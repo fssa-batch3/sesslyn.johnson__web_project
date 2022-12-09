@@ -62,7 +62,7 @@ body{
 	text-decoration:none;
 }
 .hero{
-	background-image:url(../../assets/images/living-room-main.jpg);
+	background-image:url(../../assets/images/Main/living-room-main.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
@@ -76,55 +76,59 @@ body{
 	background-position: 50%;
 }
 #sofa-img {
-	background-image: url(../../assets/images/Sofa/Sofa/Sofa\ 3.png);
+	background-image: url(../../assets/images/Rooms/Sofa/Sofa/Sofa\ 3.png);
+	background-size:cover;
+ }     
+ #renovation-image {
+	background-image: url(../../assets/images/Rooms/Renovation/renovation\ 7.jpg);
 	background-size:cover;
  }     
 #chandelier-image {
-	background-image: url(../../assets/images/chandelier-main.jfif);
+	background-image: url(../../assets/images/Main/chandelier-main.jfif);
 	background-size:cover;
  }   
  #images {
-	background: url(../../assets/images/Wallpaper/Wallpaper\ 4.jpg);
+	background: url(../../assets/images/Rooms/Wallpaper/Wallpaper\ 4.jpg);
 	background-size:cover;
  }
  #image-background{
-	background: url(../../assets/images/modular-kitchen-main.png);
+	background: url(../../assets/images/Main/modular-kitchen-main.png);
 	background-size:cover;  
  }
  #images-background{
-	background: url(../../assets/images/TV/tv\ units\ 2.png);
+	background: url(../../assets/images/Rooms/TV/tv\ units\ 2.png);
 	background-size:cover;  
  }
  #img-background{
-	background: url(../../assets/images/wadrobe/wadrobe\ 5.jpg);
+	background: url(../../assets/images/Rooms/wadrobe/wadrobe\ 5.jpg);
 	background-size:cover;  
  }
  #crockery-img{
-	background: url(../../assets/images/Crockery/crockery\ 2.jpg);
+	background: url(../../assets/images/Chamber/Crockery/crockery\ 2.jpg);
 	background-size:cover;  
  }
  #pooja-img{
-	background: url(../../assets/images/pooja/prayer\ 3.jpg);
+	background: url(../../assets/images/Rooms/pooja/prayer\ 3.jpg);
 	background-size:cover;  
  }
  #bathroom-img{
-	background: url(../../assets/images/Bathroom/Bathroom\ 1.jpg);
+	background: url(../../assets/images/Chamber/Bathroom/Bathroom\ 1.jpg);
 	background-size:cover;  
  }
  #kids-img{
-	background: url(../../assets/images/kids/kids\ area\ 1.jpg);
+	background: url(../../assets/images/Chamber/kids/kids\ area\ 1.jpg);
 	background-size:cover;  
  }
  #truck-img{
-	background: url(../../assets/images/truck/Truck/truck\ house\ 7.jpg);
+	background: url(../../assets/images/Rooms/truck/Truck/truck\ house\ 7.jpg);
 	background-size:cover;  
  }
  #ceiling-img{
-	background: url(../../assets/images/ceiling/False\ ceiling\ 13.jpg);
+	background: url(../../assets/images/Chamber/ceiling/False\ ceiling\ 13.jpg);
 	background-size:cover;  
  }
  #reuse-img{
-	background: url(../../assets/images/Reusable/reusable\ 8.jpg);
+	background: url(../../assets/images/Rooms/Reusable/reusable\ 8.jpg);
 	background-size:cover;  
  }
 .hero p{

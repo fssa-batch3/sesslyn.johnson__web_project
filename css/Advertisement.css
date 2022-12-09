@@ -5,7 +5,7 @@ body{
   overflow-y:hidden;
 }
 body{
-    background-image:url(../images/ad-wallpaper.png);
+    background-image:url(../images/Main/ad-wallpaper.png);
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-size:100%;
