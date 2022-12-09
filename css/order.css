@@ -1,0 +1,54 @@
+body{
+    margin:3.75rem 6.25rem;
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+.color{
+	color:red;
+}
+.orders{
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:space-between;
+    padding-top:3.125rem;
+}
+.orders-info{
+ display:flex;
+ flex-direction:row;
+ flex-wrap:nowrap;
+}
+.orders-head{
+    font-size:1.875rem;
+    margin-left:1.875rem;
+    margin-bottom:-2.5rem;
+}
+.details p{
+    padding-left:3.75rem;
+    font-size:1.563rem;
+}
+.details small{
+    padding-left:3.75rem;
+    font-size:1.563rem;
+}
+.btn-secondary img{
+    height:0.938rem;
+    width:1.25rem;
+}
+.btn-secondary a{
+	text-decoration:none;
+	color:white;
+}
+.btn-secondary{
+    border-radius:0.313rem;
+	border:transparent;
+	color:white;
+	background-color:rgb(239, 86, 86);
+	padding:0.625rem 3.125rem;
+	margin-top:3.125rem;
+    font-size:1.25rem;
+}
+.cart-info img:hover{
+	transform: scale(1.1); 
+	transition: 1s;
+}
