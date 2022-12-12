@@ -82,7 +82,7 @@ body{
 	border-radius:0.625rem;
 }
 .right{
-	padding:3.75rem 5rem 0rem 5rem;
+	padding:3.75rem 5rem 0rem 3.125rem;
     margin-top:2.5rem;
 }
 
@@ -117,7 +117,7 @@ h4{
     padding-top:1.25rem;
 }
 .right-down{
-	padding-left:0.625rem;
+	padding-left:1.875rem;
 }
 .right-down p{
 	text-align:center;

@@ -43,6 +43,8 @@ td a {
 }
 td img {
     margin-right: 0.625rem;
+    padding-top:2.5rem;
+
 }
 .details {
     margin-top:4.375rem;
@@ -59,9 +61,6 @@ td img {
     max-width: 18.75rem;
 }
 td:last-child {
-    text-align: right;
-}
-th:last-child {
     text-align: right;
 }
 .details p{
@@ -90,9 +89,22 @@ th:last-child {
 	transform: scale(1.1); 
 	transition: 1s;
 }
-
-
-
+ #main{
+        margin-left:300px;
+        margin-right:100px;
+ }
+.heart-heading{
+      margin-top:1.875rem;
+     padding:1.875rem 0rem 0.938rem 0rem;
+      font-size:25px;
+      text-align:left;
+} 
+#det p{
+    padding-left:3.125rem;
+ }
+ th:last-child {
+    text-align: left;
+}
 
 
 

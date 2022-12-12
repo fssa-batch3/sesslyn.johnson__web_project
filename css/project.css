@@ -2,7 +2,7 @@ body{
     margin:0rem;
     padding:0rem;
     font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-	
+	Overflow-x:hidden;
 }
 .color{
 	color:red;
@@ -15,7 +15,6 @@ body{
 	flex-direction:row;
 	flex-wrap:wrap;
 	justify-content:space-between;
-	align-items:space-between;
 	background-color:#2a2727;  
 }
 .navbar  ul li{
@@ -69,18 +68,22 @@ body{
 	height:50%;
 	width:100%;
     margin:0rem;
-   padding:0rem;
+    padding:0rem;
 	color:white;
 	font-size:1.25rem;
 	position:relative;
 	background-position: 50%;
 }
 #sofa-img {
-	background-image: url(../../assets/images/Rooms/Sofa/Sofa/Sofa\ 3.png);
+	background-image: url(../../assets/images/Rooms/Sofa/Sofa/Sofa\ 20.png);
 	background-size:cover;
  }     
  #renovation-image {
-	background-image: url(../../assets/images/Rooms/Renovation/renovation\ 7.jpg);
+	background-image: url(../../assets/images/Rooms/Renovation/renovation\ 3.png);
+	background-size:cover;
+ }     
+ #bedroom-image {
+	background-image: url(../../assets/images/Chamber/Bedroom/couple/couple\ bedroom\ 1.jpg);
 	background-size:cover;
  }     
 #chandelier-image {
@@ -104,7 +107,7 @@ body{
 	background-size:cover;  
  }
  #crockery-img{
-	background: url(../../assets/images/Chamber/Crockery/crockery\ 2.jpg);
+	background: url(../../assets/images/Chamber/Crockery/crockery\ 8.jpg);
 	background-size:cover;  
  }
  #pooja-img{
@@ -112,35 +115,36 @@ body{
 	background-size:cover;  
  }
  #bathroom-img{
-	background: url(../../assets/images/Chamber/Bathroom/Bathroom\ 1.jpg);
+	background: url(../../assets/images/Chamber/Bathroom/Bathroom\ 8-new.jpg);
 	background-size:cover;  
  }
  #kids-img{
-	background: url(../../assets/images/Chamber/kids/kids\ area\ 1.jpg);
+	background: url(../../assets/images/Chamber/kids/kids\ area-new\ 6.jpeg);
 	background-size:cover;  
  }
  #truck-img{
-	background: url(../../assets/images/Rooms/truck/Truck/truck\ house\ 7.jpg);
+	background: url(../../assets/images/Rooms/truck/Truck/truck\ interior\ 5.png);
 	background-size:cover;  
  }
  #ceiling-img{
-	background: url(../../assets/images/Chamber/ceiling/False\ ceiling\ 13.jpg);
+	background: url(../../assets/images/Chamber/ceiling/False\ ceiling\ 11.png);
 	background-size:cover;  
  }
  #reuse-img{
-	background: url(../../assets/images/Rooms/Reusable/reusable\ 8.jpg);
+	background: url(../../assets/images/Rooms/Reusable/reusable\ 10.jpg);
 	background-size:cover;  
  }
 .hero p{
     margin:0;
-    padding-top:23.75rem;
-    padding-left:5rem;
+    padding:23.75rem 0rem 0rem 5rem;
     font-size:3.125rem;
     color:black;
 }
+#bedroom-image p{
+	 padding-left:11.25rem;
+}
 #img p{
-    padding-top:23.125rem;
-    padding-left:6.25rem;
+    padding:23.125rem 0rem 0rem 6.25rem;
 }
 #image p{
     padding-left:13.75rem;
@@ -148,6 +152,7 @@ body{
 #images p{
     padding-left:9.375rem;
 }
+
 div.container{
     height:42.5rem;
     width:62.5rem;
@@ -158,6 +163,17 @@ div.container{
    background-color:transparent;
    position:fixed;
   }
+div.container-bedroom{
+	height:42.5rem;
+    width:62.5rem;
+    border-radius:0.5rem;
+    z-index:1;
+	margin:-5.625rem 3.75rem 0rem 0.625rem;
+    padding-top:1.25rem;
+   background-color:transparent;
+   position:relative;
+}
+
   #container-interiors{
 	margin:0rem 3.75rem 0rem 0.625rem;
   }
@@ -172,16 +188,12 @@ div.container{
 	margin:3.75rem 0rem;	
 }
 .interior-row{
-	text-align:start;
 	margin:2.25rem 0rem;
 	display:flex;
 	flex-direction:row;
-	flex-wrap:no-wrap;
 	justify-content:space-between;
-	align-items:space-between;	
 }
 .interiors{
-	display:inline-block;
 	width:33%;
 	position:relative;
 	padding:0rem 0.625rem;
@@ -213,4 +225,8 @@ div.container{
 }
 .home-interiors{
 	margin-top:37.5rem;
+}
+.bedroom-heading{
+	font-size:24px;
+	margin:0.313rem 0rem 0rem 0.938rem;
 }

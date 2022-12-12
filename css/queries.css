@@ -47,7 +47,7 @@ body{
     margin-left:0.125rem;
 }
 .header .inner{
-	margin-top:0.938rem 1.25rem 0.313rem 0rem;
+	margin:0.938rem 1.25rem 0.313rem 0rem;
 	padding:0.125rem;
 }
 .header button{
@@ -63,6 +63,7 @@ body{
 	transform: scale(1.2); 
 	transition: 1s;
 	background-color:rgb(199, 4, 4);
+	border-radius:0.625rem;
 }
 .submit a:hover{
 	color:white;
