@@ -3,8 +3,6 @@ body{
   padding:0rem;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   overflow-y:hidden;
-}
-body{
     background-image:url(../images/Main/ad-wallpaper.png);
     background-repeat:no-repeat;
     background-attachment:fixed;
