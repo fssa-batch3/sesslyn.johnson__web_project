@@ -78,6 +78,7 @@ div.left form div{
         display:flex;
         flex-direction:row;
         padding:0.938rem;
+        margin-left:20.625rem;
        
     }
  .btn-tertiary button{
@@ -104,9 +105,7 @@ div.left form div{
         color:white;
         margin-left:0.625rem;
     }
-  .btn{
-        margin-left:20.625rem;
-    }
+  
     .btn-secondary button{
         margin-top:0rem;
         margin-left:-12.5rem;

@@ -66,7 +66,7 @@ body{
 	flex-direction:row;
 	flex-wrap:wrap;
 	background-color:var(--grey-black);
-	display:block;
+	/* display:block; */
 	padding:20rem 0rem 0rem 3.75rem;
 }
 .main-page div:nth-child(2){
@@ -98,11 +98,19 @@ body{
 	color:var(--white);
 	margin-left:0.625rem;
 }
-.main-content p{
+.main-content {
 	color: var(--white);
 	font-size:1.25rem;
 	padding-right:2.188rem;
 	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+	padding-top: 10rem;
+}
+.content-parah {
+	margin-bottom: 15rem;
+	margin-top:-2rem;
+	padding-right:3rem;
+	text-align: justify;
+	text-justify: inherit;
 }
 .main-content h1{
 	padding-top:0rem;
@@ -245,6 +253,7 @@ div.contain{
 	color:var(--black);
 	text-align:center;
 	padding-top:1.25rem;
+	margin-top:1.875rem;
 }
 .customize a{
 	text-decoration:none;
@@ -314,10 +323,6 @@ div.contain{
 }
 .button-quant{
 	margin-top:1.75rem;
-}
-
-.call-para{
-	margin-top:1.875rem;
 }
 .trends{
 	margin:2.5rem;
