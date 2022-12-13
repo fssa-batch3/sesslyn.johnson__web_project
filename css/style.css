@@ -73,7 +73,7 @@ body{
 	display:flex;
 }
 .main-img{
-	height:55.75rem;
+	height:57rem;
 	z-index:1;
 }
 .submit{
@@ -107,7 +107,7 @@ body{
 }
 .content-parah {
 	margin-bottom: 15rem;
-	margin-top:-2rem;
+	margin-top:-1rem;
 	padding-right:3rem;
 	text-align: justify;
 	text-justify: inherit;
