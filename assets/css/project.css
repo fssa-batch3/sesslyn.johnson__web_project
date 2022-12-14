@@ -159,9 +159,8 @@ div.container{
     border-radius:0.5rem;
     z-index:1;
 	margin:-5.625rem 3.75rem 0rem 0.625rem;
-    padding-top:1.25rem;
+    padding-top:0.25rem;
    background-color:transparent;
-   position:fixed;
   }
 div.container-bedroom{
 	height:42.5rem;
@@ -241,3 +240,56 @@ div.container-bedroom{
 	background-color:azure;
 	margin-top:-3rem;
 }
+#footer-living-room{
+	margin-top:-15rem;
+}
+#footer-bedroom{
+	margin-top:-2rem;
+}
+div.footer{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	margin-top:-27rem;
+	height:27.875rem;
+	width:93.038rem;
+	background-color:#222222;
+	
+}
+.footer a{
+	text-decoration:none;
+	color:#f53f3f;
+	font-size:1.25rem;
+}
+.footer-div{
+	padding-left:12.5rem;
+	margin-right:0rem;
+	
+}
+.footer-div p{
+	font-size:1.25rem;
+}
+.footer h4{
+	font-size:1.875rem;
+	color:whitesmoke;
+}
+.footer-img{
+	margin:4.375rem -2.5rem 0rem -8.75rem;
+	height:12.5rem;
+	width:23.75rem;
+    padding:0rem;	
+}
+.footer-media{
+	display:flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	margin:-1.875rem 0rem 0rem -5rem;
+}
+.footer-media img{
+	height:4.063rem;
+	width:3.125rem;
+	padding:0.313rem 0.313rem 0.313rem 0.313rem 0.938rem;
+	margin:0rem 0rem 6.25rem 0rem;
+}
+
+

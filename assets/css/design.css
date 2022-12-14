@@ -111,7 +111,7 @@ body{
 h2{
     margin-left:18.75rem;
 }
-h4{
+h4.left-heading{
     font-size:1.25rem;
     margin-left:12.5rem;
     padding-top:1.25rem;
@@ -122,3 +122,48 @@ h4{
 .right-down p{
 	text-align:center;
 }
+div.footer{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	margin-top:5.625rem;
+	height:27.875rem;
+	width:93.038rem;
+	background-color:#222222;
+	
+}
+.footer a{
+	text-decoration:none;
+	color:#f53f3f;
+	font-size:1.25rem;
+}
+.footer-div{
+	padding-left:12.5rem;
+	margin-right:0rem;
+}
+.footer-div p{
+	font-size:1.25rem;
+}
+.footer h4{
+	font-size:1.875rem;
+	color:whitesmoke;
+}
+.footer-img{
+	margin:4.375rem -2.5rem 0rem -8.75rem;
+	height:12.5rem;
+	width:23.75rem;
+    padding:0rem;	
+}
+.footer-media{
+	display:flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	margin:-1.875rem 0rem 0rem -5rem;
+}
+.footer-media img{
+	height:4.063rem;
+	width:3.125rem;
+	padding:0.313rem 0.313rem 0.313rem 0.313rem 0.938rem;
+	margin:0rem 0rem 6.25rem 0rem;
+}
+
