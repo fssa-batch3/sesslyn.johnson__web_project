@@ -15,6 +15,9 @@ body{
     justify-content:space-between;
     align-items:space-between;
     padding-top:3.125rem;
+    box-sizing:border-box;
+    box-shadow: 0.313rem 0.638rem 1.125rem rgb(122, 118, 118);
+    margin-bottom:3rem;
 }
 .orders-info{
  display:flex;
@@ -60,12 +63,6 @@ body{
 .cart-info img:hover{
 	transform: scale(1.1); 
 	transition: 1s;
-}
-
-.orders{
-    box-sizing:border-box;
-    box-shadow: 0.313rem 0.638rem 1.125rem rgb(122, 118, 118);
-    margin-bottom:3rem;
 }
 .orders:hover{
     transform: scale(1.1); 
