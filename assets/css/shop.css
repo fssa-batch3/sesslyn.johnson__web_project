@@ -73,17 +73,18 @@ body{
     margin:0.313rem;
     font-size:1.375rem;
 }
- .search{
+ input.search{
     margin:3.125rem 0rem 0rem 6.25rem;
     width:50rem;
-    padding:0.625rem 0rem;
+    padding:0.625rem 0rem 0.625rem 1rem;
     border:0.063rem solid black;
     border-radius:0.625rem;
  }
- .search-icon{
+ img.search-icon{
    position:relative;
    left:-3.125rem;
    top:0.625rem;
+   bottom:2rem;
  }
 .top{
     display:flex;
@@ -277,4 +278,7 @@ p{
 .fb-icon{
 	width:14rem;
 	height:8rem;
+}
+.wishlist{
+    margin-top:3rem;
 }
