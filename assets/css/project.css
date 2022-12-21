@@ -4,61 +4,9 @@ body{
     font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 	Overflow-x:hidden;
 }
-.color{
-	color:red;
-}
+
 .colors{
 	color:rgb(207, 21, 21);
-}
-.header{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-	background-color:#2a2727;  
-}
-.navbar  ul li{
-	display:inline;
-	padding:0.313rem;
-	
-}
-.navbar ul{
-	margin-top:0.938rem;
-}
-.navbar ul li a{
-  color:white;
-  text-decoration:none;
-  font-size:1.25rem;
-  margin-top:0.938rem;
-  padding:1.563rem 2.5rem 0rem 3.75rem;
-  text-align:center;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-}
-.navbar ul li:hover{
-	box-shadow: 0.625rem 0.625rem  rgba(47, 42, 42, 0.75);
-	transform: scale(1.5); 
-	transition: 1s;	
-    background-color:transparent;
-	margin:0rem 0.938rem;
-}
-.logo-img{
-	margin-top:0.125rem;
-	height:2.5rem;
-	width:6.25rem;
-    padding:0.313rem;	
-    margin-left:0.125rem;
-}
-.header .triple-bar{
-	margin:0.75rem 1.25rem 0rem 0rem;
-	padding:2px;
-}
-.header .triple-bar img{
-	height:1.875rem;
-	width:1.875rem;
-
-}
-.header .triple-bar a{
-	text-decoration:none;
 }
 .hero{
 	background-image:url(../../assets/images/Main/living-room-main.jpg);

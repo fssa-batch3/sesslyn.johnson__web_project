@@ -4,9 +4,6 @@ body{
 	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 	overflow-x:hidden;
 }
-.color{
-	color:red;
-}
 :root{
 	--medium-black:#2a2727;
 	--white:#fff;
@@ -16,44 +13,6 @@ body{
 }
 .colors{
 	color:rgba(255, 0, 0, 0.674);
-}
-.header{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-	align-items:space-between;
-	background-color:var(--medium-black);  
-}
-.navbar  ul li{
-	display:inline;
-	padding:0.3rem;	
-}
-.navbar ul{
-	margin-top:0.938rem;
-}
-.navbar ul li a{
-  color:var(--white);
-  text-decoration:none;
-  font-size:1.25rem;
-  margin:0.938rem 0rem 0rem 0rem;
-  padding:1.563rem 2.5rem 0rem 3.75rem;
-  text-align:center;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-}
-.navbar ul li:hover{
-	box-shadow: 0.625rem 0.625rem rgba(47, 42, 42, 0.75);
-	transform: scale(1.5); 
-	transition: 1s;	
-    background-color:transparent;
-	margin: 0rem 0.938rem;
-}
-.logo-img{
-	margin-top:0.125rem;
-	height:2.5rem;
-	width:6.25rem;
-    padding:0.313rem;	
-    margin-left:0.125rem;
 }
 .main-page{
 	display:grid;
@@ -66,7 +25,6 @@ body{
 	flex-direction:row;
 	flex-wrap:wrap;
 	background-color:var(--grey-black);
-	/* display:block; */
 	padding:20rem 0rem 0rem 3.75rem;
 }
 .main-page div:nth-child(2){
@@ -75,28 +33,6 @@ body{
 .main-img{
 	height:57rem;
 	z-index:1;
-}
-.submit{
-   background-color:var(--white);
-    z-index:0.8;
-    margin:0.625rem 1.875rem 0rem 62.5rem;
-	padding:0.313rem 1.25rem;
-	position: sticky;
-	top: 0;
-} 
-.submit  a{
-	  text-decoration:none;
-	  color:var(--black);
-}
-.inner button:hover{
-	transform: scale(1.2); 
-	transition: 1s;
-	background-color:var(--bright-red);
-	border-radius:0.625rem;
-}
-.submit a:hover{
-	color:var(--white);
-	margin-left:0.625rem;
 }
 .main-content {
 	color: var(--white);
@@ -177,6 +113,12 @@ div.container{
 	text-align:center;
 	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
+p.reusable-para{
+	margin-top:-0.616rem;
+}
+p.chandelier-para{
+	margin-top:-0.616rem;
+}
 .interiors a{
 	text-decoration:none;
 }
@@ -202,10 +144,22 @@ img.sofa{
 	margin:0rem 0rem 0.938rem 2.5rem;
 	padding-left:0.625rem;	
 }
+img.chandelier{
+	height:8rem;
+	width:5rem;
+	margin-bottom:0.5rem;
+	margin-top:-1.5rem;
+}
 img.wadrobe{
 	height:4.063rem;
 	width:4.063rem;
 	margin-bottom:0.938rem;
+}
+img.reusable{
+	height:8rem;
+	width:5rem;
+	margin-bottom:0.5rem;
+	margin-top:-2rem;
 }
 div.contain{
     height:25rem;
@@ -307,12 +261,13 @@ div.contain{
     margin:1.25rem 5.625rem 0rem 6.563rem;
     font-size:1.125rem;
 	background-color:black;
+	border-radius:0.625rem;
 }
 .button:hover{
 	transform: scale(1.2); 
 	transition: 1s;
 	background-color:rgb(199, 4, 4);
-	border-radius:10px;
+	border-radius:0.625rem;
 }
 .button a{
 	color:white;
@@ -398,6 +353,7 @@ div.contain{
 	color:var(--white);
 	padding:0.625rem 0.938rem;
 	font-size:1.25rem;
+	border-radius:0.625rem;
 }
 .work-btn a{
 	color:var(--white);
@@ -406,7 +362,7 @@ div.contain{
 	transform: scale(1.2); 
 	transition: 1s;
 	background-color:rgb(199, 4, 4);	
-	border-radius:10px;
+	border-radius:0.625rem;
 }
 .work-btn a:hover{
 	color:var(--white);
@@ -508,51 +464,4 @@ div.contain{
 .trending-img a{
 	text-decoration:none;
 	color:black;
-}
-div.footer{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:nowrap;
-	margin-top:5.625rem;
-	height:28.125rem;
-	width:93.038rem;
-	background-color:#222222;
-	
-}
-.footer a{
-	text-decoration:none;
-	color:#f53f3f;
-}
-.footer-div{
-	padding-left:12.5rem;
-	margin-right:0rem;
-}
-.footer-div p{
-  font-size:1.25rem;
-}
-.footer h4{
-	font-size:1.875rem;
-	color:whitesmoke;
-}
-.footer-img{
-	margin:4.375rem -2.5rem 0rem -8.75rem;
-	height:12.5rem;
-	width:23.75rem;
-    padding:0rem;	
-}
-.footer-media{
-	display:flex;
-	flex-direction: row;
-	flex-wrap:nowrap;
-	margin:-1.875rem 0rem 0rem -5rem;
-}
-.footer-media img{
-	height:4.063rem;
-	width:3.125rem;
-	padding:0.313rem 0.313rem 0.313rem 0.313rem 0.938rem;
-	margin:0rem 0rem 6.25rem 0rem;
-}
-.fb-icon{
-	width:14rem;
-	height:8rem;
 }
