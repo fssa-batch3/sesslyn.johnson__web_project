@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <title>Wishlist</title>
-    <link rel="stylesheet" href="../assets/css/order.css">
+    <link rel="stylesheet" href="../assets/css/liked.css">
 	<link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="../assets/css/header and footer.css">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -37,46 +37,42 @@
 		  <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon"/></a>
 		</div> 
    </header>
+     <div class="liked-head">
+          <p><span class="color"> M</span>y <span class="color">  W</span>ishlist</p>
+    </div>
     <div class="order-page">
-
-        <div class="orders-head">
-            <p><span class="color"> M</span>y <span class="color">  W</span>ishlist</p>
-        </div>
-    
-          <div class="order-list">
-            <div class="order-status">
+          <div class="order-list" id="list">
+            <div class="order-status" id="status">
                 <div class="order-img">
                    <img src="../assets/images/Main/in-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
                   </div>
-                <div class="delivery-date">
+                <div class="delivery-date" id="delivery">
                   <h3>Available</h3>
                   <p>Sold by<span class="color"> Godrej</span></p>
                 </div>
                 <div class="cancel">
-                    <i class="fa fa-close"></i>
+                  <i class="fa fa-heart" style="color:red"></i>
                 </div>
             </div>
             <div class="order-details">
-                <div>
-                  <a href="../pages/Wallpaper/Wallpaper cart.html"><img src="../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg" alt="wallpaper-img"  width="150px" height="150px"/></a>
+                <div class="liked-img">
+                  <a href="../pages/Wallpaper/Wallpaper cart.html"><img src="../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
                 </div>
                 <div class="product-details">
                   <p>Bedroom Sticky wallpaper</p>
                   <h4>Maroon Star Wallpaper</h4>
                   <small>Price: <span class="color"> ₹</span> 5000</small>
                 </div>
-                <div class="arrow">
-                  <a href="../pages/Wallpaper/Wallpaper cart.html"><i class="fa-solid fa-chevron-right"></i></a>
-                </div>
+                
               </div>
-              <div class="review">
+              <div class="review" id="liked-star">
                   <div class="order-star">
                      <button class="btn-primary">3.8 | 
-                        <i class="fa fa-star" style="font-size:1.563rem;color:rgb(239, 86, 86)"></i>
+                        <i class="fa fa-star" style="font-size:1rem;color:rgb(239, 86, 86)"></i>
                     </button>
                   </div>
                   <div class="order-review">
-                   <a href="#"><button class="btn">Buy Now</button></a>
+                   <a href="#"><button class="btn" id="btns">Buy Now</button></a>
                  </div>
              </div>
           </div>
@@ -91,26 +87,24 @@
                   <p>Sold by <span class="color">  IKEA Furniture</span></p>
                 </div>
                 <div class="cancel" id="cancel-icon">
-                    <i class="fa fa-close"></i>
+                  <i class="fa fa-heart" style="color:red"></i>
                 </div>
             </div>
             <div class="order-details">
-                <div>
-                  <a href="../pages/Chandelier/Chandelier cart.html"><img src="../assets/images/Chamber/Chandelier/Chandelier 12.jpg" alt="wallpaper-img"  width="150px" height="150px"/></a>
+                <div class="liked-img" id="image">
+                  <a href="../pages/Chandelier/Chandelier cart.html"><img src="../assets/images/Chamber/Chandelier/Chandelier 12.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
                 </div>
                 <div class="product-details">
                   <p>Hanging crystal chandelier</p>
                   <h4>Crystal Clear Chandelier</h4>
                   <small>Price: <span class="color"> ₹</span> 20000</small>
                 </div>
-                <div class="arrow">
-                  <a href="../pages/Chandelier/Chandelier cart.html"><i class="fa-solid fa-chevron-right"></i></a>
-                </div>
+               
               </div>
               <div class="review">
                 <div class="order-star">
                    <button class="btn-primary">3.8 | 
-                      <i class="fa fa-star" style="font-size:1.563rem;color:rgb(239, 86, 86)"></i>
+                      <i class="fa fa-star" style="font-size:1rem;color:rgb(239, 86, 86)"></i>
                   </button>
                 </div>
                 <div class="order-review">
@@ -122,33 +116,31 @@
           <div class="order-list">
             <div class="order-status">
                 <div class="order-img">
-                    <img src="../assets/images/Main/out-of-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
+                  <img src="../assets/images/Main/out-of-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
                 </div>
                 <div class="delivery-date">
                   <h3>Inavailable</h3>
                   <p>Sold by<span class="color"> Zuari Furniture</span></p>
                 </div>
                 <div class="cancel" id="cancel-icon">
-                    <i class="fa fa-close"></i>
+                  <i class="fa fa-heart" style="color:red"></i>
                 </div>
             </div>
             <div class="order-details">
-                <div>
-                  <a href="../pages/cart.html"><img src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="wallpaper-img"  width="150px" height="150px"/></a>
+                <div class="liked-img" id="image">
+                  <a href="../pages/cart-list.html"><img src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
                 </div>
                 <div class="product-details">
                   <p>Leather L shape Sofa</p>
                   <h4>Grand Bluish Green Sofa</h4>
                   <small>Price: <span class="color"> ₹</span> 56000</small>
                 </div>
-                <div class="arrow">
-                  <a href="../pages/cart.html"><i class="fa-solid fa-chevron-right"></i></a>
-                </div>
+               
               </div>
               <div class="review">
                 <div class="order-star">
                    <button class="btn-primary">3.8 | 
-                      <i class="fa fa-star" style="font-size:1.563rem;color:rgb(239, 86, 86)"></i>
+                      <i class="fa fa-star" style="font-size:1rem;color:rgb(239, 86, 86)"></i>
                   </button>
                 </div>
                 <div class="order-review">

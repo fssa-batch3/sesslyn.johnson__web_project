@@ -1,0 +1,104 @@
+body{
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    background-color: rgb(203, 196, 196);
+}
+.liked-head{
+    margin:4rem 0rem 0rem 5rem;
+    font-size:2rem;
+}
+.order-page{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+}
+.order-list{
+    margin:0.75rem 3rem 4rem 5.5rem ;
+    background-color: #eee;
+    padding:1.25rem 1.5rem;
+    box-sizing:border-box;
+    box-shadow: 0.313rem 0.638rem 1.125rem rgb(122, 118, 118);
+}
+.order-list:hover{
+    transform: scale(1.1); 
+	transition: 1s;	
+    background-color:rgb(247, 223, 223);
+}
+#list{
+    padding:1.25rem 3rem 1.25rem 3.5rem;
+    margin-left:4rem;
+
+}
+.order-status{
+    display:flex;
+    flex-direction: row;
+    margin:0.5rem 0rem 0.5rem 0rem ;
+    background-color:white;
+    padding:1rem 1rem 0rem 1rem;
+}
+
+.order-details{
+    border-bottom:0.1rem solid white;
+    padding-bottom:1rem;
+    padding-top:2rem;
+}
+.product-details {
+   text-align:center;
+   margin-top:3rem;
+}
+.product-details h4{
+    font-size:1.3rem;
+    margin:-0.5rem 0rem 0rem 1rem;
+    font-family: serif;
+}
+.delivery-date{
+    margin:-1.8rem 0rem 0rem 0rem;
+    padding:1rem 2rem 0rem 1rem;
+}
+#status{
+    margin:0.5rem 0rem 0.5rem -1rem;
+    padding:1rem 2rem 0rem 1rem; 
+}
+.cancel{
+    margin-left:2rem;
+}
+.liked-img{
+    margin:-1.5rem 1rem;
+}
+#image{
+    margin-left:2.8rem;
+}
+.review{
+    display:flex;
+    flex-direction:row;
+   justify-content: space-between;
+   margin:2rem;
+}
+.btn{
+    color:white;
+    background-color:rgb(184, 40, 40);
+    border-color:transparent;
+    border-radius:0.5rem;
+    padding:0.5rem 0.5rem;
+}
+.btn:hover{
+    transform: scale(1.2); 
+	transition: 1s;
+	background-color:rgb(199, 4, 4);
+    color:black;
+	border-radius:0.625rem;
+}
+.btn-primary{
+    font-size:1.5rem;
+    border:0.1rem solid black;
+    border-radius:0.8rem;
+    padding:0.2rem 0.5rem;
+    margin: -0.2rem 0rem 0rem 0.5rem;
+}
+#liked-star{
+   justify-content: space-evenly;
+   margin-left:-2rem;
+}
+#btns{
+    margin-left:4rem;
+    margin-right:-1.5rem;
+}
