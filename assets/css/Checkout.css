@@ -6,9 +6,7 @@ body{
 .colors{
     color:rgb(185, 43, 43);
 }
-.top{
-    margin:1rem 0rem 0rem 8rem; 
-}
+
 h4{
     font-size:2rem;
     font-weight:bold;
@@ -76,8 +74,8 @@ input{
     flex-direction: row;
     flex-wrap: nowrap;
     width:80%;
-    margin-left: 9.375rem;
-    margin-bottom:5rem;
+   
+    margin:1rem 0rem 0rem 8rem; 
 }
 .chandelier{
     margin-top:1.5rem;
