@@ -103,13 +103,13 @@
 	width:32rem;
 }
 .about-div h3{
-    font-family: "bentonmod";
+   font-family: 'Noto Serif SC', serif;
     font-weight: 300;
     font-style: normal;
     font-size:3rem;
 }
 .about-div div:nth-child(2) h5{
-    font-family: "brandon-grotesque";
+    font-family: "brandon-grotesque", serif;
     font-weight: 500;
     font-style: normal;
     font-size:1rem;
@@ -156,7 +156,7 @@
 	width:32rem;
 }
 .family-div div:nth-child(1) h3{
-    font-family: "brandon-grotesque";
+    font-family: "brandon-grotesque", serif;
     font-weight: 500;
     font-style: normal;
     font-size:2rem;

@@ -78,7 +78,7 @@ body{
 	width:32rem;
 }
 .family-div div:nth-child(1) h3{
-    font-family: "brandon-grotesque";
+    font-family: "brandon-grotesque", serif;
     font-weight: 500;
     font-style: normal;
     font-size:3rem;
