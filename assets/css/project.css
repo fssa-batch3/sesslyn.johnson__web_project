@@ -88,6 +88,10 @@ body{
     font-size:3.125rem;
     color:black;
 }
+mark{
+	background-color:rgb(203, 203, 203);
+	padding:0rem 1rem 0rem 1rem;
+}
 #bedroom-image p{
 	 padding-left:11.25rem;
 }

@@ -37,9 +37,7 @@ body{
 .main-content {
 	color: var(--white);
 	font-size:1.25rem;
-	padding-right:2.188rem;
 	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-	padding-top: 10rem;
 }
 .content-parah {
 	margin-bottom: 15rem;
@@ -54,23 +52,6 @@ body{
 	color: var(--white);
 	font-size:5.625rem;
 	font-family:serif;
-	
-}
-.inner{
-	margin-top:0.938rem;
-	margin-right:1.25rem;
-	margin-bottom:0.313rem;
-	padding:0.125rem;
-	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-}
-button{
-	background-color:var(--medium-black);
-	border-color:transparent;
-	font-size:0.938rem;
-}
-button a{
-	text-decoration:none;
-	color:var(--white);	
 }
 div.container{
     height:42.5rem;
@@ -127,7 +108,6 @@ p.chandelier-para{
 	width:4.603rem;
 	margin:0rem 0rem 0.938rem 3rem;
 	padding: 0.625rem;
-	
 }
 .interiors img:hover{
 	transform: scale(1.5); 
@@ -171,11 +151,14 @@ div.contain{
    background-color:var(--white);
   }
 .support{
-	background-color:var(--white);
+	background-color:whitesmoke;
+	padding-bottom:3rem;
+	padding-top:0rem;
+	margin-bottom:0.5rem;
 }
 .support-heading{
 	color:#222222;
-	margin:3.75rem 0rem;
+	margin:-1rem 0rem 3.5rem 0rem;
     font-size:3.75rem;
 	padding-top:3.125rem;
 	text-align:center;
@@ -268,6 +251,7 @@ div.contain{
 	transition: 1s;
 	background-color:rgb(199, 4, 4);
 	border-radius:0.625rem;
+	border-color:transparent;
 }
 .button a{
 	color:white;
@@ -348,7 +332,7 @@ div.contain{
 	margin:0rem;
 }
 .work-btn{
-	margin:1.25rem 34.375rem;
+	margin:0rem 34.375rem 3rem 34.375rem;
 	background-color:var(--black);
 	color:var(--white);
 	padding:0.625rem 0.938rem;
@@ -357,12 +341,14 @@ div.contain{
 }
 .work-btn a{
 	color:var(--white);
+	text-decoration: none;
 }
 .work-btn:hover{
 	transform: scale(1.2); 
 	transition: 1s;
 	background-color:rgb(199, 4, 4);	
 	border-radius:0.625rem;
+	border-color:transparent;
 }
 .work-btn a:hover{
 	color:var(--white);
@@ -403,8 +389,6 @@ div.contain{
     flex-wrap:nowrap;
 	justify-content:space-between;
 	align-items:space-between;
-	
-
 }
 .customer-img{
     height:18.75rem;
@@ -464,4 +448,10 @@ div.contain{
 .trending-img a{
 	text-decoration:none;
 	color:black;
+}
+#footer-index{
+	margin-top:0rem;
+}
+#footer-chamber{
+	margin-top:13rem;
 }

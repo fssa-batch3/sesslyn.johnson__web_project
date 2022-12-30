@@ -2,7 +2,6 @@ body{
     width: 100%;
     margin:0rem;
     padding:0rem;
-    background-color:white;
     box-sizing:border-box;
     font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
     background-image:url(../images/Main/profile-main.png);
@@ -14,7 +13,6 @@ body{
 .color{
 	color:red;
 }
-
 .container{
 	position:absolute;
 	top:50%;
@@ -110,30 +108,23 @@ span.about{
 p input{
 	color:black;
 	margin-right:1rem;
+    padding-left:0.5rem;
 }
-
 input.name{
-    padding-left:1rem;
-	margin-left:3rem;
+	margin-left:3.2rem; 
 }
 input.mail{
-	padding-left:1rem;
 	margin-left:3.2rem;
 }
 input.address{
-    padding-left:1rem;
-	margin-left:1.875rem;
+   margin-left:1.875rem;
 }
 input.number{
-    padding-left:1rem;
 	margin-left:2.125rem;
 }
 input.place{
-    padding-left:1rem;
 	margin-left:2rem;
 }
 input.about{
-    padding-left:1rem;
 	margin-left:4.2rem;
 }
-

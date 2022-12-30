@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout page</title>
+    <link rel="stylesheet" href="../assets/css/Checkout.css">
+    <link rel="stylesheet" href="../assets/css/header and footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+
+</head>
+<body>
+
+    <header class="header">
+		<div>
+			<a href="../index.html">
+			<img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
+			</a>
+		</div>
+		
+		<div class="navbar">
+		<nav>
+		 <ul>
+			<li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
+			<li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
+			<li><a href="./queries.html"><span class="color">A</span>bout</a></li>
+			<li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
+		    <li><a href="./order.html"><span class="color">O</span>rders</a></li>	  
+		 </ul>
+		 </nav>
+		</div>
+		<div class="inner">
+		  <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
+		</div>
+		<div class="triple-bar">
+		  <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon"/></a>
+		</div> 
+   </header>
+
+<div class="top">
+
+   <div class="left-container">
+<div class="billing">
+    <h4><span class="colors">Billing Details</span></h4>
+
+ <div class="details">
+    <div class="input">
+        <label>First name</label>
+        <input type="text" id="name" required="true" placeholder="">
+     </div>
+    
+    <div class="inputs">
+        <label class="last-name">Last name</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+</div>
+
+<div class="details">
+    <div class="input">
+        <label>Country/Region</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+
+    <div class="inputs">
+        <label>Address</label>
+        <input type="text" id="name" required="true" placeholder=""><br> 
+    </div>
+</div>
+
+<div class="details">
+   <div class="input">
+        <label>State</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+
+    <div class="inputs">
+        <label>Pincode</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+</div>
+
+<div class="details">
+    <div class="input">
+        <label>Phone</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+
+
+    <div class="inputs">
+        <label>Email address</label>
+        <input type="text" id="name" required="true" placeholder="">
+    </div>
+
+</div>
+
+</div>
+
+<div class="payment">
+    <h4><span class="colors">Payment Method</span></h4>
+   
+     <div class="card-details">
+       <button>Credit Card
+        <img src="../assets/images/Main/card-new.png" class="card-img" alt="card picture" height="20px" width="80px"/></button> 
+     <button id="btn" type="submit">Cash on Delivery
+         <img src="../assets/images/Main/delivery.png"  class="card-img" alt="card picture" height="20px" width="40px"/></button>
+    </div>
+ 
+
+   <div class="container">
+    <button>
+    <p>Pay securely using your credit card</p>
+    <div>
+
+    <div class="details">
+        <div class="input">
+            <label>Card Number</label>
+            <input type="text" id="inter" required="true" placeholder=".... .... .... ....">
+        </div>
+    
+        <div class="input">
+            <label>Expiration (MM/YY)</label>
+            <input type="text" id="inter" required="true" placeholder="MM/YY">
+        </div>
+
+        <div class="input">
+            <label>Card Security Code</label>
+            <input type="text" id="inter" required="true" placeholder="CSC">
+        </div>
+    </div>
+    </div>
+</button>
+   </div>
+
+  </div>
+</div>
+
+   <div class="side-container">
+    <h4><span class="colors">Order Details</span></h4>
+    <a href="../pages/Chandelier/Chandelier cart.html">
+        <img class="chandelier" src="../assets/images/Chamber/Chandelier/Chandelier 12.jpg" alt="wallpaper-img"  width="200px" height="150px"/>
+    </a>
+
+    <div class="product-details">
+        <h3>Crystal Chandelier</h3>
+        <div class="details">
+          <p>COLOR: Grey</p>
+          <p  id="detail">QUANTITY: 1</p>
+        </div>
+        <p id="size">SIZE: 22 Inch</p>
+      </div>
+      <div class="amount">
+        <p>Sub - total : 22000</p>
+        <p>Discount : 2000</p>
+        <p>Shipping : Free</p>
+      </div>
+
+      <div class="total">
+        <p>TOTAL : 20000</p>
+       <a href="Order_completed.html"><button class="btn-primary">Place order</button></a>
+       </div>
+
+     <div class="details" id="details">
+       <div>
+         <input type="checkbox" id="checkbox" required="true">
+       </div>
+       <div>
+        <p class="agreement"> By confirming the order , I accept the terms of the users agreement</p>
+       </div>
+     </div>
+
+ </div>
+
+</div>
+
+
+</body>
+</html>

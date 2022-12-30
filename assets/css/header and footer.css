@@ -7,7 +7,8 @@
 	flex-wrap:wrap;
 	justify-content:space-between;
 	align-items:space-between;
-	background-color:#2a2727;  
+	background-color:#2a2727; 
+	border:0.063rem solid #1f1e1e; 
 }
 .navbar  ul li{
 	display:inline;
@@ -65,7 +66,7 @@
 }
 .header .triple-bar{
 	margin:0.75rem 1.25rem 0rem 0rem;
-	padding:2px;
+	padding:0.125rem;
 }
 .header .triple-bar img{
 	height:1.875rem;
@@ -82,8 +83,7 @@ div.footer{
 	margin-top:5.625rem;
 	height:28.125rem;
 	width:93.038rem;
-	background-color:#222222;
-	
+	background-color:#222222;	
 }
 .footer-div a{
 	text-decoration:none;
@@ -122,5 +122,9 @@ div.footer{
 	width:14rem;
 	height:8rem;
 }
+@media only screen and (min-width:768px){
+	
+}	
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
 
 

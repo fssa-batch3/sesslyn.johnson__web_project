@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
+ <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
  <title>Casas</title>
 <link rel="stylesheet" href="./assets/css/style.css">
 <link rel="stylesheet" href="./assets/css/normalize.css">
@@ -10,10 +11,11 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
 <body> 
     <header class="header">
       <div>
-          <a href="../index.html">
+          <a href="index.html">
       <img class="logo-img" src="./assets/images/Main/casas-logo.png" alt="logo image" />
       </a>
       </div>
@@ -21,13 +23,16 @@
       <div class="navbar">
       <nav>
        <ul>
-        <li><a href="./pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
+        <li><a href="./pages/chamber.html"><span class="color">C</span>hamber</a></li>
         <li><a href="./pages/Shop.html"><span class="color">S</span>hop</a></li>
         <li><a href="./pages/queries.html"><span class="color">A</span>bout</a></li>
         <li><a href="./pages/liked.html"><span class="color">W</span>ishlist</a></li>
-        <li><a href="./pages/order.html"><span class="color">O</span>rders</a></li>    
+        <li><a href="./pages/order.html"><span class="color">O</span>rders</a></li> 
        </ul>
-       </nav>
+      </nav>
+      </div>
+      <div class="inner">
+        <button type="submit"><a href="./pages/Seller/Homepage.html">Seller</a></button>
       </div>
       <div class="inner">
         <button type="submit"><a href="./pages/Login/Register.html">Sign Up</a></button>
@@ -47,7 +52,9 @@
      </div>
 	
 	 <div>
-	   <img class="main-img" src="./assets/images/Main/sofa.png" alt="desktop image" />
+	  <video autoplay muted loop class="main-img">
+      <source src="./assets/images/Main/gif/mainpage.mp4" type="video/mp4">
+    </video>
     
 	 </div>
 
@@ -194,13 +201,9 @@
 
 </div>
 
-
-
-
-
 <div class="review">
   <div class="review-head">
-  <p><span class="color">C</span>ustomer <span class="color">R</span>eviews</p>
+  <p><span class="color">C</span>ilent <span class="color">T</span>estimonials</p>
   </div>
 
   <div class="customer">
@@ -221,7 +224,7 @@
 
     <div>
       <img class="customer-img" src="./assets/images/Main/customer-img-3.jpeg"  alt="customer image"/>
-      <h4 class="customer-heading">Vignesh <span class="color">and</span>  Varsha </h4>
+      <h4 class="customer-heading">Vignesh <span class="color">and</span>  Varnika </h4>
       <p class="customer-content">Our designer took us through our options in extraordinary detail and was extremely 
           helpful in setting up our home the way we wanted.</p>
     </div>
@@ -261,7 +264,7 @@
     </div>
   </div>
   <div class="work-content">
-    <button class="work-btn"><a href="./pages/Login/">Book a session with design experts</a></button>
+    <button class="work-btn"><a href="./pages/Login/Login.html">Book a session with design experts</a></button>
   </div>
 </div>
 
@@ -276,7 +279,7 @@
          <div class="customize">
           <a href="#"><img id="mail-img" src="./assets/images/Main/queries.png" alt="queries-icon"/></a>
            <a href="#"><p class="queries-para">Frequently asked questions <span class="color">(FAQ)</span> </p></a>
-          <button class="button button-sec" type="submit"><a href="./pages/queries.html">Check</a></button>
+          <button class="button button-sec" type="submit"><a href="./pages/queries.html" >Check</a></button>
          </div>
          <div class="customize" >
           <a href="#"><img id="mail-img" src="./assets/images/Main/mail-icon.png" alt="mail-icon"/></a>
@@ -291,7 +294,7 @@
    </div>
   </div>
 
-  <div class="footer">
+  <div class="footer" id="footer-index">
     <div class="footer-div">
       <img class="footer-img" src="./assets/images/Main/casas-logo.png" alt="desktop image" />
     

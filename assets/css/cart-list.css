@@ -32,24 +32,21 @@
     width:30%;
 }
 
-.cart-address{
-    border:0.063rem solid #bbb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:2rem;
-    margin-bottom: 2rem;
+.btn{
+    border-radius:0.625rem;
+    background-color: black;
+    color:white;
+    border: 0.063rem solid transparent;
 }
-.cart-address p{
-    font-size: 1.125rem;
-    padding-bottom: 1rem;
+.btn:hover{
+    transform: scale(1.1); 
+	transition: 1s;
+	background-color:rgb(199, 4, 4);
+	border-radius:0.625rem;
+    color:black;
+    border-color:transparent;
 }
-.cart-address button{
-    padding: 0.5rem;
-    width:9.375rem;
-    font-weight: 500;
-    border: 0.063rem solid #000;
-}
+
 .cart-details{
     display:flex;
     justify-content:flex-start;
@@ -109,13 +106,10 @@ span.date{
 }
  button.liked-product{
     padding:0.8rem;
-    background-color: #222;
-    border:0.063rem solid #bbb;
-    color:#fff;
     width:12.5rem;
     margin-left:3rem;
+  
 }
-
 .side-container h3{
     padding-bottom: 1rem;
 }
@@ -128,14 +122,11 @@ span.date{
 .side-container table tbody tr:last-child td:first-child,tr:last-child td:last-child{
     font-weight: 600;
 }
-
-.side-container button{
-    background-color: #222;
-    color:#fff;
+.order-btn{
     width:100%;
     padding:1rem;
     font-weight: 600;
-    margin-top: 1rem;
+    margin-top: 1rem; 
 }
 .footer-div h4{
    margin-top:1.5rem;
