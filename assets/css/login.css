@@ -53,6 +53,9 @@ form #data-input input{
 .container .input{
 	padding:0.625rem;
 }
+.order-star{
+	margin:1rem 0rem 0rem 2rem;
+}
 form .input input{
 	height:8%;
 	width:100%;
