@@ -140,7 +140,7 @@ section.right button.btn-secondary {
 	width:1.875rem;
 }
 .heart-icon img:hover{
-	transform: scale(1.5); 
+	transform: scale(1.2); 
 	transition: 1s;	
 }
 .heart-icon a{
@@ -184,4 +184,6 @@ small{
 #btn-edit{
 	margin-top:1rem;
 }
-
+del{
+	padding-left:0.8rem;
+}

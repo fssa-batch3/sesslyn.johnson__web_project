@@ -18,6 +18,9 @@ body{
 #profile-icon{
     margin:0.75rem 0rem 0rem 5rem;
 }
+#profile{
+    margin:0.75rem 2rem 0rem 2rem;
+}
 .logo-image{
 	margin-top:0.125rem;
 	height:4.5rem;
