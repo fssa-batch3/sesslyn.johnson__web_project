@@ -43,12 +43,12 @@
       
         <div class="container-content">
          <b>
-             <p>Name:    <input class="name" type="text" required="true" placeholder="Name"/></p>
-             <p> Email: <input class="mail" type="text" required="true" placeholder="abc@gmail.com"/> </p>
-             <p>Address: <input class="address" type="text" required="true" placeholder="Address"/></p>
-             <P>Contact: <input class="number" type="text" required="true" placeholder="+916789654327"/></p>
-             <p>Country: <input class="place" type="text" required="true" placeholder="India"/></p>
-             <p>Bio: <input class="about" type="text" required="true" placeholder="About"/></p>
+             <p>Name:    <input class="name" type="text" required="true" placeholder="Name" id="name" value="Sesslyn"/></p>
+             <p> Email: <input class="mail" type="text" required="true" placeholder="abc@gmail.com" id="email" value="sesslyn2004@gmail.com"/> </p>
+             <p>Address: <input class="address" type="text" required="true" placeholder="Address" id="address" value="12th Gandhi street, Chennai"/></p>
+             <P>Contact: <input class="number" type="text" required="true" placeholder="+916789654327" id="contact" value="9876567890"/></p>
+             <p>Country: <input class="place" type="text" required="true" placeholder="India" id="country" value="India"/></p>
+             <p>Bio: <input class="about" type="text" required="true" placeholder="About" id="about" value="Trust God"/></p>
           </b>
           
         </div>
@@ -56,7 +56,22 @@
       
  </div>
  
-   
+ <script>
+  const name=  document.getElementById("name").value 
+  const email= document.getElementById("email").value 
+  const address= document.getElementById("address").value 
+  const contact= document.getElementById("contact").value 
+  const country= document.getElementById("country").value 
+  const about= document.getElementById("about").value 
+
+  console.log(name)
+	console.log(email)
+	console.log(address)
+  console.log(contact)
+  console.log(country)
+  console.log(about)
+</script>
+
 </body>
 </html>
 

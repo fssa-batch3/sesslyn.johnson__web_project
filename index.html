@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Casas</title>
 <link rel="stylesheet" href="./assets/css/style.css">
 <link rel="stylesheet" href="./assets/css/normalize.css">
@@ -9,6 +11,7 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body> 
     <header class="header">
@@ -38,6 +41,7 @@
       <div class="triple-bar">
         <a href="./pages/profile.html"><img src="./assets/images/Main/profile (1).png" alt="bar icon"/></a>
       </div> 
+      <div id="menu-btn" class="fas fa-bars"></div>
  </header>
  
  <div class="main-page">
@@ -50,14 +54,7 @@
      </div>
 	
 	 <div>
-	  <video autoplay muted loop class="main-img">
-      <source src="./assets/images/Main/gif/mainpage.mp4" type="video/mp4">
-      <track
-       label="Español"
-       kind="subtitles"
-       srclang="es"
-      src="captions/vtt/sintel-es.vtt" />
-    </video>
+	<img src="./assets/images/Main/sofa.png" alt="" class="main-img"/>
     
 	 </div>
 
@@ -76,7 +73,7 @@
         <a href="./pages/Living room/project.html"><p><span class="color">L</span>iving Room</p></a>
       </div>
       
-      <div class="interiors">
+      <div class="interiors" id="inter-bedroom">
         <a href="./pages/Bedroom/Main Page.html"><img class="bedroom" src="./assets/images/Main/bedroom-icon.png" alt="icon of every chamber"/></a>
         <a href="./pages/Bedroom/Main Page.html"><p><span class="color">B</span>edroom</p></a>
       </div>
@@ -86,7 +83,7 @@
         <a href="./pages/Kitchen/Main Page.html"><p><span class="color">M</span>odular Kitchen</p></a>
       </div>
 
-      <div class="interiors">
+      <div class="interiors" id="inter-4">
         <a href="./pages/Sofa/Main page.html"><img  class="sofa" src="./assets/images/Main/sofa-icon.png" alt="icon of every chamber"/></a>
         <a href="./pages/Sofa/Main page.html"><p><span class="color">S</span>ofa Sets</p></a>
       </div>
@@ -108,9 +105,9 @@
         <a href="./pages/Crockery Units/Main Page.html"><p><span class="color">C</span>rockery Units</p></a>
       </div>
     
-    <div class="interiors">
+    <div class="interiors" id="inter-wadrobe">
         <a href="./pages/Pooja/Main Page.html"><img  class="pooja" src="./assets/images/Main/pooja unit-icon.png" alt="icon of every chamber"/></a>
-       <a href="./pages/Pooja/Main Page.html"> <p><span class="color">P</span>ooja Units</p></a>
+       <a href="./pages/Pooja/Main Page.html"> <p class="wadrobe-para"><span class="color">P</span>ooja Units</p></a>
       </div>
   </div>
   
@@ -130,7 +127,7 @@
         <a href="./pages/Renovation/Main Page.html"><p><span class="color">R</span>enovation</p></a>
       </div>
     
-    <div class="interiors">
+    <div class="interiors" id="inter-reusable">
        <a href="./pages/Reusuable/Main Page.html"> <img  class="reusable" src="./assets/images/Main/space-saving.png" alt="icon of every chamber"/></a>
         <a href="./pages/Reusuable/Main Page.html"><p class="reusable-para"><span class="color">R</span>eusable things</p></a>
       </div>
@@ -152,7 +149,7 @@
         <a href="./pages/False Ceiling/Main Page.html"><p><span class="color">F</span>alse Ceiling</p></a>
       </div>
     
-    <div class="interiors">
+    <div class="interiors" id="inter-chandelier">
         <a href="./pages/Chandelier/Main Page.html"><img  class="chandelier" src="./assets/images/Main/chandelier.png" alt="icon of every chamber"/></a>
         <a href="./pages/Chandelier/Main Page.html"><p class="chandelier-para"><span class="color">C</span>handelier</p></a>
       </div>
@@ -225,7 +222,7 @@
       </p>
     </div>
 
-    <div>
+    <div class="customer-3">
       <img class="customer-img" src="./assets/images/Main/customer-img-3.jpeg"  alt="customer image"/>
       <h4 class="customer-heading">Vignesh <span class="color">and</span>  Varnika </h4>
       <p class="customer-content">Our designer took us through our options in extraordinary detail and was extremely 
@@ -260,10 +257,10 @@
     <img class="dotted-line" src="./assets/images/Main/dotted-line-icon.png"  alt="dotted line"/>
     <p><b>(100% payment)</b><br>Final Installations</p>
     </div>
-    <div class="work-content-article">
+    <div class="work-content-article" id="work-content-5">
     <button class="btn-work"><img class="work-images" src="./assets/images/Main/delievery-icon-new.png"  alt="delivery image"/></button>
   
-    <p>Move in and Enjoy</p>
+    <p class="para-5">Move in and Enjoy</p>
     </div>
   </div>
   <div class="work-content">
@@ -274,22 +271,22 @@
 <div class="support">
   <p class="support-heading"><span class="color">C</span>ustomer <span class="color">S</span>upport</p>
    <div class="contain">
-       <div class="customizes">
+       <div class="customizes" id="customize-1">
           <a href="#"><img  src="./assets/images/Main/chat-icon.png"  alt="chat-icon"/></a>
            <a href="#"><p>Have a Problem with a <br><span class="color">Project</span></p></a>
           <button class="button button-pri" type="submit"><a href="./pages/issue.html">Issue</a></button>
          </div>
-         <div class="customize">
+         <div class="customize" id="customize-1">
           <a href="#"><img id="mail-img" src="./assets/images/Main/queries.png" alt="queries-icon"/></a>
            <a href="#"><p class="queries-para">Frequently asked questions <span class="color">(FAQ)</span> </p></a>
           <button class="button button-sec" type="submit"><a href="./pages/queries.html" >Check</a></button>
          </div>
-         <div class="customize" >
+         <div class="customize" id="customize-1"  >
           <a href="#"><img id="mail-img" src="./assets/images/Main/mail-icon.png" alt="mail-icon"/></a>
            <a href="#"><p class="mail-para">Email us<br><span class="color">sesslyn2004@gmail.com</span></p></a>
            <button class="button button-ter" type="submit"><a href="#">Mail</a></button>
          </div>
-         <div class="customize">
+         <div class="customize" id="customize-1">
           <a href="#"><img id="call-img" src="./assets/images/Main/call-icon.png" alt="call-icon"/></a>
            <a href="#"><p class="call-para">Call us<br><span class="color">+91 9952353964</span></p></a>
            <button class="button button-quant" type="submit"><a href="#">Call</a></button>
@@ -298,7 +295,7 @@
   </div>
 
   <div class="footer" id="footer-index">
-    <div class="footer-div">
+    <div class="footer-div" id="footer-image">
       <img class="footer-img" src="./assets/images/Main/casas-logo.png" alt="desktop image" />
     
     <div class="footer-media">
@@ -328,8 +325,8 @@
        <a href="./pages/order.html"> <p>Orders</p></a>
     </div>
       
-    <div class="footer-div">
-      <h4>Business Solutions</h4>
+    <div class="footer-div" id="div-footer">
+      <h4> Solutions</h4>
       <a href="#"><p>Talent</p></a>
       <a href="#"><p>Marketing</p></a>
       <a href="#"><p>Sales</p></a>
@@ -339,8 +336,7 @@
   </div>
 
    
-
-
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>

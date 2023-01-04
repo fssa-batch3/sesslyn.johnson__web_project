@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
   <title>Login Page</title>
    <link rel="stylesheet" href="../../assets/css/login.css">
    <link rel="stylesheet" href="../../assets/css/normalize.css">
    <link rel="stylesheet" href="../../assets/css/header and footer.css">
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
 	<header class="header">
@@ -33,25 +37,30 @@
 		<div class="triple-bar">
 		  <a href="../../pages/profile.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon"/></a>
 		</div> 
+
+		<div id="menu-btn" class="fas fa-bars"></div>
    </header>
 
 
     <div id="login"  class="center">
+		<div class="mobile-img">
+			<img src="../../assets/images/Main/ad-wallpaper.png" alt="" />
+		  </div>
       <div class="container" id="contain-div">
 
 	   <div class="title"><span class="color">L</span>OGIN</div>
 
-    <form action="#">
-    <div class="data" id="data-div">
+       <form action="#">
+       <div class="data" id="data-div">
 
 	    <div class="input">
-	        <label>Email Id</label>
-	        <input type="text" id="number or email id" required="true" placeholder="Email id ">
+	        <label class="label">Email Id</label>
+	        <input type="text"  class="inputs" id="email" value="sesslyn2004@gmail.com" required="true" placeholder="Email id ">
 	   </div>
 
 	   <div class="input">
-	      <label>Password</label>
-	      <input type="text" required="true" placeholder="Password">
+	      <label class="label">Password</label>
+	      <input type="text" class="inputs" required="true" placeholder="Password" id="password" value="sess@15">
 	   </div>
 
 	    <div class="btn">
@@ -64,9 +73,18 @@
 	      <a href="../Login/password.html">Forgot Password?</a>
 	    </div>
 	  
-    </form>
+       </form>
+	  </div>
 
-     </div>
 	 </div>
+
+	 <script>
+		const email=  document.getElementById("email").value 
+		const password=  document.getElementById("password").value 
+
+		console.log(email)
+		console.log(password)
+	</script>
+
 	   </body>
 	   </html>

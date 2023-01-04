@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Session</title>
     <link rel="stylesheet" href="../../assets/css/proceed.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
@@ -18,15 +20,15 @@
 			<form>
 				<div>
 					<label>Name</label>
-	               <input type="text" id="name" required="true" placeholder="Name" >
+	               <input type="text" id="name" required="true" placeholder="Name"   value="Sesslyn" >
                 </div>
 				<div>
 					<label>Phone Number</label>
-	               <input type="text"  required="true"  placeholder="Phone Number">
+	               <input type="text"  required="true"  placeholder="Phone Number"  id="phone_number" value="9876567890">
                 </div>
 				<div>
 					<label>Address</label>
-	               <input type="textarea" id="textarea"  placeholder="Address" required="true">
+	               <input type="textarea" id="textarea"  placeholder="Address" value="12th Gandhi street, Chennai" required="true">
                 </div>
 			<div>
                 <div class="btn-tertiary">
@@ -43,6 +45,14 @@
 		 </div>
 	  </div>
 	</div>
-	
+	<script>
+		const name=  document.getElementById("name").value 
+		const textarea= document.getElementById("textarea").value 
+		const phone_number= document.getElementById("phone_number").value 
+		
+		console.log(name)
+		console.log(textarea)
+		console.log(phone_number)
+	  </script>
 </body>
 </html>

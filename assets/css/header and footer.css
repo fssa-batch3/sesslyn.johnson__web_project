@@ -118,3 +118,138 @@ div.footer{
 }
 
 
+#menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--green);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* media queries  */
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding:2rem;
+    }
+}
+@media (max-width:768px){
+    #menu-btn{
+        display: initial;
+    }
+	.navbar  ul li{
+		display:none;
+		padding:0.3rem;	
+	}
+	.navbar ul{
+		margin-top:0.938rem;
+	}
+	.navbar ul li a{
+	  color:white;
+	  text-decoration:none;
+	  font-size:1.25rem;
+	  margin:0.938rem 0rem 0rem 0rem;
+	  padding:1.563rem 2.5rem 0rem 3.75rem;
+	  text-align:center;
+	  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+	}
+
+
+
+
+.header .navbar{
+	position: absolute;
+	top:115%; right: 2rem;
+	border-radius: .5rem;
+	box-shadow: white;
+	width: 100%;
+	border: red;
+	background: #fff;
+	transform: scale(0);
+	opacity: 0;
+	transform-origin: top right;
+	transition: none;
+}
+.header .navbar.active{
+	transform: scale(1);
+	opacity: 1;
+	transition: .2s ease-out;
+}
+.header .navbar  a{
+	font-size: 2rem;
+	display: block;
+	margin:2.5rem;
+}
+}
+@media (max-width:450px){
+html{
+	font-size: 50%;
+}
+
+div.footer{
+	/* display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap; */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+	margin-top:5.625rem;
+	
+	height:28.125rem;
+	width:49rem;
+	background-color:#222222;	
+}
+.footer-div a{
+	text-decoration:none;
+	color:#f53f3f;
+}
+.footer-div {
+	padding-left:6.8rem;
+	margin-left:-4.8rem;
+	padding-right: 1.5rem;
+}
+.footer-div p{
+  font-size:0.9rem;
+}
+.footer-div h4{
+	font-size:1.875rem;
+	color:whitesmoke;
+}
+.footer-img{
+	margin:4.375rem -2.5rem 0rem -5.75rem;
+	height:12.5rem;
+	width:8rem;
+    padding:0rem;	
+}
+.footer-media{
+	display:flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	margin:-1.875rem 0rem 0rem -5rem;
+}
+.footer-media img{
+	height:4.063rem;
+	width:1.125rem;
+	/* padding:0.313rem 0.313rem 0.313rem 0.938rem;
+	margin:0rem 0rem 6.25rem 0rem; */
+}
+.fb-icon{
+	width:14rem;
+	height:8rem;
+}
+#footer-image{
+	margin-top:0rem;
+	margin-left:1rem;
+}
+#div-footer p{
+	margin-right:0;
+	padding-right:0;
+}
+}
