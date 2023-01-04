@@ -519,6 +519,11 @@ div.contain{
 	}
 	.home-int-heading{
 		margin-left:12rem;
+		color:#222222;
+		font-size:1.5rem;
+		text-align:left;
+		/* margin:3.75rem 0rem; */
+		font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;	
 	}
      div.container{
 		height:42.5rem;
@@ -554,13 +559,7 @@ div.contain{
 		font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 	}
 
-	.home-int-heading{
-		color:#222222;
-		font-size:1.5rem;
-		text-align:left;
-		/* margin:3.75rem 0rem; */
-		font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;	
-	}
+	
 
 	.interiors{
 		/* display:inline-block; */
@@ -732,12 +731,6 @@ div.contain{
 	.customer-heading{
 		margin-left:1.688rem;
 		font-size:1.563rem;
-	}
-
-	.customer-3{
-	       margin-right: -10rem;
-		   margin-left:14rem;
-		   margin-top:5rem;
 	}
 	.work-content{
 		display:grid;
