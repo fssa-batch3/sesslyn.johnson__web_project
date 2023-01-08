@@ -20,19 +20,19 @@
 			<form>
 				<div>
 					<label>Name</label>
-	               <input type="text" id="name" required="true" placeholder="Name"   value="Sesslyn" >
+	               <input type="text" id="name" required="true" placeholder="Name">
                 </div>
 				<div>
 					<label>Phone Number</label>
-	               <input type="text"  required="true"  placeholder="Phone Number"  id="phone_number" value="9876567890">
+	               <input type="text"  required="true"  placeholder="Phone Number"  id="phone_number">
                 </div>
 				<div>
 					<label>Address</label>
-	               <input type="textarea" id="textarea"  placeholder="Address" value="12th Gandhi street, Chennai" required="true">
+	               <input type="textarea" id="textarea"  placeholder="Address" required="true">
                 </div>
 			<div>
                 <div class="btn-tertiary">
-                    <button type="submit"><a href="../../index.html">Submit</a></button>
+                    <button class="btn-main" type="submit" onclick="register()">Submit</button>
                 </div>	
              </div>
             </form>
@@ -46,13 +46,19 @@
 	  </div>
 	</div>
 	<script>
-		const name=  document.getElementById("name").value 
-		const textarea= document.getElementById("textarea").value 
-		const phone_number= document.getElementById("phone_number").value 
+
+		 function register(){
+			const name=  document.getElementById("name").value 
+		    const textarea= document.getElementById("textarea").value 
+		    const phone_number= document.getElementById("phone_number").value 
 		
-		console.log(name)
-		console.log(textarea)
-		console.log(phone_number)
+		   console.log(name)
+		   console.log(textarea)
+		   console.log(phone_number)
+
+		window.location.href="../../index.html"
+		 }
+		
 	  </script>
 </body>
 </html>

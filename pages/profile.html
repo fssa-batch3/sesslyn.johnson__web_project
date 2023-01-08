@@ -41,21 +41,51 @@
          <img src="../assets/images/Main/sess.jpg" alt="profile image" class="profile-image" width="180px">
         
         </div>
-        <div class="container-content">
+        <div class="container-content" >
          <b>
-             <p>Name:    <span class="name">Sesslyn J</span></p>
-             <p> Email:  <span class="mail">sesslyn2004@gmail.com </span></p>
-             <p>Address: <span class="address">12th Water tank street</span></p>
-             <P>Contact: <span  class="number"> 9952393525</span></P>
-             <p>Country: <span  class="place">India</span></p>
-             <p>Bio: <span class="about"> Trust God</span></p>
+             <p>Name:    <span class="name" id="profile_name" >Sesslyn </span></p>
+             <p> Email:  <span class="mail" id="profile_mail">sesslyn2004@gmail.com </span></p>
+             <p>Address: <span class="address" id="profile_address">12th Water tank street</span></p>
+             <P>Contact: <span  class="number" id="profile_contact"> 9952393525</span></P>
+             <p>Country: <span  class="place" id="profile_country">India</span></p>
+             <p>Bio: <span class="about" id="profile_bio"> Trust God</span></p>
           </b>
           
         </div>
         <button class="btn btn-primary"><a href="../pages/edit.html">Edit</a></button>
         <button class="btn btn-secondary"><a href="../pages/Living room/project.html">Back</a></button>
  </div>
- 
+ <script>
+  const name = localStorage.getItem("name");
+  console.log(name);
+
+  document.getElementById("profile_name").innerText = name
+
+  const email = localStorage.getItem("email");
+  console.log(email);
+
+  document.getElementById("profile_mail").innerText = email
+
+  const address = localStorage.getItem("address");
+  console.log(address);
+
+  document.getElementById("profile_address").innerText = address
+
+  const contact= localStorage.getItem("contact");
+  console.log(contact);
+
+  document.getElementById("profile_contact").innerText = contact
+
+  const country= localStorage.getItem("country");
+  console.log(country);
+
+  document.getElementById("profile_country").innerText = country
+
+  const about= localStorage.getItem("about");
+  console.log(about);
+
+  document.getElementById("profile_bio").innerText = about
+ </script>
    
 </body>
 </html>

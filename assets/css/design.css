@@ -80,7 +80,7 @@ body{
 	flex-direction:row;
     flex-wrap:nowrap;
 	justify-content:space-between;
-	align-items:space-between;
+	
 }
 .down-img:hover{
 	transform: scale(1.2); 
@@ -110,4 +110,52 @@ h4.left-heading{
 .right-down p{
 	text-align:center;
 }
-
+@media screen and (max-width:768px) {
+	HTML{
+		font-size: 2rem;
+	}
+	.top{
+		display:flex;
+		flex-direction:column;
+		flex-wrap:nowrap;
+		justify-content:space-evenly;
+		align-items:space-evenly;
+	}
+	.image-img{
+		margin:1.25rem 1rem 0rem 0rem;
+		/* height:37.5rem;
+		width:43.75rem; */
+		height:100%;
+		width:100%;
+		border-radius:0.625rem;
+	}
+	#living-footer{
+		margin-left:-2rem;
+	}
+	.right{
+		 padding:0rem;
+		margin-top:0rem; 
+		margin-right:2rem;
+		margin-left:0rem;
+	}
+	.image-overlay{
+		top:1rem;
+		left:1.5rem;
+		width: 100%;
+		height:96%;
+	}
+	h4.left-heading{
+		font-size:1.5rem;
+		margin:1.25rem 1rem 2rem 4rem;
+		padding-top:1.25rem;
+	}
+	h2{
+		margin-left:15.75rem;
+		font-size:2rem;
+	}
+	.down{
+		margin:3.75rem 0rem 0rem 0rem;
+		
+		
+	}
+}

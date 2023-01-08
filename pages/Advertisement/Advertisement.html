@@ -63,16 +63,16 @@
             <div class="input-inner">
 			<form>
 			 <div class="inners">
-			    <button type="submit"><input class="radio"  type="radio">1 BHK</button>
+			    <button type="submit"><input class="radio"  id="bhk_1" value="true or false" type="radio">1 BHK</button>
 		    </div>
 			<div class="inners">
-			    <button type="submit"><input  class="radio"   type="radio">2 BHK</button>
+			    <button type="submit"><input  class="radio"   id="bhk_2" value="true or false" type="radio">2 BHK</button>
 		    </div>
 			<div class="inners">
-			    <button type="submit"><input  class="radio"  type="radio">3 BHK</button>
+			    <button type="submit"><input  class="radio"  id="bhk_3" value="true or false" type="radio">3 BHK</button>
 		    </div>
 			<div class="inners">
-			    <button type="submit"><input  class="radio"   type="radio">3+  BHK</button>
+			    <button type="submit"><input  class="radio"   id="bhk_4" value="true " type="radio">3+  BHK</button>
 		    </div>
 		    </div>
 		 
@@ -82,13 +82,13 @@
             <label><span class="color">P</span>urpose</label>
              <div class="input-inner">
 			 <div class="innes">
-			    <button type="submit"><input  class="radio" type="radio">Move In</button>
+			    <button type="submit"><input   id="move" value="true or false" class="radio" type="radio">Move In</button>
 		    </div>
 			<div class="innes">
-			    <button type="submit"><input  class="radio" type="radio">Rent Out</button>
+			    <button type="submit"><input  id="rent" value="true or false" class="radio" type="radio">Rent Out</button>
 		    </div>
 			<div class="innes">
-			    <button type="submit"><input  class="radio" type="radio">Renovate</button>
+			    <button type="submit"><input  id="renovate" value="true" class="radio" type="radio">Renovate</button>
 		    </div>
 			
            </div>
@@ -96,22 +96,19 @@
 
 	   <div class="rooms">
 		<div>
-			<input type="checkbox" class="radio-box-1" >
+			<input type="checkbox" id="rooms" value="true" class="radio-box-1" >
 			<label><a href="session.html">For Entire Rooms</a></label>
 		</div>
 		<div>
-			<input type="checkbox" class="radio-box-1" >
+			<input type="checkbox" id="house" value="true or false" class="radio-box-1" >
 			<label>For Specified Rooms</label>
 		</div>
 	   </div>
       
    </div>
-
-
-
 	    
 		 <div class="submit">
-			    <button type="submit"><a href="./proceed.html">Proceed</a></button>
+			    <button type="submit" onclick="displayRadioValue()"><a href="./proceed.html">Proceed</a></button>
 		 </div>
 	   </div>
        </form>
@@ -122,6 +119,35 @@
        <div class="btn">
 	    <a href="./Advertisement.html"><button type="submit">Book session with <span class="color">Design</span> experts</button></a>
      </div>
+
+
+	  <script>
+		const bhk_1= document.getElementById("bhk_1").value 
+		const bhk_2= document.getElementById("bhk_2").value 
+		const bhk_3= document.getElementById("bhk_3").value 
+		const bhk_4= document.getElementById("bhk_4").value 
+	
+		const move= document.getElementById("move").value 
+		const rent= document.getElementById("rent").value 
+		const renovate= document.getElementById("renovate").value 
+		
+		const rooms= document.getElementById("rooms").value 
+		const house= document.getElementById("house").value 
+
+		console.log(bhk_1)
+		console.log(bhk_2)
+		console.log(bhk_3)
+		console.log(bhk_4)	
+
+		console.log(move)
+		console.log(rent)
+		console.log(renovate)
+
+		console.log(rooms)
+		console.log(house)
+
+	</script> 
+
 
 </body>
 </html>

@@ -239,7 +239,7 @@ div.container-bedroom{
 
 	#container-interiors{
 		height:100%;
-		margin:0rem 2.75rem 1rem 0.625rem;
+		margin:2rem 2.75rem 1rem 0.625rem;
 	  }
 	  #container-bathroom{
 		height:100%;
@@ -278,5 +278,6 @@ div.container-bedroom{
 	height:100%;
 	width:100%;
 }
+
 
 }

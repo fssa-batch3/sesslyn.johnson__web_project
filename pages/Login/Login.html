@@ -48,24 +48,24 @@
 		  </div>
       <div class="container" id="contain-div">
 
-	   <div class="title"><span class="color">L</span>OGIN</div>
+		<div class="title"><span class="color">L</span>OGIN</div>
 
        <form action="#">
        <div class="data" id="data-div">
 
 	    <div class="input">
 	        <label class="label">Email Id</label>
-	        <input type="text"  class="inputs" id="email" value="sesslyn2004@gmail.com" required="true" placeholder="Email id ">
+	        <input type="text"  class="inputs" id="email" required="true" placeholder="Email id ">
 	   </div>
 
 	   <div class="input">
 	      <label class="label">Password</label>
-	      <input type="text" class="inputs" required="true" placeholder="Password" id="password" value="sess@15">
+	      <input type="password" class="inputs" required="true" placeholder="Password" id="password" >
 	   </div>
 
 	    <div class="btn">
 	     <div class="btn-primary">
-	       <button type="submit"><a href="../Advertisement/Advertisement.html">Login</a></button>
+	       <button class="btn-register" type="submit" onclick="login()">Login</button>
 		 </div>
 		 </div>
 
@@ -79,11 +79,15 @@
 	 </div>
 
 	 <script>
-		const email=  document.getElementById("email").value 
-		const password=  document.getElementById("password").value 
+		function login(){
+			const email=  document.getElementById("email").value 
+		   const password=  document.getElementById("password").value 
 
 		console.log(email)
 		console.log(password)
+
+		window.location.href="../Advertisement/Advertisement.html"
+		}
 	</script>
 
 	   </body>

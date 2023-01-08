@@ -42,10 +42,10 @@
                 </div>
                
                 <div class="mail">
-                    <input type="email" placeholder="E-mail">
+                    <input type="email" id="email" value="sesslyn2004@gmail.com" placeholder="E-mail">
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" id="password" value="sess@15">
                 </div>
               
                 <div class="forget">
@@ -70,7 +70,13 @@
     </div>
    </div>
    
-   
+<script>
+    const email=  document.getElementById("email").value 
+    const password=  document.getElementById("password").value 
+
+    console.log(email)
+    console.log(password)
+</script>
     
 
   </body>

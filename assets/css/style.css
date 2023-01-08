@@ -606,9 +606,9 @@ div.contain{
 	}
 	
 	img.sofa{
-		height:6.063rem;
+		height:4.063rem;
 		width:3.313rem;
-		
+		margin-top:2rem;
 		/* margin:0rem 0rem 0.938rem 2.5rem;
 		padding-left:0.625rem;	 */
 	}
@@ -620,7 +620,7 @@ div.contain{
 		width:3.313rem;
 	}
 	img.chandelier{
-		height:9.5rem;
+		height:7.5rem;
 		width:3.5rem;
 		/* margin-bottom:0.5rem;
 		margin-top:-1.5rem; */
@@ -631,7 +631,7 @@ div.contain{
 		/* margin-bottom:0.938rem; */
 	}
 	img.reusable{
-		height:9.8rem;
+		height:6.8rem;
 		width:3.5rem;
 		
 		/* margin-bottom:0.5rem;

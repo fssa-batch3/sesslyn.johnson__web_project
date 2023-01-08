@@ -21,31 +21,31 @@
 			<form>
 				<div>
 					<label>Kitchen</label>
-	               <input type="checkbox" class="radio-box-1" >
+	               <input type="checkbox" class="radio-box-1"  value="true or false" id="kitchen">
                 </div>
 				<div>
 					<label>Bedroom</label>
-	               <input type="checkbox" class="radio-box-2" >
+	               <input type="checkbox" class="radio-box-2"  value="true or false" id="bedroom">
                 </div>
 				<div>
 					<label>Living Room</label>
-	               <input type="checkbox"class="radio-box-3">
+	               <input type="checkbox"class="radio-box-3" value="true or false" id="living_room">
                 </div>  
 				<div>
 					<label>Wadrobe</label>
-	               <input type="checkbox"class="radio-box-4">
+	               <input type="checkbox"class="radio-box-4" value="true or false" id="wadrobe">
                 </div>
 				<div>
 					<label>Kids room</label>
-	               <input type="checkbox" class="radio-box-5">
+	               <input type="checkbox" class="radio-box-5" value="true or false" id="kids_room">
                 </div>
 				<div>
 					<label>Bathroom</label>
-	               <input type="checkbox"class="radio-box-6">
+	               <input type="checkbox"class="radio-box-6" value="true or false" id="bathroom">
                 </div>
 				<div>
 					<label>Movable house</label>
-	               <input type="checkbox" class="radio-box-7">
+	               <input type="checkbox" class="radio-box-7" value="true or false" id="movable_house">
                 </div>
 		
 			<div class="btn">
@@ -66,5 +66,28 @@
 		 </div>
 	  </div>
 </div>
+<script>
+
+const kitchen= document.getElementById("kitchen").value 
+		const bedroom= document.getElementById("bedroom").value 
+		const living_room= document.getElementById("living_room").value 
+		const wadrode= document.getElementById("wadrode").value 
+	
+		const kids_room= document.getElementById("kids_room").value 
+		const bathroom= document.getElementById("bathroom").value 
+		const movable_house= document.getElementById("movable_house").value 
+		
+		
+
+		console.log(kitchen)
+		console.log(bedroom)
+		console.log(living_room)
+		console.log(wadrobe)	
+
+		console.log(kids_room)
+		console.log(bathroom)
+		console.log(movable_house)
+
+</script>
 </body>
 </html>

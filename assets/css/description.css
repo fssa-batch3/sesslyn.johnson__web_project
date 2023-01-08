@@ -187,3 +187,17 @@ small{
 del{
 	padding-left:0.8rem;
 }
+@media screen and (max-width:768px) {
+	HTML{
+		font-size: 2rem;
+	}
+	.top{
+		display:flex;
+		flex-direction:column;
+		flex-wrap:nowrap;
+		justify-content:space-evenly;
+		align-items:space-evenly;
+	}
+
+
+}

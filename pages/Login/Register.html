@@ -55,30 +55,30 @@
 
 					<div class="input">
 						<label>First name</label>
-						<input type="text" id="first_name" required="true" placeholder="First name" value="Sesslyn">
+						<input type="text" id="first_name" required="true" placeholder="First name" >
 					</div>
 
 					<div class="input">
 						<label>Last name</label>
-						<input type="text" id="last_name" required="true" placeholder="Last name" value="J">
+						<input type="text" id="last_name" required="true" placeholder="Last name">
 					</div>
 
 					<div class="input">
 						<label>Email Id</label>
-						<input type="text" id="email" required="true" placeholder="Email Id" value="sesslyn2004@gmail.com">
+						<input type="text" id="email" required="true" placeholder="Email Id" >
 					</div>
 
 					<div class="input">
 						<label>Password</label>
-						<input type="text" required="true" placeholder="Password" id="password" value="sess@15">
+						<input type="password" required="true" placeholder="Password" id="password" >
 					</div>
 
 					<div class="input">
 						<label>Confirm password</label>
-						<input type="text" required="true" placeholder="Confirm password" id="confirm_password" value="sess@15">
+						<input type="password" required="true" placeholder="Confirm password" id="confirm_password" >
 					</div>
 					<div class="btn">
-						<button type="submit"><a href="../Advertisement/Advertisement.html">Sign Up</a></button>
+						 <button class="btn-register" type="button" onclick="register()"> Sign Up </button> 
 					</div>
 
 					<div class="container-content">
@@ -86,12 +86,15 @@
 					</div>
                  </div>
 			</form>
-
+     
 		</div>
 	</div>
     
 	<script>
-		const first_name= document.getElementById("first_name").value 
+
+
+    function register(){
+        const first_name= document.getElementById("first_name").value 
 		const last_name= document.getElementById("last_name").value 
 		const email= document.getElementById("email").value 
 		const password=  document.getElementById("password").value 
@@ -101,7 +104,16 @@
 		console.log(last_name)
 		console.log(email)
 		console.log(password)
-		console.log(confirm_password)			
+		console.log(confirm_password)	
+         
+		localStorage.setItem("first_name", first_name)
+		localStorage.setItem("last_name", last_name)
+		localStorage.setItem("email", email)
+		localStorage.setItem("password", password)
+		localStorage.setItem("confirm_password", confirm_password)
+
+		window.location.href="../Advertisement/Advertisement.html"
+	}	
 	</script>
 
 </body>

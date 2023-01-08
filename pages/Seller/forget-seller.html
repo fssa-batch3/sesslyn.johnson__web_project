@@ -42,14 +42,14 @@
                 </div>
                
                 <div class="mail">
-                    <input type="email" placeholder="E-mail">
+                    <input type="email" id="email" required="true" value="sesslyn2004@gmail.com" placeholder="E-mail">
                 </div>
                 <div class="password">
-                    <input type="password" placeholder="Password">
+                    <input type="password" id="password" value="sess@15"  placeholder="Password">
                 </div>
               
                 <div class="password">
-                    <input type="password" placeholder="Confirm Password">
+                    <input type="password"  id="confirm_password" value="sess@15" placeholder="Confirm Password">
                 </div>
             
                 <a href="./Product-uploaded .html"> <button class="btn" >Login</button></a>
@@ -67,7 +67,15 @@
     </div>
    </div>
    
-   
+   <script>
+    const email=  document.getElementById("email").value 
+    const password=  document.getElementById("password").value 
+    const confirm_password=  document.getElementById("confirm_password").value 
+
+    console.log(email)
+    console.log(password)
+    console.log(confirm_password)
+</script>
     
 
   </body>
