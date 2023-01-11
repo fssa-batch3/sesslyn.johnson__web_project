@@ -18,7 +18,7 @@ body{
 	display:grid;
 	grid-template-columns:25% 75%;
 	height:55.75rem;
-	background-color:var(--white);
+	/* background-color:var(--white); */
 }
 .main-page div:nth-child(1){
 	display:flex;
@@ -33,8 +33,11 @@ body{
 .main-img{
 	height:57rem;
 	z-index:1;
-	
 }
+.main-image{
+	display:none;
+}
+
 .main-content {
 	color: var(--white);
 	font-size:1.25rem;
@@ -459,63 +462,62 @@ div.contain{
 @media screen and (max-width:768px) {
 	HTML{
 		font-size: 2rem;
-	}
-#menu-btn{
-	display: initial;
-}
 	
+	}
+   #menu-btn{
+	display: initial;
+    }
 	.main-img{
-		height: auto;
-		z-index:1;
+		height:55rem;
+		z-index:-1;
+		margin-top:-29rem;
+		padding:0rem;
 		width:100%;
-
-		
+		/* position:fixed; */
 	}
 	.main-page{
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		max-width: 100%;
 		object-fit: cover;
-		
 	}
-
 	.main-page div:nth-child(1){
 		display:flex;
-		flex-direction:row;
-		flex-wrap:wrap;
-		background-color:var(--grey-black);
-		 padding:20rem 0rem 0rem 3.75rem; 
-		width: 30%;
-		
-	}
-
+		flex-direction: column;
+		flex-wrap: nowrap;
+		padding:2rem 0rem 0rem 3rem;
+		background-color: transparent;
+		color:white;
+	} 
 	.customer-3{
 		display:none;
 	}
-	.main-page div:nth-child(2){
+	/* .main-page div:nth-child(2){
 		display:flex;
-	}
+	} */
 	
 	.main-content {
 		color: var(--white);
 		font-size:1.25rem;
 		font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+		text-align:center;
+	}
+	.main-parah{
+		color:rgb(112, 107, 107);
+        font-size:5rem;
 	}
 	 .content-parah {
-		margin-bottom: 15rem;
-		margin-top:-1rem;
-		padding-right:3rem;
-		text-align: justify;
-		text-justify: inherit;
+	display:none;
+		
 	} 
 	.main-content h1{
-		
         margin-left: -2rem;
 		/* margin-top:0rem; */
-		color: var(--white);
+		color: rgb(250, 246, 246);
 		/* font-size:5.625rem; */
 		font-family:serif;
 		width: auto;
+		font-size:7rem;
 	}
 	.home-int-heading{
 		margin-left:12rem;
@@ -530,7 +532,7 @@ div.contain{
 		width:auto;
 		border-radius:0.5rem;
 		z-index:1; 
-		margin:1.875rem 3.75rem 0rem 0rem;
+		margin:-18rem 3.75rem 0rem 0rem;
 		background-color:transparent;
 	 } 
 	/* .interior-row{
@@ -558,9 +560,6 @@ div.contain{
 		text-align:left;
 		font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 	}
-
-	
-
 	.interiors{
 		/* display:inline-block; */
 		position:relative;

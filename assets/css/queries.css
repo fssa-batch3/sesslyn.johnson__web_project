@@ -5,9 +5,24 @@
     font-family: 'Poppins', sans-serif;
     box-sizing:border-box;
 }
-#head-about{
-    padding-bottom:0.3rem;
-    padding-top:0.3rem;
+.top{
+    display:flex;
+	flex-direction:row;
+    flex-wrap:nowrap;
+	justify-content:space-between;
+    background-color:rgb(244, 239, 239);
+    padding-bottom:2rem;
+}
+.after-order img{
+  margin:3rem 0rem 0rem 5rem;
+  width:600px;
+   height:600px;
+}
+.after-order h2{
+    text-align:center;
+    margin-top:4rem;
+    margin-left:2rem;
+    color:rgb(83, 76, 76);
 }
 #accordian{
     margin-left:0rem;
@@ -53,23 +68,6 @@
 }
 #accordian label + input[type="radio"]:checked + .content{
     max-height:400px;
-}
-.top{
-    display:flex;
-	flex-direction:row;
-    flex-wrap:nowrap;
-	justify-content:space-between;
-    background-color:rgb(244, 239, 239);
-    padding-bottom:2rem;
-}
-.after-order img{
-  margin:3rem 0rem 0rem 5rem;
-}
-.after-order h2{
-    text-align:center;
-    margin-top:4rem;
-    margin-left:2rem;
-    color:rgb(83, 76, 76);
 }
 .about-div{
 	display:grid;
@@ -212,5 +210,177 @@
     padding:1rem 0rem 0rem 1.875rem;
     margin:0rem 1.875rem 0rem 2.813rem;
 }
-
+@media screen and (max-width:768px) {
+	HTML{
+		font-size: 2rem;
+	
+	}
+    .customer-3{
+		display:none;
+	}
+    .customer{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		/* gap: 3rem; */
+		margin: 1rem 2rem 3rem 2rem;
+	}
+	.customer-img{
+		height:10.75rem;
+		width:8.75rem;
+		margin:0rem 3.125rem 1.25rem 1.75rem;
+		padding-left:-3.125rem;
+	}
+	.customer-content{
+		font-size:1.25rem;
+		padding:0rem 0rem 0rem 1.5rem;
+		margin:0rem 2rem 0rem 0rem;
+		text-align:justify;
+		text-justify: inter-word;
+	}
+	.review-head{
+		margin:3.125rem 0rem 3rem 5rem;
+		font-size:2.5rem;
+	}
+    .customer-1{
+        margin-left:2.5rem;
+        margin-right:2rem;
+    }
+    .customer-2{
+        margin-left:3rem;
+    }
+	.customer-color{
+        color:grey;
+        font-size:1.25rem;
+        padding:1rem 0rem 0rem 1.875rem;
+        margin:0rem 1.875rem 0rem 1rem;
+    }
+	.customer-heading{
+		margin-left:1.688rem;
+		font-size:1.563rem;
+	}
+    .about-div{
+       display:flex;
+       flex-direction: column;
+        width:100%;
+        height:75vh;
+        background-color:rgb(244, 239, 239);
+    }
+    .about-div div:nth-child(1){
+        display:flex;
+        flex-direction:column;
+    }
+    .about-div div:nth-child(2){
+        display:flex;
+        flex-direction:column;
+        padding:0rem;
+        /* padding-left:20px; */
+        /* padding-right:120px; */
+        margin:1rem 5rem 0rem 8rem;
+    } 
+    .about-profile-img{
+        height:30rem;
+        width:32rem;
+        margin-top:5rem;
+    }
+    .about-div h3{
+        font-size:4.3em;
+    }
+    .about-div div:nth-child(2) h5{
+        font-size:2rem;
+        padding:2rem;
+    }
+    .about-div div:nth-child(2) p{
+        padding: 1rem;
+        padding-top:3rem;
+        font-size: 1.5rem;
+    }
+    .family-div{
+        display:flex;
+       flex-direction: column;
+        width:100%;
+        height:65vh;
+        background-color:#fff;
+        margin-top:2
+       
+    }
+    .family-div div:nth-child(1){
+        display:flex;
+        flex-direction:column;
+        padding:0rem;
+        /* padding-left:80px;
+        padding-right:20px; */
+        font-size:1.6rem;
+        text-align:center;
+        padding-left:10px;
+        padding-right:10px;
+        margin-bottom: 2rem;
+        color:rgb(16, 15, 15);
+    }
+    .family-div div:nth-child(2){
+        display:flex;
+        flex-direction:column;
+        padding-left:20px;
+        padding-right:20px;
+        font-size:20px;
+    }
+    .family-img{
+        height:30rem;
+        width:32rem;
+    }
+    .family-div div:nth-child(1) h3{
+        font-style: bold;
+        font-size:2rem;
+        padding:2rem;
+        margin-top:2rem;
+    }
+    .top{
+        display:flex;
+        flex-direction:column;
+    }
+    .after-order img{
+      margin:3rem 0rem 0rem 5rem;
+      width:80%;
+       height:100%;
+    }
+    .after-order h2{
+        font-size:2rem;
+    }
+    #head-about{
+        padding-bottom:0.3rem;
+        padding-top:0.3rem;
+    }
+    #accordian{
+        margin-left:4rem;
+        margin-top:2.5rem;
+        margin-right:1rem;
+        width:80%;
+    }
+    
+    #accordian li label{
+        padding:1rem;
+        font-size:1.8rem;
+    }
+    #accordian li label span{
+        font-size:1.6rem;
+    }
+   
+    #accordian .content{
+        font-size:1.5rem;
+        padding:0px;
+        line-height:18px;
+       text-align:center;
+    }
+    #accordian .content p{
+        color:rgb(45, 37, 37);
+    }
+    #accordian label + input[type="radio"]:checked + .content{
+        max-height:400px;
+    }
+    
+	#living-footer{
+		margin-left:0rem;
+		padding-right:2rem;
+	}
+    
+}
    

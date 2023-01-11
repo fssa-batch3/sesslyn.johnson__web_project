@@ -42,7 +42,7 @@
    </header>
       
 
-	<div class="center">
+	<div class="center" id="main-contain">
 		<div class="mobile-img">
 			<img src="../../assets/images/Main/ad-wallpaper.png" alt="" />
 		  </div>
@@ -53,14 +53,10 @@
 			<form>
 				<div class="data">
 
+					
 					<div class="input">
-						<label>First name</label>
-						<input type="text" id="first_name" required="true" placeholder="First name" >
-					</div>
-
-					<div class="input">
-						<label>Last name</label>
-						<input type="text" id="last_name" required="true" placeholder="Last name">
+						<label>Name</label>
+						<input type="text" id="name" required="true" placeholder="Name">
 					</div>
 
 					<div class="input">
@@ -94,25 +90,26 @@
 
 
     function register(){
-        const first_name= document.getElementById("first_name").value 
-		const last_name= document.getElementById("last_name").value 
+       
+		const name= document.getElementById("name").value 
 		const email= document.getElementById("email").value 
 		const password=  document.getElementById("password").value 
 		const confirm_password=  document.getElementById("confirm_password").value 
 
-		console.log(first_name)
-		console.log(last_name)
+		
+		console.log(name)
 		console.log(email)
 		console.log(password)
 		console.log(confirm_password)	
          
-		localStorage.setItem("first_name", first_name)
-		localStorage.setItem("last_name", last_name)
+		
+		localStorage.setItem("last_name", name)
 		localStorage.setItem("email", email)
 		localStorage.setItem("password", password)
 		localStorage.setItem("confirm_password", confirm_password)
 
 		window.location.href="../Advertisement/Advertisement.html"
+		
 	}	
 	</script>
 

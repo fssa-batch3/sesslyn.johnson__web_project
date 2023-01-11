@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout page</title>
     <link rel="stylesheet" href="../assets/css/Checkout.css">
     <link rel="stylesheet" href="../assets/css/header and footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
@@ -37,6 +39,7 @@
 		<div class="triple-bar">
 		  <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon"/></a>
 		</div> 
+        <div id="menu-btn" class="fas fa-bars"></div>
    </header>
 
 <div class="top">
@@ -158,7 +161,7 @@
 
       <div class="total">
         <p>TOTAL : 20000</p>
-      <button class="btn-primary" onclick="checkout()">Place order</button>
+      <a href="./Order_completed.html"><button class="btn-primary" onclick="checkout()">Place order</button></a>
        </div>
 
      <div class="details" id="details">

@@ -166,7 +166,7 @@ label{
 .bulbs{
 	padding-left:2rem;
 }
-small{
+small.discount{
 	color:rgb(159, 12, 12);
 }
 .price{
@@ -187,9 +187,15 @@ small{
 del{
 	padding-left:0.8rem;
 }
+
 @media screen and (max-width:768px) {
 	HTML{
 		font-size: 2rem;
+		/* overflow-x: hidden; */
+
+	}
+	.header{
+		width:100%;
 	}
 	.top{
 		display:flex;
@@ -198,6 +204,90 @@ del{
 		justify-content:space-evenly;
 		align-items:space-evenly;
 	}
-
-
+	.main-img{
+		margin-top:3rem;
+		height:100%;
+		width:100%;
+		border-radius:0.625rem;
+	}
+	.down{
+		margin-top:1.25rem;
+		margin-left:1rem;
+		 display:flex;
+		flex-direction:row;
+		flex-wrap:nowrap;
+		justify-content:space-between;
+	}
+	.down-img{
+		height:7rem;
+		width:7rem;
+		margin:1.875rem 1.875rem 0rem -2.5rem;
+		padding:2rem;
+		border-radius:0.625rem;
+	}
+	
+    #footer-living-room{
+		margin-top:-1rem;
+		margin-left:0rem;
+		width:53.5rem;
+	}
+	#living-footer{
+		margin-left:0rem;
+		padding-right:2rem;
+	}
+	
+	.heading{
+		font-size:4.2rem;
+		margin-top:0.1rem;
+		margin-left:1rem;
+		margin-right:0rem;
+		margin-bottom:1.25rem;
+	}
+	.heart-icon img{
+		height:1.875rem;
+		width:1.875rem;
+		float:right;
+	}
+	h3{
+		font-size:3rem;
+	}
+	.real-price{
+		font-size:2rem;
+	}
+	small.discount{
+		margin-left:9rem;
+		font-size:2rem;
+		color:rgb(174, 14, 14);
+		padding-top:10rem;
+	}
+	del{
+		font-size:2rem;
+	}
+	 p{
+		margin-left:2rem;
+		font-size: 2rem;
+	}
+	.rate p{
+		font-size:3rem;
+	}
+	section.right button.btn-secondary {
+		border-radius:0.313rem;
+		border:transparent;
+		color:white;
+		background-color:rgb(239, 86, 86);
+		padding:1rem 3.125rem 1rem 3.125rem;
+		margin:-0.5rem 0.625rem 0.625rem 1.5rem;
+		font-size:1.5rem;
+	}
+	.btn-secondary img{
+		height:1.3rem;
+		width:1.25rem;
+		margin-left:-0.625rem;
+		padding-right:0.625rem;
+	}
+	.btn-secondary a{
+		text-decoration:none;
+		color:white;
+		
+	}
 }
