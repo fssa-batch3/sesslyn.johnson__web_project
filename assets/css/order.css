@@ -38,6 +38,9 @@ body{
 .arrow{
     margin:3rem 0rem 0rem 45rem;
 }
+.arrow-j{
+    margin:-5rem 0rem 0rem 60rem;
+}
 .delivery-date{
     padding-left:3rem;
 }
@@ -69,6 +72,10 @@ body{
     text-decoration: none;
     color:rgb(220, 21, 21);
 }
+.order-review p{
+    margin-left:60rem;
+    margin-top:0rem;
+}
 .order-icon i{
     font-size: 1.563rem;
     width:6%;
@@ -77,6 +84,9 @@ body{
     margin-right: 4%;
 }
 .arrow i{
+    color: rgb(169, 36, 36); 
+}
+.arrow-j i{
     color: rgb(169, 36, 36); 
 }
 .btn{
@@ -103,4 +113,12 @@ body{
 }
 #cancel-icon{
     margin:2rem 0rem 0rem 55rem;
+}
+.stock-product{
+    width:150px;
+    height:150px;
+}
+.order-star i{
+    font-size:1.563rem;
+    color:rgb(239, 86, 86);
 }

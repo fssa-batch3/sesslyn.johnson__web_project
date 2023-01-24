@@ -91,8 +91,9 @@
         </div>
         </div>
     </div>
+    <div id="looped-div"></div>
 
-    <div class="shopping">
+    <!-- <div class="shopping">
         <div class="shopping-heading">
         <h1><span class="color">S</span>ofas For <span class="color">S</span>hopping</h1>
         </div>
@@ -118,7 +119,7 @@
             <a href="./cart-list.html"><button class="btn-primary">Add to Cart</button></a>
          </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="categories">
         <div class="categories-heading">
@@ -376,6 +377,133 @@
             </div>
               
           </div>
+
+<script>
+       
+           
+   let main = document.getElementById('looped-div');
+   let div_shopping;
+   let div_heading;
+   let h1_head;
+   let span_color;
+   let div_image;
+   let div_image_1;
+   let a_anchor;
+   let img_sofa;
+   let p_para;
+   let a_link;
+   let button_primary;
+   let div_categories;
+   let div_category_head;
+   let h1_head_category;
+   let span_colors;
+ 
+   let heading = [ {
+      heading : "Sofas for Shopping "
+   } ]
+
+   let details = [
+    {
+     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+     text : "Rs.55,999.00",
+     button : "Add to Cart"
+   },
+
+   {
+     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 1.jpg",
+     text : "Rs.34,999.00",
+     button : "Add to Cart"
+   },
+
+   {
+     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 3.png",
+     text : "Rs.25,999.00",
+     button : "Add to Cart"
+   },
+
+   {
+     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 7.jpg",
+     text : "Rs.39,999.00",
+     button : "Add to Cart"
+   }
+
+]
+
+for (let i = 0; i < 3; i++){
+  
+   
+ //<div class="shopping"></div>
+ div_shopping = document.createElement("div");
+ div_shopping.setAttribute("class", "shopping");
+ main.append(div_shopping);
+ console.log(div_shopping)
+
+//<div class="shopping-heading"></div>
+ div_heading = document.createElement("div");
+ div_heading.setAttribute("class", "shopping-heading");
+ div_shopping.append(div_heading);
+ console.log(div_heading) 
+
+ //  <h1> </h1>
+ h1_head = document.createElement("h1");
+ h1_head.innerHTML = heading[i].heading;
+ div_heading.append(h1_head);
+ console.log(h1_head)
+
+ //<span class="color"></span>
+ span_color= document.createElement("span");
+ span_color.setAttribute("class", "color");
+ h1_head.append(span_color); 
+ console.log(span_color)
+
+//<div class="shopping-img"></div>
+div_image = document.createElement("div");
+ div_image.setAttribute("class", "shopping-img");
+ div_shopping.append(div_image); 
+ console.log(div_image)
+
+ for(let j = 0;j < details.length; j++){
+
+ //<div></div>
+ div_image_1= document.createElement("div");
+ div_image.append(div_image_1); 
+ console.log(div_image_1)
+
+//<a></a>
+ a_anchor = document.createElement("a");
+ div_image_1.append(a_anchor);
+ console.log(a_anchor)
+
+//<img/>
+img_sofa = document.createElement("img");
+img_sofa.setAttribute("id", "shopping-img");
+img_sofa.setAttribute("alt", "chandelier image");
+img_sofa.setAttribute("src", details[j].img);
+img_sofa.setAttribute("class", "kids");
+a_anchor.append(img_sofa);
+console.log(img_sofa)
+
+//<p></p>
+p_para = document.createElement("p");
+p_para.innerHTML = details[j].text;
+div_image_1.append(p_para);
+console.log(p_para)
+
+//<a></a>
+a_link = document.createElement("a");
+div_image_1.append(a_link);
+console.log(a_link)
+
+//<button class="btn-primary"></button>
+button_primary = document.createElement("button");
+button_primary.setAttribute("class", "btn-primary");
+button_primary.innerHTML = details[j].button;
+a_link.append(button_primary);
+console.log(button_primary)
+
+}
+}
+ </script>
         
 </body>
 </html>

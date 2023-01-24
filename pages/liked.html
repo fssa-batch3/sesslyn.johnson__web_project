@@ -40,23 +40,29 @@
      <div class="liked-head">
           <p><span class="color"> M</span>y <span class="color">  W</span>ishlist</p>
     </div>
-    <div class="order-page">
+
+    <div id="looped-div"></div>
+
+    <!-- <div class="order-page">
+
+     
           <div class="order-list" id="list">
             <div class="order-status" id="status">
                 <div class="order-img">
-                   <img src="../assets/images/Main/in-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
+                   <img src="../assets/images/Main/in-stock.png" alt="out of stock image" class="stock-image" />
                   </div>
                 <div class="delivery-date" id="delivery">
                   <h3>Available</h3>
                   <p>Sold by<span class="color"> Godrej</span></p>
                 </div>
                 <div class="cancel">
-                  <i class="fa fa-heart" style="color:red"></i>
+                  <i class="fa fa-heart" id="icon-heart"></i>
                 </div>
             </div>
             <div class="order-details">
                 <div class="liked-img">
-                  <a href="../pages/Wallpaper/Wallpaper cart.html"><img src="../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
+                  <a href="../pages/Wallpaper/Wallpaper cart.html">
+                    <img src="../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg" alt="wallpaper-img"  class="order-stock"/></a>
                 </div>
                 <div class="product-details">
                   <p>Bedroom Sticky wallpaper</p>
@@ -68,7 +74,7 @@
               <div class="review" id="liked-star">
                   <div class="order-star">
                      <button class="btn-primary">3.8 | 
-                        <i class="fa fa-star" style="font-size:1.5rem;color:rgb(239, 86, 86)"></i>
+                        <i class="fa fa-star" id="icon-star"></i>
                     </button>
                   </div>
                   <div class="order-review">
@@ -80,19 +86,19 @@
           <div class="order-list">
             <div class="order-status">
                 <div class="order-img">
-                    <img src="../assets/images/Main/in-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
+                    <img src="../assets/images/Main/in-stock.png" alt="out of stock image" class="stock-image"/>
                 </div>
                 <div class="delivery-date">
                   <h3>Available </h3>
                   <p>Sold by <span class="color">  IKEA Furniture</span></p>
                 </div>
                 <div class="cancel" id="cancel-icon">
-                  <i class="fa fa-heart" style="color:red"></i>
+                  <i class="fa fa-heart" id="icon-heart"></i>
                 </div>
             </div>
             <div class="order-details">
                 <div class="liked-img" id="image">
-                  <a href="../pages/Chandelier/Chandelier cart.html"><img src="../assets/images/Chamber/Chandelier/Chandelier 12.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
+                  <a href="../pages/Chandelier/Chandelier cart.html"><img src="../assets/images/Chamber/Chandelier/Chandelier 12.jpg" alt="wallpaper-img"  class="order-stock"/></a>
                 </div>
                 <div class="product-details">
                   <p>Hanging crystal chandelier</p>
@@ -104,7 +110,7 @@
               <div class="review">
                 <div class="order-star">
                    <button class="btn-primary">4.2 | 
-                      <i class="fa fa-star" style="font-size:1.5rem;color:rgb(239, 86, 86)"></i>
+                      <i class="fa fa-star" id="icon-star"></i>
                   </button>
                 </div>
                 <div class="order-review">
@@ -116,19 +122,19 @@
           <div class="order-list">
             <div class="order-status">
                 <div class="order-img">
-                  <img src="../assets/images/Main/out-of-stock.png" alt="out of stock image" wodth="40px" height="50px"/>
+                  <img src="../assets/images/Main/out-of-stock.png" alt="out of stock image" class="stock-image"/>
                 </div>
                 <div class="delivery-date">
                   <h3>Inavailable</h3>
                   <p>Sold by<span class="color"> Zuari Furniture</span></p>
                 </div>
                 <div class="cancel" id="cancel-icon">
-                  <i class="fa fa-heart" style="color:red"></i>
+                  <i class="fa fa-heart" id="icon-heart" ></i>
                 </div>
             </div>
             <div class="order-details">
                 <div class="liked-img" id="image">
-                  <a href="../pages/cart-list.html"><img src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="wallpaper-img"  width="200px" height="150px"/></a>
+                  <a href="../pages/cart-list.html"><img src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="wallpaper-img"   class="order-stock"/></a>
                 </div>
                 <div class="product-details">
                   <p>Leather L shape Sofa</p>
@@ -140,17 +146,17 @@
               <div class="review">
                 <div class="order-star">
                    <button class="btn-primary">4.5 | 
-                      <i class="fa fa-star" style="font-size:1.5rem;color:rgb(239, 86, 86)"></i>
+                      <i class="fa fa-star" id="icon-star" ></i>
                   </button>
                 </div>
                 <div class="order-review">
-                 <a href="#"><button class="btn">Buy Now</button></a>
+                 <a href="./Checkout.html"><button class="btn">Buy Now</button></a>
                </div>
            </div>
           </div>      
-        </div>
+        </div> -->
         
-        
+      
         <div class="footer">
           <div class="footer-div">
             <img class="footer-img" src="../assets/images/Main/casas-logo.png" alt="desktop image" />
@@ -192,6 +198,276 @@
           </div>
             
         </div>
+
+  <script>
+
+   let main = document.getElementById('looped-div');
+   let div_page;
+   let div_order;
+   let div_status;
+   let div_image;
+   let img_sofa;
+   let div_date;
+   let h3_title;
+   let p_para;
+   let span_color;
+   let div_cancel;
+   let i_heart;
+   let div_details;
+   let div_wish;
+   let a_anchor;
+   let img_product;
+   let div_info;
+   let p_paragraph;
+   let h4_heading;
+   let small_pattern;
+   let div_review;
+   let div_star;
+   let button_primary;
+   let i_star;
+   let div_orderview;
+   let a_view;
+   let button_btn;
+;
+
+   let stock = [
+    {
+     img : "../assets/images/Main/in-stock.png",
+     h3 : "Available",
+     text: "Sold By",
+     span: " Godrej Furniture"
+   },
+
+   {
+     img : "../assets/images/Main/in-stock.png",
+     h3 : "Available",
+     text: "Sold By",
+     span: " IKEA Furniture"
+   },
+
+   {
+     img : "../assets/images/Main/out-of-stock.png",
+     h3 : "Inavailable",
+     text: "Sold By",
+     span: " Zuari Furniture"
+   }
+ 
+]
+   let product = [
+    {
+      img : "../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg",
+      anchor : "../pages/Wallpaper/Wallpaper cart.html",
+      para : "Bedroom Sticky wallpaper",
+      h4 : "Maroon Star Wallpaper",
+      small : "Price: ₹ 5000",
+      
+    },
+
+   {
+     img : "../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
+     anchor : "../pages/Chandelier/Chandelier cart.html",
+     para : "Hanging crystal chandelier",
+      h4 : "Crystal Clear Chandelier",
+      small : "Price: ₹ 20000",
+   },
+
+   {
+     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+     anchor : "../pages/cart-list.html",
+     para : " Leather L shape Sofa",
+      h4 : "Grand Bluish Green Sofa",
+      small : "Price: ₹ 56000",
+   }
+
+   ]
+ 
+   let review = [
+
+    {
+      button : "3.8 | ",
+      view : "./Checkout.html",
+      btn : "Buy Now"
+    },
+
+    {
+      button : "4.2 | ",
+      view : "./Checkout.html",
+      btn : "Buy Now"
+    },
+
+    {
+      button : "4.5 | ",
+      view : "./Checkout.html",
+      btn : "Buy Now"
+    }
+   ]
+
+div_page = document.createElement("div");
+ div_page.setAttribute("class", "order-page");
+ main.append(div_page);
+for (let i = 0; i < 3; i++){
+  //<div class="order-page"></div>
+ console.log(div_page)
+
+
+ //<div class="order-list"></div>
+ div_order = document.createElement("div");
+ div_order.setAttribute("class", "order-list");
+ div_page.append(div_order);
+ console.log(div_order)
+
+ //<div class="order-status"></div>
+ div_status = document.createElement("div");
+ div_status.setAttribute("class", "order-status");
+ div_order.append(div_status);
+ console.log(div_status) 
+
+ //<div class="order-img"></div>
+ div_image = document.createElement("div");
+ div_image.setAttribute("class", "order-status");
+ div_status.append(div_image);
+ console.log(div_image) 
+
+ //<img/>
+img_sofa = document.createElement("img");
+img_sofa.setAttribute("alt", "out of stock image");
+img_sofa.setAttribute("class", "stock-image");
+img_sofa.setAttribute("src", stock[i].img);
+div_image.append(img_sofa);
+console.log(img_sofa)
+
+//<div class="delivery-date" id="delivery"></div>
+div_date = document.createElement("div");
+div_date.setAttribute("class", "delivery-date");
+div_date.setAttribute("id", "delivery");
+div_status.append(div_date);
+console.log(div_date) 
+
+//  <h3> </h3>
+h3_title = document.createElement("h3");
+h3_title.innerHTML = stock[i].h3;
+div_date.append(h3_title);
+
+//<p></p>
+p_para = document.createElement("p");
+p_para.innerHTML = stock[i].text;
+div_date.append(p_para);
+console.log(p_para)
+
+//<span class="color"></span>
+span_color= document.createElement("span");
+span_color.setAttribute("class", "color");
+span_color.innerHTML = stock[i].span;
+p_para.append(span_color); 
+console.log(span_color)
+
+//<div class="cancel"></div>
+div_cancel = document.createElement("div");
+div_cancel.setAttribute("class", "cancel");
+div_status.append(div_cancel);
+console.log(div_cancel) 
+
+//<i></i>
+i_heart = document.createElement("i");
+i_heart.setAttribute("class", "fa fa-heart");
+div_cancel.append(i_heart);
+console.log(i_heart)
+
+//<div class="order-details"></div>
+div_details = document.createElement("div");
+ div_details.setAttribute("class", "order-details");
+ div_order.append(div_details);
+ console.log(div_details)
+
+ //<div class="liked-img"></div>
+ div_wish = document.createElement("div");
+ div_wish.setAttribute("class", "liked-img");
+ div_details.append(div_wish);
+ console.log(div_wish)
+
+ //<a></a>
+ a_anchor = document.createElement("a");
+ a_anchor.setAttribute("href", product[i].anchor);
+ div_wish.append(a_anchor);
+ console.log(a_anchor)
+
+  //<img/>
+img_product = document.createElement("img");
+img_product.setAttribute("alt", "wallpaper-image");
+img_product.setAttribute("class", "order-stock");
+img_product.setAttribute("src", product[i].img);
+a_anchor.append(img_product);
+console.log(img_product)
+
+//<div class="product-details"></div>
+div_info = document.createElement("div");
+ div_info.setAttribute("class", "product-details");
+ div_details.append(div_info);
+ console.log(div_info)
+
+ //<p></p>
+p_paragraph = document.createElement("p");
+p_paragraph.innerHTML = product[i].para;
+div_info.append(p_paragraph);
+console.log(p_paragraph)
+
+//  <h4> </h4>
+h4_heading = document.createElement("h4");
+h4_heading.innerHTML = product[i].h4;
+ div_info.append(h4_heading);
+ console.log(h4_heading)
+
+ //  <small> </small>
+small_pattern = document.createElement("small");
+small_pattern.innerHTML = product[i].small;
+div_info.append(small_pattern);
+console.log(small_pattern)
+
+//<div class="review"></div>
+div_review = document.createElement("div");
+ div_review .setAttribute("class", "review ");
+ div_order.append(div_review );
+ console.log(div_review )
+
+ //<div class="order-star"></div>
+ div_star = document.createElement("div");
+ div_star .setAttribute("class", "order-star");
+ div_review.append(div_star );
+ console.log(div_star )
+
+ //<button class="btn-primary"></button>
+button_primary = document.createElement("button");
+button_primary.setAttribute("class", "btn-primary");
+button_primary.innerHTML = review[i].button;
+div_star.append(button_primary);
+console.log(button_primary)
+
+//<i></i>
+i_star = document.createElement("i");
+i_star.setAttribute("class", "fa fa-star");
+button_primary.append(i_star);
+console.log(i_star)
+
+//<div class="order-review"></div>
+div_orderview = document.createElement("div");
+ div_orderview .setAttribute("class", "order-review");
+ div_review.append(div_orderview );
+ console.log(div_orderview)
+
+ //<a></a>
+ a_view = document.createElement("a");
+ a_view.setAttribute("href", review[i].view);
+ div_orderview.append(a_view);
+ console.log(a_view)
+
+ //<button class="btn"></button>
+button_btn = document.createElement("button");
+button_btn.setAttribute("class", "btn");
+button_btn.innerHTML = review[i].btn;
+div_star.append(button_btn);
+console.log(button_btn)
+}
+  </script>
 
 </body>
 </html>
