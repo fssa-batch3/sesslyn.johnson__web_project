@@ -1,5 +1,5 @@
-function signUp() { 
-    
+function signUp(e) { 
+    e.preventDefault();
     let name= document.getElementById("name").value
     let email= document.getElementById("email").value
     let password=  document.getElementById("password").value
@@ -21,9 +21,10 @@ function signUp() {
         alert('Sorry the User already Exist!! \n Try with different Email');
         document.querySelector('form').reset();
     }
-    e.preventDefault();
+  
 }
-function signIn(){
+function signIn(e){
+    e.preventDefault();
     let password = document.getElementById('password').value;
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
     let exist = user_list.length &&
@@ -36,6 +37,6 @@ function signIn(){
             alert("Your login in successful");
             location.href = "../Advertisement/Advertisement.html";
         }
-        e.preventDefault();
+     
 
 }
