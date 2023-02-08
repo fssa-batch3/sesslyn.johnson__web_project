@@ -1,4 +1,4 @@
-const signUp = e => { 
+function signUp() { 
     
     let name= document.getElementById("name").value
     let email= document.getElementById("email").value
@@ -23,7 +23,7 @@ const signUp = e => {
     }
     e.preventDefault();
 }
-const signIn = e =>{
+function signIn(){
     let password = document.getElementById('password').value;
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
     let exist = user_list.length &&
@@ -37,5 +37,5 @@ const signIn = e =>{
             location.href = "../Advertisement/Advertisement.html";
         }
         e.preventDefault();
-        
+
 }
