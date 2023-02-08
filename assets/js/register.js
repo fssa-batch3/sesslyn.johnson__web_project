@@ -1,5 +1,4 @@
-
-  const signUp = e => {
+function signUp() {
     e.preventDefault();
     let name= document.getElementById("name").value
     let email= document.getElementById("email").value
@@ -10,32 +9,32 @@
     let exist = user_list.length &&
         JSON.parse(localStorage.getItem('user_list')).some(data =>data.email.toLowerCase() == email.toLowerCase() );
     if(!exist){
-        user_list.push({ name:name,  email:email, password:password, confirm_password:confirm_password });
+        user_list.push({name, email, password, confirm_password });
         localStorage.setItem('user_list', JSON.stringify(user_list));
         console.log(localStorage.getItem('user_list'));
         document.querySelector('form').reset();
         document.getElementById('email').focus();
         alert('Account created Successfully');
-        location.href = "../../index.html";
+        location.href = "../Advertisement/Advertisement.html";
     }
     else{
         alert('Sorry the User already Exist!! \n Try with different Email');
         document.querySelector('form').reset();
     }
-   
+    
 }
-const signIn = e =>{
+function signIn() {
     let password = document.getElementById('password').value;
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
     let exist = user_list.length &&
     JSON.parse(localStorage.getItem('user_list')).some(data =>
         data.password.toLowerCase() == password);
-    if(!exist){
-        alert("Incorrect login credentials");
-    }
-    else{
-        alert("Login successfully");
-        location.href = "/index.html";
-    }
-    e.preventDefault();
+        if(!exist){
+            alert("Incorrect login credentials");
+        }
+        else{
+            alert("Your login in successful");
+            location.href = "../Advertisement/Advertisement.html";
+        }
+        e.preventDefault();
 }
