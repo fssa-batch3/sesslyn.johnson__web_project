@@ -129,8 +129,12 @@ div.container-bedroom{
 	height:42.5rem;
 	margin:0rem 3.75rem -29rem 0.625rem;
   }
+  #container-interiors-wadrobe{
+	height:48rem;
+	margin:0rem 3.75rem -29rem 0.625rem;
+  }
   #container-bathroom{
-	height:42.5rem;
+	/* height:42.5rem; */
 	margin:0rem 3.75rem 0rem 0.625rem;
   }
 
@@ -239,8 +243,10 @@ div.container-bedroom{
 	margin:1.25rem 0rem;
 	display:grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));}
-
-
+	#container-interiors-wadrobe{
+		height:100%;
+		margin:2rem 2.75rem 1rem 0.625rem;
+	  }
 	#container-interiors{
 		height:100%;
 		margin:2rem 2.75rem 1rem 0.625rem;

@@ -50,7 +50,7 @@
 
 			<div class="text"><span class="color">C</span>reate a new <span class="color">a</span>ccount</div>
 
-			<form>
+			<form role="form" onsubmit="signUp(event);">
 				<div class="data">
 
 					
@@ -74,7 +74,7 @@
 						<input type="password" required="true" placeholder="Confirm password" id="confirm_password" >
 					</div>
 					<div class="btn">
-						 <button class="btn-register" type="button" onclick="register()"> Sign Up </button> 
+						 <button class="btn-register" type="submit"> Sign Up </button> 
 					</div>
 
 					<div class="container-content">
@@ -85,35 +85,25 @@
      
 		</div>
 	</div>
-    
-	<script>
-
-
-    function register(){
-       
-		const name= document.getElementById("name").value 
-		const email= document.getElementById("email").value 
-		const password=  document.getElementById("password").value 
-		const confirm_password=  document.getElementById("confirm_password").value 
-
-		
-		console.log(name)
-		console.log(email)
-		console.log(password)
-		console.log(confirm_password)	
-         
-		
-		localStorage.setItem("last_name", name)
-		localStorage.setItem("email", email)
-		localStorage.setItem("password", password)
-		localStorage.setItem("confirm_password", confirm_password)
-
-		window.location.href="../Advertisement/Advertisement.html"
-		
-	}	
-	
-	</script>
-
+    <script src="../../assets/js/register.js"/>
+<!-- <script>
+    // function register(){
+    //  const name= document.getElementById("name").value
+    //  const email= document.getElementById("email").value
+    //  const password=  document.getElementById("password").value
+    //  const confirm_password=  document.getElementById("confirm_password").value
+    //  console.log(name)
+    //  console.log(email)
+    //  console.log(password)
+    //  console.log(confirm_password)
+    //  localStorage.setItem("last_name", name)
+    //  localStorage.setItem("email", email)
+    //  localStorage.setItem("password", password)
+    //  localStorage.setItem("confirm_password", confirm_password)
+    //  window.location.href="../Advertisement/Advertisement.html"
+    // }
+    // </script> -->
 </body>
 
 </html>
+`

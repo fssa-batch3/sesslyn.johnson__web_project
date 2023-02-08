@@ -50,7 +50,7 @@
 
 		<div class="title"><span class="color">L</span>OGIN</div>
 
-       <form action="#">
+       <form action="#" role="form" onsubmit="signIn(event);">
        <div class="data" id="data-div">
 
 	    <div class="input">
@@ -65,7 +65,7 @@
 
 	    <div class="btn">
 	     <div class="btn-primary">
-	       <button class="btn-register" type="submit" onclick="login()">Login</button>
+	       <button class="btn-register" type="submit">Login</button>
 		 </div>
 		 </div>
 
@@ -77,8 +77,9 @@
 	  </div>
 
 	 </div>
-
-	 <script>
+     <script src="../../assets/js/register.js"/>
+	 
+	 <!-- <script>
 		function login(){
 			const email=  document.getElementById("email").value 
 		   const password=  document.getElementById("password").value 
@@ -88,7 +89,7 @@
 
 		window.location.href="../Advertisement/Advertisement.html"
 		}
-	</script>
+	</script> -->
 
 	   </body>
 	   </html>

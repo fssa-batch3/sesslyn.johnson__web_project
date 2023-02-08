@@ -6,6 +6,11 @@ body{
 .color{
 	color:red;
 }
+#looped-div{
+	margin:0rem;
+	padding:0rem;
+	display:none;
+}
 .top{
     display:flex;
 	flex-direction:row;
@@ -74,13 +79,12 @@ body{
     margin-top:2.5rem;
 } 
 
-.down{
+#down{
     margin:3.75rem 0rem 0rem 2.5rem;
 	 display:flex;
 	flex-direction:row;
     flex-wrap:nowrap;
-	justify-content:space-between;
-	
+	justify-content:space-between;	
 }
 .down-img:hover{
 	transform: scale(1.2); 
@@ -92,7 +96,7 @@ body{
 	margin:1.875rem 1.25rem 0rem 2.5rem;
 	border-radius:0.625rem;
 }
-.down a{
+#down a{
     text-decoration:none;
     color:#000;
 }
@@ -108,7 +112,7 @@ h4.left-heading{
 	padding-left:1.875rem;
 }
 .right-down p{
-	text-align:center;
+	text-align:center;	
 }
 @media screen and (max-width:768px) {
 	HTML{
@@ -153,7 +157,7 @@ h4.left-heading{
 		margin-left:15.75rem;
 		font-size:2rem;
 	}
-	.down{
+	#down{
 		margin:3.75rem 0rem 0rem 0rem;
 		
 		

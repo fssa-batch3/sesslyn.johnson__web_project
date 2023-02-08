@@ -232,72 +232,108 @@
 
    let stock = [
     {
-     img : "../assets/images/Main/in-stock.png",
-     h3 : "Available",
+      image:{
+      source:"../assets/images/Main/in-stock.png",
+      alt:"Stock available image"
+    },
+     availablity : "Available",
      text: "Sold By",
-     span: " Godrej Furniture"
+     company: " Godrej Furniture"
    },
 
    {
-     img : "../assets/images/Main/in-stock.png",
-     h3 : "Available",
+    image:{
+      source:"../assets/images/Main/in-stock.png",
+      alt:"Stock available image"
+    },
+    availablity : "Available",
      text: "Sold By",
-     span: " IKEA Furniture"
+     company : " IKEA Furniture"
    },
 
    {
-     img : "../assets/images/Main/out-of-stock.png",
-     h3 : "Inavailable",
+    image:{
+      source:"../assets/images/Main/out-of-stock.png",
+      alt:"Inavailable stock image"
+    },
+    availablity : "Inavailable",
      text: "Sold By",
-     span: " Zuari Furniture"
+     company: " Zuari Furniture"
    }
  
 ]
    let product = [
     {
-      img : "../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg",
-      anchor : "../pages/Wallpaper/Wallpaper cart.html",
+      image:{
+      source:"../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg",
+      alt:"Wallpaper image"
+    },
+      link : "../pages/Wallpaper/Wallpaper cart.html",
       para : "Bedroom Sticky wallpaper",
-      h4 : "Maroon Star Wallpaper",
-      small : "Price: ₹ 5000",
-      
+      heading : "Maroon Star Wallpaper",
+      amount :{
+        text: "Price:",
+        currency: "₹",
+        price:5000
+      } 
     },
 
    {
-     img : "../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
-     anchor : "../pages/Chandelier/Chandelier cart.html",
+    image:{
+      source:"../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
+      alt:"Chandelier image"
+    },
+     link : "../pages/Chandelier/Chandelier cart.html",
      para : "Hanging crystal chandelier",
-      h4 : "Crystal Clear Chandelier",
-      small : "Price: ₹ 20000",
+      heading : "Crystal Clear Chandelier",
+      amount :{
+        text: "Price:",
+        currency: "₹",
+        price:20000
+      } 
    },
 
    {
-     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-     anchor : "../pages/cart-list.html",
+    image:{
+      source:"../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+      alt:"Sofa image"
+    },
+     link : "../pages/cart-list.html",
      para : " Leather L shape Sofa",
-      h4 : "Grand Bluish Green Sofa",
-      small : "Price: ₹ 56000",
+     heading : "Grand Bluish Green Sofa",
+     amount :{
+        text: "Price:",
+        currency: "₹",
+        price:56000
+      } 
    }
-
    ]
  
    let review = [
-
     {
-      button : "3.8 | ",
-      view : "./Checkout.html",
+      button :{
+        rate:3.8,
+        bar:"|"
+      },
+      link : "./Checkout.html",
       btn : "Buy Now"
     },
 
     {
-      button : "4.2 | ",
-      view : "./Checkout.html",
+      button :{
+        rate:4.2,
+        bar:"|"
+      },
+      link : "./Checkout.html",
       btn : "Buy Now"
     },
 
     {
-      button : "4.5 | ",
-      view : "./Checkout.html",
+      button :{
+        rate:4.5,
+        bar:"|"
+      },
+      link : "./Checkout.html",
       btn : "Buy Now"
     }
    ]
@@ -330,9 +366,9 @@ for (let i = 0; i < 3; i++){
 
  //<img/>
 img_sofa = document.createElement("img");
-img_sofa.setAttribute("alt", "out of stock image");
+img_sofa.setAttribute("alt", stock[i].image.alt);
 img_sofa.setAttribute("class", "stock-image");
-img_sofa.setAttribute("src", stock[i].img);
+img_sofa.setAttribute("src", stock[i].image.source);
 div_image.append(img_sofa);
 console.log(img_sofa)
 
@@ -345,7 +381,7 @@ console.log(div_date)
 
 //  <h3> </h3>
 h3_title = document.createElement("h3");
-h3_title.innerHTML = stock[i].h3;
+h3_title.innerHTML = stock[i].availablity;
 div_date.append(h3_title);
 
 //<p></p>
@@ -357,7 +393,7 @@ console.log(p_para)
 //<span class="color"></span>
 span_color= document.createElement("span");
 span_color.setAttribute("class", "color");
-span_color.innerHTML = stock[i].span;
+span_color.innerHTML = stock[i].company;
 p_para.append(span_color); 
 console.log(span_color)
 
@@ -367,7 +403,7 @@ div_cancel.setAttribute("class", "cancel");
 div_status.append(div_cancel);
 console.log(div_cancel) 
 
-//<i></i>
+//<i></i>id="icon-heart"
 i_heart = document.createElement("i");
 i_heart.setAttribute("class", "fa fa-heart");
 div_cancel.append(i_heart);
@@ -387,15 +423,15 @@ div_details = document.createElement("div");
 
  //<a></a>
  a_anchor = document.createElement("a");
- a_anchor.setAttribute("href", product[i].anchor);
+ a_anchor.setAttribute("href", product[i].link);
  div_wish.append(a_anchor);
  console.log(a_anchor)
 
   //<img/>
 img_product = document.createElement("img");
-img_product.setAttribute("alt", "wallpaper-image");
+img_product.setAttribute("alt", product[i].image.alt);
 img_product.setAttribute("class", "order-stock");
-img_product.setAttribute("src", product[i].img);
+img_product.setAttribute("src", product[i].image.source);
 a_anchor.append(img_product);
 console.log(img_product)
 
@@ -413,13 +449,13 @@ console.log(p_paragraph)
 
 //  <h4> </h4>
 h4_heading = document.createElement("h4");
-h4_heading.innerHTML = product[i].h4;
+h4_heading.innerHTML = product[i].heading;
  div_info.append(h4_heading);
  console.log(h4_heading)
 
  //  <small> </small>
 small_pattern = document.createElement("small");
-small_pattern.innerHTML = product[i].small;
+small_pattern.innerHTML = product[i].amount.text + product[i].amount.currency + product[i].amount.price;
 div_info.append(small_pattern);
 console.log(small_pattern)
 
@@ -438,7 +474,7 @@ div_review = document.createElement("div");
  //<button class="btn-primary"></button>
 button_primary = document.createElement("button");
 button_primary.setAttribute("class", "btn-primary");
-button_primary.innerHTML = review[i].button;
+button_primary.innerHTML = review[i].button.rate + review[i].button.bar ;
 div_star.append(button_primary);
 console.log(button_primary)
 
@@ -456,7 +492,7 @@ div_orderview = document.createElement("div");
 
  //<a></a>
  a_view = document.createElement("a");
- a_view.setAttribute("href", review[i].view);
+ a_view.setAttribute("href", review[i].link);
  div_orderview.append(a_view);
  console.log(a_view)
 

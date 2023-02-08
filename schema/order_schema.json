@@ -1,0 +1,32 @@
+
+"data" :{
+
+ {
+    "update" : "string",
+    "text": "string",
+    "delivery":"object",
+    "day": "string ",
+    "date": "number",
+    "month": "string",
+},
+
+{
+    "image":"object",
+    "source":"string",
+    "alt":"string",
+    "link": "string",
+    "para" : "string",
+   "heading" : "string",
+   "amount":"object",
+   "text": "string",
+   "currency": "string",
+   "price":"number"
+},
+
+{
+    "link" : "string",
+    "review" : "string"
+}
+
+}
+   

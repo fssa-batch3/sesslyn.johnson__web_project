@@ -171,69 +171,97 @@
     let product = [
 
    {
-   img:"../../assets/images/Rooms/Living room/living room middle/living room 2.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 2.jpg",
+      alt:"Light color Living room"
+    },
    text: "Light color living room",
    link:"./design.html"
    },
    {
-     img: "../../assets/images/Rooms/Living room/living room rich/living space 4.png",
+     image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 4.png",
+      alt:"Lovely Living room"
+    },
      text: "Lovely living room",
      link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room middle/living room 3.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 3.jpg",
+      alt:"Lovely Living room"
+    },
     text: "Modern living room",
     link:"./design.html"
    },
 
    {
-    img:"../../assets/images/Rooms/Living room/living room middle/living room 4.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 4.jpg",
+      alt:"Brown Sofa Living room"
+    },
     text: "Brown sofa living room",
     link:"./design.html"
    },
 
    {
-    img:"../../assets/images/Rooms/Living room/living room middle/living room 5.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 5.jpg",
+      alt:"Traditional Living room"
+    },
     text: "Traditional living room",
     link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room rich/living space 1.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 1.jpg",
+      alt:"Stylish White Living room"
+    },
     text: "Stylish White living room",
     link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room rich/living space 2.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 2.jpg",
+      alt:"Elegant Living room with Wooden Work"
+    },
     text: "Elegant Living room with Wooden Work",
     link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room rich/living space 3.png",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 3.png",
+      alt:"Beautiful Living room"
+    },
     text: "Beautiful living room",
     link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room middle/living room 1.jpg",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 1.jpg",
+      alt:"Elegant Living room"
+    },
     text: "Elegant living room",
     link:"./design.html"
    },
    {
-    img:"../../assets/images/Rooms/Living room/living room rich/living space 5.png",
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 5.png",
+      alt:"Glassed Living room"
+    },
     text: "Glassed living room",
     link:"./design.html"
    },
 ]
-// <section class="living">
 
+// <section class="living">
 section_project = document.createElement("section");
 section_project.setAttribute("class", "living");
 main.append(section_project);
 for (let i = 0; i < 2; i++){
  console.log(section_project)
 
-
 //  <div class="container" id="container-interiors">
-
  div_container = document.createElement("div");
  div_container.setAttribute("class", "container");
  div_container.setAttribute("id", "container-interiors");
@@ -263,7 +291,9 @@ for (let i = 0; i < 2; i++){
   k = 0;
   s = 5;
  }
+
  for(let j = k;j <= s; j++){
+
 //  <div class="interiors">
  div_interiors = document.createElement("div");
  div_interiors .setAttribute("class", "interiors");
@@ -278,15 +308,15 @@ console.log(a_anchor)
 
 //<img/>
 img_product = document.createElement("img");
-img_product.setAttribute("alt", "living room image");
+img_product.setAttribute("alt",product[j].image.alt );
 img_product.setAttribute("class", "image-product");
-img_product.setAttribute("src", product[j].img);
+img_product.setAttribute("src", product[j].image.source);
 a_anchor.append(img_product);
 console.log(img_product)
 
 //<a></a>
 a_view = document.createElement("a");
-// a_view.setAttribute("href", product[j].view);
+//a_view.setAttribute("href", product[j].view);
 div_interiors.append(a_view);
 console.log(a_view)
 
@@ -297,6 +327,7 @@ a_view.append(p_paragraph);
 console.log(p_paragraph)
  }
 }
+
  </script>
 
 </body>

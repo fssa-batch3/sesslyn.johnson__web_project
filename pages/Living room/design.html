@@ -41,7 +41,6 @@
 
 
 <section class="top">
-
 <section class="left">
     <h2>Living Room</h2>
     <h4 class="left-heading"><span class="color">L</span>ovely Living room with Book shelves and <span class="color">H</span>earth</h4>
@@ -62,9 +61,11 @@
     
 </section>
 
-<!-- <div id="looped-div"></div> -->
+
+
  <section class="right">
-    <div class="down">
+  <div id="down"></div> 
+      <!-- <div class="down">
       <div class="right-down">
         <a href="#"><img class="down-img" src="../../assets/images/Rooms/Living room/living room rich/living space 1.jpg" alt="living room image" /></a>
         <a href="#"><p>Stylish White Living Space</p></a>
@@ -88,9 +89,9 @@
         <a href="#"><p>Traditional Clear Living Room</p></a>
         <a href="#"><img class="down-img" src="../../assets/images/Rooms/Living room/living room rich/living space 5.png" alt="living room image" /></a>
         <a href="#"><p>Glassed Living Room with Sofas</p></a>
-     </div>
-    </div> 
-</section>
+     </div> 
+    </div>   -->
+</section>  
 </section>
 
 <div class="footer">
@@ -136,113 +137,144 @@
  </div>
 
  <script>
-
+  
+  let main = document.getElementById('down');
   let div_container;
   let div_home;
   let a_anchor;
   let img_product;
   let a_view;
   let p_paragraph;
-  ;
+  
 
-//   let product = [
-//   {
-//     img:"../../assets/images/Rooms/Living room/living room rich/living space 1.jpg",
-//     text: "Stylish White living room",
-//     link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room rich/living space 2.jpg",
-//     text: "Elegant Living room with Wooden Work",
-//     link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room middle/living room 1.jpg",
-//     text: "Elegant living room",
-//     link:"./design.html"
-//    },
-//    {
-//    img:"../../assets/images/Rooms/Living room/living room middle/living room 2.jpg",
-//    text: "Light color living room",
-//    link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room middle/living room 3.jpg",
-//     text: "Modern living room",
-//     link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room rich/living space 3.png",
-//     text: "Beautiful living room",
-//     link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room middle/living room 4.jpg",
-//     text: "Brown sofa living room",
-//     link:"./design.html"
-//    },
+  let product = [
+  {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 2.jpg",
+      alt:"Light color Living room"
+    },
+   text: "Light color living room",
+   link:"./design.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 3.jpg",
+      alt:"Lovely Living room"
+    },
+    text: "Modern living room",
+    link:"./design.html"
+   },
 
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room middle/living room 5.jpg",
-//     text: "Traditional living room",
-//     link:"./design.html"
-//    },
-//    {
-//     img:"../../assets/images/Rooms/Living room/living room rich/living space 5.png",
-//     text: "Glassed living room",
-//     link:"./design.html"
-//    },
-// ]
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 4.jpg",
+      alt:"Brown Sofa Living room"
+    },
+    text: "Brown sofa living room",
+    link:"../description.html"
+   },
 
-//  // <section class="right">
-
-// section_project = document.createElement("section");
-// section_project.setAttribute("class", "right");
-// section_top.append(section_project);
-//  console.log(section_project)
-
-//  <div class="down">
-
- div_container = document.createElement("div");
- div_container.setAttribute("class", "down");
- console.log(div_container)
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 5.jpg",
+      alt:"Traditional Living room"
+    },
+    text: "Traditional living room",
+    link:"../description.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 5.png",
+      alt:"Glassed Living room"
+    },
+    text: "Glassed living room",
+    link:"../description.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 1.jpg",
+      alt:"Stylish White Living room"
+    },
+    text: "Stylish White living room",
+    link:"../description.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 2.jpg",
+      alt:"Elegant Living room with Wooden Work"
+    },
+    text: "Elegant Living room with Wooden Work",
+    link:"../description.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room rich/living space 3.png",
+      alt:"Beautiful Living room"
+    },
+    text: "Beautiful living room",
+    link:"../description.html"
+   },
+   {
+    image:{
+      source:"../../assets/images/Rooms/Living room/living room middle/living room 1.jpg",
+      alt:"Elegant Living room"
+    },
+    text: "Elegant living room",
+    link:"../description.html"
+   },
+   
+]
 
  for(let i = 0;i < 3; i++){
-//  <div class="right-down">
  div_home = document.createElement("div");
  div_home.setAttribute("class", "right-down");
- div_container.append(div_home);
+ main.append(div_home);
  console.log(div_home) 
 
- for(let j = 0;j < 3; j++){
- //<a></a>
+ let k = 0;
+ let s = 0;
+ if(i === 0){
+  k = 0;
+  s = 2;
+ }
+ if(i === 1 ){
+  k = 3;
+  s = 5;
+ } 
+ if(i === 2 ){
+  k = 6;
+  s = 9;
+ } 
+
+for(let j = k;j <= s; j++){
+//<a></a>
 a_anchor = document.createElement("a");
-// a_anchor.setAttribute("href", product[j].link);
+a_anchor.setAttribute("href", product[j].link);
 div_home.append(a_anchor);
 console.log(a_anchor)
 
 //<img/>
 img_product = document.createElement("img");
-img_product.setAttribute("alt", "living room image");
-img_product.setAttribute("class", "image-product");
-// img_product.setAttribute("src", product[j].img);
+img_product.setAttribute("alt",product[j].image.alt );
+img_product.setAttribute("class", "down-img");
+img_product.setAttribute("src", product[j].image.source);
 a_anchor.append(img_product);
 console.log(img_product)
 
 //<a></a>
 a_view = document.createElement("a");
-//a_view.setAttribute("href", product[j].view);
+// a_view.setAttribute("href", product[j].view);
 div_home.append(a_view);
 console.log(a_view)
 
 //<p></p>
 p_paragraph = document.createElement("p");
-// p_paragraph.innerHTML = product[j].text;
+p_paragraph.innerHTML = product[j].text;
 a_view.append(p_paragraph);
 console.log(p_paragraph)
  }
- document.querySelector("section.right").append(div_container);
-}
+ }
+
  </script>
 </body>
 

@@ -232,66 +232,95 @@
    
       let stock = [
     {
-     h3 : "On the way",
+     update : "On the way",
      text: "Delivered on",
-     span: " Sat , 25 Feb "
+     delivery:{
+      day:" Sat, ",
+      date: 25 ,
+      month:" Feb "
+     } 
    },
 
    {
-     h3 : "Delivered",
+     update : "Delivered",
      text: "Delivered on",
-     span: " Sun, 25 Dec "
+     delivery:{
+      day:" Sun, ",
+      date: 25 ,
+      month:" Dec "
+     } 
    },
 
    {
-     h3 : "Delivered",
+     update : "Delivered",
      text: "Delivered on",
-     span: " Fri, 25 Nov "
+     delivery:{
+      day:" Fri, ",
+      date: 25 ,
+      month:" Nov "
+     } 
    }
  
 ]
 let product = [
     {
-      img : "../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg",
-      anchor : "../pages/Wallpaper/Wallpaper cart.html",
+      image:{
+      source:"../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg",
+      alt:"Wallpaper image"
+    },
+      link : "../pages/Wallpaper/Wallpaper cart.html",
       para : "Bedroom Sticky wallpaper",
-      h4 : "Maroon Star Wallpaper",
-      small : "Price: ₹ 5000",
-      
+      heading : "Maroon Star Wallpaper",
+      amount :{
+        text: "Price:",
+        currency: "₹",
+        price:5000
+      } 
     },
 
    {
-     img : "../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
-     anchor : "../pages/Chandelier/Chandelier cart.html",
+    image:{
+      source:"../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
+      alt:"Chandelier image"
+    },
+     link : "../pages/Chandelier/Chandelier cart.html",
      para : "Hanging crystal chandelier",
-      h4 : "Crystal Clear Chandelier",
-      small : "Price: ₹ 20000",
+    heading : "Crystal Clear Chandelier",
+    amount :{
+        text: "Price:",
+        currency: "₹",
+        price:20000
+      } 
    },
 
    {
-     img : "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-     anchor : "../pages/cart-list.html",
+    image:{
+      source:"../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+      alt:"Sofa image"
+    },
+     link : "../pages/cart-list.html",
      para : " Leather L shape Sofa",
-      h4 : "Grand Bluish Green Sofa",
-      small : "Price: ₹ 56000",
+     heading : "Grand Bluish Green Sofa",
+     amount :{
+        text: "Price:",
+        currency: "₹",
+        price:56000
+      } 
    }
   ]
 
   let review = [
-
     {
-      view : "../pages/review.html",
-      parag : "Review"
+      link : "../pages/review.html",
+      review : "Review"
     },
-
     {
-      view : "../pages/review.html",
-      parag : "Review"
+      link : "../pages/review.html",
+      review : "Review"
     },
-
     {
-      view : "../pages/review.html",
-      parag : "Review"
+      link : "../pages/review.html",
+      review : "Review"
     }
    ]
 
@@ -337,7 +366,7 @@ let product = [
    
    //  <h3> </h3>
    h3_title = document.createElement("h3");
-   h3_title.innerHTML = stock[i].h3;
+   h3_title.innerHTML = stock[i].update;
    div_date.append(h3_title);
    
    //<p></p>
@@ -349,7 +378,7 @@ let product = [
    //<span class="color"></span>
    span_color= document.createElement("span");
    span_color.setAttribute("class", "color");
-   span_color.innerHTML = stock[i].span;
+   span_color.innerHTML = stock[i].delivery.day + stock[i].delivery.date + stock[i].delivery.month;
    p_para.append(span_color); 
    console.log(span_color)
 
@@ -366,14 +395,14 @@ let product = [
    
     //<a></a>
     a_anchor = document.createElement("a");
-    a_anchor.setAttribute("href", product[i].anchor);
+    a_anchor.setAttribute("href", product[i].link);
     div_wish.append(a_anchor);
     console.log(a_anchor)
    
      //<img/>
    img_product = document.createElement("img");
-   img_product.setAttribute("alt", "wallpaper-image");
-   img_product.setAttribute("src", product[i].img);
+   img_product.setAttribute("alt", product[i].image.alt);
+   img_product.setAttribute("src", product[i].image.source);
    img_product.setAttribute("class", "stock-product");
    a_anchor.append(img_product);
    console.log(img_product)
@@ -392,13 +421,13 @@ let product = [
    
    //  <h4> </h4>
    h4_heading = document.createElement("h4");
-   h4_heading.innerHTML = product[i].h4;
+   h4_heading.innerHTML = product[i].heading;
    div_info.append(h4_heading);
    console.log(h4_heading)
    
     //  <small> </small>
    small_pattern = document.createElement("small");
-   small_pattern.innerHTML = product[i].small;
+   small_pattern.innerHTML =product[i].amount.text + product[i].amount.currency + product[i].amount.price;;
    div_info.append(small_pattern);
    console.log(small_pattern)
    
@@ -447,13 +476,13 @@ let product = [
     
      //<a></a>
     a_review = document.createElement("a");
-    a_review.setAttribute("href", review[i].view);
+    a_review.setAttribute("href", review[i].link);
    div_orderview.append(a_review);
    console.log(a_review)
 
    //<p></p>
  p_parag = document.createElement("p");
- p_parag.innerHTML = review[i].parag;
+ p_parag.innerHTML = review[i].review;
  a_review.append(p_parag);
  console.log(p_parag)
  
