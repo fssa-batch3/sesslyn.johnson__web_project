@@ -7,7 +7,7 @@ function signUp(e) {
 
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
     let exist = user_list.length &&
-        JSON.parse(localStorage.getItem('user_list')).some(data =>data.email.toLowerCase() == email.toLowerCase() );
+        JSON.parse(localStorage.getItem('user_list')).some(data =>data.email.toLowerCase() == email.toLowerCase());
     if(!exist){
         user_list.push({name, email, password, confirm_password });
         localStorage.setItem('user_list', JSON.stringify(user_list));
@@ -28,8 +28,7 @@ function signIn(e){
     let password = document.getElementById('password').value;
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
     let exist = user_list.length &&
-    JSON.parse(localStorage.getItem('user_list')).some(data =>
-        data.password.toLowerCase() == password);
+    JSON.parse(localStorage.getItem('user_list')).some(data =>data.password.toLowerCase() == password);
         if(!exist){
             alert("Incorrect login credentials");
         }
