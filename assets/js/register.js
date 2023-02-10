@@ -1,4 +1,3 @@
-
 function signUp(e) {
     e.preventDefault();
     let user_name = document.getElementById("user_name").value,
@@ -24,7 +23,7 @@ function signUp(e) {
         document.querySelector('form').reset();
         document.getElementById('user_email').focus();
         alert('Account created Successfully');
-        location.href = "../../index.html";
+        location.href = "./Login.html";
     }
     
     else{
@@ -50,7 +49,7 @@ function signIn(e) {
     }
     else{
         alert("Your login in successful");
-        location.href = "/index.html";  
+        location.href = "../../index.html";  
     }
 }
 
@@ -81,14 +80,6 @@ function registration()
 		else if (!filter.test(user_email))
 		{
 			alert('Invalid email');
-		}
-		else if(user_name=='')
-		{
-			alert('Please enter the user name.');
-		}
-		else if(!letters.test(user_name))
-		{
-			alert('User name field required only alphabet characters');
 		}
 		else if(user_password=='')
 		{
