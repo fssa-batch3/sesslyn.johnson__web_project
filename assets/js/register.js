@@ -4,7 +4,16 @@ function signUp(e) {
         user_email = document.getElementById("user_email").value,
         user_password = document.getElementById("user_password").value,
         confirm_password = document.getElementById("confirm_password").value;
-
+        function checkPassword(){
+            if (user_password!==confirm_password){
+                alert("Re-enter the Password");
+                confirm_password.value=reset();
+            }
+            else{
+                alert("Password Matched");
+            }
+        }
+        checkPassword()
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
 
     let exist = user_list.length && 
@@ -41,7 +50,7 @@ function signIn(e) {
 
     let exist = user_list.length &&
     JSON.parse(localStorage.getItem('user_list')).some(data => 
-        data.user_password.toLowerCase() == user_password);
+        data.user_password == user_password);
 
     if(!exist){
         alert("Incorrect login credentials");
@@ -52,64 +61,3 @@ function signIn(e) {
         location.href = "../../index.html";  
     }
 }
-
-function registration()
-	{
-        let user_name = document.getElementById("user_name").value,
-        user_email = document.getElementById("user_email").value,
-        user_password = document.getElementById("user_password").value,
-        confirm_password = document.getElementById("confirm_password").value;
-		
-        //email id expression code
-		let user_password_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
-		let letters = /^[A-Za-z]+$/;
-		let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-		if(user_name=='')
-		{
-			alert('Please enter your name');
-		}
-		else if(!letters.test(user_name))
-		{
-			alert('Name field required only alphabet characters');
-		}
-		else if(user_email=='')
-		{
-			alert('Please enter your user email id');
-		}
-		else if (!filter.test(user_email))
-		{
-			alert('Invalid email');
-		}
-		else if(user_password=='')
-		{
-			alert('Please enter Password');
-		}
-		else if(confirm_password=='')
-		{
-			alert('Enter Confirm Password');
-		}
-		else if(!user_password_expression.test(user_password))
-		{
-			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
-		}
-		else if(user_password != user_password)
-		{
-			alert ('Password not Matched');
-		}
-		else if(document.getElementById("user_password").value.length < 6)
-		{
-			alert ('Password minimum length is 4');
-		}
-		else if(document.getElementById("user_password").value.length > 12)
-		{
-			alert ('Password max length is 12');
-		}
-		else
-		{				                            
-               alert('Thank You for Login');
-			   // Redirecting to other page or webste code. 
-			   window.location = "./Login.html"; 
-		}
-	}
-	

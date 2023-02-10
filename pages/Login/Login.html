@@ -49,17 +49,19 @@
       <div class="container" id="contain-div">
 
 		<div class="title"><span class="color">L</span>OGIN</div>
+		
         <form role="form" onsubmit="signIn(event)">
        <div class="data" id="data-div">
 
 	    <div class="input">
 	        <label class="label">Email Id</label>
-	        <input type="text"  class="inputs" id="user_email" required="true" placeholder="Email id ">
+	        <input type="text"  class="inputs" id="user_email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true" placeholder="Email id ">
 	   </div>
 
 	   <div class="input">
 	      <label class="label">Password</label>
-	      <input type="password" class="inputs" required="true" placeholder="Password" id="user_password" >
+	      <input type="password" class="inputs" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+		  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" placeholder="Password" id="user_password" >
 	   </div>
 
 	    <div class="btn">
@@ -69,7 +71,7 @@
 		 </div>
 
 	    <div class="container-content">
-	      <a href="../Login/password.html">Forgot Password?</a>
+	      <a href="../Login/Register.html">Forgot Password?</a>
 	    </div>
 	  
        </form>
