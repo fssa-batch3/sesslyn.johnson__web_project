@@ -71,27 +71,7 @@ h1{
     margin-top:-0.938rem;
     margin-left:5rem;
 }
-p span{
-	color:white;
-}
-span.name{
-    padding-left:3.125rem;
-}
-span.mail{
-	padding-left:3.3rem;
-}
-span.address{
-    padding-left:1.875rem;
-}
-span.number{
-    padding-left:2.125rem;
-}
-span.place{
-    padding-left:2.1rem;
-}
-span.about{
-    padding-left:4.1rem;
-}
+
 .inner{
 	margin:1.875rem 1.25rem 0.313rem 0rem;
 	padding:0.125rem;
@@ -100,6 +80,9 @@ p input{
 	color:black;
 	margin-right:1rem;
     padding-left:0.5rem;
+    border-style: hidden hidden hidden hidden;
+    background-color: transparent;
+    color:white;
 }
 input.name{
 	margin-left:3.2rem; 
@@ -118,4 +101,13 @@ input.place{
 }
 input.about{
 	margin-left:4.2rem;
+}
+.input{
+    border-style: hidden hidden hidden hidden;
+    background-color: transparent;
+    color:white;
+}
+#user_mail{
+    margin-left:3.2rem;
+    padding-right:-4rem;
 }

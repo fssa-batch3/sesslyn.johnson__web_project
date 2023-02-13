@@ -45,7 +45,7 @@ function signUp(e) {
 function signIn(e) {
     e.preventDefault();
     let user_password = document.getElementById('user_password').value;
-    
+    let user_email = document.getElementById('user_email').value;
     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
 
     let exist = user_list.length &&
@@ -57,7 +57,29 @@ function signIn(e) {
         document.querySelector('form').reset();        
     }
     else{
+        localStorage.setItem("user_id",JSON.stringify(user_email));
         alert("Your login in successful");
-        location.href = "../../index.html";  
+        location.href = "../profile.html";  
     }
 }
+
+//     function password(e) {
+//         e.preventDefault();
+//         let user_email=  document.getElementById("user_email").value 
+//         let user_password=  document.getElementById("user_password").value 
+//         let confirm_password=  document.getElementById("confirm_password").value 
+//         let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+    
+//         let exist = user_list.length &&
+//         JSON.parse(localStorage.getItem('user_list')).some(data => 
+//             data.user_password == user_password);
+    
+//         if(!exist){
+//             alert("Incorrect login credentials");
+//             document.querySelector('form').reset();        
+//         }
+//         else{
+//             alert("Your login in successful");
+//             location.href = "../../index.html";  
+//         }
+// }

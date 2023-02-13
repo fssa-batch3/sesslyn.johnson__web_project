@@ -1,102 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
-    <link rel="stylesheet" href="../assets/css/profile.css">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/header and footer.css">
+  <link rel="stylesheet" href="../assets/css/profile.css">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/header and footer.css">
 </head>
+
 <body class="body">
-    <header class="header">
-		<div>
-			<a href="../index.html">
-			<img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
-			</a>
-		</div>
-		
-		<div class="navbar">
-		<nav>
-		 <ul>
-			<li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
-			<li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
-			<li><a href="./queries.html"><span class="color">A</span>bout</a></li>
-			<li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
-		    <li><a href="./order.html"><span class="color">O</span>rders</a></li>	  
-		 </ul>
-		 </nav>
-		</div>
-		<div class="inner">
-		  <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
-		</div>
-		<div class="triple-bar">
-		  <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon"/></a>
-		</div> 
-   </header>
-   <div class="container">
-       
-        <div class="container-title">
-         <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
-       
-         <img src="../assets/images/Main/sess.jpg" alt="profile image" class="profile-image" width="180px">
-        
-        </div>
-        <div class="container-content" >
-         <b>
-             <p>Name:    <span class="name" id="profile_name" >Sesslyn </span></p>
-             <p> Email:  <span class="mail" id="profile_mail">sesslyn2004@gmail.com </span></p>
-             <p>Address: <span class="address" id="profile_address">12th Water tank street</span></p>
-             <P>Contact: <span  class="number" id="profile_contact"> 9952393525</span></P>
-             <p>Country: <span  class="place" id="profile_country">India</span></p>
-             <p>Bio: <span class="about" id="profile_bio"> Trust God</span></p>
-          </b>
-          
-        </div>
-        <button class="btn btn-primary"><a href="../pages/edit.html">Edit</a></button>
-        <button class="btn btn-secondary"><a href="../pages/Living room/project.html">Back</a></button>
- </div>
- <script>
-  const name = localStorage.getItem("name");
-  console.log(name);
+  <header class="header">
+    <div>
+      <a href="../index.html">
+        <img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
+      </a>
+    </div>
 
-  document.getElementById("profile_name").innerText = name
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
+          <li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
+          <li><a href="./queries.html"><span class="color">A</span>bout</a></li>
+          <li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
+          <li><a href="./order.html"><span class="color">O</span>rders</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="inner">
+      <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
+    </div>
+    <div class="triple-bar">
+      <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon" /></a>
+    </div>
+  </header>
+  <div class="container">
 
-  const email = localStorage.getItem("email");
-  console.log(email);
+    <div class="container-title">
+      <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
 
-  document.getElementById("profile_mail").innerText = email
+      <img src="../assets/images/Main/sess.jpg" alt="profile image" class="profile-image" width="180px">
 
-  const address = localStorage.getItem("address");
-  console.log(address);
+    </div>
+    <div class="container-content">
+      <b>
+        <p>Name: <input class="input name" type="text" required="true" placeholder="Name" id="user_name" disabled /></p>
+        <p> Email: <input class="input mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email"
+            disabled /> </p>
+        <p>Address: <input class="input address" type="text" required="true" placeholder="Address" id="user_address"
+            disabled /></p>
+        <P>Contact: <input class="input number" type="text" required="true" placeholder="+916789654327"
+            id="user_contact" disabled /></p>
+        <p>Country: <input class="input place" type="text" required="true" placeholder="India" id="user_country"
+            disabled /></p>
+        <p>Bio: <input class="input about" type="text" required="true" placeholder="About" id="user_about" disabled />
+        </p>
+      </b>
 
-  document.getElementById("profile_address").innerText = address
+    </div>
+    <button class="btn btn-primary"><a href="../pages/edit.html">Edit</a></button>
+    <button class="btn btn-secondary"><a href="../pages/Living room/project.html">Back</a></button>
+  </div>
+  <script>
 
-  const contact= localStorage.getItem("contact");
-  console.log(contact);
+    let user_id = JSON.parse(localStorage.getItem('user_id'));
+    let user_list = JSON.parse(localStorage.getItem('user_list'));
+    function login_data(e) {
+      return e.user_email == user_id;
+    }
 
-  document.getElementById("profile_contact").innerText = contact
+    user_data = user_list.find(login_data);
+    document.getElementById("user_name").value = user_data['user_name'];
+    document.getElementById("user_email").value = user_data["user_email"];
 
-  const country= localStorage.getItem("country");
-  console.log(country);
+    
 
-  document.getElementById("profile_country").innerText = country
+    const address = localStorage.getItem("user_address");
+    console.log(address);
 
-  const about= localStorage.getItem("about");
-  console.log(about);
+    document.getElementById("user_address").innerText = address
 
-  document.getElementById("profile_bio").innerText = about
- </script>
-   
+    const contact = localStorage.getItem("user_contact");
+    console.log(contact);
+
+    document.getElementById("user_contact").innerText = contact
+
+    const country = localStorage.getItem("user_country");
+    console.log(country);
+
+    document.getElementById("user_country").innerText = country
+
+    const about = localStorage.getItem("user_about");
+    console.log(about);
+
+    document.getElementById("user_about").innerText = about
+
+  </script>
+
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
