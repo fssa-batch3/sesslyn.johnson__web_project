@@ -4,6 +4,7 @@ function signUp(e) {
         user_email = document.getElementById("user_email").value,
         user_password = document.getElementById("user_password").value,
         confirm_password = document.getElementById("confirm_password").value;
+
         function checkPassword(){
             if (user_password!==confirm_password){
                 alert("Re-enter the Password");
@@ -23,7 +24,7 @@ function signUp(e) {
 
     if(!exist){
         user_list.push({ user_name, user_email, 
-                        user_password, confirm_password });
+                        user_password, confirm_password, "user_address": "", "user_contact":"", "user_country":"", "user_about":"" });
 
         localStorage.setItem('user_list', JSON.stringify(user_list));
 
@@ -63,23 +64,4 @@ function signIn(e) {
     }
 }
 
-//     function password(e) {
-//         e.preventDefault();
-//         let user_email=  document.getElementById("user_email").value 
-//         let user_password=  document.getElementById("user_password").value 
-//         let confirm_password=  document.getElementById("confirm_password").value 
-//         let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
-    
-//         let exist = user_list.length &&
-//         JSON.parse(localStorage.getItem('user_list')).some(data => 
-//             data.user_password == user_password);
-    
-//         if(!exist){
-//             alert("Incorrect login credentials");
-//             document.querySelector('form').reset();        
-//         }
-//         else{
-//             alert("Your login in successful");
-//             location.href = "../../index.html";  
-//         }
-// }
+

@@ -44,15 +44,21 @@
 
     </div>
     <div class="container-content">
+      <form role="form">
       <b>
-        <p>Name: <input class="input name" type="text" required="true" placeholder="Name" id="user_name" disabled /></p>
-        <p> Email: <input class="input mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email"
+        <p>Name: 
+          <input class="input name" type="text" required="true" placeholder="Name" id="user_name" disabled /></p>
+        <p> Email: 
+          <input class="input mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email"
             disabled /> </p>
-        <p>Address: <input class="input address" type="text" required="true" placeholder="Address" id="user_address"
+        <p>Address: 
+          <input class="input address" type="text" required="true" placeholder="Address" id="user_address"
             disabled /></p>
-        <P>Contact: <input class="input number" type="text" required="true" placeholder="+916789654327"
+        <P>Contact: 
+          <input class="input number" type="text" required="true" placeholder="+916789654327"
             id="user_contact" disabled /></p>
-        <p>Country: <input class="input place" type="text" required="true" placeholder="India" id="user_country"
+        <p>Country: 
+          <input class="input place" type="text" required="true" placeholder="India" id="user_country"
             disabled /></p>
         <p>Bio: <input class="input about" type="text" required="true" placeholder="About" id="user_about" disabled />
         </p>
@@ -62,6 +68,7 @@
     <button class="btn btn-primary"><a href="../pages/edit.html">Edit</a></button>
     <button class="btn btn-secondary"><a href="../pages/Living room/project.html">Back</a></button>
   </div>
+</form>
   <script>
 
     let user_id = JSON.parse(localStorage.getItem('user_id'));
@@ -71,31 +78,15 @@
     }
 
     user_data = user_list.find(login_data);
-    document.getElementById("user_name").value = user_data['user_name'];
+
+    document.getElementById("user_name").value = user_data["user_name"];
     document.getElementById("user_email").value = user_data["user_email"];
+    document.getElementById("user_address").value = user_data[""];
+    document.getElementById("user_contact").value = user_data[""];
+    document.getElementById("user_country").value =user_data[""];
+    document.getElementById("user_about").value = user_data[""];
 
     
-
-    const address = localStorage.getItem("user_address");
-    console.log(address);
-
-    document.getElementById("user_address").innerText = address
-
-    const contact = localStorage.getItem("user_contact");
-    console.log(contact);
-
-    document.getElementById("user_contact").innerText = contact
-
-    const country = localStorage.getItem("user_country");
-    console.log(country);
-
-    document.getElementById("user_country").innerText = country
-
-    const about = localStorage.getItem("user_about");
-    console.log(about);
-
-    document.getElementById("user_about").innerText = about
-
   </script>
 
 </body>

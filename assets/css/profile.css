@@ -77,12 +77,11 @@ h1{
 	padding:0.125rem;
 }
 p input{
-	color:black;
+	color:white;
 	margin-right:1rem;
     padding-left:0.5rem;
     border-style: hidden hidden hidden hidden;
     background-color: transparent;
-    color:white;
 }
 input.name{
 	margin-left:3.2rem; 
@@ -107,7 +106,7 @@ input.about{
     background-color: transparent;
     color:white;
 }
-#user_mail{
+#user_email{
     margin-left:3.2rem;
     padding-right:-4rem;
 }

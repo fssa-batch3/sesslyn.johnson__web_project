@@ -1,98 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
-    <link rel="stylesheet" href="../assets/css/profile.css">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/header and footer.css">
+  <link rel="stylesheet" href="../assets/css/profile.css">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/header and footer.css">
 </head>
+
 <body class="body">
-    <header class="header">
-		<div>
-			<a href="../index.html">
-			<img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
-			</a>
-		</div>
-		
-		<div class="navbar">
-		<nav>
-		 <ul>
-			<li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
-			<li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
-			<li><a href="./queries.html"><span class="color">A</span>bout</a></li>
-			<li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
-		    <li><a href="./order.html"><span class="color">O</span>rders</a></li>	  
-		 </ul>
-		 </nav>
-		</div>
-		<div class="inner">
-		  <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
-		</div>
-		<div class="triple-bar">
-		  <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon"/></a>
-		</div> 
-   </header>
-   <div class="container">
-       
-        <div class="container-title">
-         <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
-         
-         <img src="../assets/images/Main/profile (1).png" alt="profile image" class="profile-image" width="180px">
-        </div>
-      
-        <div class="container-content">
-         <b>
-             <p>Name:    <input class="name" type="text" required="true" placeholder="Name" id="name"/></p>
-             <p> Email: <input class="mail" type="text" required="true" placeholder="abc@gmail.com" id="email"/> </p>
-             <p>Address: <input class="address" type="text" required="true" placeholder="Address" id="address" /></p>
-             <P>Contact: <input class="number" type="text" required="true" placeholder="+916789654327" id="contact" /></p>
-             <p>Country: <input class="place" type="text" required="true" placeholder="India" id="country" /></p>
-             <p>Bio: <input class="about" type="text" required="true" placeholder="About" id="about" /></p>
-          </b>
-        
-        </div>
-        <button class="btn btn-tertiary" onclick="edit()">Submit</button>
-      
- </div>
- 
- <script>
-  function edit(){
-    const name=  document.getElementById("name").value 
-    const email= document.getElementById("email").value 
-    const address= document.getElementById("address").value 
-    const contact= document.getElementById("contact").value 
-    const country= document.getElementById("country").value 
-    const about= document.getElementById("about").value 
+  <header class="header">
+    <div>
+      <a href="../index.html">
+        <img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
+      </a>
+    </div>
 
-  console.log(name)
-	console.log(email)
-	console.log(address)
-  console.log(contact)
-  console.log(country)
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
+          <li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
+          <li><a href="./queries.html"><span class="color">A</span>bout</a></li>
+          <li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
+          <li><a href="./order.html"><span class="color">O</span>rders</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="inner">
+      <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
+    </div>
+    <div class="triple-bar">
+      <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon" /></a>
+    </div>
+  </header>
+  <div class="container">
 
-  localStorage.setItem("name", name)
-  localStorage.setItem("email", email)
-  localStorage.setItem("address", address)
-  localStorage.setItem("contact", contact)
-  localStorage.setItem("country", country)
-  localStorage.setItem("about", about)
+    <div class="container-title">
+      <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
 
-  window.location.href="./profile.html"
-}
-  
-</script>
+      <img src="../assets/images/Main/profile (1).png" alt="profile image" class="profile-image" width="180px">
+    </div>
+
+    <div class="container-content">
+      <form role="form" onsubmit="update(e);">
+        <b>
+          <p>Name:
+            <input class="name" type="text" required="true" placeholder="Name" id="user_name" />
+          </p>
+          <p> Email:
+            <input class="mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email" />
+          </p>
+          <p>Address:
+            <input class="address" type="text" required="true" placeholder="Address" id="user_address" />
+          </p>
+          <P>Contact:
+            <input class="number" type="text" required="true" placeholder="+916789654327" id="user_contact" />
+          </p>
+          <p>Country:
+            <input class="place" type="text" required="true" placeholder="India" id="user_country" />
+          </p>
+          <p>Bio:
+            <input class="about" type="text" required="true" placeholder="About" id="user_about" />
+          </p>
+        </b>
+      </form>
+    </div>
+    <button class="btn btn-tertiary" type="submit"> Submit </button>
+
+  </div>
+
+
+  <script>
+
+    // let user_id = JSON.parse(localStorage.getItem('user_id'));
+    // let user_list = JSON.parse(localStorage.getItem('user_list'));
+
+    // function login_data(e) {
+    //   return e.user_email == user_id;
+    // }
+
+    // user_data = user_list.find(login_data);
+
+    // document.getElementById("user_name").value = user_data['user_name'];
+    // document.getElementById("user_email").value = user_data["user_email"];
+
+    // function update(e) {
+    //   e.preventDefault();
+    //   // getting the updated data from the input field
+    //   //   let up_address = document.getElementById("user_address").value
+    //   //   let up_country = document.getElementById("user_country").value
+    //   //   let up_contact = document.getElementById("user_contact").value
+    //   //   let up_about = document.getElementById("user_about").value
+    //   //   // paste the updated data to the correct object
+    //   //   user_list["user_address"] = up_address;
+    //   //   user_list["user_country"] = up_country;
+    //   //   user_list["user_contact"] = up_contact;
+    //   //   user_list["user_about"] = up_about;
+    //   //   // again paste it to the
+    //   //   localStorage.setItem('user_list', JSON.stringify(user_list));
+    //   //   console.log(user_list);
+    //   //   window.location.href = "./profile.html"
+    //   // }
+
+    //   let up_address = document.getElementById("user_address").value
+    //   let up_country = document.getElementById("user_country").value
+    //   let up_contact = document.getElementById("user_contact").value
+    //   let up_about = document.getElementById("user_about").value
+
+    //   document.getElementById("user_address").value = user_data["user_address"];
+    //   document.getElementById("user_country").value = user_data["user_country"];
+    //   document.getElementById("user_about").value = user_data["user_about"];
+    //   document.getElementById("user_contact").value = user_data["user_contact"];
+
+    //   localStorage.setItem('user_list', JSON.stringify(user_list));
+    //   window.location.href = "./profile.html";
+    // }
+
+
+    let user_id = JSON.parse(localStorage.getItem('user_id'));
+    let user_list = JSON.parse(localStorage.getItem('user_list'));
+    function login_data(e) {
+      return e.user_email == user_id;
+    }
+    user_data = user_list.find(login_data);
+
+    document.getElementById("user_name").value = user_data["user_name"];
+    document.getElementById("user_email").value = user_data["user_email"];
+
+    function update_details(e) {
+      let up_address = document.getElementById("user_address").value
+      let up_country = document.getElementById("user_country").value
+      let up_contact = document.getElementById("user_contact").value
+      let up_about = document.getElementById("user_about").value
+
+      user_data["user_address"] = up_address;
+      user_data["user_contact"] = up_contact;
+      user_data["user_country"] = up_country;
+      user_data["user_about"] = up_about;
+      localStorage.setItem('user_list', JSON.stringify(user_list));
+      console.log(user_list);
+    }
+  </script>
+
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
