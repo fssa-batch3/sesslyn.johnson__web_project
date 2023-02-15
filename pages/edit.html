@@ -44,7 +44,7 @@
     </div>
 
     <div class="container-content">
-      <form role="form" onsubmit="update(e);">
+      <form onSubmit="update_details(event)">
         <b>
           <p>Name:
             <input class="name" type="text" required="true" placeholder="Name" id="user_name" />
@@ -65,59 +65,17 @@
             <input class="about" type="text" required="true" placeholder="About" id="user_about" />
           </p>
         </b>
+        <button class="btn btn-quart" type="submit"> Delete </button>
+        <button class="btn btn-tertiary" type="submit"> Submit </button>
+    
       </form>
     </div>
-    <button class="btn btn-tertiary" type="submit"> Submit </button>
+    
 
   </div>
 
 
   <script>
-
-    // let user_id = JSON.parse(localStorage.getItem('user_id'));
-    // let user_list = JSON.parse(localStorage.getItem('user_list'));
-
-    // function login_data(e) {
-    //   return e.user_email == user_id;
-    // }
-
-    // user_data = user_list.find(login_data);
-
-    // document.getElementById("user_name").value = user_data['user_name'];
-    // document.getElementById("user_email").value = user_data["user_email"];
-
-    // function update(e) {
-    //   e.preventDefault();
-    //   // getting the updated data from the input field
-    //   //   let up_address = document.getElementById("user_address").value
-    //   //   let up_country = document.getElementById("user_country").value
-    //   //   let up_contact = document.getElementById("user_contact").value
-    //   //   let up_about = document.getElementById("user_about").value
-    //   //   // paste the updated data to the correct object
-    //   //   user_list["user_address"] = up_address;
-    //   //   user_list["user_country"] = up_country;
-    //   //   user_list["user_contact"] = up_contact;
-    //   //   user_list["user_about"] = up_about;
-    //   //   // again paste it to the
-    //   //   localStorage.setItem('user_list', JSON.stringify(user_list));
-    //   //   console.log(user_list);
-    //   //   window.location.href = "./profile.html"
-    //   // }
-
-    //   let up_address = document.getElementById("user_address").value
-    //   let up_country = document.getElementById("user_country").value
-    //   let up_contact = document.getElementById("user_contact").value
-    //   let up_about = document.getElementById("user_about").value
-
-    //   document.getElementById("user_address").value = user_data["user_address"];
-    //   document.getElementById("user_country").value = user_data["user_country"];
-    //   document.getElementById("user_about").value = user_data["user_about"];
-    //   document.getElementById("user_contact").value = user_data["user_contact"];
-
-    //   localStorage.setItem('user_list', JSON.stringify(user_list));
-    //   window.location.href = "./profile.html";
-    // }
-
 
     let user_id = JSON.parse(localStorage.getItem('user_id'));
     let user_list = JSON.parse(localStorage.getItem('user_list'));
@@ -128,8 +86,16 @@
 
     document.getElementById("user_name").value = user_data["user_name"];
     document.getElementById("user_email").value = user_data["user_email"];
+    document.getElementById("user_address").value = user_data["user_address"];
+    document.getElementById("user_contact").value = user_data["user_contact"];
+    document.getElementById("user_country").value =user_data["user_country"];
+    document.getElementById("user_about").value = user_data["user_about"];
 
-    function update_details(e) {
+
+    function update_details(e){
+
+      e.preventDefault();
+      let up_name = document.getElementById("user_name").value
       let up_address = document.getElementById("user_address").value
       let up_country = document.getElementById("user_country").value
       let up_contact = document.getElementById("user_contact").value
@@ -139,8 +105,11 @@
       user_data["user_contact"] = up_contact;
       user_data["user_country"] = up_country;
       user_data["user_about"] = up_about;
+
       localStorage.setItem('user_list', JSON.stringify(user_list));
-      console.log(user_list);
+     //console.log(user_list);
+
+     window.location.href = "./profile.html";
     }
   </script>
 
