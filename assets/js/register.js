@@ -42,7 +42,7 @@ function signUp(e) {
     }
     
     else{
-        alert('Sorry the User already Exist!! \n Try with different Phone number or email');
+        alert('Sorry the User already Exist!! \n Try with different E-mail');
         document.querySelector('form').reset();
     }
     
