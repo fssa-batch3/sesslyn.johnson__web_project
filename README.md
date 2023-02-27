@@ -16,13 +16,19 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
 1. Register CRUD 
    
     Create user profile
+    
     Read user profile
+    
     Update user profile
+    
     Delete user profile
 
 2. Product CRUD 
     
     Create product
+    
     Read product
+    
     Update product 
+    
     Delete product
