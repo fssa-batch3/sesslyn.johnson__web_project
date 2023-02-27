@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Seller Page</title>
+  <title>Product Upload page</title>
   <link rel="stylesheet" href="../../assets/css/description.css">
   <link rel="stylesheet" href="../../assets/css/seller/homepage.css">
   <link rel="stylesheet" href="../../assets/css/normalize.css">
@@ -403,7 +403,21 @@
     //             localStorage.setItem("product_Uid" , JSON.stringify(id))
     //         });
     //     }); 
-
+   
+    function delData(e) {
+      if (confirm("Are you sure?")) {
+        let user_id = JSON.parse(localStorage.getItem("user_id"));
+        let user_list = JSON.parse(localStorage.getItem("user_list"));
+        function login_data(e) {
+          return e.user_email == user_id;
+        }
+        let user_data = user_list.find(login_data);
+        const indexOfUser = user_list.indexOf(user_data);
+        user_list.splice(indexOfUser, 1);
+        localStorage.setItem('user_list', JSON.stringify(user_list));
+        window.location.href = "../../index.html";
+      };
+    }
 
   </script>
 
