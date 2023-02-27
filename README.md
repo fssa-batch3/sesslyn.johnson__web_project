@@ -27,8 +27,8 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
     
     Create product
     
-    Read product
+    Read product-list
     
-    Update product 
+    Update product-list
     
     Delete product
