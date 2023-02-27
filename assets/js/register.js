@@ -4,7 +4,7 @@ function signUp(e) {
         user_email = document.getElementById("user_email").value,
         user_password = document.getElementById("user_password").value,
         confirm_password = document.getElementById("confirm_password").value;
-
+         user_uuid=uuidv4();
         let user_address="";
         let user_contact="";
         let user_country="";
@@ -29,7 +29,7 @@ function signUp(e) {
 
     if(!exist){
         user_list.push({ user_name, user_email, 
-                        user_password, confirm_password, user_address, user_contact, user_country, user_about });
+                        user_password, confirm_password, user_address, user_contact, user_country, user_about,user_uuid });
 
         localStorage.setItem('user_list', JSON.stringify(user_list));
 

@@ -1,104 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <title>Seller Page</title>
-<link rel="stylesheet" href="../../assets/css/seller/upload.css">
-<link rel="stylesheet" href="../../assets/css/seller/homepage.css">
-<link rel="stylesheet" href="../../assets/css/normalize.css">
-<link rel="stylesheet" href="../../assets/css/header and footer.css">
-    
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="UTF-8">
+  <title>Seller Page</title>
+  <link rel="stylesheet" href="../../assets/css/seller/upload.css">
+  <link rel="stylesheet" href="../../assets/css/seller/homepage.css">
+  <link rel="stylesheet" href="../../assets/css/normalize.css">
+  <link rel="stylesheet" href="../../assets/css/header and footer.css">
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
-<body> 
+
+<body>
   <header class="header" id="header-nav">
     <div>
-        <a href="./Homepage.html">
-    <img class="logo-image" src="../../assets/images/Main/casas-logo.png" alt="logo image" />
-    </a>
+      <a href="./Homepage.html">
+        <img class="logo-image" src="../../assets/images/Main/casas-logo.png" alt="logo image" />
+      </a>
     </div>
     <div class="inner" id="input">
       <button type="submit"><a href="./Register-seller.html">Login</a></button>
     </div>
     <div class="triple-bar" id="profile-icon">
-      <a href="profile-seller.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon"/></a>
-    </div> 
+      <a href="profile-seller.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon" /></a>
+    </div>
     <div class="plus-icon">
       <a href="new-product.html"><i class="fa fa-plus"></i></a>
     </div>
-</header>
+  </header>
 
-<div class="container">
-    
+  <div class="container">
+
     <div class="upload-img">
-       <img src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg" width="400rem" height="500rem" alt="wallpaper image">
-     <div class="round-img">
-       <input type="file">
-       <i class="fa fa-camera" style="color: #000;"></i>
-     </div>
-   </div>
+      <img src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg" width="400rem" height="500rem"
+        alt="wallpaper image">
+      <div class="round-img">
+        <input type="file">
+        <i class="fa fa-camera" style="color: #000;"></i>
+      </div>
+    </div>
 
-      <div class="form-details">
-            <div class="form">
-              <div class="details">
-                  <div class="details_list"><p class="list">ProductName:</p><input type="text" value="Blue Wallpaper" class="list_2"></div>
-                  <div class="details_list"><p class="list">Real Price:</p><input type="text" value=" Rs.9,999.00" class="list_2"> </div>
-                  <div class="details_list"><p class="list"> Price to sell:</p><input type="text" value=" Rs.4,999.00" class="list_2"> </div>
-                  <div class="details_list"><p class="list">Discount:</p><input type="text" value="Rs.5000" class="list_2"></div>
-                  <div class="details_list"><p class="list">Description:</p><input type="text" value="* Royal Blue Wallpaper.  * Free from PVC, Microplastics, Lead, and other harmful chemicals.  * All materials were sourced responsibly from within our country. * Our experts will install it for you – No cost * Tearproof, Water Resistant.  * Perfect for living room, bedroom, hallway and more..." class="list_2"></div>
-                  <div class="details_list"><p class="list">Warranty:</p><input type="text" value=" * 5 Years of On-Site" class="list_2"></div>
-       
-              </div>
-                  <a href="Product-uploaded .html"><button type="button" class="save"> <strong>Upload</strong></button></a>
+    <div class="form-details">
+      <div class="form">
+        <div class="details">
+          <div class="details_list">
+            <p class="list">ImageUrl:</p>
+            <input type="text" placeholder="http://" id="image_url" class="list_2">
           </div>
+          <div class="details_list">
+            <p class="list">ProductName:</p><input type="text" placeholder="Blue Wallpaper" id="product_name"
+              class="list_2">
+          </div>
+          <div class="details_list">
+            <p class="list">Real Price:</p><input type="text" placeholder=" Rs.9,999.00" id="product_real"
+              class="list_2">
+          </div>
+          <div class="details_list">
+            <p class="list"> Price to sell:</p><input type="text" placeholder=" Rs.4,999.00" id="product_sell"
+              class="list_2">
+          </div>
+          <div class="details_list">
+            <p class="list">Discount:</p><input type="text" placeholder="Rs.5000" id="product_discount" class="list_2">
+          </div>
+          <div class="details_list">
+            <p class="list">Description:</p><input type="text" id="product_description"
+              placeholder="* Royal Blue Wallpaper.  * Free from PVC, Microplastics, Lead, and other harmful chemicals.  * All materials were sourced responsibly from within our country. * Our experts will install it for you – No cost * Tearproof, Water Resistant.  * Perfect for living room, bedroom, hallway and more..."
+              class="list_2">
+          </div>
+          <div class="details_list">
+            <p class="list">Warranty:</p><input type="text" id="product_warranty" placeholder=" * 5 Years of On-Site"
+              class="list_2">
+          </div>
+
         </div>
-</div>
-
-<div class="footer" id="footer-upload">
-  <div class="footer-div">
-    <img class="footer-image" src="../../assets/images/Main/Casas-dark.png" alt="desktop image" />
-  
-  <div class="footer-media">
-    <a href="https://www.facebook.com/profile.php?id=100087049213851"><img class="fb-icon" src="../../assets/images/Main/facebook-icon.png" alt="facebook-icon"/></a>
-    <a href="https://github.com/Sesslyn041215"><img src="../../assets/images/Main/github-new.png" alt="github-icon"/></a>
-    <a href="https://www.linkedin.com/in/sesslyn-j-989b18250"><img src="../../assets/images/Main/linked-icon.png" alt="linked-icon"/></a>
-    <a href="https://twitter.com/SesslynJ"><img src="../../assets/images/Main/twitter-icon.png" alt="twitter-icon"/></a>
-  </div>
-</div>
-
-  <div class="footer-div" id="footer-h4">
-    <h4>General</h4>
-    <a href="./pages/Login/Register.html"><p>Sign Up</p></a>
-    <a href="./pages/queries.html"><p>About</p></a>
-    <a href="https://medium.com/@sesslyn2004"><p>Blog</p></a>
-    <a href="https://medium.com/@mohid-ahmed/ghow-to-stay-focused-when-working-from-home-b54c7ab39e96"><p>Careers</p></a>
-    <a href="https://medium.com/hackernoon/11-things-developers-love-hearing-from-non-developer-co-workers-ea94805cf05d"> <p>Developers</p></a>
+        <a href="Product-uploaded .html"><button type="button" class="save"> <strong>Save</strong></button></a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-div"  id="footer-h4">
-    <h4>Browse Casas</h4>
-      <a href="./index.html"> <p>Main page</p></a>
-      <a href="./pages/Living room/project.html"><p>Chamber</p></a>
-     <a href="./pages/queries.html"><p>About</p></a>
-      <a href="./pages/Shop.html"> <p>Shop</p></a>
-      <a href="./pages/liked.html"> <p>Wishlist</p></a>
-     <a href="./pages/order.html"> <p>Orders</p></a>
-  </div>
-    
-  <div class="footer-div"  id="footer-h4">
-    <h4>Business Solutions</h4>
-    <a href="#"><p>Talent</p></a>
-    <a href="#"><p>Marketing</p></a>
-    <a href="#"><p>Sales</p></a>
-    <a href="#"><p>Learning</p></a>
-    <a href="#"><p>Creativity</p></a>
-  </div>
-</div>
+  <div class="footer" id="footer-upload">
+    <div class="footer-div">
+      <img class="footer-image" src="../../assets/images/Main/Casas-dark.png" alt="desktop image" />
 
+      <div class="footer-media">
+        <a href="https://www.facebook.com/profile.php?id=100087049213851"><img class="fb-icon"
+            src="../../assets/images/Main/facebook-icon.png" alt="facebook-icon" /></a>
+        <a href="https://github.com/Sesslyn041215"><img src="../../assets/images/Main/github-new.png"
+            alt="github-icon" /></a>
+        <a href="https://www.linkedin.com/in/sesslyn-j-989b18250"><img src="../../assets/images/Main/linked-icon.png"
+            alt="linked-icon" /></a>
+        <a href="https://twitter.com/SesslynJ"><img src="../../assets/images/Main/twitter-icon.png"
+            alt="twitter-icon" /></a>
+      </div>
+    </div>
+
+    <div class="footer-div" id="footer-h4">
+      <h4>General</h4>
+      <a href="./pages/Login/Register.html">
+        <p>Sign Up</p>
+      </a>
+      <a href="./pages/queries.html">
+        <p>About</p>
+      </a>
+      <a href="https://medium.com/@sesslyn2004">
+        <p>Blog</p>
+      </a>
+      <a href="https://medium.com/@mohid-ahmed/ghow-to-stay-focused-when-working-from-home-b54c7ab39e96">
+        <p>Careers</p>
+      </a>
+      <a
+        href="https://medium.com/hackernoon/11-things-developers-love-hearing-from-non-developer-co-workers-ea94805cf05d">
+        <p>Developers</p>
+      </a>
+    </div>
+
+    <div class="footer-div" id="footer-h4">
+      <h4>Browse Casas</h4>
+      <a href="./index.html">
+        <p>Main page</p>
+      </a>
+      <a href="./pages/Living room/project.html">
+        <p>Chamber</p>
+      </a>
+      <a href="./pages/queries.html">
+        <p>About</p>
+      </a>
+      <a href="./pages/Shop.html">
+        <p>Shop</p>
+      </a>
+      <a href="./pages/liked.html">
+        <p>Wishlist</p>
+      </a>
+      <a href="./pages/order.html">
+        <p>Orders</p>
+      </a>
+    </div>
+
+    <div class="footer-div" id="footer-h4">
+      <h4>Business Solutions</h4>
+      <a href="#">
+        <p>Talent</p>
+      </a>
+      <a href="#">
+        <p>Marketing</p>
+      </a>
+      <a href="#">
+        <p>Sales</p>
+      </a>
+      <a href="#">
+        <p>Learning</p>
+      </a>
+      <a href="#">
+        <p>Creativity</p>
+      </a>
+    </div>
+  </div>
+  <script>
+    let product_id = JSON.parse(localStorage.getItem('product_id'));
+    let product_crud = JSON.parse(localStorage.getItem('product_crud'));
+    function login_data(e) {
+      return e.product_uuid == product_id;
+    }
+    product_data = product_crud.find(login_data);
+
+    document.getElementById("image_url").value = product_data["image_url"];
+    document.getElementById("product_name").value = product_data["product_name"];
+    document.getElementById("product_real").value = product_data["product_real"];
+    document.getElementById("product_sell").value = product_data["product_sell"];
+    document.getElementById("product_discount").value = product_data["product_discount"];
+    document.getElementById("product_description").value = product_data["product_description"];
+    document.getElementById("product_warranty").value = product_data["product_warranty"];
+
+  </script>
 </body>
+
 </html>
-
-
-

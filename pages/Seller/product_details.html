@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details page</title>
+    <link rel="stylesheet" href="../../assets/css/seller/product_details.css">
+    <link rel="stylesheet" href="../../assets/css/seller/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/header and footer.css">
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body id="product-main">
+    <header class="header" id="header-nav">
+        <div>
+            <a href="./Homepage.html">
+                <img class="logo-image" src="../../assets/images/Main/casas-logo.png" alt="logo image" />
+            </a>
+        </div>
+        <div class="inner" id="input">
+            <button type="submit"><a href="./Register-seller.html">Login</a></button>
+        </div>
+        <div class="triple-bar" id="profile-icon">
+            <a href="profile-seller.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon" /></a>
+        </div>
+        <div class="plus-icon">
+            <a href="new-product.html"><i class="fa fa-plus"></i></a>
+        </div>
+    </header>
+
+    <div class="contain">
+        <div class="top_container">
+            <div class="container">
+                <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Munich Scarlet Sofa</h2>
+                <p>₹ 25,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Royal Blue Wallpaper</h2>
+                <p>₹ 5,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Chamber/Chandelier/Chandelier 12.jpg" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Crystal White Chandelier</h2>
+                <p>₹ 8,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Chamber/Crockery/crockery 6.jpg" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>White Crockery Sets</h2>
+                <p>₹ 12,000</p>
+            </div>
+        </div>
+        <div class="top_container">
+            <div class="container">
+                <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Munich Scarlet Sofa</h2>
+                <p>₹ 25,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Munich Scarlet Sofa</h2>
+                <p>₹ 25,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Munich Scarlet Sofa</h2>
+                <p>₹ 25,000</p>
+            </div>
+            <div class="container">
+                <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
+                <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                <h2>Munich Scarlet Sofa</h2>
+                <p>₹ 25,000</p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let div_top
+        let div_container
+        let img_product
+        let img_delete
+        let h2_title
+        let p_paragraph
+
+        let details = {
+            description: [
+                {
+                    product_image: {
+                        source: "../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png",
+                        alt: "main_image"
+                    },
+                    title: "Munich Scarlet Sofa",
+                    price: {
+                        type: "₹",
+                        value: 25000
+                    }
+                },
+                {
+                    product_image: {
+                        source: "../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg",
+                        alt: "main_image"
+                    },
+                    title: "Royal Blue Wallpaper",
+                    price: {
+                        type: "₹",
+                        value: 5000
+                    }
+                },
+                {
+                    product_image: {
+                        source: "../../assets/images/Chamber/Chandelier/Chandelier 12.jpg",
+                        alt: "main_image"
+                    },
+                    title: "Crystal White Chandelier",
+                    price: {
+                        type: "₹",
+                        value: 8000
+                    }
+                },
+                {
+                    product_image: {
+                        source: "../../assets/images/Chamber/Crockery/crockery 6.jpg",
+                        alt: "main_image"
+                    },
+                    title: "White Crockery Sets",
+                    price: {
+                        type: "₹",
+                        value: 12000
+                    }
+                }
+
+            ],
+            delete_image: {
+                source: "../../assets/images/Main/delete_icon.png",
+                alt: "delete_image"
+            }
+        }
+
+        
+        for(i=0; i<=details.length; i++){
+      
+        //  <div class="down">
+        div_top = document.createElement("div");
+        div_top.setAttribute("class", "top_container");
+        console.log(div_top)
+
+        //  <div class="down">
+        div_container = document.createElement("div");
+        div_container.setAttribute("class", "container");
+        div_top.append(div_container);
+
+        //<img/>
+        img_product = document.createElement("img");
+        img_product.setAttribute("alt",details.description[i].product_image.alt);
+        img_product.setAttribute("class", "main_image");
+        img_product.setAttribute("src",details.description[i].product_image.source);
+        div_container.append(img_product);
+
+        //<img/>
+        img_delete = document.createElement("img");
+        img_delete.setAttribute("alt",details.delete_image.alt );
+        img_delete.setAttribute("class", "upload-img");
+        img_delete.setAttribute("src",details.delete_image.source);
+        div_container.append(img_delete);
+
+
+        //<h2></h2>
+        h2_title = document.createElement("h1");
+        h2_title.innerHTML = details.description[i].title;
+        div_container.append(h2_title);
+
+        //<p class="price"></p>
+        p_paragraph = document.createElement("p");
+        p_paragraph.innerHTML = details.description[i].price.type+details.description[i].price.value;
+        div_container.append(p_paragraph);
+
+        document.querySelector("div.contain").append(div_top);
+        
+    }
+    </script>
+</body>
+
+</html>

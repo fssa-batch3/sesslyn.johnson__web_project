@@ -108,24 +108,6 @@ h1{
 p span{
 	color:white;
 }
-span.name{
-    padding-left:3.125rem;
-}
-span.mail{
-	padding-left:3.3rem;
-}
-span.address{
-    padding-left:1.875rem;
-}
-span.number{
-    padding-left:2.125rem;
-}
-span.place{
-    padding-left:2.1rem;
-}
-span.about{
-    padding-left:4.1rem;
-}
 .inner{
 	margin:1.875rem 1.25rem 0.313rem 0rem;
 	padding:0.125rem;
@@ -152,5 +134,18 @@ input.place{
 }
 input.about{
 	margin-left:4.2rem;
+}
+.input{
+    border-style: hidden hidden hidden hidden;
+    background-color: transparent;
+    color:white;
+}
+.btn-quart{
+    margin-left:4rem;
+}
+.btn-tert{
+    margin-bottom:2rem;
+     margin-left:5rem;
+	 padding:0.313rem 1.5rem;
 }
 

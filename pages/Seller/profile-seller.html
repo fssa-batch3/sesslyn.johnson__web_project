@@ -41,19 +41,66 @@
     
     </div>
     <div id="container-profile">
-     <b>
-         <p>Name:    <span class="name">Sesslyn J</span></p>
-         <p> Email:  <span class="mail">sesslyn2004@gmail.com </span></p>
-         <p>Address: <span class="address">12th Water tank street</span></p>
-         <P>Contact: <span  class="number"> 9952393525</span></P>
-         <p>Country: <span  class="place">India</span></p>
-         <p>Bio: <span class="about"> Trust God</span></p>
+      <form role="form">
+      
+      <b>
+        <p class="inputs">Name: 
+          <input class="input name" type="text" required="true" placeholder="Name" id="user_name" disabled /></p>
+        <p class="inputs"> Email: 
+          <input class="input mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email" disabled /> </p>
+        <p class="inputs">Address: 
+          <input class="input address" type="text" required="true" placeholder="Address" id="user_address"
+            disabled /></p>
+        <p class="inputs">Contact: 
+          <input class="input number" type="text" required="true" placeholder="+916789654327"
+            id="user_contact" disabled /></p>
+        <p class="inputs">Country: 
+          <input class="input place" type="text" required="true" placeholder="India" id="user_country"
+            disabled /></p>
+        <p class="inputs">Bio: <input class="input about" type="text" required="true" placeholder="About" id="user_about" disabled />
+        </p>
       </b>
+      </form>
       
     </div>
+
+
     <button class="btn btn-primary"><a href="profile-edit.html">Edit</a></button>
-    <button class="btn btn-secondary"><a href="Homepage.html">Back</a></button>
+    <button class="btn btn-secondary" type="sumbit" onclick="delData() ">Delete</button>
 </div>
+<script>
+
+  let user_id = JSON.parse(localStorage.getItem('user_id'));
+  let user_list = JSON.parse(localStorage.getItem('user_list'));
+  function login_data(e) {
+    return e.user_email == user_id;
+  }
+
+  user_data = user_list.find(login_data);
+
+  document.getElementById("user_name").value = user_data["user_name"];
+  document.getElementById("user_email").value = user_data["user_email"];
+  document.getElementById("user_address").value = user_data["user_address"];
+  document.getElementById("user_contact").value = user_data["user_contact"];
+  document.getElementById("user_country").value =user_data["user_country"];
+  document.getElementById("user_about").value = user_data["user_about"];
+  
+  function delData(e) {
+    if (confirm("Are you sure?")) {
+      let user_id = JSON.parse(localStorage.getItem("user_id"));
+      let user_list = JSON.parse(localStorage.getItem("user_list"));
+      function login_data(e) {
+        return e.user_email == user_id;
+      }
+      user_data = user_list.find(login_data);
+      const indexOfUser = user_list.indexOf(user_data);
+      user_list.splice(indexOfUser, 1);
+      localStorage.setItem('user_list', JSON.stringify(user_list));
+      window.location.href = "./Homepage.html";
+    };
+  }
+  
+</script>
 
 </body>
 </html>
