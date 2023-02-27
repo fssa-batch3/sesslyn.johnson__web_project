@@ -25,10 +25,12 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
 
 2. Product CRUD 
     
-     Create products
+     Create product
       
-     Read products list
+     List product
     
-     Update products detail
+     Detail of the product
+     
+     Update product
     
-     Delete products
+     Delete product
