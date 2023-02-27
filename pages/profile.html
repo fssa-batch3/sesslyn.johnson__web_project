@@ -91,7 +91,7 @@
         function login_data(e) {
           return e.user_email == user_id;
         }
-        user_data = user_list.find(login_data);
+        let user_data = user_list.find(login_data);
         const indexOfUser = user_list.indexOf(user_data);
         user_list.splice(indexOfUser, 1);
         localStorage.setItem('user_list', JSON.stringify(user_list));

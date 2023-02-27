@@ -66,14 +66,14 @@
         <button class="btn btn-tert" type="submit"> Submit </button>
       </form>
  </div>
- <script>
+ <!-- <script>
 
   let user_id = JSON.parse(localStorage.getItem('user_id'));
   let user_list = JSON.parse(localStorage.getItem('user_list'));
   function login_data(e) {
     return e.user_email == user_id;
   }
-  user_data = user_list.find(login_data);
+ let user_data = user_list.find(login_data);
 
   document.getElementById("user_name").value = user_data["user_name"];
   document.getElementById("user_email").value = user_data["user_email"];
@@ -102,7 +102,7 @@
 
    window.location.href = "profile-seller.html";
   }
-</script>
+</script> -->
    
 </body>
 </html>

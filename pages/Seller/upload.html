@@ -164,7 +164,7 @@
     function login_data(e) {
       return e.product_uuid == product_id;
     }
-    product_data = product_crud.find(login_data);
+   let product_data = product_crud.find(login_data);
 
     document.getElementById("image_url").value = product_data["image_url"];
     document.getElementById("product_name").value = product_data["product_name"];
