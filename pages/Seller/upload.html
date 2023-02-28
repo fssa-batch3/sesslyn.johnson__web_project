@@ -76,7 +76,7 @@
           </div>
 
         </div>
-        <a href="Product-uploaded .html"><button type="button" class="save"> <strong>Save</strong></button></a>
+        <button type="submit" class="save"> <strong>Save</strong></button>
       </div>
     </div>
   </div>
@@ -159,13 +159,15 @@
     </div>
   </div>
   <script>
-    let product_id = JSON.parse(localStorage.getItem('product_id'));
-    let product_crud = JSON.parse(localStorage.getItem('product_crud'));
-    function login_data(e) {
-      return e.product_uuid == product_id;
-    }
-   let product_data = product_crud.find(login_data);
 
+    let uid = JSON.parse(localStorage.getItem("product_uuid"));
+    let product = JSON.parse(localStorage.getItem("product_crud"));
+    console.log(uid)
+    console.log(product)
+    function find_data(e) {
+      return e.product_uuid == uid;
+    }
+    product_data = product.find(find_data);
     document.getElementById("image_url").value = product_data["image_url"];
     document.getElementById("product_name").value = product_data["product_name"];
     document.getElementById("product_real").value = product_data["product_real"];
@@ -173,6 +175,36 @@
     document.getElementById("product_discount").value = product_data["product_discount"];
     document.getElementById("product_description").value = product_data["product_description"];
     document.getElementById("product_warranty").value = product_data["product_warranty"];
+
+    let update = document.querySelector("button.save");
+        update.addEventListener("click", upadate_product);
+        function upadate_product() {
+            let uid = JSON.parse(localStorage.getItem("product_uuid"));
+            let product = JSON.parse(localStorage.getItem("product_crud"));
+            function find_data(e) {
+                return e.product_uuid == uid;
+            }
+           
+            product_data = product.find(find_data);
+
+            let edit_image = document.getElementById("image_url").value
+            let edit_name = document.getElementById("product_name").value
+            let edit_sell = document.getElementById("product_sell").value
+            let edit_real = document.getElementById("product_real").value
+            let edit_discount = document.getElementById("product_discount").value
+            let edit_description = document.getElementById("product_description").value
+            let edit_warranty = document.getElementById("product_warranty").value
+            product_data["image_url"] = edit_image;
+            product_data["product_name"] = edit_name;
+            product_data["product_real"] = edit_real;
+            product_data["product_sell"] = edit_sell;
+            product_data["product_discount"] = edit_discount;
+            product_data["product_description"] = edit_description;
+            product_data["product_warranty"] = edit_warranty;
+            localStorage.setItem('product_crud', JSON.stringify(product));
+            alert("Product updated successfully");
+           window.location.href="./Product-uploaded .html"
+        }
 
   </script>
 </body>

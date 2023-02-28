@@ -31,9 +31,10 @@
             <a href="new-product.html"><i class="fa fa-plus"></i></a>
         </div>
     </header>
+   
 
     <div class="contain">
-        <div class="top_container">
+        <!-- <div class="top_container">
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
@@ -58,8 +59,6 @@
                 <h2>White Crockery Sets</h2>
                 <p>₹ 12,000</p>
             </div>
-        </div>
-        <div class="top_container">
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
@@ -84,12 +83,13 @@
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
             </div>
-        </div>
+        </div> -->
     </div>
     <script>
 
         let div_top
         let div_container
+        let a_tag
         let img_product
         let img_delete
         let h2_title
@@ -103,9 +103,14 @@
                         alt: "main_image"
                     },
                     title: "Munich Scarlet Sofa",
+                    tag: "./Product-uploaded .html",
                     price: {
                         type: "₹",
                         value: 25000
+                    },
+                     delete_image: {
+                        source: "../../assets/images/Main/delete_icon.png",
+                        alt: "delete_image"
                     }
                 },
                 {
@@ -114,9 +119,14 @@
                         alt: "main_image"
                     },
                     title: "Royal Blue Wallpaper",
+                    tag: "./Product-uploaded .html",
                     price: {
                         type: "₹",
                         value: 5000
+                    },
+                    delete_image: {
+                        source: "../../assets/images/Main/delete_icon.png",
+                        alt: "delete_image"
                     }
                 },
                 {
@@ -125,9 +135,14 @@
                         alt: "main_image"
                     },
                     title: "Crystal White Chandelier",
+                    tag: "./Product-uploaded .html",
                     price: {
                         type: "₹",
                         value: 8000
+                    },
+                    delete_image: {
+                        source: "../../assets/images/Main/delete_icon.png",
+                        alt: "delete_image"
                     }
                 },
                 {
@@ -136,60 +151,71 @@
                         alt: "main_image"
                     },
                     title: "White Crockery Sets",
+                    tag: "./Product-uploaded .html",
                     price: {
                         type: "₹",
                         value: 12000
+                    },
+                    delete_image: {
+                        source: "../../assets/images/Main/delete_icon.png",
+                        alt: "delete_image"
                     }
                 }
 
             ],
-            delete_image: {
-                source: "../../assets/images/Main/delete_icon.png",
-                alt: "delete_image"
-            }
+
         }
 
+
+        let product_upload = JSON.parse(localStorage.getItem("product_crud"));
+       
+
+            //  <div class="down">
+            div_top = document.createElement("div");
+            div_top.setAttribute("class", "top_container");
+            console.log(div_top)
+
+            for (let j = 0; j < product_upload.length; j++) {
+
+                //  <div class="down">
+                div_container = document.createElement("div");
+                div_container.setAttribute("class", "container");
+                div_top.append(div_container);
+
+                //<a></a>
+                a_tag = document.createElement("a");
+                a_tag.setAttribute("href", "./Product-uploaded .html");
+                div_container.append(a_tag);
+
+                //<img/>
+                img_product = document.createElement("img");
+                img_product.setAttribute("alt",product_upload[j]["product_name"]+" image");
+                img_product.setAttribute("class", "main_image");
+                img_product.setAttribute("src", product_upload[j]["image_url"]);
+                a_tag.append(img_product);
+
+                //<img/>
+                img_delete = document.createElement("img");
+                img_delete.setAttribute("alt", "delete_icon");
+                img_delete.setAttribute("class", "delete_icon");
+                img_delete.setAttribute("src", "../../assets/images/Main/delete_icon.png");
+                div_container.append(img_delete);
+
+
+                //<h2></h2>
+                h2_title = document.createElement("h2");
+                h2_title.innerHTML = product_upload[j]["product_name"];
+                div_container.append(h2_title);
+
+                //<p class="price"></p>
+                p_paragraph = document.createElement("p");
+                p_paragraph.innerHTML = product_upload[j]["product_sell"];
+                div_container.append(p_paragraph);
+
+            }
+
+            document.querySelector("div.contain").append(div_top);
         
-        for(let i=0; i<=details.length; i++){
-      
-        //  <div class="down">
-        div_top = document.createElement("div");
-        div_top.setAttribute("class", "top_container");
-        console.log(div_top)
-
-        //  <div class="down">
-        div_container = document.createElement("div");
-        div_container.setAttribute("class", "container");
-        div_top.append(div_container);
-
-        //<img/>
-        img_product = document.createElement("img");
-        img_product.setAttribute("alt",details.description[i].product_image.alt);
-        img_product.setAttribute("class", "main_image");
-        img_product.setAttribute("src",details.description[i].product_image.source);
-        div_container.append(img_product);
-
-        //<img/>
-        img_delete = document.createElement("img");
-        img_delete.setAttribute("alt",details.delete_image.alt );
-        img_delete.setAttribute("class", "upload-img");
-        img_delete.setAttribute("src",details.delete_image.source);
-        div_container.append(img_delete);
-
-
-        //<h2></h2>
-        h2_title = document.createElement("h1");
-        h2_title.innerHTML = details.description[i].title;
-        div_container.append(h2_title);
-
-        //<p class="price"></p>
-        p_paragraph = document.createElement("p");
-        p_paragraph.innerHTML = details.description[i].price.type+details.description[i].price.value;
-        div_container.append(p_paragraph);
-
-        document.querySelector("div.contain").append(div_top);
-        
-    }
     </script>
 </body>
 
