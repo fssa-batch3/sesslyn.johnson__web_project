@@ -34,3 +34,13 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
      Update product 
     
      Delete product
+     
+3.Cart
+
+     Add to cart
+   
+    Read cart
+    
+    Update cart
+    
+    Remove cart
