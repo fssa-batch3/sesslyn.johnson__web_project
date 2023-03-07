@@ -36,3 +36,19 @@ h2 {
     text-align: center;
     margin-left: 1rem;
 }
+.button_add{
+   margin: 0.5rem 0rem 0.5rem 2rem;
+   padding:-0.5rem;
+   background-color:whitesmoke;
+   border-color: transparent;
+}
+.button_remove{
+    margin: 0.5rem 0rem 0.5rem 2rem;
+    padding:-0.5rem;
+    background-color:whitesmoke;
+    border-color: transparent;
+ }
+ button:hover{
+    transform: scale(1.1); 
+	transition: 1s;
+ }

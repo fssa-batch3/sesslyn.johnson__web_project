@@ -31,7 +31,7 @@
             <a href="new-product.html"><i class="fa fa-plus"></i></a>
         </div>
     </header>
-   
+
 
     <div class="contain">
         <!-- <div class="top_container">
@@ -40,48 +40,64 @@
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Royal Blue Wallpaper</h2>
                 <p>₹ 5,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Chamber/Chandelier/Chandelier 12.jpg" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Crystal White Chandelier</h2>
                 <p>₹ 8,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Chamber/Crockery/crockery 6.jpg" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>White Crockery Sets</h2>
                 <p>₹ 12,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
             <div class="container">
                 <img src="../../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" class="main_image" alt="Sofa image">
                 <img src="../../assets/images/Main/delete_icon.png" class="delete_icon" alt="Delete icon" />
                 <h2>Munich Scarlet Sofa</h2>
                 <p>₹ 25,000</p>
+                <button class="button_add">Add</button>
+                <button class="button_remove">Remove</button>
             </div>
         </div> -->
     </div>
@@ -94,6 +110,8 @@
         let img_delete
         let h2_title
         let p_paragraph
+        let button_primary
+        let button_secondary
 
         let details = {
             description: [
@@ -108,7 +126,7 @@
                         type: "₹",
                         value: 25000
                     },
-                     delete_image: {
+                    delete_image: {
                         source: "../../assets/images/Main/delete_icon.png",
                         alt: "delete_image"
                     }
@@ -168,55 +186,103 @@
 
 
         let product_upload = JSON.parse(localStorage.getItem("product_crud"));
-       
+
+
+        //  <div class="down">
+        div_top = document.createElement("div");
+        div_top.setAttribute("class", "top_container");
+        console.log(div_top)
+
+        
+        let added_products = [];
+        for (let j = 0; j < product_upload.length; j++) {
 
             //  <div class="down">
-            div_top = document.createElement("div");
-            div_top.setAttribute("class", "top_container");
-            console.log(div_top)
-
-            for (let j = 0; j < product_upload.length; j++) {
-
-                //  <div class="down">
-                div_container = document.createElement("div");
-                div_container.setAttribute("class", "container");
-                div_top.append(div_container);
-
-                //<a></a>
-                a_tag = document.createElement("a");
-                a_tag.setAttribute("href", "./Product-uploaded .html");
-                div_container.append(a_tag);
-
-                //<img/>
-                img_product = document.createElement("img");
-                img_product.setAttribute("alt",product_upload[j]["product_name"]+" image");
-                img_product.setAttribute("class", "main_image");
-                img_product.setAttribute("src", product_upload[j]["image_url"]);
-                a_tag.append(img_product);
-
-                //<img/>
-                img_delete = document.createElement("img");
-                img_delete.setAttribute("alt", "delete_icon");
-                img_delete.setAttribute("class", "delete_icon");
-                img_delete.setAttribute("src", "../../assets/images/Main/delete_icon.png");
-                div_container.append(img_delete);
+            div_container = document.createElement("div");
+            div_container.setAttribute("class", "container");
+            div_container.setAttribute("data-id", product_upload[j]["product_uuid"])
+            div_top.append(div_container);
 
 
-                //<h2></h2>
-                h2_title = document.createElement("h2");
-                h2_title.innerHTML = product_upload[j]["product_name"];
-                div_container.append(h2_title);
+            //<img/>
+            img_product = document.createElement("img");
+            img_product.setAttribute("alt", product_upload[j]["product_name"] + " image");
+            img_product.setAttribute("class", "main_image");
+            img_product.setAttribute("src", product_upload[j]["image_url"]);
+            img_product.setAttribute("data-id", product_upload[j]["product_uuid"]);
+            let img_id = img_product.getAttribute('data-id');
+            img_product.addEventListener("click", (event) => {
+                const product_description = img_id;
+                window.location.href = `./Product-uploaded .html?product_id=${product_description}`;
+            })
+            div_container.append(img_product);
 
-                //<p class="price"></p>
-                p_paragraph = document.createElement("p");
-                p_paragraph.innerHTML = product_upload[j]["product_sell"];
-                div_container.append(p_paragraph);
+            //<img/>
+            img_delete = document.createElement("img");
+            img_delete.setAttribute("alt", "delete_icon");
+            img_delete.setAttribute("class", "delete_icon");
+            img_delete.setAttribute("src", "../../assets/images/Main/delete_icon.png");
+            div_container.append(img_delete);
 
-            }
 
-            document.querySelector("div.contain").append(div_top);
+            //<h2></h2>
+            h2_title = document.createElement("h2");
+            h2_title.innerHTML = product_upload[j]["product_name"];
+            div_container.append(h2_title);
+
+            //<p class="price"></p>
+            p_paragraph = document.createElement("p");
+            p_paragraph.innerHTML = product_upload[j]["product_sell"];
+            div_container.append(p_paragraph);
+
+            //<button class="btn"></button>
+            button_primary = document.createElement("button");
+            button_primary.setAttribute("class", "button_add");
+            button_primary.setAttribute("data-id", product_upload[j]["product_uuid"]);
+            button_primary.innerHTML = "Add";
+            div_container.append(button_primary);
+
+            //<button class="btn"></button>
+            button_secondary = document.createElement("button");
+            button_secondary.setAttribute("class", "button_remove");
+            button_secondary.setAttribute("data-id", product_upload[j]["product_uuid"]);
+            button_secondary.innerHTML = "Remove";
+            div_container.append(button_secondary);
+
+        }
+
+        document.querySelector("div.contain").append(div_top);
+
         
+        let button_id = document.querySelectorAll('.button_add');
+         button_id = button_primary.getAttribute('data-id')
+            button_primary.addEventListener("click", (event) => {
+                
+            console.log(button_id);
+              if(!added_products.includes(button_id)){
+                added_products.push(button_id);
+              } else {
+                alert("Already Added");
+              }
+            localStorage.setItem('added_products', JSON.stringify(added_products));
+            })
+
+           
+            let delete_id = document.querySelectorAll('.button_remove');   
+             delete_id = button_secondary.getAttribute('data-id');
+            button_secondary.addEventListener("click", (event) => {
+                if(added_products.includes(delete_id)){
+                    const indexOfUser = added_products.indexOf(delete_id);
+                    added_products.splice(indexOfUser, 1);
+                }
+                else{
+                    alert("Product have not been added");
+                }
+                localStorage.setItem('added_products', JSON.stringify(added_products));
+            })
+
     </script>
+
 </body>
 
 </html>

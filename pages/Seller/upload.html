@@ -32,10 +32,10 @@
     </div>
   </header>
 
-  <div class="container">
+  <div class="container" id="contain">
 
     <div class="upload-img">
-      <img src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg" width="400rem" height="500rem"
+      <img src="../../assets/images/Seller/plus.png" width="400rem" height="500rem"
         alt="wallpaper image">
       <div class="round-img">
         <input type="file">
@@ -53,6 +53,18 @@
           <div class="details_list">
             <p class="list">ProductName:</p><input type="text" placeholder="Blue Wallpaper" id="product_name"
               class="list_2">
+          </div>
+          <div class="details_list">  
+            <label class="list">Category</label>
+            <select id="product_category" type="text" placeholder="Sofa" required class="list_2">
+                <option>Sofa</option>
+                <option>Crockery Units</option>
+                <option>Candelier</option>
+                <option>TV Units</option>
+                <option>Wallpaper</option>
+                <option>Wadrobe</option>
+                <option>Space Saving Furniture</option>
+            </select>
           </div>
           <div class="details_list">
             <p class="list">Real Price:</p><input type="text" placeholder=" Rs.9,999.00" id="product_real"
@@ -77,6 +89,7 @@
 
         </div>
         <button type="submit" class="save"> <strong>Save</strong></button>
+        <button type="submit" class="btn-delete"> <strong>Delete</strong></button>
       </div>
     </div>
   </div>
@@ -170,6 +183,7 @@
     product_data = product.find(find_data);
     document.getElementById("image_url").value = product_data["image_url"];
     document.getElementById("product_name").value = product_data["product_name"];
+    document.getElementById("product_category").value = product_data["product_category"];
     document.getElementById("product_real").value = product_data["product_real"];
     document.getElementById("product_sell").value = product_data["product_sell"];
     document.getElementById("product_discount").value = product_data["product_discount"];
@@ -189,6 +203,7 @@
 
             let edit_image = document.getElementById("image_url").value
             let edit_name = document.getElementById("product_name").value
+            let edit_category = document.getElementById("product_category").value
             let edit_sell = document.getElementById("product_sell").value
             let edit_real = document.getElementById("product_real").value
             let edit_discount = document.getElementById("product_discount").value
@@ -196,6 +211,7 @@
             let edit_warranty = document.getElementById("product_warranty").value
             product_data["image_url"] = edit_image;
             product_data["product_name"] = edit_name;
+            product_data["product_category"] = edit_category;
             product_data["product_real"] = edit_real;
             product_data["product_sell"] = edit_sell;
             product_data["product_discount"] = edit_discount;
@@ -203,10 +219,29 @@
             product_data["product_warranty"] = edit_warranty;
             localStorage.setItem('product_crud', JSON.stringify(product));
             alert("Product updated successfully");
-           window.location.href="./Product-uploaded .html"
+            window.location.href="./product_details.html";
+           
         }
 
+        let del_product = document.querySelector(".btn-delete");
+        del_product.addEventListener("click", delData);
+        function delData() {
+            if (confirm("Are you sure?")) {
+                let uid = JSON.parse(localStorage.getItem("product_uuid"));
+                let product = JSON.parse(localStorage.getItem("product_crud"));
+                function find_data(e) {
+                    return e.product_uuid == uid;
+                }
+                product_data = product.find(find_data);
+                const indexOfUser = product.indexOf(product_data);
+                product.splice(indexOfUser, 1);
+                localStorage.setItem('product_crud', JSON.stringify(product));
+                window.location.href="./product_details.html";
+            };
+        }
+        
   </script>
+ 
 </body>
 
 </html>

@@ -170,74 +170,84 @@
     let button_secondary
     let a_tag
 
+          let url_upload = JSON.parse(localStorage.getItem("product_crud"));
+            
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const product_id = urlParams.get('product_id');
+
+            let unique_id = url_upload.find(e => e.product_uuid == product_id);
+
+        console.log(unique_id)
+        localStorage.setItem('productId', JSON.stringify(unique_id.product_uuid));
 
 
-    let details = {
-      product_image: {
-        source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-        alt: "Bluish Green Fabric Sofa"
-      },
-      name: "Designs of Sofa",
-      link: "./liked.html",
-      heart_image: {
-        source: "../assets/images/Main/heart-icon.png",
-        alt: "heart-liked products"
-      },
-      text: "Price",
-      price: {
-        actual: {
-          type: "Rs",
-          value: "59000"
-        },
-        discount: {
-          type: "Save Rs",
-          value: "4000"
-        },
-        current: {
-          type: "Rs",
-          value: "55,000.00"
-        },
-      },
-      product_description: "Description",
-      description: [
-        {
-          text: "* Teak Wood Sofa with cushions."
-        },
-        {
-          text: "* 10 days replacement"
-        },
-        {
-          text: "* Sectional Sofa Length = 105.5"
-        },
-        {
-          text: "* Our experts will install it for you – No cost."
-        },
-        {
-          text: "* Teak Wood Sofa with cushions."
-        },
-        {
-          text: "* Perfect for Living room."
-        }],
+    // let details = {
+    //   product_image: {
+    //     source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+    //     alt: "Bluish Green Fabric Sofa"
+    //   },
+    //   name: "Designs of Sofa",
+    //   link: "./liked.html",
+    //   heart_image: {
+    //     source: "../assets/images/Main/heart-icon.png",
+    //     alt: "heart-liked products"
+    //   },
+    //   text: "Price",
+    //   price: {
+    //     actual: {
+    //       type: "Rs",
+    //       value: "59000"
+    //     },
+    //     discount: {
+    //       type: "Save Rs",
+    //       value: "4000"
+    //     },
+    //     current: {
+    //       type: "Rs",
+    //       value: "55,000.00"
+    //     },
+    //   },
+    //   product_description: "Description",
+    //   description: [
+    //     {
+    //       text: "* Teak Wood Sofa with cushions."
+    //     },
+    //     {
+    //       text: "* 10 days replacement"
+    //     },
+    //     {
+    //       text: "* Sectional Sofa Length = 105.5"
+    //     },
+    //     {
+    //       text: "* Our experts will install it for you – No cost."
+    //     },
+    //     {
+    //       text: "* Teak Wood Sofa with cushions."
+    //     },
+    //     {
+    //       text: "* Perfect for Living room."
+    //     }],
 
-      heading: "Warranty",
-      warranty: {
-        years: 3,
-        type: "Years of On-Site"
-      },
-      rate: "Ratings :",
-      primary: "Edit",
-      secondary:"Delete",
-      tag: "../upload.html",
-      picture: {
-        source: "../cart-outline.svg",
-        alt: "cart icon"
-      },
+    //   heading: "Warranty",
+    //   warranty: {
+    //     years: 3,
+    //     type: "Years of On-Site"
+    //   },
+    //   rate: "Ratings :",
+    //   primary: "Edit",
+    //   secondary:"Delete",
+    //   tag: "../upload.html",
+    //   picture: {
+    //     source: "../cart-outline.svg",
+    //     alt: "cart icon"
+    //   },
 
-    }
+    // }
 
-    let product_upload = JSON.parse(localStorage.getItem("product_crud"));
-    console.log(product_upload)
-
+    // let product_upload = JSON.parse(localStorage.getItem("product_crud"));
+    // console.log(product_upload)
+ 
       section_left = document.createElement("section");
       section_left.setAttribute("class", "left");
 
@@ -245,9 +255,9 @@
 
       //<img/>
       img_product = document.createElement("img");
-      img_product.setAttribute("alt", details.product_image.alt);
+      img_product.setAttribute("alt", unique_id["product_name"]+" image");
       img_product.setAttribute("id", "upload-img");
-      img_product.setAttribute("src", product_upload[0]["image_url"]);
+      img_product.setAttribute("src", unique_id["image_url"]);
       section_left.append(img_product);
 
 
@@ -267,7 +277,7 @@
       //  <h1 class="heading"> </h1>
       h1_title = document.createElement("h1");
       h1_title.setAttribute("class", "heading");
-      h1_title.innerHTML = product_upload[0]["product_name"];
+      h1_title.innerHTML = unique_id["product_name"];
       section_right.append(h1_title);
 
 
@@ -276,10 +286,9 @@
       div_amount.setAttribute("class", "amount");
       section_right.append(div_amount);
 
-
       //  <h3> </h3>
       h3_head = document.createElement("h3");
-      h3_head.innerHTML = details.text;
+      h3_head.innerHTML = "Price";
       div_amount.append(h3_head);
 
       //<p class="price"></p>
@@ -290,13 +299,13 @@
       //<span class="real_price"></span>
       span_price = document.createElement("span");
       span_price.setAttribute("class", "real-price");
-      span_price.innerHTML = product_upload[0]["product_sell"];
+      span_price.innerHTML = unique_id["product_sell"];
       p_paragraph.append(span_price);
 
 
       //<del></del>
       del_price = document.createElement("del");
-      del_price.innerHTML = product_upload[0]["product_real"];
+      del_price.innerHTML = unique_id["product_real"];
       p_paragraph.append(del_price);
 
 
@@ -304,7 +313,7 @@
       //  <small> </small>
       small_pattern = document.createElement("small");
       small_pattern.setAttribute("class", "real-prize");
-      small_pattern.innerHTML = product_upload[0]["product_discount"];
+      small_pattern.innerHTML = unique_id["product_discount"];
       p_paragraph.append(small_pattern);
 
 
@@ -316,27 +325,26 @@
 
       //  <h3> </h3>
       h3_description = document.createElement("h3");
-      h3_description.innerHTML = details.product_description;
+      h3_description.innerHTML = "Description";
       div_description.append(h3_description);
 
-      const descript = details.description;
-      const no_of_list = descript.length;
+      // const descript = details.description;
+      // const no_of_list = descript.length;
 
       // for (let j = 0; j < no_of_list; j++) {
       //<p></p>
       p_text = document.createElement("p");
-      p_text.innerHTML = product_upload[0]["product_description"];
+      p_text.innerHTML = unique_id["product_description"];
       div_description.append(p_text);
-
 
       //  <h3> </h3>
       h3_warranty = document.createElement("h3");
-      h3_warranty.innerHTML = details.heading;
+      h3_warranty.innerHTML = "Warranty";
       div_description.append(h3_warranty);
 
       //<p></p>
       p_para = document.createElement("p");
-      p_para.innerHTML = product_upload[0]["product_warranty"];
+      p_para.innerHTML = unique_id["product_warranty"];
       div_description.append(p_para);
 
 
@@ -346,7 +354,7 @@
 
       //<p></p>
       p_rate = document.createElement("p");
-      p_rate.innerHTML = details.rate;
+      p_rate.innerHTML = "Ratings :";
       div_rate.append(p_rate);
 
       for (let s = 0; s < 5; s++) {
@@ -359,19 +367,14 @@
       button_primary = document.createElement("button");
       button_primary.setAttribute("class", "btn-secondary");
       button_primary.setAttribute("type", "submit");
-      button_primary.setAttribute("data-id", product_upload[0]["product_uuid"])
-      button_primary.innerHTML = details.primary;
+      button_primary.setAttribute("data-id", unique_id["product_uuid"])
+      button_primary.innerHTML = "Edit";
       section_right.append(button_primary);
 
-      //<button class="btn"></button>
-      button_secondary = document.createElement("button");
-      button_secondary.setAttribute("class", "btn-delete");
-      button_secondary.setAttribute("type", "submit");
-      button_secondary.innerHTML = details.secondary;
-      section_right.append(button_secondary);
+     
 
       document.querySelector("section.top").append(section_right);
-
+    
    
     const edit = document.querySelectorAll('button.btn-secondary');
         edit.forEach(function (findId) {
@@ -383,22 +386,7 @@
             });
         });
 
-        let del_product = document.querySelector(".btn-delete");
-        del_product.addEventListener("click", delData);
-        function delData() {
-            if (confirm("Are you sure?")) {
-                let uid = JSON.parse(localStorage.getItem("product_uuid"));
-                let product = JSON.parse(localStorage.getItem("product_crud"));
-                function find_data(e) {
-                    return e.product_uuid == uid;
-                }
-                product_data = product.find(find_data);
-                const indexOfUser = product.indexOf(product_data);
-                product.splice(indexOfUser, 1);
-                localStorage.setItem('product_crud', JSON.stringify(product));
-                location.reload();
-            };
-        }
+           
   </script>
 
 </body>

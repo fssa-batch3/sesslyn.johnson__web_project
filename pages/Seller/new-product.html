@@ -51,6 +51,18 @@
           <div class="details_list">
             <p class="list">ProductName:</p><input type="text" required placeholder="Blue Wallpaper" id="product_name" class="list_2">
           </div>
+          <div class="details_list">  
+            <label class="list">Category</label>
+            <select id="product_category" type="text" placeholder="Sofa" required class="list_2">
+                <option>Sofa</option>
+                <option>Crockery Units</option>
+                <option>Candelier</option>
+                <option>TV Units</option>
+                <option>Wallpaper</option>
+                <option>Wadrobe</option>
+                <option>Space Saving Furniture</option>
+            </select>
+          </div>
           <div class="details_list">
             <p class="list">Real Price:</p><input type="text" required  placeholder="Rs.9,999.00" id="product_real" class="list_2">
           </div>
@@ -58,7 +70,7 @@
             <p class="list"> Price to sell:</p><input type="text" required placeholder="Rs.4,999.00" id="product_sell" class="list_2">
           </div>
           <div class="details_list">
-            <p class="list">Discount:</p><input type="text" required placeholder="RS.5,000" id="product_discount" class="list_2">
+            <p class="list">Discount:</p><input type="text" required placeholder="Rs.5,000" id="product_discount" class="list_2">
           </div>
           <div class="details_list">
             <p class="list">Description:</p><input type="text" required id="product_description"
@@ -158,6 +170,7 @@
       e.preventDefault();
     let image_url = document.getElementById("image_url").value;
     let product_name = document.getElementById("product_name").value;
+    let product_category = document.getElementById("product_category").value;
     let product_real = document.getElementById("product_real").value;
     let product_sell  = document.getElementById("product_sell").value;
     let product_discount  = document.getElementById("product_discount").value;
@@ -168,7 +181,7 @@
 
     let product_crud = JSON.parse(localStorage.getItem('product_crud')) || [];
 
-    product_crud.push({image_url,product_name, product_real,product_sell,product_discount,product_description,product_warranty, product_uuid });
+    product_crud.push({image_url,product_name,product_category,product_real,product_sell,product_discount,product_description,product_warranty, product_uuid });
     localStorage.setItem('product_crud', JSON.stringify(product_crud));
 
         alert('Product Created Successfully');
