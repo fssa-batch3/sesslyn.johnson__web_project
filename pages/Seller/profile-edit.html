@@ -66,43 +66,7 @@
         <button class="btn btn-tert" type="submit"> Submit </button>
       </form>
  </div>
- <!-- <script>
 
-  let user_id = JSON.parse(localStorage.getItem('user_id'));
-  let user_list = JSON.parse(localStorage.getItem('user_list'));
-  function login_data(e) {
-    return e.user_email == user_id;
-  }
- let user_data = user_list.find(login_data);
-
-  document.getElementById("user_name").value = user_data["user_name"];
-  document.getElementById("user_email").value = user_data["user_email"];
-  document.getElementById("user_address").value = user_data["user_address"];
-  document.getElementById("user_contact").value = user_data["user_contact"];
-  document.getElementById("user_country").value =user_data["user_country"];
-  document.getElementById("user_about").value = user_data["user_about"];
-
-
-  function update_details(e){
-
-    e.preventDefault();
-    let up_name = document.getElementById("user_name").value
-    let up_address = document.getElementById("user_address").value
-    let up_country = document.getElementById("user_country").value
-    let up_contact = document.getElementById("user_contact").value
-    let up_about = document.getElementById("user_about").value
-
-    user_data["user_address"] = up_address;
-    user_data["user_contact"] = up_contact;
-    user_data["user_country"] = up_country;
-    user_data["user_about"] = up_about;
-
-    localStorage.setItem('user_list', JSON.stringify(user_list));
-   //console.log(user_list);
-
-   window.location.href = "profile-seller.html";
-  }
-</script> -->
    
 </body>
 </html>

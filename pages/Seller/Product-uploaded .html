@@ -34,36 +34,7 @@
 
 
   <section class="top" id="top">
-    <!-- <section class="left">
-      <img class="main-img" id="upload-img" src="../../assets/images/Rooms/Wallpaper/Wallpaper 3.jpg"
-        alt="desktop image" />
-    </section>
-
-    <section class="right" id="upload-right">
-
-      <h1 class="heading"> <span class="color">B</span>lue<span class="color"> W</span>allpaper </h1>
-
-      <div class="amount">
-        <h3>Price</h3>
-        <p class="price"><del>Rs. 9,999.00</del> <span class="real-price"> Rs.4,999.00 </span><small class="real-prize">
-            Save Rs.5000</small></p>
-      </div>
-
-      <div class="product-description">
-        <h3>Description :</h3>
-        <p>* Royal Blue Wallpaper </p>
-        <p>* Free from PVC, Microplastics, Lead, and other harmful chemicals.</p>
-        <p>* All materials were sourced responsibly from within our country.</p>
-        <p>* Our experts will install it for you – No cost</p>
-        <p>* Tearproof, Water Resistant.</p>
-        <p>* Perfect for living room, bedroom, hallway and more</p>
-        <h3>Warranty:</h3>
-        <p> 5 Years of On-Site</p>
-
-      </div>
-          <button class="btn-secondary"><a href="./new-product.html">Edit</a></button> 
-     
-    </section>  -->
+    
   </section>
 
   <div class="footer" id="footer-upload">
@@ -182,72 +153,6 @@
         
         localStorage.setItem('productId', JSON.stringify(unique_id.product_uuid));
 
-
-    // let details = {
-    //   product_image: {
-    //     source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-    //     alt: "Bluish Green Fabric Sofa"
-    //   },
-    //   name: "Designs of Sofa",
-    //   link: "./liked.html",
-    //   heart_image: {
-    //     source: "../assets/images/Main/heart-icon.png",
-    //     alt: "heart-liked products"
-    //   },
-    //   text: "Price",
-    //   price: {
-    //     actual: {
-    //       type: "Rs",
-    //       value: "59000"
-    //     },
-    //     discount: {
-    //       type: "Save Rs",
-    //       value: "4000"
-    //     },
-    //     current: {
-    //       type: "Rs",
-    //       value: "55,000.00"
-    //     },
-    //   },
-    //   product_description: "Description",
-    //   description: [
-    //     {
-    //       text: "* Teak Wood Sofa with cushions."
-    //     },
-    //     {
-    //       text: "* 10 days replacement"
-    //     },
-    //     {
-    //       text: "* Sectional Sofa Length = 105.5"
-    //     },
-    //     {
-    //       text: "* Our experts will install it for you – No cost."
-    //     },
-    //     {
-    //       text: "* Teak Wood Sofa with cushions."
-    //     },
-    //     {
-    //       text: "* Perfect for Living room."
-    //     }],
-
-    //   heading: "Warranty",
-    //   warranty: {
-    //     years: 3,
-    //     type: "Years of On-Site"
-    //   },
-    //   rate: "Ratings :",
-    //   primary: "Edit",
-    //   secondary:"Delete",
-    //   tag: "../upload.html",
-    //   picture: {
-    //     source: "../cart-outline.svg",
-    //     alt: "cart icon"
-    //   },
-
-    // }
-
-    // let product_upload = JSON.parse(localStorage.getItem("product_crud"));
-    // console.log(product_upload)
  
       section_left = document.createElement("section");
       section_left.setAttribute("class", "left");
@@ -329,10 +234,6 @@
       h3_description.innerHTML = "Description";
       div_description.append(h3_description);
 
-      // const descript = details.description;
-      // const no_of_list = descript.length;
-
-      // for (let j = 0; j < no_of_list; j++) {
       //<p></p>
       p_text = document.createElement("p");
       p_text.innerHTML = unique_id["product_description"];
