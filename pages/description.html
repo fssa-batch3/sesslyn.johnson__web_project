@@ -42,406 +42,299 @@
 	</header>
 
 
-	<section class="top">
-		<div id="looped-div"></div>
-		<section class="left">
-    <img class="main-img" src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="desktop image" />
-	<div class="down">
-	<a href="#"><img class="down-img" src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" alt="sofa image" /></a>
-	<a href="#"><img class="down-img" src="../assets/images/Rooms/Sofa/Sofa/Sofa 3.png" alt="sofa image" /></a>
-	<a href="#"><img class="down-img" src="../assets/images/Rooms/Sofa/Sofa/Sofa 2.jpg" alt="sofa image" /></a>
-	<a href="#"><img class="down-img" src="../assets/images/Rooms/Sofa/Sofa/Sofa 4 .png" alt="sofa image" /></a>
-	</div>
-</section>
+	<section class="top" id="top_section">
 
- <section class="right">
-
-	<h1 class="heading"> <span class="color">D</span>esigns of <span class="color">S</span>ofa
-		<div class="heart-icon">
-			<a href="./liked.html"><img src="../assets/images/Main/heart-icon.png" alt="likeed products icon"/></a>
-		</div>
-	  </h1>
+	</section>
 
 
- 
-  <div class="amount">
-	<h3>Price</h3>
-	<p class="price"><span class="real-price"> Rs.55,999.00 </span><del>Rs. 59,999.00</del> <small class="real-price">  Save Rs.4000</small></p>
-  </div>
- 
- <div class="product-description">
-	 <h3>Description :</h3>
-	  <p>* Teak Wood Sofa with cushions</p>
-	  <p>* 10 days replacement</p>  
-	  <p>* Sectional Sofa Length = 105.5"</p>  
-	  <p>* Our experts will install it for you – No cost</p>  
-	  <p>* Tearproof, Water Resistant.</p>  
-	  <p>* Perfect for Living room</p>
-	<h3>Warranty:</h3>   
-	  <p>  3 Years of On-Site</p>   
- 
 	</div>
 
-		<div class="rate">
-			<p>Ratings :
-				<i class="fa fa-star" style="font-size:28px;color:red"></i>
-				<i class="fa fa-star" style="font-size:28px;color:red"></i>
-				<i class="fa fa-star" style="font-size:28px;color:red"></i>
-				<i class="fa fa-star" style="font-size:28px;color:red"></i>
-				<i class="fa fa-star-o" style="font-size:28px"></i>
-			</p>
-		</div>
+	<script>
 
-		<button class="btn-secondary"><a href="./cart-list.html">
-			<img src="../cart-outline.svg" class="cart" alt="cart icon" />Add to Cart</a></button>
-		<button class="btn-secondary"><a href="./cart-list.html">Buy Now</a></button> 
+		
+		let product_crud = JSON.parse(localStorage.getItem("product_crud"));
+		let added_products = JSON.parse(localStorage.getItem("added_products"));
 
-		</section>
-</section>
-
-		 <div class="footer" id="footer-living-room">
-	<div class="footer-div"  id="living-footer">
-	  <img class="footer-img" src=".././assets/images/Main/casas-logo.png" alt="desktop image" />
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const product_id = urlParams.get('product_id');
 	
-	<div class="footer-media">
-	  <a href="https://www.facebook.com/profile.php?id=100087049213851"><img src=".././assets/images/Main/facebook-icon.png" alt="facebook-icon"/></a>
-	  <a href="https://github.com/Sesslyn041215"><img src=".././assets/images/Main/github-new.png" alt="github-icon"/></a>
-	  <a href="https://www.linkedin.com/in/sesslyn-j-989b18250"><img src=".././assets/images/Main/linked-icon.png" alt="linked-icon"/></a>
-	  <a href="https://twitter.com/SesslynJ"><img src=".././assets/images/Main/twitter-icon.png" alt="twitter-icon"/></a>
-	</div>
-  </div>
- 
-	<div class="footer-div">
-	  <h4>General</h4>
-	  <a href="../pages/Login/Register.html"><p>Sign Up</p></a>
-	  <a href="../pages/queries.html"><p>About</p></a>
-	  <a href="https://medium.com/@sesslyn2004"><p>Blog</p></a>
-	  <a href="https://medium.com/@mohid-ahmed/ghow-to-stay-focused-when-working-from-home-b54c7ab39e96"><p>Careers</p></a>
-	  <a href="https://medium.com/hackernoon/11-things-developers-love-hearing-from-non-developer-co-workers-ea94805cf05d"> <p>Developers</p></a>
-	</div>
+			let unique_id = product_crud .find(e => e.product_uuid == product_id);
+	
+			console.log(unique_id)
+			localStorage.setItem('product', JSON.stringify(unique_id.product_uuid));
+		 
+
+let section_left
+let img_product
+let div_interiors
+let img_similar
+let section_right
+let h1_title
+let div_heart
+let a_link
+let img_heart
+let div_amount
+let h3_head
+let p_paragraph
+let span_price
+let del_price
+let small_pattern
+let div_description
+let h3_description
+let p_text
+let h3_warranty
+let p_para
+let div_rate
+let p_rate
+let i_star
+let button_primary
+let a_tag
+let img_tag
+let button_secondary
+let a_tagline
+
+
+let product_upload = {
+	product_image: {
+		source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+		alt: "Bluish Green Fabric Sofa"
+	},
+	image: [
+		{
+			source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
+			alt: "Bluish Green Fabric Sofa"
+		},
+		{
+			source: "../assets/images/Rooms/Sofa/Sofa/Sofa 3.png",
+			alt: "Royal Red Sofa"
+		},
+		{
+			source: "../assets/images/Rooms/Sofa/Sofa/Sofa 2.jpg",
+			alt: "Blue Comfortable Sofa"
+		},
+		{
+			source: "../assets/images/Rooms/Sofa/Sofa/Sofa 7.jpg",
+			alt: "Sandal and Brown Sofa Set"
+		}
+	],
+	name: "Designs of Sofa",
+	link: "./liked.html",
+	heart_image: {
+		source: "../assets/images/Main/heart-icon.png",
+		alt: "heart-liked products"
+	},
+	text: "Price",
+	price: {
+		actual: {
+			type: "Rs",
+			value: 59000
+		},
+		discount: {
+			type: "Save Rs",
+			value: "4000"
+		},
+		current: {
+			type: "Rs",
+			value: "55,000.00"
+		},
+	},
+	product_description: "Description",
+	description: "* Teak Wood Sofa with cushions.* 10 days replacement.* Sectional Sofa Length = 105.5. * Our experts will install it for you – No cost.* Teak Wood Sofa with cushions.* Perfect for Living room.",
+	heading: "Warranty",
+	warranty:  " 3Years of On-Site",
+	rate: "Ratings :",
+	primary:"Add to Cart",
+	secondary:"Buy Now",
+	tag:"./cart-list.html",
+	picture:{
+		source: "../cart-outline.svg",
+		alt: "cart icon"
+	},
+	tagline:"./cart-list.html"
+}
+
+// let product_upload = JSON.parse(localStorage.getItem("product_crud"));
+// console.log(product_upload)
+
+
+
+
+section_left = document.createElement("section");
+section_left.setAttribute("class", "left");
+
+console.log(section_left)
+
+//<img/>
+img_product = document.createElement("img");
+img_product.setAttribute("alt", unique_id.product_name);
+img_product.setAttribute("class", "main-img");
+img_product.setAttribute("src", unique_id.image_url);
+section_left.append(img_product);
+
+
+//  <div class="down">
+div_interiors = document.createElement("div");
+div_interiors.setAttribute("class", "down");
+section_left.append(div_interiors);
+
+
+for (let i = 0; i < 4; i++) {
+
+	//<img/>
+	img_similar = document.createElement("img");
+	img_similar.setAttribute("alt", product_upload.image[i].alt);
+	img_similar.setAttribute("class", "down-img");
+	img_similar.setAttribute("src", product_upload.image[i].source);
+	div_interiors.append(img_similar);
+
+}
+document.querySelector("section.top").append(section_left);
+
+section_right = document.createElement("section");
+section_right.setAttribute("class", "right");
+
+console.log(section_right)
+
+//  <h1 class="heading"> </h1>
+h1_title = document.createElement("h1");
+h1_title.setAttribute("class", "heading");
+h1_title.innerHTML = unique_id.product_name;
+section_right.append(h1_title);
+
+//  <div class="heart-icon">
+div_heart = document.createElement("div");
+div_heart.setAttribute("class", "heart-icon");
+h1_title.append(div_heart);
+
+
+//<a></a>
+a_link = document.createElement("a");
+a_link.setAttribute("href", product_upload.link);
+div_heart.append(a_link);
+
+
+//<img/>
+img_heart = document.createElement("img");
+img_heart.setAttribute("alt", product_upload.heart_image.alt);
+img_heart.setAttribute("src", product_upload.heart_image.source);
+a_link.append(img_heart);
+
+
+//  <div class="amount">
+div_amount = document.createElement("div");
+div_amount.setAttribute("class", "amount");
+section_right.append(div_amount);
+
+
+//  <h3> </h3>
+h3_head = document.createElement("h3");
+h3_head.innerHTML = product_upload.text;
+div_amount.append(h3_head);
+
+//<p class="price"></p>
+p_paragraph = document.createElement("p");
+p_paragraph.setAttribute("class", "price");
+div_amount.append(p_paragraph);
+
+//<span class="real_price"></span>
+span_price = document.createElement("span");
+span_price.setAttribute("class", "real-price");
+span_price.innerHTML = unique_id.product_sell;
+p_paragraph.append(span_price);
+
+
+//<del></del>
+del_price = document.createElement("del");
+del_price.innerHTML = unique_id.product_real;
+p_paragraph.append(del_price);
+
+
+
+//  <small> </small>
+small_pattern = document.createElement("small");
+small_pattern.setAttribute("class", "real-price");
+small_pattern.innerHTML = unique_id.product_discount;
+p_paragraph.append(small_pattern);
+
+
+//  <div class="product-description">
+div_description = document.createElement("div");
+div_description.setAttribute("class", "product-description");
+section_right.append(div_description);
+
+
+//  <h3> </h3>
+h3_description = document.createElement("h3");
+h3_description.innerHTML =product_upload.product_description;
+div_description.append(h3_description);
+
+
+	p_text = document.createElement("p");
+	p_text.innerHTML = unique_id.product_description;
+	div_description.append(p_text);
+
+
+//  <h3> </h3>
+h3_warranty = document.createElement("h3");
+h3_warranty.innerHTML = product_upload.heading;
+div_description.append(h3_warranty);
+
+//<p></p>
+p_para = document.createElement("p");
+p_para.innerHTML = unique_id.product_warranty;
+div_description.append(p_para);
+
+
+div_rate = document.createElement("div");
+div_rate.setAttribute("class", "rate");
+section_right.append(div_rate);
+
+//<p></p>
+p_rate = document.createElement("p");
+p_rate.innerHTML = product_upload.rate;
+div_rate.append(p_rate);
+
+for (let k = 0; k < 5; k++) {
+	//<i></i>
+	i_star = document.createElement("i");
+	i_star.setAttribute("class", "fa fa-star");
+	p_rate.append(i_star);
+}
+
+
+//<button class="btn"></button>
+button_primary = document.createElement("button");
+button_primary.setAttribute("class", "btn-secondary");
+button_primary.innerHTML = product_upload.primary;
+section_right.append(button_primary);
+
+//<a></a>
+a_tag = document.createElement("a");
+a_tag.setAttribute("href", product_upload.tag);
+button_primary.append(a_tag);
   
-	<div class="footer-div">
-	  <h4>Browse Casas</h4>
-		<a href="../index.html"> <p>Main page</p></a>
-		<a href="../pages/Living room/project.html"><p>Chamber</p></a>
-	   <a href="../pages/queries.html"><p>About</p></a>
-		<a href="../pages/Shop.html"> <p>Shop</p></a>
-		<a href="../pages/liked.html"> <p>Wishlist</p></a>
-	   <a href="../pages/order.html"> <p>Orders</p></a>
-	</div>
-	  
-	<div class="footer-div">
-	  <h4>Business Solutions</h4>
-	  <a href="#"><p>Talent</p></a>
-	  <a href="#"><p>Marketing</p></a>
-	  <a href="#"><p>Sales</p></a>
-	  <a href="#"><p>Learning</p></a>
-	  <a href="#"><p>Creativity</p></a>
-	</div>
-	  
-  </div>
+// <img/>
+img_tag= document.createElement("img");
+img_tag.setAttribute("class", "cart");
+img_tag.setAttribute("src", product_upload.picture.source);
+img_tag.setAttribute("alt", product_upload.picture.alt);
+button_primary.append(img_tag);
 
-		 <!-- <script>
+//<button class="btn"></button>
+button_secondary = document.createElement("button");
+button_secondary.setAttribute("class", "btn-secondary");
+button_secondary.innerHTML = product_upload.secondary;
+section_right.append(button_secondary);
 
-			let section_left
-			let img_product
-			let div_interiors
-			let img_similar
-			let section_right
-			let h1_title
-			let div_heart
-			let a_link
-			let img_heart
-			let div_amount
-			let h3_head
-			let p_paragraph
-			let span_price
-			let del_price
-			let small_pattern
-			let div_description
-			let h3_description
-			let p_text
-			let h3_warranty
-			let p_para
-			let div_rate
-			let p_rate
-			let i_star
-            let button_primary
-			let a_tag
-			let img_tag
-			let button_secondary
-			let a_tagline
+ //<a></a>
+a_tagline = document.createElement("a");
+a_tagline.setAttribute("href", product_upload.tagline);
+button_secondary.append(a_tag);
 
+document.querySelector("section.top").append(section_right);
 
-			let details = {
-				product_image: {
-					source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-					alt: "Bluish Green Fabric Sofa"
-				},
-				image: [
-					{
-						source: "../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg",
-						alt: "Bluish Green Fabric Sofa"
-					},
-					{
-						source: "../assets/images/Rooms/Sofa/Sofa/Sofa 3.png",
-						alt: "Royal Red Sofa"
-					},
-					{
-						source: "../assets/images/Rooms/Sofa/Sofa/Sofa 2.jpg",
-						alt: "Blue Comfortable Sofa"
-					},
-					{
-						source: "../assets/images/Rooms/Sofa/Sofa/Sofa 7.jpg",
-						alt: "Sandal and Brown Sofa Set"
-					}
-				],
-				name: "Designs of Sofa",
-				link: "./liked.html",
-				heart_image: {
-					source: "../assets/images/Main/heart-icon.png",
-					alt: "heart-liked products"
-				},
-				text: "Price",
-				price: {
-					actual: {
-						type: "Rs",
-						value: 59000
-					},
-					discount: {
-						type: "Save Rs",
-						value: "4000"
-					},
-					current: {
-						type: "Rs",
-						value: "55,000.00"
-					},
-				},
-				product_description: "Description",
-				description: [
-					{
-						text: "* Teak Wood Sofa with cushions."
-					},
-					{
-						text: "* 10 days replacement"
-					},
-					{
-						text: "* Sectional Sofa Length = 105.5"
-					},
-					{
-						text: "* Our experts will install it for you – No cost."
-					},
-					{
-						text: "* Teak Wood Sofa with cushions."
-					},
-					{
-						text: "* Perfect for Living room."
-					}],
-
-				heading: "Warranty",
-				warranty: {
-					years: 3,
-					type: "Years of On-Site"
-				},
-				rate: "Ratings :",
-				primary:"Add to Cart",
-				secondary:"Buy Now",
-				tag:"./cart-list.html",
-				picture:{
-					source: "../cart-outline.svg",
-					alt: "cart icon"
-				},
-				tagline:"./cart-list.html"
-			}
-
-			let product_upload = JSON.parse(localStorage.getItem("product_crud"));
-			console.log(product_upload)
-			
-			
-			for (k=0; k<product_upload.length; k++){
-
-			section_left = document.createElement("section");
-			section_left.setAttribute("class", "left");
-
-			console.log(section_left)
-
-			//<img/>
-			img_product = document.createElement("img");
-			img_product.setAttribute("alt", details.product_image.alt);
-			img_product.setAttribute("class", "main-img");
-			img_product.setAttribute("src", details.product_image.source);
-			section_left.append(img_product);
-
-
-			//  <div class="down">
-			div_interiors = document.createElement("div");
-			div_interiors.setAttribute("class", "down");
-			section_left.append(div_interiors);
-
-
-			for (let i = 0; i < 4; i++) {
-
-				//<img/>
-				img_similar = document.createElement("img");
-				img_similar.setAttribute("alt", details.image[i].alt);
-				img_similar.setAttribute("class", "down-img");
-				img_similar.setAttribute("src", details.image[i].source);
-				div_interiors.append(img_similar);
-
-			}
-			document.querySelector("section.top").append(section_left);
-
-			section_right = document.createElement("section");
-			section_right.setAttribute("class", "right");
-
-			console.log(section_right)
-
-			//  <h1 class="heading"> </h1>
-			h1_title = document.createElement("h1");
-			h1_title.setAttribute("class", "heading");
-			h1_title.innerHTML = product_upload[k]["product_name"];
-			section_right.append(h1_title);
-
-			//  <div class="heart-icon">
-			div_heart = document.createElement("div");
-			div_heart.setAttribute("class", "heart-icon");
-			h1_title.append(div_heart);
-
-
-			//<a></a>
-			a_link = document.createElement("a");
-			a_link.setAttribute("href", details.link);
-			div_heart.append(a_link);
-
-
-			//<img/>
-			img_heart = document.createElement("img");
-			img_heart.setAttribute("alt", details.heart_image.alt);
-			img_heart.setAttribute("src", details.heart_image.source);
-			a_link.append(img_heart);
-
-
-			//  <div class="amount">
-			div_amount = document.createElement("div");
-			div_amount.setAttribute("class", "amount");
-			section_right.append(div_amount);
-
-
-			//  <h3> </h3>
-			h3_head = document.createElement("h3");
-			h3_head.innerHTML = details.text;
-			div_amount.append(h3_head);
-
-			//<p class="price"></p>
-			p_paragraph = document.createElement("p");
-			p_paragraph.setAttribute("class", "price");
-			div_amount.append(p_paragraph);
-
-			//<span class="real_price"></span>
-			span_price = document.createElement("span");
-			span_price.setAttribute("class", "real-price");
-			span_price.innerHTML = product_upload[k]["product_sell"];
-			p_paragraph.append(span_price);
-
-
-			//<del></del>
-			del_price = document.createElement("del");
-			del_price.innerHTML = product_upload[k]["product_real"];
-			p_paragraph.append(del_price);
-
-
-
-			//  <small> </small>
-			small_pattern = document.createElement("small");
-			small_pattern.setAttribute("class", "real-price");
-			small_pattern.innerHTML = product_upload[k]["product_discount"];
-			p_paragraph.append(small_pattern);
-
-
-			//  <div class="product-description">
-			div_description = document.createElement("div");
-			div_description.setAttribute("class", "product-description");
-			section_right.append(div_description);
-
-
-			//  <h3> </h3>
-			h3_description = document.createElement("h3");
-			h3_description.innerHTML = details.product_description;
-			div_description.append(h3_description);
-
-			// const descript = details.description;
-			// const no_of_list = descript.length;
-
-			// for (let j = 0; j < no_of_list; j++) {
-				//<p></p>
-				p_text = document.createElement("p");
-				p_text.innerHTML = product_upload[k]["product_description"];
-				div_description.append(p_text);
-			
-
-			//  <h3> </h3>
-			h3_warranty = document.createElement("h3");
-			h3_warranty.innerHTML = details.heading;
-			div_description.append(h3_warranty);
-
-			//<p></p>
-			p_para = document.createElement("p");
-			p_para.innerHTML = product_upload[k]["product_warranty"];
-			div_description.append(p_para);
-
-
-			div_rate = document.createElement("div");
-			div_rate.setAttribute("class", "rate");
-			section_right.append(div_rate);
-
-			//<p></p>
-			p_rate = document.createElement("p");
-			p_rate.innerHTML = details.rate;
-			div_rate.append(p_rate);
-
-			for (let k = 0; k < 5; k++) {
-				//<i></i>
-				i_star = document.createElement("i");
-				i_star.setAttribute("class", "fa fa-star");
-				p_rate.append(i_star);
-			}
-
-
-			//<button class="btn"></button>
-			button_primary = document.createElement("button");
-			button_primary.setAttribute("class", "btn-secondary");
-			button_primary.innerHTML = details.primary;
-			section_right.append(button_primary);
-			
-            //<a></a>
-			a_tag = document.createElement("a");
-			a_tag.setAttribute("href", details.tag);
-			button_primary.append(a_tag);
-              
-			// <img/>
-			img_tag= document.createElement("img");
-			img_tag.setAttribute("class", "cart");
-			img_tag.setAttribute("src", details.picture.source);
-			img_tag.setAttribute("alt", details.picture.alt);
-			button_primary.append(img_tag);
-
-			//<button class="btn"></button>
-			button_secondary = document.createElement("button");
-			button_secondary.setAttribute("class", "btn-secondary");
-			button_secondary.innerHTML = details.secondary;
-			section_right.append(button_secondary);
-			
-             //<a></a>
-			a_tagline = document.createElement("a");
-			a_tagline.setAttribute("href", details.tagline);
-			button_secondary.append(a_tag);
-
-			document.querySelector("section.top").append(section_right);
-		   }
-
-			
-
-		</script> -->
+	</script>
 
 </body>
 

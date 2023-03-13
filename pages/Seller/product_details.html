@@ -210,11 +210,14 @@
             img_product.setAttribute("class", "main_image");
             img_product.setAttribute("src", product_upload[j]["image_url"]);
             img_product.setAttribute("data-id", product_upload[j]["product_uuid"]);
-            let img_id = img_product.getAttribute('data-id');
+
+          let  img_id = img_product.getAttribute('data-id');
             img_product.addEventListener("click", (event) => {
                 const product_description = img_id;
                 window.location.href = `./Product-uploaded .html?product_id=${product_description}`;
             })
+
+
             div_container.append(img_product);
 
             //<img/>
@@ -240,24 +243,9 @@
             button_primary.setAttribute("class", "button_add");
             button_primary.setAttribute("data-id", product_upload[j]["product_uuid"]);
             button_primary.innerHTML = "Add";
-            div_container.append(button_primary);
 
-            //<button class="btn"></button>
-            button_secondary = document.createElement("button");
-            button_secondary.setAttribute("class", "button_remove");
-            button_secondary.setAttribute("data-id", product_upload[j]["product_uuid"]);
-            button_secondary.innerHTML = "Remove";
-            div_container.append(button_secondary);
-
-        }
-
-        document.querySelector("div.contain").append(div_top);
-
-        
-        let button_id = document.querySelectorAll('.button_add');
-         button_id = button_primary.getAttribute('data-id')
-            button_primary.addEventListener("click", (event) => {
-                
+         let  button_id = button_primary.getAttribute('data-id')
+            button_primary.addEventListener("click", (event) => {  
             console.log(button_id);
               if(!added_products.includes(button_id)){
                 added_products.push(button_id);
@@ -267,9 +255,15 @@
             localStorage.setItem('added_products', JSON.stringify(added_products));
             })
 
-           
-            let delete_id = document.querySelectorAll('.button_remove');   
-             delete_id = button_secondary.getAttribute('data-id');
+            div_container.append(button_primary);
+        
+            //<button class="btn"></button>
+            button_secondary = document.createElement("button");
+            button_secondary.setAttribute("class", "button_remove");
+            button_secondary.setAttribute("data-id", product_upload[j]["product_uuid"]);
+            button_secondary.innerHTML = "Remove";
+
+          let  delete_id = button_secondary.getAttribute('data-id');
             button_secondary.addEventListener("click", (event) => {
                 if(added_products.includes(delete_id)){
                     const indexOfUser = added_products.indexOf(delete_id);
@@ -281,6 +275,19 @@
                 localStorage.setItem('added_products', JSON.stringify(added_products));
             })
 
+            div_container.append(button_secondary);
+
+        }
+
+        document.querySelector("div.contain").append(div_top);
+
+        //  let img_id = document.querySelectorAll('.main_image');
+        
+        // let button_id = document.querySelectorAll('.button_add');
+        
+           
+        //     let delete_id = document.querySelectorAll('.button_remove');   
+            
     </script>
 
 </body>

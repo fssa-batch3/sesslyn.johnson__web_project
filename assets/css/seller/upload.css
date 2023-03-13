@@ -80,3 +80,17 @@ input[type="file"]::-webkit-file-upload-button {
 .profile_details .run{
 	border-radius:0.625rem;
 }
+.btn-delete{
+    border-radius:0.313rem;
+	border:transparent;
+	color:white;
+	background-color:rgb(239, 86, 86);
+	padding:0.625rem 3.125rem 0.938rem 3.125rem;
+	margin:2.5rem 0.625rem 0.625rem 16rem;
+}
+.btn-delete:hover{
+    transform: scale(1.1); 
+	transition: 1s;	
+    background-color:crimson;
+    color:white;
+}

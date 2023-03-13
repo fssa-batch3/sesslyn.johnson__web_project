@@ -179,6 +179,7 @@
             let unique_id = url_upload.find(e => e.product_uuid == product_id);
 
         console.log(unique_id)
+        
         localStorage.setItem('productId', JSON.stringify(unique_id.product_uuid));
 
 
@@ -380,7 +381,6 @@
         edit.forEach(function (findId) {
             findId.addEventListener('click', function () {
                 const id = this.dataset.id;
-
                 localStorage.setItem("product_uuid", JSON.stringify(id));
                window.location.href="./upload.html"
             });
