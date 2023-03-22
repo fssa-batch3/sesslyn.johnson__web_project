@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,31 @@
 </head>
 
 <body>
-  
+    <header class="header">
+        <div>
+            <a href="../index.html">
+                <img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
+            </a>
+        </div>
+
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
+                    <li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
+                    <li><a href="./queries.html"><span class="color">A</span>bout</a></li>
+                    <li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
+                    <li><a href="./order.html"><span class="color">O</span>rders</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="inner">
+            <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
+        </div>
+        <div class="triple-bar">
+            <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon" /></a>
+        </div>
+    </header>
 
     <div>
 
@@ -29,7 +52,96 @@
     <div class="content">
         <div class="container">
             <div class="cart-list">
-               
+                <!-- <div class="cart-details">
+
+                    <div class="remove">
+                        <a href="../homepage/homepage.html">
+                            <i class="fa-solid fa-xmark" style="color:rgb(238, 120, 120)"></i>
+                        </a>
+                    </div>
+
+                    <div class="cart-img">
+                        <a href="#">
+                            <img src="../assets/images/Rooms/Sofa/Sofa/Sofa 5.jpg" height="200rem" width="200rem"
+                                alt="sofa-img">
+                        </a>
+                    </div>
+
+                    <div class="cart-list">
+
+                        <div class="description">
+                            <h4 class="product-head">Grand Bluish Green Sofa</h4>
+                            <p class="product-company"><span class="color">Zuari Furniture</span></p>
+                        </div>
+
+                        <div class="product-rate">
+                            <span class="product-price">Rs.54000</span>
+                            <span class="original-price"><del>Rs.60000</del></span>
+                            <span class="product-offer">(10% off)</span>
+                        </div>
+
+                        <div class="quant">
+                            <label>Quantity</label>
+                            <input class="quantity" type="number" value="1" />
+                        </div>
+
+                        <div class="buttons">
+                            <div>
+                                <a href="../orders/wishlist.html">
+                                    <button class="btn liked-product">Move to Wishlist</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div> -->
+
+                <!-- <div class="cart-details">
+
+                    <div class="remove">
+                        <a href="../homepage/homepage.html">
+                            <i class="fa-solid fa-xmark" style="color:rgb(238, 120, 120)"></i>
+                        </a>
+                    </div>
+
+                    <div class="cart-img">
+                        <a href="#">
+                            <img src="../assets/images/Rooms/Wallpaper/Wallpaper 16.jpg" height="200rem" width="200rem"
+                                alt="wallpaper-img">
+                        </a>
+                    </div>
+
+                    <div class="cart-list">
+
+                        <div class="description">
+                            <h4 class="product-head">Maroon Star Wallpaper</h4>
+                            <p class="product-company"><span class="color">Godrej</span></p>
+                        </div>
+
+
+
+                        <div>
+                            <span class="product-price">Rs.899</span>
+                        </div>
+
+                        <div class="quant">
+                            <label>Quantity</label>
+                            <input class="quantity" type="number" value="1" />
+                        </div>
+
+                        <div class="buttons">
+                            <div>
+                                <a href="../orders/wishlist.html">
+                                    <button class="btn liked-product">Move to Wishlist</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div> -->
             </div>
         </div>
 
@@ -152,78 +264,69 @@
         </div>
     </div>
     <script>
+let product_crud = JSON.parse(localStorage.getItem("product_crud"));
+let cart_list = JSON.parse(localStorage.getItem("cart_list"));
+let userId = JSON.parse(localStorage.getItem('user_id'));
 
-        let product_crud = JSON.parse(localStorage.getItem("product_crud"));
-        let cart_list = JSON.parse(localStorage.getItem("cart_list"));
+let amount = 0;
 
-        let cart_product = product_crud.filter(product =>
-            cart_list.some(uuid => uuid.product_uuid === product.product_uuid)
-        );
-       
-        let cart_product_list = JSON.parse(localStorage.getItem("cart_list"));
+for (let i = 0; i < cart_list.length; i++) {
+if (userId === cart_list[i].userId) {
+  const product = product_crud.find(p => p.product_uuid === cart_list[i].product_uuid);
 
-        let amount = 0;
-      
-        for (i = 0; i < cart_product.length; i++) {
-            // Create the parent element with class "cart-details"
-            const cartDetailsDiv = document.createElement("div");
-            cartDetailsDiv.classList.add("cart-details");
-        
+      // Create the parent element with class "cart-details"
+      const cartDetailsDiv = document.createElement("div");
+      cartDetailsDiv.classList.add("cart-details");
 
-            // Create the "remove" div
-            const removeDiv = document.createElement("div");
-            removeDiv.classList.add("remove");
-            cartDetailsDiv.append(removeDiv);
-         
+      // Create the "remove" div
+      const removeDiv = document.createElement("div");
+      removeDiv.classList.add("remove");
+      cartDetailsDiv.append(removeDiv);
 
-            // Create the "i" element with class "fa-solid fa-xmark"
-            const xMarkIcon = document.createElement("i");
-            xMarkIcon.classList.add("fa-solid", "fa-xmark");
-            xMarkIcon.setAttribute("data-remove",  cart_product[i]["product_uuid"]);
-            xMarkIcon.setAttribute("id", "icon_remove");
-            xMarkIcon.style.color = "rgb(238, 120, 120)";
-            removeDiv.append(xMarkIcon);
-            // console.log(xMarkIcon)
+      // Create the "i" element with class "fa-solid fa-xmark"
+      const xMarkIcon = document.createElement("i");
+      xMarkIcon.classList.add("fa-solid", "fa-xmark");
+      xMarkIcon.setAttribute("data-remove", product.product_uuid)"]);
+      xMarkIcon.setAttribute("id", "icon_remove");
+      xMarkIcon.style.color = "rgb(238, 120, 120)";
+      removeDiv.append(xMarkIcon);
 
-            // Create the "cart-img" div
-            const cartImgDiv = document.createElement("div");
-            cartImgDiv.classList.add("cart-img");
-            cartDetailsDiv.append(cartImgDiv);
-            // console.log(cartImgDiv)
+      // Create the "cart-img" div
+      const cartImgDiv = document.createElement("div");
+      cartImgDiv.classList.add("cart-img");
+      cartDetailsDiv.append(cartImgDiv);
 
-            // Create the "a" element with href to "#"
-            const productLink = document.createElement("a");
-            productLink.href = "#";
-            cartImgDiv.append(productLink);
-            // console.log(productLink)
+      // Create the "a" element with href to "#"
+      const productLink = document.createElement("a");
+      productLink.href = "#";
+      cartImgDiv.append(productLink);
 
-            // Create the "img" element with src equal to cart_product["image_url"]
-            const productImg = document.createElement("img");
-            productImg.src = cart_product[i]["image_url"];
-            productImg.setAttribute("class", "img_product");
-            productImg.setAttribute("alt", "cart-images");
-            productLink.append(productImg);
-            // console.log(productImg)
+      // Create the "img" element with src equal to product["image_url"]
+      const productImg = document.createElement("img");
+      productImg.src = product["image_url"];
+      productImg.setAttribute("class", "img_product");
+      productImg.setAttribute("alt", "cart-images");
+      productLink.append(productImg);
 
-            // Create the "cart-list" div
-            const cartListDiv = document.createElement("div");
-            cartListDiv.classList.add("cart-list");
-            cartDetailsDiv.append(cartListDiv);
+      // Create the "cart-list" div
+      const cartListDiv = document.createElement("div");
+      cartListDiv.classList.add("cart-list");
+      cartDetailsDiv.append(cartListDiv);
 
-            // Create the "description" div
-            const descriptionDiv = document.createElement("div");
-            descriptionDiv.classList.add("description");
-            cartListDiv.append(descriptionDiv);
+      // Create the "description" div
+      const descriptionDiv = document.createElement("div");
+      descriptionDiv.classList.add("description");
+      cartListDiv.append(descriptionDiv);
 
-            // Create the "h4" element with class "product-head" and text equal to cart_product["product_name"]
-            const productName = document.createElement("h4");
-            productName.setAttribute("class", "product-head");
-            productName.textContent = cart_product[i]["product_name"];
-            descriptionDiv.append(productName);
+      // Create the "h4" element with class "product-head" and text equal to product["product_name"]
+      const productName = document.createElement("h4");
+      productName.setAttribute("class", "product-head");
+      productName.textContent = product["product_name"];
+      descriptionDiv.append(productName);
 
-            // Create the "p" element with class "product-company" and text "Minimal Furniture"
-            const productCompany = document.createElement("p");
-            productCompany.classList.add("product-company");
+      // Create the "p" element with class "product-company" and text "Minimal Furniture"
+      const productCompany = document.createElement("p");
+      productCompany.classList.add("product-company");
             const colorSpan = document.createElement("span");
             colorSpan.classList.add("color");
             colorSpan.textContent = "Minimal Furniture";
@@ -235,13 +338,13 @@
             productRateDiv.classList.add("product-rate");
             cartListDiv.append(productRateDiv);
 
-            let find_quantity = cart_list.find(e=> e.product_uuid  == cart_list[i]["product_uuid"]);
+            let find_quantity = cart_list.find(e => e.product_uuid === product["product_uuid"]);
             console.log(find_quantity);
 
             // Create the "span" element with class "product-price" and text equal to cart_product["product_sell"]
             let productPrice = document.createElement("span");
             productPrice.classList.add("product-price");
-            productPrice.textContent = "Rs." + cart_product[i]["product_sell"]*find_quantity["product_quantity"];
+            productPrice.textContent = "Rs." + product["product_sell"]*find_quantity["product_quantity"];
             productRateDiv.append(productPrice);
 
             // Create the "quant" div
@@ -253,8 +356,6 @@
             const quantityLabel = document.createElement("label");
             quantityLabel.textContent = "Quantity";
             quantDiv.append(quantityLabel);
-
-           
 
             // Create the "input" element with class "quantity", type "number", value equal to find_quantity["product_quantity"], and id "cart_quantity"
             const quantityInput = document.createElement("input");
@@ -281,7 +382,7 @@
             const button_primary = document.createElement("button");
             button_primary.setAttribute("class", "btn");
             button_primary.setAttribute("id", "liked-product");
-            button_primary.setAttribute("data-id", cart_product[i]["product_uuid"]);
+            button_primary.setAttribute("data-id", product["product_uuid"]);
             button_primary.innerHTML = "Move to Wishlist";
             productTag.append(button_primary);
 
@@ -289,11 +390,10 @@
 
             document.querySelector("div.cart-list").append(cartDetailsDiv);
 
-            amount+= cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
-
-            console.log(amount);
-
+            amount+= cart_list[i]["product_price"] * cart_list["product_quantity"];
+            }
         }
+
 
         document.getElementById("sub_total").innerText="Rs."+amount;
         document.getElementById("total_amount").innerText="Rs."+amount;
@@ -307,16 +407,16 @@
                 let cart_quantity = parent.querySelector(".quantity").value
 
                 let cart_product = JSON.parse(localStorage.getItem("cart_list"));
-                console.log(cart_product);
                 let items = parent.querySelector(".btn").getAttribute("data-id");
 
                 let cart_items = cart_product.filter(product => items === product.product_uuid);
-                console.log(cart_items)
+
                 if (cart_items) {
-                    cart_items.product_quantity = cart_quantity;   
+                    cart_items[0].product_quantity = cart_quantity;
+                   
                     localStorage.setItem("cart_list", JSON.stringify(cart_product)); 
                 }
-                window.location.reload()
+                window.location.reload();
             });
         });
 
@@ -341,10 +441,7 @@
                      window.location.reload();
                 });
             });
-
     </script>
-      <script src="../../assets/comments/header.js"></script>
 </body>
 
 </html>
-

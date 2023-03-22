@@ -14,32 +14,6 @@
 </head>
 
 <body>
-   <header class="header">
-      <div>
-         <a href="../index.html">
-            <img class="logo-img" src="../assets/images/Main/casas-logo.png" alt="logo image" />
-         </a>
-      </div>
-
-      <div class="navbar">
-         <nav>
-            <ul>
-               <li><a href="../pages/Living room/project.html"><span class="color">C</span>hamber</a></li>
-               <li><a href="./Shop.html"><span class="color">S</span>hop</a></li>
-               <li><a href="./queries.html"><span class="color">A</span>bout</a></li>
-               <li><a href="./liked.html"><span class="color">W</span>ishlist</a></li>
-               <li><a href="./order.html"><span class="color">O</span>rders</a></li>
-            </ul>
-         </nav>
-      </div>
-      <div class="inner">
-         <button type="submit"><a href="./Login/Register.html">Sign Up</a></button>
-      </div>
-      <div class="triple-bar">
-         <a href="../pages/profile.html"><img src="../assets/images/Main/profile (1).png" alt="bar icon" /></a>
-      </div>
-      <div id="menu-btn" class="fas fa-bars"></div>
-   </header>
 
    <div class="search-div">
       <input type="search" placeholder="Search" class="search" />
@@ -109,7 +83,7 @@
          <h1><span class="color">S</span>ofas For <span class="color">S</span>hopping</h1>
       </div>
       <div class="shopping-img" id="shop_sofa">
-       
+
       </div>
    </div>
 
@@ -119,7 +93,7 @@
                class="color">S</span>helves</h1>
       </div>
       <div class="categories-img" id="shop_tv">
-       
+
       </div>
 
       <div class="shopping">
@@ -127,7 +101,7 @@
             <h1><span class="color">S</span>pace Saving <span class="color">F</span>urniture</h1>
          </div>
          <div class="shopping-img" id="reusable_shop">
-        
+
          </div>
       </div>
 
@@ -137,7 +111,7 @@
             <h1><span class="color">W</span>insome <span class="color">W</span>allpaper</h1>
          </div>
          <div class="categories-img" id="wallpaper_shop">
-          
+
          </div>
 
          <div class="shopping">
@@ -145,7 +119,7 @@
                <h1><span class="color">C</span>handelier Lights to brighten your <span class="color">L</span>ife</h1>
             </div>
             <div class="shopping-img" id="chandelier_shop">
-         
+
             </div>
          </div>
 
@@ -155,7 +129,7 @@
                <h1><span class="color">W</span>arming <span class="color">W</span>adrobe</h1>
             </div>
             <div class="categories-img" id="wadrobe_shop">
-              
+
             </div>
 
 
@@ -164,7 +138,7 @@
                   <h1><span class="color">C</span>lassy Crockery<span class="color"> U</span>nits</h1>
                </div>
                <div class="shopping-img" id="crockery_shop">
-                 
+
 
                </div>
             </div>
@@ -270,17 +244,15 @@
                let product_list = product_crud.filter(product =>
                   added_products.some(uuid => uuid === product.product_uuid)
                );
-               console.log(product_list)
-
 
                //sofa
                let sofa = product_list.filter(function (e) {
                   return e.product_category == 'Sofa';
                });
-               console.log(sofa)
 
-               for (i = 0; i < sofa.length; i++) {
-                  const product_details = sofa[i];
+
+               for (j = 0; j < sofa.length; j++) {
+                  const product_details = sofa[j];
                   // console.log(product_details)
                   const template1 = product_upload(product_details);
                   document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
@@ -290,10 +262,10 @@
                function product_upload(sofa) {
                   const template1 =
                      `
-                           <div>
+                           <div class="cart_div">
                               <img id="shopping-img"  src="${sofa["image_url"]}" class="details" data-id="${sofa["product_uuid"]}" alt="Sofa image"/>
-                              <p>${sofa["product_sell"]}</p>
-                              <a href="./cart-list.html"><button class="btn-primary">Add to Cart</button></a>
+                              <p class="price_para">${"Rs." + sofa["product_sell"]}</p>
+                              <button data-cart=${sofa["product_uuid"]} class="cart_button" id="btn-primary">Add to Cart</button>
                            </div>
                      `
                   return template1;
@@ -303,7 +275,6 @@
                let tv_sets = product_list.filter(function (e) {
                   return e.product_category == 'TV Units';
                });
-               console.log(tv_sets)
 
                for (j = 0; j < tv_sets.length; j++) {
                   const product_tv = tv_sets[j];
@@ -314,10 +285,10 @@
 
                function product_units(tv_sets) {
                   const template2 =
-                     ` <div>
+                     ` <div class="cart_div">
                        <img src="${tv_sets["image_url"]}" class="details" data-id="${tv_sets["product_uuid"]}" alt="chandleir image" />
-                      <p>${tv_sets["product_sell"]}</p>
-                      <a href="./cart-list.html"><button class="btn-secondary">Add to Cart</button></a>
+                      <p class="price_para">${"Rs." + tv_sets["product_sell"]}</p>
+                     <button data-cart=${tv_sets["product_uuid"]} class="cart_button" id="btn-secondary">Add to Cart</button>
                      </div>
                      `
                   return template2;
@@ -327,7 +298,6 @@
                let space_saving = product_list.filter(function (e) {
                   return e.product_category == 'Space Saving Furniture';
                });
-               console.log(space_saving)
 
                for (j = 0; j < space_saving.length; j++) {
                   const product_reuse = space_saving[j];
@@ -339,10 +309,10 @@
                function product_space(space_saving) {
                   const template3 =
                      ` 
-                     <div>
+                     <div class="cart_div">
                     <img  src="${space_saving["image_url"]}" class="details" data-id="${space_saving["product_uuid"]}" alt="chandleir image" />
-                     <p>${space_saving["product_sell"]}</p>
-                     <a href="./cart-list.html"><button class="btn-primary">Add to Cart</button></a>
+                     <p class="price_para">${"Rs." + space_saving["product_sell"]}</p>
+                    <button data-cart="${space_saving["product_uuid"]}" class="cart_button" id="btn-primary">Add to Cart</button>
                      </div>
                      `
                   return template3;
@@ -352,7 +322,7 @@
                let Wallpaper_units = product_list.filter(function (e) {
                   return e.product_category == 'Wallpaper';
                });
-               console.log(Wallpaper_units)
+
 
                for (j = 0; j < Wallpaper_units.length; j++) {
                   const product_wallpaper = Wallpaper_units[j];
@@ -364,10 +334,10 @@
                function product_wall(Wallpaper_units) {
                   const template4 =
                      ` 
-                      <div>
+                      <div class="cart_div">
                       <img src="${Wallpaper_units["image_url"]}" class="details" data-id="${Wallpaper_units["product_uuid"]}" alt="chandleir image" />
-                      <p>${Wallpaper_units["product_sell"]}</p>
-                      <a href="./cart-list.html"><button class="btn-secondary">Add to Cart</button></a>
+                      <p class="price_para">${"Rs." + Wallpaper_units["product_sell"]}</p>
+                      <button data-cart="${Wallpaper_units["product_uuid"]}" class="cart_button" id="btn-secondary">Add to Cart</button>
                       </div>
                      `
                   return template4;
@@ -377,7 +347,7 @@
                let chandelier_units = product_list.filter(function (e) {
                   return e.product_category == 'Candelier';
                });
-               console.log(chandelier_units)
+
 
                for (j = 0; j < chandelier_units.length; j++) {
                   const product_chandelier = chandelier_units[j];
@@ -389,10 +359,10 @@
                function product_chand(chandelier_units) {
                   const template4 =
                      ` 
-                     <div>
+                     <div class="cart_div">
                   <img src="${chandelier_units["image_url"]}" class="details" data-id="${chandelier_units["product_uuid"]}" alt="chandleir image" />
-                  <p>${chandelier_units["product_sell"]}</p>
-                  <a href="./cart-list.html"><button class="btn-primary">Add to Cart</button></a>
+                  <p class="price_para">${"Rs." + chandelier_units["product_sell"]}</p>
+                 <button data-cart="${chandelier_units["product_uuid"]}" class="cart_button" id="btn-primary">Add to Cart</button>
                </div>
 
                      `
@@ -403,7 +373,7 @@
                let Wadrobe_units = product_list.filter(function (e) {
                   return e.product_category == 'Wadrobe';
                });
-               console.log(Wadrobe_units)
+
 
                for (j = 0; j < Wadrobe_units.length; j++) {
                   const product_wadrobe = Wadrobe_units[j];
@@ -415,10 +385,10 @@
                function product_wad(Wadrobe_units) {
                   const template4 =
                      ` 
-                    <div>
+                    <div class="cart_div">
                     <img id="ceiling" src="${Wadrobe_units["image_url"]}" class="details" data-id="${Wadrobe_units["product_uuid"]}" alt="chandleir image" />
-                    <p>${Wadrobe_units["product_sell"]}</p>
-                    <a href="./cart-list.html"><button class="btn-secondary">Add to Cart</button></a>
+                    <p class="price_para">${"Rs." + Wadrobe_units["product_sell"]}</p>
+                   <button data-cart="${Wadrobe_units["product_uuid"]}" class="cart_button" id="btn-secondary">Add to Cart</button>
                     </div>
 
                      `
@@ -429,8 +399,6 @@
                let crockery_units = product_list.filter(function (e) {
                   return e.product_category == 'Crockery Units';
                });
-               console.log(crockery_units)
-
 
                for (j = 0; j < crockery_units.length; j++) {
                   const product_crockery = crockery_units[j];
@@ -442,10 +410,10 @@
                function product_crock(crockery_units) {
                   const template4 =
                      ` 
-                     <div>
+                     <div class="cart_div">
                     <img  src="${crockery_units["image_url"]}" class="details" data-id="${crockery_units["product_uuid"]}" alt="chandleir image" />
-                     <p>${crockery_units["product_sell"]}</p>
-                     <a href="./cart-list.html"><button class="btn-primary">Add to Cart</button></a>
+                     <p class="price_para">${"Rs." + crockery_units["product_sell"]}</p>
+                     <a href="./cart-list.html"><button data-cart="${crockery_units["product_uuid"]}" class="cart_button" id="btn-primary">Add to Cart</button></a>
 
                     </div>
                      `
@@ -461,8 +429,45 @@
                   })
                })
 
+               let addToCart = document.querySelectorAll(".cart_button")
+               addToCart.forEach(function (cart) {
+                  cart.addEventListener("click", function () {
+                     let id_cart = this.dataset.cart
+
+                     let parent = this.closest(".cart_div");
+                     // console.log(parent)
+                     let product_price = parent.querySelector(".price_para").innerHTML.replace("Rs.", "");
+                     console.log(product_price)
+                     let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
+                     let userId = JSON.parse(localStorage.getItem('user_id'));
+
+                     let exist = cart_list.length &&
+                        JSON.parse(localStorage.getItem('cart_list')).some(data =>
+                           data.product_uuid == id_cart
+                        );
+
+                     if (!exist) {
+                        cart_list.push({
+                           "product_uuid": id_cart,
+                           "product_price": parseInt(product_price),
+                           "userId":userId,
+                           "product_quantity": 1
+
+                        });
+                        localStorage.setItem('cart_list', JSON.stringify(cart_list));
+                        alert('Product Added to the Cart');
+                        window.location.href = "../pages/cart-list.html";
+                     }
+
+                     else {
+                        alert('Sorry the Product already added');
+                     }
+                  });
+
+               })
             </script>
 
+<script src="../assets/comments/header.js"></script>
 </body>
 
 </html>

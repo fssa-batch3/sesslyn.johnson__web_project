@@ -65,7 +65,7 @@ function signIn(e) {
     else{
         localStorage.setItem("user_id",JSON.stringify(user_email));
         alert("Your login in successful");
-        location.href = "../profile.html";  
+        location.href = "../../index.html";  
     }
 }
 

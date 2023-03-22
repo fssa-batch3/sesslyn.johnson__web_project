@@ -194,8 +194,11 @@ small.discount{
 .price{
 	font-size:1.4rem;
 }
-.real-price{
+.real-price,.prize{
 	padding-left:1rem;
+}
+.prize{
+	font-size:16px;
 }
 .real-prize{
 	float: right;
