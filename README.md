@@ -13,6 +13,45 @@ Documentation: https://docs.google.com/document/d/1byvLtvtBDpoKq4_vphgbOFomeDiCT
 
 Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.johnson__web_project
 
+
+Featues
+
+1. User Crud
+
+     * Create Crud
+     * Read Crud
+     * Update Crud
+     * Delete Crud
+  
+2. Product Crud
+  
+     * Create Crud
+     * Read Crud
+     * Update Crud
+     * Delete Crud
+
+3. Cart Crud
+     
+     * Create Crud
+     * Read Crud
+     * Update Crud
+     * Delete Crud
+     
+4. Wishlist Crud
+
+     * Create Crud
+     * Read Crud
+     * Update Crud
+     * Delete Crud
+    
+5. Order Crud
+
+     * Create Crud
+     * Read Crud
+     * Update Crud
+     * Delete Crud
+
+
 E-COMMERCE
 BUYER:
 CREATE AN ACCOUNT :  ( COMPLETED )
