@@ -17,39 +17,44 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
 Featues
 
 1. User Crud
-
-     * Create Crud
-     * Read Crud
-     * Update Crud
-     * Delete Crud
+     
+     * Create account
+     * Read account
+     * Update profile
+     * Delete profile
   
 2. Product Crud
-  
-     * Create Crud
-     * Read Crud
-     * Update Crud
-     * Delete Crud
+
+  Seller
+     * Create product
+     * Read product
+     * Update product
+     * Delete product
+  Buyer
+      * Read product list
+      * Update product details
+     
 
 3. Cart Crud
      
-     * Create Crud
-     * Read Crud
-     * Update Crud
-     * Delete Crud
+     * Create cart
+     * Read cart
+     * Update cart
+     * Delete cart
      
 4. Wishlist Crud
 
-     * Create Crud
-     * Read Crud
-     * Update Crud
-     * Delete Crud
+     * Create wishlist
+     * Read wishlist
+     * Update wishlist
+     * Delete wishlist
     
 5. Order Crud
 
-     * Create Crud
-     * Read Crud
-     * Update Crud
-     * Delete Crud
+     * Create order
+     * Read order
+     * Update order
+     * Delete order
 
 
 E-COMMERCE
