@@ -110,6 +110,13 @@ REMOVE PRODUCT/ITEM FROM THE WISHLIST :  ( COMPLETD )
         * The item is removed from the user's wishlist.
 
 
+VIEW PRODUCTS/ITEMS IN THE Order:  ( NOT YET STARTED )
+* Scenario 1: Successfully view products/items in orders
+    * Steps :
+        1. Navigate to the order page through the navbar.
+        2. View the details and give ratings.
+    * Expected result:
+        * The user can view the list of items in the orders page.
 
 
  Seller:
