@@ -181,6 +181,7 @@
             xMarkIcon.classList.add("fa-solid", "fa-xmark");
             xMarkIcon.setAttribute("data-remove",  cart_product[i]["product_uuid"]);
             xMarkIcon.setAttribute("id", "icon_remove");
+            // xMarkIcon.setAttribute("class", "iconRemove");
             xMarkIcon.style.color = "rgb(238, 120, 120)";
             removeDiv.append(xMarkIcon);
             // console.log(xMarkIcon)
@@ -263,6 +264,13 @@
             quantityInput.value = find_quantity["product_quantity"];
             quantDiv.append(quantityInput);
 
+            update = document.createElement("button");
+            update.setAttribute("type", "button");
+            update.setAttribute("class", "btn update");
+            update.setAttribute("style", "display:none");
+            update.innerText = "Update"
+            quantDiv.append(update);
+
             //  <div class="product-description">
             const div_description = document.createElement("div");
             div_description.setAttribute("class", "buttons");
@@ -298,27 +306,42 @@
         document.getElementById("sub_total").innerText="Rs."+amount;
         document.getElementById("total_amount").innerText="Rs."+amount;
         
-
-       
-        let quantity = document.querySelectorAll(".quantity");
-        quantity.forEach(function (findQuant) {
-            findQuant.addEventListener('click', function () {
-                let parent = this.closest(".cart-list");
-                let cart_quantity = parent.querySelector(".quantity").value
-
-                let cart_product = JSON.parse(localStorage.getItem("cart_list"));
-                console.log(cart_product);
-                let items = parent.querySelector(".btn").getAttribute("data-id");
-
-                let cart_items = cart_product.filter(product => items === product.product_uuid);
-                console.log(cart_items)
-                if (cart_items) {
-                    cart_items.product_quantity = cart_quantity;   
-                    localStorage.setItem("cart_list", JSON.stringify(cart_product)); 
+       // getting extra informatio like no.of.guest and date of delivery
+       let updateBtn = document.querySelectorAll(".update")
+        updateBtn.forEach(function (upDate) {
+        upDate.addEventListener('click', function () {
+      
+                let parent = this.closest(".cart-details")
+                console.log(parent)
+   
+                let getNumber = parent.querySelector(".quantity").value;
+                let id = parent.querySelector("#icon_remove").getAttribute("data-remove");
+                function getId(e) {
+                    return e.product_uuid == id
                 }
-                window.location.reload()
-            });
-        });
+                findcartId = cart_list.filter(getId);
+                console.log(findcartId)
+                let y = findcartId[0]["product_price"]
+
+                let up_totalcost = y * getNumber;
+                console.log(up_totalcost);
+
+                findcartId[0]["product_quantity"] = getNumber;
+                localStorage.setItem("cart_list", JSON.stringify(cart_list));
+                location.reload();
+            })
+        })
+       
+        // getting extra information like no.of.guest
+        let number_of_guest = document.querySelectorAll(".quantity")
+        number_of_guest.forEach(function (getGuest) {
+            getGuest.addEventListener("click", function () {
+                let parent = this.closest(".cart-details")
+                update_btn = parent.querySelector(".update")
+                update_btn.setAttribute("style", "display:block");
+            })
+        })
+
 
         let products = document.querySelectorAll("i#icon_remove")
                products.forEach(function(check){
@@ -341,6 +364,8 @@
                      window.location.reload();
                 });
             });
+
+
 
     </script>
       <script src="../../assets/comments/header.js"></script>
