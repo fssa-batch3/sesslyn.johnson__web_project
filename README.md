@@ -16,7 +16,7 @@ Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.john
 E-COMMERCE
 BUYER:
 CREATE AN ACCOUNT :  ( COMPLETED )
-* Scenario 1: Successfully creat an account
+* Scenario 1: Successfully create an account
     * Steps :
         1. Navigate to the sign up page.
         2. Enter the required information such as name, email, and password.
@@ -200,20 +200,11 @@ REMOVE PRODUCT FOR THE USER SIDE :  ( COMPLETED )
 VIEW LIST OF ORDERS :  ( NOT YET STARTED )
 * Scenario 1: Successfully view list of orders
     * Steps:
-        1. Login as a seller.
-        2. Navigate to the orders page.
-        3. View the list of orders.
+        1. Navigate to the orders page.
+        2. View the list of orders.
     * Expected result:
         * The seller can view the list of orders.
-VIEW ORDER DETAILS :  ( NOT YET STARTED )
-* Scenario 1: Successfully view order details
-    * Steps:
-        1. Login as a seller.
-        2. Navigate to the orders page.
-        3. Select an order to view.
-        4. Click the "View Order" button.
-    * Expected Result:
-        * The seller can view the details of the selected order.
+
 
 
 
