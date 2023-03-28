@@ -163,7 +163,7 @@ Features
      * Steps:
           1. Click the + button.
           2. Navigate to the product-form page.
-          3. Enter the required information such as imageurl, product name, product category, product    description, product price (original, current price, discount in Rs), product warranty.
+          3. Enter the required information such as imageurl, product name, product category, product description, product price (original, current price, discount in Rs), product warranty.
           4. Click the "Submit" button.
     * Expected Result:
           1. Navigate to the Product list page.
