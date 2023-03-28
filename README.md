@@ -25,15 +25,13 @@ Featues
   
 2. Product Crud
 
-  Seller
-  
+ a)Seller
      * Create product
      * Read product
      * Update product
      * Delete product
      
-  Buyer
-  
+  b)Buyer
       * Read product list
       * Update product details
      
