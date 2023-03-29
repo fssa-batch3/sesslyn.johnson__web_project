@@ -75,13 +75,13 @@
 		}
 
 
-		section_left = document.createElement("section");
+		const section_left = document.createElement("section");
 		section_left.setAttribute("class", "left");
 
 		console.log(section_left)
 
 		//<img/>
-		img_product = document.createElement("img");
+	    const img_product = document.createElement("img");
 		img_product.setAttribute("alt", unique_id.product_name);
 		img_product.setAttribute("class", "main-img");
 		img_product.setAttribute("src", unique_id.image_url);
@@ -89,7 +89,7 @@
 
 
 		//  <div class="down">
-		div_interiors = document.createElement("div");
+		const div_interiors = document.createElement("div");
 		div_interiors.setAttribute("class", "down");
 		section_left.append(div_interiors);
 
@@ -97,7 +97,7 @@
 		for (let i = 0; i < 4; i++) {
 
 			//<img/>
-			img_similar = document.createElement("img");
+			const img_similar = document.createElement("img");
 			img_similar.setAttribute("alt", product_upload.image[i].alt);
 			img_similar.setAttribute("class", "down-img");
 			img_similar.setAttribute("src", product_upload.image[i].source);
@@ -106,25 +106,25 @@
 		}
 		document.querySelector("section.top").append(section_left);
 
-		section_right = document.createElement("section");
+		const section_right = document.createElement("section");
 		section_right.setAttribute("class", "right");
 
 		console.log(section_right)
 
 		//  <h1 class="heading"> </h1>
-		h1_title = document.createElement("h1");
+		const h1_title = document.createElement("h1");
 		h1_title.setAttribute("class", "heading");
 		h1_title.innerHTML = unique_id.product_name;
 		section_right.append(h1_title);
 
 		//  <div class="heart-icon">
-		div_heart = document.createElement("div");
+		const div_heart = document.createElement("div");
 		div_heart.setAttribute("class", "heart-icon");
 		h1_title.append(div_heart);
 
 
 		//<img/>
-		img_heart = document.createElement("img");
+		const img_heart = document.createElement("img");
 		img_heart.setAttribute("class","liked_heart");
 		img_heart.setAttribute("data-wish", unique_id.product_uuid);
 		img_heart.setAttribute("alt", product_upload.heart_image.alt);
@@ -133,76 +133,76 @@
 
 
 		//  <div class="amount">
-		div_amount = document.createElement("div");
+		const div_amount = document.createElement("div");
 		div_amount.setAttribute("class", "amount");
 		section_right.append(div_amount);
 
 
 		//  <h3> </h3>
-		h3_head = document.createElement("h3");
+		const h3_head = document.createElement("h3");
 		h3_head.innerHTML = product_upload.text;
 		div_amount.append(h3_head);
 
 		//<p class="price"></p>
-		p_paragraph = document.createElement("p");
+		const p_paragraph = document.createElement("p");
 		p_paragraph.setAttribute("class", "price");
 		div_amount.append(p_paragraph);
 
 		//<span class="real_price"></span>
-		span_price = document.createElement("span");
+		const span_price = document.createElement("span");
 		span_price.setAttribute("class", "real-price");
 		span_price.innerHTML ="Rs." + unique_id.product_sell;
 		p_paragraph.append(span_price);
 
 
 		//<del></del>
-		del_price = document.createElement("del");
+		const del_price = document.createElement("del");
 		del_price.innerHTML ="Rs." + unique_id.product_real;
 		p_paragraph.append(del_price);
 
 
 
 		//  <small> </small>
-		small_pattern = document.createElement("small");
+		const small_pattern = document.createElement("small");
 		small_pattern.setAttribute("class", "prize");
 		small_pattern.innerHTML ="Rs." + unique_id.product_discount;
 		p_paragraph.append(small_pattern);
 
 
 		//  <div class="product-description">
-		div_description = document.createElement("div");
+		const div_description = document.createElement("div");
 		div_description.setAttribute("class", "product-description");
 		section_right.append(div_description);
 
 
 		//  <h3> </h3>
-		h3_description = document.createElement("h3");
+		const h3_description = document.createElement("h3");
 		h3_description.innerHTML = product_upload.product_description;
 		div_description.append(h3_description);
 
 
-		p_text = document.createElement("p");
+		const p_text = document.createElement("p");
 		p_text.innerHTML = unique_id.product_description;
 		div_description.append(p_text);
 
 
 		//  <h3> </h3>
-		h3_warranty = document.createElement("h3");
+		const h3_warranty = document.createElement("h3");
 		h3_warranty.innerHTML = product_upload.heading;
 		div_description.append(h3_warranty);
 
 		//<p></p>
-		p_para = document.createElement("p");
+		const p_para = document.createElement("p");
 		p_para.innerHTML = unique_id.product_warranty;
 		div_description.append(p_para);
 
 
-		div_rate = document.createElement("div");
+		const div_rate = document.createElement("div");
 		div_rate.setAttribute("class", "rate");
 		section_right.append(div_rate);
 
 		//<p></p>
-		p_rate = document.createElement("p");
+		const p_rate = document.createElement("p");
 		p_rate.innerHTML = product_upload.rate;
 		div_rate.append(p_rate);
 
@@ -215,7 +215,7 @@
 
 
 		//<button class="btn"></button>
-		button_primary = document.createElement("button");
+		const button_primary = document.createElement("button");
 		button_primary.setAttribute("class", "btn-secondary");
 		button_primary.setAttribute("data-id", unique_id.product_uuid);
 		button_primary.innerHTML = product_upload.primary;

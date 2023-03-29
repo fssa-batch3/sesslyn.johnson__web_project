@@ -164,7 +164,7 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
 
         let amount = 0;
       
-        for (i = 0; i < cart_product.length; i++) {
+        for (let i = 0; i < cart_product.length; i++) {
             // Create the parent element with class "cart-details"
             const cartDetailsDiv = document.createElement("div");
             cartDetailsDiv.classList.add("cart-details");
@@ -181,7 +181,6 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
             xMarkIcon.classList.add("fa-solid", "fa-xmark");
             xMarkIcon.setAttribute("data-remove",  cart_product[i]["product_uuid"]);
             xMarkIcon.setAttribute("id", "icon_remove");
-            // xMarkIcon.setAttribute("class", "iconRemove");
             xMarkIcon.style.color = "rgb(238, 120, 120)";
             removeDiv.append(xMarkIcon);
             // console.log(xMarkIcon)
@@ -264,7 +263,7 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
             quantityInput.value = find_quantity["product_quantity"];
             quantDiv.append(quantityInput);
 
-            update = document.createElement("button");
+            const update = document.createElement("button");
             update.setAttribute("type", "button");
             update.setAttribute("class", "btn update");
             update.setAttribute("style", "display:none");
@@ -319,7 +318,7 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
                 function getId(e) {
                     return e.product_uuid == id
                 }
-                findcartId = cart_list.filter(getId);
+                let findcartId = cart_list.filter(getId);
                 console.log(findcartId)
                 let y = findcartId[0]["product_price"]
 
@@ -337,7 +336,7 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         number_of_guest.forEach(function (getGuest) {
             getGuest.addEventListener("click", function () {
                 let parent = this.closest(".cart-details")
-                update_btn = parent.querySelector(".update")
+                let update_btn = parent.querySelector(".update")
                 update_btn.setAttribute("style", "display:block");
             })
         })

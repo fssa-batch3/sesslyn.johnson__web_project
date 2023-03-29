@@ -62,9 +62,9 @@ body{
 	display:inline;
 }
 .prize{
-	font-size:1.563rem;
     padding-bottom:0rem;
     margin-bottom:0.938rem;
+	font-size:16px;
 }
 
 section.right button.btn-primary{
@@ -196,9 +196,6 @@ small.discount{
 }
 .real-price,.prize{
 	padding-left:1rem;
-}
-.prize{
-	font-size:16px;
 }
 .real-prize{
 	float: right;
