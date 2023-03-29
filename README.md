@@ -13,56 +13,6 @@ Documentation: https://docs.google.com/document/d/1byvLtvtBDpoKq4_vphgbOFomeDiCT
 
 Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.johnson__web_project
 
-Features
-
-1. Register CRUD 
-   
-    Create user profile
-    
-    Read user profile
-    
-    Update user profile
-    
-    Delete user profile
-
-2. Product CRUD 
-    
-   Create product
-      
-   List product
-   
-   Detail of the product
-     
-   Update product 
-    
-   Delete product
-     
-3.Cart
-    
-   Add Cart
-   
-   Read Cart
-   
-   Update Cart
-   
-   Delete cart
-   
-4. Wishlist 
-
-   Add Wishlist 
-  
-   Read Wishlist 
-  
-   Delete Wishlist 
-
-5. Order
-
-   Add Order
-  
-   Read Order
-  
-   Delete Order
-
 
    #E-commerce
 

@@ -123,17 +123,13 @@
 		h1_title.append(div_heart);
 
 
-		//<a></a>
-		a_link = document.createElement("a");
-		a_link.setAttribute("href", product_upload.link);
-		div_heart.append(a_link);
-
-
 		//<img/>
 		img_heart = document.createElement("img");
+		img_heart.setAttribute("class","liked_heart");
+		img_heart.setAttribute("data-wish", unique_id.product_uuid);
 		img_heart.setAttribute("alt", product_upload.heart_image.alt);
 		img_heart.setAttribute("src", product_upload.heart_image.source);
-		a_link.append(img_heart);
+		div_heart.append(img_heart);
 
 
 		//  <div class="amount">
@@ -233,35 +229,31 @@
 			let product_price = document.querySelector(".real-price").innerHTML.replace("Rs.", "");
 			let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
 			let userId = JSON.parse(localStorage.getItem('user_id'));
-
 			let exist = cart_list.length &&
 				JSON.parse(localStorage.getItem('cart_list')).some(data =>
 					data.product_uuid == id_cart
 				);
-
 			if (!exist) {
 				cart_list.push({
 					"product_uuid":id_cart,
 					"product_price":parseInt(product_price),
 					"userId":userId,
 					"product_quantity":1
-
 				});
 				localStorage.setItem('cart_list', JSON.stringify(cart_list));
-
 				alert('Product Added to the Cart');
 				location.href = "./cart-list.html";
 			}
 
 			else {
 				alert('Sorry the Product already added');
-				
 			}
-			
 		 });
 
 
+		//  document.querySelector(".liked_heart").addEventListener("click", function () {
 
+		//  })
 	</script>
 <script src="../assets/comments/header.js"></script>
 </body>

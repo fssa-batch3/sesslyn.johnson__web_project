@@ -28,17 +28,7 @@ body{
     padding:0.313rem;	
     margin-left:2rem;
 }
-#input button{
-    margin-left:55rem;
-    margin-top:1rem;
-    background-color:rgb(252, 219, 219);
-	border-radius:0.625rem;
-    border-color:transparent;
-    padding:0.2rem 0.8rem 0.2rem 0.8rem;
-}
-#input button a{
-    color:rgb(67,43,43);
-}
+
 .inner button a{
     font-size:1.2rem;
 }
@@ -174,4 +164,19 @@ div#footer-upload{
 	width:23.75rem;
     padding:0rem;	
 }
-
+.products button{
+    margin-left:0rem;
+    margin-top:2rem;
+    background-color:rgb(252, 219, 219);
+	border-radius:0.625rem;
+    border-color:transparent;
+}
+.products button a{
+    color:rgb(67,43,43);
+}
+#product_input{
+    margin-left:35rem;
+}
+#product_inner {
+    background-color:rgb(121, 118, 118);
+}

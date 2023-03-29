@@ -38,7 +38,7 @@ const AfterLogin = `
 
     <header class="header" >
       <div>
-        <a href="index.html">
+        <a href="${rootPath}/index.html">
           <img class="logo-img" src="${rootPath}/assets/images/Main/casas-logo.png" alt="logo image" />
         </a>
       </div>

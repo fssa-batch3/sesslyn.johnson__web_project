@@ -241,15 +241,12 @@
                let product_crud = JSON.parse(localStorage.getItem("product_crud"));
                let added_products = JSON.parse(localStorage.getItem("added_products"));
 
-               let product_list = product_crud.filter(product =>
-                  added_products.some(uuid => uuid === product.product_uuid)
-               );
 
                //sofa
-               let sofa = product_list.filter(function (e) {
+               let sofa = product_crud.filter(function (e) {
                   return e.product_category == 'Sofa';
                });
-
+               console.log(sofa)
 
                for (j = 0; j < sofa.length; j++) {
                   const product_details = sofa[j];
@@ -272,7 +269,7 @@
                }
 
                //tv units
-               let tv_sets = product_list.filter(function (e) {
+               let tv_sets = product_crud.filter(function (e) {
                   return e.product_category == 'TV Units';
                });
 
@@ -295,7 +292,7 @@
                }
 
                //reusable 
-               let space_saving = product_list.filter(function (e) {
+               let space_saving = product_crud.filter(function (e) {
                   return e.product_category == 'Space Saving Furniture';
                });
 
@@ -319,7 +316,7 @@
                }
 
                //Wallpaper
-               let Wallpaper_units = product_list.filter(function (e) {
+               let Wallpaper_units = product_crud.filter(function (e) {
                   return e.product_category == 'Wallpaper';
                });
 
@@ -344,7 +341,7 @@
                }
 
                //Chandelier
-               let chandelier_units = product_list.filter(function (e) {
+               let chandelier_units = product_crud.filter(function (e) {
                   return e.product_category == 'Candelier';
                });
 
@@ -370,7 +367,7 @@
                }
 
                //wadrobe
-               let Wadrobe_units = product_list.filter(function (e) {
+               let Wadrobe_units = product_crud.filter(function (e) {
                   return e.product_category == 'Wadrobe';
                });
 
@@ -396,7 +393,7 @@
                }
 
                //Crockery units
-               let crockery_units = product_list.filter(function (e) {
+               let crockery_units = product_crud.filter(function (e) {
                   return e.product_category == 'Crockery Units';
                });
 
