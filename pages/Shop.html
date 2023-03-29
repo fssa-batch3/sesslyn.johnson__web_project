@@ -248,12 +248,15 @@
                });
                console.log(sofa)
 
-               for (let j = 0; j < sofa.length; j++) {
-                  const product_details = sofa[j];
-                  // console.log(product_details)
-                  const template1 = product_upload(product_details);
-                  document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
-
+               // for (let j = 0; j < sofa.length; j++) {
+               //    const product_details = sofa[j];
+               //    // console.log(product_details)
+               //    const template1 = product_upload(product_details);
+               //    document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
+               // }
+               for (const product_details of sofa) {
+               const template1 = product_upload(product_details);
+               document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
                }
 
                function product_upload(sofa) {
@@ -273,8 +276,8 @@
                   return e.product_category == 'TV Units';
                });
 
-               for (let j = 0; j < tv_sets.length; j++) {
-                  const product_tv = tv_sets[j];
+              
+               for (const product_tv of tv_sets) { 
                   const template2 = product_units(product_tv);
                   document.querySelector("#shop_tv").insertAdjacentHTML("beforeend", template2);
 
@@ -296,8 +299,8 @@
                   return e.product_category == 'Space Saving Furniture';
                });
 
-               for (let j = 0; j < space_saving.length; j++) {
-                  const product_reuse = space_saving[j];
+           
+               for (const product_reuse of space_saving) { 
                   const template3 = product_space(product_reuse);
                   document.querySelector("#reusable_shop").insertAdjacentHTML("beforeend", template3);
 
@@ -320,12 +323,9 @@
                   return e.product_category == 'Wallpaper';
                });
 
-
-               for (let j = 0; j < Wallpaper_units.length; j++) {
-                  const product_wallpaper = Wallpaper_units[j];
+               for (const product_wallpaper of Wallpaper_units) { 
                   const template4 = product_wall(product_wallpaper);
                   document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
-
                }
 
                function product_wall(Wallpaper_units) {
@@ -345,9 +345,7 @@
                   return e.product_category == 'Candelier';
                });
 
-
-               for (let j = 0; j < chandelier_units.length; j++) {
-                  const product_chandelier = chandelier_units[j];
+               for (const product_chandelier of chandelier_units) { 
                   const template4 = product_chand(product_chandelier);
                   document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
 
@@ -371,9 +369,7 @@
                   return e.product_category == 'Wadrobe';
                });
 
-
-               for (let j = 0; j < Wadrobe_units.length; j++) {
-                  const product_wadrobe = Wadrobe_units[j];
+               for (const product_wadrobe of Wadrobe_units) { 
                   const template4 = product_wad(product_wadrobe);
                   document.querySelector("#wadrobe_shop").insertAdjacentHTML("beforeend", template4);
 
@@ -396,9 +392,8 @@
                let crockery_units = product_crud.filter(function (e) {
                   return e.product_category == 'Crockery Units';
                });
-
-               for (let j = 0; j < crockery_units.length; j++) {
-                  const product_crockery = crockery_units[j];
+               
+               for (const product_crockery of crockery_units) { 
                   const template4 = product_crock(product_crockery);
                   document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
 
