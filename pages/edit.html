@@ -40,6 +40,9 @@
           <p>Bio:
             <input class="about" type="text" required="true" placeholder="About" id="user_about" />
           </p>
+          <p>Image :
+            <input class="image" type="text" required="true" placeholder="Image" id="user_image" />
+          </p>
         </b>
         <button class="btn btn-quart" type="submit">Back </button>
         <button class="btn btn-tertiary" type="submit"> Submit </button>
@@ -66,6 +69,7 @@
     document.getElementById("user_contact").value = user_data["user_contact"];
     document.getElementById("user_country").value =user_data["user_country"];
     document.getElementById("user_about").value = user_data["user_about"];
+    document.getElementById("user_image").value = user_data["user_image"];
 
 
     function update_details(e){
@@ -76,11 +80,13 @@
       let up_country = document.getElementById("user_country").value
       let up_contact = document.getElementById("user_contact").value
       let up_about = document.getElementById("user_about").value
+      let up_image = document.getElementById("user_image").value
 
       user_data["user_address"] = up_address;
       user_data["user_contact"] = up_contact;
       user_data["user_country"] = up_country;
       user_data["user_about"] = up_about;
+      user_data["user_image"] = up_image;
 
       localStorage.setItem('user_list', JSON.stringify(user_list));
     

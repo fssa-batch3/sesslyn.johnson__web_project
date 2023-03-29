@@ -77,10 +77,10 @@
     e.preventDefault();
     let user_password = document.getElementById('user_password').value;
     let user_email = document.getElementById('user_email').value;
-    let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+    let seller_list = JSON.parse(localStorage.getItem('seller_list')) || [];
 
-    let exist = user_list.length &&
-    JSON.parse(localStorage.getItem('user_list')).some(data => 
+    let exist = seller_list.length &&
+    JSON.parse(localStorage.getItem('seller_list')).some(data => 
         data.user_password == user_password);
 
     if(!exist){
@@ -88,7 +88,7 @@
         document.querySelector('form').reset();        
     }
     else{
-        localStorage.setItem("user_id",JSON.stringify(user_email));
+        localStorage.setItem("seller_id",JSON.stringify(user_email));
         alert("Your login in successful");
         location.href = "./new-product.html";  
     }

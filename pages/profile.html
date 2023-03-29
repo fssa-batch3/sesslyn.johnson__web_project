@@ -16,7 +16,7 @@
     <div class="container-title">
       <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
 
-      <img src="../assets/images/Main/sess.jpg" alt="profile image" class="profile-image" width="180px">
+      <img src="../assets/images/Main/profile.png" id="user_image" alt="profile image" class="profile-image" width="180px">
 
     </div>
     <div class="container-content">
@@ -59,6 +59,7 @@
     document.getElementById("user_contact").value = user_data["user_contact"];
     document.getElementById("user_country").value =user_data["user_country"];
     document.getElementById("user_about").value = user_data["user_about"];
+    document.getElementById("user_image").src = user_data["user_image"];
     
     function delData(e) {
       if (confirm("Are you sure?")) {

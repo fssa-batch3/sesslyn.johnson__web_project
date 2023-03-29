@@ -178,10 +178,10 @@
     let product_warranty  = document.getElementById("product_warranty").value;
     let product_uuid=uuidv4();
        
-
+    let sellerId = JSON.parse(localStorage.getItem('seller_id'));
     let product_crud = JSON.parse(localStorage.getItem('product_crud')) || [];
 
-    product_crud.push({image_url,product_name,product_category,product_real,product_sell,product_discount,product_description,product_warranty, product_uuid });
+    product_crud.push({image_url,product_name,product_category,product_real,product_sell,product_discount,product_description,product_warranty, product_uuid,"sellerId":sellerId });
     localStorage.setItem('product_crud', JSON.stringify(product_crud));
 
         alert('Product Created Successfully');

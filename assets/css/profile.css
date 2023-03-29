@@ -105,6 +105,10 @@ input.place{
 input.about{
 	margin-left:4.2rem;
 }
+input.image{
+    margin-bottom:3rem;
+    margin-left:6rem; 
+}
 .input{
     border-style: hidden hidden hidden hidden;
     background-color: transparent;

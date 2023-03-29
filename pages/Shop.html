@@ -248,15 +248,9 @@
                });
                console.log(sofa)
 
-               // for (let j = 0; j < sofa.length; j++) {
-               //    const product_details = sofa[j];
-               //    // console.log(product_details)
-               //    const template1 = product_upload(product_details);
-               //    document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
-               // }
                for (const product_details of sofa) {
-               const template1 = product_upload(product_details);
-               document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
+                  const template1 = product_upload(product_details);
+                  document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
                }
 
                function product_upload(sofa) {
@@ -265,7 +259,7 @@
                            <div class="cart_div">
                               <img id="shopping-img"  src="${sofa["image_url"]}" class="details" data-id="${sofa["product_uuid"]}" alt="Sofa image"/>
                               <p class="price_para">${"Rs." + sofa["product_sell"]}</p>
-                              <button data-cart=${sofa["product_uuid"]} class="cart_button" id="btn-primary">Add to Cart</button>
+                              <button data-cart=${sofa["product_uuid"]} onclick=" function already()" class="cart_button" id="btn-primary">Add to Cart</button>
                            </div>
                      `
                   return template1;
@@ -276,8 +270,8 @@
                   return e.product_category == 'TV Units';
                });
 
-              
-               for (const product_tv of tv_sets) { 
+
+               for (const product_tv of tv_sets) {
                   const template2 = product_units(product_tv);
                   document.querySelector("#shop_tv").insertAdjacentHTML("beforeend", template2);
 
@@ -299,8 +293,8 @@
                   return e.product_category == 'Space Saving Furniture';
                });
 
-           
-               for (const product_reuse of space_saving) { 
+
+               for (const product_reuse of space_saving) {
                   const template3 = product_space(product_reuse);
                   document.querySelector("#reusable_shop").insertAdjacentHTML("beforeend", template3);
 
@@ -323,7 +317,7 @@
                   return e.product_category == 'Wallpaper';
                });
 
-               for (const product_wallpaper of Wallpaper_units) { 
+               for (const product_wallpaper of Wallpaper_units) {
                   const template4 = product_wall(product_wallpaper);
                   document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
                }
@@ -345,7 +339,7 @@
                   return e.product_category == 'Candelier';
                });
 
-               for (const product_chandelier of chandelier_units) { 
+               for (const product_chandelier of chandelier_units) {
                   const template4 = product_chand(product_chandelier);
                   document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
 
@@ -369,7 +363,7 @@
                   return e.product_category == 'Wadrobe';
                });
 
-               for (const product_wadrobe of Wadrobe_units) { 
+               for (const product_wadrobe of Wadrobe_units) {
                   const template4 = product_wad(product_wadrobe);
                   document.querySelector("#wadrobe_shop").insertAdjacentHTML("beforeend", template4);
 
@@ -392,8 +386,8 @@
                let crockery_units = product_crud.filter(function (e) {
                   return e.product_category == 'Crockery Units';
                });
-               
-               for (const product_crockery of crockery_units) { 
+
+               for (const product_crockery of crockery_units) {
                   const template4 = product_crock(product_crockery);
                   document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
 
@@ -421,6 +415,8 @@
                   })
                })
 
+             
+
                let addToCart = document.querySelectorAll(".cart_button")
                addToCart.forEach(function (cart) {
                   cart.addEventListener("click", function () {
@@ -432,7 +428,7 @@
                      console.log(product_price)
                      let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
                      let userId = JSON.parse(localStorage.getItem('user_id'));
-
+                    
                      let exist = cart_list.length &&
                         JSON.parse(localStorage.getItem('cart_list')).some(data =>
                            data.product_uuid == id_cart
@@ -442,7 +438,7 @@
                         cart_list.push({
                            "product_uuid": id_cart,
                            "product_price": parseInt(product_price),
-                           "userId":userId,
+                           "userId": userId,
                            "product_quantity": 1
 
                         });
@@ -456,10 +452,11 @@
                      }
                   });
 
-               })
+               });
+
             </script>
 
-<script src="../assets/comments/header.js"></script>
+            <script src="../assets/comments/header.js"></script>
 </body>
 
 </html>

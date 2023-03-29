@@ -9,6 +9,7 @@ function signUp(e) {
         let user_contact="";
         let user_country="";
         let user_about="";
+        let user_image="";
 
         function checkPassword(){
             if (user_password!==confirm_password){
@@ -29,7 +30,7 @@ function signUp(e) {
 
     if(!exist){
         user_list.push({ user_name, user_email, 
-                        user_password, confirm_password, user_address, user_contact, user_country, user_about,user_uuid });
+                        user_password, confirm_password,user_image, user_address, user_contact, user_country, user_about,user_uuid });
 
         localStorage.setItem('user_list', JSON.stringify(user_list));
 

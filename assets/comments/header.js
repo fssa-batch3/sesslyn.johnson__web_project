@@ -11,11 +11,11 @@ const beforeLogin = `
         <div class="navbar">
           <nav>
             <ul>
-              <li><span class="color">C</span>hamber</li>
-              <li><span class="color">S</span>hop</li>
-              <li><span class="color">A</span>bout</li>
-              <li><span class="color">W</span>ishlist</li>
-              <li><span class="color">O</span>rders</li> 
+            <li><a href="${rootPath}/pages/chamber.html"><span class="color">C</span>hamber</a></li>
+            <li><a href="${rootPath}/pages/Shop.html"><span class="color">S</span>hop</a></li>
+            <li><a href="${rootPath}/pages/queries.html"><span class="color">A</span>bout</a></li>
+            <li><a href="${rootPath}/pages/liked.html"><span class="color">W</span>ishlist</a></li>
+            <li><a href="${rootPath}/pages/order.html"><span class="color">O</span>rders</a></li> 
             </ul>
         </nav>
        </div> 

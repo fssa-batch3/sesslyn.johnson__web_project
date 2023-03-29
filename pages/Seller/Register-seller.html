@@ -98,20 +98,20 @@
             }
         }
         checkPassword()
-    let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+    let seller_list = JSON.parse(localStorage.getItem('seller_list')) || [];
 
-    let exist = user_list.length && 
-        JSON.parse(localStorage.getItem('user_list')).some(data => 
+    let exist = seller_list.length && 
+        JSON.parse(localStorage.getItem('seller_list')).some(data => 
             data.user_email.toLowerCase() == user_email.toLowerCase()
         );
 
     if(!exist){
-        user_list.push({ user_name, user_email, 
+        seller_list.push({ user_name, user_email, 
                         user_password, confirm_password, user_address, user_contact, user_country, user_about,user_uuid });
 
-        localStorage.setItem('user_list', JSON.stringify(user_list));
+        localStorage.setItem('seller_list', JSON.stringify(seller_list));
 
-        console.log(localStorage.getItem('user_list'));
+        console.log(localStorage.getItem('seller_list'));
 
         document.querySelector('form').reset();
         document.getElementById('user_email').focus();

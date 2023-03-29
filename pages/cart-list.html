@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +17,7 @@
 </head>
 
 <body>
-  
+
 
     <div>
 
@@ -29,7 +27,7 @@
     <div class="content">
         <div class="container">
             <div class="cart-list">
-               
+
             </div>
         </div>
 
@@ -58,7 +56,7 @@
 
                         <tr>
                             <td>TOTAL AMOUNT</td>
-                            <td id="total_amount" ></td>
+                            <td id="total_amount"></td>
                         </tr>
 
                     </tbody>
@@ -153,166 +151,170 @@
     </div>
     <script>
 
-let product_crud = JSON.parse(localStorage.getItem("product_crud"));
+        let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         let cart_list = JSON.parse(localStorage.getItem("cart_list"));
-
-        let cart_product = product_crud.filter(product =>
-            cart_list.some(uuid => uuid.product_uuid === product.product_uuid)
-        );
-       
-        let cart_product_list = JSON.parse(localStorage.getItem("cart_list"));
+        let user = JSON.parse(localStorage.getItem("user_id"));
 
         let amount = 0;
-      
-        for (let i = 0; i < cart_product.length; i++) {
-            // Create the parent element with class "cart-details"
-            const cartDetailsDiv = document.createElement("div");
-            cartDetailsDiv.classList.add("cart-details");
-        
 
-            // Create the "remove" div
-            const removeDiv = document.createElement("div");
-            removeDiv.classList.add("remove");
-            cartDetailsDiv.append(removeDiv);
-         
+        for (let i = 0; i < cart_list.length; i++) {
+            if (cart_list[i].userId === user) {
 
-            // Create the "i" element with class "fa-solid fa-xmark"
-            const xMarkIcon = document.createElement("i");
-            xMarkIcon.classList.add("fa-solid", "fa-xmark");
-            xMarkIcon.setAttribute("data-remove",  cart_product[i]["product_uuid"]);
-            xMarkIcon.setAttribute("id", "icon_remove");
-            xMarkIcon.style.color = "rgb(238, 120, 120)";
-            removeDiv.append(xMarkIcon);
-            // console.log(xMarkIcon)
+                let card = product_crud.find(p => p.product_uuid === cart_list[i].product_uuid);
 
-            // Create the "cart-img" div
-            const cartImgDiv = document.createElement("div");
-            cartImgDiv.classList.add("cart-img");
-            cartDetailsDiv.append(cartImgDiv);
-            // console.log(cartImgDiv)
+                if (card) {
 
-            // Create the "a" element with href to "#"
-            const productLink = document.createElement("a");
-            productLink.href = "#";
-            cartImgDiv.append(productLink);
-            // console.log(productLink)
+                    // Create the parent element with class "cart-details"
+                    const cartDetailsDiv = document.createElement("div");
+                    cartDetailsDiv.classList.add("cart-details");
 
-            // Create the "img" element with src equal to cart_product["image_url"]
-            const productImg = document.createElement("img");
-            productImg.src = cart_product[i]["image_url"];
-            productImg.setAttribute("class", "img_product");
-            productImg.setAttribute("alt", "cart-images");
-            productLink.append(productImg);
-            // console.log(productImg)
 
-            // Create the "cart-list" div
-            const cartListDiv = document.createElement("div");
-            cartListDiv.classList.add("cart-list");
-            cartDetailsDiv.append(cartListDiv);
+                    // Create the "remove" div
+                    const removeDiv = document.createElement("div");
+                    removeDiv.classList.add("remove");
+                    cartDetailsDiv.append(removeDiv);
 
-            // Create the "description" div
-            const descriptionDiv = document.createElement("div");
-            descriptionDiv.classList.add("description");
-            cartListDiv.append(descriptionDiv);
 
-            // Create the "h4" element with class "product-head" and text equal to cart_product["product_name"]
-            const productName = document.createElement("h4");
-            productName.setAttribute("class", "product-head");
-            productName.textContent = cart_product[i]["product_name"];
-            descriptionDiv.append(productName);
+                    // Create the "i" element with class "fa-solid fa-xmark"
+                    const xMarkIcon = document.createElement("i");
+                    xMarkIcon.classList.add("fa-solid", "fa-xmark");
+                    xMarkIcon.setAttribute("data-remove", card["product_uuid"]);
+                    xMarkIcon.setAttribute("id", "icon_remove");
+                    xMarkIcon.style.color = "rgb(238, 120, 120)";
+                    removeDiv.append(xMarkIcon);
+                    // console.log(xMarkIcon)
 
-            // Create the "p" element with class "product-company" and text "Minimal Furniture"
-            const productCompany = document.createElement("p");
-            productCompany.classList.add("product-company");
-            const colorSpan = document.createElement("span");
-            colorSpan.classList.add("color");
-            colorSpan.textContent = "Minimal Furniture";
-            productCompany.appendChild(colorSpan);
-            descriptionDiv.append(colorSpan);
+                    // Create the "cart-img" div
+                    const cartImgDiv = document.createElement("div");
+                    cartImgDiv.classList.add("cart-img");
+                    cartDetailsDiv.append(cartImgDiv);
+                    // console.log(cartImgDiv)
 
-            // Create the "product-rate" div
-            const productRateDiv = document.createElement("div");
-            productRateDiv.classList.add("product-rate");
-            cartListDiv.append(productRateDiv);
+                    // Create the "a" element with href to "#"
+                    const productLink = document.createElement("a");
+                    productLink.href = "#";
+                    cartImgDiv.append(productLink);
+                    // console.log(productLink)
 
-            let find_quantity = cart_list.find(e=> e.product_uuid  == cart_list[i]["product_uuid"]);
-            console.log(find_quantity);
+                    // Create the "img" element with src equal to cart_product["image_url"]
+                    const productImg = document.createElement("img");
+                    productImg.src = card["image_url"];
+                    productImg.setAttribute("class", "img_product");
+                    productImg.setAttribute("alt", "cart-images");
+                    productLink.append(productImg);
+                    // console.log(productImg)
 
-            // Create the "span" element with class "product-price" and text equal to cart_product["product_sell"]
-            let productPrice = document.createElement("span");
-            productPrice.classList.add("product-price");
-            productPrice.textContent = "Rs." + cart_product[i]["product_sell"]*find_quantity["product_quantity"];
-            productRateDiv.append(productPrice);
+                    // Create the "cart-list" div
+                    const cartListDiv = document.createElement("div");
+                    cartListDiv.classList.add("cart-list");
+                    cartDetailsDiv.append(cartListDiv);
 
-            // Create the "quant" div
-            const quantDiv = document.createElement("div");
-            quantDiv.classList.add("quant");
-            cartListDiv.append(quantDiv);
+                    // Create the "description" div
+                    const descriptionDiv = document.createElement("div");
+                    descriptionDiv.classList.add("description");
+                    cartListDiv.append(descriptionDiv);
 
-            // Create the "label" element with text "Quantity"
-            const quantityLabel = document.createElement("label");
-            quantityLabel.textContent = "Quantity";
-            quantDiv.append(quantityLabel);
+                    // Create the "h4" element with class "product-head" and text equal to cart_product["product_name"]
+                    const productName = document.createElement("h4");
+                    productName.setAttribute("class", "product-head");
+                    productName.textContent = card["product_name"];
+                    descriptionDiv.append(productName);
 
-           
+                    // Create the "p" element with class "product-company" and text "Minimal Furniture"
+                    const productCompany = document.createElement("p");
+                    productCompany.classList.add("product-company");
+                    const colorSpan = document.createElement("span");
+                    colorSpan.classList.add("color");
+                    colorSpan.textContent = "Minimal Furniture";
+                    productCompany.appendChild(colorSpan);
+                    descriptionDiv.append(colorSpan);
 
-            // Create the "input" element with class "quantity", type "number", value equal to find_quantity["product_quantity"], and id "cart_quantity"
-            const quantityInput = document.createElement("input");
-            quantityInput.classList.add("quantity");
-            quantityInput.type = "number";
-            quantityInput.value = find_quantity["product_quantity"];
-            quantDiv.append(quantityInput);
+                    // Create the "product-rate" div
+                    const productRateDiv = document.createElement("div");
+                    productRateDiv.classList.add("product-rate");
+                    cartListDiv.append(productRateDiv);
 
-            const update = document.createElement("button");
-            update.setAttribute("type", "button");
-            update.setAttribute("class", "btn update");
-            update.setAttribute("style", "display:none");
-            update.innerText = "Update"
-            quantDiv.append(update);
+                    let find_quantity = cart_list.find(e => e.product_uuid == card["product_uuid"]);
 
-            //  <div class="product-description">
-            const div_description = document.createElement("div");
-            div_description.setAttribute("class", "buttons");
-            cartListDiv.append(div_description);
+                    // Create the "span" element with class "product-price" and text equal to cart_product["product_sell"]
+                    let productPrice = document.createElement("span");
+                    productPrice.classList.add("product-price");
+                    productPrice.textContent = "Rs." + card["product_sell"] * find_quantity["product_quantity"];
+                    productRateDiv.append(productPrice);
 
-            //<div></div>
-            const div_descriptionButton = document.createElement("div");
-            div_description.append(div_descriptionButton);
+                    // Create the "quant" div
+                    const quantDiv = document.createElement("div");
+                    quantDiv.classList.add("quant");
+                    cartListDiv.append(quantDiv);
 
-            // Create the "a" element with href to "#"
-            const productTag = document.createElement("a");
-            productTag.href = "#";
-            div_descriptionButton.append(productTag);
-
-            //<button class="btn"></button>
-            const button_primary = document.createElement("button");
-            button_primary.setAttribute("class", "btn");
-            button_primary.setAttribute("id", "liked-product");
-            button_primary.setAttribute("data-id", cart_product[i]["product_uuid"]);
-            button_primary.innerHTML = "Move to Wishlist";
-            productTag.append(button_primary);
+                    // Create the "label" element with text "Quantity"
+                    const quantityLabel = document.createElement("label");
+                    quantityLabel.textContent = "Quantity";
+                    quantDiv.append(quantityLabel);
 
 
 
-            document.querySelector("div.cart-list").append(cartDetailsDiv);
+                    // Create the "input" element with class "quantity", type "number", value equal to find_quantity["product_quantity"], and id "cart_quantity"
+                    const quantityInput = document.createElement("input");
+                    quantityInput.classList.add("quantity");
+                    quantityInput.type = "number";
+                    quantityInput.value = find_quantity["product_quantity"];
+                    quantityInput.min = "1";
+                    quantDiv.append(quantityInput);
 
-            amount+= cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
+                    const update = document.createElement("button");
+                    update.setAttribute("type", "button");
+                    update.setAttribute("class", "btn update");
+                    update.setAttribute("style", "display:none");
+                    update.innerText = "Update"
+                    quantDiv.append(update);
 
-            console.log(amount);
+                    //  <div class="product-description">
+                    const div_description = document.createElement("div");
+                    div_description.setAttribute("class", "buttons");
+                    cartListDiv.append(div_description);
 
+                    //<div></div>
+                    const div_descriptionButton = document.createElement("div");
+                    div_description.append(div_descriptionButton);
+
+                    // Create the "a" element with href to "#"
+                    const productTag = document.createElement("a");
+                    productTag.href = "#";
+                    div_descriptionButton.append(productTag);
+
+                    //<button class="btn"></button>
+                    const button_primary = document.createElement("button");
+                    button_primary.setAttribute("class", "btn");
+                    button_primary.setAttribute("id", "liked-product");
+                    button_primary.setAttribute("data-id", card["product_uuid"]);
+                    button_primary.innerHTML = "Move to Wishlist";
+                    productTag.append(button_primary);
+
+
+
+                    document.querySelector("div.cart-list").append(cartDetailsDiv);
+
+                    amount += cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
+
+                    console.log(amount);
+
+                }
+            }
         }
 
-        document.getElementById("sub_total").innerText="Rs."+amount;
-        document.getElementById("total_amount").innerText="Rs."+amount;
-        
-       // getting extra informatio like no.of.guest and date of delivery
-       let updateBtn = document.querySelectorAll(".update")
+        document.getElementById("sub_total").innerText = "Rs." + amount;
+        document.getElementById("total_amount").innerText = "Rs." + amount;
+
+
+        // getting extra informatio like no.of.guest and date of delivery
+        let updateBtn = document.querySelectorAll(".update")
         updateBtn.forEach(function (upDate) {
-        upDate.addEventListener('click', function () {
-      
+            upDate.addEventListener('click', function () {
+
                 let parent = this.closest(".cart-details")
                 console.log(parent)
-   
+
                 let getNumber = parent.querySelector(".quantity").value;
                 let id = parent.querySelector("#icon_remove").getAttribute("data-remove");
                 function getId(e) {
@@ -330,7 +332,7 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
                 location.reload();
             })
         })
-       
+
         // getting extra information like no.of.guest
         let number_of_guest = document.querySelectorAll(".quantity")
         number_of_guest.forEach(function (getGuest) {
@@ -343,30 +345,29 @@ let product_crud = JSON.parse(localStorage.getItem("product_crud"));
 
 
         let products = document.querySelectorAll("i#icon_remove")
-               products.forEach(function(check){
-                check.addEventListener("click", function (){
-                    let product_id = this.dataset.remove;
-                    localStorage.setItem("products_id", JSON.stringify(product_id));
-                    console.log(product_id);
-                  
-                    if (confirm("Are you sure to remove this product?")){
-                       let id = JSON.parse(localStorage.getItem("products_id"));
-                        let all_products = JSON.parse(localStorage.getItem("cart_list"));
-                        console.log(all_products);
-                        let pdts = all_products.find(e => e.product_uuid == product_id)
-                        console.log(pdts);
-                        let indexOfProduct = all_products.indexOf(pdts);
-                        all_products.splice(indexOfProduct, 1);
-                        console.log(indexOfProduct);
-                        localStorage.setItem("cart_list", JSON.stringify(all_products));
-                    }
-                     window.location.reload();
-                });
+        products.forEach(function (check) {
+            check.addEventListener("click", function () {
+                let product_id = this.dataset.remove;
+                localStorage.setItem("products_id", JSON.stringify(product_id));
+                console.log(product_id);
+
+                if (confirm("Are you sure to remove this product?")) {
+                    let id = JSON.parse(localStorage.getItem("products_id"));
+                    let all_products = JSON.parse(localStorage.getItem("cart_list"));
+                    console.log(all_products);
+                    let pdts = all_products.find(e => e.product_uuid == product_id)
+                    console.log(pdts);
+                    let indexOfProduct = all_products.indexOf(pdts);
+                    all_products.splice(indexOfProduct, 1);
+                    console.log(indexOfProduct);
+                    localStorage.setItem("cart_list", JSON.stringify(all_products));
+                }
+                window.location.reload();
             });
+        });
 
     </script>
-      <script src="../../assets/comments/header.js"></script>
+    <script src="../../assets/comments/header.js"></script>
 </body>
 
 </html>
-
