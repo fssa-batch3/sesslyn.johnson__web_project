@@ -59,8 +59,11 @@
     document.getElementById("user_contact").value = user_data["user_contact"];
     document.getElementById("user_country").value =user_data["user_country"];
     document.getElementById("user_about").value = user_data["user_about"];
-    document.getElementById("user_image").src = user_data["user_image"];
-    
+
+if(user_data["user_image"] !== ""){
+  document.getElementById("user_image").src = user_data["user_image"];
+}    
+
     function delData(e) {
       if (confirm("Are you sure?")) {
         let user_id = JSON.parse(localStorage.getItem("user_id"));

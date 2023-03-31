@@ -148,4 +148,7 @@ input.about{
      margin-left:5rem;
 	 padding:0.313rem 1.5rem;
 }
-
+input.image{
+    margin-left:5.5rem;
+    padding-top:-6rem;
+}

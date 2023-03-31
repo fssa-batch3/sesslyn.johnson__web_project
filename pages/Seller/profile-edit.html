@@ -58,6 +58,9 @@
               <p>Bio:
                 <input class="about" type="text" required="true" placeholder="About" id="user_about" />
               </p>
+              <p>Image :
+                <input class="image" type="text" required="true" placeholder="Image" id="user_image" />
+              </p>
           </b>
        
         </div>
@@ -65,6 +68,46 @@
         <button class="btn btn-quart" type="submit">Back </button>
         <button class="btn btn-tert" type="submit"> Submit </button>
       </form>
+      <script>
+
+        let seller_id = JSON.parse(localStorage.getItem('seller_id'));
+        let seller_list = JSON.parse(localStorage.getItem('seller_list'));
+        function login_data(e) {
+          return e.user_email == seller_id;
+        }
+        seller_data = seller_list.find(login_data);
+    
+        document.getElementById("user_name").value = seller_data["user_name"];
+        document.getElementById("user_email").value = seller_data["user_email"];
+        document.getElementById("user_address").value = seller_data["user_address"];
+        document.getElementById("user_contact").value = seller_data["user_contact"];
+        document.getElementById("user_country").value =seller_data["user_country"];
+        document.getElementById("user_about").value = seller_data["user_about"];
+        document.getElementById("user_image").value = seller_data["user_image"];
+    
+    
+        function update_details(e){
+    
+          e.preventDefault();
+          let up_name = document.getElementById("user_name").value
+          let up_address = document.getElementById("user_address").value
+          let up_country = document.getElementById("user_country").value
+          let up_contact = document.getElementById("user_contact").value
+          let up_about = document.getElementById("user_about").value
+          let up_image = document.getElementById("user_image").value
+    
+          seller_data["user_address"] = up_address;
+          seller_data["user_contact"] = up_contact;
+          seller_data["user_country"] = up_country;
+          seller_data["user_about"] = up_about;
+          seller_data["user_image"] = up_image;
+    
+          localStorage.setItem('seller_list', JSON.stringify(seller_list));
+        
+    
+         window.location.href = "./profile-seller.html";
+        }
+      </script>
  </div>
 
    

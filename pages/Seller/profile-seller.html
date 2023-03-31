@@ -37,7 +37,7 @@
     <div class="container-title">
      <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
    
-     <img src="../../assets/images/Main/sess.jpg" alt="profile image" class="profile-image" width="180px">
+     <img src="../../assets/images/Main/profile.png" id="user_image" alt="profile image" class="profile-image" width="180px">
     
     </div>
     <div id="container-profile">
@@ -66,37 +66,41 @@
 
 
     <button class="btn btn-primary"><a href="profile-edit.html">Edit</a></button>
-    <button class="btn btn-secondary" type="sumbit" onclick="delData() ">Delete</button>
+    <button class="btn btn-secondary" type="sumbit" onclick="delData() ">Log Out</button>
 </div>
 <script>
 
-  let user_id = JSON.parse(localStorage.getItem('user_id'));
-  let user_list = JSON.parse(localStorage.getItem('user_list'));
+  let seller_id = JSON.parse(localStorage.getItem('seller_id'));
+  let seller_list = JSON.parse(localStorage.getItem('seller_list'));
   function login_data(e) {
-    return e.user_email == user_id;
+    return e.user_email == seller_id;
   }
 
-  user_data = user_list.find(login_data);
+   seller_data = seller_list.find(login_data);
 
-  document.getElementById("user_name").value = user_data["user_name"];
-  document.getElementById("user_email").value = user_data["user_email"];
-  document.getElementById("user_address").value = user_data["user_address"];
-  document.getElementById("user_contact").value = user_data["user_contact"];
-  document.getElementById("user_country").value =user_data["user_country"];
-  document.getElementById("user_about").value = user_data["user_about"];
-  
+  document.getElementById("user_name").value = seller_data["user_name"];
+  document.getElementById("user_email").value = seller_data["user_email"];
+  document.getElementById("user_address").value = seller_data["user_address"];
+  document.getElementById("user_contact").value = seller_data["user_contact"];
+  document.getElementById("user_country").value =seller_data["user_country"];
+  document.getElementById("user_about").value = seller_data["user_about"];
+
+if(seller_data["user_image"] !== ""){
+document.getElementById("user_image").src = seller_data["user_image"];
+}    
+
   function delData(e) {
     if (confirm("Are you sure?")) {
-      let user_id = JSON.parse(localStorage.getItem("user_id"));
-      let user_list = JSON.parse(localStorage.getItem("user_list"));
+      let seller_id = JSON.parse(localStorage.getItem("seller_id"));
+      let seller_list = JSON.parse(localStorage.getItem("seller_list"));
       function login_data(e) {
         return e.user_email == user_id;
       }
-      user_data = user_list.find(login_data);
-      const indexOfUser = user_list.indexOf(user_data);
-      user_list.splice(indexOfUser, 1);
-      localStorage.setItem('user_list', JSON.stringify(user_list));
-      window.location.href = "./Homepage.html";
+      let seller_data = seller_list.find(login_data);
+      const indexOfUser = seller_list.indexOf(seller_data);
+      seller_list.splice(indexOfUser, 1);
+      localStorage.setItem('seller_list', JSON.stringify(seller_list));
+      window.location.href = "../../index.html";
     };
   }
   

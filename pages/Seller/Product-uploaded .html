@@ -205,29 +205,24 @@
       //<span class="real_price"></span>
       span_price = document.createElement("span");
       span_price.setAttribute("class", "real-price");
-      span_price.innerHTML = unique_id["product_sell"];
+      span_price.innerHTML = "Rs" + unique_id["product_sell"];
       p_paragraph.append(span_price);
-
 
       //<del></del>
       del_price = document.createElement("del");
-      del_price.innerHTML = unique_id["product_real"];
+      del_price.innerHTML = "Rs" + unique_id["product_real"];
       p_paragraph.append(del_price);
-
-
 
       //  <small> </small>
       small_pattern = document.createElement("small");
       small_pattern.setAttribute("class", "real-prize");
-      small_pattern.innerHTML = unique_id["product_discount"];
+      small_pattern.innerHTML ="Rs" +  unique_id["product_discount"];
       p_paragraph.append(small_pattern);
-
 
       //  <div class="product-description">
       div_description = document.createElement("div");
       div_description.setAttribute("class", "product-description");
       section_right.append(div_description);
-
 
       //  <h3> </h3>
       h3_description = document.createElement("h3");

@@ -217,10 +217,10 @@
 
                <div class="footer-div" id="footer-3">
                   <h4>Business Solutions</h4>
-                  <a href="#">
+                  <a href="./Login/Register.html">
                      <p>Talent</p>
                   </a>
-                  <a href="#">
+                  <a href="">
                      <p>Marketing</p>
                   </a>
                   <a href="#">
@@ -431,8 +431,13 @@
                     
                      let exist = cart_list.length &&
                         JSON.parse(localStorage.getItem('cart_list')).some(data =>
-                           data.product_uuid == id_cart
+                           data.product_uuid == id_cart && data.userId === userId
                         );
+                        if(!userId){
+                           alert("log in")
+                           window.location.href="./Login/Register.html";
+                           return;
+                        }
 
                      if (!exist) {
                         cart_list.push({
