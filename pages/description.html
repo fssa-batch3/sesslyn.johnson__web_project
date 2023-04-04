@@ -165,7 +165,6 @@
 
         //<p class="price"></p>
         const p_text = document.createElement("p");
-        // p_text.setAttribute("class", "description_para");
         p_text.innerHTML = unique_id["product_description"];
         div_description.append(p_text);
 
@@ -182,7 +181,6 @@
         //<button class="btn"></button>
         const button_primary = document.createElement("button");
         button_primary.setAttribute("class", "btn_cart");
-        // button_primary.setAttribute("id", "btn_cart");
         button_primary.setAttribute("type", "submit");
         button_primary.setAttribute("data-id", unique_id["product_uuid"])
         button_primary.innerHTML = "Add to Cart";
