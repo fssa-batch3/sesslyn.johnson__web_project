@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/profile/login.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Minimal</title>
+</head>
+<body>
+    <div></div>
+    <div id="index_main">
+        <div id="main_page">
+            <div class="main_left" id="left-div">
+                 <div class="main_header">
+                    <span class="header"><a href="../../index.html"><img class="main_logo" src="../../assets/images/home_page/Logo.jpg" alt="logo of minimalistic m"/></a></span>
+                    <span class="header"><a href="#"><p class="header_para">CHAMBER</p></a></span>
+                    <span class="header"><a href="../shop.html"><p class="header_para">SHOP</p></a></span>
+                    <span class="header"><a href="../about.html"><p class="header_para">ABOUT</p></a></span>
+                    <span class="header"><a href="../order/order.html"><p class="header_para">ORDERS</p></a></span>
+                   </div>
+                   <hr class="new2">
+               <div class="left">
+                <img class="left_img" id="left-div-img" src="../../assets/images/home_page/MIN IMA LIS TIC.png" alt="Design Minimalistic picture"/>
+                <p class="left_para" id="left-div-para"> Your house may have many functions, which requires that its device be ergonomic.
+                   This is where the role of the interior designor begins.</p>
+               </div>
+               <div class="media" id="media-div">
+                <span id="media-span">facebook<p>/</p> </span>
+                <span id="media-span2">Twitter<p>/</p></span>
+                <span >Instagram</span>
+               </div>
+            </div>
+            <div class="main_right">
+              <div class="main_img">
+                <img class="right_img" src="../../assets/images/home_page/white_img.jpg" alt="Picture of a living room"/>
+               </div>
+                <div class="right">
+                    <div class="right_btn">
+                        <button  id="btn"> Sign Up <a href="#"><img src="../../assets/images/home_page/arrow.png" alt="arrow towards right"/></a> </button>
+                    </div>
+                    <div>
+                        <hr class="new1">
+                        <p class="right_para">A Unique structure combined with a cushion <br>and a greenish plants.</p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <!-- <div class="sign_main "> -->
+    <div class="right_corner">
+        <div class="menu">
+            <div class="menu_bar"></div>
+            <div class="menu_bar"></div>
+            <div class="menu_bar"></div>
+        </div>
+        <div class="circle">
+            
+            <div  class="dot" id="dot"></div>
+            <div  class="double_circle"></div>
+            <div  class="dot"></div>
+        </div>
+        <div>
+            <h1 class="sign-up">Login</h1>
+            <p class="text_sign">An website to decor your home.<br>Welcome to minimalistic</p>
+        </div>
+       <div class="data_form">
+        <form role="form" onsubmit="signIn(event)">
+        <div class="form_input">
+            <label>Name</label>
+            <input type="text" class="no_outline" id="user_name" required="true" placeholder="Sesslyn">
+        </div>
+        <hr class="new1">
+
+        <div class="form_input">
+            <label>Email Id</label>
+            <input type="text" class="no_outline" id="user_email" required="true" placeholder="sesslyn2004@gmail.com" >
+        </div>
+        <hr class="new1">
+
+        <div class="form_input">
+            <label>Password</label>
+            <input type="password" class="no_outline" required="true" placeholder="Password" id="user_password" >
+        </div>
+        
+        <div class="form_btn">
+            <button class="btn_register" type="submit">Login</button> 
+            <button class="btn_register" id="btn_password" type="button"><a href="../index.html">Create Password</a> </button> 
+       </div>
+    </form>
+       <div>
+        <img class="sign_img" id="login_img" src="../../assets/images/home_page/minimalist.png" alt="minimalistic.logo" />
+       </div>
+ 
+       </div>
+    </div>
+    <script>
+        function signIn(e) {
+    e.preventDefault();
+    let user_name = document.getElementById('user_name').value;
+    let user_password = document.getElementById('user_password').value;
+    let user_email = document.getElementById('user_email').value;
+    let user_crud = JSON.parse(localStorage.getItem('user_crud')) || [];
+
+    let exist = user_crud.length &&
+    JSON.parse(localStorage.getItem('user_crud')).some(data => 
+        data.user_password == user_password);
+
+    if(!exist){
+        alert("Incorrect login credentials");
+        document.querySelector('form').reset();        
+    }
+    else{
+        localStorage.setItem("profile_id",JSON.stringify(user_email));
+        alert("Your login in successful");
+        window.location.href = "./profile_new.html";  
+    }
+}
+    </script>
+</body>
+</html>
+
