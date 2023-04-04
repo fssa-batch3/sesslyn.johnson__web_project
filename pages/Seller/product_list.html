@@ -3,51 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Product Details page</title>
-    <link rel="stylesheet" href="../../assets/css/seller/product_details.css">
-    <link rel="stylesheet" href="../../assets/css/seller/homepage.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/seller/product_list.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="../../assets/css/header and footer.css">
-
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
 </head>
 
-<body id="product-main">
-    <header class="header" id="header-nav">
-        <div>
-            <a href="./Homepage.html">
-                <img class="logo-image" src="../../assets/images/Main/casas-logo.png" alt="logo image" />
-            </a>
-        </div>
-        <div class="inner" id="input">
-            <button type="submit"><a href="./Register-seller.html">Login</a></button>
-        </div>
-        <div class="triple-bar" id="profile-icon">
-            <a href="profile-seller.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon" /></a>
-        </div>
-        <div class="plus-icon">
-            <a href="new-product.html"><i class="fa fa-plus"></i></a>
-        </div>
-    </header>
-
-
+<body>
     <div class="contain">
-       
+
     </div>
     <script>
-
-        let div_top
-        let div_container
-        let a_tag
-        let img_product
-        let img_delete
-        let h2_title
-        let p_paragraph
-        let button_primary
-        let button_secondary
-
 
         let product_upload = JSON.parse(localStorage.getItem("product_crud"));
         let seller = JSON.parse(localStorage.getItem("seller_id"));
@@ -82,20 +61,11 @@
           let  img_id = img_product.getAttribute('data-id');
             img_product.addEventListener("click", (event) => {
                 const product_description = img_id;
-                window.location.href = `./Product-uploaded .html?product_id=${product_description}`;
+                window.location.href = `../seller/seller_description.html?product_id=${product_description}`;
             })
-
-
             div_container.append(img_product);
 
-            //<img/>
-            img_delete = document.createElement("img");
-            img_delete.setAttribute("alt", "delete_icon");
-            img_delete.setAttribute("class", "delete_icon");
-            img_delete.setAttribute("src", "../../assets/images/Main/delete_icon.png");
-            div_container.append(img_delete);
-
-
+          
             //<h2></h2>
             h2_title = document.createElement("h2");
             h2_title.innerHTML = productDetails_list["product_name"];
@@ -103,22 +73,29 @@
 
             //<p class="price"></p>
             p_paragraph = document.createElement("p");
+            p_paragraph.setAttribute("class", "price");
             p_paragraph.innerHTML = "Rs."+ productDetails_list["product_sell"];
             div_container.append(p_paragraph);
+
+             //  <div class="down">
+            div_contain = document.createElement("div");
+            div_contain.setAttribute("class", "btn");
+            div_contain.setAttribute("data-id", productDetails_list["product_uuid"])
+            div_container.append(div_contain);
 
             //<button class="btn"></button>
             button_primary = document.createElement("button");
             button_primary.setAttribute("class", "button_add");
             button_primary.setAttribute("data-uuid", productDetails_list["product_uuid"]);
             button_primary.innerHTML = "Add";
-            div_container.append(button_primary);
+            div_contain.append(button_primary);
         
             //<button class="btn"></button>
             button_secondary = document.createElement("button");
             button_secondary.setAttribute("class", "button_remove");
             button_secondary.setAttribute("data-uuid", productDetails_list["product_uuid"]);
             button_secondary.innerHTML = "Remove";
-            div_container.append(button_secondary);
+            div_contain.append(button_secondary);
 
         }
     }
@@ -183,8 +160,6 @@
         });
      });
     </script>
-
+    <script src="../../assets/comments/seller_header.js"></script>
 </body>
-
 </html>
-

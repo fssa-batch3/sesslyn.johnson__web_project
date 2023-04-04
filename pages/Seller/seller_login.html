@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <title>Seller Page</title>
-<link rel="stylesheet" href="../../assets/css/seller/register-seller.css">
-
-<link rel="stylesheet" href="../../assets/css/normalize.css">
-<link rel="stylesheet" href="../../assets/css/header and footer.css">
-    
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Homepage</title>
+    <link rel="stylesheet" href="../../assets/css/seller/seller_register.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
 </head>
-<body> 
-    <header class="header" id="header-nav">
-        <div>
-            <a href="./Homepage.html">
-        <img class="logo-image" src="../../assets/images/Main/casas-logo.png" alt="logo image" />
-        </a>
-        </div>
-        <div class="inner" id="input">
-          <button type="submit"><a href="./Register-seller.html">Sign Up</a></button>
-        </div>
-        <div class="triple-bar" id="profile">
-          <a href="profile-seller.html"><img src="../../assets/images/Main/profile (1).png" alt="bar icon"/></a>
-        </div> 
-       
-   </header>
-  
-
- <div id="family" class="family-div">
+<body><div id="family" class="family-div">
 
     <div>
      <div>
@@ -51,15 +39,15 @@
                  </div>
               
                 <div class="forget">
-                    <a href="./forget-seller.html">Forget Password</a>
+                    <a href="./seller_register.html">Forget Password</a>
                 </div>
             
-                <button class="btn" type="submit" id="primary">Login</button>
+                <button class="btn_sell" type="submit" id="primary">Login</button>
              
                 <div class="register">
-                <p> Don't have a account?<a href="./Register-seller.html">  Register Now</a></p>
+                <p> Don't have a account?<a href="./seller_register.html">  Register Now</a></p>
                 </div>
-          
+    
             </div>
         </div>
         </form>
@@ -68,7 +56,7 @@
     </div>
      
     <div>
-        <img src="../../assets/images/Seller/register-seller.png"  alt="seller-img" class="family-img"/>
+        <img src="../../assets/images/home_page/seller_register.jpg"  alt="seller-img" class="family-img"/>
     </div>
    </div>
    
@@ -90,11 +78,11 @@
     else{
         localStorage.setItem("seller_id",JSON.stringify(user_email));
         alert("Your login in successful");
-        location.href = "./new-product.html";  
+        location.href = "./product_form.html";  
     }
 }
 
 </script>
-
+<script src="../../assets/comments/seller_header.js"></script>
   </body>
   </html>
