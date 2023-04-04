@@ -90,7 +90,7 @@ small.discount{
 .price{
 	font-size:1.5rem;
     margin-bottom:-1rem;
-    margin-top:-0.5rem;
+    margin-top:0.3rem;
 }
 .current-price{
     padding-left:1rem;
@@ -193,10 +193,6 @@ del{
     margin-top:1.5rem;
     border-radius: 10rem;
     box-shadow: 7px 8px 33px 0px rgba(83, 83, 83, 0.998);
-}
-.price{
-    font-size:1.1rem;
-    margin-top:0.3rem;
 }
 .description_para{
     padding-right:17rem;

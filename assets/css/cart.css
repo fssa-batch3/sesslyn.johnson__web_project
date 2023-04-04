@@ -57,6 +57,9 @@ body{
 	flex-direction: row;
  }
  h3{
+	text-overflow: ellipsis;
+	width:180px;
+	height:10px;
 	margin:6rem 1rem 0rem 2rem;
  }
  td{

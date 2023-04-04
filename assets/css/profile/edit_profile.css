@@ -56,9 +56,12 @@ input#user_dob{
 #city_code{
     margin-left:0.5rem;
 }
-input#user_gender{
+#usercity_gender{
+    padding-bottom:0.5rem;
+}
+/* #user_gender{
     padding:0.5rem 1.2rem 0.5rem 0.5rem;
-} 
+}  */
 input#user_state{
     padding:0.5rem 2rem 0.5rem 0.5rem;
     width:100%;
@@ -80,10 +83,7 @@ input#user_address{
 /* input#user_about{
     padding:0.5rem 11.5rem 0.5rem 0.5rem;
 } */
-label{
-    font-size:1.5rem;
-    padding:1rem 0rem; 
-}
+
 .form_details label{
     font-size:1rem;
     padding:1rem 0rem;
@@ -115,13 +115,17 @@ a{
 }
 select{
     display:block;
-    padding:0.5rem 17.5rem 0.5rem 0.5rem;
+    padding:0.2rem 17.5rem 0.5rem 0.5rem;
     margin:1rem 10rem 0.5rem 0.2rem;
     outline:none;
     border:1px solid rgb(190, 190, 190);
 }
+select#user_gender{
+    margin:0.2rem 7rem 0.5rem 0.2rem;
+    padding:0.2rem 17rem 0.5rem 0.5rem;
+}
 #usercity_code{
-    margin-left:-12.2rem;
+    margin-left:-9.2rem;
 }
 #usercity_dob{
     margin-left:-1.5rem;

@@ -1,4 +1,5 @@
-// let user_crud = JSON.parse(localStorage.getItem("user_crud"));
+
+
 let profile_id = JSON.parse(localStorage.getItem("profile_id"));
 let btn = document.getElementById('btn');
 document.getElementById('btn').onclick = function() {
@@ -14,28 +15,24 @@ document.getElementById('btn').onclick = function() {
 
  function register() {
     document.getElementById("right_corner").style.display = "block";
- }
-
-function register() {
-
-    var x = document.getElementById("right_corner");
+    let x = document.getElementById("right_corner");
     x.classList.remove("hide");
     x.classList.add("block");
-    var y = document.getElementById("main_page");
+    let y = document.getElementById("main_page");
     y.style.width = "70%";
-    var j = document.getElementById("left-div");
+    let j = document.getElementById("left-div");
     j.style.width = "50%";
-    var z = document.getElementById("left-div-img");
+    let z = document.getElementById("left-div-img");
     z.style.width = "22rem";
     z.style.height = "22rem";
     z.style.margin = "8rem 2rem 1rem 5rem";
-    var s = document.getElementById("left-div-para");
+    let s = document.getElementById("left-div-para");
     s.style.margin = "1rem 5rem 1rem 5rem";
-    var k = document.getElementById("media-div");
+    let k = document.getElementById("media-div");
     k.style.margin = "3rem 3rem 3rem 5rem";
-    var ele = document.getElementById("media-span");
+    let ele = document.getElementById("media-span");
     ele.style.padding = "0rem";
-    var ele2 = document.getElementById("media-span2");
+    let ele2 = document.getElementById("media-span2");
     ele2.style.padding = "0rem";
 }
 

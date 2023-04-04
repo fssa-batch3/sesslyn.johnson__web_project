@@ -52,6 +52,7 @@ hr.new2{
 } 
 .main_right{
   margin-left:-20rem;
+    width:100%;
 }
 
 .left_img{
@@ -79,10 +80,6 @@ hr.new2{
     margin-left:1.5rem;
     padding-left:1.5rem;
 }
-.main_right{
-    width:100%;
-   margin-left:-23rem;
-}
 .right_img{
     width:32.8rem;
     height:40rem;
@@ -105,9 +102,10 @@ hr.new2{
     height:1rem;
     padding-left:1rem;
 }
-hr.new1{
+
+  hr.new1{
     border-top: 1px solid rgb(20, 19, 19);
-    margin:4.5rem 3rem 2rem 1rem;
+    margin:1rem 5rem 2rem 4rem;
   }
 .right_para{
     margin:3rem 2rem 2rem 2rem;
@@ -233,11 +231,6 @@ hr.new1{
      float:inherit;
      margin:0rem 1rem 0rem 4rem;
     }
-    hr.new1{
-      border-top: 1px solid rgb(20, 19, 19);
-      margin:1rem 5rem 2rem 4rem;
-    }
- 
     .btn_register a{
      color:black;
      text-decoration: none;

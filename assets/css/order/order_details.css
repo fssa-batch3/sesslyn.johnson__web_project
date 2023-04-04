@@ -123,6 +123,7 @@ label{
     display:inline;
     width:20px;
     height:20px;
+    accent-color: rgb(5, 5, 5);   
 }
 .payment_label{
    margin:1rem 2rem 0rem 0.2rem;
@@ -142,11 +143,6 @@ label{
 	box-shadow: 19px 1px 27px 0px rgba(193, 192, 192, 0.767);
     /* font-family: 'Roboto', sans-serif */
 }
-#user_cash {
-    accent-color: rgb(5, 5, 5);
-}
-
-
 .heading_page{
     margin:0rem 0rem 2rem 30rem;
  }

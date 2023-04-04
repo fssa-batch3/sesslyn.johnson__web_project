@@ -59,7 +59,6 @@ const AfterLogin = `
 </div>
 `
 
-
 const loginUser = JSON.parse(localStorage.getItem("profile_id"));
 if (loginUser) {
   document.body.insertAdjacentHTML("afterbegin", AfterLogin);
@@ -78,4 +77,5 @@ else {
   localStorage.removeItem("profile_id");
  
 }
+
 

@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="details">
-                            <div class="form_details">
+                            <div class="form_details" id="usercity_gender">
                                 <label>Gender</label>
                                 <select type="text" class="name" required="true" id="user_gender" placeholder="Male">
                                     <option>Male</option>
@@ -147,7 +147,7 @@
             return e.user_email == profile_id;
         }
 
-        let user_data = user_crud.find(login_data);
+        user_data = user_crud.find(login_data);
 
         document.getElementById("user_name").value = user_data["user_name"];
         document.getElementById("user_email").value = user_data["user_email"];
