@@ -13,9 +13,6 @@ Documentation: https://docs.google.com/document/d/1byvLtvtBDpoKq4_vphgbOFomeDiCT
 
 Sonar Cloud : https://sonarcloud.io/project/overview?id=fssa-batch3_sesslyn.johnson__web_project
 
-<<<<<<< HEAD
-=======
-
 Featues
 
 1. User Crud
@@ -58,8 +55,6 @@ Featues
      * Read order
      * Update order
      * Delete order
-
->>>>>>> a86da3067c18634a171e1878815eb04e11660c04
 
 E-COMMERCE
 BUYER:
@@ -127,27 +122,6 @@ REMOVE PRODUCTS/ITEMS FROM THE CART :  ( COMPLETED )
     * Expected result:
         * The item is removed from the user's cart.
 
-BUY A PRODUCT/ITEM :  ( NOT YET STARTED )
-* Scenario 1: Successfully purchase a product/item
-    * Steps :
-        1. Navigate to the buy now page.
-        2. Click the "Buy Now" button.
-        3. Confirm the shipping address and payment method.
-        4. Click the "Place Order" button.
-    * Expected result:
-        * Redirect to the order confirmation page.
-      
-
-VIEW PRODUCTS/ITEMS IN THE Wishlist:  ( NOT YET STARTED )
-* Scenario 1: Successfully view products/items in wishlist
-    * Steps :
-        1. Navigate to the shop page.
-        2. Click the image.
-        3. Navigate to the product description page.
-        4. Click the heart icon
-    * Expected result:
-        * The user can view the list of items in the wishlist.
-         
 
 REMOVE PRODUCT/ITEM FROM THE WISHLIST :  ( COMPLETD )
 * Scenario 1: Remove the product/item from the wishlist
@@ -156,15 +130,6 @@ REMOVE PRODUCT/ITEM FROM THE WISHLIST :  ( COMPLETD )
         2. Click the heart icon to remove the product from your wishlist.
     * Expected Result:
         * The item is removed from the user's wishlist.
-
-
-VIEW PRODUCTS/ITEMS IN THE Order:  ( NOT YET STARTED )
-* Scenario 1: Successfully view products/items in orders
-    * Steps :
-        1. Navigate to the order page through the navbar.
-        2. View the details and give ratings.
-    * Expected result:
-        * The user can view the list of items in the orders page.
 
 
  Seller:
@@ -252,13 +217,6 @@ REMOVE PRODUCT FOR THE USER SIDE :  ( COMPLETED )
     * Expected result :
         * The selected product is removed from the user side.
 
-VIEW LIST OF ORDERS :  ( NOT YET STARTED )
-* Scenario 1: Successfully view list of orders
-    * Steps:
-        1. Navigate to the orders page.
-        2. View the list of orders.
-    * Expected result:
-        * The seller can view the list of orders.
 
 
 
