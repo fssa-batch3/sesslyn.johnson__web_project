@@ -61,82 +61,91 @@ BUYER:
 CREATE AN ACCOUNT :  ( COMPLETED )
 * Scenario 1: Successfully create an account
     * Steps :
-        1. Navigate to the sign up page.
-        2. Enter the required information such as name, email, and password.
-        3. Click the "Sign Up" button.
+        1. In the index page, click the sign up.
+        2. You will be navigate to the sign up page.
+        3. Enter the required information such as name, email, and password.
+        4. Click the "Sign Up" button.
     * Expected result :
         * Navigate to the login page.
+
 CREATE AN ACCOUNT :  ( COMPLETED )
 * Scenario 1: Successfully log in to your account
-    * steps :
-        1. Navigate to the login page.
+    * Steps :
+        1. While Signing up you will be navigate to the login page.
         2. Enter the required information such as email, and password.
         3. Click the "Login" button.
     * Expected result :
         * Navigate to the Profile page.
 
 
-Update your profile :  ( COMPLETED )
+UPDATE YOUR PROFILE :  ( COMPLETED )
 * Scenario 1: Successfully Update your profile 
-    * steps :
+    * Steps :
         1. Navigate to the Profile page.
-        2. Click the Update Button.
+        2. Click the edit icon in the right corner.
         3. Enter the required information such as contact, address, country, about .
         4. Click the "Submit" button.
     * Expected result :
-        * Navigate to the Profile page.
+        * Navigate to the Profile page where you can see your details.
+
+LOG OUT FROM THE ACCOUNT :  ( COMPLETED )
+* Scenario 1: Log out from your account
+    * Steps :
+        1. If you have login already, you can see the log out button in every page header.
+        2. Click the log out button.
+    * Expected result :
+        * You will be logged out of your account and navigate to the index page.
+
+DELETE YOUR ACCOUNT :  ( COMPLETED )
+* Scenario 1: Delete your account
+    * Steps :
+        1. If you want to complete erase your details.
+        2. Navigate to the profile page.
+        3. By clicking the profile icon on the right corner of the header.
+        4. On the profile page, click delete button on the bottom of the page.
+    * Expected result :
+        * Navigate to the index page and your data has been erased.
           
 Add Products to Cart:  ( COMPLETED )
 * Scenario 1: Add Products to Cart
     * steps :
-        1. Navigate to the Shop page.
-        2. Click the Image Button.
-        3. Click the Cart Button.
+        1. Navigate to the Shop page through the header.
+        2. Hover the image.
+        3. Click the view more.
+        4. Navigate to the product description page.
+        5. Click the Add to cart button.
     * Expected result :
         * Navigate to the Cart page.
 
- * Scenario 2: 
-     * Steps:
-          1. Navigate to the Shop page.
-          2. Click the Cart Button.
-    * Expected Result:
-          *  Navigate to the Cart page.
- 
 
 Update Cart :  ( COMPLETED )
 * Scenario 1: Successfully Updated Cart
     * Steps :
-         1.  Navigate to the Cart page.
-          2. Click the quantity Button.
+          1. Navigate to the Cart page.
+          2. Update the quantity.
           3. Click the Update Button.
-          4. Total price will be updated in the summary.
+          4. Click the Buy Now button
     * Expected result :
-        * Navigate to the Place Order page.
+         * Navigate to the Place Order page.
 
 
 REMOVE PRODUCTS/ITEMS FROM THE CART :  ( COMPLETED )
 * Scenario 1: Successfully remove item from cart
     * Steps:
          1.  Navigate to the Cart page.
-          2. Click the remove icon. 
+         2. Click the delete icon. 
     * Expected result:
-        * The item is removed from the user's cart.
+        * The product will be removed from the cart.
 
 
-REMOVE PRODUCT/ITEM FROM THE WISHLIST :  ( COMPLETD )
-* Scenario 1: Remove the product/item from the wishlist
-    * steps :
-      1. Navigate to the wishlist page.
-        2. Click the heart icon to remove the product from your wishlist.
-    * Expected Result:
-        * The item is removed from the user's wishlist.
-
-
- Seller:
+ SELLER:
  CREATE AN ACCOUNT :  ( COMPLETED )
-* Scenario 1: Successfully creat an account
+* Scenario 1: Successfully create an account
     * Steps :
-        1. Navigate to the sign up page.
+        1. At the bottom of the index page, there will be a text (Are you a seller?)
+        2. Click the word seller
+        3. Navigate to the Seller homepage page.
+        4. Click the Sign up button in the header
         2. Enter the required information such as name, email, and password.
         3. Click the "Sign Up" button.
     * Expected result :

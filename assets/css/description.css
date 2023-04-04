@@ -31,8 +31,6 @@
   margin:-5rem 0rem 0rem 2rem;
 }
 .review{
-    display: flex;
-    flex-direction: row;
 	font-size:1.3rem;
 	margin:7rem -5rem 0rem -1.5rem;	
     display: inline-block;
