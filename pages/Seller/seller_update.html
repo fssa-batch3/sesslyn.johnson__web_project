@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +80,7 @@ let uid = JSON.parse(localStorage.getItem("product_uuid"));
     function find_data(e) {
       return e.product_uuid == uid;
     }
-    product_data = product.find(find_data);
+    let product_data = product.find(find_data);
 
     document.getElementById("image_url").value = product_data["image_url"];
     document.getElementById("product_brand").value = product_data["product_brand"];
@@ -132,139 +131,4 @@ let uid = JSON.parse(localStorage.getItem("product_uuid"));
      <script src="../../assets/comments/seller_header.js"></script>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Seller Update</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../assets/css/seller/product_form.css">
-    <link rel="stylesheet" href="../../assets/css/profile/header.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-
-</head>
-
-<body>
-    
-    <div class="wrapper">
-        <div class="inner">
-            <div class="image-holder">
-                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png" alt="idea with the bulb" />
-            </div>
-            <form>
-                <h3>Start Selling</h3>
-                <div class="form-group">
-                    <input type="text" placeholder="Product Name" id="product_name" required class="form-control"/>
-                    <input type="text" placeholder="Brand Name" id="product_brand" required class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Product Description" id="product_description" required class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Image" id="image_url" required class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Actual Price"  id="product_real" required pattern="[0-9]+" class="form-control"/>
-                    <input type="text" placeholder="Discount"  id="product_discount" required pattern="[0-9]+" class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Current Price"  id="product_sell" required pattern="[0-9]+" class="form-control"/>
-                    <select name="" id="product_category" class="form-control">
-                        <option value="" disabled selected>Product Category</option>
-                        <option value="Sofa">Sofa</option>
-                        <option value="TV Units">TV Units</option>
-                        <option value="Space Saving Furniture">Space Saving Furniture</option>
-                        <option value="Wallpaper">Wallpaper</option>
-                        <option value="Wadrobe">Wadrobe</option>
-                        <option value="Crockery Units">Crockery Units</option>
-                        <option value="Chandelier">Chandelier</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="text" required placeholder="Warranty" id="product_warranty" class="form-control"/>
-                </div>
-                <span>Note : Prices are only in numbers (in Rs)</span>
-                <div class="btn">
-                    <button type="submit" class="submit-form">Submit</button>
-                </div>
-              
-            </form>
-        </div>
-    </div>
- 
-    <script>
-
-let uid = JSON.parse(localStorage.getItem("product_uuid"));
-    let product = JSON.parse(localStorage.getItem("product_crud"));
-    console.log(uid)
-    console.log(product)
-    
-    function find_data(e) {
-      return e.product_uuid == uid;
-    }
-    product_data = product.find(find_data);
-
-    document.getElementById("image_url").value = product_data["image_url"];
-    document.getElementById("product_brand").value = product_data["product_brand"];
-    document.getElementById("product_name").value = product_data["product_name"];
-    document.getElementById("product_category").value = product_data["product_category"];
-    document.getElementById("product_real").value = product_data["product_real"];
-    document.getElementById("product_sell").value = product_data["product_sell"];
-    document.getElementById("product_discount").value = product_data["product_discount"];
-    document.getElementById("product_description").value = product_data["product_description"];
-    document.getElementById("product_warranty").value = product_data["product_warranty"];
-
-    let update = document.querySelector("button.submit-form");
-        update.addEventListener("click", upadate_product);
-        function upadate_product() {
-            let uid = JSON.parse(localStorage.getItem("product_uuid"));
-            let product = JSON.parse(localStorage.getItem("product_crud"));
-            function find_data(e) {
-                return e.product_uuid == uid;
-            }
-           
-            product_data = product.find(find_data);
-
-            let edit_image = document.getElementById("image_url").value
-            let edit_name = document.getElementById("product_name").value
-            let edit_brand = document.getElementById("product_brand").value
-            let edit_category = document.getElementById("product_category").value
-            let edit_sell = document.getElementById("product_sell").value
-            let edit_real = document.getElementById("product_real").value
-            let edit_discount = document.getElementById("product_discount").value
-            let edit_description = document.getElementById("product_description").value
-            let edit_warranty = document.getElementById("product_warranty").value
-            product_data["image_url"] = edit_image;
-            product_data["product_name"] = edit_name;
-            product_data["product_brand"] = edit_brand;
-            product_data["product_category"] = edit_category;
-            product_data["product_real"] = edit_real;
-            product_data["product_sell"] = edit_sell;
-            product_data["product_discount"] = edit_discount;
-            product_data["product_description"] = edit_description;
-            product_data["product_warranty"] = edit_warranty;
-            localStorage.setItem('product_crud', JSON.stringify(product));
-            alert("Product updated successfully");
-            window. location.href = "./product_list.html";           
-        }
-       
-            
-      </script>
-     <script src="../../assets/comments/seller_header.js"></script>
-
-</body>
->>>>>>> bb5721000df383eb6f743760b31676bca2815f2e
 </html>

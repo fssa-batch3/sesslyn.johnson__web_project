@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +43,8 @@
 
         <div class="total_price">
             <table>
+                <caption></caption>
+                <th></th>
                 <tr class="amount">
                     <td>Total Amount :</td>
                     <td id="total_amount"></td>
@@ -54,101 +55,98 @@
     </div>
     <script>
 
-       let product_crud = JSON.parse(localStorage.getItem("product_crud"));
+        let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         let cart_list = JSON.parse(localStorage.getItem("cart_list"));
         let user = JSON.parse(localStorage.getItem("profile_id"));
 
         let amount = 0;
 
-        for (let i = 0; i < cart_list.length; i++) {
-            if (cart_list[i].userId === user) {
-
-                let card = product_crud.find(p => p.product_uuid === cart_list[i].product_uuid);
-
+        for (const cart of cart_list) {
+            if (cart.userId === user) {
+                let card = product_crud.find(p => p.product_uuid === cart.product_uuid);
                 if (card) {
+                    // create the table element
+                    const table = document.createElement('table');
+                    table.classList.add('table_product');
 
-        // create the table element
-        const table = document.createElement('table');
-        table.classList.add('table_product');
+                    // create the row element
+                    const row = document.createElement('tr');
+                    table.classList.add('tr_row');
+                    table.append(row);
 
-        // create the row element
-        const row = document.createElement('tr');
-        table.classList.add('tr_row');
-        table.append(row);
+                    // create the first column element
+                    const col1 = document.createElement('td');
+                    row.append(col1);
 
-        // create the first column element
-        const col1 = document.createElement('td');
-        row.append(col1);
+                    const cartInfo = document.createElement('div');
+                    cartInfo.classList.add('cart_info');
+                    col1.append(cartInfo);
 
-        const cartInfo = document.createElement('div');
-        cartInfo.classList.add('cart_info');
-        col1.append(cartInfo);
+                    const img = document.createElement('img');
+                    img.src = card["image_url"];
+                    img.classList.add('product_1');
+                    img.alt = 'Compat camal brown sofa';
+                    cartInfo.append(img);
 
-        const img = document.createElement('img');
-        img.src = card["image_url"];
-        img.classList.add('product_1');
-        img.alt = 'Compat camal brown sofa';
-        cartInfo.append(img);
+                    const h3 = document.createElement('h3');
+                    h3.textContent = card["product_name"];
+                    cartInfo.append(h3);
 
-        const h3 = document.createElement('h3');
-        h3.textContent = card["product_name"];
-        cartInfo.append(h3);
+                    // create the second column element
+                    const col2 = document.createElement('td');
+                    col2.textContent = 'By 1th Mar, 2023';
+                    row.append(col2);
 
-        // create the second column element
-        const col2 = document.createElement('td');
-        col2.textContent = 'By 1th Mar, 2023';
-        row.append(col2);
+                    // create the third column element
+                    const col3 = document.createElement('td');
+                    row.appendChild(col3);
 
-        // create the third column element
-        const col3 = document.createElement('td');
-        row.appendChild(col3);
+                    let find_quantity = cart_list.find(e => e.product_uuid == card["product_uuid"]);
 
-        let find_quantity = cart_list.find(e => e.product_uuid == card["product_uuid"]);
+                    const input = document.createElement('input');
+                    input.classList.add("quantity");
+                    input.type = 'number';
+                    input.value = find_quantity["product_quantity"];
+                    input.min = "1";
+                    col3.appendChild(input);
 
-        const input = document.createElement('input');
-        input.classList.add("quantity");
-        input.type = 'number';
-        input.value = find_quantity["product_quantity"];
-        input.min = "1";
-        col3.appendChild(input);
+                    const update = document.createElement("button");
+                    update.setAttribute("type", "button");
+                    update.setAttribute("class", "btn update");
+                    update.setAttribute("style", "display:none");
+                    update.innerText = "Update"
+                    col3.append(update);
 
-        const update = document.createElement("button");
-        update.setAttribute("type", "button");
-        update.setAttribute("class", "btn update");
-        update.setAttribute("style", "display:none");
-        update.innerText = "Update"
-        col3.append(update);
+                    // create the fourth column element
+                    const col4 = document.createElement('td');
+                    col4.textContent = "Rs." + card["product_sell"] * find_quantity["product_quantity"];
+                    row.appendChild(col4);
 
-        // create the fourth column element
-        const col4 = document.createElement('td');
-        col4.textContent = "Rs." + card["product_sell"] * find_quantity["product_quantity"];
-        row.appendChild(col4);
+                    // create the fifth column element
+                    const col5 = document.createElement('td');
+                    row.appendChild(col5);
 
-        // create the fifth column element
-        const col5 = document.createElement('td');
-        row.appendChild(col5);
-
-        const deleteIcon = document.createElement('img');
-        deleteIcon.src = '../assets/images/home_page/delete_icon.png';
-        deleteIcon.setAttribute("data-remove", card["product_uuid"]);
-        deleteIcon.setAttribute("id", "icon_remove");
-        deleteIcon.classList.add('delete_icon');
-        deleteIcon.alt = 'delete_icon';
-        col5.appendChild(deleteIcon);
+                    const deleteIcon = document.createElement('img');
+                    deleteIcon.src = '../assets/images/home_page/delete_icon.png';
+                    deleteIcon.setAttribute("data-remove", card["product_uuid"]);
+                    deleteIcon.setAttribute("id", "icon_remove");
+                    deleteIcon.classList.add('delete_icon');
+                    deleteIcon.alt = 'delete_icon';
+                    col5.appendChild(deleteIcon);
 
 
-        document.querySelector("div.contain_cart").append(table);
+                    document.querySelector("div.contain_cart").append(table);
 
-        amount += cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
+                    amount += cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
 
-       console.log(amount);
+                    console.log(amount);
+                }
+            }
         }
-      }
-    }
-    document.getElementById("total_amount").innerText = "Rs." + amount;
+        document.getElementById("total_amount").innerText = "Rs." + amount;
 
-      // getting extra informatio like no.of.guest and date of delivery
-      let updateBtn = document.querySelectorAll(".update")
+        // getting extra informatio like no.of.guest and date of delivery
+        let updateBtn = document.querySelectorAll(".update")
         updateBtn.forEach(function (upDate) {
             upDate.addEventListener('click', function () {
 
@@ -210,217 +208,4 @@
     <script src="../assets/comments/header.js"></script>
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart page</title>
-    <link rel="stylesheet" href="../assets/css/cart.css">
-    <link rel="stylesheet" href="../assets/css/profile/header.css">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <div>
-
-        <div class="heading_page">
-            <td><img src="../assets/images/home_page/bag_icon.png" class="page" id="page" alt="bag icon" /><img
-                    class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line" /></td>
-            <td><img src="../assets/images/home_page/truck_icon.png" class="page" id="page_2" alt="bag icon" /><img
-                    class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line" /></td>
-            <td><img src="../assets/images/home_page/card_icon.png" class="page" id="page_2" alt="bag icon" /></td>
-        </div>
-        <div class="heading_page">
-            <small class="page_new">Your Shipping</small>
-            <small class="page_text">Delivery Address</small>
-            <small class="page_text">Payment Method</small>
-        </div>
-    </div>
-
-    <div class="small_container">
-        <div class="contain_cart">
-
-        </div>
-
-        <div class="total_price">
-            <table>
-                <tr class="amount">
-                    <td>Total Amount :</td>
-                    <td id="total_amount"></td>
-                </tr>
-            </table>
-            <a href="../pages/order/order_details.html"><button type="submit" class="btn_order">Buy Now</button></a>
-        </div>
-    </div>
-    <script>
-
-       let product_crud = JSON.parse(localStorage.getItem("product_crud"));
-        let cart_list = JSON.parse(localStorage.getItem("cart_list"));
-        let user = JSON.parse(localStorage.getItem("profile_id"));
-
-        let amount = 0;
-
-        for (let i = 0; i < cart_list.length; i++) {
-            if (cart_list[i].userId === user) {
-
-                let card = product_crud.find(p => p.product_uuid === cart_list[i].product_uuid);
-
-                if (card) {
-
-        // create the table element
-        const table = document.createElement('table');
-        table.classList.add('table_product');
-
-        // create the row element
-        const row = document.createElement('tr');
-        table.classList.add('tr_row');
-        table.append(row);
-
-        // create the first column element
-        const col1 = document.createElement('td');
-        row.append(col1);
-
-        const cartInfo = document.createElement('div');
-        cartInfo.classList.add('cart_info');
-        col1.append(cartInfo);
-
-        const img = document.createElement('img');
-        img.src = card["image_url"];
-        img.classList.add('product_1');
-        img.alt = 'Compat camal brown sofa';
-        cartInfo.append(img);
-
-        const h3 = document.createElement('h3');
-        h3.textContent = card["product_name"];
-        cartInfo.append(h3);
-
-        // create the second column element
-        const col2 = document.createElement('td');
-        col2.textContent = 'By 1th Mar, 2023';
-        row.append(col2);
-
-        // create the third column element
-        const col3 = document.createElement('td');
-        row.appendChild(col3);
-
-        let find_quantity = cart_list.find(e => e.product_uuid == card["product_uuid"]);
-
-        const input = document.createElement('input');
-        input.classList.add("quantity");
-        input.type = 'number';
-        input.value = find_quantity["product_quantity"];
-        input.min = "1";
-        col3.appendChild(input);
-
-        const update = document.createElement("button");
-        update.setAttribute("type", "button");
-        update.setAttribute("class", "btn update");
-        update.setAttribute("style", "display:none");
-        update.innerText = "Update"
-        col3.append(update);
-
-        // create the fourth column element
-        const col4 = document.createElement('td');
-        col4.textContent = "Rs." + card["product_sell"] * find_quantity["product_quantity"];
-        row.appendChild(col4);
-
-        // create the fifth column element
-        const col5 = document.createElement('td');
-        row.appendChild(col5);
-
-        const deleteIcon = document.createElement('img');
-        deleteIcon.src = '../assets/images/home_page/delete_icon.png';
-        deleteIcon.setAttribute("data-remove", card["product_uuid"]);
-        deleteIcon.setAttribute("id", "icon_remove");
-        deleteIcon.classList.add('delete_icon');
-        deleteIcon.alt = 'delete_icon';
-        col5.appendChild(deleteIcon);
-
-
-        document.querySelector("div.contain_cart").append(table);
-
-        amount += cart_list[i]["product_price"] * cart_list[i]["product_quantity"];
-
-       console.log(amount);
-        }
-      }
-    }
-    document.getElementById("total_amount").innerText = "Rs." + amount;
-
-      // getting extra informatio like no.of.guest and date of delivery
-      let updateBtn = document.querySelectorAll(".update")
-        updateBtn.forEach(function (upDate) {
-            upDate.addEventListener('click', function () {
-
-                let parent = this.closest(".table_product")
-                console.log(parent)
-
-                let getNumber = parent.querySelector(".quantity").value;
-                let id = parent.querySelector("#icon_remove").getAttribute("data-remove");
-                function getId(e) {
-                    return e.product_uuid == id
-                }
-                let findcartId = cart_list.filter(getId);
-                console.log(findcartId)
-                let y = findcartId[0]["product_price"]
-
-                let up_totalcost = y * getNumber;
-                console.log(up_totalcost);
-
-                findcartId[0]["product_quantity"] = getNumber;
-                localStorage.setItem("cart_list", JSON.stringify(cart_list));
-                location.reload();
-            })
-        })
-
-        // getting extra information like no.of.guest
-        let number_of_guest = document.querySelectorAll(".quantity")
-        number_of_guest.forEach(function (getGuest) {
-            getGuest.addEventListener("click", function () {
-                let parent = this.closest(".table_product")
-                let update_btn = parent.querySelector(".update")
-                update_btn.setAttribute("style", "display:block");
-            })
-        })
-
-
-        let products = document.querySelectorAll("img#icon_remove")
-        products.forEach(function (check) {
-            check.addEventListener("click", function () {
-                let product_id = this.dataset.remove;
-                localStorage.setItem("products_id", JSON.stringify(product_id));
-                console.log(product_id);
-
-                if (confirm("Are you sure to remove this product?")) {
-                    let id = JSON.parse(localStorage.getItem("products_id"));
-                    let all_products = JSON.parse(localStorage.getItem("cart_list"));
-                    console.log(all_products);
-                    let pdts = all_products.find(e => e.product_uuid == product_id)
-                    console.log(pdts);
-                    let indexOfProduct = all_products.indexOf(pdts);
-                    all_products.splice(indexOfProduct, 1);
-                    console.log(indexOfProduct);
-                    localStorage.setItem("cart_list", JSON.stringify(all_products));
-                }
-                window.location.reload();
-            });
-        });
-
-    </script>
-    <script src="../assets/comments/header.js"></script>
-</body>
-
->>>>>>> bb5721000df383eb6f743760b31676bca2815f2e
 </html>
