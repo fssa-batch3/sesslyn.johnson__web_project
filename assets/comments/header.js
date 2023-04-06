@@ -3,7 +3,7 @@
 const rootPath = window.location.origin;
 console.log(rootPath)
 
-const beforeLogin = ` 
+const beforeLogin = `
 <div class="head">
 <div class="main_header">
     <span class="header" id="header_shop"><a href="${rootPath}/index.html"><img class="main_logo" id="main_logo" src="${rootPath}/assets/images/home_page/Logo.jpg"
@@ -59,23 +59,25 @@ const AfterLogin = `
 </div>
 `
 
-const loginUser = JSON.parse(localStorage.getItem("profile_id"));
-if (loginUser) {
+let loginUser = localStorage.getItem("profile_id");
+if  (loginUser === "" || loginUser === null)  {
+      document.body.insertAdjacentHTML("afterbegin", beforeLogin);
+      const userLoginElement = document.getElementById("logOut");
+      userLoginElement?.removeEventListener("click", () => document.body.innerHTML = beforeLogin);
+      localStorage.removeItem("profile_id");
+} 
+else {
   document.body.insertAdjacentHTML("afterbegin", AfterLogin);
   const userLoginElement = document.getElementById("userLogin");
-  userLoginElement?.addEventListener("click", () => document.body.innerHTML = beforeLogin);
+  userLoginElement?.addEventListener("click", () => document.body.innerHTML = AfterLogin);
   const userLogoutElement = document.getElementById("logOut");
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("profile_id");
-    document.body.innerHTML = beforeLogin;
+    document.body.innerHTML = AfterLogin;
   });
-} 
-else {
-  document.body.insertAdjacentHTML("afterbegin", beforeLogin);
-  const userLoginElement = document.getElementById("logOut");
-  userLoginElement?.removeEventListener("click", () => document.body.innerHTML = AfterLogin);
-  localStorage.removeItem("profile_id");
- 
 }
+
+
+
 
 

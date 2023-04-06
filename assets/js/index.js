@@ -1,17 +1,17 @@
 
 
-let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+let profile_id = localStorage.getItem("profile_id");
 let btn = document.getElementById('btn');
+
 document.getElementById('btn').onclick = function() {
-    if (profile_id) {
-      btn.innerText = "Explore";
-      window.location.href = './pages/homepage.html';
+    if (profile_id !== null && profile_id !== undefined && profile_id !== '') {
+        btn.innerText = "Explore";
+        window.location.href = './pages/homepage.html';
     } else {
         btn.innerText = "Sign In";
         register();
-        
     }
-  };
+};
 
  function register() {
     document.getElementById("right_corner").style.display = "block";

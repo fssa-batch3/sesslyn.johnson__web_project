@@ -97,9 +97,9 @@
 
                     <div class="form_input">
                         <label>Email Id</label>
-                        <input type="text" class="no_outline" id="user_email"
+                        <input type="email" class="no_outline" id="user_email"
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true"
-                            placeholder="sesslyn2004@gmail.com">
+                            placeholder="sess@...">
                     </div>
                     <hr class="new3">
 
@@ -119,11 +119,14 @@
                             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"
                             placeholder="Password" id="confirm_password">
                     </div>
+                    <small>* Password must have six characters, uppercase,</small>
+                    <small id="small">  lowercase, and special case.</small>
                     <div class="form_btn">
                         <button class="btn_register" type="submit">Sign Up</button>
                         <button class="btn_register" id="btn_login" type="button"><a href="./pages/profile/login.html">Login</a>
                         </button>
                     </div>
+                    
                     <div>
                         <img class="sign_img" src="./assets/images/home_page/minimalist.png" alt="minimalistic.logo" />
                     </div>

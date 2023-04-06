@@ -9,18 +9,18 @@ const beforeLogin = `
     <span class="header" id="header_shop"><a href="${rootPath}/index.html"><img class="main_logo" id="main_logo"
                 src="${rootPath}/assets/images/home_page/Logo.jpg" alt="logo of minimalistic m" /></a></span>
     <div id="nav_header">
-        <span class="header"><a href="${rootPath}/pages/seller/product_list.html">
+        <span class="header">
                 <p class="header_para">PRODUCTS</p>
-            </a></span>
-        <span class="header"><a href="${rootPath}/pages/seller/product_form.html">
+            </span>
+        <span class="header">
                 <p class="header_para">NEW</p>
-            </a></span>
-        <span class="header"><a href="${rootPath}/pages/about.html">
+            </span>
+        <span class="header">
                 <p class="header_para">ABOUT</p>
-            </a></span>
-        <span class="header"><a href="${rootPath}/pages/order/order.html">
+            </span>
+        <span class="header">
                 <p class="header_para">ORDERS</p>
-            </a></span>
+            </span>
     </div>
     <div class="btn">
         <a href = "${rootPath}/pages/seller/seller_register.html"><button class="sign_in">Sign In</button></a>
@@ -60,23 +60,20 @@ const AfterLogin = `
 
 `
 
-
-const loginUser = JSON.parse(localStorage.getItem("seller_id"));
-if (loginUser) {
+let loginUser = localStorage.getItem("seller_id");
+if  (loginUser === "" || loginUser === null)  {
+      document.body.insertAdjacentHTML("afterbegin", beforeLogin);
+      const userLoginElement = document.getElementById("logOut");
+      userLoginElement?.removeEventListener("click", () => document.body.innerHTML = beforeLogin);
+      localStorage.removeItem("seller_id");
+} 
+else {
   document.body.insertAdjacentHTML("afterbegin", AfterLogin);
   const userLoginElement = document.getElementById("userLogin");
-  userLoginElement?.addEventListener("click", () => document.body.innerHTML = beforeLogin);
+  userLoginElement?.addEventListener("click", () => document.body.innerHTML = AfterLogin);
   const userLogoutElement = document.getElementById("logOut");
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("seller_id");
-    document.body.innerHTML = beforeLogin;
+    document.body.innerHTML = AfterLogin;
   });
-} 
-else {
-  document.body.insertAdjacentHTML("afterbegin", beforeLogin);
-  const userLoginElement = document.getElementById("logOut");
-  userLoginElement?.removeEventListener("click", () => document.body.innerHTML = AfterLogin);
-  localStorage.removeItem("seller_id");
- 
 }
-

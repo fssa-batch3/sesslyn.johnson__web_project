@@ -88,7 +88,7 @@ select option[value=""] [disabled]{
 span{
     color:red;
     text-align: center;
-    margin-left:7rem;
+    margin-left:2rem;
 }
 p#main_head{
     font-size:1.3rem;

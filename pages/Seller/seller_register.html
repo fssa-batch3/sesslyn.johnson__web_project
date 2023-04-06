@@ -44,13 +44,23 @@
                         <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" placeholder="Confirm password" id="confirm_password">
                     </div>
-                
+                   
+                    <div class="mail">
+                        <input type="text" id="user_aadhar" required="true" 
+                        pattern="[0-9]{12}" title="Must contains 12 characters" placeholder="Enter Aadhar Number" >
+                    </div>
+                    <div class="mail">
+                        <input type="text" id="user_gst" required="true"  
+                        pattern="[0-9]{15}" title="Must contains 15 characters" placeholder="Enter GSTIN" >
+                    </div>
+                    <small>* Password must have six characters, uppercase, lowercase, and special case.</small>
+
                      <button class="btn_sell"  type="submit">Sign Up</button>
                  
                     <div class="register">
                     <p> Already have a account?<a href="./seller_login.html">Login Now</a></p>
                     </div>
-                
+                   
                 </div>
             </div>
              </form>
@@ -71,32 +81,27 @@
             user_email = document.getElementById("user_email").value,
             user_password = document.getElementById("user_password").value,
             confirm_password = document.getElementById("confirm_password").value,
-             user_uuid=uuidv4();
+            user_aadhar= document.getElementById("user_aadhar").value,
+            user_gst = document.getElementById("user_gst").value,
+            user_uuid=uuidv4();
             let user_address="";
             let user_contact="";
             let user_country="";
             let user_about="";
-    
-            function checkPassword(){
-                if (user_password!==confirm_password){
-                    alert("Re-enter the Password");
-                    confirm_password.value=reset();
-                }
-                else{
-                    alert("Password Matched");
-                }
-            }
-            checkPassword()
+        
+
         let seller_list = JSON.parse(localStorage.getItem('seller_list')) || [];
-    
         let exist = seller_list.length && 
             JSON.parse(localStorage.getItem('seller_list')).some(data => 
                 data.user_email.toLowerCase() == user_email.toLowerCase()
             );
+            
     
         if(!exist){
+            if (user_password == confirm_password){
             seller_list.push({ user_name, user_email, 
-                            user_password, confirm_password, user_address, user_contact, user_country, user_about,user_uuid });
+                            user_password, user_aadhar, user_gst, confirm_password, user_address,
+                             user_contact, user_country, user_about,user_uuid });
     
             localStorage.setItem('seller_list', JSON.stringify(seller_list));
     
@@ -107,14 +112,18 @@
             alert('Account created Successfully');
             location.href = "./seller_login.html";
         }
-        
+        else{
+                    alert("Password does not matched");
+                }
+        }
+
         else{
             alert('Sorry the User already Exist!! \n Try with different E-mail');
             document.querySelector('form').reset();
         }
-        
-    }
     
+    
+            }
         </script>
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>	
     

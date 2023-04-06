@@ -251,3 +251,15 @@ hr.new1{
  .btn_register:hover{
    border-color:rgb(172, 170, 170);
   }
+  small{
+    padding-left:4rem;
+    padding-right:5rem;
+   
+  }
+  #small{
+    padding-left:4.5rem;
+  }
+  input[type=email]{
+    text-overflow: ellipsis;
+    padding-right:0rem;
+  }
