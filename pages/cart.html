@@ -63,9 +63,10 @@
 
         let user_cart = cart_list.filter(e => e.userId == user);
         console.log(user_cart)
+        
+        for (let i = 0; i < user_cart.length; i++) {
+          
 
-        for (const item of user_cart) {
-  
                     // create the table element
                     const table = document.createElement('table');
                     table.classList.add('table_product');

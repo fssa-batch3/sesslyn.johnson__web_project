@@ -137,6 +137,28 @@ REMOVE PRODUCTS/ITEMS FROM THE CART :  ( COMPLETED )
     * Expected result:
         * The product will be removed from the cart.
 
+ADD PRODUCT/ITEM TO THE WISHLIST : ( COMPLETED )
+
+* Scenario 1: Successfully add product/item to the wishlist
+  * Steps :
+     1. Navigate to the Shop page.
+     2. Hover the product.
+     3. Click the heart icon.
+     4. You will receive an alert message.
+* Expected result :
+     1. You will be redirected to the wishlist page and the product will be added.
+  
+* Scenario 2: Successfully add product/item to the wishlist
+  * Steps :
+     1. Navigate to the Shop page.
+     2. Hover the product.
+     3. Click the view more
+     4. You will be redirect to the product details page.
+     5. Click the heart icon which is on the image.
+     4. You will receive an alert message.
+* Expected result :
+     1. You will be redirected to the wishlist page and the product will be added.
+  
 
  SELLER:
  CREATE AN ACCOUNT :  ( COMPLETED )

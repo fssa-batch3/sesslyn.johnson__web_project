@@ -292,7 +292,7 @@
                       <a href="#"><img class="crockery" src="${sofa["image_url"]}"
                           alt="sofa image" /></a>
                      <div class="overlay">
-                       <a href="#"><img class="bag_overlay" data-cart="${sofa["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                       <a href="#"><img class="bag_overlay" data-cart="${sofa["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag"/></a>
                        <button data-id="${sofa["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
                       </div>
@@ -319,7 +319,7 @@
                         <a href="#"><img class="crockery" src="${tv_sets["image_url"]}"
                              alt="tv image" /></a>
                         <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${tv_sets["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                            <a href="#"><img class="bag_overlay" data-cart="${tv_sets["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button data-id="${tv_sets["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
                         </div>
@@ -348,7 +348,7 @@
                         <a href="#"><img class="crockery" src="${space_saving["image_url"]}"
                               alt="Space saving furniture image" /></a>
                         <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${space_saving["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                            <a href="#"><img class="bag_overlay" data-cart="${space_saving["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button data-id="${space_saving["product_uuid"]}"  class="overlay_button"><a href="#">View More</a></button>
                         </div>
@@ -374,7 +374,7 @@
                         <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}"
                             alt="chandleir image" /></a>
                         <div class="overlay">
-                           <a href="#"><img class="bag_overlay"  src="../assets/images/home_page/heart_icon.jpg"
+                           <a href="#"><img class="bag_overlay"  data-cart="${Wallpaper_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button class="overlay_button"  data-id="${Wallpaper_units["product_uuid"]}" ><a href="#">View More</a></button>
                          </div>
@@ -400,7 +400,7 @@
                             alt="chandelier image" /></a>
                         <div class="overlay">
                             <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
-                                src="../assets/images/home_page/heart_icon.jpg"
+                                 src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
                         </div>
@@ -472,6 +472,32 @@
             })
         })
 
+        document.querySelector(".bag_overlay").addEventListener("click",  function () {
+            let id_wish = this.dataset.cart;
+            let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
+            let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+            let condition = JSON.parse(localStorage.getItem("profile_id"))
+            if (!condition) {
+                alert("Log In")
+                window.location.href = "./profile/login.html";
+                return;
+            }
+            let product_uuid = new URLSearchParams(window.location.search).get('product_id');
+            let prod_data = wish_list.find(product => product.product_id === product_uuid && product.user_id === profile_id);
+            if (prod_data) {
+                alert('This Product Is Already Added In Your whishlist Page');
+                return;
+            }
+            else {
+                let prod = {
+                    product_id: id_wish,
+                    user_id: profile_id
+                }
+                wish_list.push(prod);
+                localStorage.setItem("wish_list", JSON.stringify(wish_list));
+                alert('Your product has been added to the wishlist')
+            }
+        });
 
     </script>
     <script src="../assets/comments/header.js"></script>

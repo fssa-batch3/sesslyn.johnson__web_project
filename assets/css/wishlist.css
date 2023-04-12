@@ -51,10 +51,12 @@ body{
 }
 .contain{
     display:flex;
+    flex-wrap: wrap;
     flex-direction: row;
+   
 }
 .product{
-    margin:2rem 2rem 0rem 4rem;
+    margin:2rem 1rem 0rem 4rem;
     box-shadow: 10px 10px 30px 0px rgb(180, 180, 180);
   
 }
@@ -64,7 +66,9 @@ body{
 }
 .btn_primary{
     background-color: black;
+    color:white;
     padding:0.5rem 4.58rem;
+    width:100%;
 }
 .left_corner{
     position: fixed; 

@@ -90,7 +90,7 @@
                 <form role="form" onsubmit="signUp(event);">
                     <div class="form_input">
                         <label>Name</label>
-                        <input type="text" class="no_outline" id="user_name" pattern="[a-zA-Z0-9]+" required="true"
+                        <input type="text" class="no_outline" id="user_name" pattern="[a-zA-Z0-9]+"  title="Only contain Alphabets" required="true"
                             placeholder="Sesslyn">
                     </div>
                     <hr class="new3">
@@ -98,7 +98,7 @@
                     <div class="form_input">
                         <label>Email Id</label>
                         <input type="email" class="no_outline" id="user_email"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must contain @ and only lower case is allowed." required="true"
                             placeholder="sess@...">
                     </div>
                     <hr class="new3">

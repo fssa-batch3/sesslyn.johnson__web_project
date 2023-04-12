@@ -30,11 +30,11 @@
                         <p>What differentiates sellers today is their ability to bring fresh ideas. </p>
                     </div>
                     <div class="mail">
-                        <input type="name" id="user_name" required="true" pattern="[a-zA-Z0-9]+" placeholder="Name">
+                        <input type="name" id="user_name" required="true" title="Only contain Alphabets" pattern="[a-zA-Z0-9]+" placeholder="Name">
                     </div>
     
                     <div class="mail">
-                        <input type="email" id="user_email" required="true"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Id" >
+                        <input type="email" id="user_email" required="true" title="Must contain @ and only lower case is allowed." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email Id" >
                     </div>
                     <div class="password">
                         <input type="password" required="true" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
@@ -47,11 +47,11 @@
                    
                     <div class="mail">
                         <input type="text" id="user_aadhar" required="true" 
-                        pattern="[0-9]{12}" title="Must contains 12 characters" placeholder="Enter Aadhar Number" >
+                        pattern="[0-9]{12}" title="Must contains 12 characters and only number is allowed" placeholder="Enter Aadhar Number" >
                     </div>
                     <div class="mail">
                         <input type="text" id="user_gst" required="true"  
-                        pattern="[0-9]{15}" title="Must contains 15 characters" placeholder="Enter GSTIN" >
+                        pattern="[0-9]{15}" title="Must contains 15 characters and only number is allowed" placeholder="Enter GSTIN" >
                     </div>
                     <small>* Password must have six characters, uppercase, lowercase, and special case.</small>
 
