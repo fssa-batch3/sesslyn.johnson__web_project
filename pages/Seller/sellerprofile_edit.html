@@ -148,7 +148,7 @@
             return e.user_email == seller_id;
         }
 
-        user_data = seller_list.find(login_data);
+        let user_data = seller_list.find(login_data);
 
         document.getElementById("user_name").value = user_data["user_name"];
         document.getElementById("user_email").value = user_data["user_email"];

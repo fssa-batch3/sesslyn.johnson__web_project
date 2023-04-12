@@ -140,6 +140,7 @@ p.details{
 }
 #user_dob{
     margin-top:0rem;
+    padding-top:1rem;
 }
 #user_city{
     margin-left:-0.8rem;
@@ -175,7 +176,4 @@ a{
     background-color: rgb(6, 6, 6);
     color:white;
     display: inline; 
-}
-#user_dob{
-    padding-top:1rem;
 }
