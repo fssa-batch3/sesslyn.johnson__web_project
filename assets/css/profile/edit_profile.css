@@ -59,9 +59,10 @@ input#user_dob{
 #usercity_gender{
     padding-bottom:0.5rem;
 }
-/* #user_gender{
-    padding:0.5rem 1.2rem 0.5rem 0.5rem;
-}  */
+input#user_aadhar{
+    padding:0.5rem 1rem 0.5rem 0.5rem;
+    width:100%;
+}
 input#user_state{
     padding:0.5rem 2rem 0.5rem 0.5rem;
     width:100%;
@@ -69,8 +70,16 @@ input#user_state{
 #country_no{
     margin:0.5rem 0rem 0.5rem 0.7rem;
 }
+#gst_no{
+    margin:0.5rem 0rem 0.5rem -0.5rem;
+}
 input#user_country{
     width:90%;
+    padding:0.5rem 0.8rem 0.5rem 0.5rem;
+}
+input#user_gst{
+    width:90%;
+    
     padding:0.5rem 0.8rem 0.5rem 0.5rem;
 }
 input#user_image{
@@ -80,10 +89,6 @@ input#user_image{
 input#user_address{
     padding:0.5rem 11rem 0.5rem 0.5rem;
 }
-/* input#user_about{
-    padding:0.5rem 11.5rem 0.5rem 0.5rem;
-} */
-
 .form_details label{
     font-size:1rem;
     padding:1rem 0rem;
@@ -93,20 +98,11 @@ input#user_address{
     display:flex;
     flex-direction: row;
 }
-
-.btn_secondary{
-    margin:0.5rem 0rem 2rem 3rem; 
-    padding:0.8rem 3.3rem 0.8rem 3.3rem;
-    border:1px solid transparent;
-    background-color: rgb(6, 6, 6);
-    color:white;
-    display: inline; 
-}
 a{
     text-decoration: none;
 }
 .btn_save{
-    margin:0.5rem 0rem 2rem 30rem;  
+    margin:0.8rem 0rem 2rem 40rem;  
     padding:0.5rem 3.3rem 0.8rem 3.3rem;
     border:1px solid transparent;
     background-color: rgb(6, 6, 6);

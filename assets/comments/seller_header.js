@@ -52,7 +52,7 @@ const AfterLogin = `
     </div>
 
     <button class="btn_delete" id="logOut">Log Out</button>
-    <a href="${rootPath}/pages/profile_new.html">
+    <a href="${rootPath}/pages/seller/seller_profile.html">
         <img src="${rootPath}/assets/images/home_page/profile.png" class="profile_img" alt="profile picture" />
     </a>
 </div>
@@ -75,5 +75,6 @@ else {
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("seller_id");
     document.body.innerHTML = AfterLogin;
+    window.location.reload();
   });
 }

@@ -24,6 +24,7 @@
 
 <body>
     <div class="head">
+
         <div class="main_header">
             <span class="header" id="header_shop"><a href="../index.html"><img class="main_logo" id="main_logo"
                         src="../assets/images/home_page/Logo.jpg" alt="logo of minimalistic m" /></a></span>
@@ -45,10 +46,10 @@
                     <img src="../assets/images/home_page/profile.png" class="profile_img" alt="profile picture" />
                 </a></span>
         </div>
-   
+
     </div>
     <div class="container">
-         
+
     </div>
     <script>
 
@@ -174,7 +175,7 @@
         div_description.append(h3_warranty);
 
         //<p class="price"></p>
-        const  p_warrant = document.createElement("p");
+        const p_warrant = document.createElement("p");
         p_warrant.innerHTML = unique_id["product_warranty"];
         div_description.append(p_warrant);
 
@@ -231,7 +232,7 @@
         const reviewIcon1 = document.createElement('span');
         reviewIcon1.className = 'review_icon';
         parentTop.append(reviewIcon1);
-        
+
         for (let i = 0; i < 5; i++) {
             //<i></i>
             const star1 = document.createElement("i");
@@ -277,7 +278,7 @@
         const reviewIcon2 = document.createElement('span');
         reviewIcon2.className = 'review_icon';
         parent2Top.append(reviewIcon2);
-        
+
         for (let i = 0; i < 5; i++) {
             //<i></i>
             const star2 = document.createElement("i");
@@ -301,32 +302,43 @@
 
 
         document.querySelector(".btn_cart").addEventListener("click", function () {
-			let id_cart = this.dataset.id
-			let product_price = document.querySelector(".current-price").innerHTML.replace("Rs.", "");
-			let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
+            let id_cart = this.dataset.id;
+            let product_price = document.querySelector(".current-price").innerHTML.replace("Rs.", "");
+            let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
             let product_name = document.querySelector(".product_name").innerHTML || [];
-			let userId = JSON.parse(localStorage.getItem('profile_id'));
-			let exist = cart_list.length &&
-				JSON.parse(localStorage.getItem('cart_list')).some(data =>
-					data.product_uuid == id_cart
-				);
-			if (!exist) {
-				cart_list.push({
-					"product_uuid":id_cart,
-                    "product_name":product_name,
-					"product_price":parseInt(product_price),
-					"userId":userId,
-					"product_quantity":1
-				});
-				localStorage.setItem('cart_list', JSON.stringify(cart_list));
-				alert('Product Added to the Cart');
-				location.href = "./cart.html";
-			}
+            let image_url = document.querySelector(".description_img").getAttribute("src");
+            let profile_id = JSON.parse(localStorage.getItem('profile_id'));
+            let exist = cart_list.length &&
+                JSON.parse(localStorage.getItem('cart_list')).some(data =>
+                    data.product_uuid == id_cart && data.profile_id === profile_id
+                );
+            if (!profile_id) {
+                alert("Log In")
+                window.location.href = "./profile/login.html";
+                return;
+            }
+            if (!exist) {
+                cart_list.push({
+                    "product_uuid": id_cart,
+                    "product_name": product_name,
+                    "image_url":image_url,
+                    "product_price": parseInt(product_price),
+                    "userId": profile_id,
+                    "product_quantity": 1
+                });
+                localStorage.setItem('cart_list', JSON.stringify(cart_list));
+                alert('Product Added to the Cart');
+                location.href = "./cart.html";
+            } else {
+                alert('Sorry, the product is already added to the cart');
+            }
+        });
 
-			else {
-				alert('Sorry the Product already added');
-			}
-		 });
+
+
+
+
+
     </script>
 
 </body>

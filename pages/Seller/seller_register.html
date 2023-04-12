@@ -84,12 +84,11 @@
             user_aadhar= document.getElementById("user_aadhar").value,
             user_gst = document.getElementById("user_gst").value,
             user_uuid=uuidv4();
-            let user_address="";
             let user_contact="";
-            let user_country="";
+            let user_address="";
             let user_about="";
+            let user_image="";
         
-
         let seller_list = JSON.parse(localStorage.getItem('seller_list')) || [];
         let exist = seller_list.length && 
             JSON.parse(localStorage.getItem('seller_list')).some(data => 
@@ -100,8 +99,8 @@
         if(!exist){
             if (user_password == confirm_password){
             seller_list.push({ user_name, user_email, 
-                            user_password, user_aadhar, user_gst, confirm_password, user_address,
-                             user_contact, user_country, user_about,user_uuid });
+                            user_password, user_aadhar,user_image,user_gst, confirm_password, user_address,
+                             user_contact, user_about,user_uuid });
     
             localStorage.setItem('seller_list', JSON.stringify(seller_list));
     

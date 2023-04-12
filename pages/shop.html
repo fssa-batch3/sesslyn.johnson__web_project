@@ -220,43 +220,50 @@
             <div class="categories" id="category">
                 <h1 id="h1">Sofas For Shopping</h1>
                 <div class="categories-img" id="shop_sofa">
-                  <!-- Sofa -->
+                    <!-- Sofa -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Modular TV Units with Shelves</h1>
                 <div class="categories-img" id="shop_tv">
-                  <!-- Tv units -->
+                    <!-- Tv units -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Space Saving Furniture</h1>
                 <div class="categories-img" id="reusable_shop">
-                   <!-- Space Saving Furniture -->
+                    <!-- Space Saving Furniture -->
                 </div>
             </div>
-          
+
 
             <div class="categories" id="category">
                 <h1 id="h1">Winsome Wallpaper</h1>
                 <div class="categories-img" id="wallpaper_shop">
-                 <!-- Wallpaper -->
+                    <!-- Wallpaper -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Chandelier Lights to Brighten your Life</h1>
                 <div class="categories-img" id="chandelier_shop">
-                   <!-- Chandelier -->
+                    <!-- Chandelier -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Warming Wadrobe</h1>
                 <div class="categories-img" id="wadrobe_shop">
-                   <!-- Wadrobe -->
+                    <!-- Wadrobe -->
+                </div>
+            </div>
+
+            <div class="categories" id="category">
+                <h1 id="h1">Classy Crockery Units</h1>
+                <div class="categories-img" id="crockery_shop">
+                    <!--Crockery Units -->
                 </div>
             </div>
         </div>
@@ -269,18 +276,18 @@
 
 
         let sofa = product_crud.filter(function (e) {
-                  return e.product_category == 'Sofa';
-               });
-               console.log(sofa)
+            return e.product_category == 'Sofa';
+        });
+        console.log(sofa)
 
-               for (const product_details of sofa) {
-                  const template1 = product_upload(product_details);
-                  document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
-               }
+        for (const product_details of sofa) {
+            const template1 = product_upload(product_details);
+            document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
+        }
 
-               function product_upload(sofa) {
-                  const template1 =
-                     `
+        function product_upload(sofa) {
+            const template1 =
+                `
                      <div class="container">
                       <a href="#"><img class="crockery" src="${sofa["image_url"]}"
                           alt="sofa image" /></a>
@@ -291,7 +298,7 @@
                       </div>
                      </div>
                      `
-                  return template1;
+            return template1;
         }
 
         //tv units
@@ -352,19 +359,19 @@
         }
 
         let Wallpaper_units = product_crud.filter(function (e) {
-                  return e.product_category == 'Wallpaper';
-               });
+            return e.product_category == 'Wallpaper';
+        });
 
-               for (const product_wallpaper of Wallpaper_units) {
-                  const template4 = product_wall(product_wallpaper);
-                  document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
-               }
+        for (const product_wallpaper of Wallpaper_units) {
+            const template4 = product_wall(product_wallpaper);
+            document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
+        }
 
-               function product_wall(Wallpaper_units) {
-                  const template4 =
-                     ` 
+        function product_wall(Wallpaper_units) {
+            const template4 =
+                ` 
                      <div class="container">
-                        <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}""
+                        <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}"
                             alt="chandleir image" /></a>
                         <div class="overlay">
                            <a href="#"><img class="bag_overlay"  src="../assets/images/home_page/heart_icon.jpg"
@@ -373,38 +380,35 @@
                          </div>
                    </div>
                      `
-                  return template4;
-            }
+            return template4;
+        }
 
-        //Chandelier
-
+        // Chandelier
         let chandelier_units = product_crud.filter(function (e) {
-                  return e.product_category == 'Chandelier';
-               });
-console.log(chandelier_units)
-               for (const product_chandelier of chandelier_units) {
-                  const template4 = product_chand(product_chandelier);
-                  document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
+            return e.product_category == 'Chandelier';
+        });
+        for (let i = 0; i < chandelier_units.length; i++) {
+            const product_chandelier = chandelier_units[i];
+            const template = product_chand(product_chandelier);
+            document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
+        }
 
-               }
-
-               function product_chand(chandelier_units) {
-                  const template4 =
-                     ` 
-                     <div class="container">
-                        <a href="#"><img class="crockery" src="${chandelier_units["image_url"]}"
-                            alt="chandleir image" /></a>
+        function product_chand(a) {
+            const template4 =
+                ` 
+                   <div class="container">
+                        <a href="#"><img class="crockery" src="${a["image_url"]}"
+                            alt="chandelier image" /></a>
                         <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${chandelier_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                            <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
+                                src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
-                            <button class="overlay_button"  data-id="${chandelier_units["product_uuid"]}" ><a href="#">View More</a></button>
+                            <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
                         </div>
                     </div>
-
                      `
-                  return template4;
-               }
-
+            return template4;
+        }
 
         //wadrobe
         let Wadrobe_units = product_crud.filter(function (e) {
@@ -437,12 +441,12 @@ console.log(chandelier_units)
         let crockery_units = product_crud.filter(function (e) {
             return e.product_category == 'Crockery Units';
         });
+console.log(crockery_units)
+        for (const product_crock of crockery_units) {
+            const template4 = product_chand(product_crock);
+            document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
 
-        for (const product_chandelier of chandelier_units) {
-                  const template4 = product_chand(product_chandelier);
-                  document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
-
-               }
+        }
 
         function product_crock(crockery_units) {
             const template4 =
@@ -469,7 +473,7 @@ console.log(chandelier_units)
             })
         })
 
-       
+
     </script>
     <script src="../assets/comments/header.js"></script>
 </body>

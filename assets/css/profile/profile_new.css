@@ -176,3 +176,6 @@ a{
     color:white;
     display: inline; 
 }
+#user_dob{
+    padding-top:1rem;
+}

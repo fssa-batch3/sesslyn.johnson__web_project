@@ -173,9 +173,9 @@ if(!seller_list){
         user_uuid: "798a2fdf-f7ce-410d-b408-6c0cfb40a444",user_image:"https://iili.io/HOCuJ0F.th.png"
     },
     {
-        user_gst:"098765432109876", user_aadhar:"098765432109", confirm_password: "admin456", user_about: "Admin", user_address: "15th water tank street", 
+        user_gst:"098765432109876", user_aadhar:"098765432109", confirm_password: "Admin@456", user_about: "Admin", user_address: "15th water tank street", 
         user_city: "Chennai", user_country: "India" ,user_dob: "2004-12-25", user_email: "admin@gmail.com",
-        user_gender: "Male", user_name: "Admin", user_no: "9954676547", user_password: "admin456", user_state: "Tamil Nadu",
+        user_gender: "Male", user_name: "Admin", user_no: "9954676547", user_password: "Admin@456", user_state: "Tamil Nadu",
         user_uuid: "9bdcf9cc-7e11-4521-8b8d-f34f43b7aeb4",user_image:"https://iili.io/HOCuCWN.th.png"
     }
     ]))
