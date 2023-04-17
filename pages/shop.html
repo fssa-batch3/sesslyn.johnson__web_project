@@ -390,27 +390,29 @@
         let chandelier_units = add_crud.filter(function (e) {
             return e.product_category == 'Chandelier';
         });
-        for (const product_chandelier of chandelier_units) {
-            const template = product_chand(product_chandelier);
-            document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
-        }
+        console.log(chandelier_units)
+        for (let i = 0; i < chandelier_units.length; i++) {
+    const product_chandelier = chandelier_units[i];
+    const template = product_chand(product_chandelier);
+    document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
+}
 
-        function product_chand(a) {
-            const template4 =
-                ` 
-                   <div class="container">
-                        <a href="#"><img class="crockery" src="${a["image_url"]}"
-                            alt="chandelier image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
-                                 src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
-                        </div>
-                    </div>
-                     `
-            return template4;
-        }
+function product_chand(a) {
+    const template4 =
+        ` 
+            <div class="container">
+                <a href="#"><img class="crockery" src="${a["image_url"]}"
+                    alt="chandelier image" /></a>
+                <div class="overlay">
+                    <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
+                            src="../assets/images/home_page/heart_icon.jpg"
+                            alt="shopping-bag" /></a>
+                    <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
+                </div>
+            </div>
+        `
+    return template4;
+}
 
         //wadrobe
         let Wadrobe_units = add_crud.filter(function (e) {
@@ -447,7 +449,6 @@
         for (const product_crock of crockery_units) {
             const template4 = product_chand(product_crock);
             document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
-
         }
 
         function product_crock(crockery_units) {
