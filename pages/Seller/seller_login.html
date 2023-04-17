@@ -37,7 +37,7 @@
                     <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
                     title= "Must contain at least 6 or more characters" placeholder="Password" id="user_password" >
                  </div>
-              
+            
                 <div class="forget">
                     <a href="./seller_register.html">Forget Password</a>
                 </div>
@@ -78,7 +78,7 @@
     else{
         localStorage.setItem("seller_id",JSON.stringify(user_email));
         alert("Your login in successful");
-        location.href = "./seller_profile.html";  
+        location.href = "./seller_homepage.html";  
     }
 }
 

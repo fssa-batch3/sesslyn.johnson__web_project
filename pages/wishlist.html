@@ -53,6 +53,19 @@
       <div class="wish_product">
         <div class="contain">
         
+          <!-- <div class="wish_details">
+            <div class="product">
+               <img src="../assets/images/Sofa/sofa_2.jpg" class="product_1"
+                          alt="Compat camal brown sofa">
+                <div class="product_delete">
+                   <p class="product_name">Compat Camal Brown Sofa</p>
+                   <img src="../assets/images/home_page/delete_icon.png" class="delete_icon" alt="Delete icon" />
+                </div>
+                <hr class="new2">
+                  <p class="price">₹ 55,999</p>
+               <button class="btn_primary"><a href="#">Add to Cart</a></button>
+               </div>
+            </div> -->
 
         </div>
       </div>
@@ -87,10 +100,21 @@
       img_details.setAttribute("src", prod_data.image_url);
       div_product.append(img_details);
 
+     const div_delete = document.createElement("div");
+      div_delete.setAttribute("class", "product_delete");
+      div_product.append(div_delete);
+
       const p_paragraph = document.createElement("p");
       p_paragraph.setAttribute("class", "product_name");
       p_paragraph.innerHTML = prod_data.product_name;
-      div_product.append(p_paragraph);
+      div_delete.append(p_paragraph);
+
+      const img_delete = document.createElement("img");
+      img_delete.setAttribute("alt", "Delete icon");
+      img_delete.setAttribute("class", "delete_icon");
+      img_delete.setAttribute("data-remove", prod_data.product_uuid);
+      img_delete.setAttribute("src", "../assets/images/home_page/delete_icon.png");
+      div_delete.append(img_delete);
 
       const hr = document.createElement('hr');
       hr.setAttribute("class", "new2");
@@ -147,6 +171,45 @@
                 location.href = "./cart.html";
             }
         });
+
+        // function remove(e, uniqueid) {
+        //     if (!e || typeof uniqueid !== 'string') {
+        //         return;
+        //     }
+        //     e.preventDefault();
+        //     const whish_list = JSON.parse(localStorage.getItem('whish_list') || '[]');
+        //     const uniqueID_user = JSON.parse(localStorage.getItem('uniqueID_user') || '');
+        //     const index = whish_list.findIndex(
+        //         item => item.product_id === uniqueid && item.buyer_id === uniqueID_user
+        //     );
+        //     if (index !== -1 && confirm('Are you sure you want to remove your product')) {
+        //         whish_list.splice(index, 1);
+        //         localStorage.setItem('whish_list', JSON.stringify(whish_list));
+        //         window.location.reload();
+        //     }
+        // }
+
+        // let products = document.querySelectorAll(".delete_icon")
+        // products.forEach(function (check) {
+        //     check.addEventListener("click", function () {
+        //         let wishlist_id = this.dataset.remove;
+        //         localStorage.setItem("wishlist_id", JSON.stringify(wishlist_id));
+        //         console.log(wishlist_id);
+
+        //         if (confirm("Are you sure to remove this product?")) {
+        //             let id = JSON.parse(localStorage.getItem("wishlist_id"));
+        //             let all_products = JSON.parse(localStorage.getItem("wish_list"));
+        //             console.log(all_products);
+        //             let pdts = all_products.find(e => e.product_uuid == wishlist_id && e.userId == user)
+        //             console.log(pdts);
+        //             let indexOfProduct = all_products.indexOf(pdts);
+        //             all_products.splice(indexOfProduct, 1);
+        //             console.log(indexOfProduct);
+        //             localStorage.setItem("cart_list", JSON.stringify(all_products));
+        //         }
+        //         window.location.reload();
+        //     });
+        // });
 
   </script>
   <script src="../assets/comments/header.js"></script>

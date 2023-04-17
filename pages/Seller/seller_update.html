@@ -23,30 +23,35 @@
 </head>
 
 <body>
-    
+
     <div class="wrapper">
         <div class="inner">
             <div class="image-holder">
-                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png" alt="idea with the bulb" />
+                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png"
+                    alt="idea with the bulb" />
             </div>
             <form>
                 <h3>Start Selling</h3>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Name" id="product_name" required class="form-control"/>
-                    <input type="text" placeholder="Brand Name" id="product_brand" required class="form-control"/>
+                    <input type="text" placeholder="Product Name" id="product_name" required class="form-control" />
+                    <input type="text" placeholder="Brand Name" id="product_brand" required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Description" id="product_description" required class="form-control"/>
+                    <input type="text" placeholder="Product Description" id="product_description" required
+                        class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Image" id="image_url" required class="form-control"/>
+                    <input type="text" placeholder="Image" id="image_url" required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Actual Price"  id="product_real" required pattern="[0-9]+" class="form-control"/>
-                    <input type="text" placeholder="Discount"  id="product_discount" required pattern="[0-9]+" class="form-control"/>
+                    <input type="text" placeholder="Actual Price" id="product_real" required pattern="[0-9]+"
+                        class="form-control" />
+                    <input type="text" placeholder="Discount" id="product_discount" required pattern="[0-9]+"
+                        class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price"  id="product_sell" required pattern="[0-9]+" class="form-control"/>
+                    <input type="text" placeholder="Current Price" id="product_sell" required pattern="[0-9]+"
+                        class="form-control" />
                     <select name="" id="product_category" class="form-control">
                         <option value="" disabled selected>Product Category</option>
                         <option value="Sofa">Sofa</option>
@@ -59,40 +64,43 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" required placeholder="Warranty" id="product_warranty" class="form-control"/>
+                    <input type="text" required placeholder="Warranty" id="product_warranty" class="form-control" />
                 </div>
                 <span>Note : Prices are only in numbers (in Rs)</span>
                 <div class="btn">
                     <button type="submit" class="submit-form">Submit</button>
                 </div>
-              
+
             </form>
         </div>
     </div>
- 
+
     <script>
 
-let uid = JSON.parse(localStorage.getItem("product_uuid"));
-    let product = JSON.parse(localStorage.getItem("product_crud"));
-    console.log(uid)
-    console.log(product)
-    
-    function find_data(e) {
-      return e.product_uuid == uid;
-    }
-    let product_data = product.find(find_data);
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const product_id = urlParams.get('product_id');
 
-    document.getElementById("image_url").value = product_data["image_url"];
-    document.getElementById("product_brand").value = product_data["product_brand"];
-    document.getElementById("product_name").value = product_data["product_name"];
-    document.getElementById("product_category").value = product_data["product_category"];
-    document.getElementById("product_real").value = product_data["product_real"];
-    document.getElementById("product_sell").value = product_data["product_sell"];
-    document.getElementById("product_discount").value = product_data["product_discount"];
-    document.getElementById("product_description").value = product_data["product_description"];
-    document.getElementById("product_warranty").value = product_data["product_warranty"];
+        let uid = JSON.parse(localStorage.getItem("product_uuid"));
+        let product = JSON.parse(localStorage.getItem("product_crud"));
+        console.log(uid)
+       
+        function find_data(e) {
+            return e.product_uuid == uid;
+        }
+        let product_data = product.find(find_data);
 
-    let update = document.querySelector("button.submit-form");
+        document.getElementById("image_url").value = product_data["image_url"];
+        document.getElementById("product_brand").value = product_data["product_brand"];
+        document.getElementById("product_name").value = product_data["product_name"];
+        document.getElementById("product_category").value = product_data["product_category"];
+        document.getElementById("product_real").value = product_data["product_real"];
+        document.getElementById("product_sell").value = product_data["product_sell"];
+        document.getElementById("product_discount").value = product_data["product_discount"];
+        document.getElementById("product_description").value = product_data["product_description"];
+        document.getElementById("product_warranty").value = product_data["product_warranty"];
+
+        let update = document.querySelector("button.submit-form");
         update.addEventListener("click", upadate_product);
         function upadate_product() {
             let uid = JSON.parse(localStorage.getItem("product_uuid"));
@@ -100,7 +108,7 @@ let uid = JSON.parse(localStorage.getItem("product_uuid"));
             function find_data(e) {
                 return e.product_uuid == uid;
             }
-           
+
             product_data = product.find(find_data);
 
             let edit_image = document.getElementById("image_url").value
@@ -123,12 +131,13 @@ let uid = JSON.parse(localStorage.getItem("product_uuid"));
             product_data["product_warranty"] = edit_warranty;
             localStorage.setItem('product_crud', JSON.stringify(product));
             alert("Product updated successfully");
-            window. location.href = "./product_list.html";           
+            location.href = `./seller_description.html?product_id=${product_id}`;
         }
-       
-            
-      </script>
-     <script src="../../assets/comments/seller_header.js"></script>
+
+
+    </script>
+    <script src="../../assets/comments/seller_header.js"></script>
 
 </body>
+
 </html>

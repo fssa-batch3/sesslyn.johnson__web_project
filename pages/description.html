@@ -23,31 +23,7 @@
 </head>
 
 <body>
-    <div class="head">
-
-        <div class="main_header">
-            <span class="header" id="header_shop"><a href="../index.html"><img class="main_logo" id="main_logo"
-                        src="../assets/images/home_page/Logo.jpg" alt="logo of minimalistic m" /></a></span>
-            <div id="nav_header">
-                <span class="header"><a href="#">
-                        <p class="header_para">CHAMBER</p>
-                    </a></span>
-                <span class="header"><a href="./shop.html">
-                        <p class="header_para">SHOP</p>
-                    </a></span>
-                <span class="header"><a href="./about.html">
-                        <p class="header_para">ABOUT</p>
-                    </a></span>
-                <span class="header"><a href="./order.html">
-                        <p class="header_para">ORDERS</p>
-                    </a></span>
-            </div>
-            <span><a href="./profile_new.html">
-                    <img src="../assets/images/home_page/profile.png" class="profile_img" alt="profile picture" />
-                </a></span>
-        </div>
-
-    </div>
+    
     <div class="container">
 
     </div>
@@ -351,7 +327,7 @@
             let product_uuid = new URLSearchParams(window.location.search).get('product_id');
             let prod_data = wish_list.find(product => product.product_id === product_uuid && product.user_id === profile_id);
             if (prod_data) {
-                alert('This Product Is Already Added In Your whishlist Page');
+                alert('This product is already added in your wishlist page');
                 return;
             }
             else {
@@ -362,11 +338,12 @@
                 wish_list.push(prod);
                 localStorage.setItem("wish_list", JSON.stringify(wish_list));
                 alert('Your product has been added to the wishlist')
+                window.location.href="./wishlist.html"
             }
         }
 
     </script>
-
+ <script src="../assets/comments/header.js"></script>
 </body>
 
 </html>

@@ -36,7 +36,7 @@ body{
     color:black;
 }
 .product_name{
-    margin:0.8rem 1rem;
+    margin:0.8rem 0.4rem;
     font-size:1.1rem;
 }
 .price{
@@ -61,7 +61,7 @@ body{
   
 }
 .product_1{
-    width:15.5rem;
+    width:15.7rem;
     height:16rem; 
 }
 .btn_primary{
@@ -137,4 +137,14 @@ body{
 }
 #contain_1{
     margin-top:3rem;
+}
+.product_delete{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+}
+.delete_icon{
+    height:40px;
+    width:40px;
+    margin:0.2rem 0rem 0rem 0.2rem;
 }

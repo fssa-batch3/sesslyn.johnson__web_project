@@ -199,3 +199,6 @@ del{
     font-size:18px;
     color:rgb(232, 182, 16);
 }
+#cartIcon{
+    padding-left:1rem;
+}

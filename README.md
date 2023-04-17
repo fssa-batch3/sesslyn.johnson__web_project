@@ -75,13 +75,13 @@ CREATE AN ACCOUNT :  ( COMPLETED )
         2. Enter the required information such as email, and password.
         3. Click the "Login" button.
     * Expected result :
-        * Navigate to the Profile page.
+        * Navigate to the User Home page.
 
 
 UPDATE YOUR PROFILE :  ( COMPLETED )
 * Scenario 1: Successfully Update your profile 
     * Steps :
-        1. Navigate to the Profile page.
+        1. Click profile icon on the header and navigate to the Profile page.
         2. Click the edit icon in the right corner.
         3. Enter the required information such as contact, address, country, about .
         4. Click the "Submit" button.
@@ -132,7 +132,7 @@ Update Cart :  ( COMPLETED )
 REMOVE PRODUCTS/ITEMS FROM THE CART :  ( COMPLETED )
 * Scenario 1: Successfully remove item from cart
     * Steps:
-         1.  Navigate to the Cart page.
+         1. Navigate to the Cart page.
          2. Click the delete icon. 
     * Expected result:
         * The product will be removed from the cart.
@@ -181,12 +181,12 @@ CREATE AN ACCOUNT :  ( COMPLETED )
         2. Enter the required information such as email, and password.
         3. Click the "Login" button.
     * Expected result :
-        * Navigate to the Profile page.
+        * Navigate to the Seller Home page.
 
 UPDATE YOUR PROFILE :  ( COMPLETED )
 * Scenario 1: Successfully Update your profile 
     * Steps :
-        1. Navigate to the Profile page.
+        1. Click the profile icon and navigate to the profile page.
         2. Click the edit icon in the right corner.
         3. Enter the required information such as contact, address, country, about .
         4. Click the "Submit" button.

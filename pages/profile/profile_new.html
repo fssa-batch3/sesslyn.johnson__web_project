@@ -93,7 +93,6 @@
         <div class="user_details">
             <p class="content">Gender :</p>
             <p class="details" id="user_gender"></p>
-            <button class="btn_secondary" onclick="delData()">Delete</button>
         </div>
        
         </div>
@@ -123,28 +122,7 @@
     if(user_data["user_image"] !== ""){
      document.getElementById("user_image").src = user_data["user_image"];
    }    
-
-   function delData(e) {
-       if (confirm("Are you sure?")) {
-      
-        function login_data(e) {
-            return e.user_email == profile_id;
-        }
-        user_data = user_crud.find(login_data);
-
-        const indexOfUser = user_crud.indexOf(user_data);
-
-        user_crud.splice(indexOfUser, 1);
-
-        localStorage.setItem('user_crud', JSON.stringify(user_crud));
-
-        localStorage.setItem('profile_id', '');
-        
-        window.location.href = "../../index.html";
-      };
-    }
-
-    
+  
   </script>
 <script src="../../assets/comments/header.js"></script>
 </body>

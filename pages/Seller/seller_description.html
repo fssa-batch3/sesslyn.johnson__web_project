@@ -168,13 +168,14 @@
         //<img/>
         const img_cart = document.createElement("img");
         img_cart.setAttribute("alt", "cart_icon");
-        img_cart.setAttribute("src", "../../assets/images/home_page/cart.png");
+        img_cart.setAttribute("id", "cartIcon");
+        img_cart.setAttribute("src", "../../assets/images/home_page/eddit.png");
         button_primary.append(img_cart);
 
         document.querySelector("div.contain").append(div_contain);
     
    
-    const edit = document.querySelectorAll('button#btn-secondary');
+        const edit = document.querySelectorAll('button#btn-secondary, img.heart_icon');
         edit.forEach(function (findId) {
             findId.addEventListener('click', function () {
                 const id = this.dataset.id;

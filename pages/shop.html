@@ -274,8 +274,11 @@
         let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         let added_products = JSON.parse(localStorage.getItem("added_products"));
 
+        let add_crud = product_crud.filter(product => 
+        added_products.some(a=>product.product_uuid === a.product_uuid))
+        console.log(add_crud)
 
-        let sofa = product_crud.filter(function (e) {
+        let sofa = add_crud.filter(function (e) {
             return e.product_category == 'Sofa';
         });
         console.log(sofa)
@@ -302,7 +305,7 @@
         }
 
         //tv units
-        let tv_sets = product_crud.filter(function (e) {
+        let tv_sets = add_crud.filter(function (e) {
             return e.product_category == 'TV Units';
         });
 
@@ -329,11 +332,11 @@
         }
 
         //reusable 
-        let space_saving = product_crud.filter(function (e) {
+        let space_saving = add_crud.filter(function (e) {
             return e.product_category == 'Space Saving Furniture';
         });
 
-
+        console.log(space_saving)
         for (const product_reuse of space_saving) {
             const template3 = product_space(product_reuse);
             document.querySelector("#reusable_shop").insertAdjacentHTML("beforeend", template3);
@@ -358,7 +361,7 @@
             return template3;
         }
 
-        let Wallpaper_units = product_crud.filter(function (e) {
+        let Wallpaper_units = add_crud.filter(function (e) {
             return e.product_category == 'Wallpaper';
         });
 
@@ -384,7 +387,7 @@
         }
 
         // Chandelier
-        let chandelier_units = product_crud.filter(function (e) {
+        let chandelier_units = add_crud.filter(function (e) {
             return e.product_category == 'Chandelier';
         });
         for (const product_chandelier of chandelier_units) {
@@ -410,7 +413,7 @@
         }
 
         //wadrobe
-        let Wadrobe_units = product_crud.filter(function (e) {
+        let Wadrobe_units = add_crud.filter(function (e) {
             return e.product_category == 'Wadrobe';
         });
 
@@ -437,7 +440,7 @@
         }
 
         //Crockery units
-        let crockery_units = product_crud.filter(function (e) {
+        let crockery_units = add_crud.filter(function (e) {
             return e.product_category == 'Crockery Units';
         });
         console.log(crockery_units)
@@ -475,7 +478,7 @@
         document.querySelector(".bag_overlay").addEventListener("click",  function () {
             let id_wish = this.dataset.cart;
             let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
-            let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+            // let profile_id = JSON.parse(localStorage.getItem("profile_id"));
             let condition = JSON.parse(localStorage.getItem("profile_id"))
             if (!condition) {
                 alert("Log In")
@@ -485,7 +488,7 @@
             let product_uuid = new URLSearchParams(window.location.search).get('product_id');
             let prod_data = wish_list.find(product => product.product_id === product_uuid && product.user_id === profile_id);
             if (prod_data) {
-                alert('This Product Is Already Added In Your whishlist Page');
+                alert('This product is already added in your wishlist page');
                 return;
             }
             else {
@@ -496,6 +499,7 @@
                 wish_list.push(prod);
                 localStorage.setItem("wish_list", JSON.stringify(wish_list));
                 alert('Your product has been added to the wishlist')
+                window.location.href="./wishlist.html"
             }
         });
 
