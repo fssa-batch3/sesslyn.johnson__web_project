@@ -391,18 +391,11 @@
             return e.product_category == 'Chandelier';
         });
         console.log(chandelier_units)
-<<<<<<< HEAD
         for (let i = 0; i < chandelier_units.length; i++) {
     const product_chandelier = chandelier_units[i];
     const template = product_chand(product_chandelier);
     document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
 }
-=======
-        for (const product_chandelier of chandelier_units) {
-            const template = product_chand(product_chandelier);
-            document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
-        }
->>>>>>> 91ab4ec619622d5a0106920f07049f454ae97f75
 
 function product_chand(a) {
     const template4 =
