@@ -447,11 +447,11 @@ function product_chand(a) {
         });
         console.log(crockery_units)
         for (const product_crock of crockery_units) {
-            const template4 = product_chand(product_crock);
+            const template4 = product_crockery(product_crock);
             document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
         }
 
-        function product_crock(crockery_units) {
+        function product_crockery(crockery_units) {
             const template4 =
                 ` 
                 <div class="container">
