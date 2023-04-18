@@ -33,20 +33,20 @@
             <form>
                 <h3>Start Selling</h3>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Name" id="product_name" required class="form-control" />
-                    <input type="text" placeholder="Brand Name" id="product_brand" required class="form-control" />
+                    <input type="text" placeholder="Product Name" id="product_name" title="Only Alphabets and space is allowed" required class="form-control" />
+                    <input type="text" placeholder="Brand Name" id="product_brand" title="Only Alphabets and space is allowed" required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Description" id="product_description" required
+                    <input type="text" placeholder="Product Description" id="product_description" title="Only Alphabets, numbers and space is allowed" required
                         class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Image" id="image_url" required class="form-control" />
+                    <input type="text" placeholder="Image" id="image_url" title="https://.*" required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Actual Price" id="product_real" required pattern="[0-9]+"
+                    <input type="text" placeholder="Actual Price" id="product_real" title="Only numbers is allowed" required pattern="[0-9]{5}"
                         class="form-control" />
-                    <input type="text" placeholder="Discount" id="product_discount" required pattern="[0-9]+"
+                    <input type="text" placeholder="Discount" id="product_discount" title="Only 2 numbers is allowed" required pattern="[0-9]{2}"
                         class="form-control" />
                 </div>
                 <div class="form-group">
@@ -64,9 +64,9 @@
                   </div>
                   
                 <div class="form-group">
-                    <input type="text" required placeholder="Warranty" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+"  id="product_warranty" class="form-control" />
+                    <input type="text" required placeholder="Warranty" title="Only Alphabets, numbers and space is allowed" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+"  id="product_warranty" class="form-control" />
                 </div>
-                <span>Note : Prices are only in numbers (in Rs)</span>
+                <span>Note : Only numbers should be used to write prices (in Rs) and Discount should be in % </span>
                 <div class="btn">
                     <button type="submit" class="submit-form">Submit</button>
                    <button type="submit" class="delete-form">Delete</button>

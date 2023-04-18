@@ -96,15 +96,6 @@ LOG OUT FROM THE ACCOUNT :  ( COMPLETED )
     * Expected result :
         * You will be logged out of your account and navigate to the index page.
 
-DELETE YOUR ACCOUNT :  ( COMPLETED )
-* Scenario 1: Delete your account
-    * Steps :
-        1. If you want to complete erase your details.
-        2. Navigate to the profile page.
-        3. By clicking the profile icon on the right corner of the header.
-        4. On the profile page, click delete button on the bottom of the page.
-    * Expected result :
-        * Navigate to the index page and your data has been erased.
           
 Add Products to Cart:  ( COMPLETED )
 * Scenario 1: Add Products to Cart
@@ -200,16 +191,6 @@ LOG OUT FROM THE ACCOUNT :  ( COMPLETED )
         2. Click the log out button.
     * Expected result :
         * You will be logged out of your account and navigate to the index page.
-
-DELETE YOUR ACCOUNT :  ( COMPLETED )
-* Scenario 1: Delete your account
-    * Steps :
-        1. If you want to complete erase your details.
-        2. Navigate to the profile page.
-        3. By clicking the profile icon on the right corner of the header.
-        4. On the profile page, click delete button on the bottom of the page.
-    * Expected result :
-        * Navigate to the index page and your data has been erased.
 
  Add new product: ( COMPLETED )
  * Scenario 1: Successfully add new product

@@ -33,11 +33,11 @@
             <form onsubmit="newProduct(event)">
                 <h3>Start Selling</h3>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" id="product_name" required class="form-control"/>
-                    <input type="text" placeholder="Brand Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" id="product_brand" required class="form-control"/>
+                    <input type="text" placeholder="Product Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets and space is allowed" id="product_name" required class="form-control"/>
+                    <input type="text" placeholder="Brand Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets and space is allowed" id="product_brand" required class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Description" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" id="product_description" required class="form-control"/>
+                    <input type="text" placeholder="Product Description" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets, number and space is allowed" id="product_description" required class="form-control"/>
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Image" id="image_url"  pattern="https://.*" required class="form-control"/>
