@@ -109,20 +109,15 @@
                     const input = document.createElement('input');
                     input.classList.add("quantity");
                     input.type = 'number';
+                    input.setAttribute("data-id", user_cart[i]["product_uuid"])
                     input.value = find_quantity["product_quantity"];
                     input.min = "1";
                     col3.appendChild(input);
 
-                    const update = document.createElement("button");
-                    update.setAttribute("type", "button");
-                    update.setAttribute("class", "btn update");
-                    update.setAttribute("style", "display:none");
-                    update.innerText = "Update"
-                    col3.append(update);
 
                     // create the fourth column element
                     const col4 = document.createElement('td');
-                    col4.textContent = "Rs." + user_cart[i]["product_price"] * find_quantity["product_quantity"];
+                    col4.innerText = "Rs." + user_cart[i]["product_price"] * find_quantity["product_quantity"];
                     row.appendChild(col4);
 
                     // create the fifth column element
@@ -147,46 +142,33 @@
                 }
             
         
-
-
-
         document.getElementById("total_amount").innerText = "Rs." + amount;
 
-        // getting extra informatio like no.of.guest and date of delivery
-        let updateBtn = document.querySelectorAll(".update")
-        updateBtn.forEach(function (upDate) {
-            upDate.addEventListener('click', function () {
 
-                let parent = this.closest(".table_product")
-                console.log(parent)
-
-                let getNumber = parent.querySelector(".quantity").value;
-                let id = parent.querySelector("#icon_remove").getAttribute("data-remove");
-                function getId(e) {
-                    return e.product_uuid == id
-                }
-                let findcartId = user_cart.filter(getId);
-                console.log(findcartId)
-                let y = findcartId[0]["product_price"]
-
-                let up_totalcost = y * getNumber;
-                console.log(up_totalcost);
-
-                findcartId[0]["product_quantity"] = parseInt(getNumber);
-                localStorage.setItem("cart_list", JSON.stringify(cart_list));
-                location.reload();
+        let product_quantity = document.querySelectorAll(".quantity");
+        product_quantity.forEach(function(add){
+          add.addEventListener("change", function(calcus){
+           let productId = this.dataset.id;
+            localStorage.setItem("products_id", JSON.stringify(productId));
+            console.log(productId);
+            let productid = JSON.parse(localStorage.getItem("products_id"));
+            let all_products = JSON.parse(localStorage.getItem("cart_list"));
+            let pdts = all_products.find(e => e.product_uuid === productid)
+            let ogPrice = pdts["product_price"]
+            console.log(ogPrice)
+            let parent = this.closest(".table_product")
+            console.log(parent)
+            let qauntity = parent.querySelector(".quantity").value
+            console.log(qauntity);
+            const cartPrice = ogPrice * qauntity
+            ogPrice = cartPrice
+            console.log(ogPrice);
+            pdts["product_quantity"] = qauntity;
+            localStorage.setItem("cart_list", JSON.stringify(all_products));
+            location.reload();
             })
         })
 
-        // getting extra information like no.of.guest
-        let number_of_guest = document.querySelectorAll(".quantity")
-        number_of_guest.forEach(function (getGuest) {
-            getGuest.addEventListener("click", function () {
-                let parent = this.closest(".table_product")
-                let update_btn = parent.querySelector(".update")
-                update_btn.setAttribute("style", "display:block");
-            })
-        })
 
 
         let products = document.querySelectorAll("img#icon_remove")

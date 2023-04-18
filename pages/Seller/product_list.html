@@ -137,7 +137,7 @@
 
                 let exist = delete_ids.length &&
                     JSON.parse(localStorage.getItem('added_products')).some(data =>
-                        data == id)
+                        data.product_uuid == id)
 
                 if (exist) {
                     alert("This product is removed from the page")

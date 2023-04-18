@@ -129,7 +129,7 @@
         //  <small> </small>
         const small_pattern = document.createElement("small");
         small_pattern.setAttribute("class", "actual-prize");
-        small_pattern.innerHTML = "Rs. " + unique_id["product_discount"];
+        small_pattern.innerHTML = unique_id["product_discount"]+ "% off";
         p_price.append(small_pattern);
 
         const div_description = document.createElement("div");
@@ -279,6 +279,7 @@
 
 
         document.querySelector(".btn_cart").addEventListener("click", function () {
+            
             let id_cart = this.dataset.id;
             let product_price = parseInt(document.querySelector(".current-price").innerHTML.replace("Rs.", "")); // Added parseInt() to convert product_price to a number
             let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
@@ -327,7 +328,7 @@
             let product_uuid = new URLSearchParams(window.location.search).get('product_id');
             let prod_data = wish_list.find(product => product.product_id === product_uuid && product.user_id === profile_id);
             if (prod_data) {
-                alert('This product is already added in your wishlist page');
+                alert('Sorry, the product is already added to the wishlist');
                 return;
             }
             else {

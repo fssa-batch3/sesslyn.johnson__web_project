@@ -24,7 +24,7 @@
   <div class="top">
     <div class="left_corner">
       <div class="top_container">
-        <img src="../assets/images/home_page/sess.jfif" class="profile_image" alt="profile image" />
+        <img src="../assets/images/home_page/sess.jfif" id="user_image" class="profile_image" alt="profile image" />
         <div class="crown">
           <img src="../assets/images/home_page/crown.png" class="crown_icon" alt="crwon image" />
           <p class="crown_text">Learner</p>
@@ -52,8 +52,8 @@
 
       <div class="wish_product">
         <div class="contain">
-        
-        
+
+
 
         </div>
       </div>
@@ -63,102 +63,115 @@
   </div>
   <script>
     let wish_list = JSON.parse(localStorage.getItem("wish_list"));
-        if (!wish_list) {
-            wish_list = []; 
-        }
-        let profile_id = JSON.parse(localStorage.getItem("profile_id"));
-        let product_crud = JSON.parse(localStorage.getItem("product_crud"));
-       
-        for (i = 0; i < wish_list.length; i++) {
-            if (wish_list[i].user_id === profile_id) {
-                let prod_data = product_crud.find(product => product.product_uuid === wish_list[i].product_id);
-         
-    
-      const div_details = document.createElement("div");
-      div_details.setAttribute("class", "wish_details");
-      console.log(div_details)
-
-      const div_product = document.createElement("div");
-      div_product.setAttribute("class", "product");
-      div_details.append(div_product);
-
-      const img_details = document.createElement("img");
-      img_details.setAttribute("alt", "Product");
-      img_details.setAttribute("class", "product_1");
-      img_details.setAttribute("src", prod_data.image_url);
-      div_product.append(img_details);
-
-     const div_delete = document.createElement("div");
-      div_delete.setAttribute("class", "product_delete");
-      div_product.append(div_delete);
-
-      const p_paragraph = document.createElement("p");
-      p_paragraph.setAttribute("class", "product_name");
-      p_paragraph.innerHTML = prod_data.product_name;
-      div_delete.append(p_paragraph);
-
-      const img_delete = document.createElement("img");
-      img_delete.setAttribute("alt", "Delete icon");
-      img_delete.setAttribute("class", "delete_icon");
-      img_delete.setAttribute("data-remove", prod_data.product_uuid);
-      img_delete.setAttribute("src", "../assets/images/home_page/delete_icon.png");
-      div_delete.append(img_delete);
-
-      const hr = document.createElement('hr');
-      hr.setAttribute("class", "new2");
-      div_product.append(hr);
-
-      const p_price = document.createElement("p");
-      p_price.setAttribute("class", "price");
-      p_price.innerHTML = "₹ " + prod_data.product_sell;
-      div_product.append(p_price);
-
-      const button_primary = document.createElement("button");
-      button_primary.setAttribute("class", "btn_primary");
-      button_primary.setAttribute("data-id",prod_data.product_uuid)
-      button_primary.innerHTML = "Add to Cart";
-      div_product.append(button_primary);
-
-      document.querySelector("div.contain").append(div_details);
+    if (!wish_list) {
+      wish_list = [];
+    }
+    let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+    let user_crud = JSON.parse(localStorage.getItem('user_crud'));
+   
+    let prod_data = user_crud.find(user => user.user_email === profile_id);
+    console.log(prod_data);
+    if (prod_data["user_image"] !== "") {
+      document.getElementById("user_image").src = prod_data["user_image"];
     }
 
-  }
 
-  document.querySelector(".btn_primary").addEventListener("click", function () {
-            let id_cart = this.dataset.id;
-            let product_price = document.querySelector(".price").innerHTML.replace("₹ ", "");
-            let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
-            let product_name = document.querySelector(".product_name").innerHTML || [];
-            let image_url = document.querySelector(".product_1").getAttribute("src");
-            let profile_id = JSON.parse(localStorage.getItem('profile_id'));
-            let exist = cart_list.length &&
-                JSON.parse(localStorage.getItem('cart_list')).some(data =>
-                    data.product_uuid == id_cart && data.profile_id === profile_id
-                );
+    let product_crud = JSON.parse(localStorage.getItem("product_crud"));
 
-            if (cart_list.find(p => p.product_uuid === id_cart && p.userId === profile_id)) {
-                alert('Sorry, the product is already added to the cart');
-                return;
-            }
-            if (!profile_id) {
-                alert("Log In");
-                window.location.href = "./profile/login.html";
-                return;
-            }
-            if (!exist) {
-                cart_list.push({
-                    "product_uuid": id_cart,
-                    "product_name": product_name,
-                    "image_url": image_url,
-                    "product_price": product_price,
-                    "userId": profile_id,
-                    "product_quantity": 1
-                });
-                localStorage.setItem('cart_list', JSON.stringify(cart_list));
-                alert('Product Added to the Cart');
-                location.href = "./cart.html";
-            }
+    for (i = 0; i < wish_list.length; i++) {
+      if (wish_list[i].user_id === profile_id) {
+        let prod_data = product_crud.find(product => product.product_uuid === wish_list[i].product_id);
+
+
+        const div_details = document.createElement("div");
+        div_details.setAttribute("class", "wish_details");
+        console.log(div_details)
+
+        const div_product = document.createElement("div");
+        div_product.setAttribute("class", "product");
+        div_details.append(div_product);
+
+        const img_details = document.createElement("img");
+        img_details.setAttribute("alt", "Product");
+        img_details.setAttribute("class", "product_1");
+        img_details.setAttribute("src", prod_data.image_url);
+        div_product.append(img_details);
+
+        const div_delete = document.createElement("div");
+        div_delete.setAttribute("class", "product_delete");
+        div_product.append(div_delete);
+
+        const p_paragraph = document.createElement("p");
+        p_paragraph.setAttribute("class", "product_name");
+        p_paragraph.innerHTML = prod_data.product_name;
+        div_delete.append(p_paragraph);
+
+        const img_delete = document.createElement("img");
+        img_delete.setAttribute("alt", "Delete icon");
+        img_delete.setAttribute("class", "delete_icon");
+        img_delete.setAttribute("data-remove", prod_data.product_uuid);
+        img_delete.setAttribute("src", "../assets/images/home_page/delete_icon.png");
+        div_delete.append(img_delete);
+
+        const hr = document.createElement('hr');
+        hr.setAttribute("class", "new2");
+        div_product.append(hr);
+
+        const p_price = document.createElement("p");
+        p_price.setAttribute("class", "price");
+        p_price.innerHTML = "₹ " + prod_data.product_sell;
+        div_product.append(p_price);
+
+        const button_primary = document.createElement("button");
+        button_primary.setAttribute("class", "btn_primary");
+        button_primary.setAttribute("data-id", prod_data.product_uuid)
+        button_primary.innerHTML = "Add to Cart";
+        div_product.append(button_primary);
+
+        document.querySelector("div.contain").append(div_details);
+      }
+
+    }
+
+ 
+      const add = document.querySelectorAll("button.btn_primary");
+        add.forEach(function (findId) {
+            findId.addEventListener('click', function () {
+      let id_cart = this.dataset.id;
+      let product_price = document.querySelector(".price").innerHTML.replace("₹ ", "");
+      let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
+      let product_name = document.querySelector(".product_name").innerHTML || [];
+      let image_url = document.querySelector(".product_1").getAttribute("src");
+      let profile_id = JSON.parse(localStorage.getItem('profile_id'));
+      let exist = cart_list.length &&
+        JSON.parse(localStorage.getItem('cart_list')).some(data =>
+          data.product_uuid == id_cart && data.profile_id === profile_id
+        );
+
+      if (cart_list.find(p => p.product_uuid === id_cart && p.userId === profile_id)) {
+        alert('Sorry, the product is already added to the cart');
+        return;
+      }
+      if (!profile_id) {
+        alert("Log In");
+        window.location.href = "./profile/login.html";
+        return;
+      }
+      if (!exist) {
+        cart_list.push({
+          "product_uuid": id_cart,
+          "product_name": product_name,
+          "image_url": image_url,
+          "product_price": product_price,
+          "userId": profile_id,
+          "product_quantity": 1
         });
+        localStorage.setItem('cart_list', JSON.stringify(cart_list));
+        alert('Product Added to the Cart');
+        location.href = "./cart.html";
+      }
+    });
+  });
 
         // function remove(e, uniqueid) {
         //     if (!e || typeof uniqueid !== 'string') {
@@ -198,6 +211,9 @@
         //         window.location.reload();
         //     });
         // });
+
+
+
 
   </script>
   <script src="../assets/comments/header.js"></script>

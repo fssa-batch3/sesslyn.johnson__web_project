@@ -138,10 +138,10 @@ p.details{
 #contact{
     margin-top:0rem;
 }
-#user_dob{
+/* #user_dob{
     margin-top:0rem;
-    padding-top:1rem;
-}
+    padding-top:0rem;
+} */
 #user_city{
     margin-left:-0.8rem;
 }
@@ -177,3 +177,4 @@ a{
     color:white;
     display: inline; 
 }
+

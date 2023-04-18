@@ -50,7 +50,7 @@
                         class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price" id="product_sell" required pattern="[0-9]+" class="form-control" />
+                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+" class="form-control" />
                     <select name="" id="product_category" class="form-control" required>
                       <option value="" disabled selected>Product Category</option>
                       <option value="Sofa">Sofa</option>
@@ -96,7 +96,6 @@
         document.getElementById("product_name").value = product_data["product_name"];
         document.getElementById("product_category").value = product_data["product_category"];
         document.getElementById("product_real").value = product_data["product_real"];
-        document.getElementById("product_sell").value = product_data["product_sell"];
         document.getElementById("product_discount").value = product_data["product_discount"];
         document.getElementById("product_description").value = product_data["product_description"];
         document.getElementById("product_warranty").value = product_data["product_warranty"];
@@ -119,11 +118,20 @@
             let edit_name = document.getElementById("product_name").value
             let edit_brand = document.getElementById("product_brand").value
             let edit_category = document.getElementById("product_category").value
-            let edit_sell = document.getElementById("product_sell").value
+            // let edit_sell = document.getElementById("product_sell").value
             let edit_real = document.getElementById("product_real").value
             let edit_discount = document.getElementById("product_discount").value
             let edit_description = document.getElementById("product_description").value
             let edit_warranty = document.getElementById("product_warranty").value
+
+            if(edit_discount == edit_discount){
+        edit_sell = edit_real - edit_real * edit_discount / 100 ;
+        edit_sell = Math.round(edit_sell);
+       }
+       else{
+        edit_sell = edit_real - edit_discount
+       }
+
             product_data["image_url"] = edit_image;
             product_data["product_name"] = edit_name;
             product_data["product_brand"] = edit_brand;

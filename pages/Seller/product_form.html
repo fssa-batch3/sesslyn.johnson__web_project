@@ -44,10 +44,10 @@
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Actual Price"  id="product_real" required pattern="[0-9]+" class="form-control"/>
-                    <input type="text" placeholder="Discount"  id="product_discount" required pattern="[0-9]+" class="form-control"/>
+                    <input type="text" placeholder="Discount"  id="product_discount" required pattern="[0-9]{2}" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price" id="product_sell" required pattern="[0-9]+" class="form-control" />
+                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+" class="form-control" />
                     <select name="" id="product_category" class="form-control" required>
                       <option value="" disabled selected>Product Category</option>
                       <option value="Sofa">Sofa</option>
@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <input type="text" required placeholder="Warranty" id="product_warranty" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" class="form-control"/>
                 </div>
-                <span>Note : Only numbers should be used to write prices (in Rs)</span>
+                <span>Note : Only numbers should be used to write prices (in Rs) and Discount should be in % </span>
                 <div class="btn">
                     <button type="submit" class="submit">Submit</button>
                 </div>
@@ -79,13 +79,18 @@
     let product_name = document.getElementById("product_name").value;
     let product_category = document.getElementById("product_category").value;
     let product_real = document.getElementById("product_real").value;
-    let product_sell  = document.getElementById("product_sell").value;
     let product_discount  = document.getElementById("product_discount").value;
     let product_description  = document.getElementById("product_description").value;
     let product_warranty  = document.getElementById("product_warranty").value;
     let product_brand  = document.getElementById("product_brand").value;
     let product_uuid=uuidv4();
-       
+       if(product_discount == product_discount){
+        product_sell = product_real - product_real * product_discount / 100 ;
+        product_sell = Math.round(product_sell);
+       }
+       else{
+        product_sell = product_real - product_discount
+       }
     let sellerId = JSON.parse(localStorage.getItem('seller_id'));
     let product_crud = JSON.parse(localStorage.getItem('product_crud')) || [];
 
