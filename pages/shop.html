@@ -220,43 +220,50 @@
             <div class="categories" id="category">
                 <h1 id="h1">Sofas For Shopping</h1>
                 <div class="categories-img" id="shop_sofa">
-                  <!-- Sofa -->
+                    <!-- Sofa -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Modular TV Units with Shelves</h1>
                 <div class="categories-img" id="shop_tv">
-                  <!-- Tv units -->
+                    <!-- Tv units -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Space Saving Furniture</h1>
                 <div class="categories-img" id="reusable_shop">
-                   <!-- Space Saving Furniture -->
+                    <!-- Space Saving Furniture -->
                 </div>
             </div>
-          
+
 
             <div class="categories" id="category">
                 <h1 id="h1">Winsome Wallpaper</h1>
                 <div class="categories-img" id="wallpaper_shop">
-                 <!-- Wallpaper -->
+                    <!-- Wallpaper -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Chandelier Lights to Brighten your Life</h1>
                 <div class="categories-img" id="chandelier_shop">
-                   <!-- Chandelier -->
+                    <!-- Chandelier -->
                 </div>
             </div>
 
             <div class="categories" id="category">
                 <h1 id="h1">Warming Wadrobe</h1>
                 <div class="categories-img" id="wadrobe_shop">
-                   <!-- Wadrobe -->
+                    <!-- Wadrobe -->
+                </div>
+            </div>
+
+            <div class="categories" id="category">
+                <h1 id="h1">Classy Crockery Units</h1>
+                <div class="categories-img" id="crockery_shop">
+                    <!--Crockery Units -->
                 </div>
             </div>
         </div>
@@ -267,35 +274,38 @@
         let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         let added_products = JSON.parse(localStorage.getItem("added_products"));
 
+        let add_crud = product_crud.filter(product => 
+        added_products.some(a=>product.product_uuid === a.product_uuid))
+        console.log(add_crud)
 
-        let sofa = product_crud.filter(function (e) {
-                  return e.product_category == 'Sofa';
-               });
-               console.log(sofa)
+        let sofa = add_crud.filter(function (e) {
+            return e.product_category == 'Sofa';
+        });
+        console.log(sofa)
 
-               for (const product_details of sofa) {
-                  const template1 = product_upload(product_details);
-                  document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
-               }
+        for (const product_details of sofa) {
+            const template1 = product_upload(product_details);
+            document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
+        }
 
-               function product_upload(sofa) {
-                  const template1 =
-                     `
+        function product_upload(sofa) {
+            const template1 =
+                `
                      <div class="container">
                       <a href="#"><img class="crockery" src="${sofa["image_url"]}"
                           alt="sofa image" /></a>
                      <div class="overlay">
-                       <a href="#"><img class="bag_overlay" data-cart="${sofa["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                       <a href="#"><img class="bag_overlay" data-cart="${sofa["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag"/></a>
                        <button data-id="${sofa["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
                       </div>
                      </div>
                      `
-                  return template1;
+            return template1;
         }
 
         //tv units
-        let tv_sets = product_crud.filter(function (e) {
+        let tv_sets = add_crud.filter(function (e) {
             return e.product_category == 'TV Units';
         });
 
@@ -312,7 +322,7 @@
                         <a href="#"><img class="crockery" src="${tv_sets["image_url"]}"
                              alt="tv image" /></a>
                         <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${tv_sets["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                            <a href="#"><img class="bag_overlay" data-cart="${tv_sets["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button data-id="${tv_sets["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
                         </div>
@@ -322,11 +332,11 @@
         }
 
         //reusable 
-        let space_saving = product_crud.filter(function (e) {
+        let space_saving = add_crud.filter(function (e) {
             return e.product_category == 'Space Saving Furniture';
         });
 
-
+        console.log(space_saving)
         for (const product_reuse of space_saving) {
             const template3 = product_space(product_reuse);
             document.querySelector("#reusable_shop").insertAdjacentHTML("beforeend", template3);
@@ -341,7 +351,7 @@
                         <a href="#"><img class="crockery" src="${space_saving["image_url"]}"
                               alt="Space saving furniture image" /></a>
                         <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${space_saving["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
+                            <a href="#"><img class="bag_overlay" data-cart="${space_saving["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button data-id="${space_saving["product_uuid"]}"  class="overlay_button"><a href="#">View More</a></button>
                         </div>
@@ -351,63 +361,61 @@
             return template3;
         }
 
-        let Wallpaper_units = product_crud.filter(function (e) {
-                  return e.product_category == 'Wallpaper';
-               });
+        let Wallpaper_units = add_crud.filter(function (e) {
+            return e.product_category == 'Wallpaper';
+        });
 
-               for (const product_wallpaper of Wallpaper_units) {
-                  const template4 = product_wall(product_wallpaper);
-                  document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
-               }
+        for (const product_wallpaper of Wallpaper_units) {
+            const template4 = product_wall(product_wallpaper);
+            document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
+        }
 
-               function product_wall(Wallpaper_units) {
-                  const template4 =
-                     ` 
+        function product_wall(Wallpaper_units) {
+            const template4 =
+                ` 
                      <div class="container">
-                        <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}""
+                        <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}"
                             alt="chandleir image" /></a>
                         <div class="overlay">
-                           <a href="#"><img class="bag_overlay"  src="../assets/images/home_page/heart_icon.jpg"
+                           <a href="#"><img class="bag_overlay"  data-cart="${Wallpaper_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
                                     alt="shopping-bag" /></a>
                             <button class="overlay_button"  data-id="${Wallpaper_units["product_uuid"]}" ><a href="#">View More</a></button>
                          </div>
                    </div>
                      `
-                  return template4;
-            }
+            return template4;
+        }
 
-        //Chandelier
+        // Chandelier
+        let chandelier_units = add_crud.filter(function (e) {
+            return e.product_category == 'Chandelier';
+        });
+        console.log(chandelier_units)
+        for (let i = 0; i < chandelier_units.length; i++) {
+    const product_chandelier = chandelier_units[i];
+    const template = product_chand(product_chandelier);
+    document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
+}
 
-        let chandelier_units = product_crud.filter(function (e) {
-                  return e.product_category == 'Chandelier';
-               });
-console.log(chandelier_units)
-               for (const product_chandelier of chandelier_units) {
-                  const template4 = product_chand(product_chandelier);
-                  document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
-
-               }
-
-               function product_chand(chandelier_units) {
-                  const template4 =
-                     ` 
-                     <div class="container">
-                        <a href="#"><img class="crockery" src="${chandelier_units["image_url"]}"
-                            alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${chandelier_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button class="overlay_button"  data-id="${chandelier_units["product_uuid"]}" ><a href="#">View More</a></button>
-                        </div>
-                    </div>
-
-                     `
-                  return template4;
-               }
-
+function product_chand(a) {
+    const template4 =
+        ` 
+            <div class="container">
+                <a href="#"><img class="crockery" src="${a["image_url"]}"
+                    alt="chandelier image" /></a>
+                <div class="overlay">
+                    <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
+                            src="../assets/images/home_page/heart_icon.jpg"
+                            alt="shopping-bag" /></a>
+                    <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
+                </div>
+            </div>
+        `
+    return template4;
+}
 
         //wadrobe
-        let Wadrobe_units = product_crud.filter(function (e) {
+        let Wadrobe_units = add_crud.filter(function (e) {
             return e.product_category == 'Wadrobe';
         });
 
@@ -434,15 +442,14 @@ console.log(chandelier_units)
         }
 
         //Crockery units
-        let crockery_units = product_crud.filter(function (e) {
+        let crockery_units = add_crud.filter(function (e) {
             return e.product_category == 'Crockery Units';
         });
-
-        for (const product_chandelier of chandelier_units) {
-                  const template4 = product_chand(product_chandelier);
-                  document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template4);
-
-               }
+        console.log(crockery_units)
+        for (const product_crock of crockery_units) {
+            const template4 = product_crock(product_crock);
+            document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
+        }
 
         function product_crock(crockery_units) {
             const template4 =
@@ -469,7 +476,34 @@ console.log(chandelier_units)
             })
         })
 
-       
+        document.querySelector(".bag_overlay").addEventListener("click",  function () {
+            let id_wish = this.dataset.cart;
+            let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
+            // let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+            let condition = JSON.parse(localStorage.getItem("profile_id"))
+            if (!condition) {
+                alert("Log In")
+                window.location.href = "./profile/login.html";
+                return;
+            }
+            let product_uuid = new URLSearchParams(window.location.search).get('product_id');
+            let prod_data = wish_list.find(product => product.product_id === product_uuid && product.user_id === profile_id);
+            if (prod_data) {
+                alert('This product is already added in your wishlist page');
+                return;
+            }
+            else {
+                let prod = {
+                    product_id: id_wish,
+                    user_id: profile_id
+                }
+                wish_list.push(prod);
+                localStorage.setItem("wish_list", JSON.stringify(wish_list));
+                alert('Your product has been added to the wishlist')
+                window.location.href="./wishlist.html"
+            }
+        });
+
     </script>
     <script src="../assets/comments/header.js"></script>
 </body>
