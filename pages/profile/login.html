@@ -75,19 +75,22 @@
         <form role="form" onsubmit="signIn(event)">
         <div class="form_input">
             <label>Name</label>
-            <input type="text" class="no_outline" id="user_name" required="true" title="Only contain Alphabets" placeholder="Sesslyn">
+            <input type="text" class="no_outline" pattern="[a-zA-Z0-9]+" id="user_name" required="true" 
+            title="Only contain Alphabets" placeholder="Sesslyn">
         </div>
         <hr class="new1">
 
         <div class="form_input">
             <label>Email Id</label>
-            <input type="email" class="no_outline" id="user_email" required="true" title="Must contain @ and only lower case is allowed." placeholder="sesslyn2004@gmail.com" >
+            <input type="email" class="no_outline" id="user_email" required="true"  pattern="[^\s]+@[^\s]+\.[^\s]+"
+            title="Must contain @ and only lower case is allowed." placeholder="sesslyn2004@gmail.com" >
         </div>
         <hr class="new1">
 
         <div class="form_input">
             <label>Password</label>
-            <input type="password" class="no_outline" required="true" placeholder="Password" id="user_password" >
+            <input type="password" class="no_outline" required="true"  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="Password" id="user_password" >
         </div>
         
         <div class="form_btn">
@@ -111,7 +114,8 @@
 
     let exist = user_crud.length &&
     JSON.parse(localStorage.getItem('user_crud')).some(data => 
-        data.user_password == user_password);
+        data.user_name == user_name && data.user_password == user_password);
+
 
     if(!exist){
         alert("Incorrect login credentials");

@@ -113,9 +113,9 @@
                         data == id);
 
                 if (!exist) {
-                    added_products.push(
-                        id
-                    )
+                    added_products.push({
+                        product_uuid: id
+                    });
                     localStorage.setItem("added_products", JSON.stringify(added_products));
                     alert("Product is added to the User page");
                 }
@@ -124,6 +124,8 @@
                 }
             });
         });
+
+
 
         const remove = document.querySelectorAll("button.button_remove");
         remove.forEach(function (findId) {

@@ -25,7 +25,7 @@
     <div class="top">
         <div class="left_corner">
             <div class="top_container">
-                <img src="../../assets/images/home_page/profile_girl.png" class="profile_image" 
+                <img src="../../assets/images/home_page/profile_girl.png" class="profile_image" id="profile_image"
                     alt="profile image" />
                 <div class="crown">
                     <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crown image" />
@@ -58,7 +58,7 @@
 
                             <div class="form_details">
                                 <label class="mobile_no">Mobile Number</label>
-                                <input type="text" class="name" required="true" id="user_no" pattern="[0-9]+"
+                                <input type="text" class="name" title="it should be 10 digit number" required="true" id="user_no" pattern="[0-9]{10}"
                                     placeholder="9952393568">
                             </div>
                         </div>
@@ -90,20 +90,20 @@
 
                             <div class="form_details" id="usercity_code">
                                 <label class="mobile_no">State</label>
-                                <input type="text" class="name" required="true" id="user_city" placeholder="Chennai">
+                                <input type="text" class="name" pattern="[a-zA-Z]+" required="true" id="user_city" placeholder="Chennai">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>Aadhar No</label>
-                                <input type="text" class="name" required="true" id="user_aadhar"
+                                <input type="text" class="name" pattern="[0-9]{12}" required="true" id="user_aadhar"
                                     placeholder="Tamil Nadu">
                             </div>
 
                             <div class="form_details" id="gst_no">
                                 <label class="gst_no">GSTIN</label>
-                                <input type="text" class="name" required="true" id="user_gst" placeholder="India">
+                                <input type="text" class="name" required="true" pattern="[0-9]{15}" id="user_gst" placeholder="India">
                             </div>
 
                         </div>
@@ -111,7 +111,7 @@
                         <div class="details">
                             <div class="form_details">
                                 <label>Address</label>
-                                <input type="text" class="name" required="true" id="user_address"
+                                <input type="text" class="name" pattern="[a-zA-Z0-9\s#-,./]+" required="true" id="user_address"
                                     placeholder="12th Nehru street, Perungudi.">
                             </div>
                         </div>
@@ -119,13 +119,13 @@
                         <div class="details">
                             <div class="form_details">
                                 <label>About</label>
-                                <input type="text" class="name" required="true" id="user_about"
+                                <input type="text" class="name" required="true" pattern="[a-zA-Z0-9\s#-,./]+" id="user_about"
                                     placeholder="I am an Entrepreneur.">
                             </div>
 
                             <div class="form_details" id="country_no">
                                 <label class="country_no">Image</label>
-                                <input type="text" class="name" id="user_image" placeholder="https://">
+                                <input type="text" class="name" id="user_image" pattern="https://.*" placeholder="https://">
                             </div>
 
                         </div>
@@ -162,6 +162,15 @@
         document.getElementById("user_about").value = user_data["user_about"];
         document.getElementById("user_image").value = user_data["user_image"];
     
+        let image_element = document.getElementById("profile_image");
+        image_element.setAttribute("src", user_data["user_image"])
+
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("user_dob").setAttribute("max", today);
 
         function update_details(e) {
 
