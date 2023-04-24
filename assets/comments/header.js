@@ -74,7 +74,8 @@ else {
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("profile_id");
     document.body.innerHTML = AfterLogin;
-    window.location.reload();
+    // window.location.reload();
+    window.location.href = "../../index.html"
   });
 }
 

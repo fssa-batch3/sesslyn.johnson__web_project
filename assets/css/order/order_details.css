@@ -42,8 +42,9 @@ input{
     border:1px solid rgb(190, 190, 190);
     font-size: 1px sans-serif;
     outline: none;
+    color:black;
 }
-  
+
 input.name{
     width:100%;
     padding:0.5rem 0.5rem 0.5rem 0.5rem;
@@ -117,7 +118,7 @@ label{
     flex-direction: row;
     margin:0rem 0rem 0rem 4rem;
 }
-#user_cash{
+.user_cash{
     margin:2rem 2rem 0rem 2rem;
     padding:0rem 0rem 0rem 2rem;
     display:inline;

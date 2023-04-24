@@ -29,7 +29,7 @@
                 <div class="interior-row" id="row_int">
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
-                            <a href="../pages/Living room/project.html"><img class="living"
+                            <a href="../pages/living_room/page.html"><img class="living"
                                     src="../assets/images/home_page/living_room-icon.png"
                                     alt="icon of every chamber" /></a>
                             <p class="tooltiptext" id="toolhall">Living Room</p>
@@ -478,37 +478,37 @@
 
 
         const add = document.querySelectorAll(".bag_overlay");
-add.forEach(function (findId) {
-  findId.addEventListener('click', function () {
-    let id_wish = this.dataset.cart;
-    let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
-    let profile_id = JSON.parse(localStorage.getItem("profile_id"));
-    let condition = JSON.parse(localStorage.getItem("profile_id"))
-    if (!condition) {
-      alert("Log In")
-      window.location.href = "./profile/login.html";
-      return;
-    }
+        add.forEach(function (findId) {
+            findId.addEventListener('click', function () {
+                let id_wish = this.dataset.cart;
+                let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
+                let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+                let condition = JSON.parse(localStorage.getItem("profile_id"))
+                if (!condition) {
+                    alert("Log In")
+                    window.location.href = "./profile/login.html";
+                    return;
+                }
 
-    let product_uuid = new URLSearchParams(window.location.search).get('product_id');
+                let product_uuid = new URLSearchParams(window.location.search).get('product_id');
 
-    let prod_data = wish_list.find((prod) => prod.product_id === id_wish);
-    if (prod_data) {
-      alert('Sorry, the product is already added to the wishlist');
-      return;
-    }
-    else {
-      let prod = {
-        product_id: id_wish,
-        user_id: profile_id
-      }
-      wish_list.push(prod);
-      localStorage.setItem("wish_list", JSON.stringify(wish_list));
-      alert('Your product has been added to the wishlist')
-      window.location.href = "./wishlist.html"
-    }
-  });
-});
+                let prod_data = wish_list.find((prod) => prod.product_id === id_wish);
+                if (prod_data) {
+                    alert('Sorry, the product is already added to the wishlist');
+                    return;
+                }
+                else {
+                    let prod = {
+                        product_id: id_wish,
+                        user_id: profile_id
+                    }
+                    wish_list.push(prod);
+                    localStorage.setItem("wish_list", JSON.stringify(wish_list));
+                    alert('Your product has been added to the wishlist')
+                    window.location.href = "./wishlist.html"
+                }
+            });
+        });
 
 
     </script>

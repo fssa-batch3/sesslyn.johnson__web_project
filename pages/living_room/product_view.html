@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/chamber/page.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="main_div">
+        <div class="div_product" id="div1">
+            <div class="details">
+                <div class="menu_icon">
+                    <p>DesignHunt</p>
+                    <div class="menu">
+                        <div class="menu_bar"></div>
+                        <div class="menu_bar"></div>
+                        <div class="menu_bar"></div>
+                    </div>
+                </div>
+                <div class="hideout">
+                    <div>
+                        <img src="../../assets/images/Living room/living room rich/pexels-надежда-мустафаева-7880318.jpg"
+                            class="hideout_lamp" alt="hideout_lamp" />
+                    </div>
+                    <div>
+                        <span class="apartment">
+                            <p>Apartments design</p>
+                            <p classs="year">2021</p>
+                        </span>
+                        <span class="classy_names">
+                            <h2>Modern</h2>
+                            <h2>Prestiguous</h2>
+                        </span>
+                        <span>
+                            <img class="right_arrow" id="arrow1" src="../../assets/images/home_page/angle_right.png"
+                                alt="angle right arrow" />
+                        </span>
+                        <span class="location">
+                            <h4 class="right_locate">Location</h4>
+                            <p class="apart_name">Ruby Apartments</p>
+                            <p class="city">Velacherry</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="collect">
+                    <span>
+                        <p class="collect">Collections</p>
+                    </span>
+                    <span>
+                        <p class="projects">Similar projects</p>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <img class="product_img" src="../../assets/images/Living room/living room rich/hall_2.jpg"
+                    alt="living_room" />
+            </div>
+        </div>
+        <div class="div_product" id="div2">
+            <div class="details">
+                <div class="menu_icon">
+                    <p>DesignHunt</p>
+                    <div class="menu">
+                        <div class="menu_bar"></div>
+                        <div class="menu_bar"></div>
+                        <div class="menu_bar"></div>
+                    </div>
+                </div>
+                <div class="hideout">
+                    <div>
+                        <img src="../../assets/images/Living room/living room rich/pexels-надежда-мустафаева-7880318.jpg"
+                            class="hideout_lamp" alt="hideout_lamp" />
+                    </div>
+                    <div>
+                        <span class="apartment">
+                            <p>Apartments design</p>
+                            <p classs="year">2021</p>
+                        </span>
+                        <span class="classy_names">
+                            <h2>Modern</h2>
+                            <h2>Prestiguous</h2>
+                        </span>
+                        <span>
+                            <img class="right_arrow" id="arrow2" src="../../assets/images/home_page/angle_right.png"
+                                alt="angle right arrow" />
+                        </span>
+                        <span class="location">
+                            <h4 class="right_locate">Location</h4>
+                            <p class="apart_name">Ruby Apartments</p>
+                            <p class="city">Velacherry</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="collect">
+                    <span>
+                        <p class="collect">Collections</p>
+                    </span>
+                    <span>
+                        <p class="projects">Similar projects</p>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <img class="product_img" src="../../assets/images/Living room/living room rich/hall_2.jpg"
+                    alt="living_room" />
+            </div>
+        </div>
+        
+    </main>
+    <script>
+        let replace = document.querySelector("img#arrow1")
+        replace.addEventListener("click", function () {
+            let srcElement = document.getElementById("arrow1");
+            let div1 = document.getElementById("div1");
+            let div2 = document.getElementById("div2");
+
+            if (srcElement.style.display === "block") {
+                div1.style.display = "none";
+                div2.style.display = "block";
+            } else {
+                div1.style.display = "block";
+                div2.style.display = "none";
+            }
+
+            return false;
+        });
+
+    </script>
+    <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>

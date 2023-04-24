@@ -14,126 +14,276 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 
 </head>
 
 <body>
-<main>
-    <div>
-        <div class="heading_page">
-            <td><img src="../../assets/images/home_page/bag_icon.png" class="page" id="page" alt="bag icon"/><img class="dotted_line" src="../../assets/images/home_page/dotted-line-icon.png" alt="dotted_line"/></td>
-            <td><img src="../../assets/images/home_page/truck_icon.png" class="page" id="page_2" alt="bag icon"/><img class="dotted_line" src="../../assets/images/home_page/dotted-line-icon.png" alt="dotted_line"/></td>
-            <td><img src="../../assets/images/home_page/card_icon.png" class="page" id="page_3" alt="bag icon"/></td>
-        </div>
-        <div class="heading_page">
-            <small class="page_new">Your Shipping</small>
-            <small class="page_text">Delivery Address</small>
-            <small class="page_text">Payment Method</small>
-        </div>
-    </div>
-
-    <div class="top">
-        <div class="top_container">
-            <h2>Delivery Information</h2>
-            <div class="order-details">
-                <div class="details">
-                    <div class="form_details">
-                        <label>Name</label>
-                        <input type="text" class="name" required="true"  id="user_name" pattern="[a-zA-Z0-9]+" placeholder="Daniel">
-                     </div>
-                    
-                    <div class="form_details">
-                        <label class="mobile_no">Mobile Number</label>
-                        <input type="text" class="name"  required="true"  id="user_no"  pattern="[0-9]+" placeholder="9952393568">
-                    </div>
-                </div>
-
-                <div class="details">
-                    <div class="form_details">
-                        <label>E-mail</label>
-                        <input type="text" class="name" required="true"  id="user_email"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
-                     </div>
-                    
-                    <div class="form_details">
-                        <label class="mobile_no">City</label>
-                        <input type="text" class="name"  required="true"  id="user_city"  pattern="[a-zA-Z0-9]+" placeholder="Chennai">
-                    </div>
-                </div>
-              
-                <div class="details">
-                    <div class="form_details">
-                        <label>State</label>
-                        <input type="text" class="name" required="true"  id="user_state" pattern="[a-zA-Z0-9]+"  placeholder="Tamil Nadu">
-                     </div>
-                
-                    
-                    <div class="form_details" id="zip_no">
-                        <label>ZIP Code</label>
-                        <input type="text" class="name"  required="true"  id="user_code" pattern="[0-9]+" placeholder="600094">
-                    </div>
-
-                    <div class="form_details" id="country_no">
-                        <label class="country_no">Country</label>
-                        <input type="text" class="name"  required="true"  id="user_country" pattern="[a-zA-Z0-9]+" placeholder="India">
-                    </div>
-                   
-                </div>
-
-                <div class="details">
-                    <div class="form_details">
-                        <label>Address</label>
-                        <input type="text" class="name" required="true"  id="user_address"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  placeholder="12th Nehru street, Perungudi.">
-                     </div>
-                </div>
+    <main>
+        <div>
+            <div class="heading_page">
+                <td><img src="../../assets/images/home_page/bag_icon.png" class="page" id="page" alt="bag icon" /><img
+                        class="dotted_line" src="../../assets/images/home_page/dotted-line-icon.png"
+                        alt="dotted_line" /></td>
+                <td><img src="../../assets/images/home_page/truck_icon.png" class="page" id="page_2"
+                        alt="bag icon" /><img class="dotted_line"
+                        src="../../assets/images/home_page/dotted-line-icon.png" alt="dotted_line" /></td>
+                <td><img src="../../assets/images/home_page/card_icon.png" class="page" id="page_3" alt="bag icon" />
+                </td>
+            </div>
+            <div class="heading_page">
+                <small class="page_new">Your Shipping</small>
+                <small class="page_text">Delivery Address</small>
+                <small class="page_text">Payment Method</small>
             </div>
         </div>
 
-        <div class="middle_container">
-              <h2>Schedule Delivery</h2>
-            <div class="order-details">
-            <div class="details">
-                <div class="form_details">
-                    <label>Dates</label>
-                    <input type="date" class="name" required="true"  id="user_dates" >
-                 </div>
-            
-                <div class="form_details">
-                    <label class="notes">Notes</label>
-                    <input type="text" class="name" required="true"  id="user_notes"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Type Your Note">
-                 </div>
-             </div>
-           </div>
-        </div>
+        <div class="top">
+            <div class="top_container">
+                <h2>Delivery Information</h2>
+                <form role="form" onsubmit="place_order(event)">
+                    <div class="order-details">
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Name</label>
+                                <input type="text" class="name" required="true" id="user_name"
+                                    title="Only Alphabets are allowed." pattern="[a-zA-Z0-9]+" placeholder="Daniel">
+                            </div>
 
-        <div class="bottom_container">
-            <h2>Payment Method</h2>
-            <div class="details_pay">
-            <div class="pay_ment">
-                <div class="input_cash" id="cash_1">
-                    <input type="radio"  id="user_cash" class="name">
-                    <label class="payment_label">Net Banking </label><br>
-                 </div>
-            
-                <div class="input_cash" id="cash_2">
-                    <input type="radio"  id="user_cash" class="name">
-                    <label  class="payment_label">Cash on Delivery</label><br>
-                </div>
+                            <div class="form_details">
+                                <label class="mobile_no">Mobile Number</label>
+                                <input type="text" class="name" required="true" title="it should be 10 digit number"
+                                    pattern="[0-9]{10}" id="user_no" pattern="[0-9]+" placeholder="9952393568">
+                            </div>
+                        </div>
 
-                <div class="input_cash" id="cash_2">
-                    <input type="radio"  id="user_cash" class="name">
-                    <label class="payment_label">Credit / Debit cards</label><br>
+                        <div class="details">
+                            <div class="form_details">
+                                <label>E-mail</label>
+                                <input type="text" class="name" required="true" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
+                            </div>
+
+                            <div class="form_details">
+                                <label class="mobile_no">City</label>
+                                <input type="text" class="name" pattern="[a-zA-Z]+"
+                                    title="Only Alphabets and space is allowed" required="true" id="user_city"
+                                    placeholder="Chennai">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>State</label>
+                                <input type="text" class="name" required="true" id="user_state" pattern="[a-zA-Z ]+"
+                                    title="Only Alphabets and space is allowed" placeholder="Tamil Nadu">
+                            </div>
+
+
+                            <div class="form_details" id="zip_no">
+                                <label>ZIP Code</label>
+                                <input type="text" class="name" required="true"
+                                    title="It should be a 6 digit number without spaces" pattern="[0-9]{6}"
+                                    id="user_code" placeholder="600094">
+                            </div>
+
+                            <div class="form_details" id="country_no">
+                                <label class="country_no">Country</label>
+                                <input type="text" class="name" required="true" id="user_country" attern="[a-zA-Z]+"
+                                    title="Only Alphabets and space is allowed" placeholder="India">
+                            </div>
+
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Address</label>
+                                <input type="text" class="name" required="true" id="user_address"
+                                    pattern="[a-zA-Z0-9\s#-,./]+"
+                                    title="Accepts Alphabets, number and special character and space too."
+                                    placeholder="12th Nehru street, Perungudi.">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="middle_container">
+                <h2>Schedule Delivery</h2>
+                <div class="order-details">
+                    <div class="details">
+                        <div class="form_details">
+                            <label>Dates</label>
+                            <input type="date" class="name" disabled required="true" id="user_dates">
+                        </div>
+
+                        <div class="form_details">
+                            <label class="notes">Notes</label>
+                            <input type="text" class="name" id="user_notes" pattern="[a-zA-Z0-9\s#-,./]+"
+                                title="Accepts Alphabets, number and special character and space too."
+                                placeholder="Type Your Note">
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="bottom_container">
+                <h2>Payment Method</h2>
+                <div class="details_pay">
+                    <div class="pay_ment" id="payment_option">
+                        <div class="input_cash" id="cash_1">
+                            <input type="radio" id="net_bank" class="user_cash">
+                            <label class="payment_label">Net Banking </label><br>
+                        </div>
+
+                        <div class="input_cash" id="cash_2">
+                            <input type="radio" id="cash_delivery" class="user_cash">
+                            <label class="payment_label">Cash on Delivery</label><br>
+                        </div>
+
+                        <div class="input_cash" id="cash_2">
+                            <input type="radio" id="credit_cards" class="user_cash">
+                            <label class="payment_label">Credit / Debit cards</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-          </div>
+
         </div>
+        <button class="btn_order" type="submit">Proceed</button>
         </div>
-        <a href="../../pages/order/order_summary.html"><button class="btn_order" type="submit">Proceed</button></a>
-    </div>
-</main>
-<script src="../../assets/comments/header.js"></script>
+    </form>
+    </main>
+    <script>
+  
+        const netBank = document.querySelector("#net_bank");
+        netBank.addEventListener('change', () => {
+            if (netBank.checked) {
+                cashDelivery.checked = false;
+                creditCards.checked = false;
+                localStorage.setItem('user_delivery', 'Net Banking');
+            }
+        });
+
+        const cashDelivery = document.querySelector("#cash_delivery");
+        cashDelivery.addEventListener('change', () => {
+            if (cashDelivery.checked) {
+                netBank.checked = false;
+                creditCards.checked = false;
+                localStorage.setItem('user_delivery', 'Cash On Delivery');
+            }
+        });
+
+        const creditCards = document.querySelector("#credit_cards");
+        creditCards.addEventListener('change', () => {
+            if (creditCards.checked) {
+                cashDelivery.checked = false;
+                netBank.checked = false;
+                localStorage.setItem('user_delivery', 'Credit / Debit cards');
+            }
+        });
+
+        const deliveryMethod = localStorage.getItem('user_delivery');
+        if (deliveryMethod === 'Net Banking') {
+            netBank.checked = true;
+        }
+        if (deliveryMethod === 'Cash On Delivery') {
+            cashDelivery.checked = true;
+        }
+        if (deliveryMethod === 'Credit / Debit cards') {
+            creditCards.checked = true;
+        }
+
+        let profile_id = JSON.parse(localStorage.getItem('profile_id'));
+        let user_crud = JSON.parse(localStorage.getItem('user_crud'));
+
+        function login_data(e) {
+            return e.user_email === profile_id;
+        }
+
+        let user_data = user_crud.find(login_data);
+        document.getElementById("user_name").value = user_data.user_name;
+        document.getElementById("user_no").value = user_data.user_no;
+        document.getElementById("user_email").value = user_data.user_email;
+        document.getElementById("user_city").value = user_data.user_city;
+        document.getElementById("user_state").value = user_data.user_state;
+        document.getElementById("user_country").value = user_data.user_country;
+        document.getElementById("user_address").value = user_data.user_address;
+        document.getElementById("user_code").value = "";
+        document.getElementById("user_notes").value = "";
+        document.getElementById("user_dates").value = "";
+
+        const place_order = e=>{
+            
+            let user_name = document.getElementById("user_name").value;
+            let user_email = document.getElementById("user_email").value;
+            let user_no = document.getElementById("user_no").value;
+            let user_city = document.getElementById("user_city").value;
+            let user_state = document.getElementById("user_state").value;
+            let user_country = document.getElementById("user_country").value;
+            let user_address = document.getElementById("user_address").value;
+            let user_code = document.getElementById("user_code").value;
+            let user_notes = document.getElementById("user_notes").value;
+            let user_dates = document.getElementById("user_dates").value;
+            let user_delivery = localStorage.getItem("user_delivery");
+
+            user_data.user_name = user_name;
+            user_data.user_no = user_no;
+            user_data.user_email = user_email;
+            user_data.user_city = user_city;
+            user_data.user_state = user_state;
+            user_data.user_country = user_country;
+            user_data.user_address = user_address;
+            user_data.user_code = user_code;
+            user_data.user_notes = user_notes;
+            user_data.user_dates = user_dates;
+
+            let order_user = JSON.parse(localStorage.getItem('order_user')) || [];
+           
+          
+                order_user.push({
+                    user_name,
+                    user_email,
+                    user_city,
+                    user_code,
+                    user_notes,
+                    user_address,
+                    user_state,
+                    user_no,
+                    user_country,
+                    user_dates,
+                    user_delivery
+                });
+               
+                localStorage.setItem('order_user', JSON.stringify(order_user));
+                console.log(localStorage.getItem('order_user'));
+                location.href="./order_summary.html";
+                event.preventDefault()
+          
+           
+        }
+
+
+        let d = new Date();
+        d.setDate(d.getDate() + 7);
+
+        let year = d.getFullYear();
+        let month = ("0" + (d.getMonth() + 1)).slice(-2);
+        let day = ("0" + d.getDate()).slice(-2);
+
+        let formattedDate = year + "-" + month + "-" + day;
+
+        document.querySelector("#user_dates").value = formattedDate;
+        
+
+    </script>
+    <script src="../../assets/comments/header.js"></script>
 </body>
+
 </html>

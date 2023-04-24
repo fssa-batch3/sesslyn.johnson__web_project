@@ -63,113 +63,136 @@
 
         let user_cart = cart_list.filter(e => e.userId == user);
         console.log(user_cart)
-        
+
+
         for (let i = 0; i < user_cart.length; i++) {
-          
-
-                    // create the table element
-                    const table = document.createElement('table');
-                    table.classList.add('table_product');
-
-                    // create the row element
-                    const row = document.createElement('tr');
-                    table.classList.add('tr_row');
-                    table.append(row);
-
-                    // create the first column element
-                    const col1 = document.createElement('td');
-                    row.append(col1);
-
-                    const cartInfo = document.createElement('div');
-                    cartInfo.classList.add('cart_info');
-                    col1.append(cartInfo);
-
-                    const img = document.createElement('img');
-                    img.src = user_cart[i]["image_url"];
-                    img.classList.add('product_1');
-                    img.alt = 'Compat camal brown sofa';
-                    cartInfo.append(img);
-
-                    const h3 = document.createElement('h3');
-                    h3.textContent = user_cart[i]["product_name"];
-                    cartInfo.append(h3);
-
-                    // create the second column element
-                    const col2 = document.createElement('td');
-                    col2.textContent = 'By 1th Mar, 2023';
-                    row.append(col2);
-
-                    // create the third column element
-                    const col3 = document.createElement('td');
-                    row.appendChild(col3);
-
-                    let find_quantity = user_cart.find(e => e.product_uuid === user_cart[i]["product_uuid"]);
-                    console.log(find_quantity)
-
-                    const input = document.createElement('input');
-                    input.classList.add("quantity");
-                    input.type = 'number';
-                    input.setAttribute("data-id", user_cart[i]["product_uuid"])
-                    input.value = find_quantity["product_quantity"];
-                    input.min = "1";
-                    col3.appendChild(input);
 
 
-                    // create the fourth column element
-                    const col4 = document.createElement('td');
-                    col4.innerText = "Rs." + user_cart[i]["product_price"] * find_quantity["product_quantity"];
-                    row.appendChild(col4);
+            // create the table element
+            const table = document.createElement('table');
+            table.classList.add('table_product');
 
-                    // create the fifth column element
-                    const col5 = document.createElement('td');
-                    row.appendChild(col5);
+            // create the row element
+            const row = document.createElement('tr');
+            table.classList.add('tr_row');
+            table.append(row);
 
-                    const deleteIcon = document.createElement('img');
-                    deleteIcon.src = '../assets/images/home_page/delete_icon.png';
-                    deleteIcon.setAttribute("data-remove", user_cart[i]["product_uuid"]);
-                    deleteIcon.setAttribute("id", "icon_remove");
-                    deleteIcon.classList.add('delete_icon');
-                    deleteIcon.alt = 'delete_icon';
-                    col5.appendChild(deleteIcon);
+            // create the first column element
+            const col1 = document.createElement('td');
+            row.append(col1);
+
+            const cartInfo = document.createElement('div');
+            cartInfo.classList.add('cart_info');
+            col1.append(cartInfo);
+
+            const img = document.createElement('img');
+            img.src = user_cart[i]["image_url"];
+            img.classList.add('product_1');
+            img.setAttribute("data-add", user_cart[i]["product_uuid"])
+            img.alt = 'Compat camal brown sofa';
+            cartInfo.append(img);
+
+            const h3 = document.createElement('h3');
+            h3.textContent = user_cart[i]["product_name"];
+            cartInfo.append(h3);
+
+            let d = new Date();
+            d.setDate(d.getDate() + 7);
+
+            let monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            let monthIndex = d.getMonth();
+
+            let monthName = monthNames[monthIndex];
+
+            let day = d.getDate();
+            let year = d.getFullYear();
+
+            let formattedDate = "By " + monthName + " " + day + ", " + year;
+
+            // create the second column element
+            const col2 = document.createElement('td');
+            col2.setAttribute("id", "user_dates");
+            col2.innerText = formattedDate;
+            row.append(col2);
 
 
-                    document.querySelector("div.contain_cart").append(table);
+            // create the third column element
+            const col3 = document.createElement('td');
+            row.appendChild(col3);
+
+            let find_quantity = user_cart.find(e => e.product_uuid === user_cart[i]["product_uuid"]);
+            console.log(find_quantity)
+
+            const input = document.createElement('input');
+            input.classList.add("quantity");
+            input.type = 'number';
+            input.setAttribute("data-id", user_cart[i]["product_uuid"])
+            input.value = find_quantity["product_quantity"];
+            input.min = "1";
+            col3.appendChild(input);
 
 
-                    amount += user_cart[i]["product_price"] * find_quantity["product_quantity"];
+            // create the fourth column element
+            const col4 = document.createElement('td');
+            col4.innerText = "Rs." + user_cart[i]["product_price"] * find_quantity["product_quantity"];
+            row.appendChild(col4);
 
-                    console.log(amount);
-                }
-            
-        
+            // create the fifth column element
+            const col5 = document.createElement('td');
+            row.appendChild(col5);
+
+            const deleteIcon = document.createElement('img');
+            deleteIcon.src = '../assets/images/home_page/delete_icon.png';
+            deleteIcon.setAttribute("data-remove", user_cart[i]["product_uuid"]);
+            deleteIcon.setAttribute("id", "icon_remove");
+            deleteIcon.classList.add('delete_icon');
+            deleteIcon.alt = 'delete_icon';
+            col5.appendChild(deleteIcon);
+
+
+            document.querySelector("div.contain_cart").append(table);
+
+            amount += user_cart[i]["product_price"] * find_quantity["product_quantity"];
+
+            console.log(amount);
+        }
+
+
         document.getElementById("total_amount").innerText = "Rs." + amount;
 
+        const bookCovers = document.querySelectorAll(".product_1");
+        bookCovers.forEach(bookCover => {
+            bookCover.addEventListener("click", (event) => {
+                const person_data = bookCover.dataset.add;
+
+                window.location.href = `./description.html?product_id=${person_data}`;
+            });
+        });
 
         let product_quantity = document.querySelectorAll(".quantity");
-        product_quantity.forEach(function(add){
-          add.addEventListener("change", function(calcus){
-           let productId = this.dataset.id;
-            localStorage.setItem("products_id", JSON.stringify(productId));
-            console.log(productId);
-            let productid = JSON.parse(localStorage.getItem("products_id"));
-            let all_products = JSON.parse(localStorage.getItem("cart_list"));
-            let pdts = all_products.find(e => e.product_uuid === productid)
-            let ogPrice = pdts["product_price"]
-            console.log(ogPrice)
-            let parent = this.closest(".table_product")
-            console.log(parent)
-            let qauntity = parent.querySelector(".quantity").value
-            console.log(qauntity);
-            const cartPrice = ogPrice * qauntity
-            ogPrice = cartPrice
-            console.log(ogPrice);
-            pdts["product_quantity"] = qauntity;
-            localStorage.setItem("cart_list", JSON.stringify(all_products));
-            location.reload();
+        product_quantity.forEach(function (add) {
+            add.addEventListener("change", function (calcus) {
+                let productId = this.dataset.id;
+                localStorage.setItem("products_id", JSON.stringify(productId));
+                console.log(productId);
+                let productid = JSON.parse(localStorage.getItem("products_id"));
+                // let all_products = JSON.parse(localStorage.getItem("cart_list"));
+                let pdts = user_cart.find(e => e.product_uuid === productid)
+                let ogPrice = pdts["product_price"]
+                console.log(ogPrice)
+                let parent = this.closest(".table_product")
+                console.log(parent)
+                let qauntity = parseInt(parent.querySelector(".quantity").value);
+                console.log(qauntity);
+                const cartPrice = ogPrice * qauntity
+                ogPrice = cartPrice
+                console.log(ogPrice);
+                pdts["product_quantity"] = qauntity;
+                localStorage.setItem("cart_list", JSON.stringify(user_cart));
+                location.reload();
             })
         })
-
-
 
         let products = document.querySelectorAll("img#icon_remove")
         products.forEach(function (check) {
@@ -180,14 +203,14 @@
 
                 if (confirm("Are you sure to remove this product?")) {
                     let id = JSON.parse(localStorage.getItem("products_id"));
-                    let all_products = JSON.parse(localStorage.getItem("cart_list"));
-                    console.log(all_products);
-                    let pdts = all_products.find(e => e.product_uuid == product_id && e.userId == user)
+                    // let all_products = JSON.parse(localStorage.getItem("cart_list"));
+                    // console.log(all_products);
+                    let pdts = user_cart.find(e => e.product_uuid == product_id && e.userId == user)
                     console.log(pdts);
-                    let indexOfProduct = all_products.indexOf(pdts);
-                    all_products.splice(indexOfProduct, 1);
+                    let indexOfProduct = user_cart.indexOf(pdts);
+                    user_cart.splice(indexOfProduct, 1);
                     console.log(indexOfProduct);
-                    localStorage.setItem("cart_list", JSON.stringify(all_products));
+                    localStorage.setItem("cart_list", JSON.stringify(user_cart));
                 }
                 window.location.reload();
             });

@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    
+
     <div class="container">
 
     </div>
@@ -129,7 +129,7 @@
         //  <small> </small>
         const small_pattern = document.createElement("small");
         small_pattern.setAttribute("class", "actual-prize");
-        small_pattern.innerHTML = unique_id["product_discount"]+ "% off";
+        small_pattern.innerHTML = unique_id["product_discount"] + "% off";
         p_price.append(small_pattern);
 
         const div_description = document.createElement("div");
@@ -279,7 +279,7 @@
 
 
         document.querySelector(".btn_cart").addEventListener("click", function () {
-            
+
             let id_cart = this.dataset.id;
             let product_price = parseInt(document.querySelector(".current-price").innerHTML.replace("Rs.", "")); // Added parseInt() to convert product_price to a number
             let cart_list = JSON.parse(localStorage.getItem('cart_list')) || [];
@@ -339,12 +339,12 @@
                 wish_list.push(prod);
                 localStorage.setItem("wish_list", JSON.stringify(wish_list));
                 alert('Your product has been added to the wishlist')
-                window.location.href="./wishlist.html"
+                window.location.href = "./wishlist.html"
             }
         }
 
     </script>
- <script src="../assets/comments/header.js"></script>
+    <script src="../assets/comments/header.js"></script>
 </body>
 
 </html>
