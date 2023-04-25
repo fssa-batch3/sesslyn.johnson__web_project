@@ -71,31 +71,32 @@
             <h1 class="sign-up">Login</h1>
             <p class="text_sign">An website to decor your home.<br>Welcome to minimalistic</p>
         </div>
-       <div class="data_form">
+       <div class="data_form"  onload="document.form1.text1.focus()">
         <form role="form" onsubmit="signIn(event)">
         <div class="form_input">
             <label>Name</label>
-            <input type="text" class="no_outline" pattern="[a-zA-Z0-9]+" id="user_name" required="true" 
+            <input type="text" class="no_outline" pattern="[a-zA-Z]+" id="user_name" required="true" 
             title="Only contain Alphabets" placeholder="Sesslyn">
         </div>
         <hr class="new1">
 
         <div class="form_input">
             <label>Email Id</label>
-            <input type="email" class="no_outline" id="user_email" required="true"  pattern="[^\s]+@[^\s]+\.[^\s]+"
-            title="Must contain @ and only lower case is allowed." placeholder="sesslyn2004@gmail.com" >
+            <input type="email" class="no_outline" id="user_email" required="true"  
+            title="Must contain @ and only lower case is allowed."  pattern="^[a-zA-Z0-9]+([a-zA-Z0-9_+\-\. ]*[a-zA-Z0-9]+)?@[a-zA-Z0-9]+([a-zA-Z0-9\-\.]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}$" title="Must contain @ and only lower case is allowed." required="true"
+            placeholder="sess@...">
         </div>
         <hr class="new1">
 
         <div class="form_input">
             <label>Password</label>
-            <input type="password" class="no_outline" required="true"  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="Password" id="user_password" >
+            <input type="password" class="no_outline" required="true"  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" id="user_password" >
         </div>
         
         <div class="form_btn">
             <button class="btn_register" type="submit">Login</button> 
-            <button class="btn_register" id="btn_password" type="button"><a href="../index.html">Create Password</a> </button> 
+            <button class="btn_register" id="btn_password" type="button"><a href="../../index.html">Sign in </a></button>
        </div>
     </form>
        <div>
@@ -114,7 +115,7 @@
 
     let exist = user_crud.length &&
     JSON.parse(localStorage.getItem('user_crud')).some(data => 
-        data.user_name == user_name && data.user_password == user_password);
+        data.user_name == user_name && data.user_password == user_password && data.user_email == user_email);
 
 
     if(!exist){
@@ -128,6 +129,7 @@
     }
 }
     </script>
+    <script src="../../assets/js/login.js"></script>
 </body>
 </html>
 

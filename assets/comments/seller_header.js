@@ -34,7 +34,7 @@ const beforeLogin = `
 const AfterLogin = `
 <div class="head">
 <div class="main_header">
-    <span class="header" id="header_shop"><a href="${rootPath}/index.html"><img class="main_logo" id="main_logo"
+    <span class="header" id="header_shop"><a href="${rootPath}/pages/seller/seller_homepage.html"><img class="main_logo" id="main_logo"
                 src="${rootPath}/assets/images/home_page/Logo.jpg" alt="logo of minimalistic" /></a></span>
     <div class="nav_header">
         <span class="header"><a href="${rootPath}/pages/seller/product_list.html">

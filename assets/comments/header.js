@@ -34,7 +34,7 @@ const beforeLogin = `
 const AfterLogin = ` 
 <div class="head">
 <div class="main_header">
-    <span class="header" id="header_shop"><a href="${rootPath}/index.html"><img class="main_logo" id="main_logo"
+    <span class="header" id="header_shop"><a href="${rootPath}/pages/homepage.html"><img class="main_logo" id="main_logo"
                 src="${rootPath}/assets/images/home_page/Logo.jpg" alt="logo of minimalistic" /></a></span>
     <div class="nav_header">
         <span class="header"><a href="#">
@@ -74,7 +74,6 @@ else {
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("profile_id");
     document.body.innerHTML = AfterLogin;
-    // window.location.reload();
     window.location.href = "../../index.html"
   });
 }

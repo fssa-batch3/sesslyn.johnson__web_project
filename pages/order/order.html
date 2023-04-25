@@ -191,7 +191,7 @@
 
                 const startTime = new Date(order_user[i].ordered_time);
                 console.log(startTime)
-                // const endTime = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate() + 7).setHours(0, 0, 0, 0);
+        
                 const endTime = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate() + 7, 0, 0, 0, 0);
                 console.log(endTime)
                 const now = new Date()
@@ -224,39 +224,13 @@
                 const delete_icon = document.createElement('td');
                 row.appendChild(delete_icon);
 
-            
-
-                // if (order_user[i].order_status == 'Cancelled') {
-                //     const deleteButton = document.createElement('button');
-                //     deleteButton.setAttribute('class', 'btn btn_cancel');
-                //     deleteButton.textContent = "Cancel";
-                //     deleteButton.setAttribute('style',"display:none");
-                //     deleteButton.setAttribute('data-id', order_user[i].order_uuid);
-                //     delete_icon.appendChild(deleteButton);
-                // }
-                // else{
-                    // const deleteButton = document.createElement('button');
-                    // deleteButton.setAttribute('class', 'btn btn_cancel');
-                    // deleteButton.textContent = "Cancel";
-                    // deleteButton.setAttribute('onclick',"cancel()");
-                    // deleteButton.setAttribute('data-id', order_user[i].order_uuid);
-                    // delete_icon.appendChild(deleteButton);
-                // }
+        
 
                 document.querySelector("div.bottom_contain").append(table);
             }
         }
 
-        // function cancel() {
-        //     if (confirm("Are you sure to cancel the order")) {
-        //         const order_list = JSON.parse(localStorage.getItem('order_list'));
-        //         const orderIndex = order_list.filter(order => order.order_uuid === order_user.order_uuid && ordered_by == profile_id);
-        //         order_list[orderIndex].order_user.order_status = 'Cancelled';
-        //         console.log(order_list)
-        //         // localStorage.setItem('order_list', JSON.stringify(order_list));
-        //     }
-        // }
-
+      
     </script>
     <script src="../../assets/comments/header.js"></script>
 </body>

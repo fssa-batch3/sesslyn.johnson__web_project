@@ -30,17 +30,17 @@
                 </div>
                
                 <div class="mail">
-                    <input type="email" id="user_email" title="Must contain @ and only lower case is allowed." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="true" placeholder="Email id ">
+                    <input type="email" id="user_email" title="Must contain @ and only lower case is allowed." required="true" placeholder="Email id ">
                 </div>
          
                 <div class="password">
-                    <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                    title= "Must contain at least 6 or more characters" placeholder="Password" id="user_password" >
+                    <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title= "Must contain at least 8 or more characters" placeholder="Password" id="user_password" >
                  </div>
             
-                <div class="forget">
+                <!-- <div class="forget">
                     <a href="./seller_register.html">Forget Password</a>
-                </div>
+                </div> -->
             
                 <button class="btn_sell" type="submit" id="primary">Login</button>
              
@@ -69,7 +69,7 @@
 
     let exist = seller_list.length &&
     JSON.parse(localStorage.getItem('seller_list')).some(data => 
-        data.user_password == user_password);
+        data.user_password == user_password && data.user_email == user_email);
 
     if(!exist){
         alert("Incorrect login credentials");
@@ -81,6 +81,7 @@
         location.href = "./seller_homepage.html";  
     }
 }
+
 
 </script>
 <script src="../../assets/comments/seller_header.js"></script>

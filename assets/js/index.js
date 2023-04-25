@@ -3,7 +3,7 @@
 let profile_id = localStorage.getItem("profile_id");
 let btn = document.getElementById('btn');
 
-document.getElementById('btn').onclick = function() {
+document.getElementById('btn').onclick = function () {
     if (profile_id !== null && profile_id !== undefined && profile_id !== '') {
         btn.innerText = "Explore";
         window.location.href = './pages/homepage.html';
@@ -13,7 +13,7 @@ document.getElementById('btn').onclick = function() {
     }
 };
 
- function register() {
+function register() {
     document.getElementById("right_corner").style.display = "block";
     let x = document.getElementById("right_corner");
     x.classList.remove("hide");
@@ -43,38 +43,40 @@ function signUp(e) {
         user_email = document.getElementById("user_email").value,
         user_password = document.getElementById("user_password").value,
         confirm_password = document.getElementById("confirm_password").value,
-         user_uuid=uuidv4();
-        let user_no="";
-        let user_dob="";
-        let user_address="";
-        let user_gender="";
-        let user_city="";
-        let user_state="";
-        let user_country="";
-        let user_about="";
-        let user_image="";
+        user_uuid = uuidv4();
+    let user_no = "";
+    let user_dob = "";
+    let user_address = "";
+    let user_gender = "";
+    let user_city = "";
+    let user_state = "";
+    let user_country = "";
+    let user_about = "";
+    let user_image = "";
 
-        function checkPassword(){
-            if (user_password!==confirm_password){
-                alert("Re-enter the Password");
-                confirm_password.value=reset();
-            }
-            else{
-                alert("Password Matched");
-            }
+    function checkPassword() {
+        if (user_password !== confirm_password) {
+            alert("Re-enter the Password");
+            confirm_password.value = reset();
         }
-        checkPassword()
+        else {
+            alert("Password Matched");
+        }
+    }
+    checkPassword()
     let user_crud = JSON.parse(localStorage.getItem('user_crud')) || [];
 
-    let exist = user_crud.length && 
-        JSON.parse(localStorage.getItem('user_crud')).some(data => 
+    let exist = user_crud.length &&
+        JSON.parse(localStorage.getItem('user_crud')).some(data =>
             data.user_email.toLowerCase() == user_email.toLowerCase()
         );
 
-    if(!exist){
-        user_crud.push({ user_name, user_email, user_image,
-                        user_password, confirm_password, user_dob ,user_no,user_gender,user_city, 
-                        user_address, user_state, user_country, user_about,user_uuid });
+    if (!exist) {
+        user_crud.push({
+            user_name, user_email, user_image,
+            user_password, confirm_password, user_dob, user_no, user_gender, user_city,
+            user_address, user_state, user_country, user_about, user_uuid
+        });
 
         localStorage.setItem('user_crud', JSON.stringify(user_crud));
 
@@ -85,12 +87,10 @@ function signUp(e) {
         alert('Account created Successfully');
         location.href = "./pages/profile/login.html";
     }
-    
-    else{
+
+    else {
         alert('Sorry the User already Exist!! \n Try with different E-mail');
         document.querySelector('form').reset();
     }
-    
+
 }
-
-

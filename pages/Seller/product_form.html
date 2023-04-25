@@ -16,52 +16,65 @@
     <link rel="stylesheet" href="../../assets/css/seller/product_form.css">
     <link rel="stylesheet" href="../../assets/css/profile/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
 </head>
 
 <body>
-  
+
 
     <div class="wrapper">
         <div class="inner">
             <div class="image-holder">
-                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png" alt="idea with the bulb" />
+                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png"
+                    alt="idea with the bulb" />
             </div>
             <form onsubmit="newProduct(event)">
                 <h3>Start Selling</h3>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets and space is allowed" id="product_name" required class="form-control"/>
-                    <input type="text" placeholder="Brand Name" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets and space is allowed" id="product_brand" required class="form-control"/>
+                    <input type="text" placeholder="Product Name" pattern = "^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                        title="Only Alphabets and space is allowed" id="product_name" required class="form-control" />
+                    <input type="text" placeholder="Brand Name" pattern = "^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                        title="Only Alphabets and space is allowed" id="product_brand" required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Description" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" title="Only Alphabets, number and space is allowed" id="product_description" required class="form-control"/>
+                    <input type="text" placeholder="Product Description" pattern="^(\S+\s{0,1})+$"
+                        title="Only Alphabets, number and space is allowed" id="product_description" required
+                        class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*" required class="form-control"/>
+                    <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*"
+                        required class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Actual Price"  id="product_real" required title="Only numbers is allowed" pattern="[0-9]{5}" class="form-control"/>
-                    <input type="text" placeholder="Discount"  id="product_discount" required title="Only 2 numbers is allowed" pattern="[0-9]{2}" class="form-control"/>
+                    <input type="number" placeholder="Actual Price" id="product_real" required
+                        title="Only numbers is allowed" min="3000" max="100000" class="form-control" />
+                    <input type="number" placeholder="Discount" id="product_discount" required
+                        title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9]{1}[0-9]{1}" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+" class="form-control" />
+                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
+                        class="form-control" />
                     <select name="" id="product_category" class="form-control" required>
-                      <option value="" disabled selected>Product Category</option>
-                      <option value="Sofa">Sofa</option>
-                      <option value="TV Units">TV Units</option>
-                      <option value="Space Saving Furniture">Space Saving Furniture</option>
-                      <option value="Wallpaper">Wallpaper</option>
-                      <option value="Wadrobe">Wadrobe</option>
-                      <option value="Crockery Units">Crockery Units</option>
-                      <option value="Chandelier">Chandelier</option>
+                        <option value="" disabled selected>Product Category</option>
+                        <option value="Sofa">Sofa</option>
+                        <option value="TV Units">TV Units</option>
+                        <option value="Space Saving Furniture">Space Saving Furniture</option>
+                        <option value="Wallpaper">Wallpaper</option>
+                        <option value="Wadrobe">Wadrobe</option>
+                        <option value="Crockery Units">Crockery Units</option>
+                        <option value="Chandelier">Chandelier</option>
                     </select>
-                  </div>
-                  
+                </div>
+
                 <div class="form-group">
-                    <input type="text" required placeholder="Warranty" title="Only Alphabets, numbers and space is allowed" id="product_warranty" pattern="[a-zA-Z0-9!@#$$%^&*()_+:>?|\]+" class="form-control"/>
+                    <input type="text" required placeholder="Warranty"
+                        title="Only Alphabets, numbers and space is allowed" id="product_warranty"
+                        pattern="^(\S+\s{0,1})+$" class="form-control" />
                 </div>
                 <span>Note : Only numbers should be used to write prices (in Rs) and Discount should be in % </span>
                 <div class="btn">
@@ -71,42 +84,50 @@
         </div>
     </div>
 
-    
-  <script>
-    function newProduct(e) {
-      e.preventDefault();
-    let image_url = document.getElementById("image_url").value;
-    let product_name = document.getElementById("product_name").value;
-    let product_category = document.getElementById("product_category").value;
-    let product_real = document.getElementById("product_real").value;
-    let product_discount  = document.getElementById("product_discount").value;
-    let product_description  = document.getElementById("product_description").value;
-    let product_warranty  = document.getElementById("product_warranty").value;
-    let product_brand  = document.getElementById("product_brand").value;
-    let product_uuid=uuidv4();
-       if(product_discount == product_discount){
-        product_sell = product_real - product_real * product_discount / 100 ;
-        product_sell = Math.round(product_sell);
-       }
-       else{
-        product_sell = product_real - product_discount
-       }
-    let sellerId = JSON.parse(localStorage.getItem('seller_id'));
-    let product_crud = JSON.parse(localStorage.getItem('product_crud')) || [];
 
-    product_crud.push({image_url,product_name,product_category,product_brand,product_real,product_sell,product_discount,product_description,product_warranty, product_uuid,"sellerId":sellerId });
-    localStorage.setItem('product_crud', JSON.stringify(product_crud));
+    <script>
+        function newProduct(e) {
+            e.preventDefault();
+            let image_url = document.getElementById("image_url").value;
+            let product_name = document.getElementById("product_name").value.trim().split(/\s+/g).join(' ');
+            let product_category = document.getElementById("product_category").value;
+            let product_real = document.getElementById("product_real").value;
+            let product_discount = document.getElementById("product_discount").value;
+            let product_description = document.getElementById("product_description").value.trim().split(/\s+/g).join(' ');
+            let product_warranty = document.getElementById("product_warranty").value.trim().split(/\s+/g).join(' ');
+            let product_brand = document.getElementById("product_brand").value.trim().split(/\s+/g).join(' ');
+            let product_uuid = uuidv4();
+            if (product_discount == product_discount) {
+                product_sell = product_real - product_real * product_discount / 100;
+                product_sell = Math.round(product_sell);
+            }
+            else {
+                product_sell = product_real - product_discount
+            }
+            function validate() {
+                if (/^\s*$/g.test(product_name) || /^\s*$/g.test(product_description) || /^\s*$/g.test(product_warranty) || /^\s*$/g.test(product_brand)) {
+                    alert('Write your information properly');
+                    val = reset();
+                }
+            }
+            validate();
+            let sellerId = JSON.parse(localStorage.getItem('seller_id'));
+            let product_crud = JSON.parse(localStorage.getItem('product_crud')) || [];
 
-        alert('Product Created Successfully');
-         window. location.href = "./product_list.html";
+            product_crud.push({ image_url, product_name, product_category, product_brand, product_real, product_sell, product_discount, product_description, product_warranty, product_uuid, "sellerId": sellerId });
+            localStorage.setItem('product_crud', JSON.stringify(product_crud));
 
-   }
+            alert('Product Created Successfully');
+            window.location.href = "./product_list.html";
 
-   
+        }
 
-  </script>
-  <script src="../../assets/comments/seller_header.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
+
+    </script>
+    <script src="../../assets/comments/seller_header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
 </body>
+
 </html>

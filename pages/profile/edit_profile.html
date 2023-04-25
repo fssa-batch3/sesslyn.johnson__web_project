@@ -52,21 +52,22 @@
                         <div class="details">
                             <div class="form_details">
                                 <label>Name</label>
-                                <input type="text" class="name" required="true" id="user_name" pattern="[a-zA-Z0-9]+" title="Only Alphabets are allowed."
-                                    placeholder="Daniel">
+                                <input type="text" class="name" required="true" id="user_name" pattern="[a-zA-Z]+"
+                                    title="Only Alphabets are allowed." placeholder="Daniel">
                             </div>
 
                             <div class="form_details">
                                 <label class="mobile_no">Mobile Number</label>
-                                <input type="text" class="name" required="true" id="user_no" pattern="[0-9]{10}" title="it should be 10 digit number"
-                                    placeholder="9952393568">
+                                <input type="tel" maxlength="10" class="name" required="true" id="user_no"
+                                    pattern="[0-9]{10}" title="it should be 10 digit number" placeholder="9952393568">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>E-mail</label>
-                                <input type="text" class="name" required="true" id="user_email" title="it can contain alphabets, number and must have @gmail.com"
+                                <input type="text" class="name" required="true" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
                                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
 
                             </div>
@@ -90,20 +91,24 @@
 
                             <div class="form_details" id="usercity_code">
                                 <label class="mobile_no">City</label>
-                                <input type="text" class="name" required="true"  title="Only Alphabets and space is allowed" pattern="[a-zA-Z]+" id="user_city" placeholder="Chennai">
+                                <input type="text" class="name" required="true"
+                                    title="Only Alphabets and space is allowed" id="user_city"
+                                    placeholder="Chennai">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>State</label>
-                                <input type="text" class="name" pattern="[a-zA-Z ]+" required="true" id="user_state"
-                                    placeholder="Tamil Nadu" title="Only Alphabets and space is allowed" >
+                                <input type="text" class="name"  required="true" id="user_state"
+                                    placeholder="Tamil Nadu" title="Only Alphabets and space is allowed">
                             </div>
 
                             <div class="form_details" id="country_no">
                                 <label class="country_no">Country</label>
-                                <input type="text" class="name" required="true" title="Only Alphabets and space is allowed" pattern="[a-zA-Z]+" id="user_country" placeholder="India">
+                                <input type="text" class="name" required="true"
+                                    title="Only Alphabets and space is allowed"  id="user_country"
+                                    placeholder="India">
                             </div>
 
                         </div>
@@ -111,21 +116,24 @@
                         <div class="details">
                             <div class="form_details">
                                 <label>Address</label>
-                                <input type="text" class="name" pattern="[a-zA-Z0-9\s#-,./]+" title="Accepts Alphabets, number and special character and space too." required="true" id="user_address"
-                                    placeholder="12th Nehru street, Perungudi.">
+                                <input type="text" class="name" 
+                                    title="Accepts Alphabets, number and special character and space too."
+                                    required="true" id="user_address" placeholder="12th Nehru street, Perungudi.">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>About</label>
-                                <input type="text" class="name" pattern="[a-zA-Z0-9\s#-,./]+" title="Accepts Alphabets, number and special character and space too." required="true" id="user_about"
-                                    placeholder="I am an Entrepreneur.">
+                                <input type="text" class="name" 
+                                    title="Accepts Alphabets, number and special character and space too."
+                                    required="true" id="user_about" placeholder="I am an Entrepreneur.">
                             </div>
 
                             <div class="form_details" id="country_no">
                                 <label class="country_no">Image</label>
-                                <input type="text" class="name" id="user_image" title="https://.*" pattern="https://.*" placeholder="https://">
+                                <input type="text" class="name" id="user_image" title="https://.*" pattern="https://.*"
+                                    placeholder="https://">
                             </div>
 
                         </div>
@@ -166,7 +174,7 @@
 
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
         let yyyy = today.getFullYear();
         today = yyyy + '-' + mm + '-' + dd;
         document.getElementById("user_dob").setAttribute("max", today);
@@ -174,17 +182,17 @@
         function update_details(e) {
 
             e.preventDefault();
-            let up_name = document.getElementById("user_name").value
-            let up_email = document.getElementById("user_email").value
-            let up_dob = document.getElementById("user_dob").value
-            let up_address = document.getElementById("user_address").value
-            let up_no = document.getElementById("user_no").value
-            let up_gender = document.getElementById("user_gender").value
-            let up_city = document.getElementById("user_city").value
-            let up_state = document.getElementById("user_state").value
-            let up_country = document.getElementById("user_country").value
-            let up_about = document.getElementById("user_about").value
-            let up_image = document.getElementById("user_image").value
+            let up_name = document.getElementById("user_name").value;
+            let up_email = document.getElementById("user_email").value;
+            let up_dob = document.getElementById("user_dob").value;
+            let up_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(' ');
+            let up_no = document.getElementById("user_no").value;
+            let up_gender = document.getElementById("user_gender").value;
+            let up_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(' ');
+            let up_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(' ');
+            let up_country = document.getElementById("user_country").value.trim().split(/\s+/g).join(' ');
+            let up_about = document.getElementById("user_about").value.trim().split(/\s+/g).join(' ');
+            let up_image = document.getElementById("user_image").value;
 
             user_data["user_address"] = up_address;
             user_data["user_dob"] = up_dob;
@@ -195,6 +203,33 @@
             user_data["user_country"] = up_country;
             user_data["user_about"] = up_about;
             user_data["user_image"] = up_image;
+
+            function validate() {
+                if (/^\s*$/g.test(up_address) || /^\s*$/g.test(up_city) || /^\s*$/g.test(up_state) || /^\s*$/g.test(up_country) || /^\s*$/g.test(up_about)) {
+                    alert('Write your information properly');
+                    val = reset();
+                }
+            }
+            validate();
+
+            function check_phonenumber() {
+                let result = 0;
+                for (let i = 0; i < up_no.length; i++) {
+                    if (up_no[0] == up_no[i]) {
+                        result += 1
+                    }
+                    else {
+                        break
+                    }
+                }
+                if (result == 10) {
+                    alert("Enter your number properly");
+                    up_no.value = reset();
+                }
+                else {
+                    return
+                }
+            } check_phonenumber();
 
             localStorage.setItem('user_crud', JSON.stringify(user_crud));
 

@@ -492,7 +492,7 @@
 
                 let product_uuid = new URLSearchParams(window.location.search).get('product_id');
 
-                let prod_data = wish_list.find((prod) => prod.product_id === id_wish);
+                let prod_data = wish_list.find((prod) => prod.product_id === id_wish && prod.user_id === profile_id);
                 if (prod_data) {
                     alert('Sorry, the product is already added to the wishlist');
                     return;

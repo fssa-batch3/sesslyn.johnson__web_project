@@ -92,8 +92,8 @@ input[type=email],input[type=name],input[type=password],input[type=text]{
    margin:1rem;
 }
 #primary{
-    margin-top:3rem;
-    margin-left:-6.5rem;
+    margin-top:1rem;
+    margin-left:0rem;
    
 }
 .btn_sell:hover{

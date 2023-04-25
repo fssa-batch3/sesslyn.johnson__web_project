@@ -130,6 +130,10 @@ body{
     padding:0.2rem 3rem;
     margin-left:4.6rem;
 }
+#nav_2{
+    padding:0.2rem 3rem;
+    margin-left:4.6rem;
+}
 .nav_profile:hover{
     background-color: rgb(222, 219, 219);
     color:white;

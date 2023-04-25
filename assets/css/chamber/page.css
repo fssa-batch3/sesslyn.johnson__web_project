@@ -85,11 +85,6 @@ p.text_description {
     margin: -2rem 0rem 0rem 4rem;
 }
 
-.collect {
-    display: flex;
-    flex-direction: row;
-}
-
 .product_img {
     margin: 2rem 4rem 2rem 0rem;
     width: 500px;
@@ -123,6 +118,8 @@ p.text_description {
     display:block;
 }
 .collect{
+    display: flex;
+    flex-direction: row;
     float:left;
    margin-left:2rem; 
 }

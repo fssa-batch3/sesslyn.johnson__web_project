@@ -68,16 +68,15 @@
         for (let i = 0; i < user_cart.length; i++) {
 
 
-            // create the table element
             const table = document.createElement('table');
             table.classList.add('table_product');
 
-            // create the row element
+           
             const row = document.createElement('tr');
             table.classList.add('tr_row');
             table.append(row);
 
-            // create the first column element
+            
             const col1 = document.createElement('td');
             row.append(col1);
 
@@ -110,14 +109,14 @@
 
             let formattedDate = "By " + monthName + " " + day + ", " + year;
 
-            // create the second column element
+          
             const col2 = document.createElement('td');
             col2.setAttribute("id", "user_dates");
             col2.innerText = formattedDate;
             row.append(col2);
 
 
-            // create the third column element
+            
             const col3 = document.createElement('td');
             row.appendChild(col3);
 
@@ -133,12 +132,12 @@
             col3.appendChild(input);
 
 
-            // create the fourth column element
+          
             const col4 = document.createElement('td');
             col4.innerText = "Rs." + user_cart[i]["product_price"] * find_quantity["product_quantity"];
             row.appendChild(col4);
 
-            // create the fifth column element
+           
             const col5 = document.createElement('td');
             row.appendChild(col5);
 
@@ -177,7 +176,6 @@
                 localStorage.setItem("products_id", JSON.stringify(productId));
                 console.log(productId);
                 let productid = JSON.parse(localStorage.getItem("products_id"));
-                // let all_products = JSON.parse(localStorage.getItem("cart_list"));
                 let pdts = user_cart.find(e => e.product_uuid === productid)
                 let ogPrice = pdts["product_price"]
                 console.log(ogPrice)
@@ -203,8 +201,6 @@
 
                 if (confirm("Are you sure to remove this product?")) {
                     let id = JSON.parse(localStorage.getItem("products_id"));
-                    // let all_products = JSON.parse(localStorage.getItem("cart_list"));
-                    // console.log(all_products);
                     let pdts = user_cart.find(e => e.product_uuid == product_id && e.userId == user)
                     console.log(pdts);
                     let indexOfProduct = user_cart.indexOf(pdts);

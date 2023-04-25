@@ -21,7 +21,7 @@ body {
 }
 .new1 {
     border-top: 1px solid rgb(184, 183, 183);
-    margin: -2.4rem 7rem 1rem 3.4rem;
+    margin: -2.4rem 7rem 1rem 7rem;
 }
 .new {
     border-top: 1px solid rgb(184, 183, 183);
@@ -138,10 +138,10 @@ p.details{
 #contact{
     margin-top:0rem;
 }
-/* #user_dob{
+.contact p{
     margin-top:0rem;
     padding-top:0rem;
-} */
+}
 #user_city{
     margin-left:-0.8rem;
 }

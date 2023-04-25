@@ -51,13 +51,13 @@
                             <div class="form_details">
                                 <label>Name</label>
                                 <input type="text" class="name" required="true" id="user_name"
-                                    title="Only Alphabets are allowed." pattern="[a-zA-Z0-9]+" placeholder="Daniel">
+                                    title="Only Alphabets are allowed." pattern="[a-zA-Z]+" placeholder="Daniel">
                             </div>
 
                             <div class="form_details">
                                 <label class="mobile_no">Mobile Number</label>
                                 <input type="text" class="name" required="true" title="it should be 10 digit number"
-                                    pattern="[0-9]{10}" id="user_no" pattern="[0-9]+" placeholder="9952393568">
+                                    id="user_no" pattern="[6-9]{1}[0-9]{9}" placeholder="9952393568">
                             </div>
                         </div>
 
@@ -65,22 +65,22 @@
                             <div class="form_details">
                                 <label>E-mail</label>
                                 <input type="text" class="name" required="true" id="user_email"
-                                    title="it can contain alphabets, number and must have @gmail.com"
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Must contain @ and only lower case is allowed." required="true"
+                                    placeholder="daniel05@gmail.com">
                             </div>
 
                             <div class="form_details">
                                 <label class="mobile_no">City</label>
-                                <input type="text" class="name" pattern="[a-zA-Z]+"
-                                    title="Only Alphabets and space is allowed" required="true" id="user_city"
-                                    placeholder="Chennai">
+                                <input type="text" class="name" title="Only Alphabets and space is allowed"
+                                    required="true" id="user_city" placeholder="Chennai">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>State</label>
-                                <input type="text" class="name" required="true" id="user_state" pattern="[a-zA-Z ]+"
+                                <input type="text" class="name" required="true" id="user_state"
                                     title="Only Alphabets and space is allowed" placeholder="Tamil Nadu">
                             </div>
 
@@ -88,13 +88,13 @@
                             <div class="form_details" id="zip_no">
                                 <label>ZIP Code</label>
                                 <input type="text" class="name" required="true"
-                                    title="It should be a 6 digit number without spaces" pattern="[0-9]{6}"
-                                    id="user_code" placeholder="600094">
+                                    title="It should be a 6 digit number without spaces"
+                                    pattern="[6-9]{1}[0-9]{4}[1-9]{1}" id="user_code" placeholder="600094">
                             </div>
 
                             <div class="form_details" id="country_no">
                                 <label class="country_no">Country</label>
-                                <input type="text" class="name" required="true" id="user_country" attern="[a-zA-Z]+"
+                                <input type="text" class="name" required="true" id="user_country"
                                     title="Only Alphabets and space is allowed" placeholder="India">
                             </div>
 
@@ -104,7 +104,6 @@
                             <div class="form_details">
                                 <label>Address</label>
                                 <input type="text" class="name" required="true" id="user_address"
-                                    pattern="[a-zA-Z0-9\s#-,./]+"
                                     title="Accepts Alphabets, number and special character and space too."
                                     placeholder="12th Nehru street, Perungudi.">
                             </div>
@@ -123,7 +122,7 @@
 
                         <div class="form_details">
                             <label class="notes">Notes</label>
-                            <input type="text" class="name" id="user_notes" pattern="[a-zA-Z0-9\s#-,./]+"
+                            <input type="text" class="name" id="user_notes"
                                 title="Accepts Alphabets, number and special character and space too."
                                 placeholder="Type Your Note">
                         </div>
@@ -136,32 +135,32 @@
                 <div class="details_pay">
                     <div class="pay_ment" id="payment_option">
                         <div class="input_cash" id="cash_1">
-                            <input type="radio" id="net_bank" class="user_cash">
+                            <input type="radio" id="net_bank" name="options" class="user_cash">
                             <label class="payment_label">Net Banking </label><br>
                         </div>
 
                         <div class="input_cash" id="cash_2">
-                            <input type="radio" id="cash_delivery" class="user_cash">
+                            <input type="radio" id="cash_delivery" name="options" class="user_cash">
                             <label class="payment_label">Cash on Delivery</label><br>
                         </div>
 
                         <div class="input_cash" id="cash_2">
-                            <input type="radio" id="credit_cards" class="user_cash">
+                            <input type="radio" id="credit_cards" name="options" class="user_cash">
                             <label class="payment_label">Credit / Debit cards</label><br>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         </div>
         <button class="btn_order" type="submit">Proceed</button>
         </div>
-    </form>
+        </form>
     </main>
     <script>
-  
+
         const netBank = document.querySelector("#net_bank");
         netBank.addEventListener('change', () => {
             if (netBank.checked) {
@@ -200,6 +199,20 @@
             creditCards.checked = true;
         }
 
+        let radioButtons = document.querySelectorAll('input[name="options"]');
+        let isValid = false;
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                isValid = true;
+                break;
+            }
+        }
+        if (!isValid) {
+            alert('Please select an option');
+            return false; 
+        }
+
+
         let profile_id = JSON.parse(localStorage.getItem('profile_id'));
         let user_crud = JSON.parse(localStorage.getItem('user_crud'));
 
@@ -211,62 +224,106 @@
         document.getElementById("user_name").value = user_data.user_name;
         document.getElementById("user_no").value = user_data.user_no;
         document.getElementById("user_email").value = user_data.user_email;
-        document.getElementById("user_city").value = user_data.user_city;
-        document.getElementById("user_state").value = user_data.user_state;
-        document.getElementById("user_country").value = user_data.user_country;
-        document.getElementById("user_address").value = user_data.user_address;
+        document.getElementById("user_city").value = user_data.user_city.trim().split(/\s+/g).join(' ');
+        document.getElementById("user_state").value = user_data.user_state.trim().split(/\s+/g).join(' ');
+        document.getElementById("user_country").value = user_data.user_country.trim().split(/\s+/g).join(' ');
+        document.getElementById("user_address").value = user_data.user_address.trim().split(/\s+/g).join(' ');
         document.getElementById("user_code").value = "";
         document.getElementById("user_notes").value = "";
         document.getElementById("user_dates").value = "";
 
-        const place_order = e=>{
-            
+        function place_order() {
+
             let user_name = document.getElementById("user_name").value;
             let user_email = document.getElementById("user_email").value;
             let user_no = document.getElementById("user_no").value;
-            let user_city = document.getElementById("user_city").value;
-            let user_state = document.getElementById("user_state").value;
-            let user_country = document.getElementById("user_country").value;
-            let user_address = document.getElementById("user_address").value;
+            let user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(' ');
+            let user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(' ');
+            let user_country = document.getElementById("user_country").value.trim().split(/\s+/g).join(' ');
+            let user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(' ');
             let user_code = document.getElementById("user_code").value;
-            let user_notes = document.getElementById("user_notes").value;
+            let user_notes = document.getElementById("user_notes").value.trim().split(/\s+/g).join(' ');
             let user_dates = document.getElementById("user_dates").value;
             let user_delivery = localStorage.getItem("user_delivery");
 
             user_data.user_name = user_name;
             user_data.user_no = user_no;
             user_data.user_email = user_email;
-            user_data.user_city = user_city;
-            user_data.user_state = user_state;
-            user_data.user_country = user_country;
-            user_data.user_address = user_address;
+            user_data.user_city = user_city.trim().split(/\s+/g).join(' ');;
+            user_data.user_state = user_state.trim().split(/\s+/g).join(' ');;
+            user_data.user_country = user_country.trim().split(/\s+/g).join(' ');;
+            user_data.user_address = user_address.trim().split(/\s+/g).join(' ');;
             user_data.user_code = user_code;
-            user_data.user_notes = user_notes;
+            user_data.user_notes = user_notes.trim().split(/\s+/g).join(' ');;
             user_data.user_dates = user_dates;
 
+            function validate() {
+                if (/^\s*$/g.test(user_address) || /^\s*$/g.test(user_city) || /^\s*$/g.test(user_state) || /^\s*$/g.test(user_country) || /^\s*$/g.test(user_notes)) {
+                    alert('Write your information properly');
+                    val = reset();
+                }
+            }
+
+            function check_phonenumber() {
+                let result = 0;
+                for (let i = 0; i < user_no.length; i++) {
+                    if (user_no[0] == user_no[i]) {
+                        result += 1
+                    }
+                    else {
+                        break
+                    }
+                }
+                if (result == 10) {
+                    alert("Enter your number properly");
+                    user_no.value = reset();
+                }
+                else {
+                    return
+                }
+            } check_phonenumber();
+
+            function check_pincode() {
+                let result = 0;
+                for (let i = 0; i < user_code.length; i++) {
+                    if (user_code[0] == user_code[i]) {
+                        result += 1
+                    }
+                    else {
+                        break
+                    }
+                }
+                if (result == 6) {
+                    alert("Enter your ZIP code properly");
+                    user_no.value = reset();
+                }
+                else {
+                    return
+                }
+            } check_pincode();
+
             let order_user = JSON.parse(localStorage.getItem('order_user')) || [];
-           
-          
-                order_user.push({
-                    user_name,
-                    user_email,
-                    user_city,
-                    user_code,
-                    user_notes,
-                    user_address,
-                    user_state,
-                    user_no,
-                    user_country,
-                    user_dates,
-                    user_delivery
-                });
-               
-                localStorage.setItem('order_user', JSON.stringify(order_user));
-                console.log(localStorage.getItem('order_user'));
-                location.href="./order_summary.html";
-                event.preventDefault()
-          
-           
+
+            order_user.push({
+                user_name,
+                user_email,
+                user_city,
+                user_code,
+                user_notes,
+                user_address,
+                user_state,
+                user_no,
+                user_country,
+                user_dates,
+                user_delivery
+            });
+
+            localStorage.setItem('order_user', JSON.stringify(order_user));
+            console.log(localStorage.getItem('order_user'));
+            location.href = "./order_summary.html";
+            event.preventDefault()
+
+
         }
 
 
@@ -280,7 +337,7 @@
         let formattedDate = year + "-" + month + "-" + day;
 
         document.querySelector("#user_dates").value = formattedDate;
-        
+
 
     </script>
     <script src="../../assets/comments/header.js"></script>
