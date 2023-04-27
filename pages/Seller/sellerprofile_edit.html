@@ -147,8 +147,8 @@
     </div>
     <script>
 
-        let seller_id = JSON.parse(localStorage.getItem('seller_id'));
-        let seller_list = JSON.parse(localStorage.getItem("seller_list"));
+        let seller_id = JSON.parse(localStorage.getItem('seller_id')),
+         seller_list = JSON.parse(localStorage.getItem("seller_list"));
         function login_data(e) {
             return e.user_email == seller_id;
         }
@@ -180,17 +180,17 @@
         function update_details(e) {
 
             e.preventDefault();
-            let up_name = document.getElementById("user_name").value
-            let up_email = document.getElementById("user_email").value
-            let up_dob = document.getElementById("user_dob").value
-            let up_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(' ')
-            let up_no = document.getElementById("user_no").value
-            let up_gender = document.getElementById("user_gender").value
-            let up_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(' ')
-            let up_aadhar = document.getElementById("user_aadhar").value
-            let up_gst = document.getElementById("user_gst").value
-            let up_about = document.getElementById("user_about").value.trim().split(/\s+/g).join(' ')
-            let up_image = document.getElementById("user_image").value
+            let up_name = document.getElementById("user_name").value,
+             up_email = document.getElementById("user_email").value,
+             up_dob = document.getElementById("user_dob").value,
+             up_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(' '),
+             up_no = document.getElementById("user_no").value,
+             up_gender = document.getElementById("user_gender").value,
+             up_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(' '),
+             up_aadhar = document.getElementById("user_aadhar").value,
+             up_gst = document.getElementById("user_gst").value,
+             up_about = document.getElementById("user_about").value.trim().split(/\s+/g).join(' '),
+             up_image = document.getElementById("user_image").value;
 
             user_data["user_address"] = up_address;
             user_data["user_dob"] = up_dob;

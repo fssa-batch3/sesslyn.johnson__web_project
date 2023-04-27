@@ -43,16 +43,16 @@ function signUp(e) {
         user_email = document.getElementById("user_email").value,
         user_password = document.getElementById("user_password").value,
         confirm_password = document.getElementById("confirm_password").value,
-        user_uuid = uuidv4();
-    let user_no = "";
-    let user_dob = "";
-    let user_address = "";
-    let user_gender = "";
-    let user_city = "";
-    let user_state = "";
-    let user_country = "";
-    let user_about = "";
-    let user_image = "";
+        user_uuid = uuidv4(),
+        user_no = "",
+        user_dob = "",
+        user_address = "",
+        user_gender = "",
+        user_city = "",
+        user_state = "",
+        user_country = "",
+        user_about = "",
+        user_image = "";
 
     function checkPassword() {
         if (user_password !== confirm_password) {

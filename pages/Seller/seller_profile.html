@@ -102,8 +102,8 @@
 
    <script>
 
-    let seller_id= JSON.parse(localStorage.getItem('seller_id'));
-    let seller_list = JSON.parse(localStorage.getItem("seller_list"));
+    let seller_id= JSON.parse(localStorage.getItem('seller_id')),
+     seller_list = JSON.parse(localStorage.getItem("seller_list"));
     function login_data(e) {
       return e.user_email == seller_id;
     }

@@ -88,14 +88,14 @@
     <script>
         function newProduct(e) {
             e.preventDefault();
-            let image_url = document.getElementById("image_url").value;
-            let product_name = document.getElementById("product_name").value.trim().split(/\s+/g).join(' ');
-            let product_category = document.getElementById("product_category").value;
-            let product_real = document.getElementById("product_real").value;
-            let product_discount = document.getElementById("product_discount").value;
-            let product_description = document.getElementById("product_description").value.trim().split(/\s+/g).join(' ');
-            let product_warranty = document.getElementById("product_warranty").value.trim().split(/\s+/g).join(' ');
-            let product_brand = document.getElementById("product_brand").value.trim().split(/\s+/g).join(' ');
+            let image_url = document.getElementById("image_url").value,
+             product_name = document.getElementById("product_name").value.trim().split(/\s+/g).join(' '),
+             product_category = document.getElementById("product_category").value,
+             product_real = document.getElementById("product_real").value,
+             product_discount = document.getElementById("product_discount").value,
+             product_description = document.getElementById("product_description").value.trim().split(/\s+/g).join(' '),
+             product_warranty = document.getElementById("product_warranty").value.trim().split(/\s+/g).join(' '),
+             product_brand = document.getElementById("product_brand").value.trim().split(/\s+/g).join(' ');
             let product_uuid = uuidv4();
             if (product_discount == product_discount) {
                 product_sell = product_real - product_real * product_discount / 100;

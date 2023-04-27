@@ -108,9 +108,9 @@
     <script>
         function signIn(e) {
     e.preventDefault();
-    let user_name = document.getElementById('user_name').value;
-    let user_password = document.getElementById('user_password').value;
-    let user_email = document.getElementById('user_email').value;
+    let user_name = document.getElementById('user_name').value,
+     user_password = document.getElementById('user_password').value,
+     user_email = document.getElementById('user_email').value;
     let user_crud = JSON.parse(localStorage.getItem('user_crud')) || [];
 
     let exist = user_crud.length &&

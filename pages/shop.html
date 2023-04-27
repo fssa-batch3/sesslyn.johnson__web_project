@@ -26,8 +26,9 @@
 
             <div class="home_interiors_div">
 
-                <div class="interior-row" id="row_int">
-                    <div class="interiors" id="inter_column">
+                <div class="interior-row">
+                 
+                    <!-- <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/living_room/page.html"><img class="living"
                                     src="../assets/images/home_page/living_room-icon.png"
@@ -43,10 +44,7 @@
                             <p class="tooltiptext">Bedroom</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
-
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Kitchen/Main Page.html"><img class="kitchen"
@@ -63,9 +61,7 @@
                             <p class="tooltiptext">TV Units</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
+               
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Wadrobe/Main Page.html"><img class="wadrobe"
@@ -82,9 +78,7 @@
                             <p class="tooltiptext">Sofa</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Crockery Units/Main Page.html"><img class="crockery"
@@ -102,9 +96,7 @@
                             <p class="tooltiptext">Pooja Units</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Bathroom/Main Page.html"><img class="bathroom"
@@ -121,9 +113,7 @@
                             <p class="tooltiptext">Kids Area</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Renovation/Main Page.html"> <img class="renovation"
@@ -140,14 +130,12 @@
                             <p class="tooltiptext">False Ceiling</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row">
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Reusuable/Main Page.html"> <img class="reusable"
                                     src="../assets/images/home_page/space-saving.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext" id="toolreuse">Reusable Things</p>
+                            <p class="tooltiptext" id="toolreuse">Space Saving Furniture</p>
                         </div>
                     </div>
 
@@ -158,10 +146,7 @@
                             <p class="tooltiptext">Wallpaper</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="interior-row" id="row_interior">
-
+              
                     <div class="interiors" id="inter_column">
                         <div class="tooltip">
                             <a href="../pages/Chandelier/Main Page.html"><img class="chandelier"
@@ -176,11 +161,11 @@
                                     src="../assets/images/home_page/mobile-house.png" alt="icon of every chamber" /></a>
                             <p class="tooltiptext" id="tooltext">Mobile House</p>
                         </div>
-                    </div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
-
 
         <div class="right_corner">
             <div class="categories" id="category">
@@ -270,6 +255,50 @@
 
     </div>
     <script>
+        
+         
+        let room_details = JSON.parse(localStorage.getItem("room_details"));
+        console.log(room_details);
+
+        for (let i = 0; i < room_details.length; i++) {
+
+           
+            // create a new div element
+            const tooltipDiv1 = document.createElement('div');
+            tooltipDiv1.className = 'interiors';
+            tooltipDiv1.id = room_details[i].id_div;
+            console.log(tooltipDiv1);
+
+            // create a new div element for the tooltip
+            const tooltip1 = document.createElement('div');
+            tooltip1.className = 'tooltip';
+            tooltipDiv1.append(tooltip1);
+
+            const a_link = document.createElement('a');
+            a_link.setAttribute("href", "./living_room/page.html?chamber_name="+room_details[i].page_id);
+            tooltip1.append(a_link);
+
+            // create a new image element for the icon
+            const image = document.createElement('img');
+            image.setAttribute("class", room_details[i].id_img);
+            image.setAttribute("id", "chamber_data");
+            image.setAttribute("src", room_details[i].image);
+            image.setAttribute("alt", "icon of every chamber");
+            a_link.append(image);
+
+            // create a new p element for the tooltip text and set its content
+            const tooltipText1 = document.createElement('p');
+            tooltipText1.setAttribute("class", "tooltiptext");
+            tooltipText1.innerHTML = room_details[i].text;
+            tooltip1.append(tooltipText1);
+
+            // if (room_details[i].image[1].text === 'Sofa' || room_details[i].image[1].text === 'TV Units' || room_details[i].image[0].text === 'Wadrobe' || room_details[i].image[0].text === 'Crockery Units' || room_details[i].image[0].text === 'Space Saving Furniture' || room_details[i].image[1].text === 'Wallpaper' || room_details[i].image[0].text === 'Chandelier') {
+
+            // }
+
+            document.querySelector("div.interior-row").append(tooltipDiv1);
+        }
+       
 
         let product_crud = JSON.parse(localStorage.getItem("product_crud"));
         let added_products = JSON.parse(localStorage.getItem("added_products"));
@@ -471,7 +500,6 @@
         bookCovers.forEach(bookCover => {
             bookCover.addEventListener("click", (event) => {
                 const person_data = bookCover.dataset.id;
-
                 window.location.href = `./description.html?product_id=${person_data}`;
             })
         })

@@ -2,10 +2,10 @@ body {
     margin: 0rem;
     padding: 0rem;
     font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-    /* overflow-x: hidden;
-    overflow-y: hidden; */
 }
-
+.container{
+    display:block;
+}
 .new {
     margin-top: 0.1rem;
     color: white;

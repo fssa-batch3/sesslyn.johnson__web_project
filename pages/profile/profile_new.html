@@ -14,117 +14,139 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-   
-   <div class="profile_container">
+
+    <div class="profile_container">
         <div class="profile_left">
-            <img src="../../assets/images/home_page/profile.png" id="user_image" class="user_profile" alt="Profile image"/>
-            <p class="head_profile">PROFILE<hr class="new"></p> 
-           
-           <div>
-             <h4 class="heading_left">Bio</h4>
-             <p class="left_para" id="user_about">I am an Entrepreneur. 
-                I am a girl who loves fashion.
-             </p>
-           </div>
-           <p class="head_profile" id="skill">NAV THROUGH<hr class="new1"></p> 
-           <p class="left_text">
-        <p>
+            <img src="../../assets/images/home_page/profile.png" id="user_image" class="user_profile"
+                alt="Profile image" />
+            <p class="head_profile">PROFILE
+                <hr class="new">
+            </p>
+
+            <div>
+                <h4 class="heading_left">Bio</h4>
+                <p class="left_para" id="user_about">I am an Entrepreneur.
+                    I am a girl who loves fashion.
+                </p>
+            </div>
+            <p class="head_profile" id="skill">NAV THROUGH
+                <hr class="new1">
+            </p>
+            <p class="left_text">
+            <p>
             <ul>
-            <a href="#"><li>Chamber</li></a>
-            <a href="../shop.html"><li>Shop</li> </a>
-            <a href="../about.html"><li>About</li></a> 
-            <a href="../order/order.html"><li>Orders</li></a>
-        </ul>
-        </p>
-           
-         </p>
-        </div>
-        <div class="profile_right">
-            <div class="user_details">   
-           <h3 class="user_name" id="user_name"></h3>
-           <span class="tooltip">
-            <a href="./edit_profile.html"><img src="../../assets/images/home_page/edit_icon.png"  id="edit_icon" alt="edit icon"/></a>
-            <p class="tooltiptext">Edit</p>
-           </span>
-          
-           </div>
-           <p class="user-title">Minimalist</p>
-        <div class="button_navigate">
-           <a href="../wishlist.html"><button class="btn_wish"><img src="../../assets/images/home_page/heart_black.png" class="icon" alt="heart image"/>Wishlist</button></a>
-           <a href="../cart.html"><button class="btn_cart"><img src="../../assets/images/home_page/cart_black.png" class="icon" alt="cart image"/>Cart</button></a>
-            <a href="../order/order.html"><button class="btn_orders"><img src="../../assets/images/home_page/tick_black.png" class="icon" alt="order image"/>Orders</button></a>
-        </div>
-       
-        <hr class="new2">
-        <p class="right_profile">CONTACT INFORMATION</p>
-        <div class="user_details">
-            <p class="content">E-mail :</p>
-            <p class="details" id="user_email"></p>
-        </div>
-        <div class="user_details">
-            <p class="content">Address :</p>
-            <p class="details" id="user_address"> 
-               <p  id="user_city"></p> 
+                <a href="#">
+                    <li>Chamber</li>
+                </a>
+                <a href="../shop.html">
+                    <li>Shop</li>
+                </a>
+                <a href="../about.html">
+                    <li>About</li>
+                </a>
+                <a href="../order/order.html">
+                    <li>Orders</li>
+                </a>
+            </ul>
+            </p>
+
             </p>
         </div>
-        <div class="user_details" >
-            <p class="content">State :</p>
-            <p class="details" id="user_state"></p>
-        </div>
-        <div class="user_details" >
-            <p class="content">Country :</p>
-            <p class="details" id="user_country"></p>
-        </div>
-        <div class="user_details" >
-            <p class="content" id="user">Phone :</p>
-            <p class="details" id="user_no"></p>
-        </div>
-        
-        <hr class="new2">
-        <p class="right_profile">PERSONAL INFORMATION</p>
-        <div class="user_details">
-            <p class="content" id="contact">Birthday :</p>
-            <p class="details" id="user_dob"></p>
-        </div>
-        <div class="user_details">
-            <p class="content">Gender :</p>
-            <p class="details" id="user_gender"></p>
-        </div>
-       
-        </div>
-   </div>
+        <div class="profile_right">
+            <div class="user_details">
+                <h3 class="user_name" id="user_name"></h3>
+                <span class="tooltip">
+                    <a href="./edit_profile.html"><img src="../../assets/images/home_page/edit_icon.png" id="edit_icon"
+                            alt="edit icon" /></a>
+                    <p class="tooltiptext">Edit</p>
+                </span>
 
-   <script>
+            </div>
+            <p class="user-title">Minimalist</p>
+            <div class="button_navigate">
+                <a href="../wishlist.html"><button class="btn_wish"><img
+                            src="../../assets/images/home_page/heart_black.png" class="icon"
+                            alt="heart image" />Wishlist</button></a>
+                <a href="../cart.html"><button class="btn_cart"><img src="../../assets/images/home_page/cart_black.png"
+                            class="icon" alt="cart image" />Cart</button></a>
+                <a href="../order/order.html"><button class="btn_orders"><img
+                            src="../../assets/images/home_page/tick_black.png" class="icon"
+                            alt="order image" />Orders</button></a>
+            </div>
 
-    let profile_id= JSON.parse(localStorage.getItem('profile_id'));
-    let user_crud = JSON.parse(localStorage.getItem('user_crud'));
-    function login_data(e) {
-      return e.user_email == profile_id;
-    }
+            <hr class="new2">
+            <p class="right_profile">CONTACT INFORMATION</p>
+            <div class="user_details">
+                <p class="content">E-mail :</p>
+                <p class="details" id="user_email"></p>
+            </div>
+            <div class="user_details">
+                <p class="content">Address :</p>
+                <p class="details" id="user_address">
+                <p id="user_city"></p>
+                </p>
+            </div>
+            <div class="user_details">
+                <p class="content">State :</p>
+                <p class="details" id="user_state"></p>
+            </div>
+            <div class="user_details">
+                <p class="content">Country :</p>
+                <p class="details" id="user_country"></p>
+            </div>
+            <div class="user_details">
+                <p class="content" id="user">Phone :</p>
+                <p class="details" id="user_no"></p>
+            </div>
 
-    let user_data= user_crud.find(login_data);
+            <hr class="new2">
+            <p class="right_profile">PERSONAL INFORMATION</p>
+            <div class="user_details">
+                <p class="content" id="contact">Birthday :</p>
+                <p class="details" id="user_dob"></p>
+            </div>
+            <div class="user_details">
+                <p class="content">Gender :</p>
+                <p class="details" id="user_gender"></p>
+            </div>
 
-    document.getElementById("user_name").innerHTML = user_data["user_name"];
-    document.getElementById("user_email").innerHTML = user_data["user_email"];
-    document.getElementById("user_dob").innerHTML = user_data["user_dob"];
-    document.getElementById("user_address").innerHTML = user_data["user_address"];
-    document.getElementById("user_no").innerHTML = user_data["user_no"];
-    document.getElementById("user_gender").innerHTML = user_data["user_gender"];
-    document.getElementById("user_city").innerHTML = user_data["user_city"];
-    document.getElementById("user_state").innerHTML = user_data["user_state"];
-    document.getElementById("user_country").innerHTML =user_data["user_country"];
-    document.getElementById("user_about").innerHTML = user_data["user_about"];
+        </div>
+    </div>
 
-    if(user_data["user_image"] !== ""){
-     document.getElementById("user_image").src = user_data["user_image"];
-   }    
-  
+    <script>
 
-  </script>
-<script src="../../assets/comments/header.js"></script>
+        let profile_id = JSON.parse(localStorage.getItem('profile_id')),
+            user_crud = JSON.parse(localStorage.getItem('user_crud'));
+        function login_data(e) {
+            return e.user_email == profile_id;
+        }
+
+        let user_data = user_crud.find(login_data);
+
+        document.getElementById("user_name").innerHTML = user_data["user_name"];
+        document.getElementById("user_email").innerHTML = user_data["user_email"];
+        document.getElementById("user_dob").innerHTML = user_data["user_dob"];
+        document.getElementById("user_address").innerHTML = user_data["user_address"];
+        document.getElementById("user_no").innerHTML = user_data["user_no"];
+        document.getElementById("user_gender").innerHTML = user_data["user_gender"];
+        document.getElementById("user_city").innerHTML = user_data["user_city"];
+        document.getElementById("user_state").innerHTML = user_data["user_state"];
+        document.getElementById("user_country").innerHTML = user_data["user_country"];
+        document.getElementById("user_about").innerHTML = user_data["user_about"];
+
+        if (user_data["user_image"] !== "") {
+            document.getElementById("user_image").src = user_data["user_image"];
+        }
+
+
+    </script>
+    <script src="../../assets/comments/header.js"></script>
 </body>
+
 </html>

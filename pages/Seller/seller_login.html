@@ -63,8 +63,8 @@
 <script>
  function signIn(e) {
     e.preventDefault();
-    let user_password = document.getElementById('user_password').value;
-    let user_email = document.getElementById('user_email').value;
+    let user_password = document.getElementById('user_password').value,
+     user_email = document.getElementById('user_email').value;
     let seller_list = JSON.parse(localStorage.getItem('seller_list')) || [];
 
     let exist = seller_list.length &&
