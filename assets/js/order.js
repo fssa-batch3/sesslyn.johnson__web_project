@@ -1,4 +1,4 @@
-
+//Order Details
 document.querySelector("#place_order").addEventListener("click", function() {
   const order_user = JSON.parse(localStorage.getItem("order_user"));
   const profile_id = JSON.parse(localStorage.getItem("profile_id"));
@@ -33,13 +33,14 @@ document.querySelector("#place_order").addEventListener("click", function() {
     return;
   }
 
+  //Order_User push
   for (const cart_item of order_cart) {
     const order_uuid = uuidv4();
     order_list.push({
       "order_uuid": order_uuid,
       "ordered_time": new Date(),
       "ordered_by": current_user.user_email,
-      "ordered_items": [cart_item], // add each product as a separate order item
+      "ordered_items": [cart_item], 
       "total_price": parseInt(cart_item.product_price),
       "order_status": "On the Way"
     });

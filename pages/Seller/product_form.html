@@ -1,158 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Product Form</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../assets/css/seller/product_form.css">
-        <link rel="stylesheet" href="../../assets/css/profile/header.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/seller/product_form.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="wrapper">
-            <div class="inner">
-                <div class="image-holder">
-                    <img src="../../assets/images/home_page/online_shopping-removebg-preview.png"
-                        alt="idea with the bulb">
-                </div>
-                <form onsubmit="newProduct(event)">
-                    <h3>Start Selling</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Product Name" pattern = "^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
-                            title="Only Alphabets and space is allowed" id="product_name" required class="form-control">
-                        <input type="text" placeholder="Brand Name" pattern = "^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
-                            title="Only Alphabets and space is allowed" id="product_brand" required class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Product Description" pattern="^(\S+\s{0,1})+$"
-                            title="Only Alphabets, number and space is allowed" id="product_description" required
-                            class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*"
-                            required class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" placeholder="Actual Price" id="product_real" required
-                            title="Only numbers is allowed" min="3000" max="100000" class="form-control">
-                        <input type="number" placeholder="Discount" id="product_discount" required
-                            title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9]{1}[0-9]{1}" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
-                            class="form-control">
-                        <select name="" id="product_category" class="form-control" required>
-                            <option value="" disabled selected>Product Category</option>
-                            <option value="Sofa">Sofa</option>
-                            <option value="TV Units">TV Units</option>
-                            <option value="Space Saving Furniture">Space Saving Furniture</option>
-                            <option value="Wallpaper">Wallpaper</option>
-                            <option value="Wadrobe">Wadrobe</option>
-                            <option value="Crockery Units">Crockery Units</option>
-                            <option value="Chandelier">Chandelier</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" required placeholder="Warranty"
-                            title="Only Alphabets, numbers and space is allowed" id="product_warranty"
-                            pattern="^(\S+\s{0,1})+$" class="form-control">
-                    </div>
-                    <span>Note : Only numbers should be used to write prices (in Rs) and Discount should be in % </span>
-                    <div class="btn">
-                        <button type="submit" class="submit">Submit</button>
-                    </div>
-                </form>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="../../assets/images/home_page/online_shopping-removebg-preview.png" alt="idea with the bulb">
             </div>
+            <form onsubmit="newProduct(event)">
+                <h3>Start Selling</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Product Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                        title="Only Alphabets and space is allowed" id="product_name" required class="form-control">
+                    <input type="text" placeholder="Brand Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                        title="Only Alphabets and space is allowed" id="product_brand" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Product Description" pattern="^(\S+\s{0,1})+$"
+                        title="Only Alphabets, number and space is allowed" id="product_description" required
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*"
+                        required class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Actual Price" id="product_real" required
+                        title="Only numbers is allowed" min="3000" max="100000" class="form-control">
+                    <input type="number" placeholder="Discount" id="product_discount" required
+                        title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9]{1}[0-9]{1}"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
+                        class="form-control">
+                    <select name="" id="product_category" class="form-control" required>
+                        <option value="" disabled selected>Product Category</option>
+                        <option value="Sofa">Sofa</option>
+                        <option value="TV Units">TV Units</option>
+                        <option value="Space Saving Furniture">Space Saving Furniture</option>
+                        <option value="Wallpaper">Wallpaper</option>
+                        <option value="Wadrobe">Wadrobe</option>
+                        <option value="Crockery Units">Crockery Units</option>
+                        <option value="Chandelier">Chandelier</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" required placeholder="Warranty"
+                        title="Only Alphabets, numbers and space is allowed" id="product_warranty"
+                        pattern="^(\S+\s{0,1})+$" class="form-control">
+                </div>
+                <span>Note : Only numbers should be used to write prices (in Rs) and Discount should be in % </span>
+                <div class="btn">
+                    <button type="submit" class="submit">Submit</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <script>
+    <script>
+
+        //product form 
         function newProduct(e) {
-          e.preventDefault();
-          const image_url = document.getElementById("image_url").value;
-  const product_name = document
-    .getElementById("product_name")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
-  const product_category = document.getElementById("product_category").value;
-  const product_real = document.getElementById("product_real").value;
-  const product_discount = document.getElementById("product_discount").value;
-  const product_description = document
-    .getElementById("product_description")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
-  const product_warranty = document
-    .getElementById("product_warranty")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
-  const product_brand = document
-    .getElementById("product_brand")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
-          const product_uuid = uuidv4();
-          if (product_discount == product_discount) {
-            let product_sell = product_real - (product_real * product_discount) / 100;
-            product_sell = Math.round(product_sell);
-          } else {
-            product_sell = product_real - product_discount;
-          }
-          function validate() {
-            if (
-      /^\s*$/g.test(product_name) ||
-      /^\s*$/g.test(product_description) ||
-      /^\s*$/g.test(product_warranty) ||
-      /^\s*$/g.test(product_brand)
-            ) {
-      alert("Write your information properly");
-             let val = reset();
+            e.preventDefault();
+            const image_url = document.getElementById("image_url").value;
+            const product_name = document
+                .getElementById("product_name")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const product_category = document.getElementById("product_category").value;
+            const product_real = document.getElementById("product_real").value;
+            const product_discount = document.getElementById("product_discount").value;
+            const product_description = document
+                .getElementById("product_description")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const product_warranty = document
+                .getElementById("product_warranty")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const product_brand = document
+                .getElementById("product_brand")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const product_uuid = uuidv4();
+            let product_sell;
+            if (product_discount == product_discount) {
+                product_sell = product_real - (product_real * product_discount) / 100;
+                product_sell = Math.round(product_sell);
+            } else {
+                product_sell = product_real - product_discount;
             }
-          }
-          validate();
-          const sellerId = JSON.parse(localStorage.getItem("seller_id"));
-          const product_crud = JSON.parse(localStorage.getItem("product_crud")) || [];
 
-          product_crud.push({
-    image_url,
-    product_name,
-    product_category,
-    product_brand,
-    product_real,
-    product_sell,
-    product_discount,
-    product_description,
-    product_warranty,
-    product_uuid,
-    sellerId,
-  });
-          localStorage.setItem("product_crud", JSON.stringify(product_crud));
+            //validate
+            function validate() {
+                if (
+                    /^\s*$/g.test(product_name) ||
+                    /^\s*$/g.test(product_warranty) ||
+                    /^\s*$/g.test(product_brand)
+                ) {
+                    alert("Write your information properly");
+                    reset();
+                }
+            }
 
-          alert("Product Created Successfully");
-          window.location.href = "./product_list.html";
+            validate();
+            const sellerId = JSON.parse(localStorage.getItem("seller_id"));
+            const product_crud = JSON.parse(localStorage.getItem("product_crud")) || [];
+
+            product_crud.push({
+                image_url,
+                product_name,
+                product_category,
+                product_brand,
+                product_real,
+                product_sell,
+                product_discount,
+                product_description,
+                product_warranty,
+                product_uuid,
+                sellerId,
+            });
+            localStorage.setItem("product_crud", JSON.stringify(product_crud));
+
+            alert("Product Created Successfully");
+            window.location.href = "./product_list.html";
         }
     </script>
-        <script src="../../assets/comments/seller_header.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <script src="../../assets/comments/seller_header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
-    </body>
+</body>
 
 </html>

@@ -1,16 +1,4 @@
-const profile_id = localStorage.getItem("profile_id");
-const btn = document.getElementById("btn");
-
-document.getElementById("btn").onclick = function () {
-  if (profile_id !== null && profile_id !== undefined && profile_id !== "") {
-    btn.innerText = "Explore";
-    window.location.href = "./pages/homepage.html";
-  } else {
-    btn.innerText = "Sign In";
-    register();
-  }
-};
-
+//Register extra div css change
 function register() {
   document.getElementById("right_corner").style.display = "block";
   const x = document.getElementById("right_corner");
@@ -34,6 +22,7 @@ function register() {
   ele2.style.padding = "0rem";
 }
 
+//Register function
 function signUp(e) {
   e.preventDefault();
   const user_name = document.getElementById("user_name").value;
@@ -51,6 +40,7 @@ function signUp(e) {
   const user_about = "";
   const user_image = "";
 
+  //Check Password
   function checkPassword() {
     if (user_password !== confirm_password) {
       alert("Re-enter the Password");

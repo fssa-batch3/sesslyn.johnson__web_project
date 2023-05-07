@@ -84,14 +84,10 @@ function product_wall(Wallpaper_units) {
 const chandelier_units = add_crud.filter(function (e) {
   return e.product_category === "Chandelier";
 });
-for (let i = 0; i < chandelier_units.length; i++) {
-  const product_chandelier = chandelier_units[i];
+for (const product_chandelier of chandelier_units) {
   const template2 = product_chand(product_chandelier);
-  document
-    .querySelector("#chandelier_shop")
-    .insertAdjacentHTML("beforeend", template2);
+  document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template2);
 }
-
 function product_chand(a) {
   const template2 = ` 
             <div class="container">
@@ -162,12 +158,11 @@ function product_crockery(crockery_units) {
 
 //Room Create Element
 const room_details = JSON.parse(localStorage.getItem("room_details"));
-for (let i = 0; i < room_details.length; i++) {
+for (const roomDetail of room_details) {
   // create a new div element
   const tooltipDiv1 = document.createElement("div");
   tooltipDiv1.className = "interiors";
-  tooltipDiv1.id = room_details[i].id_div;
-  // console.log(tooltipDiv1);
+  tooltipDiv1.id = roomDetail.id_div;
 
   // create a new div element for the tooltip
   const tooltip1 = document.createElement("div");
@@ -175,36 +170,39 @@ for (let i = 0; i < room_details.length; i++) {
   tooltipDiv1.append(tooltip1);
 
   const a_link = document.createElement("a");
-  a_link.setAttribute("href",`./living_room/page.html?chamber_name=${room_details[i].page_id}`);
+  a_link.setAttribute("href",`./living_room/page.html?chamber_name=${roomDetail.page_id}`);
   tooltip1.append(a_link);
 
   // create a new image element for the icon
   const image = document.createElement("img");
-  image.setAttribute("id", room_details[i].id_img);
+  image.setAttribute("id", roomDetail.id_img);
   image.setAttribute("class", "chamber_data");
-  image.setAttribute("src", room_details[i].image);
+  image.setAttribute("src", roomDetail.image);
   image.setAttribute("alt", "icon of every chamber");
   a_link.append(image);
 
   // create a new p element for the tooltip text and set its content
   const tooltipText1 = document.createElement("p");
   tooltipText1.setAttribute("class", "tooltiptext");
-  tooltipText1.innerHTML = room_details[i].text;
+  tooltipText1.innerHTML = roomDetail.text;
   tooltip1.append(tooltipText1);
 
   document.querySelector("div#row1").append(tooltipDiv1);
 }
 
+
 //Product Create Element
 const shoppingProduct = JSON.parse(localStorage.getItem("shoppingProduct"));
 console.log(shoppingProduct);
 
-for (let j = 0; j < shoppingProduct.length; j++) {
+for (const product of shoppingProduct) {
+  // get the index of the current product in the array
+  const index = shoppingProduct.indexOf(product);
+
   // create a new div element
   const tooltipDiv1 = document.createElement("div");
   tooltipDiv1.className = "interiors";
-  tooltipDiv1.id = shoppingProduct[j].id_div;
-  // console.log(tooltipDiv1);
+  tooltipDiv1.id = product.id_div;
 
   // create a new div element for the tooltip
   const tooltip1 = document.createElement("div");
@@ -212,24 +210,25 @@ for (let j = 0; j < shoppingProduct.length; j++) {
   tooltipDiv1.append(tooltip1);
 
   const a_link = document.createElement("a");
-  a_link.setAttribute("href","#"+j);
+  a_link.setAttribute("href", `#${index}`);
+  a_link.setAttribute("id", `link-${index}`);
   tooltip1.append(a_link);
 
   // create a new image element for the icon
   const image = document.createElement("img");
   image.setAttribute("class", "chamber_data");
-  image.setAttribute("id", shoppingProduct[j].id_img);
-  image.setAttribute("src", shoppingProduct[j].image);
+  image.setAttribute("id", product.id_img);
+  image.setAttribute("src", product.image);
   image.setAttribute("alt", "icon of every chamber");
   a_link.append(image);
 
   // create a new p element for the tooltip text and set its content
   const tooltipText1 = document.createElement("p");
   tooltipText1.setAttribute("class", "tooltiptext");
-  tooltipText1.innerHTML = shoppingProduct[j].text;
-  tooltip1.append(tooltipText1)
+  tooltipText1.innerHTML = product.text;
+  tooltip1.append(tooltipText1);
   document.querySelector("div#row2").append(tooltipDiv1);
-};
+}
 
 //URL Params
 const bookCovers = document.querySelectorAll(".overlay_button");

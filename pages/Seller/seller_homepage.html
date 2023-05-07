@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Seller Homepage</title>
-        <link rel="stylesheet" href="../../assets/css/homepage.css">
-        <link rel="stylesheet" href="../../assets/css/profile/header.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
-            rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Homepage</title>
+    <link rel="stylesheet" href="../../assets/css/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <div id="family" class="family-div">
+    <div id="family" class="family-div">
 
+        <div>
             <div>
-                <div>
-                    <p>LEARN HOW TO SELL ONLINE</p>
-                    <h3 class="heading"> Start Selling Online Today</h3>
-                    <p> Whether you are already a successful business
-                        person or have a great idea and a passion to sell, you are just a few steps away from selling on Casas.in
-                    </p>
-                    <button class="btn_sell" onclick="locateButton(event)">Start Selling</button>
-                </div>
-            </div>
-
-            <div>
-                <img src="../../assets/images/home_page/homepage3.jpg" alt="seller-img" class="family-img">
+                <p>LEARN HOW TO SELL ONLINE</p>
+                <h3 class="heading"> Start Selling Online Today</h3>
+                <p> Whether you are already a successful business
+                    person or have a great idea and a passion to sell, you are just a few steps away from selling on
+                    Casas.in
+                </p>
+                <button class="btn_sell" onclick="locateButton(event)">Start Selling</button>
             </div>
         </div>
-        <script>
-    function locateButton() {
-      const seller_id = localStorage.getItem("seller_id");
-      console.log(seller_id);
-      if (seller_id === "" || seller_id === null) {
-        window.location.href = "./seller_register.html";
-      } else {
-        window.location.href = "./product_form.html";
-      }
-    }
-  </script>
-        <script src="../../assets/comments/seller_header.js"></script>
-    </body>
+
+        <div>
+            <img src="../../assets/images/home_page/homepage3.jpg" alt="seller-img" class="family-img">
+        </div>
+    </div>
+    <script>
+        
+        //Log Out function
+        function locateButton() {
+            const seller_id = localStorage.getItem("seller_id");
+            console.log(seller_id);
+            if (seller_id === "" || seller_id === null) {
+                window.location.href = "./seller_register.html";
+            } else {
+                window.location.href = "./product_form.html";
+            }
+        }
+    </script>
+    <script src="../../assets/comments/seller_header.js"></script>
+</body>
 
 </html>

@@ -164,7 +164,10 @@
     </div>
     </form>
   </main>
-  <script>const netBank = document.querySelector("#net_bank");
+  <script>
+
+    //Radio button
+    const netBank = document.querySelector("#net_bank");
     netBank.addEventListener("change", () => {
       if (netBank.checked) {
         cashDelivery.checked = false;
@@ -202,6 +205,7 @@
       creditCards.checked = true;
     }
 
+    //Order details from user
     const profile_id = JSON.parse(localStorage.getItem("profile_id"));
     const user_crud = JSON.parse(localStorage.getItem("user_crud"));
 
@@ -222,48 +226,15 @@
     document.getElementById("user_dates").value = "";
 
     function place_order() {
-      const user_name = document.getElementById("user_name").value;
-      const user_email = document.getElementById("user_email").value;
-      const user_no = document.getElementById("user_no").value;
-      const user_city = document
-        .getElementById("user_city")
-        .value.trim()
-        .split(/\s+/g)
-        .join(" ");
-      const user_state = document
-        .getElementById("user_state")
-        .value.trim()
-        .split(/\s+/g)
-        .join(" ");
-      const user_country = document
-        .getElementById("user_country")
-        .value.trim()
-        .split(/\s+/g)
-        .join(" ");
-      const user_address = document
-        .getElementById("user_address")
-        .value.trim()
-        .split(/\s+/g)
-        .join(" ");
-      const user_code = document.getElementById("user_code").value;
-      const user_notes = document
-        .getElementById("user_notes")
-        .value.trim()
-        .split(/\s+/g)
-        .join(" ");
-      const user_dates = document.getElementById("user_dates").value;
-      const user_delivery = localStorage.getItem("user_delivery");
+      const user_data = {};
+      const formFields = ["user_name", "user_email", "user_no", "user_city", "user_state", "user_country", "user_address", "user_code", "user_notes", "user_dates"];
 
-      user_data.user_name = user_name;
-      user_data.user_no = user_no;
-      user_data.user_email = user_email;
-      user_data.user_city = user_city;
-      user_data.user_state = user_state;
-      user_data.user_country = user_country;
-      user_data.user_address = user_address;
-      user_data.user_code = user_code;
-      user_data.user_notes = user_notes;
-      user_data.user_dates = user_dates;
+      formFields.forEach((field) => {
+        const value = document.getElementById(field).value.trim().split(/\s+/g).join(" ");
+        user_data[field] = value;
+      });
+
+      const user_delivery = localStorage.getItem("user_delivery");
 
       const radioButtons = document.querySelectorAll('input[name="options"]');
       let isValid = false;
@@ -278,68 +249,27 @@
         return false;
       }
 
-      function validate() {
-        if (
-          /^\s*$/g.test(user_address) ||
-          /^\s*$/g.test(user_city) ||
-          /^\s*$/g.test(user_state) ||
-          /^\s*$/g.test(user_country)
-        ) {
-          alert("Write your information properly");
-          val = reset();
-        }
+      // Validate
+      if (user_data.user_address === "" || user_data.user_city === "" || user_data.user_state === "" || user_data.user_country === "") {
+        alert("Write your information properly");
+        return false;
       }
-      validate();
 
-      function check_phonenumber() {
-        let result = 0;
-        for (let i = 0; i < user_no.length; i++) {
-          if (user_no[0] == user_no[i]) {
-            result += 1;
-          } else {
-            break;
-          }
-        }
-        if (result == 10) {
-          alert("Enter your number properly");
-          user_no.value = reset();
-        } else {
-        }
+      // Phone number
+      if (user_data.user_no.length !== 10) {
+        alert("Enter your number properly");
+        return false;
       }
-      check_phonenumber();
 
-      function check_pincode() {
-        let result = 0;
-        for (let i = 0; i < user_code.length; i++) {
-          if (user_code[0] == user_code[i]) {
-            result += 1;
-          } else {
-            break;
-          }
-        }
-        if (result == 6) {
-          alert("Enter your ZIP code properly");
-          user_no.value = reset();
-        } else {
-        }
+      // Pincode
+      if (user_data.user_code.length !== 6) {
+        alert("Enter your ZIP code properly");
+        return false;
       }
-      check_pincode();
 
       const order_user = JSON.parse(localStorage.getItem("order_user")) || [];
 
-      order_user.push({
-        user_name,
-        user_email,
-        user_city,
-        user_code,
-        user_notes,
-        user_address,
-        user_state,
-        user_no,
-        user_country,
-        user_dates,
-        user_delivery,
-      });
+      order_user.push(user_data);
 
       localStorage.setItem("order_user", JSON.stringify(order_user));
       console.log(localStorage.getItem("order_user"));
@@ -347,6 +277,7 @@
       event.preventDefault();
     }
 
+    // Delivery Date
     const d = new Date();
     d.setDate(d.getDate() + 7);
 
@@ -357,6 +288,7 @@
     const formattedDate = `${year}-${month}-${day}`;
 
     document.querySelector("#user_dates").value = formattedDate;
+
   </script>
   <script src="../../assets/comments/header.js"></script>
 </body>

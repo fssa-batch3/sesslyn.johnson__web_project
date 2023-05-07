@@ -1,173 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Product List</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../assets/css/seller/product_list.css">
-        <link rel="stylesheet" href="../../assets/css/profile/header.css">
-        <link rel="stylesheet" href="../../assets/css/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Product List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/css/seller/product_list.css">
+  <link rel="stylesheet" href="../../assets/css/profile/header.css">
+  <link rel="stylesheet" href="../../assets/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    </head>
+</head>
 
-    <body>
-        <div class="contain">
+<body>
+  <div class="contain">
 
-        </div>
-        <script>        const product_upload = JSON.parse(localStorage.getItem("product_crud"));
-        const seller = JSON.parse(localStorage.getItem("seller_id"));
+  </div>
+  <script>        const product_upload = JSON.parse(localStorage.getItem("product_crud"));
+    const seller = JSON.parse(localStorage.getItem("seller_id"));
 
-        //  <div class="down">
-        const div_top = document.createElement("div");
-        div_top.setAttribute("class", "top_container");
-        console.log(div_top);
+    //  <div class="down">
+    const div_top = document.createElement("div");
+    div_top.setAttribute("class", "top_container");
+    console.log(div_top);
 
-        for (const product of product_upload) {
-          if (product.sellerId === seller) {
-            let productDetails_list = product_upload.find(
-      (p) => p.product_uuid === product.product_uuid
-            );
-    if (productDetails_list) {
-      //  <div class="down">
-              const div_container = document.createElement("div");
-              div_container.setAttribute("class", "container");
-              div_container.setAttribute(
-        "data-id",
-        productDetails_list["product_uuid"]
-              );
-      div_top.append(div_container);
+    for (const product of product_upload) {
+      if (product.sellerId === seller) {
+        let productDetails_list = product_upload.find(
+          (p) => p.product_uuid === product.product_uuid
+        );
+        if (productDetails_list) {
+          //  <div class="down">
+          const div_container = document.createElement("div");
+          div_container.setAttribute("class", "container");
+          div_container.setAttribute(
+            "data-id",
+            productDetails_list["product_uuid"]
+          );
+          div_top.append(div_container);
 
-                    //<img/>
-              const img_product = document.createElement("img");
-              img_product.setAttribute(
-        "alt",
-        productDetails_list["product_name"] + " image"
-              );
-      img_product.setAttribute("class", "main_image");
-              img_product.setAttribute("src", productDetails_list.image_url);
-              img_product.setAttribute("data-id", productDetails_list.product_uuid);
+          //<img/>
+          const img_product = document.createElement("img");
+          img_product.setAttribute(
+            "alt",
+            productDetails_list["product_name"] + " image"
+          );
+          img_product.setAttribute("class", "main_image");
+          img_product.setAttribute("src", productDetails_list.image_url);
+          img_product.setAttribute("data-id", productDetails_list.product_uuid);
 
-              let img_id = img_product.getAttribute("data-id");
-              img_product.addEventListener("click", (event) => {
-                const product_description = img_id;
-                window.location.href = `./seller_description.html?product_id=${product_description}`;
-              });
-              div_container.append(img_product);
+          let img_id = img_product.getAttribute("data-id");
+          img_product.addEventListener("click", (event) => {
+            const product_description = img_id;
+            window.location.href = `./seller_description.html?product_id=${product_description}`;
+          });
+          div_container.append(img_product);
 
-                    //<h2></h2>
-              const h2_title = document.createElement("h2");
-              h2_title.innerHTML = productDetails_list.product_name;
-              div_container.append(h2_title);
+          //<h2></h2>
+          const h2_title = document.createElement("h2");
+          h2_title.innerHTML = productDetails_list.product_name;
+          div_container.append(h2_title);
 
-              //<p class="price"></p>
-              const p_paragraph = document.createElement("p");
-              p_paragraph.setAttribute("class", "price");
-              p_paragraph.innerHTML = `Rs.${  productDetails_list["product_sell"]}`;
-              div_container.append(p_paragraph);
+          //<p class="price"></p>
+          const p_paragraph = document.createElement("p");
+          p_paragraph.setAttribute("class", "price");
+          p_paragraph.innerHTML = `Rs.${productDetails_list["product_sell"]}`;
+          div_container.append(p_paragraph);
 
-              //  <div class="down">
-              const div_contain = document.createElement("div");
-              div_contain.setAttribute("class", "btn");
-              div_contain.setAttribute("data-id", productDetails_list["product_uuid"]);
-              div_container.append(div_contain);
+          //  <div class="down">
+          const div_contain = document.createElement("div");
+          div_contain.setAttribute("class", "btn");
+          div_contain.setAttribute("data-id", productDetails_list["product_uuid"]);
+          div_container.append(div_contain);
 
-              //<button class="btn"></button>
-              const button_primary = document.createElement("button");
-              button_primary.setAttribute("class", "button_add");
-              button_primary.setAttribute(
-        "data-uuid",
-        productDetails_list["product_uuid"]
-              );
-      button_primary.innerHTML = "Add";
-              div_contain.append(button_primary);
+          //<button class="btn"></button>
+          const button_primary = document.createElement("button");
+          button_primary.setAttribute("class", "button_add");
+          button_primary.setAttribute(
+            "data-uuid",
+            productDetails_list["product_uuid"]
+          );
+          button_primary.innerHTML = "Add";
+          div_contain.append(button_primary);
 
-              //<button class="btn"></button>
-              const button_secondary = document.createElement("button");
-              button_secondary.setAttribute("class", "button_remove");
-              button_secondary.setAttribute(
-        "data-uuid",
-        productDetails_list["product_uuid"]
-              );
-      button_secondary.innerHTML = "Remove";
-              div_contain.append(button_secondary);
-    }
-          }
+          //<button class="btn"></button>
+          const button_secondary = document.createElement("button");
+          button_secondary.setAttribute("class", "button_remove");
+          button_secondary.setAttribute(
+            "data-uuid",
+            productDetails_list["product_uuid"]
+          );
+          button_secondary.innerHTML = "Remove";
+          div_contain.append(button_secondary);
         }
-        document.querySelector("div.contain").append(div_top);
+      }
+    }
+    document.querySelector("div.contain").append(div_top);
 
-        const add = document.querySelectorAll("button.button_add");
-        add.forEach(function (findId) {
-          findId.addEventListener("click", function () {
-            const id = this.dataset.uuid;
-            let added_products =
-      JSON.parse(localStorage.getItem("added_products")) || [];
-            // console.log(id)
-
-                const exist = added_products.length &&
-            JSON.parse(localStorage.getItem('added_products')).some(data =>
-                data == id);
-
-              );
-
-    if (!exist) {
-              added_products.push({
-                product_uuid: id,
-              });
-              localStorage.setItem("added_products", JSON.stringify(added_products));
-              alert("Product is added to the User page");
-            } else {
-              alert("Product is already added");
-            }
+    //Add the products to user side
+    const add = document.querySelectorAll("button.button_add");
+    add.forEach(function (findId) {
+      findId.addEventListener("click", function () {
+        const id = this.dataset.uuid;
+        let added_products = JSON.parse(localStorage.getItem("added_products")) || [];
+        const exist = added_products.length && added_products.some(data => data.product_uuid == id);
+        if (!exist) {
+          added_products.push({
+            product_uuid: id,
           });
-        });
+          localStorage.setItem("added_products", JSON.stringify(added_products));
+          alert("Product is added to the User page");
+        } else {
+          alert("Product is already added");
+        }
+      });
+    });
 
-        const remove = document.querySelectorAll("button.button_remove");
-        remove.forEach(function (findId) {
-          findId.addEventListener("click", function () {
-            let parentBox = this.closest(".container");
-            let id = parentBox
-      .querySelector(".button_remove")
-      .getAttribute("data-uuid");
+   //Remove  the products from the user side
+    const remove = document.querySelectorAll("button.button_remove");
+    remove.forEach(function (findId) {
+      findId.addEventListener("click", function () {
+        let parentBox = this.closest(".container");
+        let id = parentBox.querySelector(".button_remove").getAttribute("data-uuid");
+        let delete_ids = JSON.parse(localStorage.getItem("added_products")) || [];
+        let exist = delete_ids.length &&
+          JSON.parse(localStorage.getItem("added_products")).some(
+            (data) => data.product_uuid == id
+          );
+        if (exist) {
+          alert("This product is removed from the page");
+          let uuid = JSON.parse(localStorage.getItem("added_products"));
+          function find_data(e) {
+            return e === id;
+          }
+          const remove_id = uuid.find(find_data);
+          console.log(remove_id);
+          const indexOfUser = uuid.indexOf(remove_id);
+          uuid.splice(indexOfUser, 1);
+          localStorage.setItem("added_products", JSON.stringify(uuid));
+        } else {
+          alert("This product is not added yet!");
+        }
+      });
+    });
 
-            let delete_ids = JSON.parse(localStorage.getItem("added_products")) || [];
-
-            let exist =
-      delete_ids.length &&
-              JSON.parse(localStorage.getItem("added_products")).some(
-                (data) => data.product_uuid == id
-              );
-
-    if (exist) {
-              alert("This product is removed from the page");
-
-              let uuid = JSON.parse(localStorage.getItem("added_products"));
-
-              function find_data(e) {
-                return e === id;
-              }
-              const remove_id = uuid.find(find_data);
-              console.log(remove_id);
-              const indexOfUser = uuid.indexOf(remove_id);
-              uuid.splice(indexOfUser, 1);
-              localStorage.setItem("added_products", JSON.stringify(uuid));
-            } else {
-              alert("This product is not added yet!");
-            }
-          });
-        });
-    </script>
-        <script src="../../assets/comments/seller_header.js"></script>
-    </body>
+  </script>
+  <script src="../../assets/comments/seller_header.js"></script>
+</body>
 
 </html>

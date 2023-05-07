@@ -332,6 +332,7 @@ if (!added_products) {
   );
 }
 
+//Room Details for Shop page
 const room_details = JSON.parse(localStorage.getItem("room_details"));
 if (!room_details) {
   localStorage.setItem(
@@ -405,6 +406,7 @@ if (!room_details) {
   );
 }
 
+//Shopping Product
 const shoppingProduct = JSON.parse(localStorage.getItem("shoppingProduct"));
 if (!shoppingProduct) {
   localStorage.setItem(
@@ -420,6 +422,7 @@ if (!shoppingProduct) {
   );
 }
 
+//Room Details for product view page
 const roomDetails = JSON.parse(localStorage.getItem("roomDetails"));
 if (!roomDetails) {
   localStorage.setItem(

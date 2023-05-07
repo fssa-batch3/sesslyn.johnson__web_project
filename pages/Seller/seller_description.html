@@ -26,8 +26,10 @@
         
         </div>
 
-        <script>const url_upload = JSON.parse(localStorage.getItem("product_crud"));
+        <script>
 
+        //URL Params for product details
+        const url_upload = JSON.parse(localStorage.getItem("product_crud"));
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const product_id = urlParams.get("product_id");
@@ -169,6 +171,7 @@
 
         document.querySelector("div.contain").append(div_contain);
 
+        //Edit button
         const edit = document.querySelectorAll("button#btn-secondary, img.heart_icon");
         edit.forEach(function (findId) {
           findId.addEventListener("click", function () {

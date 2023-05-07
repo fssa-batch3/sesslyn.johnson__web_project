@@ -81,7 +81,10 @@
         </div>
     </div>
 
-    <script>const queryString = window.location.search;
+    <script>
+
+        //Url params for product update
+        const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const product_id = urlParams.get("product_id");
 
@@ -98,19 +101,16 @@
         document.getElementById("image_url").value = product_data.image_url;
         document.getElementById("product_brand").value = product_data.product_brand;
         document.getElementById("product_name").value = product_data.product_name;
-        document.getElementById("product_category").value =
-            product_data.product_category;
+        document.getElementById("product_category").value = product_data.product_category;
         document.getElementById("product_real").value = product_data.product_real;
-        document.getElementById("product_discount").value =
-            product_data.product_discount;
-        document.getElementById("product_description").value =
-            product_data.product_description;
-        document.getElementById("product_warranty").value =
-            product_data.product_warranty;
+        document.getElementById("product_discount").value = product_data.product_discount;
+        document.getElementById("product_description").value = product_data.product_description;
+        document.getElementById("product_warranty").value = product_data.product_warranty;
 
         const image_element = document.getElementById("update_image");
         image_element.setAttribute("src", product_data.image_url);
 
+        //Update Function
         const update = document.querySelector("button.submit-form");
         update.addEventListener("click", upadate_product);
         function upadate_product() {
@@ -132,8 +132,9 @@
             const edit_description = document.getElementById("product_description").value;
             const edit_warranty = document.getElementById("product_warranty").value;
 
+            let edit_sell;
             if (edit_discount == edit_discount) {
-                let edit_sell = edit_real - (edit_real * edit_discount) / 100;
+                edit_sell = edit_real - (edit_real * edit_discount) / 100;
                 edit_sell = Math.round(edit_sell);
             } else {
                 edit_sell = edit_real - edit_discount;
@@ -154,6 +155,7 @@
             window.location.href = "../Seller/product_list.html";
         }
 
+        //Delete product
         const del_product = document.querySelector("button.delete-form");
         del_product.addEventListener("click", delData);
 
@@ -172,6 +174,7 @@
                 window.location.href = "./product_list.html";
             }
         }
+
     </script>
     <script src="../../assets/comments/seller_header.js"></script>
 

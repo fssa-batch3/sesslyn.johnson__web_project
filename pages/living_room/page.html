@@ -25,6 +25,7 @@
     </div>
 
     <script>
+        //URL Params
         const room_details = JSON.parse(localStorage.getItem("room_details"));
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -90,6 +91,7 @@
         imageDiv.append(imageLiving);
 
         document.querySelector("div.container").append(interiorRow);
+
     </script>
     <script src="../../assets/comments/header.js"></script>
 </body>

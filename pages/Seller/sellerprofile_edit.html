@@ -22,6 +22,7 @@
 
 <body>
 
+    <!-- Left div to navigate my account -->
     <div class="top">
         <div class="left_corner">
             <div class="top_container">
@@ -55,6 +56,7 @@
 
         </div>
 
+        <!-- Form  -->
         <div class="right_corner">
             <div class="top_container">
                 <h2>Edit Profile</h2>
@@ -116,7 +118,8 @@
 
                             <div class="form_details" id="gst_no">
                                 <label class="gst_no">GSTIN</label>
-                                <input type="text" class="name" required="true" pattern="[0-9]{15}"
+                                <input type="text" class="name" required="true"
+                                    pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}"
                                     title="it should be 15 digit number" id="user_gst" placeholder="India">
                             </div>
                         </div>
@@ -156,12 +159,13 @@
         </div>
 
     </div>
-    <script>const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+    <script>
+
+        const seller_id = JSON.parse(localStorage.getItem("seller_id"));
         const seller_list = JSON.parse(localStorage.getItem("seller_list"));
         function login_data(e) {
             return e.user_email == seller_id;
         }
-
         const user_data = seller_list.find(login_data);
 
         document.getElementById("user_name").value = user_data.user_name;
@@ -176,9 +180,11 @@
         document.getElementById("user_about").value = user_data.user_about;
         document.getElementById("user_image").value = user_data.user_image;
 
+        //Image
         const image_element = document.getElementById("profile_image");
         image_element.setAttribute("src", user_data.user_image);
 
+        //Date
         let today = new Date();
         const dd = String(today.getDate()).padStart(2, "0");
         const mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -186,10 +192,9 @@
         today = `${yyyy}-${mm}-${dd}`;
         document.getElementById("user_dob").setAttribute("max", today);
 
+        //Update seller details
         function update_details(e) {
             e.preventDefault();
-            const up_name = document.getElementById("user_name").value;
-            const up_email = document.getElementById("user_email").value;
             const up_dob = document.getElementById("user_dob").value;
             const up_address = document
                 .getElementById("user_address")
@@ -211,7 +216,6 @@
                 .split(/\s+/g)
                 .join(" ");
             const up_image = document.getElementById("user_image").value;
-
             user_data.user_address = up_address;
             user_data.user_dob = up_dob;
             user_data.user_no = up_no;
@@ -222,6 +226,7 @@
             user_data.user_about = up_about;
             user_data.user_image = up_image;
 
+            //Validate for address
             function validate() {
                 if (
                     /^\s*$/g.test(user_address) ||
@@ -231,14 +236,16 @@
                     /^\s*$/g.test(user_about)
                 ) {
                     alert("Write your information properly");
-                    val = reset();
+                    reset();
                 }
             }
+            validate();
 
+            //Phone Number
             function check_phonenumber() {
                 let result = 0;
-                for (let i = 0; i < up_no.length; i++) {
-                    if (up_no[0] == up_no[i]) {
+                for (const digit of up_no) {
+                    if (up_no[0] == digit) {
                         result += 1;
                     } else {
                         break;
@@ -247,8 +254,7 @@
                 if (result == 10) {
                     alert("Enter your number properly");
                     up_no.value = reset();
-                } else {
-                }
+                } 
             }
             check_phonenumber();
 
