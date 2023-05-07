@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="../../assets/css/profile/edit_profile.css">
     <link rel="stylesheet" href="../../assets/css/profile/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,23 +26,34 @@
         <div class="left_corner">
             <div class="top_container">
                 <img src="../../assets/images/home_page/profile_girl.png" class="profile_image" id="profile_image"
-                    alt="profile image" />
+                    alt="profile image">
                 <div class="crown">
-                    <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crown image" />
+                    <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crown image">
                     <p class="crown_text">Learner</p>
-                    <button id="btn_upload"><a href="#">Edit</a></button>
+                    <button id="btn_upload">
+                        <a href="#">Edit</a>
+                    </button>
                 </div>
             </div>
             <div class="nav_account">
-                <button class="nav_profile" id="nav_1"><a href="./product_list.html">My Products</a></button>
-                <button class="nav_profile" id="nav_2"><a href="./product_form.html">New Product</a></button>
-                <button class="nav_profile" id="nav_3"><a href="./product_list.html">Product List</a></button>
-                <button class="nav_profile" id="nav_4"><a href="../about.html">My Queries</a></button>
-                <button class="nav_profile" id="nav_5"><a href="./seller_profile.html">My Account</a></button>
+                <button class="nav_profile" id="nav_1">
+                    <a href="./product_list.html">My Products</a>
+                </button>
+                <button class="nav_profile" id="nav_2">
+                    <a href="./product_form.html">New Product</a>
+                </button>
+                <button class="nav_profile" id="nav_3">
+                    <a href="./product_list.html">Product List</a>
+                </button>
+                <button class="nav_profile" id="nav_4">
+                    <a href="../about.html">My Queries</a>
+                </button>
+                <button class="nav_profile" id="nav_5">
+                    <a href="./seller_profile.html">My Account</a>
+                </button>
             </div>
 
         </div>
-
 
         <div class="right_corner">
             <div class="top_container">
@@ -145,66 +156,81 @@
         </div>
 
     </div>
-    <script>
-
-        let seller_id = JSON.parse(localStorage.getItem('seller_id')),
-         seller_list = JSON.parse(localStorage.getItem("seller_list"));
+    <script>const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+        const seller_list = JSON.parse(localStorage.getItem("seller_list"));
         function login_data(e) {
             return e.user_email == seller_id;
         }
 
-        let user_data = seller_list.find(login_data);
+        const user_data = seller_list.find(login_data);
 
-        document.getElementById("user_name").value = user_data["user_name"];
-        document.getElementById("user_email").value = user_data["user_email"];
-        document.getElementById("user_dob").value = user_data["user_dob"];
-        document.getElementById("user_address").value = user_data["user_address"];
-        document.getElementById("user_no").value = user_data["user_no"];
-        document.getElementById("user_gender").value = user_data["user_gender"];
-        document.getElementById("user_city").value = user_data["user_city"];
-        document.getElementById("user_aadhar").value = user_data["user_aadhar"];
-        document.getElementById("user_gst").value = user_data["user_gst"];
-        document.getElementById("user_about").value = user_data["user_about"];
-        document.getElementById("user_image").value = user_data["user_image"];
+        document.getElementById("user_name").value = user_data.user_name;
+        document.getElementById("user_email").value = user_data.user_email;
+        document.getElementById("user_dob").value = user_data.user_dob;
+        document.getElementById("user_address").value = user_data.user_address;
+        document.getElementById("user_no").value = user_data.user_no;
+        document.getElementById("user_gender").value = user_data.user_gender;
+        document.getElementById("user_city").value = user_data.user_city;
+        document.getElementById("user_aadhar").value = user_data.user_aadhar;
+        document.getElementById("user_gst").value = user_data.user_gst;
+        document.getElementById("user_about").value = user_data.user_about;
+        document.getElementById("user_image").value = user_data.user_image;
 
-        let image_element = document.getElementById("profile_image");
-        image_element.setAttribute("src", user_data["user_image"])
+        const image_element = document.getElementById("profile_image");
+        image_element.setAttribute("src", user_data.user_image);
 
         let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0');
-        let yyyy = today.getFullYear();
-        today = yyyy + '-' + mm + '-' + dd;
+        const dd = String(today.getDate()).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const yyyy = today.getFullYear();
+        today = `${yyyy}-${mm}-${dd}`;
         document.getElementById("user_dob").setAttribute("max", today);
 
         function update_details(e) {
-
             e.preventDefault();
-            let up_name = document.getElementById("user_name").value,
-             up_email = document.getElementById("user_email").value,
-             up_dob = document.getElementById("user_dob").value,
-             up_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(' '),
-             up_no = document.getElementById("user_no").value,
-             up_gender = document.getElementById("user_gender").value,
-             up_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(' '),
-             up_aadhar = document.getElementById("user_aadhar").value,
-             up_gst = document.getElementById("user_gst").value,
-             up_about = document.getElementById("user_about").value.trim().split(/\s+/g).join(' '),
-             up_image = document.getElementById("user_image").value;
+            const up_name = document.getElementById("user_name").value;
+            const up_email = document.getElementById("user_email").value;
+            const up_dob = document.getElementById("user_dob").value;
+            const up_address = document
+                .getElementById("user_address")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const up_no = document.getElementById("user_no").value;
+            const up_gender = document.getElementById("user_gender").value;
+            const up_city = document
+                .getElementById("user_city")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const up_aadhar = document.getElementById("user_aadhar").value;
+            const up_gst = document.getElementById("user_gst").value;
+            const up_about = document
+                .getElementById("user_about")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const up_image = document.getElementById("user_image").value;
 
-            user_data["user_address"] = up_address;
-            user_data["user_dob"] = up_dob;
-            user_data["user_no"] = up_no;
-            user_data["user_gender"] = up_gender;
-            user_data["user_city"] = up_city;
-            user_data["user_aadhar"] = up_aadhar;
-            user_data["user_gst"] = up_gst;
-            user_data["user_about"] = up_about;
-            user_data["user_image"] = up_image;
+            user_data.user_address = up_address;
+            user_data.user_dob = up_dob;
+            user_data.user_no = up_no;
+            user_data.user_gender = up_gender;
+            user_data.user_city = up_city;
+            user_data.user_aadhar = up_aadhar;
+            user_data.user_gst = up_gst;
+            user_data.user_about = up_about;
+            user_data.user_image = up_image;
 
             function validate() {
-                if (/^\s*$/g.test(user_address) || /^\s*$/g.test(user_city) || /^\s*$/g.test(user_state) || /^\s*$/g.test(user_country) || /^\s*$/g.test(user_about)) {
-                    alert('Write your information properly');
+                if (
+                    /^\s*$/g.test(user_address) ||
+                    /^\s*$/g.test(user_city) ||
+                    /^\s*$/g.test(user_state) ||
+                    /^\s*$/g.test(user_country) ||
+                    /^\s*$/g.test(user_about)
+                ) {
+                    alert("Write your information properly");
                     val = reset();
                 }
             }
@@ -213,27 +239,23 @@
                 let result = 0;
                 for (let i = 0; i < up_no.length; i++) {
                     if (up_no[0] == up_no[i]) {
-                        result += 1
-                    }
-                    else {
-                        break
+                        result += 1;
+                    } else {
+                        break;
                     }
                 }
                 if (result == 10) {
                     alert("Enter your number properly");
                     up_no.value = reset();
+                } else {
                 }
-                else {
-                    return
-                }
-            } check_phonenumber();
+            }
+            check_phonenumber();
 
-            localStorage.setItem('seller_list', JSON.stringify(seller_list));
+            localStorage.setItem("seller_list", JSON.stringify(seller_list));
 
             window.location.href = "./seller_profile.html";
         }
-
-
     </script>
     <script src="../../assets/comments/seller_header.js"></script>
 </body>

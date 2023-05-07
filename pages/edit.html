@@ -1,101 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Profile</title>
-  <link rel="stylesheet" href="../assets/css/profile.css">
-  <link rel="stylesheet" href="../assets/css/normalize.css">
-  <link rel="stylesheet" href="../assets/css/header and footer.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile</title>
+        <link rel="stylesheet" href="../assets/css/profile.css">
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/header and footer.css">
+    </head>
 
-<body class="body">
+    <body class="body">
  
-  <div class="container">
+        <div class="container">
 
-    <div class="container-title">
-      <h1 class="container-head"><span class="color">P</span>ROFILE </h1>
+            <div class="container-title">
+                <h1 class="container-head">
+                    <span class="color">P</span>ROFILE 
+                </h1>
 
-      <img src="../assets/images/Main/profile (1).png" alt="profile image" class="profile-image" width="180px">
-    </div>
+                <img src="../assets/images/Main/profile (1).png" alt="profile image" class="profile-image" width="180px">
+            </div>
 
-    <div class="container-content">
-      <form onSubmit="update_details(event)">
-        <b>
-          <p>Name:
-            <input class="name" type="text" required="true" placeholder="Name" id="user_name" />
-          </p>
-          <p> Email:
-            <input class="mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email" />
-          </p>
-          <p>Address:
-            <input class="address" type="text" required="true" placeholder="Address" id="user_address" />
-          </p>
-          <P>Contact:
-            <input class="number" type="text" required="true" placeholder="+916789654327" id="user_contact" />
-          </p>
-          <p>Country:
-            <input class="place" type="text" required="true" placeholder="India" id="user_country" />
-          </p>
-          <p>Bio:
-            <input class="about" type="text" required="true" placeholder="About" id="user_about" />
-          </p>
-          <p>Image :
-            <input class="image" type="text" required="true" placeholder="Image" id="user_image" />
-          </p>
-        </b>
-        <button class="btn btn-quart" type="submit">Back </button>
-        <button class="btn btn-tertiary" type="submit"> Submit </button>
+            <div class="container-content">
+                <form onSubmit="update_details(event)">
+                    <b>
+                        <p>Name:
+                            <input class="name" type="text" required="true" placeholder="Name" id="user_name">
+                        </p>
+                        <p> Email:
+                            <input class="mail" type="text" required="true" placeholder="abc@gmail.com" id="user_email">
+                        </p>
+                        <p>Address:
+                            <input class="address" type="text" required="true" placeholder="Address" id="user_address">
+                        </p>
+                        <P>Contact:
+                            <input class="number" type="text" required="true" placeholder="+916789654327" id="user_contact">
+                        </p>
+                        <p>Country:
+                            <input class="place" type="text" required="true" placeholder="India" id="user_country">
+                        </p>
+                        <p>Bio:
+                            <input class="about" type="text" required="true" placeholder="About" id="user_about">
+                        </p>
+                        <p>Image :
+                            <input class="image" type="text" required="true" placeholder="Image" id="user_image">
+                        </p>
+                    </b>
+                    <button class="btn btn-quart" type="submit">Back </button>
+                    <button class="btn btn-tertiary" type="submit"> Submit </button>
     
-      </form>
-    </div>
-    
+                </form>
+            </div>
 
-  </div>
+        </div>
 
-
-  <script>
-
-    let user_id = JSON.parse(localStorage.getItem('user_id'));
-    let user_list = JSON.parse(localStorage.getItem('user_list'));
+        <script>const user_id = JSON.parse(localStorage.getItem("user_id"));
+    const user_list = JSON.parse(localStorage.getItem("user_list"));
     function login_data(e) {
       return e.user_email == user_id;
     }
     user_data = user_list.find(login_data);
 
-    document.getElementById("user_name").value = user_data["user_name"];
-    document.getElementById("user_email").value = user_data["user_email"];
-    document.getElementById("user_address").value = user_data["user_address"];
-    document.getElementById("user_contact").value = user_data["user_contact"];
-    document.getElementById("user_country").value =user_data["user_country"];
-    document.getElementById("user_about").value = user_data["user_about"];
-    document.getElementById("user_image").value = user_data["user_image"];
+    document.getElementById("user_name").value = user_data.user_name;
+    document.getElementById("user_email").value = user_data.user_email;
+    document.getElementById("user_address").value = user_data.user_address;
+    document.getElementById("user_contact").value = user_data.user_contact;
+    document.getElementById("user_country").value = user_data.user_country;
+    document.getElementById("user_about").value = user_data.user_about;
+    document.getElementById("user_image").value = user_data.user_image;
 
-
-    function update_details(e){
-
+    function update_details(e) {
       e.preventDefault();
-      let up_name = document.getElementById("user_name").value
-      let up_address = document.getElementById("user_address").value
-      let up_country = document.getElementById("user_country").value
-      let up_contact = document.getElementById("user_contact").value
-      let up_about = document.getElementById("user_about").value
-      let up_image = document.getElementById("user_image").value
+      const up_name = document.getElementById("user_name").value;
+      const up_address = document.getElementById("user_address").value;
+      const up_country = document.getElementById("user_country").value;
+      const up_contact = document.getElementById("user_contact").value;
+      const up_about = document.getElementById("user_about").value;
+      const up_image = document.getElementById("user_image").value;
 
-      user_data["user_address"] = up_address;
-      user_data["user_contact"] = up_contact;
-      user_data["user_country"] = up_country;
-      user_data["user_about"] = up_about;
-      user_data["user_image"] = up_image;
+      user_data.user_address = up_address;
+      user_data.user_contact = up_contact;
+      user_data.user_country = up_country;
+      user_data.user_about = up_about;
+      user_data.user_image = up_image;
 
-      localStorage.setItem('user_list', JSON.stringify(user_list));
-    
+      localStorage.setItem("user_list", JSON.stringify(user_list));
 
-     window.location.href = "./profile.html";
+      window.location.href = "./profile.html";
     }
   </script>
-<script src="../assets/comments/header.js"></script>
+        <script src="../assets/comments/header.js"></script>
 
-</body>
+    </body>
 
 </html>

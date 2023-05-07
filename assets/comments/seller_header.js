@@ -1,7 +1,5 @@
-
-
 const rootPath = window.location.origin;
-console.log(rootPath)
+console.log(rootPath);
 
 const beforeLogin = ` 
 <div class="head">
@@ -28,8 +26,7 @@ const beforeLogin = `
      </div>
 </div>
 </div>
-`
-
+`;
 
 const AfterLogin = `
 <div class="head">
@@ -58,19 +55,24 @@ const AfterLogin = `
 </div>
 </div>
 
-`
+`;
 
-let loginUser = localStorage.getItem("seller_id");
-if  (loginUser === "" || loginUser === null)  {
-      document.body.insertAdjacentHTML("afterbegin", beforeLogin);
-      const userLoginElement = document.getElementById("logOut");
-      userLoginElement?.removeEventListener("click", () => document.body.innerHTML = beforeLogin);
-      localStorage.removeItem("seller_id");
-} 
-else {
+const loginUser = localStorage.getItem("seller_id");
+if (loginUser === "" || loginUser === null) {
+  document.body.insertAdjacentHTML("afterbegin", beforeLogin);
+  const userLoginElement = document.getElementById("logOut");
+  userLoginElement?.removeEventListener(
+    "click",
+    () => (document.body.innerHTML = beforeLogin)
+  );
+  localStorage.removeItem("seller_id");
+} else {
   document.body.insertAdjacentHTML("afterbegin", AfterLogin);
   const userLoginElement = document.getElementById("userLogin");
-  userLoginElement?.addEventListener("click", () => document.body.innerHTML = AfterLogin);
+  userLoginElement?.addEventListener(
+    "click",
+    () => (document.body.innerHTML = AfterLogin)
+  );
   const userLogoutElement = document.getElementById("logOut");
   userLogoutElement?.addEventListener("click", () => {
     localStorage.removeItem("seller_id");

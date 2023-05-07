@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../assets/css/chamber/page.css">
     <link rel="stylesheet" href="../../assets/css/profile/header.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,39 +21,19 @@
 
 <body>
     <div class="container">
-        <!-- <div class="contain">
-            <hr class="new">
-            <div class="room_div">
-                <div>
-                    <p class="main_heading">Bring your <span class="room_name">dream</span> hallway to life.</p>
-                    <p class="text_description">Designing, Manufacturing, Installing custom furniture in Indonesia.</p>
-                </div>
-                <div>
-                    <a href="./product_view.html"><img class="view_more"
-                            src="../../assets/images/Living room/living room rich/view_more.png"
-                            alt="living_room" /></a>
-                </div>
-            </div>
-            <div class="image_div">
-                <img class="image_living" src="../../assets/images/Living room/living room rich/Room_living room.png"
-                    alt="living_room" />
-            </div>
-        </div> -->
+
     </div>
 
     <script>
-        let room_details = JSON.parse(localStorage.getItem("room_details"));
-        let room_name = JSON.parse(localStorage.getItem("room_name"));
-
+        const room_details = JSON.parse(localStorage.getItem("room_details"));
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const room_id = urlParams.get('chamber_name');
+        const room_id = urlParams.get("chamber_name");
 
-        let unique_page = room_details.filter(e => e.page_id === room_id);
-        console.log(unique_page)
-        localStorage.setItem('room', JSON.stringify(unique_page.page_id));
+        const unique_page = room_details.filter((e) => e.page_id === room_id);
+        console.log(unique_page);
 
-        const interiorRow = document.createElement('div');
+        const interiorRow = document.createElement("div");
         interiorRow.setAttribute("class", "contain");
         console.log(interiorRow);
 
@@ -68,34 +48,36 @@
         const firstDiv = document.createElement("div");
         roomDiv.append(firstDiv);
 
-        const mainHeading = document.createElement('p');
+        const mainHeading = document.createElement("p");
         mainHeading.setAttribute("class", "main_heading");
 
-        const roomName = document.createElement('span');
+        const roomName = document.createElement("span");
         roomName.setAttribute("class", "room_name");
-        roomName.innerHTML = unique_page[text];
+        roomName.innerHTML = unique_page[0].text;
 
-        mainHeading.innerText = 'Bring your dream ';
+        mainHeading.innerText = "Bring your dream ";
         mainHeading.append(roomName);
-        mainHeading.innerHTML += ' to life.';
+        mainHeading.innerHTML += " to life.";
 
         firstDiv.appendChild(mainHeading);
-
 
         const textDescription = document.createElement("p");
         textDescription.setAttribute("class", "text_description");
         textDescription.innerHTML = "Designing, Manufacturing, Installing custom furniture in Indonesia.";
         firstDiv.append(textDescription);
 
-
         const secondDiv = document.createElement("div");
         roomDiv.append(secondDiv);
+
+        const aLink = document.createElement("a");
+        aLink.setAttribute("href", `./product_view.html?chamber_name=${room_id}`);
+        secondDiv.append(aLink);
 
         const viewMoreImage = document.createElement("img");
         viewMoreImage.setAttribute("class", "view_more");
         viewMoreImage.setAttribute("src", "../../assets/images/Living room/living room rich/view_more.png");
         viewMoreImage.setAttribute("alt", "view_more");
-        secondDiv.append(viewMoreImage);
+        aLink.append(viewMoreImage);
 
         const imageDiv = document.createElement("div");
         imageDiv.setAttribute("class", "image_div");
@@ -103,12 +85,11 @@
 
         const imageLiving = document.createElement("img");
         imageLiving.setAttribute("class", "image_living");
-        imageLiving.setAttribute("src", unique_page[page_img]);
+        imageLiving.setAttribute("src", unique_page[0].page_img);
         imageLiving.setAttribute("alt", "living_room");
         imageDiv.append(imageLiving);
 
         document.querySelector("div.container").append(interiorRow);
-
     </script>
     <script src="../../assets/comments/header.js"></script>
 </body>

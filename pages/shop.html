@@ -1,546 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber-Shop</title>
-    <link rel="stylesheet" href="../assets/css/shop.css">
-    <link rel="stylesheet" href="../assets/css/profile/header.css">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
-        rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chamber-Shop</title>
+        <link rel="stylesheet" href="../assets/css/shop.css">
+        <link rel="stylesheet" href="../assets/css/profile/header.css">
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+            <div class="left_corner">
+                <div class="home_interiors_div">
+                    <h3>Chamber</h3>
+                    <div class="interior-row" id="row1"></div>
+                    <a href="./shop.html"><h3>Products</h3></a>
+                    <div class="interior-row" id="row2"></div>
+                </div>
+            </div>
 
-<body>
+            <div class="right_corner">
+                <div class="categories" id="category">
+                    <h2 class="h1">Explore Our Categories</h2>
+                    <div class="categories-img">
+                        <div class="container">
+                            <a href="#">
+                                <img class="crockery" src="../assets/images/home_page/living space 4.png" alt="chandleir image">
+                            </a>
+                            <div class="overlay">
+                                <p>Living Room</p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <a href="#">
+                                <img class="crockery" src="../assets/images/Sofa/Sofa 10.jpg" alt="chandleir image">
+                            </a>
+                            <div class="overlay">
+                                <p>Sofa</p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <a href="#">
+                                <img class="crockery" src="../assets/images/Crockery/crockery 8.jpg"
+                                    alt="chandleir image"></img></a>
+                            <div class="overlay">
+                                <p>Crockery Units</p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <a href="#">
+                                <img class="crockery" src="../assets/images/wadrobe/wadrobe 5.jpg" alt="chandleir image">
+                            </a>
+                            <div class="overlay">
+                                <p>Wadrobe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="top">
-        <div class="left_corner">
+                <div class="category">
+                    <h2 class="h1" id="0">Sofas For Shopping</h2>
+                    <div class="categories-img" id="shop_sofa">
+                        <!-- Sofa -->
+                    </div>
+                </div>
 
-            <div class="home_interiors_div">
+                <div class="category">
+                    <h2 class="h1" id="1">Winsome Wallpaper</h2>
+                    <div class="categories-img" id="wallpaper_shop">
+                        <!-- Wallpaper -->
+                    </div>
+                </div>
 
-                <div class="interior-row">
-                 
-                    <!-- <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/living_room/page.html"><img class="living"
-                                    src="../assets/images/home_page/living_room-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext" id="toolhall">Living Room</p>
-                        </div>
+                <div class="category">
+                    <h2 class="h1" id="2">Chandelier Lights to Brighten your Life</h2>
+                    <div class="categories-img" id="chandelier_shop">
+                        <!-- Chandelier -->
                     </div>
+                </div>
 
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Bedroom/Main Page.html"><img class="bedroom"
-                                    src="../assets/images/home_page/bedroom-icon.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Bedroom</p>
-                        </div>
+                <div class="category">
+                    <h2 class="h1" id="3">Space Saving Furniture</h2>
+                    <div class="categories-img" id="reusable_shop">
+                        <!-- Space Saving Furniture -->
                     </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Kitchen/Main Page.html"><img class="kitchen"
-                                    src="../assets/images/home_page/modular kitchen-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Kitchen</p>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/TV units/Main Page.html"> <img class="tv"
-                                    src="../assets/images/home_page/TV units.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">TV Units</p>
-                        </div>
+                <div class="category">
+                    <h2 class="h1" id="4">Warming Wadrobe</h2>
+                    <div class="categories-img" id="wadrobe_shop">
+                        <!-- Wadrobe -->
                     </div>
-               
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Wadrobe/Main Page.html"><img class="wadrobe"
-                                    src="../assets/images/home_page/wadrobe-icon.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Wadrobe</p>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Sofa/Main page.html">
-                                <img class="sofa" src="../assets/images/home_page/sofa-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Sofa</p>
-                        </div>
+                <div class="category">
+                    <h2 class="h1" id="5">Classy Crockery Units</h2>
+                    <div class="categories-img" id="crockery_shop">
+                        <!--Crockery Units -->
                     </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Crockery Units/Main Page.html"><img class="crockery"
-                                    src="../assets/images/home_page/crockery_units-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Crockery Units</p>
-                        </div>
-                    </div>
-
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Pooja/Main Page.html"><img class="pooja"
-                                    src="../assets/images/home_page/pooja unit-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Pooja Units</p>
-                        </div>
-                    </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Bathroom/Main Page.html"><img class="bathroom"
-                                    src="../assets/images/home_page/bathroom-icon.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Bathroom</p>
-                        </div>
-                    </div>
-
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Kids area/Main Page.html"><img class="kids"
-                                    src="../assets/images/home_page/kids_room.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Kids Area</p>
-                        </div>
-                    </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Renovation/Main Page.html"> <img class="renovation"
-                                    src="../assets/images/home_page/renovation.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Renovation</p>
-                        </div>
-                    </div>
-
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/False Ceiling/Main Page.html"><img class="bathroom"
-                                    src="../assets/images/home_page/false ceiling.png"
-                                    alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">False Ceiling</p>
-                        </div>
-                    </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Reusuable/Main Page.html"> <img class="reusable"
-                                    src="../assets/images/home_page/space-saving.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext" id="toolreuse">Space Saving Furniture</p>
-                        </div>
-                    </div>
-
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Wallpaper/Main Page.html"><img class="wallpaper"
-                                    src="../assets/images/home_page/wallpaper.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext">Wallpaper</p>
-                        </div>
-                    </div>
-              
-                    <div class="interiors" id="inter_column">
-                        <div class="tooltip">
-                            <a href="../pages/Chandelier/Main Page.html"><img class="chandelier"
-                                    src="../assets/images/home_page/chandelier.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext" id="toolchand">Chandelier</p>
-                        </div>
-                    </div>
-
-                    <div class="interiors" id="inter_column_2">
-                        <div class="tooltip">
-                            <a href="../pages/Mobile House/Main Page.html"><img class="mobile"
-                                    src="../assets/images/home_page/mobile-house.png" alt="icon of every chamber" /></a>
-                            <p class="tooltiptext" id="tooltext">Mobile House</p>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>
-
-        <div class="right_corner">
-            <div class="categories" id="category">
-                <h1 id="h1">Explore Our Categories</h1>
-                <div class="categories-img">
-                    <div class="container">
-                        <a href="#"><img class="crockery" src="../assets/images/home_page/living space 4.png"
-                                alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <p>Living Room</p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="#"><img class="crockery" src="../assets/images/Sofa/Sofa 10.jpg"
-                                alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <p>Sofa</p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="#"><img class="crockery" src="../assets/images/Crockery/crockery 8.jpg"
-                                alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <p>Crockery Units</p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a href="#"><img class="crockery" src="../assets/images/wadrobe/wadrobe 5.jpg"
-                                alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <p>Wadrobe</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Sofas For Shopping</h1>
-                <div class="categories-img" id="shop_sofa">
-                    <!-- Sofa -->
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Modular TV Units with Shelves</h1>
-                <div class="categories-img" id="shop_tv">
-                    <!-- Tv units -->
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Space Saving Furniture</h1>
-                <div class="categories-img" id="reusable_shop">
-                    <!-- Space Saving Furniture -->
-                </div>
-            </div>
-
-
-            <div class="categories" id="category">
-                <h1 id="h1">Winsome Wallpaper</h1>
-                <div class="categories-img" id="wallpaper_shop">
-                    <!-- Wallpaper -->
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Chandelier Lights to Brighten your Life</h1>
-                <div class="categories-img" id="chandelier_shop">
-                    <!-- Chandelier -->
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Warming Wadrobe</h1>
-                <div class="categories-img" id="wadrobe_shop">
-                    <!-- Wadrobe -->
-                </div>
-            </div>
-
-            <div class="categories" id="category">
-                <h1 id="h1">Classy Crockery Units</h1>
-                <div class="categories-img" id="crockery_shop">
-                    <!--Crockery Units -->
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <script>
-        
-         
-        let room_details = JSON.parse(localStorage.getItem("room_details"));
-        console.log(room_details);
-
-        for (let i = 0; i < room_details.length; i++) {
-
-           
-            // create a new div element
-            const tooltipDiv1 = document.createElement('div');
-            tooltipDiv1.className = 'interiors';
-            tooltipDiv1.id = room_details[i].id_div;
-            console.log(tooltipDiv1);
-
-            // create a new div element for the tooltip
-            const tooltip1 = document.createElement('div');
-            tooltip1.className = 'tooltip';
-            tooltipDiv1.append(tooltip1);
-
-            const a_link = document.createElement('a');
-            a_link.setAttribute("href", "./living_room/page.html?chamber_name="+room_details[i].page_id);
-            tooltip1.append(a_link);
-
-            // create a new image element for the icon
-            const image = document.createElement('img');
-            image.setAttribute("class", room_details[i].id_img);
-            image.setAttribute("id", "chamber_data");
-            image.setAttribute("src", room_details[i].image);
-            image.setAttribute("alt", "icon of every chamber");
-            a_link.append(image);
-
-            // create a new p element for the tooltip text and set its content
-            const tooltipText1 = document.createElement('p');
-            tooltipText1.setAttribute("class", "tooltiptext");
-            tooltipText1.innerHTML = room_details[i].text;
-            tooltip1.append(tooltipText1);
-
-            // if (room_details[i].image[1].text === 'Sofa' || room_details[i].image[1].text === 'TV Units' || room_details[i].image[0].text === 'Wadrobe' || room_details[i].image[0].text === 'Crockery Units' || room_details[i].image[0].text === 'Space Saving Furniture' || room_details[i].image[1].text === 'Wallpaper' || room_details[i].image[0].text === 'Chandelier') {
-
-            // }
-
-            document.querySelector("div.interior-row").append(tooltipDiv1);
-        }
-       
-
-        let product_crud = JSON.parse(localStorage.getItem("product_crud"));
-        let added_products = JSON.parse(localStorage.getItem("added_products"));
-
-        let add_crud = product_crud.filter(product =>
-            added_products.some(a => product.product_uuid === a.product_uuid))
-        console.log(add_crud)
-
-        let sofa = add_crud.filter(function (e) {
-            return e.product_category == 'Sofa';
-        });
-        console.log(sofa)
-
-        for (const product_details of sofa) {
-            const template1 = product_upload(product_details);
-            document.querySelector("#shop_sofa").insertAdjacentHTML("beforeend", template1);
-        }
-
-        function product_upload(sofa) {
-            const template1 =
-                `
-                     <div class="container">
-                      <a href="#"><img class="crockery" src="${sofa["image_url"]}"
-                          alt="sofa image" /></a>
-                     <div class="overlay">
-                       <a href="#"><img class="bag_overlay" data-cart="${sofa["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag"/></a>
-                       <button data-id="${sofa["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
-                      </div>
-                     </div>
-                     `
-            return template1;
-        }
-
-        //tv units
-        let tv_sets = add_crud.filter(function (e) {
-            return e.product_category == 'TV Units';
-        });
-
-
-        for (const product_tv of tv_sets) {
-            const template2 = product_units(product_tv);
-            document.querySelector("#shop_tv").insertAdjacentHTML("beforeend", template2);
-
-        }
-
-        function product_units(tv_sets) {
-            const template2 =
-                ` <div class="container">
-                        <a href="#"><img class="crockery" src="${tv_sets["image_url"]}"
-                             alt="tv image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${tv_sets["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button data-id="${tv_sets["product_uuid"]}" class="overlay_button"><a href="#">View More</a></button>
-                        </div>
-                    </div>
-              `
-            return template2;
-        }
-
-        //reusable 
-        let space_saving = add_crud.filter(function (e) {
-            return e.product_category == 'Space Saving Furniture';
-        });
-
-        console.log(space_saving)
-        for (const product_reuse of space_saving) {
-            const template3 = product_space(product_reuse);
-            document.querySelector("#reusable_shop").insertAdjacentHTML("beforeend", template3);
-
-        }
-
-        function product_space(space_saving) {
-            const template3 =
-                ` 
-
-                <div class="container">
-                        <a href="#"><img class="crockery" src="${space_saving["image_url"]}"
-                              alt="Space saving furniture image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${space_saving["product_uuid"]}"  src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button data-id="${space_saving["product_uuid"]}"  class="overlay_button"><a href="#">View More</a></button>
-                        </div>
-                </div>
-
-              `
-            return template3;
-        }
-
-        let Wallpaper_units = add_crud.filter(function (e) {
-            return e.product_category == 'Wallpaper';
-        });
-
-        for (const product_wallpaper of Wallpaper_units) {
-            const template4 = product_wall(product_wallpaper);
-            document.querySelector("#wallpaper_shop").insertAdjacentHTML("beforeend", template4);
-        }
-
-        function product_wall(Wallpaper_units) {
-            const template4 =
-                ` 
-                     <div class="container">
-                        <a href="#"><img class="crockery" src="${Wallpaper_units["image_url"]}"
-                            alt="chandleir image" /></a>
-                        <div class="overlay">
-                           <a href="#"><img class="bag_overlay"  data-cart="${Wallpaper_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button class="overlay_button"  data-id="${Wallpaper_units["product_uuid"]}" ><a href="#">View More</a></button>
-                         </div>
-                   </div>
-                     `
-            return template4;
-        }
-
-        // Chandelier
-        let chandelier_units = add_crud.filter(function (e) {
-            return e.product_category == 'Chandelier';
-        });
-        console.log(chandelier_units)
-        for (let i = 0; i < chandelier_units.length; i++) {
-            const product_chandelier = chandelier_units[i];
-            const template = product_chand(product_chandelier);
-            document.querySelector("#chandelier_shop").insertAdjacentHTML("beforeend", template);
-        }
-
-        function product_chand(a) {
-            const template4 =
-                ` 
-            <div class="container">
-                <a href="#"><img class="crockery" src="${a["image_url"]}"
-                    alt="chandelier image" /></a>
-                <div class="overlay">
-                    <a href="#"><img class="bag_overlay" data-cart="${a["product_uuid"]}" 
-                            src="../assets/images/home_page/heart_icon.jpg"
-                            alt="shopping-bag" /></a>
-                    <button class="overlay_button"  data-id="${a["product_uuid"]}" ><a href="#">View More</a></button>
-                </div>
-            </div>
-        `
-            return template4;
-        }
-
-        //wadrobe
-        let Wadrobe_units = add_crud.filter(function (e) {
-            return e.product_category == 'Wadrobe';
-        });
-
-        for (const product_wadrobe of Wadrobe_units) {
-            const template4 = product_wad(product_wadrobe);
-            document.querySelector("#wadrobe_shop").insertAdjacentHTML("beforeend", template4);
-
-        }
-
-        function product_wad(Wadrobe_units) {
-            const template4 =
-                ` 
-                <div class="container">
-                        <a href="#"><img class="crockery" src="${Wadrobe_units["image_url"]}"
-                            alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${Wadrobe_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button class="overlay_button"  data-id="${Wadrobe_units["product_uuid"]}"><a href="#">View More</a></button>
-                        </div>
-                    </div>
-              `
-            return template4;
-        }
-
-        //Crockery units
-        let crockery_units = add_crud.filter(function (e) {
-            return e.product_category == 'Crockery Units';
-        });
-        console.log(crockery_units)
-        for (const product_crock of crockery_units) {
-            const template4 = product_crockery(product_crock);
-            document.querySelector("#crockery_shop").insertAdjacentHTML("beforeend", template4);
-        }
-
-        function product_crockery(crockery_units) {
-            const template4 =
-                ` 
-                <div class="container">
-                        <a href="#"><img class="crockery" src="${crockery_units["image_url"]}"
-                           alt="chandleir image" /></a>
-                        <div class="overlay">
-                            <a href="#"><img class="bag_overlay" data-cart="${crockery_units["product_uuid"]}" src="../assets/images/home_page/heart_icon.jpg"
-                                    alt="shopping-bag" /></a>
-                            <button class="overlay_button"   data-id="${crockery_units["product_uuid"]}"><a href="#">View More</a></button>
-                        </div>
-                    </div>
-              `
-            return template4;
-        }
-
-        const bookCovers = document.querySelectorAll(".overlay_button");
-        bookCovers.forEach(bookCover => {
-            bookCover.addEventListener("click", (event) => {
-                const person_data = bookCover.dataset.id;
-                window.location.href = `./description.html?product_id=${person_data}`;
-            })
-        })
-
-
-        const add = document.querySelectorAll(".bag_overlay");
-        add.forEach(function (findId) {
-            findId.addEventListener('click', function () {
-                let id_wish = this.dataset.cart;
-                let wish_list = JSON.parse(localStorage.getItem("wish_list")) || [];
-                let profile_id = JSON.parse(localStorage.getItem("profile_id"));
-                let condition = JSON.parse(localStorage.getItem("profile_id"))
-                if (!condition) {
-                    alert("Log In")
-                    window.location.href = "./profile/login.html";
-                    return;
-                }
-
-                let product_uuid = new URLSearchParams(window.location.search).get('product_id');
-
-                let prod_data = wish_list.find((prod) => prod.product_id === id_wish && prod.user_id === profile_id);
-                if (prod_data) {
-                    alert('Sorry, the product is already added to the wishlist');
-                    return;
-                }
-                else {
-                    let prod = {
-                        product_id: id_wish,
-                        user_id: profile_id
-                    }
-                    wish_list.push(prod);
-                    localStorage.setItem("wish_list", JSON.stringify(wish_list));
-                    alert('Your product has been added to the wishlist')
-                    window.location.href = "./wishlist.html"
-                }
-            });
-        });
-
-
-    </script>
-    <script src="../assets/comments/header.js"></script>
-</body>
-
+      
+        <script src="../assets/js/shop.js"></script>
+        <script src="../assets/comments/header.js"></script>
+    </body>
 </html>

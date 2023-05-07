@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Seller Product Description</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../assets/css/description.css">
-    <link rel="stylesheet" href="../../assets/css/profile/header.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Seller Product Description</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Serif+SC:wght@200;300;400&family=Open+Sans:wght@300;400;500&family=Shalimar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../assets/css/description.css">
+        <link rel="stylesheet" href="../../assets/css/profile/header.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    </head>
 
-</head>
-
-<body>
-    <div class="contain">
+    <body>
+        <div class="contain">
         
-    </div>
+        </div>
 
-    <script>
-
-        let url_upload = JSON.parse(localStorage.getItem("product_crud"));
+        <script>const url_upload = JSON.parse(localStorage.getItem("product_crud"));
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const product_id = urlParams.get('product_id');
+        const product_id = urlParams.get("product_id");
 
-        let unique_id = url_upload.find(e => e.product_uuid == product_id);
+        const unique_id = url_upload.find((e) => e.product_uuid == product_id);
 
-        console.log(unique_id)
+        console.log(unique_id);
 
-        localStorage.setItem('productId', JSON.stringify(unique_id.product_uuid));
+        localStorage.setItem("productId", JSON.stringify(unique_id.product_uuid));
 
         //  <div class="down">
         const div_contain = document.createElement("div");
         div_contain.setAttribute("class", "container");
-        console.log(div_contain)
+        console.log(div_contain);
 
         const div_left = document.createElement("div");
         div_left.setAttribute("class", "left_corner");
@@ -64,11 +61,10 @@
 
         //<img/>
         const img_details = document.createElement("img");
-        img_details.setAttribute("alt",  unique_id["product_name"]+" image");
+        img_details.setAttribute("alt", `${unique_id.product_name} image`);
         img_details.setAttribute("class", "description_img");
-        img_details.setAttribute("src",  unique_id["image_url"]);
+        img_details.setAttribute("src", unique_id.image_url);
         div_left.append(img_details);
-
 
         const div_middle = document.createElement("div");
         div_middle.setAttribute("class", "middle_contain");
@@ -88,7 +84,7 @@
         //<p class="price"></p>
         const p_para = document.createElement("p");
         p_para.setAttribute("class", "para_brand");
-        p_para.innerHTML = unique_id["product_brand"];
+        p_para.innerHTML = unique_id.product_brand;
         div_review.append(p_para);
 
         const div_head = document.createElement("div");
@@ -97,7 +93,7 @@
         //<h2></h2>
         const h1_title = document.createElement("h1");
         h1_title.setAttribute("class", "product_name");
-        h1_title.innerHTML = unique_id["product_name"];
+        h1_title.innerHTML = unique_id.product_name;
         div_head.append(h1_title);
 
         const div_amount = document.createElement("div");
@@ -116,20 +112,19 @@
         //<span class="real_price"></span>
         const span_price = document.createElement("span");
         span_price.setAttribute("class", "current-price");
-        span_price.innerHTML = "Rs. " + unique_id["product_sell"];
+        span_price.innerHTML = `Rs. ${unique_id.product_sell}`;
         p_price.append(span_price);
 
         //<del></del>
         const del_price = document.createElement("del");
-        del_price.innerHTML = "Rs. " + unique_id["product_real"];
+        del_price.innerHTML = `Rs. ${unique_id.product_real}`;
         p_price.append(del_price);
 
         //  <small> </small>
         const small_pattern = document.createElement("small");
         small_pattern.setAttribute("class", "actual-prize");
-        small_pattern.innerHTML = unique_id["product_discount"] + "% off";
+        small_pattern.innerHTML = `${unique_id.product_discount}% off`;
         p_price.append(small_pattern);
-
 
         const div_description = document.createElement("div");
         div_description.setAttribute("class", "product_description");
@@ -143,7 +138,7 @@
         //<p class="price"></p>
         const p_text = document.createElement("p");
         p_text.setAttribute("class", "description_para");
-        p_text.innerHTML = unique_id["product_description"];
+        p_text.innerHTML = unique_id.product_description;
         div_description.append(p_text);
 
         const h3_warranty = document.createElement("h3");
@@ -153,7 +148,7 @@
 
         //<p class="price"></p>
         const p_warrant = document.createElement("p");
-        p_warrant.innerHTML = unique_id["product_warranty"];
+        p_warrant.innerHTML = unique_id.product_warranty;
         div_description.append(p_warrant);
 
         //<button class="btn"></button>
@@ -161,7 +156,7 @@
         button_primary.setAttribute("class", "btn-secondary");
         button_primary.setAttribute("id", "btn-secondary");
         button_primary.setAttribute("type", "submit");
-        button_primary.setAttribute("data-id", unique_id["product_uuid"])
+        button_primary.setAttribute("data-id", unique_id.product_uuid);
         button_primary.innerHTML = "Edit";
         div_head.append(button_primary);
 
@@ -173,20 +168,18 @@
         button_primary.append(img_cart);
 
         document.querySelector("div.contain").append(div_contain);
-    
-   
-        const edit = document.querySelectorAll('button#btn-secondary, img.heart_icon');
-        edit.forEach(function (findId) {
-            findId.addEventListener('click', function () {
-                const id = this.dataset.id;
-                localStorage.setItem("product_uuid", JSON.stringify(id));
-               window.location.href="./seller_update.html"
-            });
-        });
 
+        const edit = document.querySelectorAll("button#btn-secondary, img.heart_icon");
+        edit.forEach(function (findId) {
+          findId.addEventListener("click", function () {
+            const { id } = this.dataset;
+            localStorage.setItem("product_uuid", JSON.stringify(id));
+            window.location.href = "./seller_update.html";
+          });
+        });
     </script>
 
-<script src="../../assets/comments/seller_header.js"></script>
-</body>
+        <script src="../../assets/comments/seller_header.js"></script>
+    </body>
 
 </html>

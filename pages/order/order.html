@@ -1,238 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order page</title>
-    <link rel="stylesheet" href="../../assets/css/order/order.css">
-    <link rel="stylesheet" href="../../assets/css/profile/header.css">
-    <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
-        rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order page</title>
+        <link rel="stylesheet" href="../../assets/css/order/order.css">
+        <link rel="stylesheet" href="../../assets/css/profile/header.css">
+        <link rel="stylesheet" href="../../assets/css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+            rel="stylesheet">
+    </head>
 
-<body>
+    <body>
 
-
-    <div class="top-container">
-        <div class="top_contain">
-            <div>
-                <img src="../../assets/images/home_page/parcel_1.png" class="delivery_girl"
-                    alt="Delivery receiving image" />
+        <div class="top-container">
+            <div class="top_contain">
+                <div>
+                    <img src="../../assets/images/home_page/parcel_1.png" class="delivery_girl"
+                        alt="Delivery receiving image">
+                </div>
+                <div>
+                    <h1>
+                        Best Furniture For Your Home <br> From Minimalistic
+                    </h1>
+                    <p class="start_shop">
+                        Start Shopping <img src="../../assets/images/home_page/arrow.png"
+                            alt="arrow image" class="arrow_icon"></p>
+                    <input type="search" id="search" placeholder="Search">
+                </div>
             </div>
-            <div>
-                <h1>Best Furniture For Your Home <br> From Minimalistic</h1>
-                <p class="start_shop">Start Shopping <img src="../../assets/images/home_page/arrow.png"
-                        alt="arrow image" class="arrow_icon" /></p>
-                <input type="search" id="search" placeholder="Search" />
-            </div>
-        </div>
-        <div class="bottom_contain">
+            <div class="bottom_contain">
 
-            <!-- <table id="table_product">
-                <caption></caption>
+                <!-- <table id="table_product">
+                    <caption></caption>
 
-                <tr>
+                    <tr>
                     <th></th>
                     <td>
-                        <div class="cart_info">
-                           <img src="../../assets/images/Sofa/sofa_2.jpg" class="product_1"
-                                    alt="Compat camal brown sofa">
-                            <h3> Compat Camal Brown Sofa</h3>
-                        </div>
+                    <div class="cart_info">
+                    <img src="../../assets/images/Sofa/sofa_2.jpg" class="product_1"
+                    alt="Compat camal brown sofa">
+                    <h3> Compat Camal Brown Sofa</h3>
+                    </div>
                     </td>
                     <td>Order on <br>23th Feb, 2023</td>
                     <td class="quantity"><input type="number" value="1" disabled></td>
                     <td>₹55,999</td>
                     <td><button class=" btn btn_tertiary">On the Way</button></td>
                     <td><img src="../../assets/images/home_page/delete_icon.png" class="delete"/></td>
-                </tr>
+                    </tr>
 
-            </table>
+                    </table>
 
-            <table id="table_product">
-                <caption></caption>
-                <tr>
+                    <table id="table_product">
+                    <caption></caption>
+                    <tr>
                     <th></th>
                     <td>
-                        <div class="cart_info">
-                            <a href="#"><img src="../../assets/images/Chandelier/chandelier_3.jpg" class="product_1"
-                                    alt="Compat camal brown sofa"></a>
-                            <h3> Foder Pendant Chandelier</h3>
-                        </div>
+                    <div class="cart_info">
+                    <a href="#"><img src="../../assets/images/Chandelier/chandelier_3.jpg" class="product_1"
+                    alt="Compat camal brown sofa"></a>
+                    <h3> Foder Pendant Chandelier</h3>
+                    </div>
                     </td>
                     <td>Order on <br> 03th Feb, 2023</td>
                     <td><input type="number" value="1" disabled></td>
                     <td>₹10,999</td>
                     <td><button class="btn btn_primary">Delivered</button></td>
-                </tr>
-            </table>
+                    </tr>
+                    </table>
 
-            <table id="table_product">
-                <caption></caption>
-                <tr>
+                    <table id="table_product">
+                    <caption></caption>
+                    <tr>
 
                     <th></th>
                     <td>
-                        <div class="cart_info">
-                            <a href="#"><img src="../../assets/images/TV/tv units 7.jpeg" class="product_1"
-                                    alt="Compat camal brown sofa"></a>
-                            <h3> Wood Shutter TV Unit</h3>
-                        </div>
+                    <div class="cart_info">
+                    <a href="#"><img src="../../assets/images/TV/tv units 7.jpeg" class="product_1"
+                    alt="Compat camal brown sofa"></a>
+                    <h3> Wood Shutter TV Unit</h3>
+                    </div>
                     </td>
                     <td class="delivery">Order on <br> 13th Feb, 2023</td>
                     <td class="quant"><input type="number" value="1" disabled></td>
                     <td>₹29,999</td>
                     <td><button class="btn btn_secondary">Return</button></td>
-                </tr>
-            </table>
+                    </tr>
+                    </table>
 
-            <table id="table_product">
-                <caption></caption>
-                <tr>
+                    <table id="table_product">
+                    <caption></caption>
+                    <tr>
                     <th></th>
                     <td>
-                        <div class="cart_info">
-                            <a href="#"><img src="../../assets/images/Wallpaper/wallpaper_1.jpg" class="product_1"
-                                    alt="Compat camal brown sofa"></a>
-                            <h3>Leaf Pattern Wallpaper</h3>
-                        </div>
+                    <div class="cart_info">
+                    <a href="#"><img src="../../assets/images/Wallpaper/wallpaper_1.jpg" class="product_1"
+                    alt="Compat camal brown sofa"></a>
+                    <h3>Leaf Pattern Wallpaper</h3>
+                    </div>
                     </td>
                     <td id="delivery">Order on <br>15th Feb, 2023</td>
                     <td class="quant"><input type="number" value="1" disabled></td>
                     <td>₹ 4,999</td>
                     <td><button class="btn btn_quart">Refund</button></td>
-                </tr>
-            </table> -->
+                    </tr>
+                    </table> -->
 
+            </div>
         </div>
-    </div>
-    <script>
-        let order_list = JSON.parse(localStorage.getItem("order_list")) || [];
+        <script>
+        const order_list = JSON.parse(localStorage.getItem("order_list")) || [];
 
-        let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+        const profile_id = JSON.parse(localStorage.getItem("profile_id"));
 
-        let order_user = order_list.filter(e => e.ordered_by == profile_id);
+        const order_user = order_list.filter((e) => e.ordered_by == profile_id);
         order_user.reverse();
 
         if (order_list == null || order_user.length == 0) {
-            document.querySelector(".top-container").setAttribute("style", "display:none")
-        }
-        else {
-            for (i = 0; i < order_user.length; i++) {
+          document
+    .querySelector(".top-container")
+    .setAttribute("style", "display:none");
+        } else {
+          for (i = 0; i < order_user.length; i++) {
+    const table = document.createElement("table");
+            table.setAttribute("id", "table_product");
+            console.log(table);
 
-                const table = document.createElement('table');
-                table.setAttribute('id', 'table_product');
-                console.log(table);
+            const caption = document.createElement("caption");
+            table.append(caption);
 
-                const caption = document.createElement('caption');
-                table.append(caption);
+            const row = document.createElement("tr");
+            table.append(row);
 
-                const row = document.createElement('tr');
-                table.append(row);
+            const header = document.createElement("th");
+            row.append(header);
 
-                const header = document.createElement('th');
-                row.append(header);
+            const productData = document.createElement("td");
+            row.append(productData);
 
-                const productData = document.createElement('td');
-                row.append(productData);
+            const cartInfo = document.createElement("div");
+            cartInfo.setAttribute("class", "cart_info");
+            productData.append(cartInfo);
 
-                const cartInfo = document.createElement('div');
-                cartInfo.setAttribute('class', 'cart_info');
-                productData.append(cartInfo);
+            const productImg = document.createElement("img");
+            productImg.setAttribute("src", order_user[i].ordered_items[0].image_url);
+            productImg.setAttribute("class", "product_1");
+            productImg.setAttribute("alt", "Compat camal brown sofa");
+            cartInfo.appendChild(productImg);
 
-                const productImg = document.createElement('img');
-                productImg.setAttribute('src', order_user[i].ordered_items[0].image_url);
-                productImg.setAttribute('class', 'product_1');
-                productImg.setAttribute('alt', 'Compat camal brown sofa');
-                cartInfo.appendChild(productImg);
+            const productName = document.createElement("h3");
+            productName.textContent = order_user[i].ordered_items[0].product_name;
+            cartInfo.appendChild(productName);
 
+            const orderDate = document.createElement("td");
+            const inputDate = order_user[i].ordered_time.substr(0, 10);
+            const date = new Date(inputDate);
 
-                const productName = document.createElement('h3');
-                productName.textContent = order_user[i].ordered_items[0].product_name;
-                cartInfo.appendChild(productName);
+            const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+            ];
+    const month = months[date.getMonth()];
+            const day = date.getDate();
+            const year = date.getFullYear();
 
-                const orderDate = document.createElement('td');
-                const inputDate = order_user[i].ordered_time.substr(0, 10);
-                const date = new Date(inputDate);
+            orderDate.textContent = `Order on ${day} ${month}, ${year}`;
+            row.appendChild(orderDate);
 
-                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                const month = months[date.getMonth()];
-                const day = date.getDate();
-                const year = date.getFullYear();
+            const quantity = document.createElement("td");
+            row.appendChild(quantity);
 
-                orderDate.textContent = `Order on ${day} ${month}, ${year}`;
-                row.appendChild(orderDate);
+            const quantityInput = document.createElement("input");
+            quantityInput.setAttribute("type", "number");
+            quantityInput.setAttribute(
+      "value",
+      order_user[i].ordered_items[0].product_quantity
+            );
+    quantityInput.setAttribute("disabled", "");
+            quantity.appendChild(quantityInput);
 
-                const quantity = document.createElement('td');
-                row.appendChild(quantity);
+            const price = document.createElement("td");
+            price.textContent = `₹ ${
+      order_user[i].ordered_items[0].product_price *
+      order_user[i].ordered_items[0].product_quantity
+    }`;
+            row.appendChild(price);
 
-                const quantityInput = document.createElement('input');
-                quantityInput.setAttribute('type', 'number');
-                quantityInput.setAttribute('value', order_user[i].ordered_items[0].product_quantity);
-                quantityInput.setAttribute('disabled', '');
-                quantity.appendChild(quantityInput);
+            const deliveryStatus = document.createElement("td");
+            row.appendChild(deliveryStatus);
 
-                const price = document.createElement('td');
-                price.textContent = "₹ " + order_user[i].ordered_items[0].product_price * order_user[i].ordered_items[0].product_quantity;
-                row.appendChild(price);
-
-                const deliveryStatus = document.createElement('td');
-                row.appendChild(deliveryStatus);
-
-                const startTime = new Date(order_user[i].ordered_time);
-                console.log(startTime)
+            const startTime = new Date(order_user[i].ordered_time);
+            console.log(startTime);
         
-                const endTime = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate() + 7, 0, 0, 0, 0);
-                console.log(endTime)
-                const now = new Date()
+            const endTime = new Date(
+      startTime.getFullYear(),
+      startTime.getMonth(),
+      startTime.getDate() + 7,
+      0,
+      0,
+      0,
+      0
+            );
+    console.log(endTime);
+            const now = new Date();
 
-                if (endTime > now) {
+            if (endTime > now) {
+      const order_list = JSON.parse(localStorage.getItem("order_list"));
+              const orderIndex = order_list.findIndex(
+        (order) => order.order_uuid === order_user[i].order_uuid
+              );
+      order_list[orderIndex].order_status = "On the Way";
+              localStorage.setItem("order_list", JSON.stringify(order_list));
 
-                    const order_list = JSON.parse(localStorage.getItem('order_list'));
-                    const orderIndex = order_list.findIndex(order => order.order_uuid === order_user[i].order_uuid);
-                    order_list[orderIndex].order_status = 'On the Way';
-                    localStorage.setItem('order_list', JSON.stringify(order_list));
+              const deliveryButton = document.createElement("button");
+              deliveryButton.setAttribute("class", "btn btn_tertiary");
+              deliveryButton.textContent = "On the Way";
+              deliveryStatus.appendChild(deliveryButton);
+    } else {
+              const order_list = JSON.parse(localStorage.getItem("order_list"));
+              const orderIndex = order_list.findIndex(
+        (order) => order.order_uuid === order_user[i].order_uuid
+              );
+      order_list[orderIndex].order_status = "Delivered";
+              localStorage.setItem("order_list", JSON.stringify(order_list));
 
-                    const deliveryButton = document.createElement('button');
-                    deliveryButton.setAttribute('class', 'btn btn_tertiary');
-                    deliveryButton.textContent = "On the Way";
-                    deliveryStatus.appendChild(deliveryButton);
-
-                } else {
-                    const order_list = JSON.parse(localStorage.getItem('order_list'));
-                    const orderIndex = order_list.findIndex(order => order.order_uuid === order_user[i].order_uuid);
-                    order_list[orderIndex].order_status = 'Delivered';
-                    localStorage.setItem('order_list', JSON.stringify(order_list));
-
-                    const deliveryButton = document.createElement('button');
-                    deliveryButton.setAttribute('class', 'btn btn_primary');
-                    deliveryButton.textContent = "Delivered";
-                    deliveryButton.setAttribute('data-id', order_user[i].order_uuid);
-                    deliveryStatus.appendChild(deliveryButton);
-                }
-
-                const delete_icon = document.createElement('td');
-                row.appendChild(delete_icon);
-
-        
-
-                document.querySelector("div.bottom_contain").append(table);
+              const deliveryButton = document.createElement("button");
+              deliveryButton.setAttribute("class", "btn btn_primary");
+              deliveryButton.textContent = "Delivered";
+              deliveryButton.setAttribute("data-id", order_user[i].order_uuid);
+              deliveryStatus.appendChild(deliveryButton);
             }
-        }
 
-      
+            const delete_icon = document.createElement("td");
+            row.appendChild(delete_icon);
+
+            document.querySelector("div.bottom_contain").append(table);
+          }
+        }
     </script>
-    <script src="../../assets/comments/header.js"></script>
-</body>
+        <script src="../../assets/comments/header.js"></script>
+    </body>
 
 </html>
