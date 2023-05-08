@@ -35,7 +35,7 @@
         const exactRoom = roomDetails.filter(product => product.roomCategory === room_id)
         console.log(exactRoom);
 
-       //Room details DOM
+        //Room details DOM
         let productCount = 0;
 
         for (const room of exactRoom) {
@@ -191,8 +191,8 @@
         let currentDivIndex = 0;
         const arrow = document.getElementById('arrow1');
         arrow.addEventListener("click", function () {
-            for (let i = 0; i < productDivs.length; i++) {
-                productDivs[i].hidden = true;
+            for (const div of productDivs) {
+                div.hidden = true;
             }
             productDivs[currentDivIndex].hidden = false;
             currentDivIndex++;

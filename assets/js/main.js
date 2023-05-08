@@ -254,49 +254,8 @@ if (!product_crud) {
         product_uuid: "ac49cacb-1804-4cfb-aa1b-9d64c8ba351e",
         product_warranty: "2 year on-site",
         sellerId: "admin",
-      },
+      }
 
-      {
-        image_url: "https://iili.io/HXb7le9.th.jpg",
-        product_category: "TV Units",
-        product_description:
-          '*Wooden TV Units . * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
-        product_discount: "14",
-        product_name: "Wooden TV Units",
-        product_real: "15000",
-        product_sell: 12900,
-        product_uuid: "31afeeb6-663c-42e9-9e16-c6c78ea0feaf",
-        product_warranty: "2 year on-site",
-        sellerId: "admin",
-      },
-
-      {
-        image_url: "https://iili.io/HNgRiSn.th.jpg",
-        product_category: "TV Units",
-        product_description:
-          '*Painted Wooden TV Units . * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
-        product_discount: "10",
-        product_name: "Painted Wooden TV Units",
-        product_real: "20000",
-        product_sell: 18000,
-        product_uuid: "6a5de6e5-3a4c-4e4c-af38-025ad771443f",
-        product_warranty: "6 year on-site",
-        sellerId: "admin",
-      },
-
-      {
-        image_url: "https://iili.io/HNg7nIf.th.jpg",
-        product_category: "TV Units",
-        product_description:
-          '*Rowlet TV Units . * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
-        product_discount: "15",
-        product_name: "Rowlet TV Units",
-        product_real: "15000",
-        product_sell: 12750,
-        product_uuid: "63e3749d-2e28-4d38-8a7c-1e25f662b04c",
-        product_warranty: "5 year on-site",
-        sellerId: "admin",
-      },
     ])
   );
 }

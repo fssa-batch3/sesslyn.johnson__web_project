@@ -7,9 +7,7 @@ const beforeLogin = `
     <span class="header" id="header_shop"><a href="${rootPath}/index.html"><img class="main_logo" id="main_logo" src="${rootPath}/assets/images/home_page/Logo.jpg"
             alt="logo of minimalistic" /></a></span>
     <div id="nav_header">
-        <span class="header"><a href="#">
-                <p class="header_para">CHAMBER</p>
-            </a></span>
+       
         <span class="header"><a href="${rootPath}/pages/shop.html">
                 <p class="header_para">SHOP</p>
             </a></span>
@@ -19,6 +17,9 @@ const beforeLogin = `
         <span class="header"><a href="${rootPath}/pages/order/order.html">
                 <p class="header_para">ORDERS</p>
             </a></span>
+        <span class="header"><a href="${rootPath}/pages/wishlist.html">
+            <p class="header_para">WISHLIST</p>
+        </a></span>
     </div>
  <div class="btn">
    <a href = "${rootPath}/index.html"><button class="sign_in">Sign In</button></a>
@@ -34,9 +35,6 @@ const AfterLogin = `
     <span class="header" id="header_shop"><a href="${rootPath}/pages/homepage.html"><img class="main_logo" id="main_logo"
                 src="${rootPath}/assets/images/home_page/Logo.jpg" alt="logo of minimalistic" /></a></span>
     <div class="nav_header">
-        <span class="header"><a href="#">
-                <p class="header_para">CHAMBER</p>
-            </a></span>
         <span class="header"><a href="${rootPath}/pages/shop.html">
                 <p class="header_para">SHOP</p>
             </a></span>
@@ -46,6 +44,9 @@ const AfterLogin = `
         <span class="header"><a href="${rootPath}/pages/order/order.html">
                 <p class="header_para">ORDERS</p>
             </a></span>
+        <span class="header"><a href="${rootPath}/pages/wishlist.html">
+            <p class="header_para">WISHLIST</p>
+        </a></span>
     </div>
 
     <button class="btn_delete" id="logOut">Log Out</button>

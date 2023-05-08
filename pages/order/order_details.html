@@ -234,12 +234,9 @@
         user_data[field] = value;
       });
 
-      const user_delivery = localStorage.getItem("user_delivery");
-
-      const radioButtons = document.querySelectorAll('input[name="options"]');
       let isValid = false;
-      for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
+      for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
           isValid = true;
           break;
         }
@@ -248,6 +245,7 @@
         alert("Please select an option");
         return false;
       }
+
 
       // Validate
       if (user_data.user_address === "" || user_data.user_city === "" || user_data.user_state === "" || user_data.user_country === "") {
