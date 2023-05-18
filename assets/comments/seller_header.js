@@ -40,7 +40,7 @@ const AfterLogin = `
         <span class="header"><a href="${rootPath}/pages/seller/product_form.html">
                 <p class="header_para">NEW</p>
             </a></span>
-        <span class="header"><a href="${rootPath}/pages/about.html">
+        <span class="header"><a href="${rootPath}/pages/seller/seller_about.html">
                 <p class="header_para">ABOUT</p>
             </a></span>
         <span class="header"><a href="${rootPath}/pages/order/order.html">

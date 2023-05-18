@@ -159,14 +159,14 @@ if (!product_crud) {
       },
 
       {
-        image_url: "https://iili.io/HNgqWDF.th.jpg",
+        image_url: "https://iili.io/HUw59vs.jpg",
         product_category: "Space Saving Furniture",
         product_description:
-          '*Office table into Dinning table. * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
+          '*Sofa into Bed. * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
         product_discount: "20",
         product_name: "Office table into Dinning table",
-        product_real: "12000",
-        product_sell: 9600,
+        product_real: "25000",
+        product_sell: 20000,
         product_uuid: "5a6f0c3d-b4d4-4c21-9bf4-c069d78517c8",
         product_warranty: "3 year on site ",
         sellerId: "admin",
@@ -371,12 +371,12 @@ if (!shoppingProduct) {
   localStorage.setItem(
     "shoppingProduct",
     JSON.stringify([
-      {id_div: "inter_column",id_img: "sofa",image: "../assets/images/home_page/sofa-icon.png",text: "Sofa",page_id: "sofa"},
-      {id_div: "inter_column_2",id_img: "wallpaper",image: "../assets/images/home_page/wallpaper.png",text: "Wallpaper",page_id: "wallpaper"},
-      {id_div: "inter_column",id_img: "chandelier",image: "../assets/images/home_page/chandelier.png",text: "Chandelier",page_id: "chandelier"},
-      {id_div: "inter_column_2",id_img: "reusable",image: "../assets/images/home_page/space-saving.png",text: "Space Saving Furniture",page_id: "reusable_products",},
-      {id_div: "inter_column",id_img: "wadrobe",image: "../assets/images/home_page/wadrobe-icon.png",text: "Wadrobe",page_id: "wadrobe",},
-      {id_div: "inter_column_2",id_img: "crockery",image: "../assets/images/home_page/crockery_units-icon.png",text: "Crockery Units",page_id: "crockery_units",} 
+      { id_div: "inter_column", id_img: "sofa", image: "../assets/images/home_page/sofa-icon.png", text: "Sofa", page_id: "sofa" },
+      { id_div: "inter_column_2", id_img: "wallpaper", image: "../assets/images/home_page/wallpaper.png", text: "Wallpaper", page_id: "wallpaper" },
+      { id_div: "inter_column", id_img: "chandelier", image: "../assets/images/home_page/chandelier.png", text: "Chandelier", page_id: "chandelier" },
+      { id_div: "inter_column_2", id_img: "reusable", image: "../assets/images/home_page/space-saving.png", text: "Space Saving Furniture", page_id: "reusable_products", },
+      { id_div: "inter_column", id_img: "wadrobe", image: "../assets/images/home_page/wadrobe-icon.png", text: "Wadrobe", page_id: "wadrobe", },
+      { id_div: "inter_column_2", id_img: "crockery", image: "../assets/images/home_page/crockery_units-icon.png", text: "Crockery Units", page_id: "crockery_units", }
     ])
   );
 }
@@ -387,39 +387,73 @@ if (!roomDetails) {
   localStorage.setItem(
     "roomDetails",
     JSON.stringify([
-      {yearBuilt : 2021,budget:50000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Velacherry",image:"../../assets/images/Living room/living room rich/hall_2.jpg",roomCategory:"living_room"}, 
-      {yearBuilt : 2020,budget:55000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Guindy",image:"../../assets/images/Living room/living room rich/hall.jpg",roomCategory:"living_room"}, 
-      {yearBuilt : 2022,budget:60000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Koyembadu",image:"../../assets/images/Living room/living room rich/hall_3.jpg",roomCategory:"living_room"},
+      { yearBuilt: 2021, budget: 50000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Velacherry", image: "../../assets/images/Living room/living room rich/hall_2.jpg", roomCategory: "living_room" },
+      { yearBuilt: 2020, budget: 55000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Guindy", image: "../../assets/images/Living room/living room rich/hall.jpg", roomCategory: "living_room" },
+      { yearBuilt: 2022, budget: 60000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Koyembadu", image: "../../assets/images/Living room/living room rich/hall_3.jpg", roomCategory: "living_room" },
 
-       {yearBuilt : 2020,budget:30000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Velacherry",image:"../../assets/images/Bathroom/bath_1.jpg",roomCategory:"bathroom"},
-       {yearBuilt : 2021,budget:25000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Chengalpattu",image:"../../assets/images/Bathroom/bath_2.jpg",roomCategory:"bathroom"},
-       {yearBuilt : 2022,budget:32000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Koyembadu",image:"../../assets/images/Bathroom/bath_3.jpg",roomCategory:"bathroom"},
+      { yearBuilt: 2020, budget: 30000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Velacherry", image: "../../assets/images/Bathroom/bath_1.jpg", roomCategory: "bathroom" },
+      { yearBuilt: 2021, budget: 25000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Chengalpattu", image: "../../assets/images/Bathroom/bath_2.jpg", roomCategory: "bathroom" },
+      { yearBuilt: 2022, budget: 32000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Koyembadu", image: "../../assets/images/Bathroom/bath_3.jpg", roomCategory: "bathroom" },
 
-       {yearBuilt : 2021,budget:50000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Velacherry",image:" ../../assets/images/Bedroom/couple bedroom 1.jpg",roomCategory:"bedroom"},
-       {yearBuilt : 2020,budget:45000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Porur",image:" ../../assets/images/Bedroom/couple bedroom 3.jpg",roomCategory:"bedroom"},
-       {yearBuilt : 2022,budget:55000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Koyembadu",image:" ../../assets/images/Bedroom/couple bedroom 5.jpg",roomCategory:"bedroom"},
+      { yearBuilt: 2021, budget: 50000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Velacherry", image: " ../../assets/images/Bedroom/couple bedroom 1.jpg", roomCategory: "bedroom" },
+      { yearBuilt: 2020, budget: 45000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Porur", image: " ../../assets/images/Bedroom/couple bedroom 3.jpg", roomCategory: "bedroom" },
+      { yearBuilt: 2022, budget: 55000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: " ../../assets/images/Bedroom/couple bedroom 5.jpg", roomCategory: "bedroom" },
 
-       {yearBuilt : 2021,budget:38000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Guindy",image:" ../../assets/images/Kids area/kids area 10.jpg",roomCategory:"kids_area"},
-       {yearBuilt : 2020,budget:35000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Perungudi",image:"../../assets/images/Kids area/kids area 4.jpg",roomCategory:"kids_area"},
-       {yearBuilt : 2022,budget:30000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Koyembadu",image:"../../assets/images/Kids area/kids area 8.jpg",roomCategory:"kids_area"},
+      { yearBuilt: 2021, budget: 38000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Guindy", image: " ../../assets/images/Kids area/kids area 10.jpg", roomCategory: "kids_area" },
+      { yearBuilt: 2020, budget: 35000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Perungudi", image: "../../assets/images/Kids area/kids area 4.jpg", roomCategory: "kids_area" },
+      { yearBuilt: 2022, budget: 30000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: "../../assets/images/Kids area/kids area 8.jpg", roomCategory: "kids_area" },
 
-       {yearBuilt : 2021,budget:45000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Valasaravakkam",image:"../../assets/images/Kitchen/kitchen 4.jpg",roomCategory:"kitchen"},
-       {yearBuilt : 2020,budget:50000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Guduvancherry",image:"../../assets/images/Kitchen/kitchen 6.jpg",roomCategory:"kitchen"},
-       {yearBuilt : 2022,budget:52000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Koyembadu",image:"../../assets/images/Kitchen/kitchen luxury 3.jpg",roomCategory:"kitchen"},
+      { yearBuilt: 2021, budget: 45000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Valasaravakkam", image: "../../assets/images/Kitchen/kitchen 4.jpg", roomCategory: "kitchen" },
+      { yearBuilt: 2020, budget: 50000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Guduvancherry", image: "../../assets/images/Kitchen/kitchen 6.jpg", roomCategory: "kitchen" },
+      { yearBuilt: 2022, budget: 52000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: "../../assets/images/Kitchen/kitchen luxury 3.jpg", roomCategory: "kitchen" },
 
-       {yearBuilt : 2021,budget:13000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Chrompet",image:"../../assets/images/ceiling/False ceiling 12.jpg", roomCategory:"false_ceiling"},
-       {yearBuilt : 2020,budget:10000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Tambaram",image:"../../assets/images/ceiling/False ceiling 15.jpg",roomCategory:"false_ceiling"},
-       {yearBuilt : 2022,budget:15000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Perungaluthur",image:"../../assets/images/ceiling/False ceiling 16.jpg",roomCategory:"false_ceiling"},
-      
-       {yearBuilt : 2021,budget:13000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Neighborly Nest",place:"Kanchipuram",image:"../../assets/images/renovate/renovation 2.jfif", roomCategory:"renovation"},
-       {yearBuilt : 2020,budget:10000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Sunrise Apartments",place:"Bangalore",image:"../../assets/images/renovate/renovation 4.jpg",roomCategory:"renovation"},
-       {yearBuilt : 2022,budget:15000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Ruby Apartments",place:"Hyderabad",image:"../../assets/images/renovate/renovation 5.jpg",roomCategory:"renovation"},
-       
-       {yearBuilt : 2021,budget:50000,catchyName1:"Stylish",catchyName2:"Markable",apartmentName:"Caravan",place:"Chrompet",image:"../../assets/images/mobile/truck interior 5.jpg", roomCategory:"mobile_house"},
-       {yearBuilt : 2020,budget:60000,catchyName1:"Classy",catchyName2:"Esteemed",apartmentName:"Motor Home",place:"Velacherry",image:"../../assets/images/mobile/truck interior 7.jpeg",roomCategory:"mobile_house"},
-       {yearBuilt : 2022,budget:58000,catchyName1:"Modern",catchyName2:"Prestigious",apartmentName:"Van House",place:"Koyembadu",image:"../../assets/images/mobile/truck interior 8.jpg",roomCategory:"mobile_house"}
+      { yearBuilt: 2021, budget: 13000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Chrompet", image: "../../assets/images/ceiling/False ceiling 12.jpg", roomCategory: "false_ceiling" },
+      { yearBuilt: 2020, budget: 10000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Tambaram", image: "../../assets/images/ceiling/False ceiling 15.jpg", roomCategory: "false_ceiling" },
+      { yearBuilt: 2022, budget: 15000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Perungaluthur", image: "../../assets/images/ceiling/False ceiling 16.jpg", roomCategory: "false_ceiling" },
+
+      { yearBuilt: 2021, budget: 13000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Neighborly Nest", place: "Kanchipuram", image: "../../assets/images/renovate/renovation 2.jfif", roomCategory: "renovation" },
+      { yearBuilt: 2020, budget: 10000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Sunrise Apartments", place: "Bangalore", image: "../../assets/images/renovate/renovation 4.jpg", roomCategory: "renovation" },
+      { yearBuilt: 2022, budget: 15000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Hyderabad", image: "../../assets/images/renovate/renovation 5.jpg", roomCategory: "renovation" },
+
+      { yearBuilt: 2021, budget: 50000, catchyName1: "Stylish", catchyName2: "Markable", apartmentName: "Caravan", place: "Chrompet", image: "../../assets/images/mobile/truck interior 5.jpg", roomCategory: "mobile_house" },
+      { yearBuilt: 2020, budget: 60000, catchyName1: "Classy", catchyName2: "Esteemed", apartmentName: "Motor Home", place: "Velacherry", image: "../../assets/images/mobile/truck interior 7.jpeg", roomCategory: "mobile_house" },
+      { yearBuilt: 2022, budget: 58000, catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Van House", place: "Koyembadu", image: "../../assets/images/mobile/truck interior 8.jpg", roomCategory: "mobile_house" }
 
     ])
-    );
-  }
-  
+  );
+}
+
+
+//Designers Info
+const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+if (!designersInfo) {
+  localStorage.setItem(
+    "designersInfo",
+    JSON.stringify([
+      {
+        name: "Mr.Johnson", profession: "Interior Designer", project: 50, team: 6, education: "BA in Interior Architecture and Design", designersId: "c36e1f3e-7e1c-4b78-9ae7-739d1ac2f6a2",
+        image: "https://iili.io/HUO2BPR.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 50 projects all over India."
+      },
+      {
+        name: "Mr.Sam Victor", profession: "Fashion designer", project: 20, team: 2, education: "Bachelor of Interior Design", designersId: "92647d62-364e-4b42-aa0a-d67c6cf65fa5",
+        image: "https://iili.io/HUO2yWG.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 20 projects all over India."
+      },
+      {
+        name: "Mr.Jebasteen", profession: "Lighting Expert", project: 35, team: 4, education: "B.Sc in Interior Designer.", designersId: "e15c48c6-8e3f-4c43-b8d2-3aef6741c9f1",
+        image: "https://iili.io/HUeYmdB.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 35 projects all over India."
+      },
+      {
+        name: "Mr.Sachin Jain", profession: "Consultant", project: 40, team: 3, education: "M.SC in Design Space", designersId: "f4809c6a-fa16-4c90-a7dd-ef92690648f3",
+        image: "https://iili.io/HUO2BPR.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 40 projects all over India."
+      },
+      {
+        name: "Mr.Calvin Jacobs", profession: "Landscape Architect", project: 54, team: 4, education: "BE in Architecture Engineering", designersId: "7e22d8ad-9324-4b5b-a1f9-7e48a8161b02",
+        image: "https://iili.io/HUO2yWG.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 54 projects all over India."
+      },
+      {
+        name: "Mr.Kabir Rohan", profession: "Design Executive", project: 32, team: 5, education: "B.Des Interior Design", designersId: "542de8c8-5d3d-4a7a-9309-89c8c0e7a0bc",
+        image: "https://iili.io/HUeYmdB.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 32 projects all over India."
+      }
+    ])
+  )
+};

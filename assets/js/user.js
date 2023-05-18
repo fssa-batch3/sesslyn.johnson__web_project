@@ -23,8 +23,8 @@ class User {
    validatePhoneNumber(phoneNumber) {
       const pattern = /^[6-9]\d{9}$/;
       return pattern.test(phoneNumber);
-    }
-      
+   }
+
 }
 
 const _name = "sesslyn"

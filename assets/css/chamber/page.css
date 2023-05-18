@@ -2,33 +2,40 @@ body {
     margin: 0rem;
     padding: 0rem;
     font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-    overflow-x:hidden;
+    overflow-x: hidden;
     overflow-y: hidden;
+    cursor: pointer;
 }
-.container{
-    display:block;
+
+.container {
+    display: block;
 }
+
 .new {
     margin-top: 0.1rem;
     color: white;
 }
+
 .room_div {
     position: absolute;
     display: flex;
     flex-direction: row;
     margin: 2rem 0rem 0rem 8rem;
 }
+
 .view_more {
     width: 100px;
     height: 100px;
     margin: 8rem 21rem 0rem 0rem;
     border-radius: 50%;
 }
+
 p.main_heading {
     font-size: 5rem;
     margin: 0rem 10rem 0rem 0rem;
     padding: 5px;
 }
+
 .room_name {
     color: #FF5757;
 }
@@ -36,24 +43,29 @@ p.main_heading {
 p {
     font-size: bold;
 }
+
 p.text_description {
     font-size: 20px;
     margin-left: 10px;
 }
+
 .image_living {
     width: 100%;
     height: 100%;
     margin-top: 4rem;
 }
-.main_div{
+
+.main_div {
     display: flex;
     flex-direction: row;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
 }
-.productDiv{
+
+.productDiv {
     display: block;
-    width:100%;
+    width: 100%;
 }
+
 .div_product {
     display: flex;
     flex-direction: row;
@@ -78,12 +90,14 @@ p.text_description {
 
 .classy_names h2 {
     font-size: 3rem;
-    margin-left:-1rem;
+    margin-left: -1rem;
 }
-p.budget{
+
+p.budget {
     margin: 1rem 0rem 0rem 8rem;
-    font-size:1.2rem; 
+    font-size: 1.2rem;
 }
+
 .classy_names h2:nth-child(2) {
     margin: -2rem 0rem 0rem 4rem;
 }
@@ -111,21 +125,25 @@ p.budget{
     flex-direction: row;
     justify-content: space-between;
 }
-.menu_icon p{
-   float:left;
-   margin-left:2rem;
+
+.menu_icon p {
+    float: left;
+    margin-left: 2rem;
 }
-.projects{
-    padding-left:16rem;
-    margin-right:5rem;
-    display:block;
+
+.projects {
+    padding-left: 16rem;
+    margin-right: 5rem;
+    display: block;
 }
-.collect{
+
+.collect {
     display: flex;
     flex-direction: row;
-    float:left;
-   margin-left:2rem; 
+    float: left;
+    margin-left: 2rem;
 }
+
 .menu {
     margin: 0rem 30rem 0rem 7rem;
     position: absolute;

@@ -25,7 +25,7 @@ function register() {
 //Register function
 function signUp(e) {
   e.preventDefault();
-  const user_name = document.getElementById("user_name").value;
+  const user_name = document.getElementById("user_name").value.trim().split(/\s+/g).join(" ");
   const user_email = document.getElementById("user_email").value;
   const user_password = document.getElementById("user_password").value;
   const confirm_password = document.getElementById("confirm_password").value;
@@ -46,7 +46,7 @@ function signUp(e) {
       alert("Re-enter the Password");
       confirm_password.value = reset();
     } else {
-      alert("Password Matched");
+      alert("Register Successfully ");
     }
   }
   checkPassword();
@@ -82,7 +82,6 @@ function signUp(e) {
 
     document.querySelector("form").reset();
     document.getElementById("user_email").focus();
-    alert("Account created Successfully");
     location.href = "./pages/profile/login.html";
   } else {
     alert("Sorry the User already Exist!! \n Try with different E-mail");

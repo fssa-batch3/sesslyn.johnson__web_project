@@ -170,7 +170,7 @@ for (const roomDetail of room_details) {
   tooltipDiv1.append(tooltip1);
 
   const a_link = document.createElement("a");
-  a_link.setAttribute("href",`./living_room/page.html?chamber_name=${roomDetail.page_id}`);
+  a_link.setAttribute("href", `./living_room/page.html?chamber_name=${roomDetail.page_id}`);
   tooltip1.append(a_link);
 
   // create a new image element for the icon
@@ -269,3 +269,43 @@ add.forEach(function (findId) {
     }
   });
 });
+
+const queryString = window.location.origin;
+console.log(queryString);
+const interiorRow1 = `
+
+<div class="container">
+<img class="crockery" src="${queryString}/assets/images/home_page/living space 4.png" alt="chandleir image">
+<div class="overlay">
+    <a href="${queryString}/pages/living_room/page.html?chamber_name=living_room">
+        <p>Living Room</p>
+    </a>
+</div>
+</div>
+<div class="container">
+<img class="crockery" src="${queryString}/assets/images/Bedroom/couple bedroom 5.jpg" alt="chandleir image">
+<div class="overlay">
+    <a href="${queryString}/pages/living_room/page.html?chamber_name=bedroom">
+        <p>Bedroom</p>
+    </a>
+</div>
+</div>
+<div class="container">
+<img class="crockery" src="${queryString}/assets/images/Kids area/kids area 4.jpg"
+    alt="chandleir image"></img></a>
+<div class="overlay">
+    <a href="${queryString}/pages/living_room/page.html?chamber_name=kids_area">
+        <p>Kids Area</p>
+    </a>
+</div>
+</div>
+<div class="container">
+<img class="crockery" src="${queryString}/assets/images/mobile/truck interior 7.jpeg" alt="chandleir image">
+<div class="overlay">
+    <a href="${queryString}/pages/living_room/page.html?chamber_name=mobile_house">
+        <p>Turck House</p>
+    </a>
+</div>
+</div>
+ `
+document.querySelector("#row1Interior").insertAdjacentHTML("afterbegin", interiorRow1);
