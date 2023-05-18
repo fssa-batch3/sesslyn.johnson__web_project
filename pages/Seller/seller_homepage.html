@@ -39,6 +39,30 @@
             <img src="../../assets/images/home_page/homepage3.jpg" alt="seller-img" class="family-img">
         </div>
     </div>
+    <div class="question">
+        <h1 class="question-head">Why sell on Minimal.in</h1>
+        <p class="question-para">Today, more than 10 lakh sellers choose Casas.in to reach out to crores of customers, 
+         and they all enjoy a host of benefits like:</p>
+         <div class="topContainer">
+             <div class="containerDiv">
+                 <img src="../../assets/images/home_page/sellar-pay.png" alt="seller-img" height="60px" width="60px"/>
+                 <h3>Secure payments, regularly</h3>
+                 <p>Your money is safely deposited directly to your bank account every 7 days, even for Pay-on-Delivery orders.</p>
+             </div>
+             <div class="containerDiv">
+                 <img src="../../assets/images/home_page/seller-delivery.jfif" id="delivery" alt="seller-img"  height="60px" width="60px"/>
+                 <h3>Stress-free shipping</h3>
+                 <p>We take care of delivering your products, whether through Fulfillment by Casas (FBA) or Easy Ship.</p>
+             </div>
+             <div class="containerDiv">
+                 <img src="../../assets/images/home_page/sellar-handshake.png" alt="seller-img"  height="60px" width="60px"/>
+                 <h3>Services for every need</h3>
+                 <p>Get paid support from third-party professionals for product photography, account management, and much more.</p>
+             </div>
+         </div>
+     </div>
+     <footer class="footer" id="footer">
+    </footer>
     <script>
         
         //Log Out function
@@ -51,7 +75,16 @@
                 window.location.href = "./product_form.html";
             }
         }
+    
+        fetch("../../pages/profile/footer.html")
+            .then(response => {
+                return response.text()
+            })
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
     </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>
 </body>
 

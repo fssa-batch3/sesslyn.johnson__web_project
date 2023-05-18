@@ -41,7 +41,6 @@
           (p) => p.product_uuid === product.product_uuid
         );
         if (productDetails_list) {
-          //  <div class="down">
           const div_container = document.createElement("div");
           div_container.setAttribute("class", "container");
           div_container.setAttribute(
@@ -50,7 +49,6 @@
           );
           div_top.append(div_container);
 
-          //<img/>
           const img_product = document.createElement("img");
           img_product.setAttribute(
             "alt",
@@ -67,24 +65,20 @@
           });
           div_container.append(img_product);
 
-          //<h2></h2>
           const h2_title = document.createElement("h2");
           h2_title.innerHTML = productDetails_list.product_name;
           div_container.append(h2_title);
 
-          //<p class="price"></p>
           const p_paragraph = document.createElement("p");
           p_paragraph.setAttribute("class", "price");
           p_paragraph.innerHTML = `Rs.${productDetails_list["product_sell"]}`;
           div_container.append(p_paragraph);
 
-          //  <div class="down">
           const div_contain = document.createElement("div");
           div_contain.setAttribute("class", "btn");
           div_contain.setAttribute("data-id", productDetails_list["product_uuid"]);
           div_container.append(div_contain);
 
-          //<button class="btn"></button>
           const button_primary = document.createElement("button");
           button_primary.setAttribute("class", "button_add");
           button_primary.setAttribute(
@@ -94,7 +88,6 @@
           button_primary.innerHTML = "Add";
           div_contain.append(button_primary);
 
-          //<button class="btn"></button>
           const button_secondary = document.createElement("button");
           button_secondary.setAttribute("class", "button_remove");
           button_secondary.setAttribute(
@@ -156,6 +149,7 @@
     });
 
   </script>
+  <script src="../../assets/js/chatBot.js"></script>
   <script src="../../assets/comments/seller_header.js"></script>
 </body>
 

@@ -116,69 +116,8 @@
             <button class="btn_primary" id="place_order" type="submit">PLACE YOUR ORDER</button>
         </div>
     </div>
-    <script>
-
-        const product_crud = JSON.parse(localStorage.getItem("product_crud"));
-        const cart_list = JSON.parse(localStorage.getItem("cart_list"));
-        const user = JSON.parse(localStorage.getItem("profile_id"));
-
-        let amount = 0;
-
-        const user_cart = cart_list.filter((e) => e.userId == user);
-        console.log(user_cart);
-
-        for (const item of user_cart) {
-            const div_details = document.createElement("div");
-            div_details.setAttribute("class", "summary_details");
-            console.log(div_details);
-
-            const img_details = document.createElement("img");
-            img_details.setAttribute("alt", "product");
-            img_details.setAttribute("id", "similar_product");
-            img_details.setAttribute("data-id", item.product_uuid);
-            img_details.setAttribute("src", item.image_url);
-            div_details.append(img_details);
-
-            const header1 = document.createElement("h4");
-            header1.setAttribute("class", "header_similar");
-            header1.textContent = item.product_name;
-            div_details.append(header1);
-
-            const price1 = document.createElement("p");
-            price1.className = "price";
-            price1.textContent = `₹ ${item.product_price * item.product_quantity}`;
-            div_details.append(price1);
-
-            document.querySelector("div.contain_left").append(div_details);
-
-            amount += item.product_price * item.product_quantity;
-        }
-
-
-        //Amount
-        document.getElementById("sub_total").innerText = `₹${amount + 1900}`;
-        document.getElementById("shipping_free").innerText = `₹ ${100}`;
-        document.getElementById("discount_amount").innerText = `₹ ${2000}`;
-        document.getElementById("total_amount").innerText = `₹ ${amount}`;
-
-        //Details from order details page
-        const user_crud = JSON.parse(localStorage.getItem("user_crud"));
-        const order_user = JSON.parse(localStorage.getItem("order_user"));
-
-        function login_data(e) {
-            return e.user_email == user;
-        }
-
-        const user_data = order_user.find(login_data);
-        const userAddress = `${user_data.user_address}, ${user_data.user_city}, ${user_data.user_state}, ${user_data.user_country}`;
-
-        document.getElementById("user_name").innerHTML = user_data.user_name;
-        document.getElementById("user_email").innerHTML = user_data.user_email;
-        document.getElementById("user_address").innerHTML = userAddress;
-        document.getElementById("user_no").innerHTML = `91 - ${user_data.user_no}`;
-        document.getElementById("delivery_mode").innerHTML = user_data.user_delivery;
-    </script>
-    <script src="../../assets/js/order.js"></script>
+    <script src="../../assets/js/chatBot.js"></script>
+    <script src="../../assets/js/order_summary.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <script src="../../assets/comments/header.js"></script>
 

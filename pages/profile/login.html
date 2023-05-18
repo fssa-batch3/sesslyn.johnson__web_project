@@ -29,11 +29,6 @@
                         </a>
                     </span>
                     <span class="header">
-                        <a href="#">
-                            <p class="header_para">CHAMBER</p>
-                        </a>
-                    </span>
-                    <span class="header">
                         <a href="../shop.html">
                             <p class="header_para">SHOP</p>
                         </a>
@@ -48,6 +43,11 @@
                             <p class="header_para">WISHLIST</p>
                         </a>
                     </span>
+                    <span class="header">
+                        <a href="../appointment/appointment_history.html">
+                            <p class="header_para">SCHEDULE</p>
+                        </a>
+                    </span>
                 </div>
                 <hr class="new2">
                 <div class="left">
@@ -59,12 +59,12 @@
                 </div>
                 <div class="media" id="media-div">
                     <span id="media-span">
-                        facebook<p>/</p>
+                       <a  href="https://www.facebook.com/profile.php?id=100087049213851">facebook</a><p>/</p>
                     </span>
                     <span id="media-span2">
-                        Twitter<p>/</p>
+                       <a href="https://twitter.com/narendramodi/status/1617894256928247808?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1617894256928247808%7Ctwgr%5E56ae42402f42bde87178a40653b92ee0b79920d8%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthesportsgrail.com%2Fwho-is-rishi-shiv-prasanna-his-iq-biography-age-family-parents-father-app-name%2F">Twitter</a> <p>/</p>
                     </span>
-                    <span>Instagram</span>
+                    <span><a href="https://www.instagram.com/endeavour_sess/?next=https%3A%2F%2Fwww.instagram.com%2F">Instagram</a></span>
                 </div>
             </div>
             <div class="main_right">
@@ -94,12 +94,10 @@
         <!-- Login Div -->
         <div class="right_corner">
             <div class="menu">
-                <div class="menu_bar"></div>
-                <div class="menu_bar"></div>
-                <div class="menu_bar"></div>
+                <a href="../../index.html">
+                    <img src="../../assets/images/home_page/x_icon.png" class="close_icon" alt="close icon"/></a>
             </div>
             <div class="circle">
-
                 <div class="dot" id="dot"></div>
                 <div class="double_circle"></div>
                 <div class="dot"></div>
@@ -151,10 +149,9 @@
             </div>
         </div>
         <script>
-            //Getting Details from Sign in page
             function signIn(e) {
                 e.preventDefault();
-                const user_name = document.getElementById("user_name").value;
+                const user_name = document.getElementById("user_name").value.trim().split(/\s+/g).join(" ");;
                 const user_password = document.getElementById("user_password").value;
                 const user_email = document.getElementById("user_email").value;
                 const user_crud = JSON.parse(localStorage.getItem("user_crud")) || [];
@@ -177,7 +174,9 @@
                     window.location.href = "../homepage.html";
                 }
             }
+            
         </script>
+        <script src="../../assets/js/whatsappChat.js"></script>
         <script src="../../assets/js/login.js"></script>
 </body>
 

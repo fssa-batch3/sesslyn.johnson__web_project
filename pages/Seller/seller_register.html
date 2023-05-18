@@ -32,12 +32,12 @@
                                 <p>What differentiates sellers today is their ability to bring fresh ideas. </p>
                             </div>
                             <div class="mail">
-                                <input type="name" id="user_name" required="true" title="Only contain Alphabets"
+                                <input type="name" id="seller_name" required="true" title="Only contain Alphabets"
                                     pattern="[a-zA-Z]+" placeholder="Name">
                             </div>
 
                             <div class="mail">
-                                <input type="email" id="user_email" required="true"
+                                <input type="email" id="seller_email" required="true"
                                     title="Must contain @ and only lower case is allowed."
                                     pattern="^[a-zA-Z0-9]+([a-zA-Z0-9_+\-\. ]*[a-zA-Z0-9]+)?@[a-zA-Z0-9]+([a-zA-Z0-9\-\.]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}$"
                                     placeholder="Email Id">
@@ -46,7 +46,7 @@
                                 <input type="password" required="true" placeholder="Password"
                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one  number and one uppercase and lowercase letter and a special case and at least 8 or more characters"
-                                    id="user_password">
+                                    id="seller_password">
                             </div>
                             <div class="password">
                                 <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -55,12 +55,12 @@
                             </div>
 
                             <div class="mail">
-                                <input type="text" id="user_aadhar" required="true" pattern="[0-9]{12}"
+                                <input type="text" id="seller_aadhar" required="true" pattern="[0-9]{12}"
                                     title="Must contains 12 characters and only number is allowed"
                                     placeholder="Enter Aadhar Number">
                             </div>
                             <div class="mail">
-                                <input type="text" id="user_gst" required="true"
+                                <input type="text" id="seller_gst" required="true"
                                     pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}"
                                     title="Must contains 15 characters and alphanumeric is allowed. Eg: 06ABCDE1234F1Z5"
                                     placeholder="Enter GSTIN">
@@ -92,39 +92,46 @@
         //Register Function
         function signUp(e) {
             e.preventDefault();
-            const user_name = document.getElementById("user_name").value;
-            const user_email = document.getElementById("user_email").value;
-            const user_password = document.getElementById("user_password").value;
+            const seller_name = document.getElementById("seller_name").value.trim().split(/\s+/g).join(" ");;
+            const seller_email = document.getElementById("seller_email").value;
+            const seller_password = document.getElementById("seller_password").value;
             const confirm_password = document.getElementById("confirm_password").value;
-            const user_aadhar = document.getElementById("user_aadhar").value;
-            const user_gst = document.getElementById("user_gst").value;
-            const user_uuid = uuidv4();
-            const user_contact = "";
-            const user_address = "";
-            const user_about = "";
-            const user_image = "";
+            const seller_aadhar = document.getElementById("seller_aadhar").value;
+            const seller_gst = document.getElementById("seller_gst").value;
+            const seller_uuid = uuidv4();
+            const seller_no = "";
+            const seller_dob = "";
+            const seller_gender = "";
+            const seller_address = "";
+            const seller_city = "";
+            const seller_about = "";
+            const seller_image = "";
+          
 
             const seller_list = JSON.parse(localStorage.getItem("seller_list")) || [];
             const exist =
                 seller_list.length &&
                 JSON.parse(localStorage.getItem("seller_list")).some(
-                    (data) => data.user_email.toLowerCase() == user_email.toLowerCase()
+                    (data) => data.seller_email.toLowerCase() == seller_email.toLowerCase()
                 );
 
             if (!exist) {
-                if (user_password == confirm_password) {
+                if (seller_password == confirm_password) {
                     seller_list.push({
-                        user_name,
-                        user_email,
-                        user_password,
-                        user_aadhar,
-                        user_image,
-                        user_gst,
+                        seller_name,
+                        seller_email,
+                        seller_password,
+                        seller_aadhar,
+                        seller_image,
+                        seller_gst,
                         confirm_password,
-                        user_address,
-                        user_contact,
-                        user_about,
-                        user_uuid,
+                        seller_address,
+                        seller_city,
+                        seller_no,
+                        seller_about,
+                        seller_uuid,
+                        seller_dob,
+                        seller_gender
                     });
 
                     localStorage.setItem("seller_list", JSON.stringify(seller_list));
@@ -132,7 +139,7 @@
                     console.log(localStorage.getItem("seller_list"));
 
                     document.querySelector("form").reset();
-                    document.getElementById("user_email").focus();
+                    document.getElementById("seller_email").focus();
                     alert("Account created Successfully");
                     location.href = "./seller_login.html";
                 } else {
@@ -146,7 +153,7 @@
         
     </script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-
+    <script src="../../assets/js/whatsappChat.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>
 </body>
 

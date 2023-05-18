@@ -57,7 +57,6 @@
                     <select name="" id="product_category" class="form-control" required>
                         <option value="" disabled selected>Product Category</option>
                         <option value="Sofa">Sofa</option>
-                        <option value="TV Units">TV Units</option>
                         <option value="Space Saving Furniture">Space Saving Furniture</option>
                         <option value="Wallpaper">Wallpaper</option>
                         <option value="Wadrobe">Wadrobe</option>
@@ -124,13 +123,13 @@
             product_data = product.find(find_data);
 
             const edit_image = document.getElementById("image_url").value;
-            const edit_name = document.getElementById("product_name").value;
-            const edit_brand = document.getElementById("product_brand").value;
+            const edit_name = document.getElementById("product_name").value.trim().split(/\s+/g).join(" ");
+            const edit_brand = document.getElementById("product_brand").value.trim().split(/\s+/g).join(" ");
             const edit_category = document.getElementById("product_category").value;
             const edit_real = document.getElementById("product_real").value;
             const edit_discount = document.getElementById("product_discount").value;
-            const edit_description = document.getElementById("product_description").value;
-            const edit_warranty = document.getElementById("product_warranty").value;
+            const edit_description = document.getElementById("product_description").value.trim().split(/\s+/g).join(" ");
+            const edit_warranty = document.getElementById("product_warranty").value.trim().split(/\s+/g).join(" ");
 
             let edit_sell;
             if (edit_discount == edit_discount) {
@@ -140,6 +139,7 @@
                 edit_sell = edit_real - edit_discount;
             }
 
+          
             product_data.image_url = edit_image;
             product_data.product_name = edit_name;
             product_data.product_brand = edit_brand;
@@ -149,6 +149,26 @@
             product_data.product_discount = edit_discount;
             product_data.product_description = edit_description;
             product_data.product_warranty = edit_warranty;
+
+              // Validate
+              if (product_data.product_name === "" || product_data.product_brand === "" || product_data.image_url === "" || product_data.product_description === "" || product_data.product_warranty === "") {
+                alert("Please enter your address information");
+                return false;
+            }
+
+            function validate() {
+                if (
+                    /^\s*$/g.test(product_name) ||
+                    /^\s*$/g.test(product_warranty) ||
+                    /^\s*$/g.test(product_brand)
+                ) {
+                    alert("Write your information properly");
+                    reset();
+                }
+            }
+
+            validate();
+
             localStorage.setItem("product_crud", JSON.stringify(product));
             alert("Product updated successfully");
 
@@ -176,6 +196,7 @@
         }
 
     </script>
+    <script src="../../assets/js/chatBot.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>
 
 </body>

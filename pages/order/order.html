@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+ <div id="small_container">
     <div class="top-container">
         <div class="top_contain">
             <div>
@@ -32,10 +32,11 @@
                 <h1>
                     Best Furniture For Your Home <br> From Minimalistic
                 </h1>
+                <a href="../shop.html">
                 <p class="start_shop">
                     Start Shopping <img src="../../assets/images/home_page/arrow.png" alt="arrow image"
-                        class="arrow_icon"></p>
-                <input type="search" id="search" placeholder="Search">
+                        class="arrow_icon"></p></a>
+                
             </div>
         </div>
         <div class="bottom_contain">
@@ -43,130 +44,141 @@
 
         </div>
     </div>
-
+</div>
+    <div id="cart_empty">
+        <img src="../../assets/images/home_page/order_history.jpg" class="emptyCart" alt="Empty Cart image" />
+        <p class="cartEmpty">You haven't placed an order yet.</p>
+      </div>
     <script>
 
         const order_list = JSON.parse(localStorage.getItem("order_list")) || [];
         const profile_id = JSON.parse(localStorage.getItem("profile_id"));
-        const order_user = order_list.filter((e) => e.ordered_by == profile_id);
-        order_user.reverse();
+        const order_user = order_list.filter((e) => e.order_email == profile_id);
+        console.log(order_user);
+
+        const emptyCart = document.getElementById('cart_empty');
+        const cartFull = document.getElementById('small_container');
+
+        function showMessageDiv() {
+            emptyCart.style.display = 'block';
+            cartFull.style.display = 'none';
+        }
+
+        if (order_user.length === 0) {
+            showMessageDiv();
+        }
+
+        for (const order of order_user) {
+            const table = document.createElement("table");
+            table.setAttribute("id", "table_product");
+            console.log(table);
+
+            const caption = document.createElement("caption");
+            table.append(caption);
+
+            const row = document.createElement("tr");
+            table.append(row);
+
+            const header = document.createElement("th");
+            row.append(header);
+
+            const productData = document.createElement("td");
+            row.append(productData);
+
+            const cartInfo = document.createElement("div");
+            cartInfo.setAttribute("class", "cart_info");
+            productData.append(cartInfo);
+
+            const productImg = document.createElement("img");
+            productImg.setAttribute("src", order.ordered_items.image_url);
+            productImg.setAttribute("class", "product_1");
+            productImg.setAttribute("alt", "Compat camal brown sofa");
+            cartInfo.appendChild(productImg);
+
+            const productName = document.createElement("h3");
+            productName.textContent = order.ordered_items.product_name;
+            cartInfo.appendChild(productName);
+
+            const orderDate = document.createElement("td");
+            const inputDate = order.ordered_time.substr(0, 10);
+            const date = new Date(inputDate);
+
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
+
+            const month = months[date.getMonth()];
+            const day = date.getDate();
+            const year = date.getFullYear();
+
+            orderDate.textContent = `Order on ${day} ${month}, ${year}`;
+            row.appendChild(orderDate);
+
+            const quantity = document.createElement("td");
+            row.appendChild(quantity);
+
+            const quantityInput = document.createElement("input");
+            quantityInput.setAttribute("type", "number");
+            quantityInput.setAttribute("value", order.ordered_items.product_quantity);
+            quantityInput.setAttribute("disabled", "");
+            quantity.appendChild(quantityInput);
+
+            const price = document.createElement("td");
+            price.textContent = "₹" + order.ordered_items.product_price;
+            row.appendChild(price);
 
 
-        if (order_list == null || order_user.length == 0) {
-            document
-                .querySelector(".top-container")
-                .setAttribute("style", "display:none");
-        } else {
-            for (const order of order_user) {
-                const table = document.createElement("table");
-                table.setAttribute("id", "table_product");
-                console.log(table);
+            const deliveryStatus = document.createElement("td");
+            row.appendChild(deliveryStatus);
 
-                const caption = document.createElement("caption");
-                table.append(caption);
+            const startTime = new Date(order.ordered_time);
+            console.log(startTime);
 
-                const row = document.createElement("tr");
-                table.append(row);
+            //date
+            const endTime = new Date(
+                startTime.getFullYear(),
+                startTime.getMonth(),
+                startTime.getDate() + 7, 0, 0, 0, 0);
+            console.log(endTime);
+            const now = new Date();
 
-                const header = document.createElement("th");
-                row.append(header);
-
-                const productData = document.createElement("td");
-                row.append(productData);
-
-                const cartInfo = document.createElement("div");
-                cartInfo.setAttribute("class", "cart_info");
-                productData.append(cartInfo);
-
-                const productImg = document.createElement("img");
-                productImg.setAttribute("src", order.ordered_items[0].image_url);
-                productImg.setAttribute("class", "product_1");
-                productImg.setAttribute("alt", "Compat camal brown sofa");
-                cartInfo.appendChild(productImg);
-
-                const productName = document.createElement("h3");
-                productName.textContent = order.ordered_items[0].product_name;
-                cartInfo.appendChild(productName);
-
-                const orderDate = document.createElement("td");
-                const inputDate = order.ordered_time.substr(0, 10);
-                const date = new Date(inputDate);
-
-                const months = [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December",
-                ];
-
-                const month = months[date.getMonth()];
-                const day = date.getDate();
-                const year = date.getFullYear();
-
-                orderDate.textContent = `Order on ${day} ${month}, ${year}`;
-                row.appendChild(orderDate);
-
-                const quantity = document.createElement("td");
-                row.appendChild(quantity);
-
-                const quantityInput = document.createElement("input");
-                quantityInput.setAttribute("type", "number");
-                quantityInput.setAttribute("value", order.ordered_items[0].product_quantity);
-                quantityInput.setAttribute("disabled", "");
-                quantity.appendChild(quantityInput);
-
-                const price = document.createElement("td");
-                price.textContent = `₹ ${order.ordered_items[0].product_price * order.ordered_items[0].product_quantity }`;
-                row.appendChild(price);
+            if (endTime > now) {
+                const order_list = JSON.parse(localStorage.getItem("order_list"));
+                const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
+                order.order_status = "On the Way";
+                localStorage.setItem("order_list", JSON.stringify(order_list));
 
 
-                const deliveryStatus = document.createElement("td");
-                row.appendChild(deliveryStatus);
-
-                const startTime = new Date(order.ordered_time);
-                console.log(startTime);
-
-                //date
-                const endTime = new Date(
-                    startTime.getFullYear(),
-                    startTime.getMonth(),
-                    startTime.getDate() + 7, 0, 0, 0, 0);
-                console.log(endTime);
-                const now = new Date();
-
-                if (endTime > now) {
-                    const order_list = JSON.parse(localStorage.getItem("order_list"));
-                    const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
-                    order_list[orderIndex].order_status = "On the Way";
-                    localStorage.setItem("order_list", JSON.stringify(order_list));
+                const deliveryButton = document.createElement("button");
+                deliveryButton.setAttribute("class", "btn btn_tertiary");
+                deliveryButton.textContent = "On the Way";
+                deliveryStatus.appendChild(deliveryButton);
+            } else {
+                const order_list = JSON.parse(localStorage.getItem("order_list"));
+                const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
+                order.order_status = "Delivered";
+                localStorage.setItem("order_list", JSON.stringify(order_list));
+            }
 
 
-                    const deliveryButton = document.createElement("button");
-                    deliveryButton.setAttribute("class", "btn btn_tertiary");
-                    deliveryButton.textContent = "On the Way";
-                    deliveryStatus.appendChild(deliveryButton);
-                } else {
-                    const order_list = JSON.parse(localStorage.getItem("order_list"));
-                    const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
-                    order_list[orderIndex].order_status = "Delivered";
-                    localStorage.setItem("order_list", JSON.stringify(order_list));
-                }
-
-                
 
             document.querySelector("div.bottom_contain").append(table);
         }
-    }
-        
+    
+
     </script>
+    <script src="../../assets/js/chatBot.js"></script>
     <script src="../../assets/comments/header.js"></script>
 </body>
 

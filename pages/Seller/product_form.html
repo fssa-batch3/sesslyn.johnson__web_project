@@ -60,7 +60,6 @@
                     <select name="" id="product_category" class="form-control" required>
                         <option value="" disabled selected>Product Category</option>
                         <option value="Sofa">Sofa</option>
-                        <option value="TV Units">TV Units</option>
                         <option value="Space Saving Furniture">Space Saving Furniture</option>
                         <option value="Wallpaper">Wallpaper</option>
                         <option value="Wadrobe">Wadrobe</option>
@@ -133,6 +132,7 @@
             }
 
             validate();
+
             const sellerId = JSON.parse(localStorage.getItem("seller_id"));
             const product_crud = JSON.parse(localStorage.getItem("product_crud")) || [];
 
@@ -155,6 +155,7 @@
             window.location.href = "./product_list.html";
         }
     </script>
+    <script src="../../assets/js/chatBot.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 

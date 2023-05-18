@@ -24,6 +24,48 @@
 </head>
 
 <body>
+    <!-- <section>
+        <p class="h2para">Our Designers</p>
+        <div class="designers-div">
+            <div class="resource-box">
+                <div class="designers-portfolio">
+                    <div class="designers-left">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            class="designers-image" alt="designers image">
+                    </div>
+                    <div class="designers-right">
+                        <h4>Mr. JOHNSON JEYAKUMAR</h4>
+                        <button id="viewLink">View Portfolio</button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-box">
+                <div class="designers-portfolio">
+                    <div class="designers-left">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            class="designers-image" alt="designers image">
+                    </div>
+                    <div class="designers-right">
+                        <h4>Mr. JOHNSON JEYAKUMAR</h4>
+                        <button id="viewLink">View Portfolio</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="resource-box">
+                <div class="designers-portfolio">
+                    <div class="designers-left">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            class="designers-image" alt="designers image">
+                    </div>
+                    <div class="designers-right">
+                        <h4>Mr. JOHNSON JEYAKUMAR</h4>
+                        <button id="viewLink">View Portfolio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <section id="sectionDiv">
         <p class="h2para">Our Designers</p>
         <div class="designers-div">
@@ -147,24 +189,30 @@
         </div>
     </section>
     <script>
-        document.getElementById('viewLink').addEventListener("click", function () {
+        const viewLinks = document.querySelectorAll('#viewLink');
+
+        viewLinks.forEach((viewLink) => {
+            viewLink.addEventListener("click", () => {
+                const messageDiv = document.getElementById('none');
+                const showMessageDiv = () => {
+                    messageDiv.style.display = 'block';
+                    document.getElementById('block').classList.add('blur-background');
+                };
+                showMessageDiv();
+            });
+        });
+
+
+        document.getElementById('x_icon').addEventListener("click", function () {
             const messageDiv = document.getElementById('none');
+            const blockDiv = document.getElementById('sectionDiv');
             function showMessageDiv() {
-                messageDiv.style.display = 'block';
-                document.getElementById('block').classList.add('blur-background');
+                messageDiv.style.display = 'none';
+                document.getElementById('sectionDiv').classList.remove('blur-background');
             }
             showMessageDiv();
         });
 
-        document.getElementById('x_icon').addEventListener("click", function () {
-            const messageDiv = document.getElementById('none');
-            function showMessageDiv() {
-                messageDiv.style.display = 'none';
-                document.getElementById('block').classList.remove('blur-background');
-            }
-            showMessageDiv();
-        });
- 
     </script>
     <script src="../../assets/comments/header.js"></script>
 </body>

@@ -32,8 +32,7 @@
 
             <div>
                 <h4 class="heading_left">Bio</h4>
-                <p class="left_para" id="user_about">I am an Entrepreneur.
-                    I am a girl who loves fashion.
+                <p class="left_para" id="seller_about">
                 </p>
             </div>
             <p class="head_profile" id="skill">
@@ -62,7 +61,7 @@
         </div>
         <div class="profile_right">
             <div class="user_details">
-                <h3 class="user_name" id="user_name"></h3>
+                <h3 class="user_name" id="seller_name"></h3>
                 <span class="tooltip">
                     <a href="./sellerprofile_edit.html">
                         <img src="../../assets/images/home_page/edit_icon.png" id="edit_icon" alt="edit icon">
@@ -94,37 +93,37 @@
             <p class="right_profile">CONTACT INFORMATION</p>
             <div class="user_details">
                 <p class="content">E-mail :</p>
-                <p class="details" id="user_email"></p>
+                <p class="details" id="seller_email"></p>
             </div>
             <div class="user_details">
                 <p class="content">Address :</p>
-                <p class="details" id="user_address">
-                <p id="user_city"></p>
-                </p>
+                <p class="details" id="seller_address"></p>
+                <p id="seller_city"></p>
+            
             </div>
             <div class="user_details">
                 <p class="content">Birthday :</p>
-                <p class="details" id="user_dob"></p>
+                <p class="details" id="seller_dob"></p>
             </div>
 
             <div class="user_details">
                 <p class="content">Gender :</p>
-                <p class="details" id="user_gender"></p>
+                <p class="details" id="seller_gender"></p>
             </div>
             <div class="user_details">
                 <p class="content" id="user">Phone :</p>
-                <p class="details" id="user_no"></p>
+                <p class="details" id="seller_no"></p>
             </div>
 
             <hr class="new2">
             <p class="right_profile">PERSONAL INFORMATION</p>
             <div class="user_details">
                 <p class="content">Aadhar No :</p>
-                <p class="details" id="user_aadhar"></p>
+                <p class="details" id="seller_aadhar"></p>
             </div>
             <div class="user_details">
                 <p class="content">GSTIN :</p>
-                <p class="details" id="user_gst"></p>
+                <p class="details" id="seller_gst"></p>
             </div>
 
         </div>
@@ -136,27 +135,28 @@
         const seller_id = JSON.parse(localStorage.getItem("seller_id"));
         const seller_list = JSON.parse(localStorage.getItem("seller_list"));
         function login_data(e) {
-            return e.user_email == seller_id;
+            return e.seller_email == seller_id;
         }
 
         let user_data = seller_list.find(login_data);
 
-        document.getElementById("user_name").innerHTML = user_data.user_name;
-        document.getElementById("user_email").innerHTML = user_data.user_email;
-        document.getElementById("user_dob").innerHTML = user_data.user_dob;
-        document.getElementById("user_address").innerHTML = user_data.user_address;
-        document.getElementById("user_no").innerHTML = user_data.user_no;
-        document.getElementById("user_gender").innerHTML = user_data.user_gender;
-        document.getElementById("user_city").innerHTML = user_data.user_city;
-        document.getElementById("user_aadhar").innerHTML = user_data.user_aadhar;
-        document.getElementById("user_gst").innerHTML = user_data.user_gst;
-        document.getElementById("user_about").innerHTML = user_data.user_about;
+        document.getElementById("seller_name").innerHTML = user_data.seller_name;
+        document.getElementById("seller_email").innerHTML = user_data.seller_email;
+        document.getElementById("seller_dob").innerHTML = user_data.seller_dob;
+        document.getElementById("seller_address").innerHTML = user_data.seller_address;
+        document.getElementById("seller_no").innerHTML = user_data.seller_no;
+        document.getElementById("seller_gender").innerHTML = user_data.seller_gender;
+        document.getElementById("seller_city").innerHTML = user_data.seller_city;
+        document.getElementById("seller_aadhar").innerHTML = user_data.seller_aadhar;
+        document.getElementById("seller_gst").innerHTML = user_data.seller_gst;
+        document.getElementById("seller_about").innerHTML = user_data.seller_about;
 
-        if (user_data.user_image !== "") {
-            document.getElementById("user_image").src = user_data.user_image;
+        if (user_data.seller_image !== "") {
+            document.getElementById("seller_image").src = user_data.seller_image;
         }
 
     </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>
 </body>
 

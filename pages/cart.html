@@ -1,212 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cart page</title>
-        <link rel="stylesheet" href="../assets/css/cart.css">
-        <link rel="stylesheet" href="../assets/css/profile/header.css">
-        <link rel="stylesheet" href="../assets/css/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
-            rel="stylesheet">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart page</title>
+  <link rel="stylesheet" href="../assets/css/cart.css">
+  <link rel="stylesheet" href="../assets/css/profile/header.css">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+    rel="stylesheet">
+</head>
 
-    <body>
- 
-        <div>
-            <div class="heading_page">
-                <td>
-                    <img src="../assets/images/home_page/bag_icon.png" class="page" id="page" alt="bag icon">
-                    <img
-                        class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line"></td>
-                <td>
-                    <img src="../assets/images/home_page/truck_icon.png" class="page" id="page_2" alt="bag icon">
-                    <img
-                        class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line"></td>
-                <td>
-                    <img src="../assets/images/home_page/card_icon.png" class="page" id="page_2" alt="bag icon">
-                </td>
-            </div>
-            <div class="heading_page">
-                <small class="page_new">Your Shipping</small>
-                <small class="page_text">Delivery Address</small>
-                <small class="page_text">Payment Method</small>
-            </div>
-        </div>
+<body>
 
-        <div class="small_container">
-            <div class="contain_cart">
+  <div>
+    <div class="heading_page">
+      <td>
+        <img src="../assets/images/home_page/bag_icon.png" class="page" id="page" alt="bag icon">
+        <img class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line">
+      </td>
+      <td>
+        <img src="../assets/images/home_page/truck_icon.png" class="page" id="page_2" alt="bag icon">
+        <img class="dotted_line" src="../assets/images/home_page/dotted-line-icon.png" alt="dotted_line">
+      </td>
+      <td>
+        <img src="../assets/images/home_page/card_icon.png" class="page" id="page_2" alt="bag icon">
+      </td>
+    </div>
+    <div class="heading_page">
+      <small class="page_new">Your Shipping</small>
+      <small class="page_text">Delivery Address</small>
+      <small class="page_text">Payment Method</small>
+    </div>
+  </div>
+  <div id="cart_empty">
+    <img src="../assets/images/home_page/empty_cart.jpg" class="emptyCart" alt="Empty Cart image" />
+    <p class="cartEmpty">Your Cart is Empty !</p>
+  </div>
+  <div class="small_container" id="small_container">
+    <div class="contain_cart">
 
-            </div>
+    </div>
 
-            <div class="total_price">
-                <table>
-                    <caption></caption>
-                    <th></th>
-                    <tr class="amount">
-                        <td>Total Amount :</td>
-                        <td id="total_amount"></td>
-                    </tr>
-                </table>
-                <a href="../pages/order/order_details.html">
-                    <button type="submit" class="btn_order">Buy Now</button>
-                </a>
-            </div>
-        </div>
+    <div class="total_price">
+      <table>
+        <caption></caption>
+        <th></th>
+        <tr class="amount">
+          <td>Total Amount :</td>
+          <td id="total_amount"></td>
+        </tr>
+      </table>
 
-        <script>
-        
-        const product_crud = JSON.parse(localStorage.getItem("product_crud"));
-        const cart_list = JSON.parse(localStorage.getItem("cart_list"));
-        const user = JSON.parse(localStorage.getItem("profile_id"));
+      <button type="submit" class="btn_order" id="btn_order">Buy Now</button>
 
-        let amount = 0;
-
-        const user_cart = cart_list.filter((e) => e.userId == user);
-        console.log(user_cart);
-
-        for (const product of user_cart) {
-          const table = document.createElement("table");
-          table.classList.add("table_product");
-          const row = document.createElement("tr");
-          table.classList.add("tr_row");
-          table.append(row);
-          const col1 = document.createElement("td");
-          row.append(col1);
-
-          const cartInfo = document.createElement("div");
-          cartInfo.classList.add("cart_info");
-          col1.append(cartInfo);
-
-          const img = document.createElement("img");
-          img.src = product.image_url;
-          img.classList.add("product_1");
-          img.setAttribute("data-add", product.product_uuid);
-          img.alt = "Compat camal brown sofa";
-          cartInfo.append(img);
-
-          const h3 = document.createElement("h3");
-          h3.textContent = product.product_name;
-          cartInfo.append(h3);
-
-          //Delivery Date
-          const d = new Date();
-          d.setDate(d.getDate() + 7);
-
-          const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-          const monthIndex = d.getMonth();
-
-          const monthName = monthNames[monthIndex];
-          const day = d.getDate();
-          const year = d.getFullYear();
-
-          const formattedDate = `By ${monthName} ${day}, ${year}`;
-          const col2 = document.createElement("td");
-          col2.setAttribute("id", "user_dates");
-          col2.innerText = formattedDate;
-          row.append(col2);
-        
-          const col3 = document.createElement("td");
-          row.appendChild(col3);
-
-          const find_quantity = user_cart.find((e) => e.product_uuid === product.product_uuid);
-          console.log(find_quantity);
-
-          const input = document.createElement("input");
-          input.classList.add("quantity");
-          input.type = "number";
-          input.setAttribute("data-id", product.product_uuid);
-          input.value = find_quantity.product_quantity;
-          input.min = "1";
-          col3.appendChild(input);
-        
-          const col4 = document.createElement("td");
-          col4.innerText = `Rs.${product.product_price * find_quantity.product_quantity}`;
-          row.appendChild(col4);
-          const col5 = document.createElement("td");
-          row.appendChild(col5);
-
-          const deleteIcon = document.createElement("img");
-          deleteIcon.src = "../assets/images/home_page/delete_icon.png";
-          deleteIcon.setAttribute("data-remove", product.product_uuid);
-          deleteIcon.setAttribute("id", "icon_remove");
-          deleteIcon.classList.add("delete_icon");
-          deleteIcon.alt = "delete_icon";
-          col5.appendChild(deleteIcon);
-
-          document.querySelector("div.contain_cart").append(table);
-
-          amount += product.product_price * find_quantity.product_quantity;
-          console.log(amount);
-
-        }
-
-        document.getElementById("total_amount").innerText = `Rs.${amount}`;
-
-       //URL params for product details
-        const bookCovers = document.querySelectorAll(".product_1");
-        bookCovers.forEach((bookCover) => {
-          bookCover.addEventListener("click", (event) => {
-            const person_data = bookCover.dataset.add;
-
-            window.location.href = `./description.html?product_id=${person_data}`;
-          });
-        });
-
-        //Product Quantity
-        const product_quantity = document.querySelectorAll(".quantity");
-        product_quantity.forEach(function (add) {
-          add.addEventListener("change", function (calcus) {
-            const productId = this.dataset.id;
-            localStorage.setItem("products_id", JSON.stringify(productId));
-            console.log(productId);
-            const productid = JSON.parse(localStorage.getItem("products_id"));
-            const pdts = user_cart.find((e) => e.product_uuid === productid);
-            let ogPrice = pdts.product_price;
-            console.log(ogPrice);
-            const parent = this.closest(".table_product");
-            console.log(parent);
-            const qauntity = parseInt(parent.querySelector(".quantity").value);
-            console.log(qauntity);
-            const cartPrice = ogPrice * qauntity;
-            ogPrice = cartPrice;
-            console.log(ogPrice);
-            pdts.product_quantity = qauntity;
-            localStorage.setItem("cart_list", JSON.stringify(user_cart));
-            location.reload();
-          });
-        });
-
-        //Delete Icon for Cart page
-        const products = document.querySelectorAll("img#icon_remove");
-        products.forEach(function (check) {
-          check.addEventListener("click", function () {
-            const product_id = this.dataset.remove;
-            localStorage.setItem("products_id", JSON.stringify(product_id));
-            console.log(product_id);
-            if (confirm("Are you sure to remove this product?")) {
-             
-              const pdts = user_cart.find((e) => e.product_uuid == product_id && e.userId == user);
-              console.log(pdts);
-              const indexOfProduct = user_cart.indexOf(pdts);
-              user_cart.splice(indexOfProduct, 1);
-              console.log(indexOfProduct);
-              localStorage.setItem("cart_list", JSON.stringify(user_cart));
-            }
-            window.location.reload();
-          });
-        });
-
-    </script>
-        <script src="../assets/comments/header.js"></script>
-    </body>
+    </div>
+  </div>
+  
+  <script src="../assets/js/chatBot.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <script src="../assets/comments/header.js"></script>
+</body>
 
 </html>

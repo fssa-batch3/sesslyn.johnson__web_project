@@ -40,7 +40,6 @@
 
         localStorage.setItem("productId", JSON.stringify(unique_id.product_uuid));
 
-        //  <div class="down">
         const div_contain = document.createElement("div");
         div_contain.setAttribute("class", "container");
         console.log(div_contain);
@@ -49,19 +48,16 @@
         div_left.setAttribute("class", "left_corner");
         div_contain.append(div_left);
 
-        //<span class="real_price"></span>
         const span_round = document.createElement("span");
         span_round.setAttribute("class", "round");
         div_left.append(span_round);
 
-        //<img/>
         const img_product = document.createElement("img");
         img_product.setAttribute("alt", "heart_icon");
         img_product.setAttribute("class", "heart_icon");
         img_product.setAttribute("src", "../../assets/images/home_page/edit.png");
         span_round.append(img_product);
 
-        //<img/>
         const img_details = document.createElement("img");
         img_details.setAttribute("alt", `${unique_id.product_name} image`);
         img_details.setAttribute("class", "description_img");
@@ -77,13 +73,11 @@
         div_review.setAttribute("id", "brand");
         div_middle.append(div_review);
 
-        //<p class="price"></p>
         const p_paragraph = document.createElement("p");
         p_paragraph.setAttribute("class", "review_para");
         p_paragraph.innerHTML = "Branded by :";
         div_review.append(p_paragraph);
 
-        //<p class="price"></p>
         const p_para = document.createElement("p");
         p_para.setAttribute("class", "para_brand");
         p_para.innerHTML = unique_id.product_brand;
@@ -92,7 +86,6 @@
         const div_head = document.createElement("div");
         div_middle.append(div_head);
 
-        //<h2></h2>
         const h1_title = document.createElement("h1");
         h1_title.setAttribute("class", "product_name");
         h1_title.innerHTML = unique_id.product_name;
@@ -106,23 +99,19 @@
         h3_price.innerHTML = "Price";
         div_amount.append(h3_price);
 
-        //<p class="price"></p>
         const p_price = document.createElement("p");
         p_price.setAttribute("class", "price");
         div_amount.append(p_price);
 
-        //<span class="real_price"></span>
         const span_price = document.createElement("span");
         span_price.setAttribute("class", "current-price");
         span_price.innerHTML = `Rs. ${unique_id.product_sell}`;
         p_price.append(span_price);
 
-        //<del></del>
         const del_price = document.createElement("del");
         del_price.innerHTML = `Rs. ${unique_id.product_real}`;
         p_price.append(del_price);
 
-        //  <small> </small>
         const small_pattern = document.createElement("small");
         small_pattern.setAttribute("class", "actual-prize");
         small_pattern.innerHTML = `${unique_id.product_discount}% off`;
@@ -137,7 +126,6 @@
         h3_head.innerHTML = "Description :";
         div_description.append(h3_head);
 
-        //<p class="price"></p>
         const p_text = document.createElement("p");
         p_text.setAttribute("class", "description_para");
         p_text.innerHTML = unique_id.product_description;
@@ -148,12 +136,10 @@
         h3_warranty.innerHTML = "Warranty :";
         div_description.append(h3_warranty);
 
-        //<p class="price"></p>
         const p_warrant = document.createElement("p");
         p_warrant.innerHTML = unique_id.product_warranty;
         div_description.append(p_warrant);
 
-        //<button class="btn"></button>
         const button_primary = document.createElement("button");
         button_primary.setAttribute("class", "btn-secondary");
         button_primary.setAttribute("id", "btn-secondary");
@@ -162,7 +148,6 @@
         button_primary.innerHTML = "Edit";
         div_head.append(button_primary);
 
-        //<img/>
         const img_cart = document.createElement("img");
         img_cart.setAttribute("alt", "cart_icon");
         img_cart.setAttribute("id", "cartIcon");
@@ -181,7 +166,7 @@
           });
         });
     </script>
-
+<script src="../../assets/js/chatBot.js"></script>
         <script src="../../assets/comments/seller_header.js"></script>
     </body>
 
