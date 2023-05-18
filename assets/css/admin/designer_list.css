@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+}
+section {
+    font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
+    margin: 0px;
+}
+.h2para {
+    font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
+    margin-top: 4rem;
+    text-align: center;
+    color: #000;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+}
+.resource-box {
+    height: 277px;
+    margin: 60px;
+}
+.resource-box:hover {
+    box-shadow: 10px 8px 55px 0px rgba(0, 0, 0, 0.75);
+}
+.designers-div {
+    margin-top: -6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding-top: 0;
+    padding-left: 10rem;
+}
+.designers-portfolio {
+    padding: 20px 20px 0px 20px;
+}
+.designers-left {
+    height: auto;
+}
+.designers-right {
+    padding: 10px 0;
+    text-align: center;
+}
+.designers-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: #fff;
+    border: none;
+    margin: -2rem 2rem 0.625rem 2.5rem;
+    width: 130px;
+    height: 40px;
+    color: rgb(130, 130, 194);
+}
+#none {
+    display: none;
+}
+.center_description {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 850px;
+    height: 350px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 8px 25px 0px rgba(0, 0, 0, 0.75);
+}
+.blur-background {
+    filter: blur(28px);
+    -webkit-filter: blur(28px);
+  }
+.projectFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    margin-right: 3px;
+}
+.img-fluid {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0rem 0rem 0rem 4rem;
+}
+#x_icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    left: 800px;
+}
+.main-description {
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+
+
+
+
+
