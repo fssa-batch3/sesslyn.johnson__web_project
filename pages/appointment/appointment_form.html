@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/appointment/appointment_form.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div id="block">
+        <div class="container">
+            <div class="left">
+                <img class="appointmentImg" src="../../assets/images/home_page/appoint_1.jpg" alt="Appointment image">
+            </div>
+            <div class="formbold-main-wrapper">
+
+                <div class="formbold-form-wrapper">
+                    <form>
+                        <label class="formbold-form-label formbold-form-label-2">
+                            Personal Details
+                        </label>
+                        <div class="flex flex-wrap formbold--mx-3" id="divform">
+                            <div class="formbold-mb-5" id="nameForm">
+                                <label for="name" class="formbold-form-label"> Full Name </label>
+                                <input type="text" name="name" id="user_name" required pattern="[a-zA-Z]+"
+                                    title="Only Alphabets are allowed." placeholder="Full Name"
+                                    class="formbold-form-input" />
+                            </div>
+                            <div class="formbold-mb-5" id="emailForm">
+                                <label for="phone" class="formbold-form-label"> Phone Number </label>
+                                <input type="text" name="phone" id="user_no" required pattern="[0-9]{10}"
+                                    title="it should be 10 digit number" placeholder="Enter your phone number"
+                                    class="formbold-form-input" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap formbold--mx-3" id="divform">
+                            <div class="formbold-mb-5">
+                                <label for="email" class="formbold-form-label"> Email Address </label>
+                                <input type="email" name="email" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                                    placeholder="Enter your email" class="formbold-form-input" />
+                            </div>
+                            <div class="formbold-mb-5" id="designers_name">
+                                <label for="option" class="formbold-form-label"> Designers </label>
+                                <select name="" id="user_designers" class="form-control" required>
+                                    <option value="" disabled selected>Designers List</option>
+                                    <option value="Mr.Johnson">Mr.Johnson</option>
+                                    <option value="Mr.Sam Victor">Mr.Sam Victor</option>
+                                    <option value="Mr.Jebasteen">Mr.Jebasteen</option>
+                                    <option value="Mr.Sachin Jain">Mr.Sachin Jain</option>
+                                    <option value="Mr.Calvin Jacobs">Mr.Calvin Jacobs</option>
+                                    <option value="Mr.Kabir Rohan">Mr.Kabir Rohan</option>
+                                </select>
+                            </div>
+                            </select>
+                        </div>
+                        <div class="flex flex-wrap formbold--mx-3">
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5 w-full">
+                                    <label for="date" class="formbold-form-label"> Date </label>
+                                    <input type="date" name="date" id="user_date" required
+                                        title="Book appointment in this month" class="formbold-form-input" />
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5">
+                                    <label for="time" class="formbold-form-label"> Time </label>
+                                    <input type="time" name="time" id="user_time" required="true"
+                                        class="formbold-form-input" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Address Details
+                            </label>
+                            <div class="flex flex-wrap formbold--mx-3">
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="area" id="user_address" required
+                                            title="Only Alphabets and space is allowed" placeholder="Enter area"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="city" id="user_city" required="true"
+                                            title="Only Alphabets and space is allowed" placeholder="Enter city"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="state" id="user_state" required="true"
+                                            title="Only Alphabets and space is allowed" placeholder="Enter state"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="post-code" id="user_code"
+                                            title="It should be a 6 digit number without spaces and first digit can not be zero"
+                                            pattern="[6]{1}[0-9]{4}[1-9]{1}" maxlength="6" min="600001" max="643253"
+                                            required="true" placeholder="Post Code" class="formbold-form-input" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Room Details
+                            </label>
+                            <div class="flex radioButton">
+                                <div class="input_cash" id="cash_1">
+                                    <input type="radio" id="1_bhk" class="user_cash">
+                                    <label class="payment_label">1 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_2">
+                                    <input type="radio" id="2_bhk" class="user_cash">
+                                    <label class="payment_label">2 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_3">
+                                    <input type="radio" id="3_bhk" class="user_cash">
+                                    <label class="payment_label">3 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_4">
+                                    <input type="radio" id="3+_bhk" class="user_cash">
+                                    <label class="payment_label">3+ BHK</label>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="formbold-btn" id="appointment">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-div" id="center-div">
+        <h3>Good Job</h3>
+        <p>Your meeting is now saved.</p>
+        <img src="https://images.fineartamerica.com/images/artworkimages/medium/3/cute-cartoon-baloon-whale-red-balloon-flying-whale-designed-by-vexels-transparent.png"
+            alt="dolphin with balloon" class="imgSuccess">
+        <a href="../appointment/appointment_history.html"><button class="dashBoard">Go the the appointment
+                history</button></a>
+    </div>
+
+    <script>
+
+        var today = new Date();
+        var futureDate = new Date();
+        futureDate.setDate(today.getDate() + 30);
+        var futureDateString = futureDate.toISOString().slice(0, 10);
+        var dateInput = document.getElementById('user_date');
+        dateInput.setAttribute('min', today.toISOString().slice(0, 10));
+        dateInput.setAttribute('max', futureDateString);
+
+        var timeInput = document.getElementById('user_time');
+        timeInput.addEventListener('input', function () {
+            var selectedTime = new Date('2000-01-01T' + this.value + ':00');
+            var minTime = new Date('2000-01-01T08:00:00');
+            var maxTime = new Date('2000-01-01T20:00:00');
+            if (selectedTime < minTime || selectedTime > maxTime) {
+                timeInput.setCustomValidity('Please select a time between 8 am and 8 pm.');
+            } else {
+                timeInput.setCustomValidity('');
+            }
+        });
+
+        const oBhk = document.getElementById("1_bhk");
+        oBhk.addEventListener("change", () => {
+            if (oBhk.checked) {
+                tBhk.checked = false;
+                hBhk.checked = false;
+                fBhk.checked = false;
+                localStorage.setItem("appointRoom", "1 BHK");
+            }
+        });
+
+        const tBhk = document.getElementById("2_bhk");
+        tBhk.addEventListener("change", () => {
+            if (tBhk.checked) {
+                oBhk.checked = false;
+                hBhk.checked = false;
+                fBhk.checked = false;
+                localStorage.setItem("appointRoom", "2 BHK");
+            }
+        });
+
+        const hBhk = document.getElementById("3_bhk");
+        hBhk.addEventListener("change", () => {
+            if (hBhk.checked) {
+                tBhk.checked = false;
+                oBhk.checked = false;
+                fBhk.checked = false;
+                localStorage.setItem("appointRoom", "3 BHK");
+            }
+        });
+
+        const fBhk = document.getElementById("3+_bhk");
+        fBhk.addEventListener("change", () => {
+            if (fBhk.checked) {
+                tBhk.checked = false;
+                hBhk.checked = false;
+                oBhk.checked = false;
+                localStorage.setItem("appointRoom", "3+ BHK");
+            }
+        });
+
+        const appointRoom = localStorage.getItem("appointRoom");
+        if (appointRoom === "1 BHK") {
+            oBhk.checked = true;
+        }
+        if (appointRoom === "2 BHK") {
+            tBhk.checked = true;
+        }
+        if (appointRoom === "3 BHK") {
+            hBhk.checked = true;
+        }
+        if (appointRoom === "3+ BHK") {
+            fBhk.checked = true;
+        }
+        console.log(appointRoom)
+
+        const profile_id = JSON.parse(localStorage.getItem("profile_id"));
+        const user_crud = JSON.parse(localStorage.getItem("user_crud"));
+
+        function login_data(e) {
+            return e.user_email == profile_id;
+        }
+
+        const user_data = user_crud.find(login_data);
+
+        document.getElementById("user_name").value = user_data.user_name;
+        document.getElementById("user_email").value = user_data.user_email;
+        document.getElementById("user_address").value = user_data.user_address;
+        document.getElementById("user_no").value = user_data.user_no;
+        document.getElementById("user_city").value = user_data.user_city;
+        document.getElementById("user_state").value = user_data.user_state;
+
+        //Update Details
+        document.getElementById("appointment").addEventListener("click", function () {
+            event.preventDefault();
+            const appointRoom = localStorage.getItem("appointRoom");
+            const user_name = document.getElementById("user_name").value;
+            const user_email = document.getElementById("user_email").value;
+            const user_no = document.getElementById("user_no").value;
+            const user_date = document.getElementById("user_date").value;
+            const user_time = document.getElementById("user_time").value;
+            const user_designers = document.getElementById("user_designers").value;
+            const user_address = document
+                .getElementById("user_address")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const user_city = document
+                .getElementById("user_city")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const user_state = document
+                .getElementById("user_state")
+                .value.trim()
+                .split(/\s+/g)
+                .join(" ");
+            const user_code = document.getElementById("user_code").value;
+
+            user_data.user_name = user_name;
+            user_data.user_email = user_email;
+            user_data.user_no = user_no;
+            user_data.user_date = user_date;
+            user_data.user_time = user_time;
+            user_data.user_address = user_address;
+            user_data.user_city = user_city;
+            user_data.user_state = user_state;
+            user_data.user_code = user_code;
+
+
+            if (user_name === "" || user_email === "" || user_date === "" || user_time === "" || user_address === "" || user_city === "" || user_state === "" || user_designers === "") {
+                alert("Please fill in all the required fields.");
+                reset();
+            }
+
+            //Validate
+            function validate() {
+                if (
+                    /^\s*$/g.test(user_address) ||
+                    /^\s*$/g.test(user_city) ||
+                    /^\s*$/g.test(user_state)
+                ) {
+                    alert("Write your information properly");
+                    reset();
+                }
+            }
+            validate();
+
+            //Phone Number
+            function check_phonenumber() {
+                let result = 0;
+                for (const digit of user_no) {
+                    if (user_no[0] == digit) {
+                        result += 1;
+                    } else {
+                        break;
+                    }
+                }
+                if (result == 10) {
+                    alert("Enter your number properly");
+                    user_no.value = reset();
+                }
+            }
+            check_phonenumber();
+
+            //code
+            function check_code() {
+                let result = 0;
+                for (const digit of user_code) {
+                    if (user_code[0] == digit) {
+                        result += 1;
+                    } else {
+                        break;
+                    }
+                }
+                if (result == 6) {
+                    alert("Enter your Pincode properly");
+                    user_code.value = reset();
+                }
+            }
+            check_code();
+
+            //radio button
+            if (!document.querySelector('input[type="radio"]:checked')) {
+                alert("Please select a room size!");
+            }
+
+            const appointDetails = JSON.parse(localStorage.getItem("appointDetails")) || [];
+            const exist =
+                appointDetails.length &&
+                JSON.parse(localStorage.getItem("appointDetails")).some(
+                    (data) =>
+                        data.user_email == user_email &&
+                        data.user_date == user_date &&
+                        data.user_time == user_time
+                );
+            if (exist) {
+                alert("Already you have an appoint on the day");
+                document.querySelector("form").reset();
+            } else {
+                const appoint_id = uuidv4();
+                appointDetails.push({
+                    user_name,
+                    user_email,
+                    user_no,
+                    user_city,
+                    user_address,
+                    user_state,
+                    user_date,
+                    user_time,
+                    user_code,
+                    user_designers,
+                    appoint_id,
+                    "room_size": appointRoom,
+                });
+                localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
+                // location.href = "../homepage.html";
+                alert("Appointment booked successfully");
+
+                const btnOrder = document.getElementById('appointment');
+                const messageDiv = document.getElementById('center-div');
+                function showMessageDiv() {
+                    messageDiv.style.display = 'block';
+                    document.getElementById('block').classList.add('blur-background');
+                }
+                showMessageDiv();
+            }
+        });
+
+
+
+
+
+
+    </script>
+    <script src="../../assets/comments/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</body>
+
+</html>

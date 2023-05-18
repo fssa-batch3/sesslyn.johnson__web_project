@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/order/order_details.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="addressContainer">
+
+
+    </div>
+    <div id="cart_empty">
+        <img src="../../assets/images/home_page/history.jpg" class="emptyCart" alt="Empty Cart image" />
+        <p class="cartEmpty">You haven't booked a meeting yet !</p>
+    </div>
+    <script>
+
+        let appointDetails = JSON.parse(localStorage.getItem("appointDetails")) || [];
+        let profileId = JSON.parse(localStorage.getItem("profile_id"));
+        let appointmentUser = appointDetails.filter(e => e.user_email == profileId);
+        console.log(appointmentUser)
+
+        const emptyCart = document.getElementById('cart_empty');
+        const cartFull = document.getElementById('addressContainer');
+
+        function showMessageDiv() {
+            emptyCart.style.display = 'block';
+            cartFull.style.display = 'none';
+        }
+
+        if (appointmentUser.length === 0) {
+            showMessageDiv();
+        }
+
+        let productCount = 0;
+        for (const appointment of appointmentUser) {
+            productCount++;
+
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('addressInfo');
+
+            const table = document.createElement('table');
+            table.classList.add('table_appoint');
+            newDiv.appendChild(table);
+
+            const tbody = document.createElement('tbody');
+            table.appendChild(tbody);
+
+            const tr = document.createElement('tr');
+            tr.classList.add('tr_row');
+            tbody.appendChild(tr);
+
+            const td1 = document.createElement('td');
+            tr.appendChild(td1);
+
+            const p1 = document.createElement('p');
+            p1.setAttribute('class', 'paraText')
+            p1.innerText = productCount;
+            td1.appendChild(p1);
+
+            const td2 = document.createElement('td');
+            tr.appendChild(td2);
+
+            const h3 = document.createElement('h3');
+            h3.innerText = appointment['user_name'];
+            td2.appendChild(h3);
+
+            const p2 = document.createElement('p');
+            p2.innerText = 'Date: ' + appointment['user_date'] + ', Time: ' + appointment['user_time'];
+            td2.appendChild(p2);
+
+            const p3 = document.createElement('p');
+            p3.innerText = appointment['user_address'] + ' ' + appointment['user_city'] + ', ' + appointment['user_state'] + ' - ' + appointment['user_code'] + '. ' + 'Contact' + ': ' + appointment['user_no'];
+            td2.appendChild(p3);
+
+            const span = document.createElement('span');
+            span.classList.add('tooltip');
+            newDiv.appendChild(span);
+
+            const img = document.createElement('img');
+            img.src = '../../assets/images/home_page/edit_icon.png';
+            img.setAttribute('data-id', appointment.appoint_id);
+            img.alt = 'edit icon';
+            img.id = 'edit_icon';
+            span.appendChild(img);
+
+            const p = document.createElement('p');
+            p.classList.add('tooltiptext');
+            p.textContent = 'Edit';
+            span.appendChild(p);
+
+            document.querySelector('div.addressContainer').append(newDiv);
+        }
+
+
+        const bookCovers = document.querySelectorAll("#edit_icon");
+        bookCovers.forEach((bookCover) => {
+            bookCover.addEventListener("click", (event) => {
+                const person_data = bookCover.dataset.id;
+                window.location.href = `./editAppointForm.html?editAppoint=${person_data}`;
+            });
+        });
+
+    </script>
+    <script src="../../assets/js/chatBot.js"></script>
+    <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>
