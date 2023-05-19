@@ -431,27 +431,27 @@ if (!designersInfo) {
     "designersInfo",
     JSON.stringify([
       {
-        name: "Mr.Johnson", profession: "Interior Designer", project: 50, team: 6, education: "BA in Interior Architecture and Design", designersId: "c36e1f3e-7e1c-4b78-9ae7-739d1ac2f6a2",
+        firstname: "Johnson", lastname:"Jeyakumar",profession: "Interior Designer", project: 50, team: 6, education: "BA in Interior Architecture and Design", designersId: "c36e1f3e-7e1c-4b78-9ae7-739d1ac2f6a2",
         image: "https://iili.io/HUO2BPR.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 50 projects all over India."
       },
       {
-        name: "Mr.Sam Victor", profession: "Fashion designer", project: 20, team: 2, education: "Bachelor of Interior Design", designersId: "92647d62-364e-4b42-aa0a-d67c6cf65fa5",
+        firstname: "Sam", lastname: "Victor", profession: "Fashion designer", project: 20, team: 2, education: "Bachelor of Interior Design", designersId: "92647d62-364e-4b42-aa0a-d67c6cf65fa5",
         image: "https://iili.io/HUO2yWG.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 20 projects all over India."
       },
       {
-        name: "Mr.Jebasteen", profession: "Lighting Expert", project: 35, team: 4, education: "B.Sc in Interior Designer.", designersId: "e15c48c6-8e3f-4c43-b8d2-3aef6741c9f1",
+        firstname: "Jebasteen", lastname:"Rajan", profession: "Lighting Expert", project: 35, team: 4, education: "B.Sc in Interior Designer.", designersId: "e15c48c6-8e3f-4c43-b8d2-3aef6741c9f1",
         image: "https://iili.io/HUeYmdB.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 35 projects all over India."
       },
       {
-        name: "Mr.Sachin Jain", profession: "Consultant", project: 40, team: 3, education: "M.SC in Design Space", designersId: "f4809c6a-fa16-4c90-a7dd-ef92690648f3",
+        firstname: "Sachin" , lastname:"Jain", profession: "Consultant", project: 40, team: 3, education: "M.SC in Design Space", designersId: "f4809c6a-fa16-4c90-a7dd-ef92690648f3",
         image: "https://iili.io/HUO2BPR.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 40 projects all over India."
       },
       {
-        name: "Mr.Calvin Jacobs", profession: "Landscape Architect", project: 54, team: 4, education: "BE in Architecture Engineering", designersId: "7e22d8ad-9324-4b5b-a1f9-7e48a8161b02",
+        firstname: "Calvin", lastname:"Jacobs", profession: "Landscape Architect", project: 54, team: 4, education: "BE in Architecture Engineering", designersId: "7e22d8ad-9324-4b5b-a1f9-7e48a8161b02",
         image: "https://iili.io/HUO2yWG.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 54 projects all over India."
       },
       {
-        name: "Mr.Kabir Rohan", profession: "Design Executive", project: 32, team: 5, education: "B.Des Interior Design", designersId: "542de8c8-5d3d-4a7a-9309-89c8c0e7a0bc",
+        firstname: "Kabir", lastname:"Rohan", profession: "Design Executive", project: 32, team: 5, education: "B.Des Interior Design", designersId: "542de8c8-5d3d-4a7a-9309-89c8c0e7a0bc",
         image: "https://iili.io/HUeYmdB.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 32 projects all over India."
       }
     ])

@@ -1,15 +1,3 @@
-body {
-	margin: 0px;
-	padding: 0px;
-	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-	overflow-x: hidden;
-	cursor: pointer;
-}
-
-.inner button a {
-	font-size: 1.2rem;
-}
-
 .family-div {
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -17,9 +5,11 @@ body {
 	height: 80vh;
 	background-color: white;
 	margin-top: 0.5rem;
-
+	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
-
+.minimalPara{
+	margin-top:-6rem;
+}
 .family-div div:nth-child(1) {
 	display: flex;
 	flex-direction: row;
@@ -27,7 +17,7 @@ body {
 	justify-content: center;
 	align-content: center;
 	text-align: center;
-	padding-left: 60px;
+	padding-left: 50px;
 	padding-right: 20px;
 	font-size: 20px;
 	color: rgb(16, 15, 15);
@@ -36,32 +26,20 @@ body {
 .family-div div:nth-child(2) {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: center;
-	text-align: center;
-	padding-left: 20px;
-	padding-right: 20px;
 	font-size: 20px;
 }
 
-.family-img {
-	height: 30rem;
-	width: 32rem;
-	margin-top: -4rem;
-	/* box-shadow: 12px 12px 34px -1px rgba(0, 0, 0, 0.75); */
-}
 
 .family-div div:nth-child(1) h3 {
 	font-family: "brandon-grotesque", serif;
 	font-weight: 500;
 	font-style: normal;
 	font-size: 3rem;
-	padding: 1rem 1rem 1rem 1rem;
-	margin: 0rem 0rem 2rem 0rem;
+	padding: 0rem 1rem 1rem 1rem;
+	margin: -3rem 0rem 2rem 0rem;
 }
 
-.family-div div:nth-child(1) p {
+.paraMini{
 	margin-top: -2rem;
 	padding-top: 0rem;
 	text-align: center;
@@ -119,7 +97,153 @@ body {
 	opacity: 0;
 }
 
+.carousel {
+   overflow: hidden;
+  font-family: 'Roboto', serif;
+  background: linear-gradient(135deg, white, #fff);
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width:100%;
+  overflow: hidden;
+  pointer-events: none;
+}
 
+.carousel-item {
+  --items: 10;
+  --width: clamp(300px, 40vw,  300px);
+  --height: clamp(300px, 40vw,  400px);
+  --x: calc(var(--active) * 800%);
+  --y: calc(var(--active) * 200%);
+  --rot: calc(var(--active) * 120deg);
+  --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+  overflow: hidden;
+  position: absolute;
+  z-index: var(--zIndex);
+  width: var(--width);
+  height: var(--height);
+  margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+  border-radius: 10px;
+  top: 50%;
+  
+  user-select: none;
+  transform-origin: 0% 100%;
+  box-shadow: 0 10px 50px 10px rgba(0, 0, 0, .5);
+  background: black;
+  pointer-events: all;
+  transform:  translate(var(--x), var(--y)) rotate(var(--rot)) ;
+  transition: transform .8s cubic-bezier(0, 0.02, 0, 1);
+
+  .carousel-box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+    opacity: var(--opacity);
+    font-family: 'Orelo-sw-db', serif;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .title {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    bottom: 20px;
+    left: 20px;
+    transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+    font-size: clamp(20px, 3vw, 30px);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+  }
+
+  .num {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    top: 10px;
+    left: 20px;
+    transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+    font-size: clamp(20px, 10vw, 80px);
+  }
+
+}
+.carousel-box img{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.layout {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 90px;
+    width: 10px;
+    height: 100%;
+    border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none;
+    opacity: .15;
+  }
+
+  .box {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    color: #fff;
+    transform-origin: 0% 10%;
+    transform: rotate(-90deg);
+    font-size: 9px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    opacity: .4;
+  }
+}
+.cursor {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+  transition: transform .85s cubic-bezier(0, 0.02, 0, 1);
+  display: none;
+  pointer-events: none;
+  
+  @media (pointer: fine) {
+    display: block;
+  }
+}
+
+.cursor2 {
+  --size: 2px;
+  transition-duration: .7s;
+}
 div.container {
 	width: 62.5rem;
 	border-radius: 0.5rem;
@@ -136,7 +260,8 @@ div.container {
 	color: #222222;
 	font-size: 1.5rem;
 	text-align: center;
-	margin: 3.75rem 0rem;
+	margin-top: 3.75rem;
+	margin-right:12rem;
 	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -414,3 +539,4 @@ img.bedroom {
 .minimalPara {
 	margin-bottom: -1rem;
 }
+ 

@@ -20,7 +20,7 @@ const beforeLogin = `
         <span class="header"><a href="${rootPath}/pages/appointment/appointment_history.html">
             <p class="header_para">SCHEDULE</p>
         </a></span>
-        <span class="header"><a href="${rootPath}/pages/appointment/designers.html">
+        <span class="header"><a href="${rootPath}/pages/admin/designer_form.html">
            <p class="header_para">DESIGNERS</p>
         </a></span>
     </div>
@@ -52,7 +52,7 @@ const AfterLogin = `
                 <span class="header"><a href="${rootPath}/pages/appointment/appointment_history.html">
                     <p class="header_para">SCHEDULE</p>
                 </a></span>
-                <span class="header"><a href="${rootPath}/pages/appointment/designers.html">
+                <span class="header"><a href="${rootPath}/pages/admin/designer_form.html">
                      <p class="header_para">DESIGNERS</p>
                 </a></span>
             </div>
