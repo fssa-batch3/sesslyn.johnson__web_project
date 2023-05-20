@@ -133,7 +133,7 @@
             </div>
 
         </div>
-       
+
         </div>
 
         <button class="delete" id="delete" type="submit">Delete</button>
@@ -144,31 +144,26 @@
     </main>
 
     <script>
+    
+        const user_dates = document.getElementById("user_dates");
 
-        // Delivery Date
         const d = new Date();
         d.setDate(d.getDate() + 7);
+        const formattedDate = d.toISOString().slice(0, 10);
+        user_dates.value = formattedDate;
+        console.log(formattedDate);
 
-        const year = d.getFullYear();
-        const month = `0${d.getMonth() + 1}`.slice(-2);
-        const day = `0${d.getDate()}`.slice(-2);
+        const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const product_id = urlParams.get("edit_address");
 
-        const formattedDate = `${year}-${month}-${day}`;
+let addressList = JSON.parse(localStorage.getItem("addressList"));
+let profileId = JSON.parse(localStorage.getItem("profile_id"));
+let foundUserAddress = addressList.filter((e) => e.user_email === profileId);
+let unique_id = foundUserAddress.find((e) => e.address_id === product_id);
+console.log(unique_id);
 
-        document.querySelector("#user_dates").value = formattedDate;
-        console.log(formattedDate)
 
-        //URL Params
-        const urlParams = new URLSearchParams(window.location.search);
-        const edit_address = urlParams.get("edit_address");
-        console.log(edit_address);
-
-        let addressList = JSON.parse(localStorage.getItem("addressList"));
-        let profileId = JSON.parse(localStorage.getItem("profile_id"));
-        let foundUserAddress = addressList.filter((e) => e.user_email === profileId);
-        let unique_id = foundUserAddress.find((e) => e.address_id === edit_address);
-        console.log(unique_id)
-        
         document.getElementById("user_name").value = unique_id.user_name;
         document.getElementById("user_no").value = unique_id.user_no;
         document.getElementById("user_email").value = unique_id.user_email;
@@ -180,19 +175,20 @@
         document.getElementById("user_code").value = unique_id.user_code;
         document.getElementById("user_notes").value = unique_id.user_notes;
 
-        document.querySelector("button.btn_order").addEventListener("click", function () {
+        const btn_order = document.querySelector("button.btn_order");
+        btn_order.addEventListener("click", function (event) {
             event.preventDefault();
-           
-            let user_name = document.getElementById("user_name").value;
-            let user_no = document.getElementById("user_no").value;
-            let user_email = document.getElementById("user_email").value;
-            let user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(" ");
-            let user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(" ");
-            let user_country = document.getElementById("user_country").value.trim().split(/\s+/g).join(" ");
-            let user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
-            let user_notes = document.getElementById("user_notes").value.trim().split(/\s+/g).join(" ");
-            let user_dates = document.getElementById("user_dates").value;
-            let user_code = document.getElementById("user_code").value;
+
+            const user_name = document.getElementById("user_name").value;
+            const user_no = document.getElementById("user_no").value;
+            const user_email = document.getElementById("user_email").value;
+            const user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(" ");
+            const user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(" ");
+            const user_country = document.getElementById("user_country").value.trim().split(/\s+/g).join(" ");
+            const user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
+            const user_notes = document.getElementById("user_notes").value.trim().split(/\s+/g).join(" ");
+            const user_dates = document.getElementById("user_dates").value;
+            const user_code = document.getElementById("user_code").value;
 
             unique_id.user_name = user_name;
             unique_id.user_no = user_no;
@@ -211,44 +207,46 @@
                 return false;
             }
 
-            //Phone Number
+            // Phone Number
             function check_phonenumber() {
-                let result = 0;
-                for (const digit of user_no) {
-                    if (user_no[0] == digit) {
-                        result += 1;
-                    } else {
-                        break;
-                    }
-                }
-                if (result == 10) {
+                if (user_no.length !== 10) {
                     alert("Enter your number properly");
-                    user_no.value = reset();
+                    user_no.value = "";
+                    return;
                 }
             }
             check_phonenumber();
 
-            //code
+            // Code
             function check_code() {
-                let result = 0;
-                for (const digit of user_code) {
-                    if (user_code[0] == digit) {
-                        result += 1;
-                    } else {
-                        break;
-                    }
-                }
-                if (result == 6) {
+                if (user_code.length !== 6) {
                     alert("Enter your Pincode properly");
-                    user_code.value = reset();
+                    user_code.value = "";
+                    return;
                 }
             }
             check_code();
 
             localStorage.setItem("addressList", JSON.stringify(addressList));
             alert("Address updated successfully");
-            window.location.reload();
+            history.back();
         });
+
+        const del_product = document.querySelector("button.delete");
+        del_product.addEventListener("click", delData);
+
+        function delData() {
+            if (confirm("Are you sure?")) {
+                const profile_id = JSON.parse(localStorage.getItem("profile_id"));
+                const addressList = JSON.parse(localStorage.getItem("addressList"));
+                const product_data = addressList.find((e) => e.address_id == profile_id);
+                const indexOfUser = addressList.indexOf(product_data);
+
+                addressList.splice(indexOfUser, 1);
+                localStorage.setItem("addressList", JSON.stringify(addressList));
+                history.back();
+            }
+        }
 
     </script>
     <script src="../../assets/js/chatBot.js"></script>

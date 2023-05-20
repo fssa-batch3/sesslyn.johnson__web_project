@@ -26,8 +26,7 @@
     <div class="top">
         <div class="left_corner">
             <div class="top_container">
-                <img src="https://iili.io/Hgd1gJ2.png" class="profile_image" id="profile_image"
-                    alt="profile image">
+                <img src="#" class="profile_image" id="profile_image" alt="profile image">
                 <div class="crown">
                     <img src="https://iili.io/HgdMOWF.png" class="crown_icon" alt="crown image">
                     <p class="crown_text">Learner</p>
@@ -56,7 +55,7 @@
 
         </div>
 
-      
+
         <div class="right_corner">
             <div class="top_container">
                 <h2>Edit Profile</h2>
@@ -87,7 +86,8 @@
 
                             <div class="form_details" id="usercity_dob">
                                 <label class="mobile_no">D.O.B</label>
-                                <input type="date" class="name" max="2015-12-31" required="true" id="seller_dob" placeholder="Chennai">
+                                <input type="date" class="name" max="2015-12-31" required="true" id="seller_dob"
+                                    placeholder="Chennai">
                             </div>
                         </div>
 
@@ -143,8 +143,8 @@
 
                             <div class="form_details" id="country_no">
                                 <label class="country_no">Image</label>
-                                <input type="text" class="name" id="seller_image" title="https://.*" pattern="https://.*"
-                                    placeholder="https://">
+                                <input type="text" class="name" id="seller_image" title="https://.*"
+                                    pattern="https://.*" placeholder="https://">
                             </div>
 
                         </div>
@@ -182,9 +182,14 @@
 
         //Image
         const image_element = document.getElementById("profile_image");
-        image_element.setAttribute("src", user_data.seller_image);
 
-      
+        if (user_data.seller_image === "") {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        } else if (user_data.seller_image !== "") {
+            image_element.setAttribute("src", user_data.seller_image);
+        } else {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        }
 
         //Update seller details
         function update_details(e) {
@@ -234,7 +239,7 @@
                 if (result == 10) {
                     alert("Enter your number properly");
                     up_no.value = reset();
-                } 
+                }
             }
             check_phonenumber();
 

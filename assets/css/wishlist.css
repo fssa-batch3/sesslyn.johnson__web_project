@@ -6,7 +6,9 @@ body {
     overflow-y: hidden;
     cursor: pointer;
 }
-
+.wish_product{
+    display:block;
+}
 .top {
     display: flex;
     flex-direction: row;
@@ -186,4 +188,21 @@ body {
     height: 40px;
     width: 40px;
     margin: 0.2rem 0rem 0rem 0.2rem;
+}
+
+.emptyCart {
+	width: 40rem;
+	height: 30rem;
+	margin: 0rem 0rem 0rem 10rem;
+}
+
+#cart_empty {
+	display: none;
+}
+
+p.cartEmpty {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	letter-spacing: 0.1rem;
 }

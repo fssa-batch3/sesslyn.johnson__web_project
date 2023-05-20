@@ -175,6 +175,8 @@ del {
     background: rgb(232, 182, 16);
     background: linear-gradient(270deg, rgba(232, 189, 31, 0.873) 0%, rgba(232, 189, 31, 0.873) 60%);
     color: rgb(4, 4, 38);
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 .btn_cart img {
@@ -208,10 +210,6 @@ del {
     color: white;
 }
 
-.btn_cart:hover {
-    transform: scale(1.1);
-    transition: 1s;
-}
 
 #btn_buy {
     margin-left: 1.9rem;

@@ -3,7 +3,6 @@ const cart_list = JSON.parse(localStorage.getItem("cart_list")) || [];
 const user = JSON.parse(localStorage.getItem("profile_id"));
 
 
-
 const user_cart = cart_list.filter((e) => e.userId == user);
 console.log(user_cart);
 
@@ -45,7 +44,6 @@ for (const product of user_cart) {
   const h3 = document.createElement("h3");
   h3.textContent = product.product_name;
   cartInfo.append(h3);
-
 
   //Delivery Date
   const d = new Date();
@@ -97,8 +95,8 @@ for (const product of user_cart) {
   amount += product.product_price * find_quantity.product_quantity;
   console.log(amount);
 
-}
 
+}
 
 document.getElementById("total_amount").innerText = `Rs.${amount}`;
 

@@ -119,6 +119,9 @@ p.user-title {
     height: 1rem;
     padding-right: 0.5rem;
 }
+p#user_dob {
+    margin-top: 0rem;
+}
 
 .button_navigate button:hover {
     transform: scale(1.1);
@@ -217,9 +220,6 @@ p#seller_city {
     display: block;
 }
 
-p#user_dob {
-    margin-top: 0rem;
-}
 
 .plus_icon {
     width: 20px;
@@ -284,10 +284,6 @@ h4 {
     margin-top: 0.2rem;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
 
 .setDefault {
     margin: 0.5rem 0rem 0.5rem 2rem;

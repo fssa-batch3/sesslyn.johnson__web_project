@@ -1,8 +1,8 @@
 (function (Q, R) {
     if (Q.qr) return;
-    var u = 'https://webview.quickreply.ai/whatsapp/script.min.js';
-    var h = R.head || R.documentElement;
-    var e = R.createElement('script');
+    let u = 'https://webview.quickreply.ai/whatsapp/script.min.js';
+    let h = R.head || R.documentElement;
+    let e = R.createElement('script');
     e.type = 'text/javascript';
     e.async = true;
     e.src = u;

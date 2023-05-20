@@ -1,8 +1,6 @@
 //DOM of wishlist
-let wish_list = JSON.parse(localStorage.getItem("wish_list"));
-if (!wish_list) {
-  wish_list = [];
-}
+let wish_list = JSON.parse(localStorage.getItem("wish_list"))||[];
+ 
 const profile_id = JSON.parse(localStorage.getItem("profile_id"));
 const user_crud = JSON.parse(localStorage.getItem("user_crud"));
 
@@ -16,6 +14,19 @@ if (prod_data.user_image !== "") {
 }
 
 const product_crud = JSON.parse(localStorage.getItem("product_crud"));
+
+const emptyCart = document.getElementById('cart_empty');
+const cartFull = document.getElementById('wish_product');
+const user_wish = wish_list.filter((e) => e.user_id == profile_id);
+console.log(user_wish);
+function showMessageDiv() {
+  emptyCart.style.display = 'block';
+  cartFull.style.display = 'none';
+}
+
+if (user_wish.length === 0) {
+  showMessageDiv();
+}
 
 for (const wish of wish_list) {
   if (wish.user_id === profile_id) {

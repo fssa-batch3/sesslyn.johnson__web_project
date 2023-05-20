@@ -25,10 +25,28 @@
   <div class="contain">
 
   </div>
-  <script>        
-    
+  <div id="cart_empty">
+    <img src="https://iili.io/HgMZb19.png" class="emptyCart" alt="Empty Cart image" />
+    <p class="cartEmpty">You still haven't added any products!</p>
+  </div>
+  <script>
+
     const product_upload = JSON.parse(localStorage.getItem("product_crud"));
     const seller = JSON.parse(localStorage.getItem("seller_id"));
+
+    const emptyCart = document.getElementById('cart_empty');
+    const cartFull = document.getElementById('contain');
+    let product_seller = product_upload.filter((p) => p.sellerId === seller);
+    console.log(product_seller);
+
+    function showMessageDiv() {
+      emptyCart.style.display = 'block';
+      cartFull.style.display = 'none';
+    }
+
+    if (product_seller.length === 0) {
+      showMessageDiv();
+    }
 
     //  <div class="down">
     const div_top = document.createElement("div");
@@ -44,8 +62,7 @@
           const div_container = document.createElement("div");
           div_container.setAttribute("class", "container");
           div_container.setAttribute(
-            "data-id",
-            productDetails_list["product_uuid"]
+            "data-id", productDetails_list["product_uuid"]
           );
           div_top.append(div_container);
 
@@ -101,7 +118,7 @@
     }
     document.querySelector("div.contain").append(div_top);
 
-    //Add the products to user side
+
     const add = document.querySelectorAll("button.button_add");
     add.forEach(function (findId) {
       findId.addEventListener("click", function () {
@@ -120,33 +137,33 @@
       });
     });
 
-   //Remove  the products from the user side
+
+    //Remove  the products from the user side
     const remove = document.querySelectorAll("button.button_remove");
     remove.forEach(function (findId) {
       findId.addEventListener("click", function () {
-        let parentBox = this.closest(".container");
-        let id = parentBox.querySelector(".button_remove").getAttribute("data-uuid");
-        let delete_ids = JSON.parse(localStorage.getItem("added_products")) || [];
-        let exist = delete_ids.length &&
-          JSON.parse(localStorage.getItem("added_products")).some(
-            (data) => data.product_uuid == id
-          );
+        const removeId = this.dataset.uuid; // Removed destructuring, no need for curly braces
+        let added_products = JSON.parse(localStorage.getItem("added_products")) || [];
+        let exist = added_products.length &&
+          added_products.some((data) => data.product_uuid === removeId); // Simplified the code
         if (exist) {
           alert("This product is removed from the page");
           let uuid = JSON.parse(localStorage.getItem("added_products"));
           function find_data(e) {
-            return e === id;
+            return e.product_uuid === removeId; // Fixed the comparison
           }
-          const remove_id = uuid.find(find_data);
-          console.log(remove_id);
-          const indexOfUser = uuid.indexOf(remove_id);
-          uuid.splice(indexOfUser, 1);
-          localStorage.setItem("added_products", JSON.stringify(uuid));
+          const remove_index = uuid.findIndex(find_data); // Changed to findIndex to get the index
+          console.log(remove_index);
+          if (remove_index !== -1) {
+            uuid.splice(remove_index, 1); // Removed unnecessary variable indexOfUser
+            localStorage.setItem("added_products", JSON.stringify(uuid));
+          }
         } else {
           alert("This product is not added yet!");
         }
       });
     });
+
 
   </script>
   <script src="../../assets/js/chatBot.js"></script>

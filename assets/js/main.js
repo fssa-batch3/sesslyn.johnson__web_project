@@ -15,7 +15,7 @@ if (!product_crud) {
         product_sell: 22500,
         product_uuid: "1197836f-70e3-4ddb-b95d-d2be9cdc9d05",
         product_warranty: "3 year on site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -29,7 +29,7 @@ if (!product_crud) {
         product_sell: 22400,
         product_uuid: "3de2af59-cced-4849-94e1-df3d4b91b907",
         product_warranty: "2 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -43,7 +43,7 @@ if (!product_crud) {
         product_sell: 17100,
         product_uuid: "131bf114-6cd9-4e44-a395-64c2a7fab318",
         product_warranty: "4 years on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -57,7 +57,7 @@ if (!product_crud) {
         product_sell: 12750,
         product_uuid: "8a4cb8b7-d21d-48a0-bcce-d7fa1adb2ebf",
         product_warranty: "2 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -71,7 +71,7 @@ if (!product_crud) {
         product_sell: 11480,
         product_uuid: "550e8400-e29b-41d4-a716-446655440000",
         product_warranty: "2 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -85,7 +85,7 @@ if (!product_crud) {
         product_sell: 10560,
         product_uuid: "123e4567-e89b-12d3-a456-426655440000",
         product_warranty: "4 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -99,7 +99,7 @@ if (!product_crud) {
         product_sell: 26250,
         product_uuid: "5aef0124-9664-4f2a-b4f2-59449a3f2d37",
         product_warranty: "5 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -113,7 +113,7 @@ if (!product_crud) {
         product_sell: 26250,
         product_uuid: "4762bbfc-8882-4458-952c-95bb0251f8ab",
         product_warranty: "3 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -127,7 +127,7 @@ if (!product_crud) {
         product_sell: 21250,
         product_uuid: "e2b5a16e-21cb-4093-b7ec-bbf29154000b",
         product_warranty: "4 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -141,7 +141,7 @@ if (!product_crud) {
         product_sell: 18000,
         product_uuid: "e0f97bfe-e861-4efc-ac26-5205852540d1",
         product_warranty: "3 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -155,7 +155,7 @@ if (!product_crud) {
         product_sell: 19600,
         product_uuid: "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
         product_warranty: "4 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -169,7 +169,7 @@ if (!product_crud) {
         product_sell: 20000,
         product_uuid: "5a6f0c3d-b4d4-4c21-9bf4-c069d78517c8",
         product_warranty: "3 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -183,7 +183,7 @@ if (!product_crud) {
         product_sell: 16000,
         product_uuid: "d3572eed-e216-419a-909d-5a7dbf5950b5",
         product_warranty: "5 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -197,7 +197,7 @@ if (!product_crud) {
         product_sell: 16000,
         product_uuid: "38b9c9dc-ec16-41d2-8e87-09e69bcf2c7e",
         product_warranty: "5 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -211,7 +211,7 @@ if (!product_crud) {
         product_sell: 9600,
         product_uuid: "2d7c9e62-34f7-4c12-a8f7-6f41a6b0c325",
         product_warranty: "3 year on site ",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -225,7 +225,7 @@ if (!product_crud) {
         product_sell: 4920,
         product_uuid: "ebd9f9cc-7e11-4521-8b8d-f34f43b7aeb4",
         product_warranty: "1 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -239,7 +239,7 @@ if (!product_crud) {
         product_sell: 4800,
         product_uuid: "d8f9d9b7-efb2-4557-b929-0c2f7bc2efb3",
         product_warranty: "1 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       },
 
       {
@@ -253,7 +253,7 @@ if (!product_crud) {
         product_sell: 5700,
         product_uuid: "ac49cacb-1804-4cfb-aa1b-9d64c8ba351e",
         product_warranty: "2 year on-site",
-        sellerId: "admin",
+        sellerId: "admin@gmail.com",
       }
 
     ])
@@ -266,27 +266,24 @@ if (!added_products) {
   localStorage.setItem(
     "added_products",
     JSON.stringify([
+      { product_uuid: "2d7c9e62-34f7-4c12-a8f7-6f41a6b0c325" },
+      { product_uuid: "d8f9d9b7-efb2-4557-b929-0c2f7bc2efb3" },
+      { product_uuid: "ebd9f9cc-7e11-4521-8b8d-f34f43b7aeb4" },
+      { product_uuid: "ac49cacb-1804-4cfb-aa1b-9d64c8ba351e" },
       { product_uuid: "1197836f-70e3-4ddb-b95d-d2be9cdc9d05" },
       { product_uuid: "3de2af59-cced-4849-94e1-df3d4b91b907" },
       { product_uuid: "131bf114-6cd9-4e44-a395-64c2a7fab318" },
       { product_uuid: "8a4cb8b7-d21d-48a0-bcce-d7fa1adb2ebf" },
       { product_uuid: "5aef0124-9664-4f2a-b4f2-59449a3f2d37" },
-      { product_uuid: "e0f97bfe-e861-4efc-ac26-5205852540d1" },
-      { product_uuid: "d3572eed-e216-419a-909d-5a7dbf5950b5" },
-      { product_uuid: "ac49cacb-1804-4cfb-aa1b-9d64c8ba351e" },
-      { product_uuid: "31afeeb6-663c-42e9-9e16-c6c78ea0feaf" },
+      { product_uuid: "123e4567-e89b-12d3-a456-426655440000" },
+      { product_uuid: "550e8400-e29b-41d4-a716-446655440000" },
       { product_uuid: "4762bbfc-8882-4458-952c-95bb0251f8ab" },
       { product_uuid: "e2b5a16e-21cb-4093-b7ec-bbf29154000b" },
-      { product_uuid: "550e8400-e29b-41d4-a716-446655440000" },
-      { product_uuid: "123e4567-e89b-12d3-a456-426655440000" },
+      { product_uuid: "e0f97bfe-e861-4efc-ac26-5205852540d1" },
       { product_uuid: "f81d4fae-7dec-11d0-a765-00a0c91e6bf6" },
       { product_uuid: "5a6f0c3d-b4d4-4c21-9bf4-c069d78517c8" },
-      { product_uuid: "6a5de6e5-3a4c-4e4c-af38-025ad771443f" },
-      { product_uuid: "63e3749d-2e28-4d38-8a7c-1e25f662b04c" },
-      { product_uuid: "38b9c9dc-ec16-41d2-8e87-09e69bcf2c7e" },
-      { product_uuid: "2d7c9e62-34f7-4c12-a8f7-6f41a6b0c325" },
-      { product_uuid: "d8f9d9b7-efb2-4557-b929-0c2f7bc2efb3" },
-      { product_uuid: "ebd9f9cc-7e11-4521-8b8d-f34f43b7aeb4" },
+      { product_uuid: "d3572eed-e216-419a-909d-5a7dbf5950b5" },
+      { product_uuid: "38b9c9dc-ec16-41d2-8e87-09e69bcf2c7e" }
     ])
   );
 }

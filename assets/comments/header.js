@@ -20,12 +20,12 @@ const beforeLogin = `
         <span class="header"><a href="${rootPath}/pages/appointment/appointment_history.html">
             <p class="header_para">SCHEDULE</p>
         </a></span>
-        <span class="header"><a href="${rootPath}/pages/admin/designer_form.html">
+        <span class="header"><a href="${rootPath}/pages/admin/designers.html">
            <p class="header_para">DESIGNERS</p>
         </a></span>
     </div>
  <div class="btn">
-   <a href = "${rootPath}/index.html"><button  id="btnAppoint" class="sign_in">Sign In</button></a>
+   <a href = "${rootPath}/index.html"><button class="sign_in">Sign In</button></a>
    
    <a href = "${rootPath}/index.html"><button id="userLogin" class="log_in">Log In</button> </a>
    
@@ -52,7 +52,7 @@ const AfterLogin = `
                 <span class="header"><a href="${rootPath}/pages/appointment/appointment_history.html">
                     <p class="header_para">SCHEDULE</p>
                 </a></span>
-                <span class="header"><a href="${rootPath}/pages/admin/designer_form.html">
+                <span class="header"><a href="${rootPath}/pages/admin/designers.html">
                      <p class="header_para">DESIGNERS</p>
                 </a></span>
             </div>
@@ -62,6 +62,9 @@ const AfterLogin = `
             <a href="${rootPath}/pages/profile/profile_new.html">
                 <img src="${rootPath}/assets/images/home_page/profile.png" class="profile_img" alt="profile picture" />
             </a>
+            <a href="${rootPath}/pages/cart.html">
+            <img src="${rootPath}/assets/images/home_page/cartBlack.png" class="cart_img" alt="profile picture" />
+        </a>
         </div>
         </div>
 `;

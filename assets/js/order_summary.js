@@ -1,4 +1,4 @@
-const product_crud = JSON.parse(localStorage.getItem("product_crud"));
+
 const cart_list = JSON.parse(localStorage.getItem("cart_list"));
 const user = JSON.parse(localStorage.getItem("profile_id"));
 
@@ -71,9 +71,7 @@ document.querySelector("#place_order").addEventListener("click", function () {
   if (!confirm("Confirm your order")) {
     return;
   }
-
-  for (let i = 0; i < order_cart.length; i++) {
-    const cart_item = order_cart[i];
+  for (const cart_item of order_cart) {
     const order_uuid = uuidv4();
     order_list.push({
       "order_email": profile_id,

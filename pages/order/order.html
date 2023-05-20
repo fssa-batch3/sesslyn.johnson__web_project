@@ -155,7 +155,6 @@
 
             if (endTime > now) {
                 const order_list = JSON.parse(localStorage.getItem("order_list"));
-                const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
                 order.order_status = "On the Way";
                 localStorage.setItem("order_list", JSON.stringify(order_list));
 
@@ -166,7 +165,6 @@
                 deliveryStatus.appendChild(deliveryButton);
             } else {
                 const order_list = JSON.parse(localStorage.getItem("order_list"));
-                const orderIndex = order_list.findIndex((order_item) => order_item.order_uuid === order.order_uuid);
                 order.order_status = "Delivered";
                 localStorage.setItem("order_list", JSON.stringify(order_list));
             }

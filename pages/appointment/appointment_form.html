@@ -260,146 +260,135 @@
         document.getElementById("user_state").value = user_data.user_state;
 
         //Update Details
-        document.getElementById("appointment").addEventListener("click", function () {
-            event.preventDefault();
-            const appointRoom = localStorage.getItem("appointRoom");
-            const user_name = document.getElementById("user_name").value;
-            const user_email = document.getElementById("user_email").value;
-            const user_no = document.getElementById("user_no").value;
-            const user_date = document.getElementById("user_date").value;
-            const user_time = document.getElementById("user_time").value;
-            const user_designers = document.getElementById("user_designers").value;
-            const user_address = document
-                .getElementById("user_address")
-                .value.trim()
-                .split(/\s+/g)
-                .join(" ");
-            const user_city = document
-                .getElementById("user_city")
-                .value.trim()
-                .split(/\s+/g)
-                .join(" ");
-            const user_state = document
-                .getElementById("user_state")
-                .value.trim()
-                .split(/\s+/g)
-                .join(" ");
-            const user_code = document.getElementById("user_code").value;
+        document.getElementById("appointment").addEventListener("click", function (event) {
+    event.preventDefault();
 
-            user_data.user_name = user_name;
-            user_data.user_email = user_email;
-            user_data.user_no = user_no;
-            user_data.user_date = user_date;
-            user_data.user_time = user_time;
-            user_data.user_address = user_address;
-            user_data.user_city = user_city;
-            user_data.user_state = user_state;
-            user_data.user_code = user_code;
+    const appointRoom = localStorage.getItem("appointRoom");
+    const user_name = document.getElementById("user_name").value;
+    const user_email = document.getElementById("user_email").value;
+    const user_no = document.getElementById("user_no").value;
+    const user_date = document.getElementById("user_date").value;
+    const user_time = document.getElementById("user_time").value;
+    const user_designers = document.getElementById("user_designers").value;
+    const user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
+    const user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(" ");
+    const user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(" ");
+    const user_code = document.getElementById("user_code").value;
 
+    user_data.user_name = user_name;
+    user_data.user_email = user_email;
+    user_data.user_no = user_no;
+    user_data.user_date = user_date;
+    user_data.user_time = user_time;
+    user_data.user_address = user_address;
+    user_data.user_city = user_city;
+    user_data.user_state = user_state;
+    user_data.user_code = user_code;
 
-            if (user_name === "" || user_email === "" || user_date === "" || user_time === "" || user_address === "" || user_city === "" || user_state === "" || user_designers === "") {
-                alert("Please fill in all the required fields.");
-                reset();
-            }
+    if (
+        user_name === "" ||
+        user_email === "" ||
+        user_date === "" ||
+        user_time === "" ||
+        user_address === "" ||
+        user_city === "" ||
+        user_state === "" ||
+        user_designers === ""
+    ) {
+        alert("Please fill in all the required fields.");
+        reset();
+        return;
+    }
 
-            //Validate
-            function validate() {
-                if (
-                    /^\s*$/g.test(user_address) ||
-                    /^\s*$/g.test(user_city) ||
-                    /^\s*$/g.test(user_state)
-                ) {
-                    alert("Write your information properly");
-                    reset();
-                }
-            }
-            validate();
+    // Validate
+    if (/^\s*$/g.test(user_address) || /^\s*$/g.test(user_city) || /^\s*$/g.test(user_state)) {
+        alert("Write your information properly");
+        reset();
+        return;
+    }
 
-            //Phone Number
-            function check_phonenumber() {
-                let result = 0;
-                for (const digit of user_no) {
-                    if (user_no[0] == digit) {
-                        result += 1;
-                    } else {
-                        break;
-                    }
-                }
-                if (result == 10) {
-                    alert("Enter your number properly");
-                    user_no.value = reset();
-                }
-            }
-            check_phonenumber();
-
-            //code
-            function check_code() {
-                let result = 0;
-                for (const digit of user_code) {
-                    if (user_code[0] == digit) {
-                        result += 1;
-                    } else {
-                        break;
-                    }
-                }
-                if (result == 6) {
-                    alert("Enter your Pincode properly");
-                    user_code.value = reset();
-                }
-            }
-            check_code();
-
-            //radio button
-            if (!document.querySelector('input[type="radio"]:checked')) {
-                alert("Please select a room size!");
-            }
-
-            const appointDetails = JSON.parse(localStorage.getItem("appointDetails")) || [];
-            const exist =
-                appointDetails.length &&
-                JSON.parse(localStorage.getItem("appointDetails")).some(
-                    (data) =>
-                        data.user_email == user_email &&
-                        data.user_date == user_date &&
-                        data.user_time == user_time
-                );
-            if (exist) {
-                alert("Already you have an appoint on the day");
-                document.querySelector("form").reset();
+    // Phone Number
+    function check_phonenumber() {
+        let result = 0;
+        for (const digit of user_no) {
+            if (user_no[0] == digit) {
+                result += 1;
             } else {
-                const appoint_id = uuidv4();
-                appointDetails.push({
-                    user_name,
-                    user_email,
-                    user_no,
-                    user_city,
-                    user_address,
-                    user_state,
-                    user_date,
-                    user_time,
-                    user_code,
-                    user_designers,
-                    appoint_id,
-                    "room_size": appointRoom,
-                });
-                localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
-                // location.href = "../homepage.html";
-                alert("Appointment booked successfully");
-
-                const btnOrder = document.getElementById('appointment');
-                const messageDiv = document.getElementById('center-div');
-                function showMessageDiv() {
-                    messageDiv.style.display = 'block';
-                    document.getElementById('block').classList.add('blur-background');
-                }
-                showMessageDiv();
+                break;
             }
+        }
+        if (result == 10) {
+            alert("Enter your number properly");
+            user_no.value = reset();
+            return;
+        }
+    }
+    check_phonenumber();
+
+    // Code
+    function check_code() {
+        let result = 0;
+        for (const digit of user_code) {
+            if (user_code[0] == digit) {
+                result += 1;
+            } else {
+                break;
+            }
+        }
+        if (result == 6) {
+            alert("Enter your Pincode properly");
+            user_code.value = reset();
+            return;
+        }
+    }
+    check_code();
+
+    // Radio button
+    if (!document.querySelector('input[type="radio"]:checked')) {
+        alert("Please select a room size!");
+        return;
+    }
+
+    const appointDetails = JSON.parse(localStorage.getItem("appointDetails")) || [];
+    const exist =
+        appointDetails.length &&
+        appointDetails.some(
+            (data) =>
+                data.user_email == user_email &&
+                data.user_date == user_date &&
+                data.user_time == user_time
+        );
+    if (exist) {
+        alert("Already you have an appoint on the day");
+        document.querySelector("form").reset();
+    } else {
+        const appoint_id = uuidv4();
+        appointDetails.push({
+            user_name,
+            user_email,
+            user_no,
+            user_city,
+            user_address,
+            user_state,
+            user_date,
+            user_time,
+            user_code,
+            user_designers,
+            appoint_id,
+            "room_size": appointRoom,
         });
+        localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
+        alert("Appointment booked successfully");
 
+        const messageDiv = document.getElementById("center-div");
 
-
-
-
+        function showMessageDiv() {
+            messageDiv.style.display = "block";
+            document.getElementById("block").classList.add("blur-background");
+        }
+        showMessageDiv();
+    }
+});
 
     </script>
     <script src="../../assets/comments/header.js"></script>

@@ -265,7 +265,6 @@ add.forEach(function (findId) {
       wish_list.push(prod);
       localStorage.setItem("wish_list", JSON.stringify(wish_list));
       alert("Your product has been added to the wishlist");
-      window.location.href = "./wishlist.html";
     }
   });
 });

@@ -17,16 +17,11 @@ main {
 
 .slide:hover {
     background-color: #ffbc43;
-    ;
 }
 
 .slide:hover .slide-image img {
     transform: translateY(-10%);
     transition: 500ms ease-in-out;
-}
-
-.slide:hover .slide-image img {
-    transform: scale(1.2);
 }
 
 .slide:hover .viewMore {
@@ -251,4 +246,31 @@ h3.edutext {
 }
 #nav_8{
     padding: 0.2rem 3.2rem;
+}
+.buttonInfo{
+    display:flex;
+    flex-direction: row;
+    margin:1rem 0rem 0rem 0.8rem;
+}
+#btnPrimary{
+   padding:1rem 3.5rem;
+    border: none;
+    cursor: pointer;
+    background-color:#ffbc43;
+    color:black;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+#btnDelete{
+    margin-left:5rem;
+    padding:1rem 3.5rem;
+    border: none;
+    cursor: pointer;
+    /* position: absolute;
+    top: 27.7rem;
+    left: 37rem; */
+    background-color:black;
+    color:white;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
 }

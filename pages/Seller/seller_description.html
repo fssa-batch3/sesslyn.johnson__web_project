@@ -162,7 +162,7 @@
           findId.addEventListener("click", function () {
             const { id } = this.dataset;
             localStorage.setItem("product_uuid", JSON.stringify(id));
-            window.location.href = "./seller_update.html";
+            window.location.href = "./seller_update.html?product_id = id";
           });
         });
     </script>

@@ -160,11 +160,15 @@ const parentDiv = document.createElement("div");
 div_right.append(parentDiv);
 
 const childDiv1 = document.createElement("div");
+const aSimilar = document.createElement("a");
+aSimilar.setAttribute("href", "http://127.0.0.1:5501/pages/description.html?product_id=550e8400-e29b-41d4-a716-446655440000");
+parentDiv.append(aSimilar);
+
 const image1 = document.createElement("img");
 image1.src = "../assets/images/Chandelier/chandelier_3.jpg";
 image1.alt = "chandelier image";
 image1.className = "similar_product";
-parentDiv.append(image1);
+aSimilar.append(image1);
 
 const header1 = document.createElement("h4");
 header1.className = "header_similar";
@@ -191,26 +195,21 @@ for (let i = 0; i < 5; i++) {
   reviewIcon1.append(star1);
 }
 
-const round1 = document.createElement("span");
-round1.id = "round";
-parentTop.append(round1);
-
-const image2 = document.createElement("img");
-image2.src = "../assets/images/home_page/heart_icon.jpg";
-image2.id = "liked_icon";
-image2.alt = "heart-icon";
-round1.append(image2);
-
 //2
 const parent2Div = document.createElement("div");
 div_right.append(parent2Div);
 
 const childDiv2 = document.createElement("div");
+
+const aSimilar2 = document.createElement("a");
+aSimilar2.setAttribute("href", "http://127.0.0.1:5501/pages/description.html?product_id=38b9c9dc-ec16-41d2-8e87-09e69bcf2c7e");
+parent2Div.append(aSimilar2);
+
 const image3 = document.createElement("img");
 image3.src = "https://iili.io/HNgYWMl.th.jpg";
 image3.alt = "TV Units image";
 image3.className = "similar_product";
-parent2Div.append(image3);
+aSimilar2.append(image3);
 
 const header2 = document.createElement("h4");
 header2.className = "header_similar";
@@ -231,21 +230,11 @@ reviewIcon2.className = "review_icon";
 parent2Top.append(reviewIcon2);
 
 for (let i = 0; i < 5; i++) {
-  //<i></i>
+
   const star2 = document.createElement("i");
   star2.setAttribute("class", "fa fa-star");
   reviewIcon2.append(star2);
 }
-
-const round2 = document.createElement("span");
-round2.id = "round";
-parent2Top.append(round2);
-
-const image4 = document.createElement("img");
-image4.src = "../assets/images/home_page/heart_icon.jpg";
-image4.id = "liked_icon";
-image4.alt = "heart-icon";
-round2.append(image4);
 
 document.querySelector("div.container").append(div_left);
 document.querySelector("div.container").append(div_middle);
@@ -290,7 +279,7 @@ document.querySelector(".btn_cart").addEventListener("click", function () {
     });
     localStorage.setItem("cart_list", JSON.stringify(cart_list));
     alert("Product Added to the Cart");
-    location.href = "./cart.html";
+    location.href = "./shop.html";
   }
 });
 
@@ -322,6 +311,6 @@ function wish(e) {
     wish_list.push(prod);
     localStorage.setItem("wish_list", JSON.stringify(wish_list));
     alert("Your product has been added to the wishlist");
-    window.location.href = "./wishlist.html";
+    window.location.href = "./shop.html";
   }
 }

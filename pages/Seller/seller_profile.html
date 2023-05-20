@@ -23,7 +23,7 @@
 
     <div class="profile_container">
         <div class="profile_left">
-            <img src="../../assets/images/home_page/profile.png" id="user_image" class="user_profile"
+            <img src="#" id="user_image" class="user_profile"
                 alt="Profile image">
             <p class="head_profile">
                 PROFILE
@@ -82,11 +82,11 @@
                         <img src="../../assets/images/home_page/cart_black.png" class="icon" alt="cart image">Products
                     </button>
                 </a>
-                <a href="./seller_homepage.html">
+                <!-- <a href="./seller_homepage.html">
                     <button class="btn_orders">
                         <img src="../../assets/images/home_page/tick_black.png" class="icon" alt="order image">Homepage
                     </button>
-                </a>
+                </a> -->
             </div>
 
             <hr class="new2">
@@ -99,7 +99,7 @@
                 <p class="content">Address :</p>
                 <p class="details" id="seller_address"></p>
                 <p id="seller_city"></p>
-            
+
             </div>
             <div class="user_details">
                 <p class="content">Birthday :</p>
@@ -130,9 +130,38 @@
     </div>
 
     <script>
+        const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+
+        const link = document.createElement('a');
+        const button = document.createElement('button');
+        button.className = 'btn_orders';
+
+        const image = document.createElement('img');
+        image.src = '../../assets/images/home_page/tick_black.png';
+        image.className = 'icon';
+        image.alt = 'order image';
+
+        button.appendChild(image);
+
+        let buttonText;
+
+        if (seller_id === "admin@gmail.com") {
+            link.href = '../admin/designer_list.html';
+            buttonText = document.createTextNode('Designers');
+        } else {
+            link.href = './seller_homepage.html';
+            buttonText = document.createTextNode('Homepage');
+        }
+
+        button.appendChild(buttonText);
+        link.appendChild(button);
+
+        document.querySelector("div.button_navigate").append(link);
+
+
 
         //Getting Details from sign in page
-        const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+
         const seller_list = JSON.parse(localStorage.getItem("seller_list"));
         function login_data(e) {
             return e.seller_email == seller_id;
@@ -151,10 +180,15 @@
         document.getElementById("seller_gst").innerHTML = user_data.seller_gst;
         document.getElementById("seller_about").innerHTML = user_data.seller_about;
 
-        if (user_data.seller_image !== "") {
-            document.getElementById("seller_image").src = user_data.seller_image;
-        }
+        const image_element = document.getElementById("user_image");
 
+        if (user_data.seller_image === "") {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        } else if (user_data.seller_image !== "") {
+            image_element.setAttribute("src", user_data.seller_image);
+        } else {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        }
     </script>
     <script src="../../assets/js/whatsappChat.js"></script>
     <script src="../../assets/comments/seller_header.js"></script>

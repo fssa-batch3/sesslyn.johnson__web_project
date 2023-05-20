@@ -20,7 +20,7 @@
     <div class="top">
         <div class="left_corner">
             <div class="top_container">
-                <img src="#" id="user_image" class="profile_image" alt="profile image">
+                <img src="../../assets/images/home_page/profile_girl.png" id="user_image" class="profile_image" alt="profile image">
                 <div class="crown">
                     <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crwon image">
                     <p class="crown_text">Learner</p>
@@ -69,21 +69,7 @@
         const profile_id = JSON.parse(localStorage.getItem("profile_id"));
         const user_crud = JSON.parse(localStorage.getItem("user_crud"));
 
-        // Specific User data
-        const prod_data = user_crud.find((user) => user.user_email === profile_id);
-        console.log(prod_data);
-
-        // User Image
-        const userImageElement = document.getElementById("user_image");
-        if (prod_data && prod_data.user_image !== "") {
-            userImageElement.src = prod_data.user_image;
-        }
-        if (prod_data && prod_data.user_image == "") {
-            userImageElement.src = "../../assets/images/home_page/profile_girl.png";
-        } else {
-            userImageElement.src = "../../assets/images/home_page/profile_girl.png";
-        }
-
+        
         const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
         console.log(designersInfo);
 
@@ -170,7 +156,7 @@
             });
         });
     </script>
-    <script src="../../assets/comments/header.js"></script>
+    <script src="../../assets/comments/seller_header.js"></script>
 </body>
 
 </html>
