@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../assets/css/admin/designer_list.css">
     <link rel="stylesheet" href="../../assets/css/wishlist.css">
     <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,7 +23,8 @@
     <div class="top">
         <div class="left_corner">
             <div class="top_container">
-                <img src="../../assets/images/home_page/profile_girl.png" id="user_image" class="profile_image" alt="profile image">
+                <img src="../../assets/images/home_page/profile_girl.png" id="user_image" class="profile_image"
+                    alt="profile image">
                 <div class="crown">
                     <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crwon image">
                     <p class="crown_text">Learner</p>
@@ -30,7 +34,7 @@
                 </div>
             </div>
             <div class="nav_account">
-                
+
                 <button class="nav_profile" id="nav_8">
                     <a href="#">My Projects</a>
                 </button>
@@ -69,7 +73,7 @@
         const profile_id = JSON.parse(localStorage.getItem("profile_id"));
         const user_crud = JSON.parse(localStorage.getItem("user_crud"));
 
-        
+
         const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
         console.log(designersInfo);
 
@@ -102,7 +106,7 @@
 
             const h4 = document.createElement('h4');
             h4.setAttribute('class', 'slide-name');
-            h4.textContent = designer['firstname'] +" "+ designer['lastname'];
+            h4.textContent = designer['firstname'] + " " + designer['lastname'];
             divSlide.appendChild(h4);
 
             const pDesign = document.createElement('p');

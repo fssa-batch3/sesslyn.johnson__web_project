@@ -144,7 +144,7 @@
     </main>
 
     <script>
-    
+
         const user_dates = document.getElementById("user_dates");
 
         const d = new Date();
@@ -154,14 +154,14 @@
         console.log(formattedDate);
 
         const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const product_id = urlParams.get("edit_address");
+        const urlParams = new URLSearchParams(queryString);
+        const product_id = urlParams.get("edit_address");
 
-let addressList = JSON.parse(localStorage.getItem("addressList"));
-let profileId = JSON.parse(localStorage.getItem("profile_id"));
-let foundUserAddress = addressList.filter((e) => e.user_email === profileId);
-let unique_id = foundUserAddress.find((e) => e.address_id === product_id);
-console.log(unique_id);
+        let addressList = JSON.parse(localStorage.getItem("addressList"));
+        let profileId = JSON.parse(localStorage.getItem("profile_id"));
+        let foundUserAddress = addressList.filter((e) => e.user_email === profileId);
+        let unique_id = foundUserAddress.find((e) => e.address_id === product_id);
+        console.log(unique_id);
 
 
         document.getElementById("user_name").value = unique_id.user_name;
@@ -202,35 +202,37 @@ console.log(unique_id);
             unique_id.user_code = user_code;
 
             // Validate
-            if (user_address === "" || user_city === "" || user_state === "" || user_country === "") {
-                alert("Please enter your address information");
-                return false;
+            if (
+                user_address === "" ||
+                user_city === "" ||
+                user_state === "" ||
+                user_country === "" ||
+                user_no === "" ||
+                user_code === ""
+            ) {
+                alert("Please enter all the required fields.");
+                return;
             }
 
             // Phone Number
-            function check_phonenumber() {
-                if (user_no.length !== 10) {
-                    alert("Enter your number properly");
-                    user_no.value = "";
-                    return;
-                }
+            if (user_no.length !== 10) {
+                alert("Enter your number properly");
+                user_no.value = "";
+                return;
             }
-            check_phonenumber();
 
             // Code
-            function check_code() {
-                if (user_code.length !== 6) {
-                    alert("Enter your Pincode properly");
-                    user_code.value = "";
-                    return;
-                }
+            if (user_code.length !== 6) {
+                alert("Enter your Pincode properly");
+                user_code.value = "";
+                return;
             }
-            check_code();
 
             localStorage.setItem("addressList", JSON.stringify(addressList));
             alert("Address updated successfully");
             history.back();
         });
+
 
         const del_product = document.querySelector("button.delete");
         del_product.addEventListener("click", delData);

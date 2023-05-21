@@ -3,7 +3,8 @@
     let s = d.createElement('script');
     if (!w[c]) {
         w[c] = function () {
-            (w[c].q = w[c].q || []).push(arguments);
+            w[c].q = w[c].q || [];  // Modified line
+            w[c].q.push(arguments); // Modified line
         };
     }
     s.async = true;

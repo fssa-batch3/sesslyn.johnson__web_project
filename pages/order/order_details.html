@@ -218,126 +218,82 @@
     document.querySelector(".btn_order").addEventListener("click", saveAddress)
 
     function saveAddress() {
-  event.preventDefault();
+      event.preventDefault();
 
-  const getUserInputValue = (elementId) => {
-    return document.getElementById(elementId).value.trim().split(/\s+/g).join(" ");
-  };
+      const getUserInputValue = (elementId) => {
+        return document.getElementById(elementId).value.trim().split(/\s+/g).join(" ");
+      };
 
-  const user_name = getUserInputValue("user_name");
-  const user_no = getUserInputValue("user_no");
-  const user_email = getUserInputValue("user_email");
-  const user_state = getUserInputValue("user_state");
-  const user_city = getUserInputValue("user_city");
-  const user_country = getUserInputValue("user_country");
-  const user_address = getUserInputValue("user_address");
-  const user_notes = getUserInputValue("user_notes");
-  const user_dates = document.getElementById("user_dates").value;
-  const user_code = document.getElementById("user_code").value;
-  const checkbox = document.getElementById("checkdefault").checked;
+      const user_name = getUserInputValue("user_name");
+      const user_no = getUserInputValue("user_no");
+      const user_email = getUserInputValue("user_email");
+      const user_state = getUserInputValue("user_state");
+      const user_city = getUserInputValue("user_city");
+      const user_country = getUserInputValue("user_country");
+      const user_address = getUserInputValue("user_address");
+      const user_notes = getUserInputValue("user_notes");
+      const user_dates = document.getElementById("user_dates").value;
+      const user_code = document.getElementById("user_code").value;
+      const checkbox = document.getElementById("checkdefault").checked;
 
-  let profile_id = JSON.parse(localStorage.getItem("profile_id"));
+      const validatePhoneNumber = () => {
+        if (user_no.length !== 10) {
+          alert("Enter your number properly");
+          return;
+        }
+      };
 
-  const validatePhoneNumber = () => {
-    let result = 0;
-    for (const digit of user_no) {
-      if (user_no[0] == digit) {
-        result += 1;
+      const validateCode = () => {
+        if (user_code.length !== 6) {
+          alert("Enter your Pincode properly");
+          return;
+        }
+      };
+
+      validatePhoneNumber();
+      validateCode();
+
+      if (user_address === "" || user_city === "" || user_state === "" || user_country === "") {
+        alert("Please enter your address information");
+        return false;
+      }
+
+      const profile_id = JSON.parse(localStorage.getItem("profile_id"));
+      const current_user = addressList.filter((e) => e.user_email === profile_id);
+
+      const newAddress = {
+        address_id: uuidv4(),
+        user_name,
+        user_email,
+        user_no,
+        user_address,
+        user_city,
+        user_state,
+        user_country,
+        user_code,
+        user_dates,
+        user_notes,
+        default_status: checkbox
+      };
+
+      if (addressList.length === 0 || current_user.length === 0) {
+        addressList.push(newAddress);
       } else {
-        break;
-      }
-    }
-    if (result == 10) {
-      alert("Enter your number properly");
-      user_no.value = reset();
-    }
-  };
-
-  const validateCode = () => {
-    let result = 0;
-    for (const digit of user_code) {
-      if (user_code[0] == digit) {
-        result += 1;
-      } else {
-        break;
-      }
-    }
-    if (result == 6) {
-      alert("Enter your Pincode properly");
-      user_code.value = reset();
-    }
-  };
-
-  validatePhoneNumber();
-  validateCode();
-
-  if (user_address === "" || user_city === "" || user_state === "" || user_country === "") {
-    alert("Please enter your address information");
-    return false;
-  }
-
-  if (addressList.length === 0) {
-    addressList.push({
-      "address_id": uuidv4(),
-      "user_name": user_name,
-      "user_email": user_email,
-      "user_no": user_no,
-      "user_address": user_address,
-      "user_city": user_city,
-      "user_state": user_state,
-      "user_country": user_country,
-      "user_code": user_code,
-      "user_dates": user_dates,
-      "user_notes": user_notes,
-      "default_status": true
-    });
-  } else {
-    const current_user = addressList.filter((e) => e.user_email === profile_id);
-
-    if (current_user.length === 0) {
-      addressList.push({
-        "address_id": uuidv4(),
-        "user_name": user_name,
-        "user_email": user_email,
-        "user_no": user_no,
-        "user_address": user_address,
-        "user_city": user_city,
-        "user_state": user_state,
-        "user_country": user_country,
-        "user_code": user_code,
-        "user_dates": user_dates,
-        "user_notes": user_notes,
-        "default_status": true
-      });
-    } else {
-      if (checkbox === true) {
-        let default_address = current_user.find((e) => e.default_status === true);
-        default_address.default_status = false;
-        localStorage.setItem("addressList", JSON.stringify(addressList));
+        if (checkbox === true) {
+          const defaultAddress = current_user.find((e) => e.default_status === true);
+          if (defaultAddress) {
+            defaultAddress.default_status = false;
+          }
+        }
+        addressList.push(newAddress);
       }
 
-      addressList.push({
-        "address_id": uuidv4(),
-        "user_name": user_name,
-        "user_email": user_email,
-        "user_no": user_no,
-        "user_address": user_address,
-        "user_city": user_city,
-        "user_state": user_state,
-        "user_country": user_country,
-        "user_code": user_code,
-        "user_dates": user_dates,
-        "user_notes": user_notes,
-        "default_status": checkbox
-      });
+      localStorage.setItem("addressList", JSON.stringify(addressList));
+      alert("Address has been added!");
+      console.log(addressList);
+      history.back();
     }
-  }
 
-  localStorage.setItem("addressList", JSON.stringify(addressList));
-  alert("Address has been added!");
-  console.log(addressList);
-  history.back();
-}
 
   </script>
   <script src="../../assets/js/chatBot.js"></script>
