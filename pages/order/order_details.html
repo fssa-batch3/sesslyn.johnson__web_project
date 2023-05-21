@@ -239,14 +239,14 @@
       const validatePhoneNumber = () => {
         if (user_no.length !== 10) {
           alert("Enter your number properly");
-          return;
+          return false;
         }
       };
 
       const validateCode = () => {
         if (user_code.length !== 6) {
           alert("Enter your Pincode properly");
-          return;
+          return false;
         }
       };
 

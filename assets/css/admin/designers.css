@@ -233,7 +233,7 @@ button {
 
 .info .text {
   position: relative;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
   white-space: nowrap;
   color: #fff;
@@ -310,7 +310,7 @@ button {
 
 .loading__wrapper .loader--text {
   color: #fff;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   margin-bottom: 1.4rem;
 }
