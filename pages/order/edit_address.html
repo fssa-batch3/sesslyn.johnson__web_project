@@ -24,31 +24,11 @@
 
 <body>
     <main>
-        <div>
-            <div class="heading_page">
-                <td>
-                    <img src="https://iili.io/HgdYtLv.png" class="page" id="page" alt="bag icon">
-                    <img class="dotted_line" src="../../assets/images/home_page/dotted-line-icon.png" alt="dotted_line">
-                </td>
-                <td>
-                    <img src="https://iili.io/HgdYg1V.png" class="page" id="page_2" alt="bag icon">
-                    <img class="dotted_line" src="../../assets/images/home_page/dotted-line-icon.png" alt="dotted_line">
-                </td>
-                <td>
-                    <img src="https://iili.io/HgdYQIa.png" class="page" id="page_3" alt="bag icon">
-                </td>
-            </div>
-            <div class="heading_page">
-                <small class="page_new">Your Shipping</small>
-                <small class="page_text">Delivery Address</small>
-                <small class="page_text">Payment Method</small>
-            </div>
-        </div>
+        <form role="form" id="formAddress">
+            <div class="top">
+                <div class="top_container">
+                    <h2>Delivery Information</h2>
 
-        <div class="top">
-            <div class="top_container">
-                <h2>Delivery Information</h2>
-                <form role="form">
                     <div class="order-details">
                         <div class="details">
                             <div class="form_details">
@@ -109,49 +89,30 @@
                                     title="Accepts Alphabets, number and special character and space too."
                                     placeholder="12th Nehru street, Perungudi.">
                             </div>
-                        </div>
-                    </div>
-            </div>
 
-            <div class="middle_container">
-                <h2>Schedule Delivery</h2>
-                <div class="order-details">
-                    <div class="details">
-                        <div class="form_details">
-                            <label>Dates</label>
-                            <input type="date" class="name" disabled required="true" id="user_dates">
-                        </div>
-
-                        <div class="form_details">
-                            <label class="notes">Title</label>
-                            <input type="text" class="name" id="user_notes"
-                                title="Accepts Alphabets, number and special character and space too."
-                                placeholder="Home">
+                            <div class="form_details">
+                                <label class="notes">Title</label>
+                                <input type="text" class="name" id="user_notes"
+                                    title="Accepts Alphabets, number and special character and space too."
+                                    placeholder="Home">
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
-        </div>
+            </div>
 
-        </div>
+            <button class="delete" id="delete" type="submit">Delete</button>
+            <button class="btn_order" id="order" type="submit">Proceed</button>
 
-        <button class="delete" id="delete" type="submit">Delete</button>
-        <button class="btn_order" id="order" type="submit">Proceed</button>
-
-        </div>
+            </div>
         </form>
     </main>
 
     <script>
-
-        const user_dates = document.getElementById("user_dates");
-
-        const d = new Date();
-        d.setDate(d.getDate() + 7);
-        const formattedDate = d.toISOString().slice(0, 10);
-        user_dates.value = formattedDate;
-        console.log(formattedDate);
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -171,11 +132,10 @@
         document.getElementById("user_state").value = unique_id.user_state;
         document.getElementById("user_country").value = unique_id.user_country;
         document.getElementById("user_address").value = unique_id.user_address;
-        document.getElementById("user_dates").value = formattedDate;
         document.getElementById("user_code").value = unique_id.user_code;
         document.getElementById("user_notes").value = unique_id.user_notes;
 
-        const btn_order = document.querySelector("button.btn_order");
+        const btn_order = document.querySelector("#order");
         btn_order.addEventListener("click", function (event) {
             event.preventDefault();
 
@@ -187,7 +147,6 @@
             const user_country = document.getElementById("user_country").value.trim().split(/\s+/g).join(" ");
             const user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
             const user_notes = document.getElementById("user_notes").value.trim().split(/\s+/g).join(" ");
-            const user_dates = document.getElementById("user_dates").value;
             const user_code = document.getElementById("user_code").value;
 
             unique_id.user_name = user_name;
@@ -198,7 +157,6 @@
             unique_id.user_country = user_country;
             unique_id.user_address = user_address;
             unique_id.user_notes = user_notes;
-            unique_id.user_dates = user_dates;
             unique_id.user_code = user_code;
 
             // Validate
@@ -232,16 +190,15 @@
             alert("Address updated successfully");
             history.back();
         });
-
+    
 
         const del_product = document.querySelector("button.delete");
         del_product.addEventListener("click", delData);
 
         function delData() {
             if (confirm("Are you sure?")) {
-                const profile_id = JSON.parse(localStorage.getItem("profile_id"));
                 const addressList = JSON.parse(localStorage.getItem("addressList"));
-                const product_data = addressList.find((e) => e.address_id == profile_id);
+                const product_data = addressList.find((e) => e.address_id == product_id);
                 const indexOfUser = addressList.indexOf(product_data);
 
                 addressList.splice(indexOfUser, 1);
@@ -249,6 +206,7 @@
                 history.back();
             }
         }
+
 
     </script>
     <script src="../../assets/js/chatBot.js"></script>

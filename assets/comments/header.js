@@ -25,7 +25,7 @@ const beforeLogin = `
         </a></span>
     </div>
  <div class="btn">
-   <a href = "${rootPath}/index.html"><button class="sign_in">Sign In</button></a>
+   <a href = "${rootPath}/index.html"><button id="sign_in" class="sign_in">Sign In</button></a>
    
    <a href = "${rootPath}/index.html"><button id="userLogin" class="log_in">Log In</button> </a>
    

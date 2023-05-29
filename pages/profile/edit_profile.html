@@ -70,7 +70,7 @@
                         <div class="details">
                             <div class="form_details">
                                 <label class="mobile_no">Mobile Number</label>
-                                <input type="tel" maxlength="10" class="name" required="true" id="user_no"
+                                <input type="tel" maxlength="10" class="name" required="true" id="user_no" value="9952393568"
                                     pattern="[0-9]{10}" title="it should be 10 digit number" placeholder="9952393568">
                             </div>
                         </div>
@@ -88,14 +88,14 @@
                         <div class="details">
                             <div class="form_details">
                                 <label class="mobile_no">D.O.B</label>
-                                <input type="date" class="name" max="2015-12-31" required="true" id="user_dob" placeholder="Chennai">
+                                <input type="date" class="name" max="2015-12-31" value="2002-08-26" required="true" id="user_dob" placeholder="Chennai">
                             </div>
                         </div>
 
                         <div class="details">
                             <div class="form_details">
                                 <label>Gender</label>
-                                <select type="text" class="name" required="true" id="user_gender" placeholder="Male">
+                                <select type="text" class="name" required="true" id="user_gender" value="Female" placeholder="Male">
                                     <option>Male</option>
                                     <option>Female</option>
                                     <option>Transgender</option>
@@ -106,7 +106,7 @@
                         <div class="details">
                             <div class="form_details">
                                 <label class="country_no">Image</label>
-                                <input type="text" class="name" id="user_image" title="https://.*" pattern="https://.*"
+                                <input type="text" class="name" id="user_image" title="https://.*" pattern="https://.*" value="https://lh3.googleusercontent.com/dG_j1BK9W9rjuTRUvB-toJ1mEn-e-R7u-_fwD1Rd5TTU2I_AGBOESfYO02nlnV4oXU6TnDvXFFgQuIbyeJ06qfViCzHX7GAwxJSWy8h8iu5VU-KqJ9BJ_sqUTDLWMNy5HRC_M-SCYSfqtUBX6tdEgR1ubAlzyQtHIMI2fYNnFfP-caEYBESpAyaGhyJDDGcIPf26oeQNYhtnl1xea4xg9VPB6KO7nHmySaeE6SXLPi6SL1xTPVSCLc4DlrXFg5Yfb-LPufTNQ924S50cL4Pl_BcPJKjHYpB770Wi3SYgfaq5M3o-kragAYMG64LPuW1D84psVpSXr8bMnC0QWC2y4-vucwZNJMseq2T-s-g7PBCgVTrUXjxZnJCp4CV-LNjUH3ODSztXLzk7G858tbRDnJrDD0a8_yA4Ds7WmzZ4Ba8Y10539S-MvNxc4R50OX-WtpylLKWrWEA3PCjunXDoVKYwvXEN23PFYNTUK2Ns-vBAn1WnFZec9oMAYI4e7vBkcESFP6TBDY6FW1RUsfZJ8rRw9YmRLvh1hY_fS3f7HBfWmCcTxcPMVfNcRa2SHoNWgIuEVhTbW0363Vi_dql0Lc6q0OGKwrY7X7yYPKVVXuRRYMWMppJ-jOQrakpdK8qqnRIXiaTpZGq62dWCSbleg45rSd2nYa8v5103Nj1ZvianDJN0xBFnjfdU1wEZqnNMT_xiQibI-Ric9lF6BR-i3XlStQcnrPepkNPAZcCvlJMcPTbKjiMtJSminR8i6uL5TsIUZqivFbASih_5MiuAMEr4WDx6F1FyJ3wJZNdrANOplZ4ZN9l8xWQYi4ulXJAxgj2Z6JJqQ9BcFkfLnG8oVd087InEtlctqk9-ZGAKg0gq15s_P8xoRe9QcMWCvPq1C3K1h7GVG3cmbv1UYCVQE717UVFf3yI9D4bR3CyqHfLpHFxKI0Yv5zB79nZ_Ylqj8EbXrh3wJj_J5KKWaFFogA=w939-h1338-s-no?authuser=1"
                                     placeholder="https://">
                             </div>
                         </div>
@@ -186,7 +186,6 @@
                 }
             }
             check_phonenumber();
-
 
             localStorage.setItem("user_crud", JSON.stringify(user_crud));
 

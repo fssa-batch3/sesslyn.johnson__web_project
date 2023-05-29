@@ -27,45 +27,47 @@
                 <h2>Designers Information</h2>
                 <div class="row">
                     <div class="col2">
-                        <input type="text" id="firstname" name="firstname">
+                        <input type="text" id="firstname" required pattern="[a-zA-Z]+" title="Only contain Alphabets"
+                            name="firstname">
                         <label for="firstname">First Name</label>
                     </div>
                     <div class="col2">
-                        <input type="text" id="lastname" name="lastname">
+                        <input type="text" id="lastname" required pattern="[a-zA-Z]+" title="Only contain Alphabets"
+                            name="lastname">
                         <label for="lastname">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
-                    <input type="text" id="profession" name="email">
+                    <input type="text" id="profession" required pattern="[a-zA-Z\s]+" title="Only contain Alphabets"
+                        name="email">
                     <label for="email">Profession</label>
                 </div>
                 <div class="row">
-                    <input type="text" id="education" name="contactnum">
+                    <input type="text" id="education" required 
+                        title="Please enter a valid education" name="contactnum">
                     <label for="contactnum">Education</label>
                 </div>
                 <div class="row">
                     <div class="col2">
-                        <input type="number" id="project" name="firstname">
-                        <label for="firstname">Projects</label>
+                        <input type="number" id="project" min="1" max="25" pattern="[1-9]{2}" required name="projects">
+                        <label for="projects">Projects</label>
                     </div>
                     <div class="col2">
-                        <input type="number" id="team" name="lastname">
-                        <label for="lastname">Team</label>
+                        <input type="number" id="team" pattern="[1-9]{1}" min="2" max="8" required name="team">
+                        <label for="team">Team</label>
                     </div>
                 </div>
                 <div class="row">
-                    <input type="text" id="image" name="contactnum">
+                    <input type="text" id="image" required name="contactnum">
                     <label for="contactnum">Image</label>
                 </div>
                 <h2>About Designers</h2>
                 <div class="row">
                     <label for="orderid">About</label>
-                    <textarea id="about" name="orderid"></textarea>
+                    <textarea id="about" required name="orderid"></textarea>
                 </div>
-
-
                 <div class="row">
-                    <input type="submit" id="submit" name="submit" value="Submit">
+                    <input type="submit" name="submit" value="Submit">
                 </div>
             </div>
         </form>
@@ -80,27 +82,28 @@
         let unique_id = designersInfo.find((form) => form.designersId === designer_id);
         console.log(unique_id);
 
-        document.getElementById("firstname").value = unique_id.firstname;
-        document.getElementById("lastname").value = unique_id.lastname;
-        document.getElementById("profession").value = unique_id.profession;
-        document.getElementById("education").value = unique_id.education;
-        document.getElementById("project").value = unique_id.project;
-        document.getElementById("team").value = unique_id.team;
-        document.getElementById("image").value = unique_id.image;
-        document.getElementById("about").value = unique_id.about;
+        if (unique_id) {
+            document.getElementById("firstname").value = unique_id.firstname;
+            document.getElementById("lastname").value = unique_id.lastname;
+            document.getElementById("profession").value = unique_id.profession;
+            document.getElementById("education").value = unique_id.education;
+            document.getElementById("project").value = unique_id.project;
+            document.getElementById("team").value = unique_id.team;
+            document.getElementById("image").value = unique_id.image;
+            document.getElementById("about").value = unique_id.about;
+        }
 
 
-        document.getElementById("submit").addEventListener("click", function (event) {
+       function newProduct(e){
             event.preventDefault();
-            const firstname = document.getElementById("firstname").value;
-            const lastname = document.getElementById("lastname").value;
-            const profession = document.getElementById("profession").value;
-            const education = document.getElementById("education").value;
+            const firstname = document.getElementById("firstname").value.trim().split(/\s+/g).join(" ");
+            const lastname = document.getElementById("lastname").value.trim().split(/\s+/g).join(" ");
+            const profession = document.getElementById("profession").value.trim().split(/\s+/g).join(" ");
+            const education = document.getElementById("education").value.trim().split(/\s+/g).join(" ");
             const project = document.getElementById("project").value;
             const team = document.getElementById("team").value;
-            const image = document.getElementById("image").value;
-            const about = document.getElementById("about").value;
-    
+            const image = document.getElementById("image").value.trim().split(/\s+/g).join(" ");
+            const about = document.getElementById("about").value.trim().split(/\s+/g).join(" ");
 
             unique_id.firstname = firstname;
             unique_id.lastname = lastname;
@@ -111,12 +114,11 @@
             unique_id.team = team;
             unique_id.about = about;
 
-
             localStorage.setItem("designersInfo", JSON.stringify(designersInfo));
             alert("Designer Info updated successfully");
 
             window.location.href = "./designer_list.html";
-        });
+        };
 
 
     </script>

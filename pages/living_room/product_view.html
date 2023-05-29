@@ -23,6 +23,7 @@
     <main class="main_div">
 
     </main>
+
     <script>
 
         //URL Params
@@ -40,7 +41,7 @@
 
         for (const room of exactRoom) {
             productCount++;
-            
+
             const productDiv = document.createElement('div');
             productDiv.setAttribute("class", "productDiv");
             productDiv.setAttribute('id', 'div1');
@@ -59,6 +60,7 @@
             detailsDiv.append(menuIconDiv);
 
             const designHuntP = document.createElement('p');
+            designHuntP.setAttribute("class", "paraIcon");
             designHuntP.innerHTML = 'DesignHunt';
             menuIconDiv.append(designHuntP);
 
@@ -86,9 +88,9 @@
             hideoutDiv.append(hideoutImgDiv);
 
             const hideoutImg = document.createElement('img');
-            hideoutImg.setAttribute('src', "../../assets/images/Living room/living room rich/hide.jpg");
+            hideoutImg.setAttribute('src', room.productImg);
             hideoutImg.setAttribute("class", "hideout_lamp");
-            hideoutImg.setAttribute('alt', 'hideout_lamp');
+            hideoutImg.setAttribute('alt', 'product image');
             hideoutImgDiv.append(hideoutImg);
 
             const spanImgDiv = document.createElement('div');
@@ -99,6 +101,7 @@
             spanImgDiv.append(apartmentSpan);
 
             const apartmentP1 = document.createElement('p');
+            apartmentP1.setAttribute("class", "paraIcon");
             apartmentP1.innerHTML = 'Apartments design';
             apartmentSpan.append(apartmentP1);
 
@@ -119,9 +122,9 @@
             classyNameH2_2.innerHTML = room.catchyName2;
             classyNamesSpan.append(classyNameH2_2);
 
-            const classyNameP = document.createElement('P');
+            const classyNameP = document.createElement('p');
             classyNameP.setAttribute("class", "budget");
-            classyNameP.innerHTML = 'Budget : ₹' + room.budget;
+            classyNameP.innerHTML = 'Designed By :' + room.designer;
             classyNamesSpan.append(classyNameP);
 
             const rightArrowSpan = document.createElement('span');
@@ -173,16 +176,41 @@
             projectsP.innerHTML = 'Similar projects';
             projectsSpan.append(projectsP);
 
-            const imageDiv = document.createElement('div');
-            divProductDiv.append(imageDiv);
+            // Create the main card div
+            const cardDiv = document.createElement('div');
+            cardDiv.setAttribute('class', 'card');
+            divProductDiv.append(cardDiv);
 
-            const productImg = document.createElement('img');
-            productImg.setAttribute('src', room.image);
-            productImg.setAttribute("class", "product_img");
-            productImg.setAttribute('alt', 'living_room');
-            imageDiv.append(productImg);
+            // Create the image element
+            const imageElement = document.createElement('img');
+            imageElement.setAttribute('src', room.image);
+            imageElement.setAttribute('class', 'product_img');
+            imageElement.setAttribute('alt', 'living_room');
+            cardDiv.appendChild(imageElement);
+
+            // Create the content div
+            const contentDiv = document.createElement('div');
+            contentDiv.setAttribute('class', 'content');
+            cardDiv.appendChild(contentDiv);
+
+            const bottomContainerDiv = document.createElement('div');
+            bottomContainerDiv.setAttribute('class', 'bottom_container');
+            contentDiv.appendChild(bottomContainerDiv);
+
+            // Create the heading element
+            const headingElement = document.createElement('h4');
+            headingElement.setAttribute('class', 'bottomHeading');
+            headingElement.textContent = 'About';
+            bottomContainerDiv.appendChild(headingElement);
+
+            // Create the paragraph element
+            const paragraphElement = document.createElement('p');
+            paragraphElement.setAttribute('id', 'bottomPara');
+            paragraphElement.textContent = room.about;
+            bottomContainerDiv.appendChild(paragraphElement);
 
             document.querySelector("main.main_div").append(productDiv);
+
         }
 
         //Div to change
@@ -204,6 +232,8 @@
     </script>
     <script src="../../assets/comments/header.js"></script>
     <script src="../../assets/js/chatBot.js"></script>
+
+
 </body>
 
 </html>

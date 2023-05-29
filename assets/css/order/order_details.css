@@ -15,7 +15,9 @@ main {
 .top {
     margin: 0rem 4rem 0rem 5rem;
 }
-
+.top_container{
+    margin-top:8rem;
+}
 .middle_container {
     margin-top: 0.5rem;
 }
@@ -93,16 +95,16 @@ input#user_dates {
 }
 
 input#user_notes {
-    padding: 0.5rem 4.3rem 0.5rem 0.5rem;
-    margin: 0.5rem 0rem 0.5rem 2.5rem;
+    padding: 0.5rem 6.5rem 0.5rem 1rem;
+    margin: 0.5rem 2rem 0.5rem 0.3rem;
 }
 
 input#user_address {
-    padding: 0.5rem 18.8rem 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .form_details label.notes {
-    margin: 0.5rem 0rem 0.5rem 3rem;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
     padding: 1rem 0rem;
 }
 

@@ -24,7 +24,7 @@
             <div class="formbold-main-wrapper">
 
                 <div class="formbold-form-wrapper">
-                    <form>
+                    <form id="formDiv">
                         <label class="formbold-form-label formbold-form-label-2">
                             Personal Details
                         </label>
@@ -54,15 +54,15 @@
                                 <label for="option" class="formbold-form-label"> Designers </label>
                                 <select name="" id="user_designers" class="form-control" required>
                                     <option value="" disabled selected>Designers List</option>
-                                    <option value="Mr.Johnson">Mr.Johnson</option>
-                                    <option value="Mr.Sam Victor">Mr.Sam Victor</option>
-                                    <option value="Mr.Jebasteen">Mr.Jebasteen</option>
-                                    <option value="Mr.Sachin Jain">Mr.Sachin Jain</option>
-                                    <option value="Mr.Calvin Jacobs">Mr.Calvin Jacobs</option>
-                                    <option value="Mr.Kabir Rohan">Mr.Kabir Rohan</option>
+                                    <option value="Gauri Khan">Gauri Khan</option>
+                                    <option value="Manit Rastogi">Manit Rastogi</option>
+                                    <option value="Sunita Kohli">Sunita Kohli</option>
+                                    <option value="Rajiv Saini">Rajiv Saini</option>
+                                    <option value="Anjum Jung">Anjum Jung</option>
+                                    <option value="Sussanne Khan">Sussanne Khan</option>
                                 </select>
                             </div>
-                            </select>
+
                         </div>
                         <div class="flex flex-wrap formbold--mx-3">
                             <div class="w-full sm:w-half formbold-px-3">
@@ -260,7 +260,7 @@
         document.getElementById("user_state").value = user_data.user_state;
 
         //Update Details
-        document.getElementById("appointment").addEventListener("click", function (event) {
+        document.getElementById("formDiv").addEventListener("submit", function (event) {
             event.preventDefault();
 
             const appointRoom = localStorage.getItem("appointRoom");
@@ -286,17 +286,17 @@
             user_data.user_code = user_code;
 
             if (
-                user_name === "" ||
-                user_email === "" ||
-                user_date === "" ||
-                user_time === "" ||
-                user_address === "" ||
-                user_city === "" ||
-                user_state === "" ||
-                user_designers === "" ||
-                /^\s*$/.test(user_address) ||
-                /^\s*$/.test(user_city) ||
-                /^\s*$/.test(user_state) ||
+                user_name.trim() === "" ||
+                user_email.trim() === "" ||
+                user_date.trim() === "" ||
+                user_time.trim() === "" ||
+                user_address.trim() === "" ||
+                user_city.trim() === "" ||
+                user_state.trim() === "" ||
+                user_designers.trim() === "" ||
+                !user_address.trim() ||
+                !user_city.trim() ||
+                !user_state.trim() ||
                 !checkPhoneNumber(user_no) ||
                 !checkCode(user_code) ||
                 !document.querySelector('input[type="radio"]:checked')
@@ -305,61 +305,61 @@
                 return;
             }
 
+            function checkPhoneNumber(phoneNumber) {
+                const phoneNumberRegex = /^[0-9]{10}$/;
+                return phoneNumberRegex.test(phoneNumber);
+            }
+
+            function checkCode(code) {
+                const codeRegex = /^[0-9]{6}$/;
+                return codeRegex.test(code);
+            }
+            function showMessageDiv() {
+                const messageDiv = document.getElementById("center-div");
+                messageDiv.style.display = "block";
+                document.getElementById("block").classList.add("blur-background");
+            }
+           
 
             const appointDetails = JSON.parse(localStorage.getItem("appointDetails")) || [];
             const exist = appointDetails.some(
                 (data) =>
-                    data.user_email === user_email &&
-                    data.user_date === user_date &&
-                    data.user_time === user_time
+                    data.user_email === user_email
             );
             if (exist) {
-                alert("Already you have an appointment on the day");
+                alert("Already you have an appointment. Wait until the appointment get over");
                 document.querySelector("form").reset();
+                window.location.href = "./appointment_history.html"
                 return;
             }
-
-            const appoint_id = uuidv4();
-            appointDetails.push({
-                user_name,
-                user_email,
-                user_no,
-                user_city,
-                user_address,
-                user_state,
-                user_date,
-                user_time,
-                user_code,
-                user_designers,
-                appoint_id,
-                room_size: appointRoom,
-            });
-            localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
-            alert("Appointment booked successfully");
-
-            showMessageDiv();
+            else {
+                const appoint_id = uuidv4();
+                appointDetails.push({
+                    user_name,
+                    user_email,
+                    user_no,
+                    user_city,
+                    user_address,
+                    user_state,
+                    user_date,
+                    user_time,
+                    user_code,
+                    user_designers,
+                    appoint_id,
+                    room_size: appointRoom,
+                });
+                localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
+                alert("Appointment booked successfully");
+                showMessageDiv();
+            }
         });
 
-        function checkPhoneNumber(phoneNumber) {
-            const result = phoneNumber.match(/^(\d)\1+$/);
-            return result && result[0].length === 10;
-        }
-
-        function checkCode(code) {
-            const result = code.match(/^(\d)\1+$/);
-            return result && result[0].length === 6;
-        }
-
-        function showMessageDiv() {
-            const messageDiv = document.getElementById("center-div");
-            messageDiv.style.display = "block";
-            document.getElementById("block").classList.add("blur-background");
-        }
 
 
     </script>
     <script src="../../assets/comments/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
 </body>
 
 </html>

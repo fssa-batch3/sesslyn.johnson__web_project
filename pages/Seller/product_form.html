@@ -33,31 +33,31 @@
             <form onsubmit="newProduct(event)">
                 <h3>Start Selling</h3>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                    <input type="text" placeholder="Product Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$" value="Minimalistic Sofa"
                         title="Only Alphabets and space is allowed" id="product_name" required class="form-control">
-                    <input type="text" placeholder="Brand Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$"
+                    <input type="text" placeholder="Brand Name" pattern="^[a-zA-Z]+(\s{1}[a-zA-Z]+)*$" value="Minimal Furniture"
                         title="Only Alphabets and space is allowed" id="product_brand" required class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Product Description" pattern="^(\S+\s{0,1})+$"
+                    <input type="text"  placeholder="Product Description" pattern="^(\S+\s{0,1})+$" value="*Minimalistic Sofa with cushion. * 10 days replacement. * Sectional Sofa Length = 105.5. * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room."
                         title="Only Alphabets, number and space is allowed" id="product_description" required
                         class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*"
+                    <input type="text" placeholder="Image" id="image_url" title="https://.*" pattern="https://.*" value="https://media.istockphoto.com/id/1415968310/photo/modern-style-conceptual-interior-room-3d-illustration.jpg?b=1&s=170667a&w=0&k=20&c=pamdXnXF2-31cf8ftXpYTLFexgSMh_VCxbvg4Z0llxA="
                         required class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="number" placeholder="Actual Price" id="product_real" required
-                        title="Only numbers is allowed" min="3000" max="100000" class="form-control">
+                    <input type="number" placeholder="Actual Price" id="product_real" value="25000" required
+                        title="Only numbers is allowed" min="300" max="100000" class="form-control">
                     <input type="number" placeholder="Discount" id="product_discount" required
-                        title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9]{1}[0-9]{1}"
+                        title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9]{1}[0-9]{1}" value="15%"
                         class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
+                    <input type="text"  placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
                         class="form-control">
-                    <select name="" id="product_category" class="form-control" required>
+                    <select name="" id="product_category" value="Sofa" class="form-control" required>
                         <option value="" disabled selected>Product Category</option>
                         <option value="Sofa">Sofa</option>
                         <option value="Space Saving Furniture">Space Saving Furniture</option>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" required placeholder="Warranty"
+                    <input type="text" required placeholder="Warranty" value="3 years of warranty"
                         title="Only Alphabets, numbers and space is allowed" id="product_warranty"
                         pattern="^(\S+\s{0,1})+$" class="form-control">
                 </div>

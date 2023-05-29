@@ -36,9 +36,9 @@ for (const item of user_cart) {
 
 
 //Amount
-document.getElementById("sub_total").innerText = `₹${amount + 1900}`;
+document.getElementById("sub_total").innerText = `₹${amount + 2900 }`;
 document.getElementById("shipping_free").innerText = `₹ ${100}`;
-document.getElementById("discount_amount").innerText = `₹ ${2000}`;
+document.getElementById("discount_amount").innerText = `₹ ${1400}`;
 document.getElementById("total_amount").innerText = `₹ ${amount}`;
 
 //Details from order details page

@@ -113,9 +113,11 @@ h3_head.setAttribute("class", "description_heading");
 h3_head.innerHTML = "Description :";
 div_description.append(h3_head);
 
-//<p class="price"></p>
+const text = unique_id.product_description;
+const dividedText = text.split(/(?=\*)/);
+
 const p_text = document.createElement("p");
-p_text.innerHTML = unique_id.product_description;
+p_text.innerHTML = dividedText.join("<br>");
 div_description.append(p_text);
 
 const h3_warranty = document.createElement("h3");
@@ -165,7 +167,7 @@ aSimilar.setAttribute("href", "http://127.0.0.1:5501/pages/description.html?prod
 parentDiv.append(aSimilar);
 
 const image1 = document.createElement("img");
-image1.src = "../assets/images/Chandelier/chandelier_3.jpg";
+image1.src = "https://iili.io/HrB7QXs.jpg";
 image1.alt = "chandelier image";
 image1.className = "similar_product";
 aSimilar.append(image1);
@@ -177,7 +179,7 @@ parentDiv.append(header1);
 
 const price1 = document.createElement("p");
 price1.className = "price";
-price1.textContent = "₹ 11480";
+price1.textContent = "₹ 36954";
 parentDiv.append(price1);
 
 const parentTop = document.createElement("div");
@@ -218,7 +220,7 @@ parent2Div.append(header2);
 
 const price2 = document.createElement("p");
 price2.className = "price";
-price2.textContent = "₹ 16000";
+price2.textContent = "₹ 30099";
 parent2Div.append(price2);
 
 const parent2Top = document.createElement("div");

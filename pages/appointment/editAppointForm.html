@@ -39,12 +39,27 @@
                                     class="formbold-form-input" />
                             </div>
                         </div>
-                        <div class="formbold-mb-5">
-                            <label for="email" class="formbold-form-label"> Email Address </label>
-                            <input type="email" name="email" id="user_email"
-                                title="it can contain alphabets, number and must have @gmail.com"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Enter your email"
-                                class="formbold-form-input" />
+                        <div class="flex flex-wrap formbold--mx-3" id="divform">
+                            <div class="formbold-mb-5">
+                                <label for="email" class="formbold-form-label"> Email Address </label>
+                                <input type="email" name="email" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                                    placeholder="Enter your email" class="formbold-form-input" />
+                            </div>
+                            <div class="formbold-mb-5" id="designers_name">
+                                <label for="option" class="formbold-form-label"> Designers </label>
+                                <select name="" id="user_designers" class="form-control" required>
+                                    <option value="" disabled selected>Designers List</option>
+                                    <option value="Gauri Khan">Gauri Khan</option>
+                                    <option value="Manit Rastogi">Manit Rastogi</option>
+                                    <option value="Sunita Kohli">Sunita Kohli</option>
+                                    <option value="Rajiv Saini">Rajiv Saini</option>
+                                    <option value="Anjum Jung">Anjum Jung</option>
+                                    <option value="Sussanne Khan">Sussanne Khan</option>
+                                </select>
+                            </div>
+                           
                         </div>
                         <div class="flex flex-wrap formbold--mx-3">
                             <div class="w-full sm:w-half formbold-px-3">
@@ -162,6 +177,7 @@
         document.getElementById("user_state").value = unique_id.user_state;
         document.getElementById("user_code").value = unique_id.user_code;
         document.getElementById("user_date").value = unique_id.user_date;
+        document.getElementById("user_designers").value = unique_id.user_designers;
         document.getElementById("user_time").value = unique_id.user_time;
 
         document.getElementById("btn_appointment").addEventListener("click", function (event) {
@@ -172,6 +188,7 @@
             const user_no = document.getElementById("user_no").value;
             const user_date = document.getElementById("user_date").value;
             const user_time = document.getElementById("user_time").value;
+            const user_designers = document.getElementById("user_designers").value;
             const user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
             const user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(" ");
             const user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(" ");
@@ -183,21 +200,23 @@
             unique_id.user_date = user_date;
             unique_id.user_time = user_time;
             unique_id.user_address = user_address;
+            unique_id.user_designers = user_designers;
             unique_id.user_city = user_city;
             unique_id.user_state = user_state;
             unique_id.user_code = user_code;
 
             if (
-                user_name === "" ||
-                user_email === "" ||
-                user_date === "" ||
-                user_time === "" ||
-                user_address === "" ||
-                user_city === "" ||
-                user_state === "" ||
-                /^\s*$/.test(user_address) ||
-                /^\s*$/.test(user_city) ||
-                /^\s*$/.test(user_state) ||
+                user_name.trim() === "" ||
+                user_email.trim() === "" ||
+                user_date.trim() === "" ||
+                user_time.trim() === "" ||
+                user_address.trim() === "" ||
+                user_city.trim() === "" ||
+                user_state.trim() === "" ||
+                user_designers.trim() === "" ||
+                !user_address.trim() ||
+                !user_city.trim() ||
+                !user_state.trim() ||
                 !checkPhoneNumber(user_no) ||
                 !checkCode(user_code) ||
                 !document.querySelector('input[type="radio"]:checked')
@@ -206,6 +225,16 @@
                 return;
             }
 
+            function checkPhoneNumber(phoneNumber) {
+                const phoneNumberRegex = /^[0-9]{10}$/;
+                return phoneNumberRegex.test(phoneNumber);
+            }
+
+            function checkCode(code) {
+                const codeRegex = /^[0-9]{6}$/;
+                return codeRegex.test(code);
+            }
+            
             localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
             alert("Appointment updated successfully");
 

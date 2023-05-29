@@ -29,8 +29,9 @@
 }
 
 .middle_contain {
-    margin-top: 2rem;
-    margin-left: 8rem;
+    margin-top: -1rem;
+    margin-left: 6rem;
+    width:100%;
 }
 
 .star_icon {
@@ -87,8 +88,8 @@
 }
 
 .product_description p {
-    margin-left: 2rem;
-    margin-right: 5rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
 }
 
 .amount {
