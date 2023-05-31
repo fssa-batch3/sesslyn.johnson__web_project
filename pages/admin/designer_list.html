@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/admin/designer_list.css">
+    <link rel="stylesheet" href="../../assets/css/wishlist.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="top">
+        <div class="left_corner">
+            <div class="top_container">
+                <img src="../../assets/images/home_page/profile_girl.png" id="user_image" class="profile_image"
+                    alt="profile image">
+                <div class="crown">
+                    <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crwon image">
+                    <p class="crown_text">Learner</p>
+                    <button id="btn_upload">
+                        <a href="../profile/edit_profile.html">Edit</a>
+                    </button>
+                </div>
+            </div>
+            <div class="nav_account">
+
+                <button class="nav_profile" id="nav_8">
+                    <a href="#">My Projects</a>
+                </button>
+                <button class="nav_profile" id="nav_4">
+                    <a href="../../pages/admin/designer_list.html">My Designers</a>
+                </button>
+                <button class="nav_profile" id="nav_5">
+                    <a href="../../pages/profile/profile_new.html">My Account</a>
+                </button>
+                <button class="nav_profile" id="nav_6">
+                    <a href="#">New Projects</a>
+                </button>
+                <button class="nav_profile" id="nav_7">
+                    <a href="../../pages/admin/designer_form.html">New Designers</a>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="right_corner">
+            <div class="wish_heading">
+                <h1>Charrette - The Designer's House</h1>
+                <p>View our expert Designers of Minimalistic</p>
+                <hr class="new1">
+            </div>
+
+            <main id="slider">
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+
+        const profile_id = JSON.parse(localStorage.getItem("profile_id"));
+        const user_crud = JSON.parse(localStorage.getItem("user_crud"));
+
+
+        const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+        console.log(designersInfo);
+
+        for (const designer of designersInfo) {
+            // Create the necessary elements
+            const section = document.createElement('section');
+            section.setAttribute('class', 'slider-container');
+            console.log(section);
+
+            const divSlider = document.createElement('div');
+            divSlider.setAttribute('class', 'slider');
+            section.appendChild(divSlider);
+
+            const divSliderItem = document.createElement('div');
+            divSliderItem.setAttribute('class', 'slider-item');
+            divSlider.appendChild(divSliderItem);
+
+            const divSlide = document.createElement('div');
+            divSlide.setAttribute('class', 'slide');
+            divSliderItem.appendChild(divSlide);
+
+            const figure = document.createElement('figure');
+            figure.setAttribute('class', 'slide-image');
+            divSlide.appendChild(figure);
+
+            const img = document.createElement('img');
+            img.setAttribute('src', designer['image']);
+            img.setAttribute('alt', 'Image of Designers');
+            figure.appendChild(img);
+
+            const h4 = document.createElement('h4');
+            h4.setAttribute('class', 'slide-name');
+            h4.textContent = designer['firstname'] + " " + designer['lastname'];
+            divSlide.appendChild(h4);
+
+            const pDesign = document.createElement('p');
+            pDesign.textContent = designer['profession'];
+            divSlide.appendChild(pDesign);
+
+            const divCustomLine1 = document.createElement('div');
+            divCustomLine1.setAttribute('class', 'custom-line');
+            divSlide.appendChild(divCustomLine1);
+
+            const divRow1 = document.createElement('div');
+            divRow1.setAttribute('class', 'row');
+            divSlide.appendChild(divRow1);
+
+            const pProjects = document.createElement('p');
+            pProjects.textContent = designer['project'] + ' Project';
+            divRow1.appendChild(pProjects);
+
+            const strong = document.createElement('strong');
+            strong.textContent = '•';
+            divRow1.appendChild(strong);
+
+            const pPersons = document.createElement('p');
+            pPersons.textContent = designer['team'] + ' Persons';
+            divRow1.appendChild(pPersons);
+
+            const divCustomLine2 = document.createElement('div');
+            divCustomLine2.setAttribute('class', 'custom-line');
+            divSlide.appendChild(divCustomLine2);
+
+            const divRow2 = document.createElement('div');
+            divRow2.setAttribute('class', 'row custom-row');
+            divSlide.appendChild(divRow2);
+
+            const button = document.createElement('button');
+            button.setAttribute('class', 'viewMore');
+            button.setAttribute('data-id', designer['designersId']);
+            button.textContent = 'View More';
+            divRow2.appendChild(button);
+
+            document.querySelector('main#slider').append(section);
+        }
+
+
+        //URL Params
+        const bookCovers = document.querySelectorAll(".viewMore");
+        bookCovers.forEach((bookCover) => {
+            bookCover.addEventListener("click", (event) => {
+                const person_data = bookCover.dataset.id;
+                window.location.href = `./designers_info.html?designers_id=${person_data}`;
+            });
+        });
+    </script>
+    <script src="../../assets/comments/seller_header.js"></script>
+</body>
+
+</html>

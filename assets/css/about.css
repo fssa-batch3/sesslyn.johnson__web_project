@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+#sign_in{
+    margin-left:0rem;
+}
+.question_div {
+    margin-bottom: 6rem;
+    margin-left: 3rem;
+}
+
+.after-order {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.4rem;
+    margin-right: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#accordian {
+    margin: 2rem -2rem 4rem 8rem;
+    width: 580px;
+}
+
+#accordian li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgb(228, 226, 226);
+    padding: 0.938rem 0rem 0.938rem 0.938rem;
+    border-radius: 4px;
+}
+
+#accordian li label {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: black;
+}
+
+#accordian li label span {
+    transform: rotate(90deg);
+    font-size: 22px;
+    color: rgb(44, 43, 43);
+    margin-right: 3rem;
+}
+
+#accordian label+input[type="radio"] {
+    display: none;
+}
+
+#accordian .content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#accordian .content p {
+    color: rgb(60, 59, 59);
+    padding-right: 2rem;
+}
+
+#accordian label+input[type="radio"]:checked+.content {
+    max-height: 400px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.left_corner {
+    position: fixed;
+}
+
+.about-profile-img {
+    height: 38rem;
+    width: 40rem;
+    margin: 6rem 0rem 0rem 7rem;
+}
+
+.right_corner {
+    margin: 2rem 0rem 2rem 42rem;
+    background-color: white;
+    width: 70%;
+    height: 87vh;
+    overflow-y: scroll;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.about_page {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 120px;
+    margin: 9rem 0rem 6rem 10rem;
+}
+
+.contact_page {
+    padding-left: 20px;
+    padding-right: 120px;
+    margin: 2rem 0rem 20rem 10rem;
+}
+
+.exper_div {
+    text-align: center;
+    margin: 8rem 2rem 6rem 6rem;
+    padding-left: 80px;
+    padding-right: 20px;
+    font-size: 20px;
+    color: rgb(16, 15, 15);
+}
+
+.h3_about {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.h3_contact {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.p_contact {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+    padding-bottom: 1rem;
+}
+
+h5 {
+    font-family: "brandon-grotesque", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    padding: 2rem;
+}
+
+.div_para {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.div_text {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about_h3 {
+    font-family: "brandon-grotesque", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-top: -2rem;
+}
+
+.scroll-wrapper {
+    text-align: center;
+}
+
+.scroll {
+    width: 40px;
+    height: 40px;
+    -webkit-animation: nod 3s ease infinite;
+    -moz-animation: nod 3s ease infinite;
+    -o-animation: nod 3s ease infinite;
+    animation: nod 3s ease infinite;
+}
+
+.scroll_bar {
+    width: 40px;
+    height: 40px;
+    margin-top: 5rem;
+    -webkit-animation: nod 3s ease infinite;
+    -moz-animation: nod 3s ease infinite;
+    -o-animation: nod 3s ease infinite;
+    animation: nod 3s ease infinite;
+}
+
+#btnAppoint {
+    margin: 1rem 1rem 0.625rem 0rem;
+}
+
+@keyframes nod {
+    0% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(0, 40px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}

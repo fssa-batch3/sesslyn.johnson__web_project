@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room-Details</title>
+    <link rel="stylesheet" href="../../assets/css/roomProject/roomDetails.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+<div class="section">
+
+</div>
+    <script>
+
+        var mainDiv = document.createElement('div');
+        mainDiv.className = 'sp-container';
+        console.log(mainDiv);
+
+        // Create the main container div
+        var containerDiv = document.createElement('div');
+        containerDiv.className = 'sp-container';
+        mainDiv.appendChild(containerDiv);
+
+        // Create the projects title paragraph
+        var projectsTitle = document.createElement('p');
+        projectsTitle.className = 'projectsTitle';
+        projectsTitle.textContent = 'PROJECTS';
+        containerDiv.appendChild(projectsTitle);
+
+
+        // Create the video stream div
+        var videoStreamDiv = document.createElement('div');
+        videoStreamDiv.className = 'video-stream';
+        mainDiv.appendChild(videoStreamDiv);
+
+         // Create the project name paragraph
+         var projectName = document.createElement('p');
+        projectName.className = 'projectName';
+        projectName.textContent = 'Project - Tara';
+        videoStreamDiv.appendChild(projectName);
+
+        // Create the iframe for the main video
+        var mainVideoIframe = document.createElement('iframe');
+        mainVideoIframe.className = 'main-video';
+        mainVideoIframe.src = 'https://www.youtube.com/embed/S-KsCfne6qw';
+        mainVideoIframe.frameborder = '0';
+        mainVideoIframe.allowfullscreen = true;
+        videoStreamDiv.appendChild(mainVideoIframe);
+
+        // Create the post meta div
+        var postMetaDiv = document.createElement('div');
+        postMetaDiv.className = 'postMeta';
+        mainDiv.appendChild(postMetaDiv);
+
+        // Create the designer by div
+        var designerByDiv = document.createElement('div');
+        designerByDiv.className = 'designerBy';
+        postMetaDiv.appendChild(designerByDiv);
+        
+        // Create the heading paragraph for designed by
+        var designedByHeading = document.createElement('p');
+        designedByHeading.className = 'heading';
+        designedByHeading.textContent = 'Designed By';
+        designerByDiv.appendChild(designedByHeading);
+
+        // Create the designer name paragraph
+        var designerName = document.createElement('p');
+        designerName.textContent = 'Sesslyn Johnson';
+        designerByDiv.appendChild(designerName);
+
+        // Create the designed year div
+        var designedYearDiv = document.createElement('div');
+        designedYearDiv.className = 'designedYear';
+        postMetaDiv.appendChild(designedYearDiv);
+
+        // Create the heading paragraph for designed in
+        var designedInHeading = document.createElement('p');
+        designedInHeading.className = 'heading';
+        designedInHeading.textContent = 'Designed In';
+        designedYearDiv.appendChild(designedInHeading);
+
+        // Create the designed year paragraph
+        var designedYear = document.createElement('p');
+        designedYear.textContent = '2022';
+        designedYearDiv.appendChild(designedYear);
+
+        // Create the new line horizontal rule
+        var newLineHr = document.createElement('hr');
+        newLineHr.className = 'newLine';
+        mainDiv.appendChild(newLineHr);
+
+        // Create the has-text h4 heading
+        var hasTextHeading = document.createElement('h4');
+        hasTextHeading.className = 'has-text';
+        hasTextHeading.textContent = 'Tara was designed around large fluid spaces and compartmentalised, functional storage and furniture. White surfaces and metal cladding reflect and diffuse light inside the 30m2 space, allowing light to open up the bathroom and kitchen despite having few windows. Everything fits neatly together, all to make the best possible use of the apartments existing space.';
+        mainDiv.appendChild(hasTextHeading);
+
+        document.querySelector("div.section").append(mainDiv);
+
+    </script>
+</body>
+
+</html>

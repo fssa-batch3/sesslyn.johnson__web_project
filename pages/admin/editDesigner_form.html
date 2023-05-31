@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/admin/designer_form.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div class="container">
+        <header>Designers Info
+            <span>Add new designers.</span>
+        </header>
+        <form onsubmit="newProduct(event)">
+            <div class="in-container">
+                <h2>Designers Information</h2>
+                <div class="row">
+                    <div class="col2">
+                        <input type="text" id="firstname" required pattern="[a-zA-Z]+" title="Only contain Alphabets"
+                            name="firstname">
+                        <label for="firstname">First Name</label>
+                    </div>
+                    <div class="col2">
+                        <input type="text" id="lastname" required pattern="[a-zA-Z]+" title="Only contain Alphabets"
+                            name="lastname">
+                        <label for="lastname">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="text" id="profession" required pattern="[a-zA-Z\s]+" title="Only contain Alphabets"
+                        name="email">
+                    <label for="email">Profession</label>
+                </div>
+                <div class="row">
+                    <input type="text" id="education" required 
+                        title="Please enter a valid education" name="contactnum">
+                    <label for="contactnum">Education</label>
+                </div>
+                <div class="row">
+                    <div class="col2">
+                        <input type="number" id="project" min="1" max="25" pattern="[1-9]{2}" required name="projects">
+                        <label for="projects">Projects</label>
+                    </div>
+                    <div class="col2">
+                        <input type="number" id="team" pattern="[1-9]{1}" min="2" max="8" required name="team">
+                        <label for="team">Team</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="text" id="image" required name="contactnum">
+                    <label for="contactnum">Image</label>
+                </div>
+                <h2>About Designers</h2>
+                <div class="row">
+                    <label for="orderid">About</label>
+                    <textarea id="about" required name="orderid"></textarea>
+                </div>
+                <div class="row">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const designer_id = urlParams.get("designer_id");
+
+        let designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+        let unique_id = designersInfo.find((form) => form.designersId === designer_id);
+        console.log(unique_id);
+
+        if (unique_id) {
+            document.getElementById("firstname").value = unique_id.firstname;
+            document.getElementById("lastname").value = unique_id.lastname;
+            document.getElementById("profession").value = unique_id.profession;
+            document.getElementById("education").value = unique_id.education;
+            document.getElementById("project").value = unique_id.project;
+            document.getElementById("team").value = unique_id.team;
+            document.getElementById("image").value = unique_id.image;
+            document.getElementById("about").value = unique_id.about;
+        }
+
+
+       function newProduct(e){
+            event.preventDefault();
+            const firstname = document.getElementById("firstname").value.trim().split(/\s+/g).join(" ");
+            const lastname = document.getElementById("lastname").value.trim().split(/\s+/g).join(" ");
+            const profession = document.getElementById("profession").value.trim().split(/\s+/g).join(" ");
+            const education = document.getElementById("education").value.trim().split(/\s+/g).join(" ");
+            const project = document.getElementById("project").value;
+            const team = document.getElementById("team").value;
+            const image = document.getElementById("image").value.trim().split(/\s+/g).join(" ");
+            const about = document.getElementById("about").value.trim().split(/\s+/g).join(" ");
+
+            unique_id.firstname = firstname;
+            unique_id.lastname = lastname;
+            unique_id.image = image;
+            unique_id.profession = profession;
+            unique_id.education = education;
+            unique_id.project = project;
+            unique_id.team = team;
+            unique_id.about = about;
+
+            localStorage.setItem("designersInfo", JSON.stringify(designersInfo));
+            alert("Designer Info updated successfully");
+
+            window.location.href = "./designer_list.html";
+        };
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>

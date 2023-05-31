@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller - Profile</title>
+    <link rel="stylesheet" href="../../assets/css/profile/profile_new.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="profile_container">
+        <div class="profile_left">
+            <img src="#" id="user_image" class="user_profile"
+                alt="Profile image">
+            <p class="head_profile">
+                PROFILE
+                <hr class="new">
+            </p>
+
+            <div>
+                <h4 class="heading_left">Bio</h4>
+                <p class="left_para" id="seller_about">
+                </p>
+            </div>
+            <p class="head_profile" id="skill">
+                VISIT US
+                <hr class="new1">
+            </p>
+            <p class="left_text">
+            <p>
+            <ul>
+                <a href="#">
+                    <li>Linked In</li>
+                </a>
+                <a href="#">
+                    <li>Github</li>
+                </a>
+                <a href="#">
+                    <li>Instagram</li>
+                </a>
+                <a href="#">
+                    <li>Facebook</li>
+                </a>
+            </ul>
+            </p>
+
+            </p>
+        </div>
+        <div class="profile_right">
+            <div class="user_details">
+                <h3 class="user_name" id="seller_name"></h3>
+                <span class="tooltip">
+                    <a href="./sellerprofile_edit.html">
+                        <img src="../../assets/images/home_page/edit_icon.png" id="edit_icon" alt="edit icon">
+                    </a>
+                    <p class="tooltiptext">Edit</p>
+                </span>
+
+            </div>
+            <p class="user-title">Minimalist</p>
+            <div class="button_navigate">
+                <a href="./product_form.html">
+                    <button class="btn_wish">
+                        <img src="../../assets/images/home_page/heart_black.png" class="icon" alt="heart image">New
+                    </button>
+                </a>
+                <a href="./product_list.html">
+                    <button class="btn_cart">
+                        <img src="../../assets/images/home_page/cart_black.png" class="icon" alt="cart image">Products
+                    </button>
+                </a>
+
+            </div>
+
+            <hr class="new2">
+            <p class="right_profile">CONTACT INFORMATION</p>
+            <div class="user_details">
+                <p class="content">E-mail :</p>
+                <p class="details" id="seller_email"></p>
+            </div>
+            <div class="user_details">
+                <p class="content">Address :</p>
+                <p class="details" id="seller_address"></p>
+                <p id="seller_city"></p>
+
+            </div>
+            <div class="user_details">
+                <p class="content">Birthday :</p>
+                <p class="details" id="seller_dob"></p>
+            </div>
+
+            <div class="user_details">
+                <p class="content">Gender :</p>
+                <p class="details" id="seller_gender"></p>
+            </div>
+            <div class="user_details">
+                <p class="content" id="user">Phone :</p>
+                <p class="details" id="seller_no"></p>
+            </div>
+
+            <hr class="new2">
+            <p class="right_profile">PERSONAL INFORMATION</p>
+            <div class="user_details">
+                <p class="content">Aadhar No :</p>
+                <p class="details" id="seller_aadhar"></p>
+            </div>
+            <div class="user_details">
+                <p class="content">GSTIN :</p>
+                <p class="details" id="seller_gst"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+
+        const link = document.createElement('a');
+        const button = document.createElement('button');
+        button.className = 'btn_orders';
+
+        const image = document.createElement('img');
+        image.src = '../../assets/images/home_page/tick_black.png';
+        image.className = 'icon';
+        image.alt = 'order image';
+
+        button.appendChild(image);
+
+        let buttonText;
+
+        if (seller_id === "admin@gmail.com") {
+            link.href = '../admin/designer_list.html';
+            buttonText = document.createTextNode('Designers');
+        } else {
+            link.href = './seller_homepage.html';
+            buttonText = document.createTextNode('Homepage');
+        }
+
+        button.appendChild(buttonText);
+        link.appendChild(button);
+
+        document.querySelector("div.button_navigate").append(link);
+
+
+
+        //Getting Details from sign in page
+
+        const seller_list = JSON.parse(localStorage.getItem("seller_list"));
+        function login_data(e) {
+            return e.seller_email == seller_id;
+        }
+
+        let user_data = seller_list.find(login_data);
+
+        document.getElementById("seller_name").innerHTML = user_data.seller_name;
+        document.getElementById("seller_email").innerHTML = user_data.seller_email;
+        document.getElementById("seller_dob").innerHTML = user_data.seller_dob;
+        document.getElementById("seller_address").innerHTML = user_data.seller_address;
+        document.getElementById("seller_no").innerHTML = user_data.seller_no;
+        document.getElementById("seller_gender").innerHTML = user_data.seller_gender;
+        document.getElementById("seller_city").innerHTML = user_data.seller_city;
+        document.getElementById("seller_aadhar").innerHTML = user_data.seller_aadhar;
+        document.getElementById("seller_gst").innerHTML = user_data.seller_gst;
+        document.getElementById("seller_about").innerHTML = user_data.seller_about;
+
+        const image_element = document.getElementById("user_image");
+
+        if (user_data.seller_image === "") {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        } else if (user_data.seller_image !== "") {
+            image_element.setAttribute("src", user_data.seller_image);
+        } else {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        }
+    </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
+    <script src="../../assets/comments/seller_header.js"></script>
+</body>
+
+</html>

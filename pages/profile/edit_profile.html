@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../../assets/css/wishlist.css">
+    <link rel="stylesheet" href="../../assets/css/profile/edit_profile.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="left_corner">
+            <div class="top_container">
+                <img src="../../assets/images/home_page/profile_girl.png" class="profile_image" id="profile_image"
+                    alt="profile image">
+                <div class="crown">
+                    <img src="../../assets/images/home_page/crown.png" class="crown_icon" alt="crwon image">
+                    <p class="crown_text">Learner</p>
+                    <button id="btn_upload">
+                        <a href="#">Edit</a>
+                    </button>
+                </div>
+            </div>
+            <div class="nav_account">
+                <button class="nav_profile" id="nav_1">
+                    <a href="../../pages/order/order.html">My Orders</a>
+                </button>
+                <button class="nav_profile" id="nav_2">
+                    <a href="../../pages/cart.html">My Trolley</a>
+                </button>
+                <button class="nav_profile" id="nav_3">
+                    <a href="../../pages/wishlist.html">My Wishlist</a>
+                </button>
+                <button class="nav_profile" id="nav_4">
+                    <a href="../../pages/appointment/appointment_history.html">My Schedule</a>
+                </button>
+                <button class="nav_profile" id="nav_5">
+                    <a href="#">My Account</a>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="right_corner">
+            <div class="top_container">
+                <h2>Edit Profile</h2>
+                <form onSubmit="update_details(event)">
+                    <div class="order-details">
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Name</label>
+                                <input type="text" class="name" required="true" id="user_name" pattern="[a-zA-Z]+"
+                                    title="Only Alphabets are allowed." placeholder="Daniel">
+                            </div>
+                        </div>
+                        <div class="details">
+                            <div class="form_details">
+                                <label class="mobile_no">Mobile Number</label>
+                                <input type="tel" maxlength="10" class="name" required="true" id="user_no" value="9952393568"
+                                    pattern="[0-9]{10}" title="it should be 10 digit number" placeholder="9952393568">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>E-mail</label>
+                                <input type="text" class="name" disabled required="true" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
+
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label class="mobile_no">D.O.B</label>
+                                <input type="date" class="name" max="2015-12-31" value="2002-08-26" required="true" id="user_dob" placeholder="Chennai">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Gender</label>
+                                <select type="text" class="name" required="true" id="user_gender" value="Female" placeholder="Male">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                </select>
+                            </div>  
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label class="country_no">Image</label>
+                                <input type="text" class="name" id="user_image" title="https://.*" pattern="https://.*" value="https://lh3.googleusercontent.com/dG_j1BK9W9rjuTRUvB-toJ1mEn-e-R7u-_fwD1Rd5TTU2I_AGBOESfYO02nlnV4oXU6TnDvXFFgQuIbyeJ06qfViCzHX7GAwxJSWy8h8iu5VU-KqJ9BJ_sqUTDLWMNy5HRC_M-SCYSfqtUBX6tdEgR1ubAlzyQtHIMI2fYNnFfP-caEYBESpAyaGhyJDDGcIPf26oeQNYhtnl1xea4xg9VPB6KO7nHmySaeE6SXLPi6SL1xTPVSCLc4DlrXFg5Yfb-LPufTNQ924S50cL4Pl_BcPJKjHYpB770Wi3SYgfaq5M3o-kragAYMG64LPuW1D84psVpSXr8bMnC0QWC2y4-vucwZNJMseq2T-s-g7PBCgVTrUXjxZnJCp4CV-LNjUH3ODSztXLzk7G858tbRDnJrDD0a8_yA4Ds7WmzZ4Ba8Y10539S-MvNxc4R50OX-WtpylLKWrWEA3PCjunXDoVKYwvXEN23PFYNTUK2Ns-vBAn1WnFZec9oMAYI4e7vBkcESFP6TBDY6FW1RUsfZJ8rRw9YmRLvh1hY_fS3f7HBfWmCcTxcPMVfNcRa2SHoNWgIuEVhTbW0363Vi_dql0Lc6q0OGKwrY7X7yYPKVVXuRRYMWMppJ-jOQrakpdK8qqnRIXiaTpZGq62dWCSbleg45rSd2nYa8v5103Nj1ZvianDJN0xBFnjfdU1wEZqnNMT_xiQibI-Ric9lF6BR-i3XlStQcnrPepkNPAZcCvlJMcPTbKjiMtJSminR8i6uL5TsIUZqivFbASih_5MiuAMEr4WDx6F1FyJ3wJZNdrANOplZ4ZN9l8xWQYi4ulXJAxgj2Z6JJqQ9BcFkfLnG8oVd087InEtlctqk9-ZGAKg0gq15s_P8xoRe9QcMWCvPq1C3K1h7GVG3cmbv1UYCVQE717UVFf3yI9D4bR3CyqHfLpHFxKI0Yv5zB79nZ_Ylqj8EbXrh3wJj_J5KKWaFFogA=w939-h1338-s-no?authuser=1"
+                                    placeholder="https://">
+                            </div>
+                        </div>
+
+                        <div class="click_button">
+                            <button class="btn_save" type="sumbit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        const profile_id = JSON.parse(localStorage.getItem("profile_id"));
+        const user_crud = JSON.parse(localStorage.getItem("user_crud"));
+        function login_data(e) {
+            return e.user_email == profile_id;
+        }
+
+        const user_data = user_crud.find(login_data);
+
+        document.getElementById("user_name").value = user_data.user_name;
+        document.getElementById("user_email").value = user_data.user_email;
+        document.getElementById("user_dob").value = user_data.user_dob;
+        document.getElementById("user_address").value = user_data.user_address;
+        document.getElementById("user_no").value = user_data.user_no;
+        document.getElementById("user_gender").value = user_data.user_gender;
+        document.getElementById("user_city").value = user_data.user_city;
+        document.getElementById("user_state").value = user_data.user_state;
+        document.getElementById("user_country").value = user_data.user_country;
+        document.getElementById("user_about").value = user_data.user_about;
+        document.getElementById("user_image").value = user_data.user_image;
+
+        //Image
+        const image_element = document.getElementById("profile_image");
+        image_element.setAttribute("src", user_data.user_image);
+
+        //Date
+        let today = new Date();
+        const dd = String(today.getDate()).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const yyyy = today.getFullYear();
+        today = `${yyyy}-${mm}-${dd}`;
+        document.getElementById("user_dob").setAttribute("max", today);
+
+        //Update Details
+        function update_details(e) {
+            e.preventDefault();
+            const up_dob = document.getElementById("user_dob").value;
+            const up_no = document.getElementById("user_no").value;
+            const up_gender = document.getElementById("user_gender").value;
+            const up_email = document.getElementById("user_email").value;
+            const up_image = document.getElementById("user_image").value;
+
+            
+            user_data.user_dob = up_dob;
+            user_data.user_no = up_no;
+            user_data.user_gender = up_gender;
+            user_data.user_about = up_email;
+            user_data.user_image = up_image;
+
+            //Phone Number
+            function check_phonenumber() {
+                let result = 0;
+                for (const digit of up_no) {
+                    if (up_no[0] == digit) {
+                        result += 1;
+                    } else {
+                        break;
+                    }
+                }
+                if (result == 10) {
+                    alert("Enter your number properly");
+                    up_no.value = reset();
+                }
+            }
+            check_phonenumber();
+
+            localStorage.setItem("user_crud", JSON.stringify(user_crud));
+
+            window.location.href = "./profile_new.html";
+        }
+    </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
+    <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>

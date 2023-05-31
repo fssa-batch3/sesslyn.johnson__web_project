@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber-Shop</title>
+    <link rel="stylesheet" href="../../assets/css/appointment/appointment_form.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div id="block">
+        <div class="container">
+            <div class="left">
+                <img class="appointmentImg" src="https://iili.io/HgJQo1s.jpg" alt="Appointment image">
+            </div>
+            <div class="formbold-main-wrapper">
+
+                <div class="formbold-form-wrapper">
+                    <form>
+                        <div class="flex flex-wrap formbold--mx-3" id="divform">
+                            <div class="formbold-mb-5" id="nameForm">
+                                <label for="name" class="formbold-form-label"> Full Name </label>
+                                <input type="text" name="name" id="user_name" required pattern="[a-zA-Z]+"
+                                    title="Only Alphabets are allowed." placeholder="Full Name"
+                                    class="formbold-form-input" />
+                            </div>
+                            <div class="formbold-mb-5" id="emailForm">
+                                <label for="phone" class="formbold-form-label"> Phone Number </label>
+                                <input type="text" name="phone" id="user_no" required pattern="[0-9]{10}"
+                                    title="it should be 10 digit number" placeholder="Enter your phone number"
+                                    class="formbold-form-input" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap formbold--mx-3" id="divform">
+                            <div class="formbold-mb-5">
+                                <label for="email" class="formbold-form-label"> Email Address </label>
+                                <input type="email" name="email" id="user_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                                    placeholder="Enter your email" class="formbold-form-input" />
+                            </div>
+                            <div class="formbold-mb-5" id="designers_name">
+                                <label for="option" class="formbold-form-label"> Designers </label>
+                                <select name="" id="user_designers" class="form-control" required>
+                                    <option value="" disabled selected>Designers List</option>
+                                    <option value="Gauri Khan">Gauri Khan</option>
+                                    <option value="Manit Rastogi">Manit Rastogi</option>
+                                    <option value="Sunita Kohli">Sunita Kohli</option>
+                                    <option value="Rajiv Saini">Rajiv Saini</option>
+                                    <option value="Anjum Jung">Anjum Jung</option>
+                                    <option value="Sussanne Khan">Sussanne Khan</option>
+                                </select>
+                            </div>
+                           
+                        </div>
+                        <div class="flex flex-wrap formbold--mx-3">
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5 w-full">
+                                    <label for="date" class="formbold-form-label"> Date </label>
+                                    <input type="date" name="date" id="user_date" required
+                                        title="Book appointment in this month" class="formbold-form-input" />
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-half formbold-px-3">
+                                <div class="formbold-mb-5">
+                                    <label for="time" class="formbold-form-label"> Time </label>
+                                    <input type="time" name="time" id="user_time" required="true"
+                                        class="formbold-form-input" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Address Details
+                            </label>
+                            <div class="flex flex-wrap formbold--mx-3">
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="area" id="user_address" required
+                                            title="Only Alphabets and space is allowed" placeholder="Enter area"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="city" id="user_city" required="true"
+                                            title="Only Alphabets and space is allowed" placeholder="Enter city"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="state" id="user_state" required="true"
+                                            title="Only Alphabets and space is allowed" placeholder="Enter state"
+                                            class="formbold-form-input" />
+                                    </div>
+                                </div>
+                                <div class="w-full sm:w-half formbold-px-3">
+                                    <div class="formbold-mb-5">
+                                        <input type="text" name="post-code" id="user_code"
+                                            title="It should be a 6 digit number without spaces and first digit can not be zero"
+                                            pattern="[6]{1}[0-9]{4}[1-9]{1}" maxlength="6" min="600001" max="643253"
+                                            required="true" placeholder="Post Code" class="formbold-form-input" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="formbold-mb-5 formbold-pt-3">
+                            <label class="formbold-form-label formbold-form-label-2">
+                                Room Details
+                            </label>
+                            <div class="flex radioButton">
+                                <div class="input_cash" id="cash_1">
+                                    <input type="radio" id="1_bhk" class="user_cash">
+                                    <label class="payment_label">1 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_2">
+                                    <input type="radio" id="2_bhk" class="user_cash">
+                                    <label class="payment_label">2 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_3">
+                                    <input type="radio" id="3_bhk" class="user_cash">
+                                    <label class="payment_label">3 BHK</label>
+                                    <br>
+                                </div>
+
+                                <div class="input_cash" id="cash_4">
+                                    <input type="radio" id="3+_bhk" class="user_cash">
+                                    <label class="payment_label">3+ BHK</label>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonDiv">
+                            <button id="btn_delete">Delete Appointment</button>
+                            <button class="formbold-btn" id="btn_appointment">Update Appointment</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        //URL Params
+        const urlParams = new URLSearchParams(window.location.search);
+        const editAppoint = urlParams.get("editAppoint");
+        console.log(editAppoint);
+
+        let appointDetails = JSON.parse(localStorage.getItem("appointDetails"));
+        let profileId = JSON.parse(localStorage.getItem("profile_id"));
+        let appointmentUser = appointDetails.filter(e => e.user_email == profileId);
+        console.log(appointmentUser)
+        let unique_id = appointmentUser.find((form) => form.appoint_id === editAppoint);
+        console.log(unique_id);
+
+        document.getElementById("user_name").value = unique_id.user_name;
+        document.getElementById("user_email").value = unique_id.user_email;
+        document.getElementById("user_address").value = unique_id.user_address;
+        document.getElementById("user_no").value = unique_id.user_no;
+        document.getElementById("user_city").value = unique_id.user_city;
+        document.getElementById("user_state").value = unique_id.user_state;
+        document.getElementById("user_code").value = unique_id.user_code;
+        document.getElementById("user_date").value = unique_id.user_date;
+        document.getElementById("user_designers").value = unique_id.user_designers;
+        document.getElementById("user_time").value = unique_id.user_time;
+
+        document.getElementById("btn_appointment").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const user_name = document.getElementById("user_name").value;
+            const user_email = document.getElementById("user_email").value;
+            const user_no = document.getElementById("user_no").value;
+            const user_date = document.getElementById("user_date").value;
+            const user_time = document.getElementById("user_time").value;
+            const user_designers = document.getElementById("user_designers").value;
+            const user_address = document.getElementById("user_address").value.trim().split(/\s+/g).join(" ");
+            const user_city = document.getElementById("user_city").value.trim().split(/\s+/g).join(" ");
+            const user_state = document.getElementById("user_state").value.trim().split(/\s+/g).join(" ");
+            const user_code = document.getElementById("user_code").value;
+
+            unique_id.user_name = user_name;
+            unique_id.user_email = user_email;
+            unique_id.user_no = user_no;
+            unique_id.user_date = user_date;
+            unique_id.user_time = user_time;
+            unique_id.user_address = user_address;
+            unique_id.user_designers = user_designers;
+            unique_id.user_city = user_city;
+            unique_id.user_state = user_state;
+            unique_id.user_code = user_code;
+
+            if (
+                user_name.trim() === "" ||
+                user_email.trim() === "" ||
+                user_date.trim() === "" ||
+                user_time.trim() === "" ||
+                user_address.trim() === "" ||
+                user_city.trim() === "" ||
+                user_state.trim() === "" ||
+                user_designers.trim() === "" ||
+                !user_address.trim() ||
+                !user_city.trim() ||
+                !user_state.trim() ||
+                !checkPhoneNumber(user_no) ||
+                !checkCode(user_code) ||
+                !document.querySelector('input[type="radio"]:checked')
+            ) {
+                alert("Please fill in all the required fields and provide valid information.");
+                return;
+            }
+
+            function checkPhoneNumber(phoneNumber) {
+                const phoneNumberRegex = /^[0-9]{10}$/;
+                return phoneNumberRegex.test(phoneNumber);
+            }
+
+            function checkCode(code) {
+                const codeRegex = /^[0-9]{6}$/;
+                return codeRegex.test(code);
+            }
+            
+            localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
+            alert("Appointment updated successfully");
+
+            window.location.href = "./appointment_history.html";
+        });
+
+        document.getElementById("btn_delete").addEventListener("click", function () {
+            if (confirm("Are you sure?")) {
+                const appointDetails = JSON.parse(localStorage.getItem("appointDetails"));
+                const profileId = JSON.parse(localStorage.getItem("profile_id"));
+                const appointmentUser = appointDetails.filter((e) => e.user_email == profileId);
+                const unique_id = appointmentUser.find((form) => form.appoint_id === editAppoint);
+
+                const indexOfUser = appointDetails.findIndex((form) => form.appoint_id === unique_id.appoint_id);
+                appointDetails.splice(indexOfUser, 1);
+                localStorage.setItem("appointDetails", JSON.stringify(appointDetails));
+                history.back();
+            }
+        });
+
+        function checkPhoneNumber(phoneNumber) {
+            const result = phoneNumber.match(/^(\d)\1+$/);
+            return result && result[0].length === 10;
+        }
+
+        function checkCode(code) {
+            const result = code.match(/^(\d)\1+$/);
+            return result && result[0].length === 6;
+        }
+
+    </script>
+    <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>

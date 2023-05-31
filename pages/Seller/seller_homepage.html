@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Homepage</title>
+    <link rel="stylesheet" href="../../assets/css/homepage.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="family" class="family-div">
+
+        <div>
+            <div>
+                <p>LEARN HOW TO SELL ONLINE</p>
+                <h4 class="heading"> Start Selling Online Today</h4>
+                <p> Whether you are already a successful business
+                    person or have a great idea and a passion to sell, you are just a few steps away from selling on
+                    Casas.in
+                </p>
+                <button class="btn_sell" onclick="locateButton(event)">Start Selling</button>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://iili.io/HgdJnwb.jpg" alt="seller-img" class="seller-img">
+        </div>
+    </div>
+    <div class="question">
+        <h1 class="question-head">Why sell on Minimal.in</h1>
+        <p class="question-para">Today, more than 10 lakh sellers choose Casas.in to reach out to crores of customers, 
+         and they all enjoy a host of benefits like:</p>
+         <div class="topContainer">
+             <div class="containerDiv">
+                 <img src="https://iili.io/HgdU9F2.png" alt="seller-img" height="60px" width="60px"/>
+                 <h3>Secure payments, regularly</h3>
+                 <p>Your money is safely deposited directly to your bank account every 7 days, even for Pay-on-Delivery orders.</p>
+             </div>
+             <div class="containerDiv">
+                 <img src="https://iili.io/Hgdg7e9.jpg" id="delivery" alt="seller-img"  height="60px" width="60px"/>
+                 <h3>Stress-free shipping</h3>
+                 <p>We take care of delivering your products, whether through Fulfillment by Casas (FBA) or Easy Ship.</p>
+             </div>
+             <div class="containerDiv">
+                 <img src="https://iili.io/HgdU3ue.png" alt="seller-img"  height="60px" width="60px"/>
+                 <h3>Services for every need</h3>
+                 <p>Get paid support from third-party professionals for product photography, account management, and much more.</p>
+             </div>
+         </div>
+     </div>
+     <footer class="footer" id="footer">
+    </footer>
+    <script>
+        
+        //Log Out function
+        function locateButton() {
+            const seller_id = localStorage.getItem("seller_id");
+            console.log(seller_id);
+            if (seller_id === "" || seller_id === null) {
+                window.location.href = "./seller_register.html";
+            } else {
+                window.location.href = "./product_form.html";
+            }
+        }
+    
+        fetch("../../pages/profile/footer.html")
+            .then(response => {
+                return response.text()
+            })
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
+    <script src="../../assets/comments/seller_header.js"></script>
+</body>
+
+</html>

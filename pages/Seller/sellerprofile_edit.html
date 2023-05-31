@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Edit Profile</title>
+    <link rel="stylesheet" href="../../assets/css/wishlist.css">
+    <link rel="stylesheet" href="../../assets/css/profile/edit_profile.css">
+    <link rel="stylesheet" href="../../assets/css/profile/header.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Prompt:wght@200&family=Source+Sans+Pro:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="top">
+        <div class="left_corner">
+            <div class="top_container">
+                <img src="#" class="profile_image" id="profile_image" alt="profile image">
+                <div class="crown">
+                    <img src="https://iili.io/HgdMOWF.png" class="crown_icon" alt="crown image">
+                    <p class="crown_text">Learner</p>
+                    <button id="btn_upload">
+                        <a href="#">Edit</a>
+                    </button>
+                </div>
+            </div>
+            <div class="nav_account">
+                <button class="nav_profile" id="nav_1">
+                    <a href="./product_list.html">My Products</a>
+                </button>
+                <button class="nav_profile" id="nav_2">
+                    <a href="./product_form.html">New Product</a>
+                </button>
+                <button class="nav_profile" id="nav_3">
+                    <a href="./product_list.html">Product List</a>
+                </button>
+                <button class="nav_profile" id="nav_4">
+                    <a href="../about.html">My Queries</a>
+                </button>
+                <button class="nav_profile" id="nav_5">
+                    <a href="./seller_profile.html">My Account</a>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="right_corner">
+            <div class="top_container">
+                <h2>Edit Profile</h2>
+                <form onsubmit="update_details(event)">
+                    <div class="order-details">
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Name</label>
+                                <input type="text" class="name" required="true" title="Only Alphabets are allowed."
+                                    id="seller_name" pattern="[a-zA-Z]+" placeholder="Daniel">
+                            </div>
+
+                            <div class="form_details">
+                                <label class="mobile_no">Mobile Number</label>
+                                <input type="text" class="name" title="it should be 10 digit number" required="true"
+                                    id="seller_no" pattern="[6-9]{1}[0-9]{9}" value="9952393568" placeholder="9952393568">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>E-mail</label>
+                                <input type="text" class="name" required="true" id="seller_email"
+                                    title="it can contain alphabets, number and must have @gmail.com"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="daniel05@gmail.com">
+
+                            </div>
+
+                            <div class="form_details" id="usercity_dob">
+                                <label class="mobile_no">D.O.B</label>
+                                <input type="date" class="name" max="2015-12-31" value="2004-12-15" required="true" id="seller_dob"
+                                    placeholder="Chennai">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details" id="usercity_gender">
+                                <label>Gender</label>
+                                <select type="text" class="name" required="true" value="Female" id="seller_gender" placeholder="Male">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Transgender</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form_details" id="usercity_code">
+                                <label class="mobile_no">State</label>
+                                <input type="text" class="name" value="TamilNadu" title="Only Alphabets and space is allowed"
+                                    required="true" id="seller_city" placeholder="Chennai">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Aadhar No</label>
+                                <input type="text" class="name" pattern="[0-9]{12}" title="it should be 12 digit number"
+                                    required="true" id="seller_aadhar" placeholder="Tamil Nadu">
+                            </div>
+
+                            <div class="form_details" id="gst_no">
+                                <label class="gst_no">GSTIN</label>
+                                <input type="text" class="name" required="true"
+                                    pattern="\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}"
+                                    title="it should be 15 digit number" id="seller_gst" placeholder="India">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>Address</label>
+                                <input type="text" class="name"
+                                    title="Accepts Alphabets, number and special character and space too." value="12th Nehru street, Perungudi."
+                                    required="true" id="seller_address" placeholder="12th Nehru street, Perungudi.">
+                            </div>
+                        </div>
+
+                        <div class="details">
+                            <div class="form_details">
+                                <label>About</label>
+                                <input type="text" class="name" required="true" value="I have a small business"
+                                    title="Accepts Alphabets, number and special character and space too."
+                                    id="seller_about" placeholder="I am an Entrepreneur.">
+                            </div>
+
+                            <div class="form_details" id="country_no">
+                                <label class="country_no">Image</label>
+                                <input type="text" class="name" id="seller_image" title="https://.*" value="https://lh3.googleusercontent.com/ghIgoOkGWG5amyOxR0oXFttc4PaxeIpHVxk_b-DicZJ762ozWobxLSfa7O4rX2BBNWC27WHTVn1z7oc3LmuggsMKmIJ19UFzinzpYNaKeVa_ZXn657-Zkb_WKb7pAbJS4trUxqwSMRpwi08wkrp3gJs0t17e9sqywdEdGp-vP8TrJvXUVibRQCtpJMJ3pd7j1OwmQtBijl9DrjUig3ZL_8JTEu-H7KufP17BNUoCf6YjwJJAHcfVXOLuytY0azZg-E1iXVkMU-pvqrgu010CHpG4kqRSWraBY561xJOaZ1zkiHMmPZGq9C0dAuHT8Zfj7H5t9-aoQcECEZJmFv2lDK5w0EjW3OQ-e8dobM6MiH1ORZin64ZOVtFp5hQ9JM-isFV7MEi0ZQfeeWT93wA36PY81gUlGH28RfSuPCITLw2EEYNl0g95bcmKYxNxia4IgCoG6cSFEY_zKuZscYN2rGRXTsucPX4QjM0o9gmdLmWaFDdTKIhDFEHMsG-7p4QRbpP0xUw78otM1VNnmcI3rTqOCwQSE174ZI62a6vxgAo1OUtDtN4zMtpIgUCQFg7wC0kjJE_UvW8mjk923MC0Yth9-hhbx5Xb7Y8j-ba0Mx4bMKdrKa52pgLL5sUCY1A4yVQ_W2xd74nDGK_jefIwCNjgncDKSsAHuEGcpa-gHO5vPsU8Ull1amYeBnPn5xpPrVQBpo2WQph1Jf3rimJ3tPscPqSqVVYTcdIC_dLOOc8uW_G7_4viKZjsR8GPMi7JpaxV2dqlQL_ZLfWAxDS5ciLdZP10jYcal6-ktOhiAvfMPObALGu3ircFX_n37te9mclhK0xJvCP8KRnPXCMAEHCcKbGGy2_ZAE9d6iMPzW2Z1SQ8aoe4kbb9ldTuHphE1JeFz1wIdPY3bT-OZiiPFMSSUVNQg1txY7O0UdCO5Wm3BlpFnrxQeLl2Z-9J8p5I6pGj1eipfkWyTYSMutNIJA=w1004-h1338-s-no?authuser=1"
+                                    pattern="https://.*" placeholder="https://">
+                            </div>
+
+                        </div>
+
+                        <div class="click_button">
+
+                            <button class="btn_save" type="sumbit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        const seller_id = JSON.parse(localStorage.getItem("seller_id"));
+        const seller_list = JSON.parse(localStorage.getItem("seller_list"));
+        function login_data(e) {
+            return e.seller_email == seller_id;
+        }
+        const user_data = seller_list.find(login_data);
+
+        document.getElementById("seller_name").value = user_data.seller_name;
+        document.getElementById("seller_email").value = user_data.seller_email;
+        document.getElementById("seller_dob").value = user_data.seller_dob;
+        document.getElementById("seller_address").value = user_data.seller_address;
+        document.getElementById("seller_no").value = user_data.seller_no;
+        document.getElementById("seller_gender").value = user_data.seller_gender;
+        document.getElementById("seller_city").value = user_data.seller_city;
+        document.getElementById("seller_aadhar").value = user_data.seller_aadhar;
+        document.getElementById("seller_gst").value = user_data.seller_gst;
+        document.getElementById("seller_about").value = user_data.seller_about;
+        document.getElementById("seller_image").value = user_data.seller_image;
+
+        //Image
+        const image_element = document.getElementById("profile_image");
+
+        if (user_data.seller_image === "") {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        } else if (user_data.seller_image !== "") {
+            image_element.setAttribute("src", user_data.seller_image);
+        } else {
+            image_element.setAttribute("src", "https://iili.io/Hgd1gJ2.png");
+        }
+
+        //Update seller details
+        function update_details(e) {
+            e.preventDefault();
+            const up_dob = document.getElementById("seller_dob").value;
+            const up_address = document.getElementById("seller_address").value.trim().split(/\s+/g).join(" ");
+            const up_no = document.getElementById("seller_no").value;
+            const up_gender = document.getElementById("seller_gender").value;
+            const up_city = document.getElementById("seller_city").value.trim().split(/\s+/g).join(" ");
+            const up_aadhar = document.getElementById("seller_aadhar").value;
+            const up_gst = document.getElementById("seller_gst").value;
+            const up_about = document.getElementById("seller_about").value.trim().split(/\s+/g).join(" ");
+            const up_image = document.getElementById("seller_image").value;
+            user_data.seller_address = up_address;
+            user_data.seller_dob = up_dob;
+            user_data.seller_no = up_no;
+            user_data.seller_gender = up_gender;
+            user_data.seller_city = up_city;
+            user_data.seller_aadhar = up_aadhar;
+            user_data.seller_gst = up_gst;
+            user_data.seller_about = up_about;
+            user_data.seller_image = up_image;
+
+            //Validate for address
+            function validate() {
+                if (
+                    /^\s*$/g.test(seller_address) ||
+                    /^\s*$/g.test(seller_city) ||
+                    /^\s*$/g.test(seller_about)
+                ) {
+                    alert("Write your information properly");
+                    reset();
+                }
+            }
+            validate();
+
+            //Phone Number
+            function check_phonenumber() {
+                let result = 0;
+                for (const digit of up_no) {
+                    if (up_no[0] == digit) {
+                        result += 1;
+                    } else {
+                        break;
+                    }
+                }
+                if (result == 10) {
+                    alert("Enter your number properly");
+                    up_no.value = reset();
+                }
+            }
+            check_phonenumber();
+
+            localStorage.setItem("seller_list", JSON.stringify(seller_list));
+
+            window.location.href = "./seller_profile.html";
+        }
+    </script>
+    <script src="../../assets/js/whatsappChat.js"></script>
+    <script src="../../assets/comments/seller_header.js"></script>
+</body>
+
+</html>

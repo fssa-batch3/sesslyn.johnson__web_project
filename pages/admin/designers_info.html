@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamber-Shop</title>
+  <link rel="stylesheet" href="../../assets/css/admin/designer_list.css">
+  <link rel="stylesheet" href="../../assets/css/profile/header.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700," rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+  <div class="card details-card p-0">
+
+  </div>
+  <script>
+
+    const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+
+    //Url params
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const designers_id = urlParams.get("designers_id");
+
+    const unique_id = designersInfo.find((e) => e.designersId == designers_id);
+
+    console.log(unique_id);
+
+    const containRow = document.createElement('div');
+    containRow.classList.add('containRow');
+    console.log(containRow);
+
+    const colLeft = document.createElement('div');
+    colLeft.classList.add('col-md-6', 'col-sm-12');
+    containRow.appendChild(colLeft);
+
+    const img = document.createElement('img');
+    img.classList.add('img-fluid', 'details-img');
+    img.src = unique_id['image'];
+    img.alt = "Designer image";
+    colLeft.appendChild(img);
+
+    const colRight = document.createElement('div');
+    colRight.classList.add('col-md-6', 'col-sm-12', 'description-container', 'p-5');
+    containRow.appendChild(colRight);
+
+
+    const mainDesc = document.createElement('div');
+    mainDesc.classList.add('main-description');
+    colRight.appendChild(mainDesc);
+
+    const prodCategory = document.createElement('p');
+    prodCategory.classList.add('product-category', 'mb-0');
+    prodCategory.textContent = unique_id['profession'];
+    mainDesc.appendChild(prodCategory);
+
+    const designerName = document.createElement('h3');
+    designerName.textContent = unique_id['firstname'] + " " + unique_id['lastname'];
+    mainDesc.appendChild(designerName);
+
+    const hr1 = document.createElement('hr');
+    mainDesc.appendChild(hr1);
+
+    const info = document.createElement('div');
+    info.classList.add('info');
+    mainDesc.appendChild(info);
+
+    const projCount = document.createElement('p');
+    projCount.classList.add('product-price');
+    projCount.textContent = 'Project - ' + unique_id['project'];
+    info.appendChild(projCount);
+
+    const teamCount = document.createElement('p');
+    teamCount.classList.add('product-price');
+    teamCount.textContent = 'Team - ' + unique_id['team'];
+    info.appendChild(teamCount);
+
+    const hr2 = document.createElement('hr');
+    mainDesc.appendChild(hr2);
+
+    const aboutTitle = document.createElement('p');
+    aboutTitle.classList.add('product-title', 'mt-4', 'mb-1');
+    aboutTitle.textContent = 'About the Designer';
+    mainDesc.appendChild(aboutTitle);
+
+    const aboutDesc = document.createElement('p');
+    aboutDesc.classList.add('product-description', 'mb-4');
+    aboutDesc.textContent = unique_id['about'];
+    mainDesc.appendChild(aboutDesc);
+
+    const hr3 = document.createElement('hr');
+    mainDesc.appendChild(hr3);
+
+    const eduInfo = document.createElement('div');
+    eduInfo.classList.add('eduInfo');
+    mainDesc.appendChild(eduInfo);
+
+    const eduTitle = document.createElement('h3');
+    eduTitle.classList.add('edutext');
+    eduTitle.textContent = 'Education :';
+    eduInfo.appendChild(eduTitle);
+
+    const degree = document.createElement('p');
+    degree.classList.add('degreetext');
+    degree.textContent = unique_id['education'];
+    eduInfo.appendChild(degree);
+
+    const buttonInfo = document.createElement('div');
+    buttonInfo.classList.add('buttonInfo');
+    mainDesc.appendChild(buttonInfo);
+
+    const button_primary = document.createElement("button");
+    button_primary.setAttribute("id", "btnPrimary");
+    button_primary.setAttribute("type", "submit");
+    button_primary.setAttribute("data-id", unique_id.designersId);
+    button_primary.innerHTML = "Edit";
+    buttonInfo.append(button_primary);
+
+    const button_delete = document.createElement("button");
+    button_delete.setAttribute("class", "btnDelete");
+    button_delete.setAttribute("id", "btnDelete");
+    button_delete.setAttribute("type", "submit");
+    button_delete.setAttribute("data-id", unique_id.designersId);
+    button_delete.innerHTML = "Delete";
+    buttonInfo.append(button_delete);
+
+    document.querySelector("div.card").appendChild(containRow);
+
+    //Edit button
+    const edit = document.querySelectorAll("button#btnPrimary");
+    edit.forEach(function (findId) {
+      findId.addEventListener("click", function () {
+        const id = this.dataset.id;
+        window.location.href = `./editDesigner_form.html?designer_id=${id}`;
+      });
+    });
+
+    // Delete product
+    document.getElementById("btnDelete").addEventListener("click", function () {
+      if (confirm("Are you sure?")) {
+        let designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+        let unique_id = designersInfo.find((form) => form.designersId === designers_id);
+        console.log(unique_id);
+        const indexOfUser = designersInfo.findIndex((form) => form.designersId  === unique_id.designersId);
+        designersInfo.splice(indexOfUser, 1);
+        localStorage.setItem("designersInfo", JSON.stringify(designersInfo));
+        location.href = "./designer_list.html";
+      }
+    });
+  </script>
+  <script src="../../assets/comments/header.js"></script>
+</body>
+
+</html>
