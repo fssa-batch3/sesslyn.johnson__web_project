@@ -70,10 +70,14 @@
     info.classList.add('info');
     mainDesc.appendChild(info);
 
+    const aLink = document.createElement('a');
+    aLink.setAttribute('href',unique_id['link']);
+    info.appendChild(aLink);
+
     const projCount = document.createElement('p');
     projCount.classList.add('product-price');
-    projCount.textContent = 'Projects - ' + unique_id['project'];
-    info.appendChild(projCount);
+    projCount.textContent = 'Project - ' + unique_id['project'];
+    aLink.appendChild(projCount);
 
     const teamCount = document.createElement('p');
     teamCount.classList.add('product-price');

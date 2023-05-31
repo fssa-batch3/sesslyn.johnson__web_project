@@ -9,7 +9,7 @@ if (!product_crud) {
         product_category: "Sofa",
         product_description: '*3+ Lounger and  2 pillows. *Brand : Muebles Casa. *Dimensions (In Centimeters) :Lounger: H 79 x W 183 x D 83; 2 Seater Sofa: H 79 x W 130 x D 83; 1 Seater Sofa : H 79 x W 56 x D 83. * Seating Height : 17. *Weight :  65kg. * Frame Material : Meranti Wood & Plywood,  Fabric: PolyCotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "5",
-        product_quantity: "15",
+        product_quantity: 15,
         product_name: "Jordan Fabric Sofa",
         product_real: "46799",
         product_sell: 44499,
@@ -24,7 +24,7 @@ if (!product_crud) {
         product_description:
           '*2 Sofa and 4 pillows. *Brand : Evok. *Dimensions (In Centimeters) : H 83 x W 292 x D 220. *Seating Height : 17.5. *Weight :  111kg. *Colour : Green and Sandal.  * Frame Material : Meranti Wood & Plywood,  Fabric: PolyCotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "58",
-        product_quantity: "8",
+        product_quantity: 8,
         product_name: "Alden Leatherette Sofa",
         product_real: "107475",
         product_sell: 44990,
@@ -38,7 +38,7 @@ if (!product_crud) {
         product_category: "Sofa",
         product_description:'*3 + 2 Seater with 2 + 4 pillows. *Brand : Casacraft. *Dimensions (In Centimeters) : H 94 x W 213 x D 89. *Seating Height : 17. *Weight :  70kg. *Colour : Mint Green.  * Frame Material : Pine Wood,  Fabric: Cotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "35",
-        product_quantity: "22",
+        product_quantity: 22,
         product_name: "Cane Connection Sofa Set",
         product_real: "123074",
         product_sell: 79998,
@@ -53,7 +53,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Smartway Lighting. *Bulb Recommended : 54 Watt. *Dimensions (In Centimeters) : 109 Cm (L) x 20 Cm (B) x 99 Cm (H). *Smart Devices Supported : Google Assistant and Amazon Alexa. * Weight : 0.4kg. * 10 days replacement. * Specifications : Natural White + Warm white + Cold white *Our experts will install it for you – No cost',
         product_discount: "9",
-        product_quantity: "13",
+        product_quantity: 13,
         product_name: "Prestige Gold Chandelier",
         product_real: "29449",
         product_sell: 27449,
@@ -68,7 +68,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Smartway Lighting. *Overall Height of the Chandelier: 65" Lamp Height: 9", Lamp Diameter: 23.5", Ceiling Cup Diameter: 6", Ceiling Cup Height: 1",Cord Length: Upto 55". * Bulb holders : 1.  *Product Material : Metal frame in a matte gold finish. * Weight : 12.5kg. * 10 days replacement. *Our experts will install it for you – No cost',
         product_discount: "17",
-        product_quantity: "15",
+        product_quantity: 15,
         product_name: "Foder pendant Chandelier",
         product_real: "41060",
         product_sell: 36954,
@@ -83,7 +83,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Smartway Lighting. *Overall Dimensions-Height: Upto 215.5", Length: 42", Width: 42", Glass Dimension-Height: 17", Diameter: 4", Ceiling Plate Dimensions - Height: 2", Dimeter: 39.5", Cord Length: Adjustable upto 192". * Bulb holders : 20.  *Product Material : Metal Frame with Glass Jars. * Weight : 48kg. * 10 days replacement.  *Our experts will install it for you – No cost',
         product_discount: "12",
-        product_quantity: "7",
+        product_quantity: 7,
         product_name: "Square Three layer Chandelier",
         product_real: "12000",
         product_sell: 10560,
@@ -98,7 +98,7 @@ if (!product_crud) {
         product_description:
         '*Brand : GUDSMITH. *Dimensions (In Centimeters) : H 281 x W 300 x D 84. *Weight : 100.5 KG. *Product Material : Made by White marble. * 10 days replacement. * Perfect for Dinning room. *Made of high-quality white marble',
         product_discount: "25",
-        product_quantity: "25",
+        product_quantity: 25,
         product_name: "Units of White Layer Crockery",
         product_real: "35000",
         product_sell: 26250,
@@ -113,7 +113,7 @@ if (!product_crud) {
         product_description:
         '*Brand : @home. *Dimensions (In Centimeters) : H 200 x W 180 x D 64. *Weight : 80.5 KG. *Product Material : Mahogany Frame with Glass Jars. * 10 days replacement. * Perfect for Dinning room. *Made of high-quality mahogany wood',
         product_discount: "20",
-        product_quantity: "18",
+        product_quantity: 18,
         product_name: "Glass Layer Crockery Units",
         product_real: "35000",
         product_sell: 28000,
@@ -128,7 +128,7 @@ if (!product_crud) {
         product_description:
           '*Brand : GUDSMITH. *Wood : Walnut *Dimensions (In Centimeters) : H 190 x W 119.9 x D 39.9. *Product Material : Made with Walnut wood. *Weight : 85.5 KG * 10 days replacement. * Perfect for Dinning room. *Made of high-quality walnut wood',
         product_discount: "37",
-        product_quantity: "4",
+        product_quantity: 4,
         product_name: "Zenith Case in Walnut Finish",
         product_real: "51420",
         product_sell: 32138,
@@ -143,7 +143,7 @@ if (!product_crud) {
         product_description:
           '* Seat Cushion : Fixed, * Frame Material : Solid Wood * Seat Filling : Foam * Color : Brown * Type : Ottoman * Dimensions : Ottoman: 1.4 m x 0.4 m x 0.48 m * 10 days replacement. * Perfect for Living room. *Frame Material Type: Engineered Wood',
         product_discount: "15",
-        product_quantity: "16",
+        product_quantity: 16,
         product_name: " Fabric Ottoman with Storage",
         product_real: "14284",
         product_sell: 12141,
@@ -158,7 +158,7 @@ if (!product_crud) {
         product_description:
           '* Coffee Table with 4 stools. *Brand : Indigo interiors. * Product Dimensions : 85D x 85W x 42H Centimeters. * Material : sheesham wood. * Colour : black wulnut. * 10 days replacement. * Perfect for Living room. *Frame Material Type: Engineered Wood',
         product_discount: "52",
-        product_quantity: "6",
+        product_quantity: 6,
         product_name: " Sheesham Wood Coffee Table",
         product_real: "28999",
         product_sell: 13920,
@@ -173,7 +173,7 @@ if (!product_crud) {
         product_description:
           '*Shape :	L-Shape, *Desk design :	Computer Desk, *Product Dimensions : 75D x 59.2W x 73H Centimeters, *Colour :	Black, * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
         product_discount: "20",
-        product_quantity: "12",
+        product_quantity: 12,
         product_name: "Wall Mounted Study Table",
         product_real: "25000",
         product_sell: 20000,
@@ -188,7 +188,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Trevi Furniture. * Colour : Black. * Dimensions (In Centimeters) : H 180 x W 72 x D 47. *Weight : 300 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "15",
-        product_quantity: "25",
+        product_quantity: 25,
         product_name: "Wenge-finished Black Wardrobe",
         product_real: "45999",
         product_sell: 39099,
@@ -203,7 +203,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Woodbuzz. * Colour : White. * Dimensions (In Centimeters) : H 180 x W 180 x D 48. *Weight : 165 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "14",
-        product_quantity: "5",
+        product_quantity: 5,
         product_name: "Frosty White Finish Wadrobe",
         product_real: "34999",
         product_sell: 30099,
@@ -218,7 +218,7 @@ if (!product_crud) {
         product_description:
         '*Brand : Maheshwari Furniture. * Colour : Brown and Grey. * Dimensions (In Centimeters) : H 196 x W 201 x D 61. *Weight : 230 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "15",
-        product_quantity: "18",
+        product_quantity: 18,
         product_name: "Brown and Grey Finish Wardrobe",
         product_real: "48999",
         product_sell: 41649,
@@ -233,7 +233,7 @@ if (!product_crud) {
         product_description:
           '*Brand :	Home Mark. * Colour : Black. * Material :	Vinyl * Product Dimensions :	60L x 200W Centimeters * Bluish Green Wallpaper. * 5 days replacement. * Tearproof, Water Resistant. *Wipes Clean With A Damp Cloth Or Sponge.',
         product_discount: "20",
-        product_quantity: "15",
+        product_quantity: 15,
         product_name: "Black Marble Sticker Wallpaper",
         product_real: "699",
         product_sell: 629,
@@ -248,7 +248,7 @@ if (!product_crud) {
         product_description:
           '*Material :	Vinyl, Paper, Polyvinyl Chloride. * Colour : Green. * Brand	: ANNA CREATIONS. * Item Weight	: 246 Grams. *Size and feature : 45"X 304" CM. * Material : Vinyl. * 5 days replacement. * Tearproof, Water Resistant. *Wipes Clean With A Damp Cloth Or Sponge.',
         product_discount: "10",
-        product_quantity: "8",
+        product_quantity: 8,
         product_name: "Vinyl Green Wallpaper",
         product_real: "999",
         product_sell: 899,
@@ -263,7 +263,7 @@ if (!product_crud) {
         product_description:
           '*Brand : The Wall Chronicles. *Dimensions : Width : 40, Height :120. *Colour : Multicolour. *Weight : 7 Kg. * 5 days replacement. * Tearproof, Water Resistant. * Perfect for Bedroom. *Wipes Clean With A Damp Cloth Or Sponge.',
         product_discount: "5",
-        product_quantity: "10",
+        product_quantity: 10,
         product_name: "Multicolour Triangles Wallpaper",
         product_real: "6000",
         product_sell: 5700,
@@ -417,20 +417,20 @@ if (!roomDetails) {
       { yearBuilt: 2020, designer : "Manit Rastogi", catchyName1: "Attractive", catchyName2: "Royal", apartmentName: "Sunrise Apartments", place: "Guduvancherry", image: "https://images.pexels.com/photos/2398375/pexels-photo-2398375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", roomCategory: "kitchen", about:"The dining table and stylish adjustable chairs were integrated into this kitchen. To gratify our customers, we have beautiful storage cabinets that had a marble appearance and some flower vases for freshness. According to the preferences of our customers, we used a chic washbasin and a dark, light theme. This room has a royal and attractive appearance.",productImg:"https://iili.io/HNgKczu.md.jpg"},
       { yearBuilt: 2022, designer : "Sunita Kohli", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: "../../assets/images/Kitchen/kitchen luxury 3.jpg", roomCategory: "kitchen", about: "This Kitchen is created with our minimalistic arts and features White as its primary colour. a small kitchen with a marble-topped dining table and movable chairs. The ceiling is lit by four LED chandeliers. A wall-mounted oven is present. The majority of the appliances are built-in, and the workspaces are simple to keep clean and maintain.It has a refined and trendy appearance.",productImg:"https://iili.io/HrC2CI1.png"},
 
-      { yearBuilt: 2021, designer : "Rajiv Saini", catchyName1: "Affection", catchyName2: "Devotion", apartmentName: "Neighborly Nest", place: "Chrompet", image: "../../assets/images/ceiling/False ceiling 12.jpg", roomCategory: "false_ceiling", about:"It is intended for our newlywed couples as a token of their devotion to one another. Our designers used a limited budget to carve and mend it. A two-heart with a beautiful light enhances the space. The lighting can be adjusted to suit our mood. We've added a range of colours to it.",productImg:"https://m.media-amazon.com/images/I/71N-j5RdPwL._SX679_.jpg" },
-      { yearBuilt: 2020, designer : "Anjum Jung", catchyName1: "Classy", catchyName2: "Astonished", apartmentName: "Sunrise Apartments", place: "Tambaram", image: "../../assets/images/ceiling/False ceiling 15.jpg", roomCategory: "false_ceiling", about:"Its purpose is to improve the elegance of our living area. There are ten petals in the flowery motif. It can be controlled remotely and connected via wifi. It comes in a variety of hues. When you turn it off, the petals will reattach. It was a truly astounding piece of art created by our team.", productImg:"https://m.media-amazon.com/images/I/71e0RPlYdhL._SX679_.jpg"},
-      { yearBuilt: 2022, designer : "Sussanne Khan", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Perungaluthur", image: "../../assets/images/ceiling/False ceiling 16.jpg", roomCategory: "false_ceiling",about:"It is intended for our newlywed couples as a token of their devotion to one another. Our designers used a limited budget to carve and mend it. A two-heart with a beautiful light enhances the space. The lighting can be adjusted to suit our mood. We've added a range of colours to it.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg" },
+      { yearBuilt: 2021, designer : "Sussanne Khan", catchyName1: "Affection", catchyName2: "Devotion", apartmentName: "Neighborly Nest", place: "Chrompet", image: "../../assets/images/ceiling/False ceiling 12.jpg", roomCategory: "false_ceiling", about:"It is intended for our newlywed couples as a token of their devotion to one another. Our designers used a limited budget to carve and mend it. A two-heart with a beautiful light enhances the space. The lighting can be adjusted to suit our mood. We've added a range of colours to it.",productImg:"https://m.media-amazon.com/images/I/71N-j5RdPwL._SX679_.jpg" },
+      { yearBuilt: 2020, designer : "Rajiv Saini", catchyName1: "Classy", catchyName2: "Astonished", apartmentName: "Sunrise Apartments", place: "Tambaram", image: "../../assets/images/ceiling/False ceiling 15.jpg", roomCategory: "false_ceiling", about:"Its purpose is to improve the elegance of our living area. There are ten petals in the flowery motif. It can be controlled remotely and connected via wifi. It comes in a variety of hues. When you turn it off, the petals will reattach. It was a truly astounding piece of art created by our team.", productImg:"https://m.media-amazon.com/images/I/71e0RPlYdhL._SX679_.jpg"},
+      { yearBuilt: 2022, designer : "Anjum Jung", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Perungaluthur", image: "../../assets/images/ceiling/False ceiling 16.jpg", roomCategory: "false_ceiling",about:"It is intended for our newlywed couples as a token of their devotion to one another. Our designers used a limited budget to carve and mend it. A two-heart with a beautiful light enhances the space. The lighting can be adjusted to suit our mood. We've added a range of colours to it.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg" },
 
       { yearBuilt: 2021, designer : "Gauri Khan", catchyName1: "Compact", catchyName2: "Tidy", apartmentName: "Neighborly Nest", place: "Velacherry", image: " https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", roomCategory: "bedroom" , about:"It was created for a college-going girl. Both under the bed and in a wall were storage units that we had. From flipkart, we purchased a single coir mattress. We created a fantastic study table out of a single piece of white marble that we purchased. To sit at the study table, we had a curved stool. It is a space-saving technique we apply in this room that is minimal cost.",productImg:"https://iili.io/Hrn3lmN.png"},
       { yearBuilt: 2020, designer : "Manit Rastogi", catchyName1: "Fashionable", catchyName2: "Orderly", apartmentName: "Sunrise Apartments", place: "Porur", image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1714&q=80", roomCategory: "bedroom", about:"We created a master bedroom with an incredibly comfortable double mattress and cosy stools for the delightful lovers. Additionally, we imported a master pie wall hanger, a glassed floor light for either side of the bed, and plants to provide freshness. The photo painted frame is the bedroom's distinctive feature. Finally, we designated this space as a fashionable and orderly creation of Minimalistic designers.",productImg:"https://iili.io/Hrn3zzP.png"},
       { yearBuilt: 2022, designer : "Sunita Kohli", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: " ../../assets/images/Bedroom/couple bedroom 5.jpg", roomCategory: "bedroom", about:"It was created for a college-going girl. Both under the bed and in a wall were storage units that we had. From flipkart, we purchased a single coir mattress. We created a fantastic study table out of a single piece of white marble that we purchased. To sit at the study table, we had a curved stool. It is a space-saving technique we apply in this room that is minimal cost.",productImg:"https://iili.io/Hrn3zzP.png"},
 
-      { yearBuilt: 2021, designer : "Gauri Khan", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Neighborly Nest", place: "Kanchipuram", image: "https://iili.io/Hr7Our7.jpg", roomCategory: "renovation", about:"I'm excited to showcase this wonderful kitchen renovation job. At first, it had a rustic and drab appearance, but in a short amount of time, we completely transformed it with simple paintings, a new floor, the purchase of a gorgeous dining table and two chairs, a wall hanger we made out of scrap materials that gives the space an extra touch of class, and plants for freshness.",productImg:"https://m.media-amazon.com/images/I/71SmYA9moiL._SL1500_.jpg"},
-      { yearBuilt: 2020, designer : "Manit Rastogi", catchyName1: "Classy", catchyName2: "Glassy", apartmentName: "Sunrise Apartments", place: "Bangalore", image: "../../assets/images/renovate/renovation 4.jpg", roomCategory: "renovation", about:"I'm thrilled to tell you about this excellent home renovation project.Our talented designers transformed a plain and boring house into a chic and fashionable residence. We converted the house into a glass house in accordance with the clients' requests, adding a wooden sofa, a tea table, a dining table, and a television. The property looks elegant and classy thanks to a pattern floor mat and a rustic piece of wall art.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"},
+      { yearBuilt: 2021, designer : "Manit Rastogi", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Neighborly Nest", place: "Kanchipuram", image: "https://iili.io/Hr7Our7.jpg", roomCategory: "renovation", about:"I'm excited to showcase this wonderful kitchen renovation job. At first, it had a rustic and drab appearance, but in a short amount of time, we completely transformed it with simple paintings, a new floor, the purchase of a gorgeous dining table and two chairs, a wall hanger we made out of scrap materials that gives the space an extra touch of class, and plants for freshness.",productImg:"https://m.media-amazon.com/images/I/71SmYA9moiL._SL1500_.jpg"},
+      { yearBuilt: 2020, designer : "Gauri Khan", catchyName1: "Classy", catchyName2: "Glassy", apartmentName: "Sunrise Apartments", place: "Bangalore", image: "../../assets/images/renovate/renovation 4.jpg", roomCategory: "renovation", about:"I'm thrilled to tell you about this excellent home renovation project.Our talented designers transformed a plain and boring house into a chic and fashionable residence. We converted the house into a glass house in accordance with the clients' requests, adding a wooden sofa, a tea table, a dining table, and a television. The property looks elegant and classy thanks to a pattern floor mat and a rustic piece of wall art.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"},
       { yearBuilt: 2022, designer : "Sunita Kohli", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Hyderabad", image: "../../assets/images/renovate/renovation 5.jpg", roomCategory: "renovation", about:"I'm excited to showcase this wonderful kitchen renovation job. At first, it had a rustic and drab appearance, but in a short amount of time, we completely transformed it with simple paintings, a new floor, the purchase of a gorgeous dining table and two chairs, a wall hanger we made out of scrap materials that gives the space an extra touch of class, and plants for freshness.",productImg:"https://m.media-amazon.com/images/I/71N-j5RdPwL._SX679_.jpg"},
 
-      { yearBuilt: 2021, designer : "Gauri Khan", catchyName1: "Compact", catchyName2: "Elegant", apartmentName: "Caravan", place: "Chrompet", image: "../../assets/images/mobile/truck interior 5.jpg", roomCategory: "mobile_house", about:"It is a truck house that was created for our young couples that enjoy exploring new places. For our clients, we provide a chic lounge space with extended storage cabinets. Additionally, there is a sink on the lounge's side. A windowed double mattress bed accessed by a rustic ladder. and improved the space by adding more windows and plants.",productImg:"https://lmsin.net/cdn-cgi/image/h=750,w=750,q=85,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/homecentre/1000011001662-1000011001661_01-2100.jpg" },
-      { yearBuilt: 2020, designer : "Anjum Jung", catchyName1: "Clean", catchyName2: "Attractive", apartmentName: "Motor Home", place: "Velacherry", image: "https://iili.io/Hr7vhv9.png", roomCategory: "mobile_house", about:"In terms of truck house design, it is one of our best projects. A small living room with a TV unit and a ladder leading to the living room with a storage cabinet, which has a bed for their child underneath. a place in which to work quietly. a complete kitchen with all the amenities. and the main bedroom is located at the top.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"},
+      { yearBuilt: 2021, designer : "Anjum Jung", catchyName1: "Compact", catchyName2: "Elegant", apartmentName: "Caravan", place: "Chrompet", image: "../../assets/images/mobile/truck interior 5.jpg", roomCategory: "mobile_house", about:"It is a truck house that was created for our young couples that enjoy exploring new places. For our clients, we provide a chic lounge space with extended storage cabinets. Additionally, there is a sink on the lounge's side. A windowed double mattress bed accessed by a rustic ladder. and improved the space by adding more windows and plants.",productImg:"https://lmsin.net/cdn-cgi/image/h=750,w=750,q=85,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/homecentre/1000011001662-1000011001661_01-2100.jpg" },
+      { yearBuilt: 2020, designer : "Gauri Khan", catchyName1: "Clean", catchyName2: "Attractive", apartmentName: "Motor Home", place: "Velacherry", image: "https://iili.io/Hr7vhv9.png", roomCategory: "mobile_house", about:"In terms of truck house design, it is one of our best projects. A small living room with a TV unit and a ladder leading to the living room with a storage cabinet, which has a bed for their child underneath. a place in which to work quietly. a complete kitchen with all the amenities. and the main bedroom is located at the top.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"},
       { yearBuilt: 2022, designer : "Sussanne Khan", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Van House", place: "Koyembadu", image: "../../assets/images/mobile/truck interior 8.jpg", roomCategory: "mobile_house", about:"It is a truck house that was created for our young couples that enjoy exploring new places. For our clients, we provide a chic lounge space with extended storage cabinets. Additionally, there is a sink on the lounge's side. A windowed double mattress bed accessed by a rustic ladder. and improved the space by adding more windows and plants.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"}
 
     ])
@@ -440,33 +440,34 @@ if (!roomDetails) {
 
 //Designers Info
 const designersInfo = JSON.parse(localStorage.getItem("designersInfo"));
+const rootPath = window.location.origin;
 if (!designersInfo) {
   localStorage.setItem(
     "designersInfo",
     JSON.stringify([
       {
-        firstname: "Gauri", lastname:"Khan",profession: "Interior Designer", project: 50, team: 6, education: "BA in Interior Architecture and Design", designersId: "c36e1f3e-7e1c-4b78-9ae7-739d1ac2f6a2",
-        image: "https://c.ndtvimg.com/2020-09/s3rha1qo_gauri-khan_625x300_15_September_20.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 50 projects all over India."
+        firstname: "Gauri", lastname:"Khan",profession: "Interior Designer", project: 1, team: 6, education: "BA in Interior Architecture and Design", designersId: "c36e1f3e-7e1c-4b78-9ae7-739d1ac2f6a2", link: rootPath + "/pages/living_room/product_view.html?chamber_name=bedroom",
+        image: "https://c.ndtvimg.com/2020-09/s3rha1qo_gauri-khan_625x300_15_September_20.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 50 projects all over India and completed 1 project in Minimalistic."
       },
       {
-        firstname: "Manit ", lastname: "Rastogi", profession: "Interior Designer", project: 20, team: 2, education: "Bachelor of Interior Design", designersId: "92647d62-364e-4b42-aa0a-d67c6cf65fa5",
-        image: "https://interiordesign.net/wp-content/uploads/2021/06/62080-Manit-Rastogi-Morphogenesis.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 20 projects all over India."
+        firstname: "Manit ", lastname: "Rastogi", profession: "Interior Designer", project: 1, team: 2, education: "Bachelor of Interior Design", designersId: "92647d62-364e-4b42-aa0a-d67c6cf65fa5",link:rootPath +"/pages/living_room/product_view.html?chamber_name=renovation",
+        image: "https://interiordesign.net/wp-content/uploads/2021/06/62080-Manit-Rastogi-Morphogenesis.jpg", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 20 projects all over India and completed 1 project in Minimalistic."
       },
       {
-        firstname: "Sunita", lastname:"Kohli", profession: "Lighting Expert", project: 35, team: 4, education: "B.Sc in Interior Designer.", designersId: "e15c48c6-8e3f-4c43-b8d2-3aef6741c9f1",
-        image: "https://wikibio.in/wp-content/uploads/2022/08/Sunita-Kohli-picture.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 35 projects all over India."
+        firstname: "Sunita", lastname:"Kohli", profession: "Lighting Expert", project: 1, team: 4, education: "B.Sc in Interior Designer.", designersId: "e15c48c6-8e3f-4c43-b8d2-3aef6741c9f1", link:rootPath +"/pages/living_room/product_view.html?chamber_name=living_room",
+        image: "https://wikibio.in/wp-content/uploads/2022/08/Sunita-Kohli-picture.jpg", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 35 projects all over India and completed 1 project in Minimalistic."
       },
       {
-        firstname: "Rajiv" , lastname:"Saini", profession: "Consultant", project: 40, team: 3, education: "M.SC in Design Space", designersId: "f4809c6a-fa16-4c90-a7dd-ef92690648f3",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oXeP6p9LF6O3XsJGoH8x291UTRNapjqYtLxcl6XU_8qFFBiX", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 40 projects all over India."
+        firstname: "Rajiv" , lastname:"Saini", profession: "Consultant", project: 1, team: 3, education: "M.SC in Design Space", designersId: "f4809c6a-fa16-4c90-a7dd-ef92690648f3",link:rootPath +"/pages/living_room/product_view.html?chamber_name=kids_area",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oXeP6p9LF6O3XsJGoH8x291UTRNapjqYtLxcl6XU_8qFFBiX", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 40 projects all over India and completed 1 project in Minimalistic."
       },
       {
-        firstname: "Anjum", lastname:"Jung", profession: "Landscape Architect", project: 54, team: 4, education: "BE in Architecture Engineering", designersId: "7e22d8ad-9324-4b5b-a1f9-7e48a8161b02",
-        image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTVuGhaTLL3yOiZr99eyR0-qabxi77ih5dj-lRJ_A1AI_4ELHWe", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 54 projects all over India."
+        firstname: "Anjum", lastname:"Jung", profession: "Landscape Architect", project: 1, team: 4, education: "BE in Architecture Engineering", designersId: "7e22d8ad-9324-4b5b-a1f9-7e48a8161b02",link:rootPath +"/pages/living_room/product_view.html?chamber_name=mobile_house",
+        image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTVuGhaTLL3yOiZr99eyR0-qabxi77ih5dj-lRJ_A1AI_4ELHWe", about: "Creative Interior Design with a strong background in project management, space planning, and computer-aided design . Expertise in coordinating all facets of design, from A&E approval to FF&E selection to final delivery. Proven success in leading multifunctional teams to achieve project goals and achieving a high degree of client satisfaction. Completed more than 54 projects all over India and completed 1 project in Minimalistic."
       },
       {
-        firstname: "Sussanne ", lastname:"Khan", profession: "Design Executive", project: 32, team: 5, education: "B.Des Interior Design", designersId: "542de8c8-5d3d-4a7a-9309-89c8c0e7a0bc",
-        image: "https://static.abplive.com/wp-content/uploads/2020/12/23045559/Sussanne-Khan.jpeg?impolicy=abp_cdn&imwidth=640", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 32 projects all over India."
+        firstname: "Sussanne ", lastname:"Khan", profession: "Design Executive", project: 1, team: 5, education: "B.Des Interior Design", designersId: "542de8c8-5d3d-4a7a-9309-89c8c0e7a0bc",link:rootPath +"/pages/living_room/product_view.html?chamber_name=false_ceiling",
+        image: "https://static.abplive.com/wp-content/uploads/2020/12/23045559/Sussanne-Khan.jpeg?impolicy=abp_cdn&imwidth=640", about: "Skilled in conceptualizing and executing innovative designs that align with clients' visions and functional requirements. Proficient in utilizing design software, such as AutoCAD and 3D modeling tools, to develop detailed plans and visualizations. Effective communicator and collaborator, working closely with clients, architects, and contractors to ensure successful project completion. Completed more than 32 projects all over India and completed 1 project in Minimalistic."
       }
     ])
   )

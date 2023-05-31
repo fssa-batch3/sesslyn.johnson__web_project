@@ -55,7 +55,7 @@ document.getElementById("delivery_mode").innerHTML = deliveryMethod;
 document.querySelector("#place_order").addEventListener("click", function () {
   const user_delivery = localStorage.getItem('user_delivery');
   const selectedArray = JSON.parse(localStorage.getItem('selectedArray'));
-  const cart_list = JSON.parse(localStorage.getItem("cart_list"));
+  let cart_list = JSON.parse(localStorage.getItem("cart_list"));
   const profile_id = JSON.parse(localStorage.getItem("profile_id"));
   const order_cart = cart_list.filter(c => c.userId == profile_id);
   const order_list = JSON.parse(localStorage.getItem("order_list")) || [];
@@ -86,20 +86,25 @@ document.querySelector("#place_order").addEventListener("click", function () {
   }
   localStorage.setItem("order_list", JSON.stringify(order_list));
 
+  cart_list = cart_list.filter(c => c.userId !== profile_id);
+  console.log(cart_list);
+  localStorage.setItem("cart_list", JSON.stringify(cart_list));
 
-  let user_cartIndex = cart_list.findIndex((cart) => cart.userId === profile_id);
-  if (user_cartIndex !== -1) {
-    const user_cart = cart_list.splice(user_cartIndex, 1)[0];
-    cart_list.push(user_cart);
+  for (i = 0; i < order_cart.length; i++) {
+    let product_crud = JSON.parse(localStorage.getItem('product_crud'));
+    let order_user = product_crud.filter(e => e.product_uuid === order_cart[i].product_uuid);
+  
+    if (order_user) {
+      order_user[0].product_quantity = parseInt(order_user[0].product_quantity) - parseInt(order_cart[i].product_quantity);
+ 
+    }
+    console.log(order_user);
+    localStorage.setItem("product_crud", JSON.stringify(product_crud));
   }
 
-  localStorage.setItem("cart_list", JSON.stringify(cart_list));
-  
-
-
- 
   localStorage.removeItem('user_delivery');
   localStorage.removeItem('selectedArray');
   window.location.href = "./order_success.html";
 
 });
+
