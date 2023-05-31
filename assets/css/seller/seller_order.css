@@ -20,7 +20,6 @@
     --more-list-shadow: rgba(209, 209, 209, 0.4);
     --button-bg: #1f1c24;
     --search-area-bg: #fff;
-    --star: #1ff1c2e;
     --message-btn: #fff;
 }
 
@@ -301,7 +300,6 @@ p {
 
 .project-btn-more {
     padding: 0;
-    height: 14px;
     width: 24px;
     height: 24px;
     position: relative;
