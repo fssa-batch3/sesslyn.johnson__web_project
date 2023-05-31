@@ -9,6 +9,7 @@ if (!product_crud) {
         product_category: "Sofa",
         product_description: '*3+ Lounger and  2 pillows. *Brand : Muebles Casa. *Dimensions (In Centimeters) :Lounger: H 79 x W 183 x D 83; 2 Seater Sofa: H 79 x W 130 x D 83; 1 Seater Sofa : H 79 x W 56 x D 83. * Seating Height : 17. *Weight :  65kg. * Frame Material : Meranti Wood & Plywood,  Fabric: PolyCotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "5",
+        product_quantity: "15",
         product_name: "Jordan Fabric Sofa",
         product_real: "46799",
         product_sell: 44499,
@@ -23,6 +24,7 @@ if (!product_crud) {
         product_description:
           '*2 Sofa and 4 pillows. *Brand : Evok. *Dimensions (In Centimeters) : H 83 x W 292 x D 220. *Seating Height : 17.5. *Weight :  111kg. *Colour : Green and Sandal.  * Frame Material : Meranti Wood & Plywood,  Fabric: PolyCotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "58",
+        product_quantity: "8",
         product_name: "Alden Leatherette Sofa",
         product_real: "107475",
         product_sell: 44990,
@@ -32,11 +34,11 @@ if (!product_crud) {
       },
 
       {
-        image_url: "https://lmsin.net/cdn-cgi/image/h=750,w=750,q=85,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/homecentre/1000012532475-1000012532475-0703_01-2100.jpg",
+        image_url: "https://iili.io/HrjcBcl.jpg",
         product_category: "Sofa",
-        product_description:
-          '*3 + 2 Seater with 2 + 4 pillows. *Brand : Casacraft. *Dimensions (In Centimeters) : H 94 x W 213 x D 89. *Seating Height : 17. *Weight :  70kg. *Colour : Mint Green.  * Frame Material : Pine Wood,  Fabric: Cotton * 10 days replacement.  * Perfect for Living room.',
+        product_description:'*3 + 2 Seater with 2 + 4 pillows. *Brand : Casacraft. *Dimensions (In Centimeters) : H 94 x W 213 x D 89. *Seating Height : 17. *Weight :  70kg. *Colour : Mint Green.  * Frame Material : Pine Wood,  Fabric: Cotton * 10 days replacement.  * Perfect for Living room.',
         product_discount: "35",
+        product_quantity: "22",
         product_name: "Cane Connection Sofa Set",
         product_real: "123074",
         product_sell: 79998,
@@ -51,6 +53,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Smartway Lighting. *Bulb Recommended : 54 Watt. *Dimensions (In Centimeters) : 109 Cm (L) x 20 Cm (B) x 99 Cm (H). *Smart Devices Supported : Google Assistant and Amazon Alexa. * Weight : 0.4kg. * 10 days replacement. * Specifications : Natural White + Warm white + Cold white *Our experts will install it for you – No cost',
         product_discount: "9",
+        product_quantity: "13",
         product_name: "Prestige Gold Chandelier",
         product_real: "29449",
         product_sell: 27449,
@@ -64,7 +67,8 @@ if (!product_crud) {
         product_category: "Chandelier",
         product_description:
           '*Brand : Smartway Lighting. *Overall Height of the Chandelier: 65" Lamp Height: 9", Lamp Diameter: 23.5", Ceiling Cup Diameter: 6", Ceiling Cup Height: 1",Cord Length: Upto 55". * Bulb holders : 1.  *Product Material : Metal frame in a matte gold finish. * Weight : 12.5kg. * 10 days replacement. *Our experts will install it for you – No cost',
-        product_discount: "10",
+        product_discount: "17",
+        product_quantity: "15",
         product_name: "Foder pendant Chandelier",
         product_real: "41060",
         product_sell: 36954,
@@ -79,6 +83,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Smartway Lighting. *Overall Dimensions-Height: Upto 215.5", Length: 42", Width: 42", Glass Dimension-Height: 17", Diameter: 4", Ceiling Plate Dimensions - Height: 2", Dimeter: 39.5", Cord Length: Adjustable upto 192". * Bulb holders : 20.  *Product Material : Metal Frame with Glass Jars. * Weight : 48kg. * 10 days replacement.  *Our experts will install it for you – No cost',
         product_discount: "12",
+        product_quantity: "7",
         product_name: "Square Three layer Chandelier",
         product_real: "12000",
         product_sell: 10560,
@@ -93,6 +98,7 @@ if (!product_crud) {
         product_description:
         '*Brand : GUDSMITH. *Dimensions (In Centimeters) : H 281 x W 300 x D 84. *Weight : 100.5 KG. *Product Material : Made by White marble. * 10 days replacement. * Perfect for Dinning room. *Made of high-quality white marble',
         product_discount: "25",
+        product_quantity: "25",
         product_name: "Units of White Layer Crockery",
         product_real: "35000",
         product_sell: 26250,
@@ -107,6 +113,7 @@ if (!product_crud) {
         product_description:
         '*Brand : @home. *Dimensions (In Centimeters) : H 200 x W 180 x D 64. *Weight : 80.5 KG. *Product Material : Mahogany Frame with Glass Jars. * 10 days replacement. * Perfect for Dinning room. *Made of high-quality mahogany wood',
         product_discount: "20",
+        product_quantity: "18",
         product_name: "Glass Layer Crockery Units",
         product_real: "35000",
         product_sell: 28000,
@@ -121,6 +128,7 @@ if (!product_crud) {
         product_description:
           '*Brand : GUDSMITH. *Wood : Walnut *Dimensions (In Centimeters) : H 190 x W 119.9 x D 39.9. *Product Material : Made with Walnut wood. *Weight : 85.5 KG * 10 days replacement. * Perfect for Dinning room. *Made of high-quality walnut wood',
         product_discount: "37",
+        product_quantity: "4",
         product_name: "Zenith Case in Walnut Finish",
         product_real: "51420",
         product_sell: 32138,
@@ -135,6 +143,7 @@ if (!product_crud) {
         product_description:
           '* Seat Cushion : Fixed, * Frame Material : Solid Wood * Seat Filling : Foam * Color : Brown * Type : Ottoman * Dimensions : Ottoman: 1.4 m x 0.4 m x 0.48 m * 10 days replacement. * Perfect for Living room. *Frame Material Type: Engineered Wood',
         product_discount: "15",
+        product_quantity: "16",
         product_name: " Fabric Ottoman with Storage",
         product_real: "14284",
         product_sell: 12141,
@@ -149,6 +158,7 @@ if (!product_crud) {
         product_description:
           '* Coffee Table with 4 stools. *Brand : Indigo interiors. * Product Dimensions : 85D x 85W x 42H Centimeters. * Material : sheesham wood. * Colour : black wulnut. * 10 days replacement. * Perfect for Living room. *Frame Material Type: Engineered Wood',
         product_discount: "52",
+        product_quantity: "6",
         product_name: " Sheesham Wood Coffee Table",
         product_real: "28999",
         product_sell: 13920,
@@ -163,6 +173,7 @@ if (!product_crud) {
         product_description:
           '*Shape :	L-Shape, *Desk design :	Computer Desk, *Product Dimensions : 75D x 59.2W x 73H Centimeters, *Colour :	Black, * 10 days replacement. * Sectional Sofa Length = 105.5". * Our experts will install it for you – No cost. * Tearproof, Water Resistant. * Perfect for Living room.',
         product_discount: "20",
+        product_quantity: "12",
         product_name: "Wall Mounted Study Table",
         product_real: "25000",
         product_sell: 20000,
@@ -177,6 +188,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Trevi Furniture. * Colour : Black. * Dimensions (In Centimeters) : H 180 x W 72 x D 47. *Weight : 300 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "15",
+        product_quantity: "25",
         product_name: "Wenge-finished Black Wardrobe",
         product_real: "45999",
         product_sell: 39099,
@@ -191,6 +203,7 @@ if (!product_crud) {
         product_description:
           '*Brand : Woodbuzz. * Colour : White. * Dimensions (In Centimeters) : H 180 x W 180 x D 48. *Weight : 165 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "14",
+        product_quantity: "5",
         product_name: "Frosty White Finish Wadrobe",
         product_real: "34999",
         product_sell: 30099,
@@ -205,6 +218,7 @@ if (!product_crud) {
         product_description:
         '*Brand : Maheshwari Furniture. * Colour : Brown and Grey. * Dimensions (In Centimeters) : H 196 x W 201 x D 61. *Weight : 230 KG. * 10 days replacement. * Perfect for Bedroom. *Simple and timeless design with an elegant finish',
         product_discount: "15",
+        product_quantity: "18",
         product_name: "Brown and Grey Finish Wardrobe",
         product_real: "48999",
         product_sell: 41649,
@@ -218,7 +232,8 @@ if (!product_crud) {
         product_category: "Wallpaper",
         product_description:
           '*Brand :	Home Mark. * Colour : Black. * Material :	Vinyl * Product Dimensions :	60L x 200W Centimeters * Bluish Green Wallpaper. * 5 days replacement. * Tearproof, Water Resistant. *Wipes Clean With A Damp Cloth Or Sponge.',
-        product_discount: "10",
+        product_discount: "20",
+        product_quantity: "15",
         product_name: "Black Marble Sticker Wallpaper",
         product_real: "699",
         product_sell: 629,
@@ -233,6 +248,7 @@ if (!product_crud) {
         product_description:
           '*Material :	Vinyl, Paper, Polyvinyl Chloride. * Colour : Green. * Brand	: ANNA CREATIONS. * Item Weight	: 246 Grams. *Size and feature : 45"X 304" CM. * Material : Vinyl. * 5 days replacement. * Tearproof, Water Resistant. *Wipes Clean With A Damp Cloth Or Sponge.',
         product_discount: "10",
+        product_quantity: "8",
         product_name: "Vinyl Green Wallpaper",
         product_real: "999",
         product_sell: 899,
@@ -247,6 +263,7 @@ if (!product_crud) {
         product_description:
           '*Brand : The Wall Chronicles. *Dimensions : Width : 40, Height :120. *Colour : Multicolour. *Weight : 7 Kg. * 5 days replacement. * Tearproof, Water Resistant. * Perfect for Bedroom. *Wipes Clean With A Damp Cloth Or Sponge.',
         product_discount: "5",
+        product_quantity: "10",
         product_name: "Multicolour Triangles Wallpaper",
         product_real: "6000",
         product_sell: 5700,
@@ -406,7 +423,7 @@ if (!roomDetails) {
 
       { yearBuilt: 2021, designer : "Gauri Khan", catchyName1: "Compact", catchyName2: "Tidy", apartmentName: "Neighborly Nest", place: "Velacherry", image: " https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", roomCategory: "bedroom" , about:"It was created for a college-going girl. Both under the bed and in a wall were storage units that we had. From flipkart, we purchased a single coir mattress. We created a fantastic study table out of a single piece of white marble that we purchased. To sit at the study table, we had a curved stool. It is a space-saving technique we apply in this room that is minimal cost.",productImg:"https://iili.io/Hrn3lmN.png"},
       { yearBuilt: 2020, designer : "Manit Rastogi", catchyName1: "Fashionable", catchyName2: "Orderly", apartmentName: "Sunrise Apartments", place: "Porur", image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1714&q=80", roomCategory: "bedroom", about:"We created a master bedroom with an incredibly comfortable double mattress and cosy stools for the delightful lovers. Additionally, we imported a master pie wall hanger, a glassed floor light for either side of the bed, and plants to provide freshness. The photo painted frame is the bedroom's distinctive feature. Finally, we designated this space as a fashionable and orderly creation of Minimalistic designers.",productImg:"https://iili.io/Hrn3zzP.png"},
-      { yearBuilt: 2022, designer : "Sunita Kohli", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: " ../../assets/images/Bedroom/couple bedroom 5.jpg", roomCategory: "bedroom", about:"It was created for a college-going girl. Both under the bed and in a wall were storage units that we had. From flipkart, we purchased a single coir mattress. We created a fantastic study table out of a single piece of white marble that we purchased. To sit at the study table, we had a curved stool. It is a space-saving technique we apply in this room that is minimal cost.",productImg:"https://m.media-amazon.com/images/I/71e0RPlYdhL._SX679_.jpg",productImg:"https://iili.io/Hrn3zzP.png"},
+      { yearBuilt: 2022, designer : "Sunita Kohli", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Ruby Apartments", place: "Koyembadu", image: " ../../assets/images/Bedroom/couple bedroom 5.jpg", roomCategory: "bedroom", about:"It was created for a college-going girl. Both under the bed and in a wall were storage units that we had. From flipkart, we purchased a single coir mattress. We created a fantastic study table out of a single piece of white marble that we purchased. To sit at the study table, we had a curved stool. It is a space-saving technique we apply in this room that is minimal cost.",productImg:"https://iili.io/Hrn3zzP.png"},
 
       { yearBuilt: 2021, designer : "Gauri Khan", catchyName1: "Modern", catchyName2: "Prestigious", apartmentName: "Neighborly Nest", place: "Kanchipuram", image: "https://iili.io/Hr7Our7.jpg", roomCategory: "renovation", about:"I'm excited to showcase this wonderful kitchen renovation job. At first, it had a rustic and drab appearance, but in a short amount of time, we completely transformed it with simple paintings, a new floor, the purchase of a gorgeous dining table and two chairs, a wall hanger we made out of scrap materials that gives the space an extra touch of class, and plants for freshness.",productImg:"https://m.media-amazon.com/images/I/71SmYA9moiL._SL1500_.jpg"},
       { yearBuilt: 2020, designer : "Manit Rastogi", catchyName1: "Classy", catchyName2: "Glassy", apartmentName: "Sunrise Apartments", place: "Bangalore", image: "../../assets/images/renovate/renovation 4.jpg", roomCategory: "renovation", about:"I'm thrilled to tell you about this excellent home renovation project.Our talented designers transformed a plain and boring house into a chic and fashionable residence. We converted the house into a glass house in accordance with the clients' requests, adding a wooden sofa, a tea table, a dining table, and a television. The property looks elegant and classy thanks to a pattern floor mat and a rustic piece of wall art.",productImg:"https://m.media-amazon.com/images/I/61MEp1jTfgS._SL1500_.jpg"},

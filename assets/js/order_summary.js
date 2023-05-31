@@ -36,7 +36,7 @@ for (const item of user_cart) {
 
 
 //Amount
-document.getElementById("sub_total").innerText = `₹${amount + 2900 }`;
+document.getElementById("sub_total").innerText = `₹${amount + 2900}`;
 document.getElementById("shipping_free").innerText = `₹ ${100}`;
 document.getElementById("discount_amount").innerText = `₹ ${1400}`;
 document.getElementById("total_amount").innerText = `₹ ${amount}`;
@@ -86,15 +86,20 @@ document.querySelector("#place_order").addEventListener("click", function () {
   }
   localStorage.setItem("order_list", JSON.stringify(order_list));
 
-  for (let k = cart_list.length - 1; k >= 0; k--) {
-    if (profile_id === cart_list[k].userId) {
-      cart_list.splice(k, 1);
-    }
+
+  let user_cartIndex = cart_list.findIndex((cart) => cart.userId === profile_id);
+  if (user_cartIndex !== -1) {
+    const user_cart = cart_list.splice(user_cartIndex, 1)[0];
+    cart_list.push(user_cart);
   }
 
   localStorage.setItem("cart_list", JSON.stringify(cart_list));
+  
 
+
+ 
   localStorage.removeItem('user_delivery');
   localStorage.removeItem('selectedArray');
   window.location.href = "./order_success.html";
+
 });

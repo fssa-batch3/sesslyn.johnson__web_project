@@ -55,7 +55,7 @@
                         class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text"  placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
+                    <input type="text"  placeholder="Product Quantity" id="product_quantity"  required  title="Only 2 numbers is allowed" min="5" max="90" pattern="[1-9][0-9]{0,2}"
                         class="form-control">
                     <select name="" id="product_category" value="Sofa" class="form-control" required>
                         <option value="" disabled selected>Product Category</option>
@@ -67,7 +67,6 @@
                         <option value="Chandelier">Chandelier</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <input type="text" required placeholder="Warranty" value="3 years of warranty"
                         title="Only Alphabets, numbers and space is allowed" id="product_warranty"
@@ -94,6 +93,7 @@
                 .join(" ");
             const product_category = document.getElementById("product_category").value;
             const product_real = document.getElementById("product_real").value;
+            const product_quantity = document.getElementById("product_quantity").value;
             const product_discount = document.getElementById("product_discount").value;
             const product_description = document
                 .getElementById("product_description")
@@ -111,6 +111,12 @@
                 .split(/\s+/g)
                 .join(" ");
             const product_uuid = uuidv4();
+
+            if (product_name === "" || product_brand === "" || image_url === "" || product_description === "" || product_warranty === "" || product_quantity === "") {
+                alert("Please enter all the information");
+                return false;
+            }
+
             let product_sell;
             if (product_discount == product_discount) {
                 product_sell = product_real - (product_real * product_discount) / 100;
@@ -146,6 +152,7 @@
                 product_discount,
                 product_description,
                 product_warranty,
+                product_quantity,
                 product_uuid,
                 sellerId,
             });

@@ -2,7 +2,6 @@ const product_crud = JSON.parse(localStorage.getItem("product_crud"));
 const cart_list = JSON.parse(localStorage.getItem("cart_list")) || [];
 const user = JSON.parse(localStorage.getItem("profile_id"));
 
-
 const user_cart = cart_list.filter((e) => e.userId == user);
 console.log(user_cart);
 
@@ -149,7 +148,6 @@ btnOrder.addEventListener("click", function () {
     window.location.href = "./order/order_details.html";
   }
 });
-
 
 //Delete Icon for Cart page
 const products = document.querySelectorAll("img#icon_remove");

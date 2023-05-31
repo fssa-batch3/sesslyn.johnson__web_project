@@ -1,4 +1,3 @@
-
 const product_crud = JSON.parse(localStorage.getItem("product_crud"));
 const added_products = JSON.parse(localStorage.getItem("added_products"));
 
@@ -11,9 +10,25 @@ const unique_id = product_crud.find((e) => e.product_uuid == product_id);
 
 console.log(unique_id);
 localStorage.setItem("product", JSON.stringify(unique_id.product_uuid));
+let roundedAverageRating
+
+const reviewsInfo = JSON.parse(localStorage.getItem("reviewsInfo")) || [];
+if (reviewsInfo.length != 0) {
+  const reviewProduct = reviewsInfo.filter((e) => e.product_id === product_id);
+  console.log(reviewProduct)
+  if (reviewProduct) {
+    let starValue = 0;
+    for (let i = 0; i < reviewProduct.length; i++) {
+      starValue += parseInt(reviewProduct[i].ratingValue);
+    }
+    const averageRating = starValue / reviewProduct.length;
+    roundedAverageRating = Math.round(averageRating);
+
+  }
+
+}
 
 //DOM for product details
-
 const div_left = document.createElement("div");
 div_left.setAttribute("class", "left_corner");
 console.log(div_left);
@@ -39,6 +54,9 @@ img_details.setAttribute("class", "description_img");
 img_details.setAttribute("src", unique_id.image_url);
 div_left.append(img_details);
 
+
+
+
 const div_middle = document.createElement("div");
 div_middle.setAttribute("class", "middle_contain");
 console.log(div_middle);
@@ -58,13 +76,19 @@ const span_review = document.createElement("span");
 span_review.setAttribute("class", "star_icon");
 div_review.append(span_review);
 
-for (let k = 0; k < 5; k++) {
-  //<i></i>
-  const i_star = document.createElement("i");
-  i_star.setAttribute("class", "fa fa-star");
-  span_review.append(i_star);
-}
 
+for (let i = 0; i < 5; i++) {
+  const i_star = document.createElement("i");
+  if (i < roundedAverageRating) {
+    i_star.setAttribute("class", "fa fa-star");
+    i_star.setAttribute("id", "starIcon");
+    span_review.append(i_star);
+  } else {
+    i_star.setAttribute("class", "fa fa-star");
+    i_star.setAttribute("id", "fastarIcon");
+    span_review.append(i_star);
+  }
+}
 const div_head = document.createElement("div");
 div_middle.append(div_head);
 
@@ -73,6 +97,24 @@ const h1_title = document.createElement("h1");
 h1_title.setAttribute("class", "product_name");
 h1_title.innerHTML = unique_id.product_name;
 div_head.append(h1_title);
+
+const spanQuantity = document.createElement("span");
+spanQuantity.setAttribute("id", "spanQuantity");
+ if (parseInt(unique_id.product_quantity) < 10 && parseInt(unique_id.product_quantity) > 0) {
+  // const btn_cart=document.getElementById("btn_cart");
+  // spanQuantity.innerHTML = unique_id.product_name;
+  spanQuantity.innerText = "Only " + unique_id.product_quantity + " stock left. Hurry up....";
+  
+} else if (parseInt(unique_id.product_quantity) == 0) {
+  spanQuantity.innerText = "Out of Stock";
+  // btn_cart.style.opacity = "0.3";
+  // btn_cart.style.pointerEvents = "none";
+}
+else {
+  // spanQuantity.style.display = "none";
+  spanQuantity.innerText = "Available now. Start Buying";
+}
+div_head.append(spanQuantity);
 
 const div_amount = document.createElement("div");
 div_amount.setAttribute("class", "amount");
@@ -194,6 +236,7 @@ for (let i = 0; i < 5; i++) {
   //<i></i>
   const star1 = document.createElement("i");
   star1.setAttribute("class", "fa fa-star");
+  star1.setAttribute("id", "fastarIcon");
   reviewIcon1.append(star1);
 }
 
@@ -235,9 +278,9 @@ for (let i = 0; i < 5; i++) {
 
   const star2 = document.createElement("i");
   star2.setAttribute("class", "fa fa-star");
+  star2.setAttribute("id", "fastarIcon");
   reviewIcon2.append(star2);
 }
-
 document.querySelector("div.container").append(div_left);
 document.querySelector("div.container").append(div_middle);
 document.querySelector("div.container").append(div_right);
@@ -316,3 +359,4 @@ function wish(e) {
     window.location.href = "./shop.html";
   }
 }
+

@@ -52,8 +52,8 @@
                         required pattern="[0-9]{2}" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Current Price" id="product_sell" disabled required pattern="[0-9]+"
-                        class="form-control">
+                    <input type="text"  placeholder="Product Quantity" id="product_quantity"  required  title="Only 2 numbers is allowed" min="5" max="150" 
+                    pattern="[1-9][0-9]{0,2}" class="form-control">
                     <select name="" id="product_category" class="form-control" required>
                         <option value="" disabled selected>Product Category</option>
                         <option value="Sofa">Sofa</option>
@@ -103,6 +103,7 @@
         document.getElementById("product_category").value = product_data.product_category;
         document.getElementById("product_real").value = product_data.product_real;
         document.getElementById("product_discount").value = product_data.product_discount;
+        document.getElementById("product_quantity").value = product_data.product_quantity;
         document.getElementById("product_description").value = product_data.product_description;
         document.getElementById("product_warranty").value = product_data.product_warranty;
 
@@ -128,6 +129,7 @@
             const edit_category = document.getElementById("product_category").value;
             const edit_real = document.getElementById("product_real").value;
             const edit_discount = document.getElementById("product_discount").value;
+            const edit_quantity = document.getElementById("product_quantity").value;
             const edit_description = document.getElementById("product_description").value.trim().split(/\s+/g).join(" ");
             const edit_warranty = document.getElementById("product_warranty").value.trim().split(/\s+/g).join(" ");
 
@@ -147,12 +149,13 @@
             product_data.product_real = edit_real;
             product_data.product_sell = edit_sell;
             product_data.product_discount = edit_discount;
+            product_data.product_quantity = edit_quantity;
             product_data.product_description = edit_description;
             product_data.product_warranty = edit_warranty;
 
               // Validate
-              if (product_data.product_name === "" || product_data.product_brand === "" || product_data.image_url === "" || product_data.product_description === "" || product_data.product_warranty === "") {
-                alert("Please enter your address information");
+              if (product_data.product_name === "" || product_data.product_brand === "" || product_data.image_url === "" || product_data.product_description === "" || product_data.product_warranty === "" || product_data.product_quantity === "") {
+                alert("Please enter all the information");
                 return false;
             }
 

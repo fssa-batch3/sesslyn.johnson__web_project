@@ -13,10 +13,9 @@ body{
     margin-left:5rem;
     font-family: "Poppins", sans-serif;
 }
+
 h4,.criteriaPara{
-    color:white;
-}
-h4,.criteriaPara{
+  color:white;
     margin:1rem 2rem 1rem 2rem;
 }
 #criteriaDiv{

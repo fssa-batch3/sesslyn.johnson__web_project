@@ -21,34 +21,34 @@
 </head>
 
 <body>
- <div id="small_container">
-    <div class="top-container">
-        <div class="top_contain">
-            <div>
-                <img src="https://iili.io/HgdJlDJ.png" class="delivery_girl"
-                    alt="Delivery receiving image">
+    <div id="small_container">
+        <div class="top-container">
+            <div class="top_contain">
+                <div>
+                    <img src="https://iili.io/HgdJlDJ.png" class="delivery_girl" alt="Delivery receiving image">
+                </div>
+                <div>
+                    <h1>
+                        Best Furniture For Your Home <br> From Minimalistic
+                    </h1>
+                    <a href="../shop.html">
+                        <p class="start_shop">
+                            Start Shopping <img src="../../assets/images/home_page/arrow.png" alt="arrow image"
+                                class="arrow_icon"></p>
+                    </a>
+
+                </div>
             </div>
-            <div>
-                <h1>
-                    Best Furniture For Your Home <br> From Minimalistic
-                </h1>
-                <a href="../shop.html">
-                <p class="start_shop">
-                    Start Shopping <img src="../../assets/images/home_page/arrow.png" alt="arrow image"
-                        class="arrow_icon"></p></a>
-                
-            </div>
-        </div>
-        <div class="bottom_contain">
+            <div class="bottom_contain">
 
 
+            </div>
         </div>
     </div>
-</div>
     <div id="cart_empty">
         <img src="https://iili.io/HgJi5I1.jpg" class="emptyCart" alt="Empty Cart image" />
         <p class="cartEmpty">You haven't placed an order yet.</p>
-      </div>
+    </div>
     <script>
 
         const order_list = JSON.parse(localStorage.getItem("order_list")) || [];
@@ -91,6 +91,7 @@
 
             const productImg = document.createElement("img");
             productImg.setAttribute("src", order.ordered_items.image_url);
+            productImg.setAttribute("data-id", order.order_uuid);
             productImg.setAttribute("class", "product_1");
             productImg.setAttribute("alt", "Compat camal brown sofa");
             cartInfo.appendChild(productImg);
@@ -168,16 +169,23 @@
                 order.order_status = "Delivered";
                 localStorage.setItem("order_list", JSON.stringify(order_list));
             }
-
-
-
             document.querySelector("div.bottom_contain").append(table);
         }
-    
+
+        //URL Params
+        const bookCovers = document.querySelectorAll(".product_1");
+        bookCovers.forEach((bookCover) => {
+            bookCover.addEventListener("click", (event) => {
+                const person_data = bookCover.dataset.id;
+                window.location.href = `./order_history.html?order_id=${person_data}`;
+            });
+        });
+
 
     </script>
     <script src="../../assets/js/chatBot.js"></script>
     <script src="../../assets/comments/header.js"></script>
+
 </body>
 
 </html>

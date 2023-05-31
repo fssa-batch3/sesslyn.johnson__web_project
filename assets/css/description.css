@@ -94,9 +94,13 @@
 
 .amount {
     display: inline-block;
-    margin: 1rem 0rem 1rem -1rem;
+    margin: 4rem 0rem 0rem -1rem;
 }
-
+#spanQuantity{
+    margin:2rem 0rem 2rem -1rem;
+    position: absolute;
+    /* color:rgb(232, 182, 16); */
+}
 .prize {
     font-size: 1rem;
     padding-bottom: 0rem;
@@ -252,11 +256,14 @@ del {
     padding-right: 17rem;
 }
 
-.fa {
+#starIcon{
     font-size: 18px;
     color: rgb(232, 182, 16);
 }
-
+#fastarIcon{
+    font-size: 18px;
+    color: rgb(199, 198, 197);
+}
 #cartIcon {
     padding-left: 1rem;
 }

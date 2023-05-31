@@ -15,6 +15,10 @@ td img {
 	margin: 4rem 2rem 0rem 4rem;
 }
 
+.contain_cart {
+	margin: 5rem 0rem 0rem 0rem;
+}
+
 input {
 	width: 40px;
 	height: 30px;
@@ -100,6 +104,7 @@ input {
 
 h3 {
 	text-overflow: ellipsis;
+	font-size:1rem;
 	width: 180px;
 	height: 10px;
 	margin: 6rem 1rem 0rem 2rem;
@@ -158,3 +163,45 @@ p.cartEmpty {
 	margin-top: 0rem;
 	letter-spacing: 0.1rem;
 }
+.parah3{
+	text-overflow: ellipsis;
+	font-size:1.1rem;
+	font-weight: 550;
+	width: 180px;
+	height: 10px;
+	margin: 6rem 1rem 0rem 2rem;
+}
+#headh1 {
+	position: absolute;
+	left: 18rem;
+	top: 12rem;
+}
+
+#headh2 {
+	position: absolute;
+	left: 27rem;
+	top: 12rem;
+}
+
+ #headh3 {
+	position: absolute;
+	left: 42rem;
+	top: 12rem;
+}
+
+#headh4 {
+	position: absolute;
+	left: 53.5rem;
+	top: 12rem;
+}
+
+#headh5 {
+	position: absolute;
+	left: 60.5rem;
+	top: 12rem;
+} 
+#headh6 {
+	position: absolute;
+	left: 68rem;
+	top: 12rem;
+} 

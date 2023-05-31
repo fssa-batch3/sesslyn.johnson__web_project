@@ -41,7 +41,7 @@
                         <img src="https://iili.io/HgtkRIf.png" class="icon" alt="" />
                         <p>91-6381040916</p>
                     </div>
-                    <img class="designerImage"
+                    <img class="designerImage" alt="designer image"
                         src="https://img.freepik.com/free-vector/team-checklist-concept-illustration_114360-9880.jpg?w=1060&t=st=1684929930~exp=1684930530~hmac=1f6bc73c52f8c8e2f0b390aacf0842e44f2e6168c84636b6ddeef2600cf18274" />
                 </div>
 
@@ -59,7 +59,8 @@
                     <p class="criteriaPara">4. Your profile should include pictures or videos of the projects you've
                         finished.</p>
                     <p class="criteriaPara">5. You can include your internship experience if you're a beginner.</p>
-                    <p class="criteriaPara">6. We also provide a quick quiz, which will be shown to you after you submit an application for the designer.</p>
+                    <p class="criteriaPara">6. We also provide a quick quiz, which will be shown to you after you submit
+                        an application for the designer.</p>
                     <p class="criteriaPara">7. Our team will get in touch with you and set up a direct interview after
                         reviewing your résumé and profile. If you were chosen, you could join Minimalistic.</p>
                     <a href="./designer_apply.html"><button class="btnOk" type="button">Ok</button></a>
@@ -83,8 +84,8 @@
                             <span>Email</span>
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="phone" pattern="[6-9]{1}[0-9]{9}" title="it should be 10 digit number"
-                                required id="designer_number" class="input" />
+                            <input type="tel" name="phone" pattern="[6-9]{1}[0-9]{9}"
+                                title="it should be 10 digit number" required id="designer_number" class="input" />
                             <label for="">Phone</label>
                             <span>Phone</span>
                         </div>
@@ -219,15 +220,13 @@
             function check_phonenumber() {
                 const designer_number = document.getElementById("designer_number").value;
                 let result = 0;
-
-                for (let i = 0; i < designer_number.length; i++) {
-                    if (designer_number[i] === designer_number[0]) {
+                for (const number of designer_number) {
+                    if (number === firstDesignerNumber) {
                         result += 1;
                     } else {
                         break;
                     }
                 }
-
                 console.log(result)
 
                 if (result !== 10) {
@@ -237,8 +236,7 @@
                 }
             }
             const applyDesigner = JSON.parse(localStorage.getItem("applyDesigner")) || [];
-            const profile_id = JSON.parse(localStorage.getItem("profile_id"));
-
+           
             const user_designer = applyDesigner.some((e) => e.user_email === user_email);
             console.log(user_designer);
 
@@ -260,7 +258,7 @@
 
                 localStorage.removeItem('photoURL');
                 localStorage.removeItem('resumeURL');
-                window.location.href="./quiz.html"
+                window.location.href = "./quiz.html"
             }
 
         });
